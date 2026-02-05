@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1d89d31f-98b0-4130-94ce-f15042e3b0af",
+    "store_id": "64fae3ab-f7b2-4cee-ae7e-ff7d824da635",
+    "coupon_title": "Nike Shoes 10% Off",
+    "coupon_code": "NIKESHOE10",
+    "coupon_description": "Discount on footwear",
+    "coupon_aff_url": "https://www.nike.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  },
+  {
+    "id": "92e8a5f6-155b-4c3b-b4d4-7ff98b6e1c33",
+    "store_id": "64fae3ab-f7b2-4cee-ae7e-ff7d824da635",
+    "coupon_title": "7% Off Fitness Gear",
+    "coupon_code": "NIKEFIT7",
+    "coupon_description": "Activewear discount",
+    "coupon_aff_url": "https://www.nike.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  }
+]

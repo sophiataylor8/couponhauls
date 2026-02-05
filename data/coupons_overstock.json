@@ -1,0 +1,30 @@
+[
+  {
+    "id": "ab3cbf59-f80d-45d2-aa24-805addce18c6",
+    "store_id": "7ecf17ec-18b6-40fd-ab1a-803829df1161",
+    "coupon_title": "Furniture Clearance 10%",
+    "coupon_code": "OSTOCK10",
+    "coupon_description": "Home items discount",
+    "coupon_aff_url": "https://www.overstock.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  },
+  {
+    "id": "38020fec-9f81-464d-9309-633ef19ee9bf",
+    "store_id": "7ecf17ec-18b6-40fd-ab1a-803829df1161",
+    "coupon_title": "Rugs Extra 5%",
+    "coupon_code": "OSTRUGS5",
+    "coupon_description": "Rug category discount",
+    "coupon_aff_url": "https://www.overstock.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  }
+]

@@ -1,0 +1,34 @@
+baseURL = "https://couponhauls.com/"
+languageCode = "en-us"
+title = "CouponHauls - Best Coupon Codes & Deals"
+
+[params]
+description = "Find the best coupon codes, promo codes, and deals from top stores. Save money on your online shopping with CouponHauls."
+author = "CouponHauls Team"
+og_image = "/images/og-image.jpg"
+twitter_handle = "@couponhauls"
+supabase_url = "https://your-project.supabase.co"
+supabase_anon_key = "your-anon-key"
+
+[menu]
+[[menu.main]]
+name = "Stores"
+url = "/stores/"
+weight = 1
+[[menu.main]]
+name = "Categories"
+url = "/categories/"
+weight = 2
+[[menu.main]]
+name = "Blog"
+url = "/blog/"
+weight = 3
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+section = ["HTML", "RSS"]
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true

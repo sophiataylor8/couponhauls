@@ -1,0 +1,30 @@
+[
+  {
+    "id": "52e920b0-0dce-49e8-92ba-7bb028e7b801",
+    "store_id": "a26842c8-9ecf-4c64-ae3e-92833efaba1b",
+    "coupon_title": "Walmart Essentials 5%",
+    "coupon_code": "WMTESS5",
+    "coupon_description": "Groceries & essentials",
+    "coupon_aff_url": "https://www.walmart.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  },
+  {
+    "id": "f9d7cab3-61f3-428a-9767-0fdf19461d44",
+    "store_id": "a26842c8-9ecf-4c64-ae3e-92833efaba1b",
+    "coupon_title": "Electronics Extra 8%",
+    "coupon_code": "WMTECH8",
+    "coupon_description": "Tech discount",
+    "coupon_aff_url": "https://www.walmart.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  }
+]

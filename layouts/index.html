@@ -1,0 +1,178 @@
+{{ define "title" }}{{ .Site.Title }} - Best Coupon Codes & Deals{{ end }}
+{{ define "main" }}
+<section class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
+<div class="container mx-auto px-4">
+<div class="max-w-4xl mx-auto text-center">
+<h1 class="text-5xl md:text-6xl font-bold mb-6 text-balance">Save Big with the Best Coupon Codes</h1>
+<p class="text-xl md:text-2xl mb-8 text-primary-100">Discover thousands of verified coupon codes and deals from top stores</p>
+<div class="max-w-2xl mx-auto">
+<form id="searchForm" class="relative" action="/stores/">
+<input type="text" id="storeSearch" name="q" placeholder="Search for stores..." class="w-full px-6 py-4 rounded-full text-gray-900 text-lg focus:outline-none focus:ring-4 focus:ring-primary-300">
+<button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 bg-accent-500 hover:bg-accent-600 text-white px-8 py-3 rounded-full font-semibold transition-colors">Search</button>
+</form>
+</div>
+<div class="mt-8 flex flex-wrap justify-center gap-4">
+<span class="text-primary-200">Popular:</span>
+{{ if .Site.Data.featured_stores }}
+{{ range first 4 .Site.Data.featured_stores }}
+<a href="/stores/{{ .slug }}" class="text-white hover:text-primary-200 transition-colors">{{ .website_name }}</a>
+{{ end }}
+{{ else }}
+<a href="/stores/walmart" class="text-white hover:text-primary-200 transition-colors">Walmart</a>
+<a href="/stores/target" class="text-white hover:text-primary-200 transition-colors">Target</a>
+<a href="/stores/amazon" class="text-white hover:text-primary-200 transition-colors">Amazon</a>
+<a href="/stores/kohls" class="text-white hover:text-primary-200 transition-colors">Kohl's</a>
+{{ end }}
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-12 bg-white border-b">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<div class="text-4xl font-bold text-primary-600">{{ if .Site.Data.stores }}{{ len .Site.Data.stores }}+{{ else }}500+{{ end }}</div>
+<div class="text-gray-600 mt-2">Stores</div>
+</div>
+<div>
+<div class="text-4xl font-bold text-primary-600">{{ if .Site.Data.coupons }}{{ len .Site.Data.coupons }}+{{ else }}10,000+{{ end }}</div>
+<div class="text-gray-600 mt-2">Coupons</div>
+</div>
+<div>
+<div class="text-4xl font-bold text-primary-600">$2M+</div>
+<div class="text-gray-600 mt-2">Saved</div>
+</div>
+<div>
+<div class="text-4xl font-bold text-primary-600">98%</div>
+<div class="text-gray-600 mt-2">Success Rate</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold mb-4">Trending Stores</h2>
+<p class="text-xl text-gray-600">Shop at your favorite stores and save more</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+{{ if .Site.Data.featured_stores }}
+{{ range .Site.Data.featured_stores }}
+<a href="/stores/{{ .slug }}" class="coupon-card block hover:scale-105 transition-transform">
+<div class="p-6">
+<div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+{{ if .logo_url }}
+<img src="{{ .logo_url }}" alt="{{ .website_name }}" class="max-w-full max-h-full p-2" loading="lazy">
+{{ else }}
+<div class="text-3xl font-bold text-primary-600">{{ substr .website_name 0 1 }}</div>
+{{ end }}
+</div>
+<h3 class="text-lg font-semibold text-center mb-2">{{ .website_name }}</h3>
+<p class="text-sm text-gray-600 text-center mb-3">{{ .coupon_count }} Coupons</p>
+<div class="text-center">
+<span class="text-primary-600 font-medium text-sm">View Deals →</span>
+</div>
+</div>
+</a>
+{{ end }}
+{{ else }}
+<div class="col-span-full text-center py-12">
+<p class="text-gray-600 text-lg">Run <code class="bg-gray-200 px-2 py-1 rounded">npm run fetch</code> to load stores from Supabase</p>
+</div>
+{{ end }}
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold mb-4">Latest Coupon Codes</h2>
+<p class="text-xl text-gray-600">Fresh deals updated daily</p>
+</div>
+{{ if .Site.Data.latest_coupons }}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+{{ range .Site.Data.latest_coupons }}
+<div class="coupon-card">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="flex-1">
+<a href="/stores/{{ .stores.slug }}" class="text-primary-600 font-medium text-sm hover:underline mb-1 block">{{ .stores.website_name }}</a>
+<h3 class="text-xl font-semibold mb-2 text-gray-900">{{ .coupon_title }}</h3>
+<p class="text-gray-600 text-sm">{{ .coupon_description }}</p>
+</div>
+<span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">{{ .coupon_type }}</span>
+</div>
+{{ if .coupon_code }}
+<div class="bg-gray-50 rounded-lg p-4 mb-4 border-2 border-dashed border-gray-300">
+<div class="flex items-center justify-between">
+<code class="text-lg font-mono font-bold text-primary-600">{{ .coupon_code }}</code>
+<button onclick="copyCoupon('{{ .coupon_code }}', '{{ .coupon_aff_url }}')" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Copy Code</button>
+</div>
+</div>
+{{ else }}
+<div class="mb-4">
+<a href="{{ .coupon_aff_url }}" target="_blank" rel="noopener noreferrer" class="block w-full bg-primary-600 hover:bg-primary-700 text-white px-4 py-3 rounded-lg text-center font-semibold transition-colors">Get Deal →</a>
+</div>
+{{ end }}
+<div class="flex items-center justify-between text-sm text-gray-500">
+<span>{{ if .coupon_code }}Code{{ else }}No Code Needed{{ end }}</span>
+{{ if .expires_at }}<span>Expires: {{ dateFormat "Jan 2, 2006" .expires_at }}</span>{{ else }}<span>No Expiration</span>{{ end }}
+</div>
+</div>
+</div>
+{{ end }}
+</div>
+{{ else }}
+<div class="text-center py-12">
+<p class="text-gray-600 text-lg">Run <code class="bg-gray-200 px-2 py-1 rounded">npm run fetch</code> to load coupons from Supabase</p>
+</div>
+{{ end }}
+<div class="text-center mt-12">
+<a href="/stores/" class="btn btn-primary">View All Stores</a>
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-gradient-to-r from-primary-600 to-primary-700 text-white">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-4xl font-bold mb-4">Never Miss a Deal</h2>
+<p class="text-xl mb-8 text-primary-100">Subscribe to get the latest coupon codes delivered to your inbox</p>
+<form id="newsletterForm" class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+<input type="email" id="emailInput" placeholder="Enter your email" required class="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-4 focus:ring-primary-300">
+<button type="submit" class="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors whitespace-nowrap">Subscribe</button>
+</form>
+<p class="text-sm text-primary-200 mt-4">Join 50,000+ subscribers. Unsubscribe anytime.</p>
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold mb-4">How It Works</h2>
+<p class="text-xl text-gray-600">Start saving in three simple steps</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+<div class="text-center">
+<div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+<h3 class="text-xl font-semibold mb-3">Find Your Store</h3>
+<p class="text-gray-600">Search for your favorite store or browse our trending deals</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+<h3 class="text-xl font-semibold mb-3">Copy the Code</h3>
+<p class="text-gray-600">Click to copy verified coupon codes instantly</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+<h3 class="text-xl font-semibold mb-3">Save Money</h3>
+<p class="text-gray-600">Apply the code at checkout and enjoy your savings</p>
+</div>
+</div>
+</div>
+</section>
+{{ end }}

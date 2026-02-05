@@ -1,0 +1,30 @@
+[
+  {
+    "id": "5d07efb7-cdac-496e-93d7-604a145d04da",
+    "store_id": "2e53bfe8-811e-4e4e-a8e4-718b1387aa5f",
+    "coupon_title": "Flat 10% Off on Select Items",
+    "coupon_code": "SAVE10AMZ",
+    "coupon_description": "Discount on eligible products",
+    "coupon_aff_url": "https://www.amazon.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  },
+  {
+    "id": "05af6bd0-85ad-4c39-8e15-72cf81d473e3",
+    "store_id": "2e53bfe8-811e-4e4e-a8e4-718b1387aa5f",
+    "coupon_title": "Free Shipping on Orders Over $25",
+    "coupon_code": "FREESHIPAMZ",
+    "coupon_description": "Free delivery on qualifying deals",
+    "coupon_aff_url": "https://www.amazon.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  }
+]

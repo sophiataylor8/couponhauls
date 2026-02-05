@@ -1,0 +1,33 @@
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="container mx-auto px-4">
+  <div class="flex items-center justify-between h-16">
+  <a href="/" class="flex items-center space-x-2">
+  <div class="text-2xl font-bold text-primary-600">🎫 CouponHauls</div>
+  </a>
+  <div class="hidden md:flex items-center space-x-8">
+  {{ range .Site.Menus.main }}
+  <a href="{{ .URL }}" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">{{ .Name }}</a>
+  {{ end }}
+  </div>
+  <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden pb-4">
+  {{ range .Site.Menus.main }}
+  <a href="{{ .URL }}" class="block py-2 text-gray-700 hover:text-primary-600 font-medium">{{ .Name }}</a>
+  {{ end }}
+  </div>
+  </nav>
+  </header>
+  <script>
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (mobileMenuBtn && mobileMenu) {
+  mobileMenuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  });
+  }
+  </script>

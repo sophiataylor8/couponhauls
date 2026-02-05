@@ -1,0 +1,30 @@
+[
+  {
+    "id": "9958ae49-4dab-45bb-907c-9ad31d75fd45",
+    "store_id": "6217a815-969c-4a08-87f9-74c1b5fc55a1",
+    "coupon_title": "Tools Extra 8% Off",
+    "coupon_code": "HDTOOL8",
+    "coupon_description": "Save on tools",
+    "coupon_aff_url": "https://www.homedepot.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  },
+  {
+    "id": "50ae05db-bff3-4bc3-b794-d4483f21717b",
+    "store_id": "6217a815-969c-4a08-87f9-74c1b5fc55a1",
+    "coupon_title": "Free Shipping over $50",
+    "coupon_code": "HDFREESHIP50",
+    "coupon_description": "Shipping discount",
+    "coupon_aff_url": "https://www.homedepot.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  }
+]

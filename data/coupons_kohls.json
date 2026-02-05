@@ -1,0 +1,44 @@
+[
+  {
+    "id": "f31e3f06-52ca-43df-8894-de9a51a1d3b5",
+    "store_id": "a2caa786-a22a-41cc-9ab1-d6d1b6e87d4a",
+    "coupon_title": "20% Off",
+    "coupon_code": "CODE20OFF",
+    "coupon_description": "discount on sale",
+    "coupon_aff_url": "https://www.kohls.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  },
+  {
+    "id": "cf4cc05d-19f1-4d4d-8fb1-5b8d84e0c126",
+    "store_id": "a2caa786-a22a-41cc-9ab1-d6d1b6e87d4a",
+    "coupon_title": "12% Off Fashion",
+    "coupon_code": "KOHL12SAVE",
+    "coupon_description": "Apparel discount",
+    "coupon_aff_url": "https://www.kohls.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  },
+  {
+    "id": "b27cd373-8857-44da-b1cf-727e31425dba",
+    "store_id": "a2caa786-a22a-41cc-9ab1-d6d1b6e87d4a",
+    "coupon_title": "Buy 2 Get 10%",
+    "coupon_code": "KOHLBUY2",
+    "coupon_description": "Multi-buy savings",
+    "coupon_aff_url": "https://www.kohls.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  }
+]

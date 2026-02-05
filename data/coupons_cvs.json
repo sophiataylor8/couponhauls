@@ -1,0 +1,30 @@
+[
+  {
+    "id": "9fc37cb1-45ea-4ffc-8382-75bf71f84e3f",
+    "store_id": "825b8fe5-612a-4691-a13c-65778823a910",
+    "coupon_title": "10% on Health Products",
+    "coupon_code": "CVSHEALTH10",
+    "coupon_description": "Pharmacy discount",
+    "coupon_aff_url": "https://www.cvs.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  },
+  {
+    "id": "88fdaf88-90a9-4886-8cd5-71a6ed621b1c",
+    "store_id": "825b8fe5-612a-4691-a13c-65778823a910",
+    "coupon_title": "Beauty Deals 8%",
+    "coupon_code": "CVSBEAUTY8",
+    "coupon_description": "Cosmetics savings",
+    "coupon_aff_url": "https://www.cvs.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "htmlElements": {
+    "tags": [
+      "body",
+      "div",
+      "h1",
+      "head",
+      "html",
+      "link",
+      "main",
+      "meta",
+      "script",
+      "title",
+      "ul"
+    ],
+    "classes": [
+      "bg-gray-100",
+      "container",
+      "font-bold",
+      "font-sans",
+      "mb-4",
+      "mb-6",
+      "mx-auto",
+      "p-4",
+      "space-y-2",
+      "space-y-4",
+      "text-3xl",
+      "text-red-500"
+    ],
+    "ids": null
+  }
+}

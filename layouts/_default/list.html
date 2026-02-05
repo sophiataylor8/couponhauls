@@ -1,0 +1,18 @@
+{{ define "title" }}{{ .Title }}{{ end }}
+{{ define "main" }}
+<section class="py-12 bg-gray-50 min-h-screen">
+<div class="container mx-auto px-4">
+<div class="mb-12 text-center">
+<h1 class="text-4xl md:text-5xl font-bold mb-4">{{ .Title }}</h1>
+{{ if .Description }}
+<p class="text-xl text-gray-600">{{ .Description }}</p>
+{{ end }}
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+{{ range .Pages }}
+{{ partial "store-card.html" . }}
+{{ end }}
+</div>
+</div>
+</section>
+{{ end }}

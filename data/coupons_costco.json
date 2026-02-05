@@ -1,0 +1,30 @@
+[
+  {
+    "id": "40eb1af4-790c-4837-8dbb-fa112b765c91",
+    "store_id": "53b5cf13-1ccd-4f9f-8cd0-e5e375661879",
+    "coupon_title": "$15 Off Orders $100+",
+    "coupon_code": "COST15OFF",
+    "coupon_description": "Big savings on bulk checkout",
+    "coupon_aff_url": "https://www.costco.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  },
+  {
+    "id": "7a0248fd-f465-4b04-98bb-4040c087d1b1",
+    "store_id": "53b5cf13-1ccd-4f9f-8cd0-e5e375661879",
+    "coupon_title": "Grocery Savings 10%",
+    "coupon_code": "COSTGROC10",
+    "coupon_description": "Grocery onsite discount",
+    "coupon_aff_url": "https://www.costco.com/",
+    "coupon_type": "Coupon",
+    "starts_at": "2025-12-08T18:40:01+00:00",
+    "expires_at": null,
+    "is_active": true,
+    "created_by": "admin",
+    "created_at": "2025-12-08T18:40:30+00:00"
+  }
+]
