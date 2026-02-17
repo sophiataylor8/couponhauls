@@ -1,0 +1,34 @@
+store_id,store_name,coupon_id,coupon_title,coupon_code,coupon_description,coupon_aff_url,coupon_type,coupon_start,coupon_expired,coupon_created
+1,Amazon,1001,Free Shipping on Orders Over $25,FREESHIPAMZ,Free delivery on qualifying deals,https://www.amazon.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+1,Amazon,1002,Flat 10% Off on Select Items,SAVE10AMZ,Discount on eligible products,https://www.amazon.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+2,Costco,1003,$15 Off Orders $100+,COST15OFF,Big savings on bulk checkout,https://www.costco.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+2,Costco,1004,Grocery Savings 10%,COSTGROC10,Grocery onsite discount,https://www.costco.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+3,Wayfair,1005,5% Off Home Decor,HOME5WAYF,Home decor discount,https://www.wayfair.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+3,Wayfair,1006,Extra 12% Furniture Sale,WAY12SAVE,Discount on select furniture,https://www.wayfair.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+4,Adidas,1007,15% Off Sports Clothing,ADI15FIT,Save on activewear,https://www.adidas.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+4,Adidas,1008,Extra 10% On Shoes,ADISHOES10,Discount on footwear,https://www.adidas.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+5,Etsy,1009,10% Craft Supplies Sale,ETSYCRAFT10,Handmade crafts discount,https://www.etsy.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+5,Etsy,1010,5% Off Vintage Gifts,ETSYGIFT5,Save on vintage products,https://www.etsy.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+6,Home Depot,1011,Free Shipping over $50,HDFREESHIP50,Shipping discount,https://www.homedepot.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+6,Home Depot,1012,Tools Extra 8% Off,HDTOOL8,Save on tools,https://www.homedepot.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+7,Nike,1013,Nike Shoes 10% Off,NIKESHOE10,Discount on footwear,https://www.nike.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+7,Nike,1014,7% Off Fitness Gear,NIKEFIT7,Activewear discount,https://www.nike.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+8,Overstock,1015,Rugs Extra 5%,OSTRUGS5,Rug category discount,https://www.overstock.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+8,Overstock,1016,Furniture Clearance 10%,OSTOCK10,Home items discount,https://www.overstock.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+9,CVS,1017,Beauty Deals 8%,CVSBEAUTY8,Cosmetics savings,https://www.cvs.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+9,CVS,1018,10% on Health Products,CVSHEALTH10,Pharmacy discount,https://www.cvs.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+10,Target,1019,$10 Off Orders $75+,TARGETSAVE10,Minimum spend discount,https://www.target.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+10,Target,1020,Grocery 5% Discount,TARGETGROC5,Grocery & essentials,https://www.target.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+11,Walgreens,1021,10% Off Prescriptions,WGPRES10,Savings on pharmacy items,https://www.walgreens.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+11,Walgreens,1022,Buy 1 Get 1 Beauty,WGBEAUTY,Select cosmetics offer,https://www.walgreens.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+12,Walmart,1023,Walmart Essentials 5%,WMTESS5,Groceries & essentials,https://www.walmart.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+12,Walmart,1024,Electronics Extra 8%,WMTECH8,Tech discount,https://www.walmart.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+13,Kohls,1025,Buy 2 Get 10%,KOHLBUY2,Multi-buy savings,https://www.kohls.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+13,Kohls,1026,12% Off Fashion,KOHL12SAVE,Apparel discount,https://www.kohls.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+13,Kohls,1027,20% Off,CODE20OFF,discount on sale,https://www.kohls.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+14,Macys,1028,Shoes Extra 7%,MACSHOE7,Footwear promo,https://www.macys.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+14,Macys,1029,15% Clothing Sale,MACYS15,Apparel discount,https://www.macys.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+15,Best Buy,1030,10% On Laptops,BBYLAB10,Save on computing,https://www.bestbuy.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+15,Best Buy,1031,Smart TV Savings 8%,,Electronics discount,https://www.bestbuy.com/,Deal,14/02/2026,31/12/2030,14/02/2026
+16,Tesco,1032,Groceries 7% Off,TESCOGROC7,Grocery & fresh products,https://www.tesco.com/,Coupon,14/02/2026,31/12/2030,14/02/2026
+16,Tesco,1033,Free Delivery $40+,,Delivery discount,https://www.tesco.com/,Deal,14/02/2026,31/12/2030,14/02/2026

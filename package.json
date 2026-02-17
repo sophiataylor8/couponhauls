@@ -1,22 +1,17 @@
 {
   "name": "couponhauls",
-  "version": "1.0.0",
-  "description": "CouponHauls - Static coupon website with Hugo and Tailwind CSS",
+  "version": "0.0.1",
+  "description": "CouponHauls - Coupon website",
   "scripts": {
-    "fetch": "node scripts/fetch-data.js",
-    "dev": "npm run fetch && concurrently \"hugo server -D --port 1313\" \"npm run tw:watch\"",
-    "build": "npm run fetch && npm run tw:build && hugo --minify",
-    "tw:watch": "tailwindcss -i ./assets/css/main.css -o ./static/css/style.css --watch",
-    "tw:build": "NODE_ENV=production tailwindcss -i ./assets/css/main.css -o ./static/css/style.css --minify"
-  },
-  "dependencies": {
-    "@supabase/supabase-js": "^2.39.0",
-    "dotenv": "^16.3.1"
+    "dev": "hugo server -D",
+    "build": "hugo --minify",
+    "build:css": "tailwindcss -i ./assets/css/main.css -o ./static/css/style.css --minify"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "tailwindcss": "^3.4.0",
     "autoprefixer": "^10.4.16",
-    "concurrently": "^8.2.2",
     "postcss": "^8.4.32",
-    "tailwindcss": "^3.4.0"
+    "postcss-cli": "^11.0.0"
   }
 }

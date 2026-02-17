@@ -4,6 +4,7 @@
   packages = [
     pkgs.hugo         # This installs Hugo
     pkgs.nodejs_20    # Node.js for PostCSS/Tailwind
+    pkgs.python311
   ];
 
   idx = {
