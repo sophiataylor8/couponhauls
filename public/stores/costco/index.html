@@ -26,12 +26,12 @@
 
 <script type="application/ld+json">
 {
-"@context": "https://schema.org",
-"@type": "Store",
-"name": "Costco",
-"url": "http:\/\/localhost:9002\/stores\/costco\/",
-"description": "Wholesale store",
-"image": "https:\/\/cdn.brandfetch.io\/idWtDQZAMc\/w\/400\/h\/400\/theme\/dark\/icon.jpeg?c=1bxid64Mup7aczewSAYMX\u0026t=1677237040717"
+  "@context": "https://schema.org",
+  "@type":    "Store",
+  "name":        "Costco",
+  "url":         "http:\/\/localhost:9002\/stores\/costco\/",
+  "description": "Wholesale store",
+  "image":       "https:\/\/cdn.brandfetch.io\/idWtDQZAMc\/w\/400\/h\/400\/theme\/dark\/icon.jpeg?c=1bxid64Mup7aczewSAYMX\u0026t=1677237040717"
 }
 </script>
 
@@ -83,64 +83,121 @@
 
 
 
+
+
 <div class="bg-gray-50 min-h-screen">
-<section class="bg-white border-b">
-<div class="container mx-auto px-4 py-12">
-<div class="flex flex-col md:flex-row items-center gap-8">
-<div class="w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 border">
 
-<img src="https://cdn.brandfetch.io/idWtDQZAMc/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1677237040717" alt="Costco logo" class="max-w-full max-h-full">
+  
+  <section class="bg-white border-b">
+    <div class="container mx-auto px-4 py-12">
+      <div class="flex flex-col md:flex-row items-center gap-8">
 
-</div>
-<div class="flex-1 text-center md:text-left">
-<h1 class="text-4xl md:text-5xl font-bold mb-3">Costco Coupons</h1>
-<p class="text-xl text-gray-600 mb-4">Wholesale store</p>
-<div class="flex flex-wrap gap-3 justify-center md:justify-start">
-<span class="store-badge">2 Active Coupons</span>
+        <div class="w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 border">
+          
+            <img src="https://cdn.brandfetch.io/idWtDQZAMc/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1677237040717" alt="Costco logo" class="max-w-full max-h-full">
+          
+        </div>
 
-<a href="https://www.costco.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium">Visit Store →</a>
+        <div class="flex-1 text-center md:text-left">
+          <h1 class="text-4xl md:text-5xl font-bold mb-3">Costco Coupons</h1>
+          <p class="text-xl text-gray-600 mb-4">Wholesale store</p>
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+            <span class="store-badge">2 Active Coupons</span>
+            
+              <a href="https://www.costco.com"
+                 target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium">
+                Visit Store →
+              </a>
+            
+          </div>
+        </div>
 
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-12">
-<div class="container mx-auto px-4">
-<div class="mb-8">
-<h2 class="text-3xl font-bold mb-2">Available Coupon Codes</h2>
-<p class="text-gray-600">All codes are verified and updated regularly</p>
-</div>
+      </div>
+    </div>
+  </section>
 
-<div class="text-center py-12">
-<div class="text-6xl mb-4">🎫</div>
-<h3 class="text-2xl font-semibold mb-2">No active coupons right now</h3>
-<p class="text-gray-600">Check back soon for new deals!</p>
-</div>
+  
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold mb-2">Available Coupon Codes</h2>
+        <p class="text-gray-600">All codes are verified and updated regularly</p>
+      </div>
 
-</div>
-</section>
-<section class="py-12 bg-white">
-<div class="container mx-auto px-4">
-<div class="max-w-2xl mx-auto text-center">
-<h2 class="text-3xl font-bold mb-4">Get Costco Deals in Your Inbox</h2>
-<p class="text-gray-600 mb-6">Be the first to know about new Costco coupon codes</p>
-<form id="storeNewsletterForm" class="flex flex-col sm:flex-row gap-4">
-<input type="email" id="storeEmailInput" placeholder="Enter your email" required class="flex-1 px-6 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500">
-<button type="submit" class="btn btn-primary">Subscribe</button>
-</form>
-</div>
-</div>
-</section>
+      
+        <div class="space-y-4">
+          
+          <div class="coupon-card">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div class="flex-1">
+                  <h3 class="text-xl font-semibold mb-2 text-gray-900">$15 Off Orders $100&#43;</h3>
+                  <p class="text-gray-600 text-sm">Big savings on bulk checkout</p>
+                </div>
+                <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
+                  Coupon
+                </span>
+              </div>
 
-<section class="py-12">
-<div class="container mx-auto px-4">
-<div class="max-w-4xl mx-auto prose prose-lg">
-<p>Wholesale store</p>
+              
+                <div class="bg-gray-50 rounded-lg p-4 mb-4 border-2 border-dashed border-gray-300">
+                  <div class="flex items-center justify-between">
+                    <code class="text-lg font-mono font-bold text-primary-600">COST15OFF</code>
+                    <button onclick="copyCoupon('COST15OFF', 'https:\/\/www.costco.com\/')"
+                            class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                      Copy Code
+                    </button>
+                  </div>
+                </div>
+              
 
-</div>
-</div>
-</section>
+              <div class="flex flex-wrap gap-4 text-sm text-gray-500">
+                
+                
+                  <span class="flex items-center gap-1">✅ No Expiration</span>
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="coupon-card">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div class="flex-1">
+                  <h3 class="text-xl font-semibold mb-2 text-gray-900">Grocery Savings 10%</h3>
+                  <p class="text-gray-600 text-sm">Grocery onsite discount</p>
+                </div>
+                <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
+                  Coupon
+                </span>
+              </div>
+
+              
+                <div class="bg-gray-50 rounded-lg p-4 mb-4 border-2 border-dashed border-gray-300">
+                  <div class="flex items-center justify-between">
+                    <code class="text-lg font-mono font-bold text-primary-600">COSTGROC10</code>
+                    <button onclick="copyCoupon('COSTGROC10', 'https:\/\/www.costco.com\/')"
+                            class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                      Copy Code
+                    </button>
+                  </div>
+                </div>
+              
+
+              <div class="flex flex-wrap gap-4 text-sm text-gray-500">
+                
+                
+                  <span class="flex items-center gap-1">✅ No Expiration</span>
+                
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      
+    </div>
+  </section>
 
 </div>
 

@@ -15,13 +15,13 @@
 <span class="text-primary-200">Popular:</span>
 {{ if .Site.Data.featured_stores }}
 {{ range first 4 .Site.Data.featured_stores }}
-<a href="/stores/{{ .slug }}" class="text-white hover:text-primary-200 transition-colors">{{ .website_name }}</a>
+{{ if .slug }}<a href="/{{ .slug }}/" class="text-white hover:text-primary-200 transition-colors">{{ .website_name }}</a>{{ end }}
 {{ end }}
 {{ else }}
-<a href="/stores/walmart" class="text-white hover:text-primary-200 transition-colors">Walmart</a>
-<a href="/stores/target" class="text-white hover:text-primary-200 transition-colors">Target</a>
-<a href="/stores/amazon" class="text-white hover:text-primary-200 transition-colors">Amazon</a>
-<a href="/stores/kohls" class="text-white hover:text-primary-200 transition-colors">Kohl's</a>
+<a href="/walmart/" class="text-white hover:text-primary-200 transition-colors">Walmart</a>
+<a href="/target/" class="text-white hover:text-primary-200 transition-colors">Target</a>
+<a href="/amazon/" class="text-white hover:text-primary-200 transition-colors">Amazon</a>
+<a href="/kohls/" class="text-white hover:text-primary-200 transition-colors">Kohl's</a>
 {{ end }}
 </div>
 </div>
@@ -60,7 +60,8 @@
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 {{ if .Site.Data.featured_stores }}
 {{ range .Site.Data.featured_stores }}
-<a href="/stores/{{ .slug }}" class="coupon-card block hover:scale-105 transition-transform">
+{{ if .slug }}
+<a href="/{{ .slug }}/" class="coupon-card block hover:scale-105 transition-transform">
 <div class="p-6">
 <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
 {{ if .logo_url }}
@@ -77,9 +78,10 @@
 </div>
 </a>
 {{ end }}
+{{ end }}
 {{ else }}
 <div class="col-span-full text-center py-12">
-<p class="text-gray-600 text-lg">Run <code class="bg-gray-200 px-2 py-1 rounded">npm run fetch</code> to load stores from Supabase</p>
+<p class="text-gray-600 text-lg">Run <code class="bg-gray-200 px-2 py-1 rounded">npm run fetch</code> to load stores</p>
 </div>
 {{ end }}
 </div>
@@ -99,7 +101,7 @@
 <div class="p-6">
 <div class="flex justify-between items-start mb-4">
 <div class="flex-1">
-<a href="/stores/{{ .stores.slug }}" class="text-primary-600 font-medium text-sm hover:underline mb-1 block">{{ .stores.website_name }}</a>
+{{ if .stores.slug }}<a href="/{{ .stores.slug }}/" class="text-primary-600 font-medium text-sm hover:underline mb-1 block">{{ .stores.website_name }}</a>{{ end }}
 <h3 class="text-xl font-semibold mb-2 text-gray-900">{{ .coupon_title }}</h3>
 <p class="text-gray-600 text-sm">{{ .coupon_description }}</p>
 </div>
@@ -127,7 +129,7 @@
 </div>
 {{ else }}
 <div class="text-center py-12">
-<p class="text-gray-600 text-lg">Run <code class="bg-gray-200 px-2 py-1 rounded">npm run fetch</code> to load coupons from Supabase</p>
+<p class="text-gray-600 text-lg">Run <code class="bg-gray-200 px-2 py-1 rounded">npm run fetch</code> to load coupons</p>
 </div>
 {{ end }}
 <div class="text-center mt-12">
@@ -145,33 +147,7 @@
 <input type="email" id="emailInput" placeholder="Enter your email" required class="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-4 focus:ring-primary-300">
 <button type="submit" class="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors whitespace-nowrap">Subscribe</button>
 </form>
-<p class="text-sm text-primary-200 mt-4">Join 50,000+ subscribers. Unsubscribe anytime.</p>
-</div>
-</div>
-</section>
-
-<section class="py-16 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<h2 class="text-4xl font-bold mb-4">How It Works</h2>
-<p class="text-xl text-gray-600">Start saving in three simple steps</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-<div class="text-center">
-<div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
-<h3 class="text-xl font-semibold mb-3">Find Your Store</h3>
-<p class="text-gray-600">Search for your favorite store or browse our trending deals</p>
-</div>
-<div class="text-center">
-<div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
-<h3 class="text-xl font-semibold mb-3">Copy the Code</h3>
-<p class="text-gray-600">Click to copy verified coupon codes instantly</p>
-</div>
-<div class="text-center">
-<div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
-<h3 class="text-xl font-semibold mb-3">Save Money</h3>
-<p class="text-gray-600">Apply the code at checkout and enjoy your savings</p>
-</div>
+<p class="text-sm text-primary-200 mt-4">Join 50,000+ subscribers. No spam, ever.</p>
 </div>
 </div>
 </section>

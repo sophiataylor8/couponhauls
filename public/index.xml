@@ -8,115 +8,122 @@
     <language>en-us</language>
     <atom:link href="http://localhost:9002/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Adidas</title>
-      <link>http://localhost:9002/stores/adidas/</link>
+      <title></title>
+      <link>http://localhost:9002/undefined/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/adidas/</guid>
+      <guid>http://localhost:9002/undefined/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Adidas</title>
+      <link>http://localhost:9002/adidas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:9002/adidas/</guid>
       <description>&lt;p&gt;Sportswear &amp;amp; lifestyle apparel&lt;/p&gt;</description>
     </item>
     <item>
       <title>Amazon</title>
-      <link>http://localhost:9002/stores/amazon/</link>
+      <link>http://localhost:9002/amazon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/amazon/</guid>
+      <guid>http://localhost:9002/amazon/</guid>
       <description>&lt;p&gt;Global online retailer&lt;/p&gt;</description>
     </item>
     <item>
       <title>Best Buy</title>
-      <link>http://localhost:9002/stores/bestbuy/</link>
+      <link>http://localhost:9002/bestbuy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/bestbuy/</guid>
+      <guid>http://localhost:9002/bestbuy/</guid>
       <description>&lt;p&gt;Electronics &amp;amp; appliances&lt;/p&gt;</description>
     </item>
     <item>
       <title>Costco</title>
-      <link>http://localhost:9002/stores/costco/</link>
+      <link>http://localhost:9002/costco/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/costco/</guid>
+      <guid>http://localhost:9002/costco/</guid>
       <description>&lt;p&gt;Wholesale store&lt;/p&gt;</description>
     </item>
     <item>
       <title>CVS</title>
-      <link>http://localhost:9002/stores/cvs/</link>
+      <link>http://localhost:9002/cvs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/cvs/</guid>
+      <guid>http://localhost:9002/cvs/</guid>
       <description>&lt;p&gt;Pharmacy &amp;amp; general merchandise&lt;/p&gt;</description>
     </item>
     <item>
       <title>Etsy</title>
-      <link>http://localhost:9002/stores/etsy/</link>
+      <link>http://localhost:9002/etsy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/etsy/</guid>
+      <guid>http://localhost:9002/etsy/</guid>
       <description>&lt;p&gt;Marketplace for handmade/vintage&lt;/p&gt;</description>
     </item>
     <item>
       <title>Home Depot</title>
-      <link>http://localhost:9002/stores/homedepot/</link>
+      <link>http://localhost:9002/homedepot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/homedepot/</guid>
+      <guid>http://localhost:9002/homedepot/</guid>
       <description>&lt;p&gt;Home improvement &amp;amp; supplies&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kohls</title>
-      <link>http://localhost:9002/stores/kohls/</link>
+      <link>http://localhost:9002/kohls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/kohls/</guid>
+      <guid>http://localhost:9002/kohls/</guid>
       <description>&lt;p&gt;Fashion and home store&lt;/p&gt;</description>
     </item>
     <item>
       <title>Macys</title>
-      <link>http://localhost:9002/stores/macys/</link>
+      <link>http://localhost:9002/macys/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/macys/</guid>
+      <guid>http://localhost:9002/macys/</guid>
       <description>&lt;p&gt;Department store &amp;amp; clothing&lt;/p&gt;</description>
     </item>
     <item>
       <title>Nike</title>
-      <link>http://localhost:9002/stores/nike/</link>
+      <link>http://localhost:9002/nike/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/nike/</guid>
+      <guid>http://localhost:9002/nike/</guid>
       <description>&lt;p&gt;Sportswear &amp;amp; athletic gear store&lt;/p&gt;</description>
     </item>
     <item>
       <title>Overstock</title>
-      <link>http://localhost:9002/stores/overstock/</link>
+      <link>http://localhost:9002/overstock/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/overstock/</guid>
+      <guid>http://localhost:9002/overstock/</guid>
       <description>&lt;p&gt;Online home goods &amp;amp; furniture&lt;/p&gt;</description>
     </item>
     <item>
       <title>Target</title>
-      <link>http://localhost:9002/stores/target/</link>
+      <link>http://localhost:9002/target/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/target/</guid>
+      <guid>http://localhost:9002/target/</guid>
       <description>&lt;p&gt;Discount retail &amp;amp; groceries&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tesco</title>
-      <link>http://localhost:9002/stores/tesco/</link>
+      <link>http://localhost:9002/tesco/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/tesco/</guid>
+      <guid>http://localhost:9002/tesco/</guid>
       <description>&lt;p&gt;UK supermarket &amp;amp; retail chain&lt;/p&gt;</description>
     </item>
     <item>
       <title>Walgreens</title>
-      <link>http://localhost:9002/stores/walgreens/</link>
+      <link>http://localhost:9002/walgreens/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/walgreens/</guid>
+      <guid>http://localhost:9002/walgreens/</guid>
       <description>&lt;p&gt;Pharmacy &amp;amp; retail store&lt;/p&gt;</description>
     </item>
     <item>
       <title>Walmart</title>
-      <link>http://localhost:9002/stores/walmart/</link>
+      <link>http://localhost:9002/walmart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/walmart/</guid>
+      <guid>http://localhost:9002/walmart/</guid>
       <description>&lt;p&gt;Top retail store&lt;/p&gt;</description>
     </item>
     <item>
       <title>Wayfair</title>
-      <link>http://localhost:9002/stores/wayfair/</link>
+      <link>http://localhost:9002/wayfair/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:9002/stores/wayfair/</guid>
+      <guid>http://localhost:9002/wayfair/</guid>
       <description>&lt;p&gt;Furniture &amp;amp; home decor marketplace&lt;/p&gt;</description>
     </item>
   </channel>

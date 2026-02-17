@@ -24,6 +24,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
+
+
+
+<script>
+window.STORES_DATA = [];
+</script>
+
 </head>
 <body class="flex flex-col min-h-screen">
 <header class="bg-white shadow-sm sticky top-0 z-50">
@@ -77,245 +84,277 @@
 </div>
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-<a href="http://localhost:9002/stores/adidas/" class="coupon-card block hover:scale-105 transition-transform">
-    <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">A</div>
-    
-    </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Adidas</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
 
-<a href="http://localhost:9002/stores/amazon/" class="coupon-card block hover:scale-105 transition-transform">
+  <a href="http://localhost:9002/undefined/" class="coupon-card block hover:scale-105 transition-transform">
     <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">A</div>
-    
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <div class="text-3xl font-bold text-primary-600"></div>
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2"></h3>
+      <p class="text-sm text-gray-600 text-center mb-3">0 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
     </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Amazon</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
+  </a>
 
-<a href="http://localhost:9002/stores/bestbuy/" class="coupon-card block hover:scale-105 transition-transform">
-    <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">B</div>
-    
-    </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Best Buy</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
 
-<a href="http://localhost:9002/stores/costco/" class="coupon-card block hover:scale-105 transition-transform">
+  <a href="http://localhost:9002/adidas/" class="coupon-card block hover:scale-105 transition-transform">
     <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">C</div>
-    
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/idyqQWKFVE/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&amp;t=1738583768112" alt="Adidas" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Adidas</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
     </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Costco</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
+  </a>
 
-<a href="http://localhost:9002/stores/cvs/" class="coupon-card block hover:scale-105 transition-transform">
-    <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">C</div>
-    
-    </div>
-    <h3 class="text-lg font-semibold text-center mb-2">CVS</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
 
-<a href="http://localhost:9002/stores/etsy/" class="coupon-card block hover:scale-105 transition-transform">
+  <a href="http://localhost:9002/amazon/" class="coupon-card block hover:scale-105 transition-transform">
     <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">E</div>
-    
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/idawOgYOsG/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1747149745978" alt="Amazon" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Amazon</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
     </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Etsy</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
+  </a>
 
-<a href="http://localhost:9002/stores/homedepot/" class="coupon-card block hover:scale-105 transition-transform">
-    <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">H</div>
-    
-    </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Home Depot</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
 
-<a href="http://localhost:9002/stores/kohls/" class="coupon-card block hover:scale-105 transition-transform">
+  <a href="http://localhost:9002/bestbuy/" class="coupon-card block hover:scale-105 transition-transform">
     <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">K</div>
-    
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/idmSVs_Vxg/w/480/h/480/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1761207107240" alt="Best Buy" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Best Buy</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
     </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Kohls</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">3 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
+  </a>
 
-<a href="http://localhost:9002/stores/macys/" class="coupon-card block hover:scale-105 transition-transform">
-    <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">M</div>
-    
-    </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Macys</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
 
-<a href="http://localhost:9002/stores/nike/" class="coupon-card block hover:scale-105 transition-transform">
+  <a href="http://localhost:9002/costco/" class="coupon-card block hover:scale-105 transition-transform">
     <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">N</div>
-    
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/idWtDQZAMc/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1677237040717" alt="Costco" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Costco</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
     </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Nike</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
+  </a>
 
-<a href="http://localhost:9002/stores/overstock/" class="coupon-card block hover:scale-105 transition-transform">
-    <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">O</div>
-    
-    </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Overstock</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
 
-<a href="http://localhost:9002/stores/target/" class="coupon-card block hover:scale-105 transition-transform">
+  <a href="http://localhost:9002/cvs/" class="coupon-card block hover:scale-105 transition-transform">
     <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">T</div>
-    
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/idd7pwVwdr/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&amp;t=1667580403048" alt="CVS" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">CVS</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
     </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Target</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
+  </a>
 
-<a href="http://localhost:9002/stores/tesco/" class="coupon-card block hover:scale-105 transition-transform">
-    <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">T</div>
-    
-    </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Tesco</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
 
-<a href="http://localhost:9002/stores/walgreens/" class="coupon-card block hover:scale-105 transition-transform">
+  <a href="http://localhost:9002/etsy/" class="coupon-card block hover:scale-105 transition-transform">
     <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">W</div>
-    
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/idzyTAzn6G/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1731111000174" alt="Etsy" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Etsy</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
     </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Walgreens</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
+  </a>
 
-<a href="http://localhost:9002/stores/walmart/" class="coupon-card block hover:scale-105 transition-transform">
-    <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">W</div>
-    
-    </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Walmart</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
-    </div>
-    </a>
 
-<a href="http://localhost:9002/stores/wayfair/" class="coupon-card block hover:scale-105 transition-transform">
+  <a href="http://localhost:9002/homedepot/" class="coupon-card block hover:scale-105 transition-transform">
     <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-    
-    <div class="text-3xl font-bold text-primary-600">W</div>
-    
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/idE9inLIQr/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1741325991872" alt="Home Depot" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Home Depot</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
     </div>
-    <h3 class="text-lg font-semibold text-center mb-2">Wayfair</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
-    <div class="text-center">
-    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+  </a>
+
+
+  <a href="http://localhost:9002/kohls/" class="coupon-card block hover:scale-105 transition-transform">
+    <div class="p-6">
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/idRBoQEEhJ/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&amp;t=1667579047713" alt="Kohls" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Kohls</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">3 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
     </div>
+  </a>
+
+
+  <a href="http://localhost:9002/macys/" class="coupon-card block hover:scale-105 transition-transform">
+    <div class="p-6">
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/id58A6j836/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1759198019971" alt="Macys" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Macys</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
     </div>
-    </a>
+  </a>
+
+
+  <a href="http://localhost:9002/nike/" class="coupon-card block hover:scale-105 transition-transform">
+    <div class="p-6">
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/id_0dwKPKT/w/399/h/399/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1741746473623" alt="Nike" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Nike</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
+    </div>
+  </a>
+
+
+  <a href="http://localhost:9002/overstock/" class="coupon-card block hover:scale-105 transition-transform">
+    <div class="p-6">
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/idG3q1Hl01/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1667945779703" alt="Overstock" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Overstock</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
+    </div>
+  </a>
+
+
+  <a href="http://localhost:9002/target/" class="coupon-card block hover:scale-105 transition-transform">
+    <div class="p-6">
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/id0ZfAM4Dt/w/240/h/240/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1667573192808" alt="Target" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Target</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
+    </div>
+  </a>
+
+
+  <a href="http://localhost:9002/tesco/" class="coupon-card block hover:scale-105 transition-transform">
+    <div class="p-6">
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/idIwi73LUs/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1668518530584" alt="Tesco" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Tesco</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
+    </div>
+  </a>
+
+
+  <a href="http://localhost:9002/walgreens/" class="coupon-card block hover:scale-105 transition-transform">
+    <div class="p-6">
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/id5zUmVWsF/w/180/h/180/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&amp;t=1667592246711" alt="Walgreens" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Walgreens</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
+    </div>
+  </a>
+
+
+  <a href="http://localhost:9002/walmart/" class="coupon-card block hover:scale-105 transition-transform">
+    <div class="p-6">
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/idoGsFQrHx/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1736912992509" alt="Walmart" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Walmart</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
+    </div>
+  </a>
+
+
+  <a href="http://localhost:9002/wayfair/" class="coupon-card block hover:scale-105 transition-transform">
+    <div class="p-6">
+      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
+        
+          <img src="https://cdn.brandfetch.io/idSfovRbnq/w/340/h/340/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1759196134039" alt="Wayfair" class="max-w-full max-h-full p-2" loading="lazy">
+        
+      </div>
+      <h3 class="text-lg font-semibold text-center mb-2">Wayfair</h3>
+      <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
+      <div class="text-center">
+        <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+      </div>
+    </div>
+  </a>
 
 </div>
 </div>
@@ -349,10 +388,10 @@
   <div>
   <h3 class="text-white font-bold text-lg mb-4">Popular Stores</h3>
   <ul class="space-y-2 text-sm">
-  <li><a href="/stores/walmart/" class="hover:text-white transition-colors">Walmart</a></li>
-  <li><a href="/stores/target/" class="hover:text-white transition-colors">Target</a></li>
-  <li><a href="/stores/amazon/" class="hover:text-white transition-colors">Amazon</a></li>
-  <li><a href="/stores/kohls/" class="hover:text-white transition-colors">Kohl's</a></li>
+  <li><a href="/walmart/" class="hover:text-white transition-colors">Walmart</a></li>
+  <li><a href="/target/" class="hover:text-white transition-colors">Target</a></li>
+  <li><a href="/amazon/" class="hover:text-white transition-colors">Amazon</a></li>
+  <li><a href="/kohls/" class="hover:text-white transition-colors">Kohl's</a></li>
   </ul>
   </div>
   <div>

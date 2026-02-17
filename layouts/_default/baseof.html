@@ -24,6 +24,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 {{ block "schema" . }}{{ end }}
+
+{{/* Embed store list for client-side search — built from data/stores.json at compile time */}}
+{{ if .Site.Data.stores }}
+<script>
+window.STORES_DATA = [{{ range .Site.Data.stores }}{{ if .slug }}{"n":{{ .website_name | jsonify }},"s":{{ .slug | jsonify }},"l":{{ .logo_url | jsonify }},"c":{{ .coupon_count | default 0 }}},{{ end }}{{ end }}];
+</script>
+{{ end }}
 </head>
 <body class="flex flex-col min-h-screen">
 {{ partial "header.html" . }}

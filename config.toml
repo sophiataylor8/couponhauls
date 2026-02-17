@@ -1,34 +1,45 @@
-baseURL = "https://www.couponhauls.com/"
+baseURL = "https://couponhauls.com/"
 languageCode = "en-us"
 title = "CouponHauls - Best Coupon Codes & Deals"
 
+# THIS IS THE KEY LINE — removes /stores/ from all store URLs
+# /stores/target/  →  /target/
+# Each store lives at  amazon.couponhauls.com  (not /stores/amazon/)
+# Store content pages are still generated under content/stores/<slug>.md
+# but their URLs are rewritten via the [permalinks] section below.
+# On your CDN/host (Netlify, Cloudflare, etc.) you need wildcard subdomain
+# routing pointing to the same build output. See README for details.
+# ─────────────────────────────────────────────────────────────────────────────
+
+[permalinks]
+  # /stores/<slug>/ → /<slug>/   (subdomain-friendly flat path)
+  stores = "/:slug/"
+
 [params]
-description = "Find the best coupon codes, promo codes, and deals from top stores. Save money on your online shopping with CouponHauls."
-author = "CouponHauls Team"
-og_image = "/images/og-image.jpg"
-twitter_handle = "@couponhauls"
-supabase_url = "https://your-project.supabase.co"
-supabase_anon_key = "your-anon-key"
+  description    = "Find the best coupon codes, promo codes, and deals from top stores. Save money on your online shopping with CouponHauls."
+  author         = "CouponHauls Team"
+  og_image       = "/images/og-image.jpg"
+  twitter_handle = "@couponhauls"
 
 [menu]
 [[menu.main]]
-name = "Stores"
-url = "/stores/"
-weight = 1
+  name   = "Stores"
+  url    = "/stores/"
+  weight = 1
 [[menu.main]]
-name = "Categories"
-url = "/categories/"
-weight = 2
+  name   = "Categories"
+  url    = "/categories/"
+  weight = 2
 [[menu.main]]
-name = "Blog"
-url = "/blog/"
-weight = 3
+  name   = "Blog"
+  url    = "/blog/"
+  weight = 3
 
 [outputs]
-home = ["HTML", "RSS", "JSON"]
-section = ["HTML", "RSS"]
+  home    = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
 
 [markup]
-[markup.goldmark]
-[markup.goldmark.renderer]
-unsafe = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
