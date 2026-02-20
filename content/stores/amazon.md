@@ -1,7 +1,7 @@
 ---
 title: "Amazon"
 slug: "amazon"
-description: "Global online retailer"
+description: "Amazon is one of the world’s largest online marketplaces, offering millions of products across categories including electronics, fashion, home essentials, books, beauty, groceries, and more. Known for competitive pricing and fast delivery through Prime membership, Amazon provides customers with convenient shopping experiences, exclusive deals, lightning offers, and seasonal sales events. Shoppers can explore top brands, read verified reviews, compare prices, and enjoy flexible return policies. Amazon also offers digital services like Prime Video, Kindle, and Amazon Music. Whether you're shopping for daily essentials or premium gadgets, Amazon combines variety, affordability, and convenience, making it a preferred destination for online shoppers worldwide."
 logo_url: "https://cdn.brandfetch.io/idawOgYOsG/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1747149745978"
 website_url: "https://www.amazon.com/"
 website_aff_url: "https://www.amazon.com/"
@@ -9,6 +9,23 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "amazon"
+coupons:
+  - coupon_id: "1001"
+    coupon_title: "Free Shipping on Orders Over $25"
+    coupon_code: "FREESHIPAMZ"
+    coupon_description: "Free delivery on qualifying deals"
+    coupon_aff_url: "https://www.amazon.com/"
+    coupon_type: "Coupon"
+    coupon_start: "14/02/2026"
+    expires_at: "31/12/2030"
+  - coupon_id: "1002"
+    coupon_title: "Flat 10% Off on Select Items"
+    coupon_code: "SAVE10AMZ"
+    coupon_description: "Discount on eligible products"
+    coupon_aff_url: "https://www.amazon.com/"
+    coupon_type: "Coupon"
+    coupon_start: "14/02/2026"
+    expires_at: "31/12/2030"
 ---
 
-Global online retailer
+Amazon is one of the world’s largest online marketplaces, offering millions of products across categories including electronics, fashion, home essentials, books, beauty, groceries, and more. Known for competitive pricing and fast delivery through Prime membership, Amazon provides customers with convenient shopping experiences, exclusive deals, lightning offers, and seasonal sales events. Shoppers can explore top brands, read verified reviews, compare prices, and enjoy flexible return policies. Amazon also offers digital services like Prime Video, Kindle, and Amazon Music. Whether you're shopping for daily essentials or premium gadgets, Amazon combines variety, affordability, and convenience, making it a preferred destination for online shoppers worldwide.

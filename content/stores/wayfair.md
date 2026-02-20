@@ -1,7 +1,7 @@
 ---
 title: "Wayfair"
 slug: "wayfair"
-description: "Furniture & home decor marketplace"
+description: "Wayfair specializes in furniture and home décor, offering an extensive collection of items for every room in the house. From sofas and beds to lighting, rugs, and outdoor furniture, Wayfair provides stylish solutions for different budgets and tastes. The platform frequently features seasonal sales, clearance discounts, and free shipping on many products. Customers benefit from detailed product descriptions, customer reviews, and easy returns. Whether redesigning a living space or furnishing a new home, Wayfair makes home improvement simple, affordable, and accessible with a vast online selection."
 logo_url: "https://cdn.brandfetch.io/idSfovRbnq/w/340/h/340/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1759196134039"
 website_url: "https://www.wayfair.com/"
 website_aff_url: "https://www.wayfair.com/"
@@ -9,6 +9,23 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "wayfair"
+coupons:
+  - coupon_id: "1005"
+    coupon_title: "5% Off Home Decor"
+    coupon_code: "HOME5WAYF"
+    coupon_description: "Home decor discount"
+    coupon_aff_url: "https://www.wayfair.com/"
+    coupon_type: "Coupon"
+    coupon_start: "14/02/2026"
+    expires_at: "31/12/2030"
+  - coupon_id: "1006"
+    coupon_title: "Extra 12% Furniture Sale"
+    coupon_code: "WAY12SAVE"
+    coupon_description: "Discount on select furniture"
+    coupon_aff_url: "https://www.wayfair.com/"
+    coupon_type: "Coupon"
+    coupon_start: "14/02/2026"
+    expires_at: "31/12/2030"
 ---
 
-Furniture & home decor marketplace
+Wayfair specializes in furniture and home décor, offering an extensive collection of items for every room in the house. From sofas and beds to lighting, rugs, and outdoor furniture, Wayfair provides stylish solutions for different budgets and tastes. The platform frequently features seasonal sales, clearance discounts, and free shipping on many products. Customers benefit from detailed product descriptions, customer reviews, and easy returns. Whether redesigning a living space or furnishing a new home, Wayfair makes home improvement simple, affordable, and accessible with a vast online selection.
