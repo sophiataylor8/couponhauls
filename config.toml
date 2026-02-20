@@ -36,7 +36,7 @@ title = "CouponHauls - Best Coupon Codes & Deals"
   weight = 3
 
 [outputs]
-  home    = ["HTML", "RSS", "JSON"]
+  home    = ["HTML", "RSS"]
   section = ["HTML", "RSS"]
 
 [markup]

@@ -28,10 +28,6 @@
 
 
 
-<script>
-window.STORES_DATA = [];
-</script>
-
 </head>
 <body class="flex flex-col min-h-screen">
 <header class="bg-white shadow-sm sticky top-0 z-50">
@@ -105,11 +101,11 @@ window.STORES_DATA = [];
 <div class="container mx-auto px-4">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 <div>
-<div class="text-4xl font-bold text-primary-600">16+</div>
+<div class="text-4xl font-bold text-primary-600">500+</div>
 <div class="text-gray-600 mt-2">Stores</div>
 </div>
 <div>
-<div class="text-4xl font-bold text-primary-600">33+</div>
+<div class="text-4xl font-bold text-primary-600">10,000+</div>
 <div class="text-gray-600 mt-2">Coupons</div>
 </div>
 <div>
@@ -147,158 +143,8 @@ window.STORES_DATA = [];
 <p class="text-xl text-gray-600">Fresh deals updated daily</p>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-<div class="coupon-card">
-<div class="p-6">
-<div class="flex justify-between items-start mb-4">
-<div class="flex-1">
-
-<h3 class="text-xl font-semibold mb-2 text-gray-900">Free Shipping on Orders Over $25</h3>
-<p class="text-gray-600 text-sm">Free delivery on qualifying deals</p>
-</div>
-<span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Coupon</span>
-</div>
-
-<div class="bg-gray-50 rounded-lg p-4 mb-4 border-2 border-dashed border-gray-300">
-<div class="flex items-center justify-between">
-<code class="text-lg font-mono font-bold text-primary-600">FREESHIPAMZ</code>
-<button onclick="copyCoupon('FREESHIPAMZ', 'https:\/\/www.amazon.com\/')" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Copy Code</button>
-</div>
-</div>
-
-<div class="flex items-center justify-between text-sm text-gray-500">
-<span>Code</span>
-<span>No Expiration</span>
-</div>
-</div>
-</div>
-
-<div class="coupon-card">
-<div class="p-6">
-<div class="flex justify-between items-start mb-4">
-<div class="flex-1">
-
-<h3 class="text-xl font-semibold mb-2 text-gray-900">Flat 10% Off on Select Items</h3>
-<p class="text-gray-600 text-sm">Discount on eligible products</p>
-</div>
-<span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Coupon</span>
-</div>
-
-<div class="bg-gray-50 rounded-lg p-4 mb-4 border-2 border-dashed border-gray-300">
-<div class="flex items-center justify-between">
-<code class="text-lg font-mono font-bold text-primary-600">SAVE10AMZ</code>
-<button onclick="copyCoupon('SAVE10AMZ', 'https:\/\/www.amazon.com\/')" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Copy Code</button>
-</div>
-</div>
-
-<div class="flex items-center justify-between text-sm text-gray-500">
-<span>Code</span>
-<span>No Expiration</span>
-</div>
-</div>
-</div>
-
-<div class="coupon-card">
-<div class="p-6">
-<div class="flex justify-between items-start mb-4">
-<div class="flex-1">
-
-<h3 class="text-xl font-semibold mb-2 text-gray-900">$15 Off Orders $100&#43;</h3>
-<p class="text-gray-600 text-sm">Big savings on bulk checkout</p>
-</div>
-<span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Coupon</span>
-</div>
-
-<div class="bg-gray-50 rounded-lg p-4 mb-4 border-2 border-dashed border-gray-300">
-<div class="flex items-center justify-between">
-<code class="text-lg font-mono font-bold text-primary-600">COST15OFF</code>
-<button onclick="copyCoupon('COST15OFF', 'https:\/\/www.costco.com\/')" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Copy Code</button>
-</div>
-</div>
-
-<div class="flex items-center justify-between text-sm text-gray-500">
-<span>Code</span>
-<span>No Expiration</span>
-</div>
-</div>
-</div>
-
-<div class="coupon-card">
-<div class="p-6">
-<div class="flex justify-between items-start mb-4">
-<div class="flex-1">
-
-<h3 class="text-xl font-semibold mb-2 text-gray-900">Grocery Savings 10%</h3>
-<p class="text-gray-600 text-sm">Grocery onsite discount</p>
-</div>
-<span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Coupon</span>
-</div>
-
-<div class="bg-gray-50 rounded-lg p-4 mb-4 border-2 border-dashed border-gray-300">
-<div class="flex items-center justify-between">
-<code class="text-lg font-mono font-bold text-primary-600">COSTGROC10</code>
-<button onclick="copyCoupon('COSTGROC10', 'https:\/\/www.costco.com\/')" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Copy Code</button>
-</div>
-</div>
-
-<div class="flex items-center justify-between text-sm text-gray-500">
-<span>Code</span>
-<span>No Expiration</span>
-</div>
-</div>
-</div>
-
-<div class="coupon-card">
-<div class="p-6">
-<div class="flex justify-between items-start mb-4">
-<div class="flex-1">
-
-<h3 class="text-xl font-semibold mb-2 text-gray-900">5% Off Home Decor</h3>
-<p class="text-gray-600 text-sm">Home decor discount</p>
-</div>
-<span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Coupon</span>
-</div>
-
-<div class="bg-gray-50 rounded-lg p-4 mb-4 border-2 border-dashed border-gray-300">
-<div class="flex items-center justify-between">
-<code class="text-lg font-mono font-bold text-primary-600">HOME5WAYF</code>
-<button onclick="copyCoupon('HOME5WAYF', 'https:\/\/www.wayfair.com\/')" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Copy Code</button>
-</div>
-</div>
-
-<div class="flex items-center justify-between text-sm text-gray-500">
-<span>Code</span>
-<span>No Expiration</span>
-</div>
-</div>
-</div>
-
-<div class="coupon-card">
-<div class="p-6">
-<div class="flex justify-between items-start mb-4">
-<div class="flex-1">
-
-<h3 class="text-xl font-semibold mb-2 text-gray-900">Extra 12% Furniture Sale</h3>
-<p class="text-gray-600 text-sm">Discount on select furniture</p>
-</div>
-<span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Coupon</span>
-</div>
-
-<div class="bg-gray-50 rounded-lg p-4 mb-4 border-2 border-dashed border-gray-300">
-<div class="flex items-center justify-between">
-<code class="text-lg font-mono font-bold text-primary-600">WAY12SAVE</code>
-<button onclick="copyCoupon('WAY12SAVE', 'https:\/\/www.wayfair.com\/')" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Copy Code</button>
-</div>
-</div>
-
-<div class="flex items-center justify-between text-sm text-gray-500">
-<span>Code</span>
-<span>No Expiration</span>
-</div>
-</div>
-</div>
-
+<div class="text-center py-12">
+<p class="text-gray-600 text-lg">Run <code class="bg-gray-200 px-2 py-1 rounded">npm run fetch</code> to load coupons</p>
 </div>
 
 <div class="text-center mt-12">
