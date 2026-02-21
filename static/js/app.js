@@ -44,8 +44,8 @@ function searchStores(query) {
 
 // ─── Live search dropdown ─────────────────────────────────────────────────────
 function initSearch() {
-  const form   = document.getElementById('searchForm');
-  const input  = document.getElementById('storeSearch');
+  const form  = document.getElementById('searchForm');
+  const input = document.getElementById('storeSearch');
   if (!form || !input) return;
 
   // Create dropdown element
@@ -60,7 +60,16 @@ function initSearch() {
     dropdown.innerHTML = results.slice(0, 8).map(s => `
       <li>
         <a href="/${s.s}/" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
-          ${s.l ? `<img src="${s.l}" alt="${s.n}" class="w-7 h-7 object-contain rounded">` : `<div class="w-7 h-7 rounded bg-primary-100 flex items-center justify-center text-primary-600 font-bold text-xs">${s.n.charAt(0)}</div>`}
+          {{/* Letter icon in search dropdown — replaces logo image */}}
+          <div style="
+            width:2rem;height:2rem;border-radius:0.5rem;
+            background:#0284c7;display:flex;align-items:center;
+            justify-content:center;flex-shrink:0;
+          ">
+            <span style="font-size:1rem;font-weight:900;color:#fff;text-transform:uppercase;line-height:1;">
+              ${s.n.charAt(0)}
+            </span>
+          </div>
           <span class="text-gray-800 font-medium">${s.n}</span>
           <span class="ml-auto text-xs text-gray-400">${s.c || 0} coupons</span>
         </a>

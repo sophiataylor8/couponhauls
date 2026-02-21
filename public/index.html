@@ -167,10 +167,8 @@ window.STORES_DATA = [{"n":"\"\"","s":"\"undefined\"","l":"\"\"","c": 0 },{"n":"
 
 <a href="http://localhost:9002/adidas/" class="coupon-card block hover:scale-105 transition-transform">
 <div class="p-6">
-<div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-
-<img src="https://cdn.brandfetch.io/idyqQWKFVE/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&amp;t=1738583768112" alt="Adidas" class="max-w-full max-h-full p-2" loading="lazy">
-
+<div class="w-20 h-20 mx-auto mb-4 rounded-xl shadow flex items-center justify-center store-letter-avatar">
+  <span class="text-2xl font-extrabold text-white uppercase">A</span>
 </div>
 <h3 class="text-lg font-semibold text-center mb-2">Adidas</h3>
 <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
@@ -182,10 +180,8 @@ window.STORES_DATA = [{"n":"\"\"","s":"\"undefined\"","l":"\"\"","c": 0 },{"n":"
 
 <a href="http://localhost:9002/macys/" class="coupon-card block hover:scale-105 transition-transform">
 <div class="p-6">
-<div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-
-<img src="https://cdn.brandfetch.io/id58A6j836/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1759198019971" alt="Macys" class="max-w-full max-h-full p-2" loading="lazy">
-
+<div class="w-20 h-20 mx-auto mb-4 rounded-xl shadow flex items-center justify-center store-letter-avatar">
+  <span class="text-2xl font-extrabold text-white uppercase">M</span>
 </div>
 <h3 class="text-lg font-semibold text-center mb-2">Macys</h3>
 <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
@@ -197,10 +193,8 @@ window.STORES_DATA = [{"n":"\"\"","s":"\"undefined\"","l":"\"\"","c": 0 },{"n":"
 
 <a href="http://localhost:9002/overstock/" class="coupon-card block hover:scale-105 transition-transform">
 <div class="p-6">
-<div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-
-<img src="https://cdn.brandfetch.io/idG3q1Hl01/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1667945779703" alt="Overstock" class="max-w-full max-h-full p-2" loading="lazy">
-
+<div class="w-20 h-20 mx-auto mb-4 rounded-xl shadow flex items-center justify-center store-letter-avatar">
+  <span class="text-2xl font-extrabold text-white uppercase">O</span>
 </div>
 <h3 class="text-lg font-semibold text-center mb-2">Overstock</h3>
 <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
@@ -212,10 +206,8 @@ window.STORES_DATA = [{"n":"\"\"","s":"\"undefined\"","l":"\"\"","c": 0 },{"n":"
 
 <a href="http://localhost:9002/target/" class="coupon-card block hover:scale-105 transition-transform">
 <div class="p-6">
-<div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-
-<img src="https://cdn.brandfetch.io/id0ZfAM4Dt/w/240/h/240/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1667573192808" alt="Target" class="max-w-full max-h-full p-2" loading="lazy">
-
+<div class="w-20 h-20 mx-auto mb-4 rounded-xl shadow flex items-center justify-center store-letter-avatar">
+  <span class="text-2xl font-extrabold text-white uppercase">T</span>
 </div>
 <h3 class="text-lg font-semibold text-center mb-2">Target</h3>
 <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
@@ -227,10 +219,8 @@ window.STORES_DATA = [{"n":"\"\"","s":"\"undefined\"","l":"\"\"","c": 0 },{"n":"
 
 <a href="http://localhost:9002/tesco/" class="coupon-card block hover:scale-105 transition-transform">
 <div class="p-6">
-<div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center">
-
-<img src="https://cdn.brandfetch.io/idIwi73LUs/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1668518530584" alt="Tesco" class="max-w-full max-h-full p-2" loading="lazy">
-
+<div class="w-20 h-20 mx-auto mb-4 rounded-xl shadow flex items-center justify-center store-letter-avatar">
+  <span class="text-2xl font-extrabold text-white uppercase">T</span>
 </div>
 <h3 class="text-lg font-semibold text-center mb-2">Tesco</h3>
 <p class="text-sm text-gray-600 text-center mb-3">2 Coupons</p>
@@ -437,6 +427,22 @@ window.STORES_DATA = [{"n":"\"\"","s":"\"undefined\"","l":"\"\"","c": 0 },{"n":"
 </div>
 </div>
 </section>
+
+<style>
+.store-letter-avatar { background: #0284c7; }
+.coupon-card:nth-child(1)  .store-letter-avatar { background: #0284c7; }
+.coupon-card:nth-child(2)  .store-letter-avatar { background: #7c3aed; }
+.coupon-card:nth-child(3)  .store-letter-avatar { background: #059669; }
+.coupon-card:nth-child(4)  .store-letter-avatar { background: #dc2626; }
+.coupon-card:nth-child(5)  .store-letter-avatar { background: #d97706; }
+.coupon-card:nth-child(6)  .store-letter-avatar { background: #0891b2; }
+.coupon-card:nth-child(7)  .store-letter-avatar { background: #9333ea; }
+.coupon-card:nth-child(8)  .store-letter-avatar { background: #16a34a; }
+.coupon-card:nth-child(9)  .store-letter-avatar { background: #e11d48; }
+.coupon-card:nth-child(10) .store-letter-avatar { background: #ea580c; }
+.coupon-card:nth-child(11) .store-letter-avatar { background: #0284c7; }
+.coupon-card:nth-child(12) .store-letter-avatar { background: #7c3aed; }
+</style>
 
 </main>
 <footer class="bg-gray-900 text-gray-300">

@@ -9,8 +9,7 @@
   "name": {{ .Title | jsonify }},
   "url": {{ .Params.website_url | default .Permalink | jsonify }},
   "description": {{ .Params.description | jsonify }},
-  "sameAs": {{ .Params.website_url | default "" | jsonify }}{{ with .Params.logo_url }},
-  "image": {{ . | jsonify }}{{ end }},
+  "sameAs": {{ .Params.website_url | default "" | jsonify }},
   "mainEntityOfPage": { "@type": "WebPage", "@id": {{ .Permalink | jsonify }} }
 }
 </script>
@@ -55,13 +54,9 @@
 <div class="store-hero">
   <div class="store-hero-inner">
 
-    {{/* Logo */}}
+    {{/* Letter icon — first character of store name, replaces logo image */}}
     <div class="store-logo-wrap">
-      {{ if .Params.logo_url }}
-        <img src="{{ .Params.logo_url }}" alt="{{ .Title }} logo" class="store-logo-img">
-      {{ else }}
-        <span class="store-logo-letter">{{ substr .Title 0 1 }}</span>
-      {{ end }}
+      <span class="store-logo-letter">{{ substr .Title 0 1 }}</span>
     </div>
 
     {{/* Info */}}
@@ -100,7 +95,6 @@
           <span class="store-stat-label">Last Verified</span>
         </div>
         {{ end }}
-
       </div>
 
       {{/* Description */}}
@@ -157,7 +151,6 @@
             {{ else }}
               <span class="coupon-meta-tag no-expiry">✓ No expiration</span>
             {{ end }}
-
           </div>
         </div>
 
@@ -227,31 +220,25 @@
   align-items: flex-start;
 }
 
-/* Logo */
+/* Letter icon */
 .store-logo-wrap {
   flex-shrink: 0;
   width: 96px;
   height: 96px;
-  background: #fff;
-  border: 1.5px solid #e5e7eb;
+  background: #0284c7;
   border-radius: 1.25rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 10px rgba(2,132,199,0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem;
-  overflow: hidden;
-}
-.store-logo-img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
 }
 .store-logo-letter {
-  font-size: 2.25rem;
-  font-weight: 800;
-  color: #0284c7;
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: #fff;
   line-height: 1;
+  text-transform: uppercase;
+  font-family: Inter, system-ui, sans-serif;
 }
 
 /* Info column */
@@ -473,8 +460,8 @@
   padding: 0.2rem 0.625rem;
   font-weight: 500;
 }
-.coupon-meta-tag.expiry   { color: #b45309; background: #fffbeb; border-color: #fde68a; }
-.coupon-meta-tag.no-expiry{ color: #059669; background: #f0fdf4; border-color: #bbf7d0; }
+.coupon-meta-tag.expiry    { color: #b45309; background: #fffbeb; border-color: #fde68a; }
+.coupon-meta-tag.no-expiry { color: #059669; background: #f0fdf4; border-color: #bbf7d0; }
 
 /* Action */
 .coupon-action { flex-shrink: 0; }
@@ -508,10 +495,8 @@
   white-space: nowrap;
   transition: background 0.15s;
 }
-.coupon-copy-btn:hover { background: #0369a1; }
-.coupon-copy-btn.copied {
-  background: #059669;
-}
+.coupon-copy-btn:hover  { background: #0369a1; }
+.coupon-copy-btn.copied { background: #059669; }
 
 .coupon-nodeal-btn {
   display: inline-flex;
@@ -531,10 +516,10 @@
 
 /* Mobile coupon stacking */
 @media (max-width: 640px) {
-  .coupon-item  { flex-wrap: wrap; }
-  .coupon-badge { width: 60px; min-height: 60px; }
-  .coupon-action{ width: 100%; }
-  .coupon-code-box { width: 100%; }
+  .coupon-item       { flex-wrap: wrap; }
+  .coupon-badge      { width: 60px; min-height: 60px; }
+  .coupon-action     { width: 100%; }
+  .coupon-code-box   { width: 100%; }
   .coupon-nodeal-btn { width: 100%; justify-content: center; }
 }
 

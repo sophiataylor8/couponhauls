@@ -1,22 +1,24 @@
 {{/*
   layouts/partials/store-card.html
-  URL is /<slug>/  (via config.toml [permalinks])
+  URL is now /<slug>/  (subdomain routing via config.toml [permalinks])
+  On production: amazon.couponhauls.com  resolves to this page.
 */}}
-{{ if and .Title (ne .Title "") (ne .Params.slug "undefined") }}
 <a href="{{ .Permalink }}" class="coupon-card block hover:scale-105 transition-transform">
-  <div class="p-6">
-    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow flex items-center justify-center overflow-hidden">
-      {{ if .Params.logo_url }}
-        <img src="{{ .Params.logo_url }}" alt="{{ .Title }}" class="max-w-full max-h-full p-2 object-contain" loading="lazy">
-      {{ else }}
-        <div class="text-3xl font-bold text-primary-600">{{ substr .Title 0 1 }}</div>
-      {{ end }}
-    </div>
-    <h3 class="text-lg font-semibold text-center mb-2">{{ .Title }}</h3>
-    <p class="text-sm text-gray-600 text-center mb-3">{{ .Params.coupon_count | default "0" }} Coupons</p>
-    <div class="text-center">
-      <span class="text-primary-600 font-medium text-sm">View Deals →</span>
-    </div>
+<div class="p-6">
+
+  {{/* Letter icon — first character of store name, replaces logo image */}}
+  <div class="w-20 h-20 mx-auto mb-4 rounded-lg shadow flex items-center justify-center"
+       style="background:#0284c7;">
+    <span style="font-size:2rem;font-weight:900;color:#fff;line-height:1;text-transform:uppercase;font-family:Inter,system-ui,sans-serif;">
+      {{ substr .Title 0 1 }}
+    </span>
   </div>
+
+  <h3 class="text-lg font-semibold text-center mb-2">{{ .Title }}</h3>
+  <p class="text-sm text-gray-600 text-center mb-3">{{ .Params.coupon_count | default "0" }} Coupons</p>
+  <div class="text-center">
+    <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+  </div>
+
+</div>
 </a>
-{{ end }}
