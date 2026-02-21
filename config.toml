@@ -1,4 +1,4 @@
-baseURL = "https://couponhauls.com/"
+baseURL = "https://www.couponhauls.com/"
 languageCode = "en-us"
 title = "CouponHauls - Best Coupon Codes & Deals"
 
@@ -17,8 +17,8 @@ title = "CouponHauls - Best Coupon Codes & Deals"
 
 [params]
   description    = "Find the best coupon codes, promo codes, and deals from top stores. Save money on your online shopping with CouponHauls."
-  author         = "CouponHauls Team"
-  og_image       = "/images/og-image.jpg"
+  author         = "CouponHauls"
+  og_image       = "/images/couponhaulslogo.jpg"
   twitter_handle = "@couponhauls"
 
 [menu]
@@ -27,13 +27,9 @@ title = "CouponHauls - Best Coupon Codes & Deals"
   url    = "/stores/"
   weight = 1
 [[menu.main]]
-  name   = "Categories"
-  url    = "/categories/"
-  weight = 2
-[[menu.main]]
   name   = "Blog"
   url    = "/blog/"
-  weight = 3
+  weight = 2
 
 [outputs]
   home    = ["HTML", "RSS"]

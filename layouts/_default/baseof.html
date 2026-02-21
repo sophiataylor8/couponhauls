@@ -25,12 +25,10 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 {{ block "schema" . }}{{ end }}
 
-{{/* Embed store list for client-side search — built from data/stores.json at compile time */}}
-{{ if .Site.Data.stores }}
+{{/* Embed store list for client-side search — built from content/stores/*.md at compile time */}}
 <script>
-window.STORES_DATA = [{{ range .Site.Data.stores }}{{ if .slug }}{"n":{{ .website_name | jsonify }},"s":{{ .slug | jsonify }},"l":{{ .logo_url | jsonify }},"c":{{ .coupon_count | default 0 }}},{{ end }}{{ end }}];
+window.STORES_DATA = [{{ range where .Site.RegularPages "Section" "stores" }}{{ if and .Params.slug .Params.is_active }}{"n":{{ .Title | jsonify }},"s":{{ .Params.slug | jsonify }},"l":{{ .Params.logo_url | jsonify }},"c":{{ .Params.coupon_count | default 0 }}},{{ end }}{{ end }}];
 </script>
-{{ end }}
 </head>
 <body class="flex flex-col min-h-screen">
 {{ partial "header.html" . }}

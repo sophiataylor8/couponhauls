@@ -2,7 +2,7 @@
   <nav class="container mx-auto px-4">
   <div class="flex items-center justify-between h-16">
   <a href="/" class="flex items-center space-x-2">
-  <div class="text-2xl font-bold text-primary-600">🎫 CouponHauls</div>
+  <div class="text-2xl font-bold text-primary-600">🎫 CouponHauls.com</div>
   </a>
   <div class="hidden md:flex items-center space-x-8">
   {{ range .Site.Menus.main }}
@@ -21,13 +21,4 @@
   {{ end }}
   </div>
   </nav>
-  </header>
-  <script>
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  if (mobileMenuBtn && mobileMenu) {
-  mobileMenuBtn.addEventListener('click', () => {
-  mobileMenu.classList.toggle('hidden');
-  });
-  }
-  </script>
+</header>

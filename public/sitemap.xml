@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:9002/blog/best-stores-for-coupons/</loc>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:9002/blog/</loc>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:9002/</loc>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:9002/blog/coupon-stacking-guide/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:9002/blog/amazon-freebies/</loc>
+    <lastmod>2025-02-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:9002/undefined/</loc>
   </url><url>
     <loc>http://localhost:9002/adidas/</loc>
@@ -13,8 +28,6 @@
     <loc>http://localhost:9002/categories/</loc>
   </url><url>
     <loc>http://localhost:9002/costco/</loc>
-  </url><url>
-    <loc>http://localhost:9002/</loc>
   </url><url>
     <loc>http://localhost:9002/cvs/</loc>
   </url><url>

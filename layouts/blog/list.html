@@ -1,0 +1,28 @@
+{{ define "title" }}Blog - Savings Tips & Coupon Guides - {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+
+<section class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16">
+  <div class="container mx-auto px-4 text-center">
+    <h1 class="text-5xl font-bold mb-4">Savings Blog</h1>
+    <p class="text-xl text-primary-100 max-w-2xl mx-auto">Expert tips, coupon guides, and money-saving strategies to help you spend less on everything you love.</p>
+  </div>
+</section>
+
+<section class="py-16 bg-gray-50 min-h-screen">
+  <div class="container mx-auto px-4">
+    {{ if .Pages }}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {{ range .Pages }}
+      {{ partial "blog-card.html" . }}
+      {{ end }}
+    </div>
+    {{ else }}
+    <div class="text-center py-20 text-gray-500">
+      <div class="text-6xl mb-4">📝</div>
+      <p class="text-xl">No blog posts yet. Add <code class="bg-gray-200 px-2 py-1 rounded">.md</code> files to <code class="bg-gray-200 px-2 py-1 rounded">content/blog/</code></p>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}

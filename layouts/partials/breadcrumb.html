@@ -1,0 +1,150 @@
+{{/*
+    layouts/partials/breadcrumb.html
+    ─────────────────────────────────────────────────────────────────
+    Usage (in any layout's {{ define "main" }} block):
+      {{ partial "breadcrumb.html" . }}
+  
+    Automatically detects Section ("blog" or "stores") and builds:
+      • JSON-LD BreadcrumbList schema (injected inline — works even
+        though {{ block "schema" }} is already in <head>, Google
+        reads inline scripts anywhere in the document)
+      • Visual breadcrumb trail styled with Tailwind
+    ─────────────────────────────────────────────────────────────────
+  */}}
+  
+  {{/* ── Determine breadcrumb items by section ── */}}
+  {{ $section := .Section }}
+  {{ $siteURL := .Site.BaseURL | strings.TrimRight "/" }}
+  {{ $pageURL := .Permalink | strings.TrimRight "/" }}
+  
+  {{/* Build items list */}}
+  {{ $items := slice
+    (dict "name" "Home" "url" $siteURL)
+  }}
+  
+  {{ if eq $section "blog" }}
+    {{ $items = $items | append (dict "name" "Blog" "url" (printf "%s/blog" $siteURL)) }}
+    {{ $items = $items | append (dict "name" .Title "url" $pageURL) }}
+  {{ else if eq $section "stores" }}
+    {{ $items = $items | append (dict "name" "All Stores" "url" (printf "%s/stores" $siteURL)) }}
+    {{ $items = $items | append (dict "name" (printf "%s Coupons" .Title) "url" $pageURL) }}
+  {{ else }}
+    {{/* Fallback for any other section */}}
+    {{ with .CurrentSection }}
+      {{ $items = $items | append (dict "name" .Title "url" (.Permalink | strings.TrimRight "/")) }}
+    {{ end }}
+    {{ $items = $items | append (dict "name" $.Title "url" $pageURL) }}
+  {{ end }}
+  
+  {{/* ── JSON-LD BreadcrumbList ── */}}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {{ range $i, $item := $items -}}
+      {
+        "@type": "ListItem",
+        "position": {{ add $i 1 }},
+        "name": {{ $item.name | jsonify }},
+        "item": {{ $item.url | jsonify }}
+      }{{ if lt $i (sub (len $items) 1) }},{{ end }}
+      {{ end }}
+    ]
+  }
+  </script>
+  
+  {{/* ── Visual breadcrumb bar ── */}}
+  <nav aria-label="Breadcrumb" class="breadcrumb-bar">
+    <div class="breadcrumb-inner">
+      <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+        {{ range $i, $item := $items }}
+        <li class="breadcrumb-item"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem">
+  
+          {{ if lt $i (sub (len $items) 1) }}
+            {{/* Linked crumb */}}
+            <a href="{{ $item.url }}"
+               itemprop="item"
+               class="breadcrumb-link">
+              <span itemprop="name">{{ $item.name }}</span>
+            </a>
+            <meta itemprop="position" content="{{ add $i 1 }}">
+            {{/* Chevron separator */}}
+            <svg class="breadcrumb-sep" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          {{ else }}
+            {{/* Current page — not linked */}}
+            <span itemprop="name" itemprop="item" class="breadcrumb-current">{{ $item.name }}</span>
+            <meta itemprop="position" content="{{ add $i 1 }}">
+          {{ end }}
+  
+        </li>
+        {{ end }}
+      </ol>
+    </div>
+  </nav>
+  
+  <style>
+    .breadcrumb-bar {
+      background: #fff;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .breadcrumb-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    .breadcrumb-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.125rem;
+      list-style: none;
+      padding: 0.75rem 0;
+      margin: 0;
+      font-size: 0.8125rem;
+    }
+    .breadcrumb-item {
+      display: flex;
+      align-items: center;
+      gap: 0.125rem;
+    }
+    .breadcrumb-link {
+      color: #64748b;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.125rem 0.25rem;
+      border-radius: 0.25rem;
+      transition: color 0.12s, background 0.12s;
+    }
+    .breadcrumb-link:hover {
+      color: #0284c7;
+      background: #f0f9ff;
+    }
+    .breadcrumb-sep {
+      width: 14px;
+      height: 14px;
+      color: #cbd5e1;
+      flex-shrink: 0;
+      margin: 0 0.1rem;
+    }
+    .breadcrumb-current {
+      color: #0f172a;
+      font-weight: 600;
+      /* Truncate long titles on mobile */
+      max-width: 220px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    @media (min-width: 640px) {
+      .breadcrumb-current { max-width: 420px; }
+    }
+  </style>

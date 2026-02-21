@@ -1,0 +1,662 @@
+{{ define "title" }}{{ .Title }} – {{ .Site.Title }}{{ end }}
+{{ define "description" }}{{ .Params.description }}{{ end }}
+
+{{ define "schema" }}
+{{/* ── BlogPosting schema ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title | jsonify }},
+  "description": {{ .Params.description | jsonify }},
+  "datePublished": "{{ .Date.Format "2006-01-02" }}",
+  "dateModified": "{{ with .Params.updated }}{{ . }}{{ else }}{{ $.Date.Format "2006-01-02" }}{{ end }}",
+  "author": {
+    "@type": "Organization",
+    "name": {{ .Site.Params.author | default "CouponHauls" | jsonify }},
+    "url": {{ .Site.BaseURL | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CouponHauls",
+    "url": {{ .Site.BaseURL | jsonify }},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ (printf "%s/images/logo.png" (.Site.BaseURL | strings.TrimRight "/")) | jsonify }}
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ .Permalink | jsonify }}
+  },
+  "url": {{ .Permalink | jsonify }}{{ with .Params.featured_image }},
+  "image": {{ . | jsonify }}{{ end }}
+}
+</script>
+
+{{/* ── BreadcrumbList schema — blog post: Home › Blog › Post Title ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": {{ .Site.BaseURL | strings.TrimRight "/" | jsonify }}
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": {{ (printf "%s/blog/" (.Site.BaseURL | strings.TrimRight "/")) | jsonify }}
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": {{ .Title | jsonify }},
+      "item": {{ .Permalink | jsonify }}
+    }
+  ]
+}
+</script>
+{{ end }}
+
+{{ define "main" }}
+
+{{ partial "breadcrumb.html" . }}
+
+<!-- ═══════════════════════════════════════════
+     HERO / POST HEADER
+════════════════════════════════════════════ -->
+<header class="bg-white pt-10 pb-8 border-b border-gray-100">
+  <div class="blog-container">
+    <div class="max-w-2xl">
+      {{ if .Params.category }}
+      <a href="/blog/" class="inline-block bg-primary-50 text-primary-700 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded mb-5 hover:bg-primary-100 transition-colors">
+        {{ .Params.category }}
+      </a>
+      {{ end }}
+
+      <h1 class="blog-post-title">{{ .Title }}</h1>
+      <p class="text-gray-500 text-lg mt-3 mb-6 leading-relaxed">{{ .Params.description }}</p>
+
+      <!-- Meta row -->
+      <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400 pb-6 border-b border-gray-100">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center text-white text-xs font-bold">CH</div>
+          <span class="text-gray-600 font-medium">{{ .Site.Params.author | default "CouponHauls Team" }}</span>
+        </div>
+        <span>·</span>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        <span>·</span>
+        <span>{{ .Params.read_time | default "5" }} min read</span>
+        {{ if .Params.updated }}
+        <span>·</span>
+        <span>Updated {{ .Params.updated }}</span>
+        {{ end }}
+      </div>
+
+      <!-- Share strip -->
+      <div class="flex items-center gap-3 pt-5">
+        <span class="text-xs text-gray-400 font-medium uppercase tracking-wider">Share</span>
+        <a href="https://twitter.com/intent/tweet?url={{ .Permalink | absURL }}&text={{ .Title | urlize }}"
+           target="_blank" rel="noopener"
+           class="share-btn bg-[#1da1f2] text-white">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+          Twitter
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink | absURL }}"
+           target="_blank" rel="noopener"
+           class="share-btn bg-[#1877f2] text-white">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <button onclick="navigator.clipboard.writeText(window.location.href).then(()=>{ this.textContent='Copied!'; setTimeout(()=>{ this.innerHTML='<svg class=\'w-3.5 h-3.5\' fill=\'none\' stroke=\'currentColor\' viewBox=\'0 0 24 24\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3\'/></svg> Copy Link'; }, 2000) })"
+           class="share-btn bg-gray-100 text-gray-600 hover:bg-gray-200">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+          Copy Link
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     MAIN CONTENT + SIDEBAR
+════════════════════════════════════════════ -->
+<div class="bg-gray-50 min-h-screen py-10">
+  <div class="blog-container">
+    <div class="blog-layout">
+
+      <!-- ── Article column ── -->
+      <main class="blog-main">
+
+        {{ if .Params.featured_image }}
+        <div class="mb-8 rounded-xl overflow-hidden shadow-md">
+          <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="w-full h-56 md:h-72 object-cover">
+        </div>
+        {{ end }}
+
+        <article class="blog-body" id="article-body">
+          {{ .Content }}
+        </article>
+
+        <!-- ── INLINE CTA ── -->
+        <aside class="blog-cta-card">
+          <div class="blog-cta-inner">
+            <div class="blog-cta-icon">🎫</div>
+            <div class="blog-cta-text">
+              <h3>Ready to Start Saving?</h3>
+              <p>Hundreds of verified codes from top stores, updated daily.</p>
+            </div>
+            <div class="blog-cta-actions">
+              <a href="/stores/" class="blog-cta-btn-primary">Browse Coupons →</a>
+              <a href="/blog/" class="blog-cta-btn-ghost">More Articles</a>
+            </div>
+          </div>
+          <div class="blog-cta-badges">
+            <span>✅ Free</span>
+            <span>🔒 No sign-up</span>
+            <span>🔄 Daily updates</span>
+          </div>
+        </aside>
+
+        <!-- ── Tags ── -->
+        {{ if .Params.tags }}
+        <div class="mt-8 pt-6 border-t border-gray-200 flex flex-wrap gap-2">
+          {{ range .Params.tags }}
+          <span class="text-xs bg-gray-100 text-gray-600 px-3 py-1.5 rounded-full font-medium">#{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+
+      </main>
+
+      <!-- ── Sidebar ── -->
+      <aside class="blog-sidebar">
+        <!-- TOC -->
+        <div class="blog-toc" id="toc-box">
+          <div class="blog-toc-header">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h10"/></svg>
+            In This Article
+          </div>
+          <nav id="toc-nav" class="blog-toc-nav">
+            <!-- JS-generated -->
+            <p class="text-xs text-gray-400 italic px-4 pb-4">Loading contents…</p>
+          </nav>
+        </div>
+
+        <!-- Sidebar CTA -->
+        <div class="blog-sidebar-cta">
+          <div class="text-3xl mb-3">💸</div>
+          <h4>Don't Miss a Deal</h4>
+          <p>Browse verified coupons from 500+ top stores.</p>
+          <a href="/stores/">Find Coupons Now →</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     RELATED POSTS
+════════════════════════════════════════════ -->
+{{ $related := where (where .Site.RegularPages "Section" "blog") "Permalink" "ne" .Permalink }}
+{{ if $related }}
+<section class="bg-white border-t border-gray-100 py-14">
+  <div class="blog-container">
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h2 class="text-2xl font-bold text-gray-900">More Savings Tips</h2>
+        <p class="text-gray-400 text-sm mt-1">Keep reading for more expert guides</p>
+      </div>
+      <a href="/blog/" class="text-primary-600 hover:text-primary-700 text-sm font-semibold transition-colors">View all →</a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {{ range first 3 $related }}
+      {{ partial "blog-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- ═══════════════════════════════════════════
+     STYLES
+════════════════════════════════════════════ -->
+<style>
+
+/* ─── Layout container ─── */
+.blog-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+@media (min-width: 1024px) {
+  .blog-layout {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 3rem;
+  }
+}
+
+/* ─── Post title ─── */
+.blog-post-title {
+  font-size: clamp(1.75rem, 4vw, 2.625rem);
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Share buttons ─── */
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.875rem;
+  border-radius: 999px;
+  transition: opacity 0.15s, transform 0.15s;
+  cursor: pointer;
+  border: none;
+}
+.share-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* ─── Article body typography ─── */
+.blog-body {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: #374151;
+}
+
+/* Headings */
+.blog-body h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 2.5rem 0 0.75rem;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  scroll-margin-top: 80px;
+}
+.blog-body h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin: 2rem 0 0.6rem;
+  line-height: 1.35;
+  scroll-margin-top: 80px;
+}
+.blog-body h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #374151;
+  margin: 1.5rem 0 0.4rem;
+}
+.blog-body h2:first-child,
+.blog-body h3:first-child { margin-top: 0; }
+
+/* Paragraphs */
+.blog-body p {
+  margin: 0 0 1.25rem;
+  color: #4b5563;
+}
+.blog-body p:last-child { margin-bottom: 0; }
+
+/* Links */
+.blog-body a {
+  color: #0284c7;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1.5px solid #bae6fd;
+  transition: color 0.12s, border-color 0.12s;
+}
+.blog-body a:hover { color: #0369a1; border-color: #0369a1; }
+
+/* Lists */
+.blog-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+}
+.blog-body ul li {
+  padding: 0.3rem 0 0.3rem 1.6rem;
+  position: relative;
+  color: #4b5563;
+}
+.blog-body ul li::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.7rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0284c7;
+}
+.blog-body ol {
+  padding-left: 1.5rem;
+  margin: 0 0 1.25rem;
+  counter-reset: item;
+}
+.blog-body ol li {
+  padding: 0.3rem 0;
+  color: #4b5563;
+}
+.blog-body strong { color: #111827; font-weight: 700; }
+.blog-body em { font-style: italic; color: #6b7280; }
+
+/* Inline code */
+.blog-body code {
+  background: #f0f9ff;
+  color: #0369a1;
+  padding: 0.125rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  border: 1px solid #bae6fd;
+  font-family: 'Courier New', monospace;
+}
+
+/* Tables */
+.blog-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0 1.5rem;
+  font-size: 0.9375rem;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+}
+.blog-body th {
+  background: #0f172a;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.blog-body td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #4b5563;
+}
+.blog-body tr:last-child td { border-bottom: none; }
+.blog-body tr:nth-child(even) td { background: #f8fafc; }
+
+/* Blockquote */
+.blog-body blockquote {
+  border-left: 3px solid #0284c7;
+  background: #f0f9ff;
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem 1rem 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: #1e40af;
+  font-style: italic;
+}
+.blog-body hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 2.5rem 0;
+}
+
+/* Tip box — use > [!TIP] in markdown or just blockquote */
+.blog-body .tip-box,
+.blog-body .info-box {
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-left: 4px solid #f59e0b;
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  margin: 1.75rem 0;
+  font-size: 0.9375rem;
+  color: #78350f;
+}
+
+/* ─── TOC sidebar ─── */
+.blog-sidebar {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .blog-sidebar {
+    display: block;
+    position: sticky;
+    top: 88px;
+  }
+}
+.blog-toc {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+.blog-toc-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  background: #fafafa;
+}
+.blog-toc-nav {
+  padding: 0.5rem 0;
+}
+.blog-toc-nav a {
+  display: block;
+  font-size: 0.875rem;
+  color: #4b5563;
+  padding: 0.4rem 1rem;
+  border-left: 2px solid transparent;
+  transition: all 0.12s;
+  text-decoration: none;
+  line-height: 1.4;
+}
+.blog-toc-nav a:hover,
+.blog-toc-nav a.toc-active {
+  color: #0284c7;
+  border-left-color: #0284c7;
+  background: #f0f9ff;
+}
+.blog-toc-nav a.toc-h3 { padding-left: 1.75rem; font-size: 0.8125rem; color: #6b7280; }
+.blog-toc-nav a.toc-h3:hover, .blog-toc-nav a.toc-h3.toc-active { color: #0284c7; }
+
+/* ─── Sidebar CTA ─── */
+.blog-sidebar-cta {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(2,132,199,0.25);
+}
+.blog-sidebar-cta h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.375rem;
+}
+.blog-sidebar-cta p {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.blog-sidebar-cta a {
+  display: inline-block;
+  background: #fff;
+  color: #0284c7;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  transition: transform 0.15s, box-shadow 0.15s;
+  text-decoration: none;
+}
+.blog-sidebar-cta a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ─── Inline CTA card ─── */
+.blog-cta-card {
+  margin-top: 3rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.blog-cta-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.75rem;
+  background: linear-gradient(135deg, #f0f9ff 0%, #fff 100%);
+  border-bottom: 1px solid #e0f2fe;
+}
+@media (min-width: 640px) {
+  .blog-cta-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.blog-cta-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.blog-cta-text { flex: 1; }
+.blog-cta-text h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+.blog-cta-text p {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+.blog-cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+@media (min-width: 640px) {
+  .blog-cta-actions { flex-direction: row; align-items: center; }
+}
+.blog-cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0284c7;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(2,132,199,0.3);
+}
+.blog-cta-btn-primary:hover { background: #0369a1; transform: translateY(-1px); }
+.blog-cta-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #0284c7;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1.5px solid #bae6fd;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
+}
+.blog-cta-btn-ghost:hover { background: #f0f9ff; border-color: #0284c7; }
+.blog-cta-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: #fafafa;
+}
+.blog-cta-badges span {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+</style>
+
+<!-- ═══════════════════════════════════════════
+     SCRIPTS — auto-generate TOC + scroll spy
+════════════════════════════════════════════ -->
+<script>
+(function () {
+  const article = document.getElementById('article-body');
+  const tocNav  = document.getElementById('toc-nav');
+  if (!article || !tocNav) return;
+
+  const headings = article.querySelectorAll('h2, h3');
+  if (!headings.length) { tocNav.innerHTML = '<p class="text-xs text-gray-400 italic px-4 pb-4">No sections found.</p>'; return; }
+
+  let html = '';
+  headings.forEach((h, i) => {
+    if (!h.id) h.id = 'section-' + i;
+    const cls = h.tagName === 'H3' ? 'toc-h3' : '';
+    html += `<a href="#${h.id}" class="${cls}" data-target="${h.id}">${h.textContent}</a>`;
+  });
+  tocNav.innerHTML = html;
+
+  // Scroll spy
+  const links = tocNav.querySelectorAll('a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('toc-active'));
+        const active = tocNav.querySelector(`[data-target="${e.target.id}"]`);
+        if (active) active.classList.add('toc-active');
+      }
+    });
+  }, { rootMargin: '-80px 0px -60% 0px' });
+
+  headings.forEach(h => observer.observe(h));
+
+  // Smooth scroll
+  links.forEach(l => {
+    l.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById(l.dataset.target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+})();
+</script>
+
+{{ end }}
