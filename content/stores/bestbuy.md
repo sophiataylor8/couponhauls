@@ -1,8 +1,22 @@
 ---
-title: "Best Buy"
+title: "Best Buy Coupon Code 2026 - 15% Off"
 slug: "bestbuy"
-description: "Best Buy specializes in consumer electronics, appliances, computers, and entertainment products. Customers can explore the latest tech gadgets, gaming consoles, smart home devices, and more. Best Buy offers price matching, installation services, and extended warranties. Frequent sales events such as Black Friday and holiday deals help shoppers secure discounts on premium electronics."
-logo_url: "https://cdn.brandfetch.io/idmSVs_Vxg/w/480/h/480/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1761207107240"
+description: "Best Buy Coupon Code 2026. Unlock Best Buy coupon codes & tech deals. Save on laptops, TVs, appliances & gadgets."
+
+# ── On-page SEO ──────────────────────────────────────────────────────
+store_h1: "Best Buy Coupon Code 2026 - 15% Off"
+store_title: "Best Buy Coupon Code 2026 - 15% Off"
+store_meta_description: "Best Buy Coupon Code 2026. Unlock Best Buy coupon codes & tech deals. Save on laptops, TVs, appliances & gadgets."
+store_keywords: "best buy coupon code, best buy promo code, best buy discounts, best buy deals 2026, best buy offers, best buy sale"
+
+# ── Open Graph / Social sharing ──────────────────────────────────────
+store_og_title: "Best Buy Coupon Code 2026 - 15% Off"
+store_og_description: "Best Buy Coupon Code 2026. Unlock Best Buy coupon codes & tech deals. Save on laptops, TVs, appliances & gadgets."
+store_og_image: ""
+store_og_type: "website"
+
+# ── Store data ───────────────────────────────────────────────────────
+logo_url: ""
 website_url: "https://www.bestbuy.com/"
 website_aff_url: "https://www.bestbuy.com/"
 is_active: true

@@ -9,23 +9,32 @@
 <link rel="canonical" href="{{ .Permalink }}">
 <meta name="robots" content="index, follow">
 <meta name="googlebot" content="index, follow">
-<meta property="og:title" content="{{ .Title }}">
+
+{{/* OG tags — store pages override this entire block via {{ define "og_meta" }} in single.html */}}
+{{ block "og_meta" . }}
+<meta property="og:title"       content="{{ .Title }}">
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-<meta property="og:type" content="website">
-<meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Params.og_image }}">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="{{ .Site.Params.twitter_handle }}">
-<meta name="twitter:title" content="{{ .Title }}">
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="{{ .Permalink }}">
+<meta property="og:image"       content="{{ .Site.BaseURL }}{{ .Site.Params.og_image }}">
+<meta property="og:site_name"   content="{{ .Site.Title }}">
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:site"        content="{{ .Site.Params.twitter_handle }}">
+<meta name="twitter:title"       content="{{ .Title }}">
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+{{ end }}
+
 <link rel="stylesheet" href="/css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+{{/* Page-specific stylesheets — store pages inject store-single.css here */}}
+{{ block "extra_head" . }}{{ end }}
+
 {{ block "schema" . }}{{ end }}
 
-{{/* Embed store list for client-side search — built from content/stores/*.md at compile time */}}
 <script>
 window.STORES_DATA = [{{ range where .Site.RegularPages "Section" "stores" }}{{ if and .Params.slug .Params.is_active }}{"n":{{ .Title | jsonify }},"s":{{ .Params.slug | jsonify }},"l":{{ .Params.logo_url | jsonify }},"c":{{ .Params.coupon_count | default 0 }}},{{ end }}{{ end }}];
 </script>

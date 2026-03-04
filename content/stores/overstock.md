@@ -1,8 +1,22 @@
 ---
-title: "Overstock"
+title: "Overstock Coupon Code 2026 - 40% Off"
 slug: "overstock"
-description: "Overstock.com offers discounted furniture, home décor, rugs, bedding, jewelry, and more. Known for clearance deals and competitive pricing, Overstock helps customers furnish homes affordably. The platform features daily deals, flash sales, and promotional offers. With detailed product filters and customer reviews, shoppers can find stylish pieces at reduced prices, making Overstock a smart option for budget-conscious home shoppers."
-logo_url: "https://cdn.brandfetch.io/idG3q1Hl01/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1667945779703"
+description: "Overstock Coupon Code 2026. Save with verified Overstock promo codes & clearance deals on furniture, rugs & home essentials."
+
+# ── On-page SEO ──────────────────────────────────────────────────────
+store_h1: "Overstock Coupon Code 2026 - 40% Off"
+store_title: "Overstock Coupon Code 2026 - 40% Off"
+store_meta_description: "Overstock Coupon Code 2026. Save with verified Overstock promo codes & clearance deals on furniture, rugs & home essentials."
+store_keywords: "overstock coupon code, overstock promo code, overstock discounts, overstock deals 2026, overstock offers, overstock sale"
+
+# ── Open Graph / Social sharing ──────────────────────────────────────
+store_og_title: "Overstock Coupon Code 2026 - 40% Off"
+store_og_description: "Overstock Coupon Code 2026. Save with verified Overstock promo codes & clearance deals on furniture, rugs & home essentials."
+store_og_image: ""
+store_og_type: "website"
+
+# ── Store data ───────────────────────────────────────────────────────
+logo_url: ""
 website_url: "https://www.overstock.com/"
 website_aff_url: "https://www.overstock.com/"
 is_active: true

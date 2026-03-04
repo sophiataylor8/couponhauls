@@ -1,8 +1,22 @@
 ---
-title: "Nike"
+title: "Nike Coupon Code 2026 - 20% Off"
 slug: "nike"
-description: "Nike is a globally recognized brand specializing in athletic footwear, apparel, and accessories. Known for innovative designs and athlete endorsements, Nike delivers high-performance gear for running, basketball, football, and training. Popular lines include Air Max, Air Jordan, and Dri-FIT apparel. Nike combines performance technology with modern fashion, appealing to athletes and streetwear fans. Regular sales and member-exclusive discounts make premium sportswear more accessible to shoppers."
-logo_url: "https://cdn.brandfetch.io/id_0dwKPKT/w/399/h/399/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1741746473623"
+description: "Nike Coupon Code 2026. Grab Nike coupon codes & sneaker deals. Save on running shoes, activewear & sports gear."
+
+# ── On-page SEO ──────────────────────────────────────────────────────
+store_h1: "Nike Coupon Code 2026 - 20% Off"
+store_title: "Nike Coupon Code 2026 - 20% Off"
+store_meta_description: "Nike Coupon Code 2026. Grab Nike coupon codes & sneaker deals. Save on running shoes, activewear & sports gear."
+store_keywords: "nike coupon code, nike promo code, nike discounts, nike deals 2026, nike offers, nike sale"
+
+# ── Open Graph / Social sharing ──────────────────────────────────────
+store_og_title: "Nike Coupon Code 2026 - 20% Off"
+store_og_description: "Nike Coupon Code 2026. Grab Nike coupon codes & sneaker deals. Save on running shoes, activewear & sports gear."
+store_og_image: ""
+store_og_type: "website"
+
+# ── Store data ───────────────────────────────────────────────────────
+logo_url: ""
 website_url: "https://www.nike.com/"
 website_aff_url: "https://www.nike.com/"
 is_active: true

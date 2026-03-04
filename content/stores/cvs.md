@@ -1,8 +1,22 @@
 ---
-title: "CVS"
+title: "CVS Coupon Code 2026 - 20% Off"
 slug: "cvs"
-description: "CVS Pharmacy is a leading pharmacy and retail store offering prescription medications, health products, beauty items, snacks, and household essentials. CVS provides convenient in-store and online shopping options, along with health services such as vaccinations and wellness screenings. Customers can join the ExtraCare rewards program to earn discounts and personalized coupons. With frequent promotions and savings events, CVS makes healthcare and everyday essentials more affordable."
-logo_url: "https://cdn.brandfetch.io/idd7pwVwdr/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1667580403048"
+description: "CVS Coupon Code 2026. Find working CVS coupon codes & pharmacy deals. Save on prescriptions, beauty & essentials."
+
+# ── On-page SEO ──────────────────────────────────────────────────────
+store_h1: "CVS Coupon Code 2026 - 20% Off"
+store_title: "CVS Coupon Code 2026 - 20% Off"
+store_meta_description: "CVS Coupon Code 2026. Find working CVS coupon codes & pharmacy deals. Save on prescriptions, beauty & essentials."
+store_keywords: "cvs coupon code, cvs promo code, cvs discounts, cvs deals 2026, cvs offers, cvs sale"
+
+# ── Open Graph / Social sharing ──────────────────────────────────────
+store_og_title: "CVS Coupon Code 2026 - 20% Off"
+store_og_description: "CVS Coupon Code 2026. Find working CVS coupon codes & pharmacy deals. Save on prescriptions, beauty & essentials."
+store_og_image: ""
+store_og_type: "website"
+
+# ── Store data ───────────────────────────────────────────────────────
+logo_url: ""
 website_url: "https://www.cvs.com/"
 website_aff_url: "https://www.cvs.com/"
 is_active: true

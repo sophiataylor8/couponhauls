@@ -1,8 +1,22 @@
 ---
-title: "Wayfair"
+title: "Wayfair Coupon Code 2026 - 20% Off"
 slug: "wayfair"
-description: "Wayfair specializes in furniture and home décor, offering an extensive collection of items for every room in the house. From sofas and beds to lighting, rugs, and outdoor furniture, Wayfair provides stylish solutions for different budgets and tastes. The platform frequently features seasonal sales, clearance discounts, and free shipping on many products. Customers benefit from detailed product descriptions, customer reviews, and easy returns. Whether redesigning a living space or furnishing a new home, Wayfair makes home improvement simple, affordable, and accessible with a vast online selection."
-logo_url: "https://cdn.brandfetch.io/idSfovRbnq/w/340/h/340/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1759196134039"
+description: "Wayfair Coupon Code 2026. Get verified Wayfair coupon codes & furniture deals. Save big on home decor, bedding & more today."
+
+# ── On-page SEO ──────────────────────────────────────────────────────
+store_h1: "Wayfair Coupon Code 2026 - 20% Off"
+store_title: "Wayfair Coupon Code 2026 - 20% Off"
+store_meta_description: "Wayfair Coupon Code 2026. Get verified Wayfair coupon codes & furniture deals. Save big on home decor, bedding & more today."
+store_keywords: "wayfair coupon code, wayfair promo code, wayfair discounts, wayfair deals 2026, wayfair offers, wayfair sale"
+
+# ── Open Graph / Social sharing ──────────────────────────────────────
+store_og_title: "Wayfair Coupon Code 2026 - 20% Off"
+store_og_description: "Wayfair Coupon Code 2026. Get verified Wayfair coupon codes & furniture deals. Save big on home decor, bedding & more today."
+store_og_image: ""
+store_og_type: "website"
+
+# ── Store data ───────────────────────────────────────────────────────
+logo_url: ""
 website_url: "https://www.wayfair.com/"
 website_aff_url: "https://www.wayfair.com/"
 is_active: true

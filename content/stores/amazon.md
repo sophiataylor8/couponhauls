@@ -1,8 +1,22 @@
 ---
-title: "Amazon"
+title: "Amazon Coupon Code 2026 - 20% Off"
 slug: "amazon"
-description: "Amazon is one of the world’s largest online marketplaces, offering millions of products across categories including electronics, fashion, home essentials, books, beauty, groceries, and more. Known for competitive pricing and fast delivery through Prime membership, Amazon provides customers with convenient shopping experiences, exclusive deals, lightning offers, and seasonal sales events. Shoppers can explore top brands, read verified reviews, compare prices, and enjoy flexible return policies. Amazon also offers digital services like Prime Video, Kindle, and Amazon Music. Whether you're shopping for daily essentials or premium gadgets, Amazon combines variety, affordability, and convenience, making it a preferred destination for online shoppers worldwide."
-logo_url: "https://cdn.brandfetch.io/idawOgYOsG/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1747149745978"
+description: "Amazon Coupon Code 2026. Save more with verified Amazon coupon codes, promo deals & discounts. Updated daily for the best online savings."
+
+# ── On-page SEO ──────────────────────────────────────────────────────
+store_h1: "Amazon Coupon Code 2026 - 20% Off"
+store_title: "Amazon Coupon Code 2026 - 20% Off"
+store_meta_description: "Amazon Coupon Code 2026. Save more with verified Amazon coupon codes, promo deals & discounts. Updated daily for the best online savings."
+store_keywords: "amazon coupon code, amazon promo code, amazon discounts, amazon deals 2026, amazon offers, amazon sale"
+
+# ── Open Graph / Social sharing ──────────────────────────────────────
+store_og_title: "Amazon Coupon Code 2026 - 20% Off"
+store_og_description: "Amazon Coupon Code 2026. Save more with verified Amazon coupon codes, promo deals & discounts. Updated daily for the best online savings."
+store_og_image: ""
+store_og_type: "website"
+
+# ── Store data ───────────────────────────────────────────────────────
+logo_url: ""
 website_url: "https://www.amazon.com/"
 website_aff_url: "https://www.amazon.com/"
 is_active: true

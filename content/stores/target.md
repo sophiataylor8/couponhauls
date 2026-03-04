@@ -1,8 +1,22 @@
 ---
-title: "Target"
+title: "Target Coupon Code 2026 - 20% Off"
 slug: "target"
-description: "Target is a popular retail chain offering stylish and affordable products across categories including fashion, home décor, electronics, groceries, and beauty. Known for designer collaborations and exclusive in-house brands, Target combines value with trend-forward design. Customers benefit from weekly deals, clearance discounts, and the Target Circle rewards program. Both online and in-store shopping options make Target a convenient destination for everyday needs."
-logo_url: "https://cdn.brandfetch.io/id0ZfAM4Dt/w/240/h/240/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1667573192808"
+description: "Target Coupon Code 2026. Get Target promo codes & weekly deals. Save on groceries, fashion, electronics & more."
+
+# ── On-page SEO ──────────────────────────────────────────────────────
+store_h1: "Target Coupon Code 2026 - 20% Off"
+store_title: "Target Coupon Code 2026 - 20% Off"
+store_meta_description: "Target Coupon Code 2026. Get Target promo codes & weekly deals. Save on groceries, fashion, electronics & more."
+store_keywords: "target coupon code, target promo code, target discounts, target deals 2026, target offers, target sale"
+
+# ── Open Graph / Social sharing ──────────────────────────────────────
+store_og_title: "Target Coupon Code 2026 - 20% Off"
+store_og_description: "Target Coupon Code 2026. Get Target promo codes & weekly deals. Save on groceries, fashion, electronics & more."
+store_og_image: ""
+store_og_type: "website"
+
+# ── Store data ───────────────────────────────────────────────────────
+logo_url: ""
 website_url: "https://www.target.com/"
 website_aff_url: "https://www.target.com/"
 is_active: true

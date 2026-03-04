@@ -1,8 +1,22 @@
 ---
-title: "Tesco"
+title: "Tesco Coupon Code 2026 - 20% Off"
 slug: "tesco"
-description: "Tesco is a leading supermarket chain offering groceries, clothing, electronics, and household essentials. With both in-store and online shopping options, Tesco provides convenient delivery and click-and-collect services. The Clubcard loyalty program allows customers to earn points and access exclusive discounts. Known for competitive pricing and quality private-label brands, Tesco serves millions of shoppers across the UK and beyond."
-logo_url: "https://cdn.brandfetch.io/idIwi73LUs/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1668518530584"
+description: "Tesco Coupon Code 2026. Save with Tesco promo codes & grocery deals. Find discounts on food, household & essentials."
+
+# ── On-page SEO ──────────────────────────────────────────────────────
+store_h1: "Tesco Coupon Code 2026 - 20% Off"
+store_title: "Tesco Coupon Code 2026 - 20% Off"
+store_meta_description: "Tesco Coupon Code 2026. Save with Tesco promo codes & grocery deals. Find discounts on food, household & essentials."
+store_keywords: "tesco coupon code, tesco promo code, tesco discounts, tesco deals 2026, tesco offers, tesco sale"
+
+# ── Open Graph / Social sharing ──────────────────────────────────────
+store_og_title: "Tesco Coupon Code 2026 - 20% Off"
+store_og_description: "Tesco Coupon Code 2026. Save with Tesco promo codes & grocery deals. Find discounts on food, household & essentials."
+store_og_image: ""
+store_og_type: "website"
+
+# ── Store data ───────────────────────────────────────────────────────
+logo_url: ""
 website_url: "https://www.tesco.com/"
 website_aff_url: "https://www.tesco.com/"
 is_active: true

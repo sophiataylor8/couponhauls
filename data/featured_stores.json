@@ -1,0 +1,42 @@
+[
+  {
+    "website_name": "Adidas",
+    "slug": "adidas",
+    "logo_url": "",
+    "website_url": "https://www.adidas.com/",
+    "website_aff_url": "https://www.adidas.com/",
+    "coupon_count": 2
+  },
+  {
+    "website_name": "Overstock",
+    "slug": "overstock",
+    "logo_url": "",
+    "website_url": "https://www.overstock.com/",
+    "website_aff_url": "https://www.overstock.com/",
+    "coupon_count": 2
+  },
+  {
+    "website_name": "Target",
+    "slug": "target",
+    "logo_url": "",
+    "website_url": "https://www.target.com/",
+    "website_aff_url": "https://www.target.com/",
+    "coupon_count": 2
+  },
+  {
+    "website_name": "Macys",
+    "slug": "macys",
+    "logo_url": "",
+    "website_url": "https://www.macys.com/",
+    "website_aff_url": "https://www.macys.com/",
+    "coupon_count": 2
+  },
+  {
+    "website_name": "Tesco",
+    "slug": "tesco",
+    "logo_url": "",
+    "website_url": "https://www.tesco.com/",
+    "website_aff_url": "https://www.tesco.com/",
+    "coupon_count": 2
+  }
+]

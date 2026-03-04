@@ -1,8 +1,22 @@
 ---
-title: "Macys"
+title: "Macys Coupon Code 2026 - 20% Off"
 slug: "macys"
-description: "Macy's is a well-known department store offering fashion apparel, accessories, beauty products, and home goods. Macy’s carries premium and designer brands, making it a destination for both everyday wear and special occasions. Seasonal sales, clearance events, and promotional coupons provide opportunities for significant savings. Customers can shop online or in-store for a comprehensive retail experience."
-logo_url: "https://cdn.brandfetch.io/id58A6j836/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1759198019971"
+description: "Macys Coupon Code 2026. Find working Macys promo codes & sale offers. Save on fashion, beauty & home essentials."
+
+# ── On-page SEO ──────────────────────────────────────────────────────
+store_h1: "Macys Coupon Code 2026 - 20% Off"
+store_title: "Macys Coupon Code 2026 - 20% Off"
+store_meta_description: "Macys Coupon Code 2026. Find working Macys promo codes & sale offers. Save on fashion, beauty & home essentials."
+store_keywords: "macys coupon code, macys promo code, macys discounts, macys deals 2026, macys offers, macys sale"
+
+# ── Open Graph / Social sharing ──────────────────────────────────────
+store_og_title: "Macys Coupon Code 2026 - 20% Off"
+store_og_description: "Macys Coupon Code 2026. Find working Macys promo codes & sale offers. Save on fashion, beauty & home essentials."
+store_og_image: ""
+store_og_type: "website"
+
+# ── Store data ───────────────────────────────────────────────────────
+logo_url: ""
 website_url: "https://www.macys.com/"
 website_aff_url: "https://www.macys.com/"
 is_active: true

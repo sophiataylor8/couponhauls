@@ -1,8 +1,22 @@
 ---
-title: "Etsy"
+title: "Etsy Coupon Code 2026 - 30% Off"
 slug: "etsy"
-description: "Etsy is an online marketplace focused on handmade, vintage, and unique products. Shoppers can discover personalized gifts, custom jewelry, home décor, art prints, clothing, and craft supplies from independent sellers worldwide. Etsy supports small businesses and creative entrepreneurs, offering one-of-a-kind items not typically found in traditional retail stores. With buyer protection policies and global shipping options, Etsy provides a trusted platform for meaningful and customized shopping experiences."
-logo_url: "https://cdn.brandfetch.io/idzyTAzn6G/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1731111000174"
+description: "Etsy Coupon Code 2026. Discover working Etsy coupon codes & handmade deals. Save on unique gifts, crafts & custom items."
+
+# ── On-page SEO ──────────────────────────────────────────────────────
+store_h1: "Etsy Coupon Code 2026 - 30% Off"
+store_title: "Etsy Coupon Code 2026 - 30% Off"
+store_meta_description: "Etsy Coupon Code 2026. Discover working Etsy coupon codes & handmade deals. Save on unique gifts, crafts & custom items."
+store_keywords: "etsy coupon code, etsy promo code, etsy discounts, etsy deals 2026, etsy offers, etsy sale"
+
+# ── Open Graph / Social sharing ──────────────────────────────────────
+store_og_title: "Etsy Coupon Code 2026 - 30% Off"
+store_og_description: "Etsy Coupon Code 2026. Discover working Etsy coupon codes & handmade deals. Save on unique gifts, crafts & custom items."
+store_og_image: ""
+store_og_type: "website"
+
+# ── Store data ───────────────────────────────────────────────────────
+logo_url: ""
 website_url: "https://www.etsy.com/"
 website_aff_url: "https://www.etsy.com/"
 is_active: true

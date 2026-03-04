@@ -1,11 +1,60 @@
 {{/* ════════════════════════════════════════════════════════════════════
   layouts/_default/single.html
-  Store coupon page — used for every store subdomain
-  e.g. amazon.couponhauls.com / target.couponhauls.com
+  Store coupon page — used for every store page
+  Styles live in: static/css/store-single.css
 ════════════════════════════════════════════════════════════════════ */}}
 
-{{ define "title" }}{{ .Title }} Coupon Codes &amp; Promo Codes {{ now.Format "2006" }} - {{ .Site.Title }}{{ end }}
-{{ define "description" }}{{ .Params.description }}{{ end }}
+{{ define "title" }}{{ .Params.store_title | default .Title }} Coupon Codes &amp; Promo Codes {{ now.Format "2006" }} - {{ .Site.Title }}{{ end }}
+{{ define "description" }}{{ .Params.store_meta_description | default .Params.description }}{{ end }}
+
+
+{{/* ════════════════════════════════════════════════════════════════════
+  EXTRA HEAD — load store-specific stylesheet only on store pages
+════════════════════════════════════════════════════════════════════ */}}
+{{ define "extra_head" }}
+<link rel="stylesheet" href="/css/store-single.css">
+{{ end }}
+
+
+{{/* ════════════════════════════════════════════════════════════════════
+  OG / SOCIAL META — overrides generic tags in baseof.html
+  Priority: store_og_* → store_title/store_meta_description → .Title
+════════════════════════════════════════════════════════════════════ */}}
+{{ define "og_meta" }}
+
+{{ $ogTitle := .Params.store_og_title       | default .Params.store_title       | default .Title }}
+{{ $ogDesc  := .Params.store_og_description | default .Params.store_meta_description | default .Params.description | default .Site.Params.description }}
+{{ $ogType  := .Params.store_og_type        | default "website" }}
+{{ $ogURL   := .Permalink }}
+
+{{/* Image: store_og_image → logo_url → site og_image */}}
+{{ $ogImage := "" }}
+{{ if .Params.store_og_image }}
+  {{ $ogImage = .Params.store_og_image }}
+{{ else if .Params.logo_url }}
+  {{ $ogImage = .Params.logo_url }}
+{{ else }}
+  {{ $ogImage = printf "%s%s" .Site.BaseURL .Site.Params.og_image }}
+{{ end }}
+
+<meta property="og:title"       content="{{ $ogTitle }}">
+<meta property="og:description" content="{{ $ogDesc }}">
+<meta property="og:type"        content="{{ $ogType }}">
+<meta property="og:url"         content="{{ $ogURL }}">
+<meta property="og:image"       content="{{ $ogImage }}">
+<meta property="og:image:alt"   content="{{ $ogTitle }} — {{ .Site.Title }}">
+<meta property="og:site_name"   content="{{ .Site.Title }}">
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:site"        content="{{ .Site.Params.twitter_handle }}">
+<meta name="twitter:title"       content="{{ $ogTitle }}">
+<meta name="twitter:description" content="{{ $ogDesc }}">
+<meta name="twitter:image"       content="{{ $ogImage }}">
+<meta name="twitter:image:alt"   content="{{ $ogTitle }} — {{ .Site.Title }}">
+{{ with .Params.store_keywords }}
+<meta name="keywords" content="{{ . }}">
+{{ end }}
+
+{{ end }}
 
 
 {{/* ════════════════════════════════════════════════════════════════════
@@ -13,25 +62,23 @@
 ════════════════════════════════════════════════════════════════════ */}}
 {{ define "schema" }}
 
-{{ $storeName    := .Title }}
-{{ $couponCount  := len (.Params.coupons | default slice) }}
+{{ $storeName   := .Title }}
+{{ $couponCount := len (.Params.coupons | default slice) }}
 {{ $bestDiscount := .Params.best_discount | default "" }}
-{{ $storeURL     := .Params.website_url | default .Permalink }}
+{{ $storeURL    := .Params.website_url | default .Permalink }}
 
-{{/* ── Store ── */}}
 <script type="application/ld+json">
 {
 "@context": "https://schema.org",
 "@type": "Store",
 "name": {{ .Title | jsonify }},
 "url": {{ $storeURL | jsonify }},
-"description": {{ .Params.description | jsonify }},
+"description": {{ (.Params.store_meta_description | default .Params.description) | jsonify }},
 "sameAs": {{ $storeURL | jsonify }},
 "mainEntityOfPage": { "@type": "WebPage", "@id": {{ .Permalink | jsonify }} }
 }
 </script>
 
-{{/* ── BreadcrumbList ── */}}
 <script type="application/ld+json">
 {
 "@context": "https://schema.org",
@@ -44,7 +91,6 @@
 }
 </script>
 
-{{/* ── Offer — one per coupon code ── */}}
 {{ with .Params.coupons }}{{ range . }}{{ if .coupon_code }}
 <script type="application/ld+json">
 {
@@ -61,7 +107,6 @@
 </script>
 {{ end }}{{ end }}{{ end }}
 
-{{/* ── FAQPage — 3 store-specific questions only ── */}}
 <script type="application/ld+json">
 {
 "@context": "https://schema.org",
@@ -70,26 +115,17 @@
  {
    "@type": "Question",
    "name": {{ (printf "How many %s coupon codes are available right now?" $storeName) | jsonify }},
-   "acceptedAnswer": {
-     "@type": "Answer",
-     "text": {{ (printf "CouponHauls currently lists %d verified %s coupon codes and deals. We verify and update all %s offers daily so you always get working promo codes — no expired duds." $couponCount $storeName $storeName) | jsonify }}
-   }
+   "acceptedAnswer": { "@type": "Answer", "text": {{ (printf "CouponHauls currently lists %d verified %s coupon codes and deals. We verify and update all %s offers daily so you always get working promo codes — no expired duds." $couponCount $storeName $storeName) | jsonify }} }
  },
  {
    "@type": "Question",
    "name": {{ (printf "What is the best %s discount available today?" $storeName) | jsonify }},
-   "acceptedAnswer": {
-     "@type": "Answer",
-     "text": {{ if $bestDiscount }}{{ (printf "The best %s discount available right now is %s off your order. Apply the coupon code at checkout on the %s website to instantly redeem your savings." $storeName $bestDiscount $storeName) | jsonify }}{{ else }}{{ (printf "The top %s deals on CouponHauls include percentage-off discounts, free shipping codes, and exclusive seasonal promotions. Click any deal to reveal the latest savings." $storeName) | jsonify }}{{ end }}
-   }
+   "acceptedAnswer": { "@type": "Answer", "text": {{ if $bestDiscount }}{{ (printf "The best %s discount available right now is %s off your order. Apply the coupon code at checkout on the %s website to instantly redeem your savings." $storeName $bestDiscount $storeName) | jsonify }}{{ else }}{{ (printf "The top %s deals on CouponHauls include percentage-off discounts, free shipping codes, and exclusive seasonal promotions. Click any deal to reveal the latest savings." $storeName) | jsonify }}{{ end }} }
  },
  {
    "@type": "Question",
    "name": {{ (printf "How do I use a %s promo code?" $storeName) | jsonify }},
-   "acceptedAnswer": {
-     "@type": "Answer",
-     "text": {{ (printf "To use a %s promo code: 1) Find a deal on this page and click Copy Code. 2) Visit %s and add items to your cart. 3) At checkout, paste the code into the promo or coupon field and click Apply. Your discount will be deducted automatically before payment." $storeName $storeURL) | jsonify }}
-   }
+   "acceptedAnswer": { "@type": "Answer", "text": {{ (printf "To use a %s promo code: 1) Find a deal on this page and click Copy Code. 2) Visit %s and add items to your cart. 3) At checkout, paste the code into the promo or coupon field and click Apply. Your discount will be deducted automatically before payment." $storeName $storeURL) | jsonify }} }
  }
 ]
 }
@@ -112,738 +148,273 @@
 
 {{ partial "breadcrumb.html" . }}
 
-{{/* ────────────────────────────────────────────────────────────────
-  HERO
-──────────────────────────────────────────────────────────────────── */}}
+{{/* ── HERO ── */}}
 <div class="sp-hero">
 <div class="sp-hero-inner">
 
- <div class="sp-avatar">
-   <span class="sp-avatar-letter">{{ substr .Title 0 1 }}</span>
- </div>
+  <div class="sp-avatar">
+    <span class="sp-avatar-letter">{{ substr .Title 0 1 }}</span>
+  </div>
 
- <div class="sp-hero-body">
+  <div class="sp-hero-body">
+    <div class="sp-hero-top">
+      <div>
+        <h1 class="sp-title">{{ with .Params.store_h1 }}{{ . }}{{ else }}{{ .Title }} Coupons &amp; Promo Codes{{ end }}</h1>
+        <p class="sp-updated">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Updated {{ now.Format "January 2, 2006" }}
+        </p>
+      </div>
+      {{ if .Params.website_url }}
+      <a href="{{ $affURL }}" target="_blank" rel="noopener noreferrer sponsored" class="sp-visit-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+        Shop at {{ .Title }}
+      </a>
+      {{ end }}
+    </div>
 
-   <div class="sp-hero-top">
-     <div>
-       <h1 class="sp-title">{{ .Title }} Coupons &amp; Promo Codes</h1>
-       <p class="sp-updated">
-         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-         Updated {{ now.Format "January 2, 2006" }}
-       </p>
-     </div>
-     {{ if .Params.website_url }}
-     <a href="{{ $affURL }}" target="_blank" rel="noopener noreferrer sponsored" class="sp-visit-btn">
-       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-       Shop at {{ .Title }}
-     </a>
-     {{ end }}
-   </div>
+    <div class="sp-stats">
+      <div class="sp-stat">
+        <span class="sp-stat-n">{{ $couponCount }}</span>
+        <span class="sp-stat-l">Active Deals</span>
+      </div>
+      {{ with .Params.best_discount }}<div class="sp-stat"><span class="sp-stat-n">{{ . }}</span><span class="sp-stat-l">Best Discount</span></div>{{ end }}
+      {{ with .Params.verified_date }}<div class="sp-stat"><span class="sp-stat-n">{{ . }}</span><span class="sp-stat-l">Last Verified</span></div>{{ end }}
+      {{ with .Params.avg_saving    }}<div class="sp-stat"><span class="sp-stat-n">{{ . }}</span><span class="sp-stat-l">Avg Saving</span></div>{{ end }}
+    </div>
 
-   <div class="sp-stats">
-     <div class="sp-stat">
-       <span class="sp-stat-n">{{ $couponCount }}</span>
-       <span class="sp-stat-l">Active Deals</span>
-     </div>
-     {{ with .Params.best_discount }}
-     <div class="sp-stat">
-       <span class="sp-stat-n">{{ . }}</span>
-       <span class="sp-stat-l">Best Discount</span>
-     </div>
-     {{ end }}
-     {{ with .Params.verified_date }}
-     <div class="sp-stat">
-       <span class="sp-stat-n">{{ . }}</span>
-       <span class="sp-stat-l">Last Verified</span>
-     </div>
-     {{ end }}
-     {{ with .Params.avg_saving }}
-     <div class="sp-stat">
-       <span class="sp-stat-n">{{ . }}</span>
-       <span class="sp-stat-l">Avg Saving</span>
-     </div>
-     {{ end }}
-   </div>
+    {{ with (.Params.store_meta_description | default .Params.description) }}
+    <p class="sp-desc">{{ . }}</p>
+    {{ end }}
+  </div>
 
-   {{ with .Params.description }}
-   <p class="sp-desc">{{ . }}</p>
-   {{ end }}
-
- </div>
 </div>
 </div>
 
-{{/* ────────────────────────────────────────────────────────────────
-  BODY
-──────────────────────────────────────────────────────────────────── */}}
+{{/* ── BODY ── */}}
 <div class="sp-body">
 <div class="sp-container">
 
- {{/* ── Coupon list ── */}}
- {{ if $storeCoupons }}
+  {{ if $storeCoupons }}
 
- <div class="cl-header">
-   <div>
-     <h2 class="cl-title">All {{ .Title }} Coupon Codes</h2>
-     <p class="cl-sub">{{ $couponCount }} offer{{ if ne $couponCount 1 }}s{{ end }} available &middot; verified {{ now.Format "Jan 2006" }}</p>
-   </div>
- </div>
+  <div class="cl-header">
+    <div>
+      <h2 class="cl-title">All {{ .Title }} Coupon Codes</h2>
+      <p class="cl-sub">{{ $couponCount }} offer{{ if ne $couponCount 1 }}s{{ end }} available &middot; verified {{ now.Format "Jan 2006" }}</p>
+    </div>
+  </div>
 
- <div class="cl-list">
-   {{ range $storeCoupons }}
-   <div class="ci {{ if .coupon_code }}ci-code{{ else }}ci-deal{{ end }}">
+  <div class="cl-list">
+    {{ range $storeCoupons }}
+    <div class="ci {{ if .coupon_code }}ci-code{{ else }}ci-deal{{ end }}">
 
-     {{/* Badge */}}
-     <div class="ci-badge {{ if .coupon_code }}ci-badge-blue{{ else }}ci-badge-green{{ end }}">
-       {{ if .discount_value }}
-         <span class="ci-badge-val">{{ .discount_value }}</span>
-         <span class="ci-badge-type">{{ .coupon_type | default "OFF" }}</span>
-       {{ else }}
-         <span class="ci-badge-icon">🏷️</span>
-         <span class="ci-badge-type">{{ .coupon_type | default "Deal" }}</span>
-       {{ end }}
-     </div>
+      <div class="ci-badge {{ if .coupon_code }}ci-badge-blue{{ else }}ci-badge-green{{ end }}">
+        {{ if .discount_value }}
+          <span class="ci-badge-val">{{ .discount_value }}</span>
+          <span class="ci-badge-type">{{ .coupon_type | default "OFF" }}</span>
+        {{ else }}
+          <span class="ci-badge-icon">🏷️</span>
+          <span class="ci-badge-type">{{ .coupon_type | default "Deal" }}</span>
+        {{ end }}
+      </div>
 
-     {{/* Info */}}
-     <div class="ci-info">
-       <h3 class="ci-title">{{ .coupon_title }}</h3>
-       {{ with .coupon_description }}
-       <p class="ci-desc">{{ . }}</p>
-       {{ end }}
-       <div class="ci-meta">
-         {{ if .expires_at }}
-         <span class="ci-tag ci-tag-exp">
-           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-           Expires {{ .expires_at }}
-         </span>
-         {{ else }}
-         <span class="ci-tag ci-tag-ok">
-           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-           No expiration
-         </span>
-         {{ end }}
-         {{ if .coupon_code }}
-         <span class="ci-tag ci-tag-promo">
-           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/></svg>
-           Promo Code
-         </span>
-         {{ end }}
-       </div>
-     </div>
+      <div class="ci-info">
+        <h3 class="ci-title">{{ .coupon_title }}</h3>
+        {{ with .coupon_description }}<p class="ci-desc">{{ . }}</p>{{ end }}
+        <div class="ci-meta">
+          {{ if .expires_at }}
+          <span class="ci-tag ci-tag-exp">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Expires {{ .expires_at }}
+          </span>
+          {{ else }}
+          <span class="ci-tag ci-tag-ok">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            No expiration
+          </span>
+          {{ end }}
+          {{ if .coupon_code }}
+          <span class="ci-tag ci-tag-promo">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/></svg>
+            Promo Code
+          </span>
+          {{ end }}
+        </div>
+      </div>
 
-     {{/* CTA */}}
-     <div class="ci-action">
-       {{ if .coupon_code }}
-       <div class="ci-codebox">
-         <span class="ci-codetext">{{ .coupon_code }}</span>
-         <button class="ci-copybtn"
-                 onclick="handleCopy('{{ .coupon_code }}','{{ .coupon_aff_url }}',this)"
-                 aria-label="Copy code {{ .coupon_code }}">
-           Copy Code
-         </button>
-       </div>
-       {{ else }}
-       <a href="{{ .coupon_aff_url }}"
-          target="_blank" rel="noopener noreferrer sponsored"
-          class="ci-dealbtn"
-          aria-label="Get deal: {{ .coupon_title }}">
-         Get Deal
-         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-       </a>
-       {{ end }}
-     </div>
+      <div class="ci-action">
+        {{ if .coupon_code }}
+        {{/*
+          CODE IS HIDDEN UNTIL CLICK
+          ─────────────────────────────────────────────────────────
+          The actual coupon code is stored ONLY in data-code on the
+          button — it is never rendered as visible text in the DOM.
+          .ci-codetext shows blurred placeholder dots (••••••••).
+          JS reveals the real code + copies it on first click.
+        */}}
+        <div class="ci-codebox" data-code="{{ .coupon_code }}" data-url="{{ .coupon_aff_url }}">
+          <span class="ci-codetext" aria-hidden="true">••••••••</span>
+          <button class="ci-copybtn" aria-label="Reveal and copy coupon code">
+            Reveal Code
+          </button>
+        </div>
+        {{ else }}
+        <a href="{{ .coupon_aff_url }}" target="_blank" rel="noopener noreferrer sponsored"
+           class="ci-dealbtn" aria-label="Get deal: {{ .coupon_title }}">
+          Get Deal
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        {{ end }}
+      </div>
 
-   </div>
-   {{ end }}
- </div>
+    </div>
+    {{ end }}
+  </div>
 
- {{ else }}
+  {{ else }}
 
- <div class="cl-empty">
-   <div class="cl-empty-icon">🔍</div>
-   <h3>No coupons yet for {{ .Title }}</h3>
-   <p>We're hunting for deals — check back soon. We update codes every day.</p>
-   <a href="/stores/" class="cl-empty-btn">Browse Other Stores</a>
- </div>
+  <div class="cl-empty">
+    <div class="cl-empty-icon">🔍</div>
+    <h3>No coupons yet for {{ .Title }}</h3>
+    <p>We're hunting for deals — check back soon. We update codes every day.</p>
+    <a href="/stores/" class="cl-empty-btn">Browse Other Stores</a>
+  </div>
 
- {{ end }}
+  {{ end }}
 
- {{/* ── FAQ — 3 store-specific questions only ── */}}
- <section class="faq" aria-labelledby="faq-h">
-   <h2 id="faq-h" class="faq-title">Frequently Asked Questions</h2>
-   <p class="faq-sub">Common questions about {{ $storeName }} coupon codes</p>
+  {{/* ── FAQ ── */}}
+  <section class="faq" aria-labelledby="faq-h">
+    <h2 id="faq-h" class="faq-title">Frequently Asked Questions</h2>
+    <p class="faq-sub">Common questions about {{ $storeName }} coupon codes</p>
+    <div class="faq-list">
 
-   <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">
+          How many {{ $storeName }} coupon codes are available right now?
+          <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="faq-a">
+          <p>CouponHauls currently lists <strong>{{ $couponCount }} verified {{ $storeName }} coupon codes</strong> and deals. We check and refresh all {{ $storeName }} offers daily so you always land on working promo codes — no expired duds, ever.</p>
+        </div>
+      </details>
 
-     {{/* Q1 — how many coupons */}}
-     <details class="faq-item">
-       <summary class="faq-q">
-         How many {{ $storeName }} coupon codes are available right now?
-         <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-       </summary>
-       <div class="faq-a">
-         <p>CouponHauls currently lists <strong>{{ $couponCount }} verified {{ $storeName }} coupon codes</strong> and deals. We check and refresh all {{ $storeName }} offers daily so you always land on working promo codes — no expired duds, ever.</p>
-       </div>
-     </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          What is the best {{ $storeName }} discount available today?
+          <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="faq-a">
+          {{ if $bestDiscount }}
+          <p>The top {{ $storeName }} deal right now takes <strong>{{ $bestDiscount }} off</strong> your order. Apply the coupon code at checkout on the {{ $storeName }} website to redeem instantly.</p>
+          {{ else }}
+          <p>The best current {{ $storeName }} deals include percentage-off discounts, free-shipping codes, and exclusive seasonal promotions. Browse the full list above and click any deal to copy the code or activate the offer automatically.</p>
+          {{ end }}
+        </div>
+      </details>
 
-     {{/* Q2 — best discount */}}
-     <details class="faq-item">
-       <summary class="faq-q">
-         What is the best {{ $storeName }} discount available today?
-         <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-       </summary>
-       <div class="faq-a">
-         {{ if $bestDiscount }}
-         <p>The top {{ $storeName }} deal right now takes <strong>{{ $bestDiscount }} off</strong> your order. Apply the coupon code at checkout on the {{ $storeName }} website to redeem instantly. Scroll up to grab the code before it expires.</p>
-         {{ else }}
-         <p>The best current {{ $storeName }} deals include percentage-off discounts, free-shipping codes, and exclusive seasonal promotions. Browse the full list above and click any deal to copy the code or activate the offer automatically.</p>
-         {{ end }}
-       </div>
-     </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          How do I use a {{ $storeName }} promo code?
+          <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="faq-a">
+          <ol class="faq-steps">
+            <li>Find a deal on this page and click <strong>Reveal Code</strong>.</li>
+            <li>Visit <a href="{{ $storeURL }}" target="_blank" rel="noopener noreferrer sponsored">{{ $storeName }}</a> and add items to your cart.</li>
+            <li>At checkout, paste the code into the <em>Promo / Coupon</em> field and click <strong>Apply</strong>.</li>
+            <li>No code? Click <strong>Get Deal</strong> — the discount activates automatically at checkout.</li>
+          </ol>
+        </div>
+      </details>
 
-     {{/* Q3 — how to use */}}
-     <details class="faq-item">
-       <summary class="faq-q">
-         How do I use a {{ $storeName }} promo code?
-         <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-       </summary>
-       <div class="faq-a">
-         <ol class="faq-steps">
-           <li>Find a deal on this page and click <strong>Copy Code</strong>.</li>
-           <li>Visit <a href="{{ $storeURL }}" target="_blank" rel="noopener noreferrer sponsored">{{ $storeName }}</a> and add items to your cart.</li>
-           <li>At checkout, paste the code into the <em>Promo / Coupon</em> field and click <strong>Apply</strong>.</li>
-           <li>No code? Click <strong>Get Deal</strong> — savings apply automatically via a special tracked link.</li>
-         </ol>
-       </div>
-     </details>
+    </div>
+  </section>
 
-   </div>
- </section>
-
- {{/* ── Back link ── */}}
- <div class="sp-back">
-   <a href="/stores/" class="sp-back-link">
-     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-     Browse All Stores
-   </a>
- </div>
+  <div class="sp-back">
+    <a href="/stores/" class="sp-back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back to All Stores
+    </a>
+  </div>
 
 </div>
 </div>
-
-
-{{/* ════════════════════════════════════════════════════════════════════
-  STYLES
-════════════════════════════════════════════════════════════════════ */}}
-<style>
-
-/* ── Hero ───────────────────────────────────────────────────────── */
-.sp-hero {
-background: #fff;
-border-bottom: 1px solid #e5e7eb;
-padding: 2.5rem 0 2rem;
-}
-.sp-hero-inner {
-max-width: 1100px;
-margin: 0 auto;
-padding: 0 1.5rem;
-display: flex;
-gap: 2rem;
-align-items: flex-start;
-}
-
-/* Avatar */
-.sp-avatar {
-flex-shrink: 0;
-width: 96px;
-height: 96px;
-background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-border-radius: 1.25rem;
-box-shadow: 0 4px 18px rgba(2,132,199,.28);
-display: flex;
-align-items: center;
-justify-content: center;
-}
-.sp-avatar-letter {
-font-size: 2.75rem;
-font-weight: 900;
-color: #fff;
-line-height: 1;
-text-transform: uppercase;
-font-family: Inter, system-ui, sans-serif;
-}
-
-/* Hero body */
-.sp-hero-body { flex: 1; min-width: 0; }
-.sp-hero-top {
-display: flex;
-align-items: flex-start;
-justify-content: space-between;
-gap: 1rem;
-margin-bottom: 1.25rem;
-flex-wrap: wrap;
-}
-.sp-title {
-font-size: clamp(1.375rem, 3vw, 1.875rem);
-font-weight: 800;
-color: #0f172a;
-line-height: 1.2;
-letter-spacing: -0.02em;
-margin: 0 0 0.3rem;
-}
-.sp-updated {
-display: flex;
-align-items: center;
-gap: 0.3rem;
-font-size: 0.8125rem;
-color: #94a3b8;
-margin: 0;
-}
-
-/* Visit button */
-.sp-visit-btn {
-display: inline-flex;
-align-items: center;
-gap: 0.375rem;
-background: #0284c7;
-color: #fff;
-font-size: 0.875rem;
-font-weight: 600;
-padding: 0.6rem 1.25rem;
-border-radius: 0.625rem;
-text-decoration: none;
-white-space: nowrap;
-flex-shrink: 0;
-transition: background .15s, transform .15s;
-}
-.sp-visit-btn:hover { background: #0369a1; transform: translateY(-1px); }
-
-/* Stats */
-.sp-stats {
-display: flex;
-flex-wrap: wrap;
-gap: .5rem;
-margin-bottom: 1.25rem;
-}
-.sp-stat {
-display: inline-flex;
-flex-direction: column;
-align-items: center;
-background: #f8fafc;
-border: 1px solid #e2e8f0;
-border-radius: .625rem;
-padding: .5rem 1rem;
-min-width: 80px;
-transition: border-color .15s;
-}
-.sp-stat:hover { border-color: #bae6fd; }
-.sp-stat-n {
-font-size: 1.125rem;
-font-weight: 800;
-color: #0284c7;
-line-height: 1.2;
-}
-.sp-stat-l {
-font-size: .6875rem;
-color: #94a3b8;
-font-weight: 500;
-text-transform: uppercase;
-letter-spacing: .04em;
-margin-top: .1rem;
-white-space: nowrap;
-}
-
-/* Description */
-.sp-desc {
-font-size: .9375rem;
-line-height: 1.75;
-color: #475569;
-margin: 0;
-}
-
-/* Mobile hero */
-@media (max-width: 600px) {
-.sp-hero-inner { flex-direction: column; align-items: center; text-align: center; }
-.sp-hero-top   { justify-content: center; }
-.sp-stats      { justify-content: center; }
-.sp-desc       { text-align: left; }
-}
-
-/* ── Body wrapper ───────────────────────────────────────────────── */
-.sp-body {
-background: #f1f5f9;
-min-height: 60vh;
-padding: 2.5rem 0 4rem;
-}
-.sp-container {
-max-width: 1100px;
-margin: 0 auto;
-padding: 0 1.5rem;
-}
-
-/* ── Coupon list header ─────────────────────────────────────────── */
-.cl-header {
-display: flex;
-align-items: center;
-justify-content: space-between;
-margin-bottom: 1.25rem;
-gap: 1rem;
-flex-wrap: wrap;
-}
-.cl-title {
-font-size: 1.375rem;
-font-weight: 800;
-color: #0f172a;
-margin: 0 0 .2rem;
-}
-.cl-sub {
-font-size: .875rem;
-color: #64748b;
-margin: 0;
-}
-
-/* ── Coupon list ────────────────────────────────────────────────── */
-.cl-list {
-display: flex;
-flex-direction: column;
-gap: .875rem;
-}
-
-/* Individual coupon item */
-.ci {
-background: #fff;
-border: 1.5px solid #e2e8f0;
-border-radius: 1rem;
-padding: 1.25rem 1.5rem;
-display: flex;
-align-items: center;
-gap: 1.25rem;
-transition: box-shadow .15s, border-color .15s, transform .15s;
-}
-.ci:hover {
-box-shadow: 0 4px 22px rgba(0,0,0,.07);
-border-color: #bae6fd;
-transform: translateY(-1px);
-}
-.ci-code { border-left: 3px solid #0284c7; }
-.ci-deal { border-left: 3px solid #10b981; }
-
-/* Badge */
-.ci-badge {
-flex-shrink: 0;
-width: 72px;
-min-height: 72px;
-border-radius: .75rem;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: .5rem;
-}
-.ci-badge-blue  { background: #f0f9ff; border: 1.5px solid #bae6fd; }
-.ci-badge-green { background: #f0fdf4; border: 1.5px solid #bbf7d0; }
-.ci-badge-val {
-font-size: 1.25rem;
-font-weight: 900;
-line-height: 1.1;
-}
-.ci-badge-blue  .ci-badge-val { color: #0284c7; }
-.ci-badge-green .ci-badge-val { color: #059669; }
-.ci-badge-type {
-font-size: .625rem;
-font-weight: 700;
-color: #64748b;
-text-transform: uppercase;
-letter-spacing: .06em;
-margin-top: .125rem;
-}
-.ci-badge-icon { font-size: 1.5rem; }
-
-/* Info */
-.ci-info { flex: 1; min-width: 0; }
-.ci-title {
-font-size: 1rem;
-font-weight: 700;
-color: #0f172a;
-margin: 0 0 .3rem;
-line-height: 1.35;
-}
-.ci-desc {
-font-size: .875rem;
-color: #64748b;
-margin: 0 0 .5rem;
-line-height: 1.5;
-}
-.ci-meta { display: flex; flex-wrap: wrap; gap: .375rem; }
-.ci-tag {
-display: inline-flex;
-align-items: center;
-gap: .275rem;
-font-size: .72rem;
-font-weight: 500;
-border-radius: 999px;
-padding: .2rem .6rem;
-border: 1px solid #e2e8f0;
-background: #f8fafc;
-color: #94a3b8;
-}
-.ci-tag-exp   { color: #b45309; background: #fffbeb; border-color: #fde68a; }
-.ci-tag-ok    { color: #059669; background: #f0fdf4; border-color: #bbf7d0; }
-.ci-tag-promo { color: #4f46e5; background: #eef2ff; border-color: #c7d2fe; }
-
-/* CTA */
-.ci-action { flex-shrink: 0; }
-
-.ci-codebox {
-display: flex;
-align-items: stretch;
-border: 2px dashed #93c5fd;
-border-radius: .625rem;
-overflow: hidden;
-background: #eff6ff;
-}
-.ci-codetext {
-font-family: 'Courier New', monospace;
-font-size: .9375rem;
-font-weight: 800;
-color: #1d4ed8;
-padding: .6rem .875rem;
-letter-spacing: .08em;
-white-space: nowrap;
-user-select: all;
-}
-.ci-copybtn {
-background: #0284c7;
-color: #fff;
-font-size: .8125rem;
-font-weight: 700;
-padding: .6rem 1rem;
-border: none;
-cursor: pointer;
-white-space: nowrap;
-transition: background .15s;
-font-family: inherit;
-}
-.ci-copybtn:hover  { background: #0369a1; }
-.ci-copybtn.copied { background: #059669; }
-
-.ci-dealbtn {
-display: inline-flex;
-align-items: center;
-gap: .375rem;
-background: #059669;
-color: #fff;
-font-size: .875rem;
-font-weight: 700;
-padding: .65rem 1.25rem;
-border-radius: .625rem;
-text-decoration: none;
-white-space: nowrap;
-transition: background .15s, transform .15s;
-}
-.ci-dealbtn:hover { background: #047857; transform: translateY(-1px); }
-
-/* Mobile coupon */
-@media (max-width: 640px) {
-.ci         { flex-wrap: wrap; gap: .875rem; }
-.ci-badge   { width: 60px; min-height: 60px; }
-.ci-action  { width: 100%; }
-.ci-codebox { width: 100%; }
-.ci-dealbtn { width: 100%; justify-content: center; }
-}
-
-/* ── Empty state ────────────────────────────────────────────────── */
-.cl-empty {
-text-align: center;
-padding: 5rem 1rem;
-background: #fff;
-border: 1.5px solid #e2e8f0;
-border-radius: 1rem;
-color: #64748b;
-}
-.cl-empty-icon { font-size: 3.5rem; margin-bottom: 1rem; }
-.cl-empty h3   { font-size: 1.375rem; font-weight: 700; color: #0f172a; margin: 0 0 .5rem; }
-.cl-empty p    { margin: 0 0 1.5rem; max-width: 34ch; margin-left: auto; margin-right: auto; }
-.cl-empty-btn  {
-display: inline-flex;
-align-items: center;
-background: #0284c7;
-color: #fff;
-font-weight: 700;
-padding: .7rem 1.5rem;
-border-radius: .625rem;
-text-decoration: none;
-transition: background .15s;
-}
-.cl-empty-btn:hover { background: #0369a1; }
-
-/* ── FAQ ────────────────────────────────────────────────────────── */
-.faq {
-margin-top: 2.5rem;
-background: #fff;
-border: 1.5px solid #e2e8f0;
-border-radius: 1.25rem;
-padding: 2rem 2rem 1.5rem;
-}
-.faq-title {
-font-size: 1.375rem;
-font-weight: 800;
-color: #0f172a;
-margin: 0 0 .25rem;
-letter-spacing: -.02em;
-}
-.faq-sub {
-font-size: .875rem;
-color: #64748b;
-margin: 0 0 1.5rem;
-}
-.faq-list {
-display: flex;
-flex-direction: column;
-gap: .5rem;
-}
-.faq-item {
-border: 1.5px solid #e2e8f0;
-border-radius: .75rem;
-background: #f8fafc;
-overflow: hidden;
-transition: border-color .15s;
-}
-.faq-item[open] {
-border-color: #bae6fd;
-background: #fff;
-}
-.faq-q {
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 1rem;
-padding: 1rem 1.25rem;
-font-size: .9375rem;
-font-weight: 600;
-color: #0f172a;
-cursor: pointer;
-list-style: none;
-user-select: none;
-transition: color .12s;
-}
-.faq-q::-webkit-details-marker { display: none; }
-.faq-q:hover { color: #0284c7; }
-.faq-item[open] .faq-q { color: #0284c7; }
-.faq-chev {
-flex-shrink: 0;
-color: #94a3b8;
-transition: transform .2s ease, color .15s;
-}
-.faq-item[open] .faq-chev { transform: rotate(180deg); color: #0284c7; }
-.faq-a {
-padding: 0 1.25rem 1.1rem;
-animation: faqIn .18s ease;
-}
-.faq-a p {
-font-size: .9375rem;
-line-height: 1.75;
-color: #475569;
-margin: 0;
-}
-.faq-a a {
-color: #0284c7;
-font-weight: 500;
-text-decoration: none;
-border-bottom: 1.5px solid #bae6fd;
-transition: color .12s;
-}
-.faq-a a:hover { color: #0369a1; }
-.faq-steps {
-margin: 0;
-padding: 0;
-list-style: none;
-counter-reset: fs;
-display: flex;
-flex-direction: column;
-gap: .5rem;
-}
-.faq-steps li {
-counter-increment: fs;
-font-size: .9375rem;
-line-height: 1.65;
-color: #475569;
-padding-left: 2.1rem;
-position: relative;
-}
-.faq-steps li::before {
-content: counter(fs);
-position: absolute;
-left: 0;
-top: .1em;
-width: 1.35rem;
-height: 1.35rem;
-background: #0284c7;
-color: #fff;
-font-size: .6875rem;
-font-weight: 800;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-line-height: 1;
-}
-@keyframes faqIn {
-from { opacity: 0; transform: translateY(-4px); }
-to   { opacity: 1; transform: translateY(0); }
-}
-@media (max-width: 600px) {
-.faq   { padding: 1.25rem 1rem 1rem; }
-.faq-q { font-size: .875rem; padding: .875rem 1rem; }
-.faq-a { padding: 0 1rem 1rem; }
-}
-
-/* ── Back link ──────────────────────────────────────────────────── */
-.sp-back { margin-top: 2.5rem; }
-.sp-back-link {
-display: inline-flex;
-align-items: center;
-gap: .375rem;
-color: #64748b;
-font-size: .875rem;
-font-weight: 600;
-text-decoration: none;
-transition: color .12s;
-}
-.sp-back-link:hover { color: #0284c7; }
-
-</style>
 
 
 {{/* ════════════════════════════════════════════════════════════════════
   JAVASCRIPT
+  ─────────────────────────────────────────────────────────────────────
+  Coupon reveal flow:
+    1. User clicks anywhere on .ci-codebox (button or box itself)
+    2. First click  → reveal: read code from data-code, write it into
+                               .ci-codetext, remove blur, copy to clipboard,
+                               open affiliate URL, update button label.
+    3. Second click → copy again silently (code already visible).
+  The actual code string is NEVER rendered as page text before step 2.
 ════════════════════════════════════════════════════════════════════ */}}
 <script>
-function handleCopy(code, affUrl, btn) {
-var done = function() {
- btn.textContent = '✓ Copied!';
- btn.classList.add('copied');
- setTimeout(function() {
-   btn.textContent = 'Copy Code';
-   btn.classList.remove('copied');
- }, 2500);
- if (affUrl) setTimeout(function() { window.open(affUrl, '_blank', 'noopener,noreferrer'); }, 400);
-};
-if (navigator.clipboard && navigator.clipboard.writeText) {
- navigator.clipboard.writeText(code).then(done).catch(function() { fallback(code); done(); });
-} else {
- fallback(code); done();
-}
-}
-function fallback(code) {
-var ta = document.createElement('textarea');
-ta.value = code;
-ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none';
-document.body.appendChild(ta);
-ta.focus(); ta.select();
-try { document.execCommand('copy'); } catch(e) {}
-document.body.removeChild(ta);
+document.querySelectorAll('.ci-codebox').forEach(function(box) {
+  box.addEventListener('click', function() {
+    var code   = box.dataset.code;
+    var affUrl = box.dataset.url;
+    var span   = box.querySelector('.ci-codetext');
+    var btn    = box.querySelector('.ci-copybtn');
+
+    if (!code) return;
+
+    // ── First click: reveal ──────────────────────────────────────
+    if (!box.classList.contains('revealed')) {
+      box.classList.add('revealed');   // CSS removes blur
+      span.textContent = code;         // inject actual code into DOM
+      btn.textContent  = '✓ Copied!';
+      btn.classList.add('copied');
+
+      // copy to clipboard
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).catch(function() { _fbCopy(code); });
+      } else {
+        _fbCopy(code);
+      }
+
+      // open affiliate link
+      if (affUrl) {
+        setTimeout(function() {
+          window.open(affUrl, '_blank', 'noopener,noreferrer');
+        }, 400);
+      }
+
+      // reset button label after 2.5 s
+      setTimeout(function() {
+        btn.textContent = 'Copy Code';
+        btn.classList.remove('copied');
+      }, 2500);
+
+    // ── Subsequent clicks: copy again ────────────────────────────
+    } else {
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).catch(function() { _fbCopy(code); });
+      } else {
+        _fbCopy(code);
+      }
+      setTimeout(function() {
+        btn.textContent = 'Copy Code';
+        btn.classList.remove('copied');
+      }, 2500);
+    }
+  });
+});
+
+// Clipboard fallback for older browsers
+function _fbCopy(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none';
+  document.body.appendChild(ta);
+  ta.focus(); ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
 }
 </script>
 

@@ -1,8 +1,22 @@
 ---
-title: "Walgreens"
+title: "Walgreens Coupon Code 2026 - 40% Off"
 slug: "walgreens"
-description: "Walgreens provides pharmacy services, health products, beauty items, and convenience essentials. Customers can refill prescriptions online, schedule vaccinations, and access wellness services. Walgreens also offers a rewards program with exclusive discounts and digital coupons. Frequent promotions on healthcare and personal care products make it a trusted neighborhood pharmacy for millions of shoppers."
-logo_url: "https://cdn.brandfetch.io/id5zUmVWsF/w/180/h/180/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1667592246711"
+description: "Walgreens Coupon Code 2026. Save with Walgreens coupon codes & pharmacy offers. Find discounts on health & daily essentials."
+
+# ── On-page SEO ──────────────────────────────────────────────────────
+store_h1: "Walgreens Coupon Code 2026 - 40% Off"
+store_title: "Walgreens Coupon Code 2026 - 40% Off"
+store_meta_description: "Walgreens Coupon Code 2026. Save with Walgreens coupon codes & pharmacy offers. Find discounts on health & daily essentials."
+store_keywords: "walgreens coupon code, walgreens promo code, walgreens discounts, walgreens deals 2026, walgreens offers, walgreens sale"
+
+# ── Open Graph / Social sharing ──────────────────────────────────────
+store_og_title: "Walgreens Coupon Code 2026 - 40% Off"
+store_og_description: "Walgreens Coupon Code 2026. Save with Walgreens coupon codes & pharmacy offers. Find discounts on health & daily essentials."
+store_og_image: ""
+store_og_type: "website"
+
+# ── Store data ───────────────────────────────────────────────────────
+logo_url: ""
 website_url: "https://www.walgreens.com/"
 website_aff_url: "https://www.walgreens.com/"
 is_active: true
