@@ -3,6 +3,9 @@ title: "Best Buy Coupon Code 2026 - 15% Off"
 slug: "bestbuy"
 description: "Best Buy Coupon Code 2026. Unlock Best Buy coupon codes & tech deals. Save on laptops, TVs, appliances & gadgets."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Best Buy"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Best Buy Coupon Code 2026 - 15% Off"
 store_title: "Best Buy Coupon Code 2026 - 15% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "bestbuy"
+
 coupons:
   - coupon_id: "1030"
     coupon_title: "10% On Laptops"

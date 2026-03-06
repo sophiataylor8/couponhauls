@@ -3,6 +3,9 @@ title: "Adidas Coupon Code 2026 - 30% Off"
 slug: "adidas"
 description: "Adidas Coupon Code 2026. Unlock Adidas promo codes & sportswear discounts. Shop shoes, apparel & accessories for less."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Adidas"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Adidas Coupon Code 2026 - 30% Off"
 store_title: "Adidas Coupon Code 2026 - 30% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: true
 coupon_count: 2
 store_id: "adidas"
+
 coupons:
   - coupon_id: "1007"
     coupon_title: "15% Off Sports Clothing"

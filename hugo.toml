@@ -18,7 +18,7 @@ title = "CouponHauls - Best Coupon Codes & Deals"
 [params]
   description    = "Find the best coupon codes, promo codes, and deals from top stores. Save money on your online shopping with CouponHauls."
   author         = "CouponHauls"
-  og_image       = "/images/couponhaulslogo.jpg"
+  og_image       = "images/couponhaulslogo.jpg"
   twitter_handle = "@couponhauls"
 
 [menu]

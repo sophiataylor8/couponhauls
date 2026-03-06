@@ -3,6 +3,9 @@ title: "Macys Coupon Code 2026 - 20% Off"
 slug: "macys"
 description: "Macys Coupon Code 2026. Find working Macys promo codes & sale offers. Save on fashion, beauty & home essentials."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Macys"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Macys Coupon Code 2026 - 20% Off"
 store_title: "Macys Coupon Code 2026 - 20% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: true
 coupon_count: 2
 store_id: "macys"
+
 coupons:
   - coupon_id: "1028"
     coupon_title: "Shoes Extra 7%"

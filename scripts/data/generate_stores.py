@@ -8,9 +8,10 @@ Reads scripts/data/stores.csv and scripts/data/coupons.csv and:
   2. Generates data/featured_stores.json (homepage "Trending Stores" section)
   3. Generates data/latest_coupons.json  (homepage "Latest Coupon Codes" section)
 
-New CSV columns supported (all optional — smart fallbacks apply):
+CSV columns supported (all optional — smart fallbacks apply):
+  store_name             → clean display name (e.g. "Amazon") used in UI everywhere
   store_h1               → <h1> heading on the store page
-  store_title            → <title> tag / og:title / twitter:title
+  store_title            → <title> tag / og:title / twitter:title  (SEO full title)
   store_meta_description → <meta description> / og:description / twitter:description
   store_keywords         → <meta keywords>
   store_og_image         → og:image / twitter:image  (full URL to a custom share image)
@@ -71,7 +72,7 @@ _INVALID = {"undefined", "null", "none", "n/a", ""}
 
 
 def pick(row: dict, *keys: str, fallback: str = "") -> str:
-    """Return the first non-empty value found among the given keys (strips header whitespace)."""
+    """Return the first non-empty value found among the given keys."""
     for key in keys:
         val = (row.get(key) or row.get(key.strip()) or "").strip()
         if val.lower() not in _INVALID:
@@ -83,35 +84,44 @@ def pick(row: dict, *keys: str, fallback: str = "") -> str:
 
 def build_markdown(store: dict, coupons: list) -> str:
     # ── Core store fields ─────────────────────────────────────────────────────
-    name     = pick(store, "website_name", "store_name", "name")
-    slug     = pick(store, "slug", "store_slug", "id", "store_id") or slugify(name)
-    desc     = pick(store, "website_desc", "store_description", "description")
-    logo     = pick(store, "logo_url", "store_logo_url")
-    url      = pick(store, "website_url", "store_url")
-    aff_url  = pick(store, "website_aff_url", "store_aff_url") or url
-    active   = bool_field(pick(store, "is_active",        "store_active",   fallback="true"))
-    featured = bool_field(pick(store, "website_featured", "store_featured", fallback="false"))
-    count    = len(coupons)
+    # store_name  = clean UI display name e.g. "Amazon", "Best Buy"
+    # title       = full SEO title  e.g. "Amazon Coupon Code 2026 - 20% Off"
+    # Both fall back to each other so nothing is ever blank.
+    store_name = pick(store, "store_name", "website_name", "name")
+    name       = pick(store, "website_name", "store_name", "name")   # SEO title base
+    slug       = pick(store, "slug", "store_slug", "id", "store_id") or slugify(store_name or name)
+    desc       = pick(store, "website_desc", "store_description", "description")
+    logo       = pick(store, "logo_url", "store_logo_url")
+    url        = pick(store, "website_url", "store_url")
+    aff_url    = pick(store, "website_aff_url", "store_aff_url") or url
+    active     = bool_field(pick(store, "is_active",        "store_active",   fallback="true"))
+    featured   = bool_field(pick(store, "website_featured", "store_featured", fallback="false"))
+    count      = len(coupons)
 
-    # ── SEO fields (4 original new columns) ───────────────────────────────────
-    store_h1       = pick(store, "store_h1")               or name
+    # Extra optional store metadata
+    best_discount = pick(store, "best_discount")
+    verified_date = pick(store, "verified_date")
+    avg_saving    = pick(store, "avg_saving")
+
+    # ── SEO fields ────────────────────────────────────────────────────────────
+    store_h1       = pick(store, "store_h1")               or store_name or name
     store_title    = pick(store, "store_title")            or name
     store_meta     = pick(store, "store_meta_description") or desc
     store_keywords = pick(store, "store_keywords")
 
     # ── OG / Social fields ────────────────────────────────────────────────────
-    # store_og_image → full URL for og:image & twitter:image
-    #                  falls back to the store's logo_url (already a full CDN URL)
-    # store_og_type  → og:type, almost always "website" for store pages
     store_og_image = pick(store, "store_og_image") or logo
     store_og_type  = pick(store, "store_og_type",  fallback="website")
 
     lines = [
         "---",
-        # Hugo built-ins — used by baseof.html {{ block "title" }} etc.
+        # ── Hugo built-ins ────────────────────────────────────────────────────
         f'title: "{safe_yaml(store_title)}"',
         f'slug: "{safe_yaml(slug)}"',
         f'description: "{safe_yaml(store_meta)}"',
+        "",
+        "# ── Display name (used in UI: buttons, footer, cards, search) ───────",
+        f'store_name: "{safe_yaml(store_name or name)}"',
         "",
         "# ── On-page SEO ──────────────────────────────────────────────────────",
         f'store_h1: "{safe_yaml(store_h1)}"',
@@ -134,6 +144,16 @@ def build_markdown(store: dict, coupons: list) -> str:
         f'coupon_count: {count}',
         f'store_id: "{safe_yaml(slug)}"',
     ]
+
+    # Optional stat fields — only written if present in CSV
+    if best_discount:
+        lines.append(f'best_discount: "{safe_yaml(best_discount)}"')
+    if verified_date:
+        lines.append(f'verified_date: "{safe_yaml(verified_date)}"')
+    if avg_saving:
+        lines.append(f'avg_saving: "{safe_yaml(avg_saving)}"')
+
+    lines.append("")
 
     if coupons:
         lines.append("coupons:")
@@ -161,22 +181,24 @@ def build_markdown(store: dict, coupons: list) -> str:
 # ── JSON builders ─────────────────────────────────────────────────────────────
 
 def build_featured_stores(stores: list, coupons_by_store_id: dict) -> list:
-    """Returns stores where website_featured == true."""
+    """Returns stores where website_featured == true, with store_name included."""
     featured = []
     for store in stores:
         if not is_true(pick(store, "website_featured", "store_featured", fallback="false")):
             continue
 
-        name     = pick(store, "website_name", "store_name", "name")
-        slug     = pick(store, "slug", "store_slug", "id", "store_id") or slugify(name)
-        logo     = pick(store, "logo_url", "store_logo_url")
-        url      = pick(store, "website_url", "store_url")
-        aff_url  = pick(store, "website_aff_url", "store_aff_url") or url
-        raw_id   = pick(store, "store_id", "id") or slug
-        count    = len(coupons_by_store_id.get(raw_id, []))
+        store_name = pick(store, "store_name", "website_name", "name")
+        name       = pick(store, "website_name", "store_name", "name")
+        slug       = pick(store, "slug", "store_slug", "id", "store_id") or slugify(store_name or name)
+        logo       = pick(store, "logo_url", "store_logo_url")
+        url        = pick(store, "website_url", "store_url")
+        aff_url    = pick(store, "website_aff_url", "store_aff_url") or url
+        raw_id     = pick(store, "store_id", "id") or slug
+        count      = len(coupons_by_store_id.get(raw_id, []))
 
         featured.append({
-            "website_name":    name,
+            "store_name":      store_name or name,   # clean display name
+            "website_name":    name,                  # full SEO title
             "slug":            slug,
             "logo_url":        logo,
             "website_url":     url,
@@ -188,14 +210,16 @@ def build_featured_stores(stores: list, coupons_by_store_id: dict) -> list:
 
 
 def build_latest_coupons(coupons: list, stores_by_raw_id: dict, limit: int = 12) -> list:
-    """Returns most recent coupons with store info nested."""
+    """Returns most recent coupons with store info nested, including store_name."""
     latest = []
     for c in coupons[:limit]:
         raw_id = pick(c, "store_id", "storeId")
         store  = stores_by_raw_id.get(raw_id, {})
-        name   = pick(store, "website_name", "store_name", "name") if store else pick(c, "store_name")
-        slug   = store.get("slug", slugify(name)) if store else slugify(name)
-        logo   = pick(store, "logo_url", "store_logo_url") if store else ""
+
+        store_name = pick(store, "store_name", "website_name", "name") if store else pick(c, "store_name")
+        name       = pick(store, "website_name", "store_name", "name") if store else pick(c, "store_name")
+        slug       = store.get("slug", slugify(store_name or name)) if store else slugify(store_name or name)
+        logo       = pick(store, "logo_url", "store_logo_url") if store else ""
 
         latest.append({
             "coupon_id":          pick(c, "coupon_id"),
@@ -207,6 +231,7 @@ def build_latest_coupons(coupons: list, stores_by_raw_id: dict, limit: int = 12)
             "coupon_start":       pick(c, "coupon_start"),
             "expires_at":         pick(c, "coupon_expired", "expires_at"),
             "stores": {
+                "store_name":   store_name or name,   # clean display name
                 "website_name": name,
                 "slug":         slug,
                 "logo_url":     logo,
@@ -254,14 +279,24 @@ def main() -> None:
     # ── Column detection report ───────────────────────────────────────────────
     if stores:
         sample_keys = {k.strip() for k in stores[0].keys()}
-        seo_cols = {"store_h1", "store_title", "store_meta_description", "store_keywords"}
-        og_cols  = {"store_og_image", "store_og_type"}
-        missing_seo = seo_cols - sample_keys
-        missing_og  = og_cols  - sample_keys
+        required_cols = {"store_name"}
+        seo_cols      = {"store_h1", "store_title", "store_meta_description", "store_keywords"}
+        og_cols       = {"store_og_image", "store_og_type"}
+
+        missing_required = required_cols - sample_keys
+        missing_seo      = seo_cols - sample_keys
+        missing_og       = og_cols  - sample_keys
+
+        if missing_required:
+            print(f"  ⚠️  store_name column missing! Display names will fall back to website_name/title.")
+        else:
+            print(f"  ✅ store_name column found — clean display names will be used everywhere")
+
         if missing_seo:
             print(f"  ⚠️  SEO columns missing (fallbacks apply): {missing_seo}")
         else:
             print(f"  ✅ SEO columns found: {seo_cols}")
+
         if missing_og:
             print(f"  ℹ️  OG columns missing (logo_url used as og:image fallback): {missing_og}")
         else:
@@ -277,9 +312,10 @@ def main() -> None:
     # ── Build stores lookup ───────────────────────────────────────────────────
     stores_by_raw_id: dict = {}
     for store in stores:
-        name   = pick(store, "website_name", "store_name", "name")
-        slug   = pick(store, "slug", "store_slug", "id", "store_id") or slugify(name)
-        raw_id = pick(store, "store_id", "id") or slug
+        store_name = pick(store, "store_name", "website_name", "name")
+        name       = pick(store, "website_name", "store_name", "name")
+        slug       = pick(store, "slug", "store_slug", "id", "store_id") or slugify(store_name or name)
+        raw_id     = pick(store, "store_id", "id") or slug
         store["slug"] = slug
         stores_by_raw_id[raw_id] = store
 
@@ -290,9 +326,10 @@ def main() -> None:
     written = 0
     skipped = 0
     for store in stores:
-        name   = pick(store, "website_name", "store_name", "name")
-        slug   = store.get("slug") or slugify(name)
-        raw_id = pick(store, "store_id", "id") or slug
+        store_name = pick(store, "store_name", "website_name", "name")
+        name       = pick(store, "website_name", "store_name", "name")
+        slug       = store.get("slug") or slugify(store_name or name)
+        raw_id     = pick(store, "store_id", "id") or slug
 
         if not slug:
             print(f"  ⚠️  Skipping row with no slug or name: {store}")
@@ -304,7 +341,8 @@ def main() -> None:
         md_text = build_markdown(store, store_coupons)
 
         if args.dry_run:
-            print(f"[DRY RUN] → {md_path}  ({len(store_coupons)} coupons)")
+            display = store_name or name
+            print(f"[DRY RUN] → {md_path}  (store_name: {display!r}, {len(store_coupons)} coupons)")
         else:
             md_path.write_text(md_text, encoding="utf-8")
             written += 1
@@ -321,23 +359,19 @@ def main() -> None:
         print(f"⭐  {len(featured)} featured stores → {featured_path}")
 
     # ── 3. Write data/latest_coupons.json ─────────────────────────────────────
-    latest      = build_latest_coupons(coupons, stores_by_raw_id, limit=12)
+    latest      = build_latest_coupons(coupons, stores_by_raw_id)
     latest_path = data_dir / "latest_coupons.json"
 
     if args.dry_run:
-        print(f"\n[DRY RUN] → {latest_path}  ({len(latest)} latest coupons)")
+        print(f"[DRY RUN] → {latest_path}  ({len(latest)} coupons)")
     else:
         latest_path.write_text(json.dumps(latest, indent=2, ensure_ascii=False), encoding="utf-8")
-        print(f"🎫  {len(latest)} latest coupons  → {latest_path}")
+        print(f"🎫  {len(latest)} latest coupons → {latest_path}")
 
-    # ── Summary ───────────────────────────────────────────────────────────────
     if not args.dry_run:
+        print(f"\n✅  Done! {written} store pages written, {skipped} skipped.")
         if skipped:
-            print(f"⚠️  Skipped {skipped} row(s) with no slug.")
-        print(f"\n✅ {written} .md files  → {out_dir}")
-        print("✨ Done! Run: hugo server")
-    else:
-        print(f"\n[DRY RUN] Would write {len(stores) - skipped} .md files to {out_dir}")
+            print(f"   Run with --dry-run to inspect skipped rows.")
 
 
 if __name__ == "__main__":

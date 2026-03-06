@@ -3,6 +3,9 @@ title: "Costco Coupon Code 2026 - 20% Off"
 slug: "costco"
 description: "Costco Coupon Code 2026. Find latest Costco coupon codes, member deals & warehouse savings. Updated offers to maximize your shopping."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Costco"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Costco Coupon Code 2026 - 20% Off"
 store_title: "Costco Coupon Code 2026 - 20% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "costco"
+
 coupons:
   - coupon_id: "1003"
     coupon_title: "$15 Off Orders $100+"

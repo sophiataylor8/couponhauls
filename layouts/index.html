@@ -6,7 +6,7 @@
 {{ $activeStores := where $allStores ".Params.is_active" true }}
 {{ $featuredStores := where $activeStores ".Params.website_featured" true }}
 
-{{/* Count total coupons across all stores — use coupon_count param with nil guard */}}
+{{/* Count total coupons across all stores */}}
 {{ $totalCoupons := 0 }}
 {{ range $activeStores }}
   {{ $totalCoupons = add $totalCoupons (len (.Params.coupons | default slice)) }}
@@ -25,8 +25,9 @@
 </div>
 <div class="mt-8 flex flex-wrap justify-center gap-4">
 <span class="text-primary-200">Popular:</span>
+{{/* Use store_name for clean display in popular links */}}
 {{ range first 4 $featuredStores }}
-<a href="{{ .Permalink }}" class="text-white hover:text-primary-200 transition-colors">{{ .Title }}</a>
+<a href="{{ .Permalink }}" class="text-white hover:text-primary-200 transition-colors">{{ .Params.store_name | default .Title }}</a>
 {{ else }}
 <a href="/walmart/" class="text-white hover:text-primary-200 transition-colors">Walmart</a>
 <a href="/target/" class="text-white hover:text-primary-200 transition-colors">Target</a>
@@ -70,12 +71,14 @@
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 {{ if $featuredStores }}
 {{ range $featuredStores }}
+{{/* Use store_name for avatar initial and card title */}}
+{{ $displayName := .Params.store_name | default .Title }}
 <a href="{{ .Permalink }}" class="coupon-card block hover:scale-105 transition-transform">
 <div class="p-6">
 <div class="w-20 h-20 mx-auto mb-4 rounded-xl shadow flex items-center justify-center store-letter-avatar">
-  <span class="text-2xl font-extrabold text-white uppercase">{{ substr .Title 0 1 }}</span>
+  <span class="text-2xl font-extrabold text-white uppercase">{{ substr $displayName 0 1 }}</span>
 </div>
-<h3 class="text-lg font-semibold text-center mb-2">{{ .Title }}</h3>
+<h3 class="text-lg font-semibold text-center mb-2">{{ $displayName }}</h3>
 <p class="text-sm text-gray-600 text-center mb-3">{{ .Params.coupon_count | default 0 }} Coupons</p>
 <div class="text-center">
 <span class="text-primary-600 font-medium text-sm">View Deals →</span>
@@ -105,6 +108,8 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 {{ range first 6 $activeStores }}
   {{ $store := . }}
+  {{/* Use store_name for the store label on each coupon card */}}
+  {{ $displayName := .Params.store_name | default .Title }}
   {{ $coupons := .Params.coupons }}
   {{ if $coupons }}
   {{ range first 1 $coupons }}
@@ -112,7 +117,7 @@
   <div class="p-6">
   <div class="flex justify-between items-start mb-4">
   <div class="flex-1">
-  <a href="{{ $store.Permalink }}" class="text-primary-600 font-medium text-sm hover:underline mb-1 block">{{ $store.Title }}</a>
+  <a href="{{ $store.Permalink }}" class="text-primary-600 font-medium text-sm hover:underline mb-1 block">{{ $displayName }}</a>
   <h3 class="text-xl font-semibold mb-2 text-gray-900">{{ .coupon_title }}</h3>
   <p class="text-gray-600 text-sm">{{ .coupon_description }}</p>
   </div>

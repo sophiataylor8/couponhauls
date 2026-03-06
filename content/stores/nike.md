@@ -3,6 +3,9 @@ title: "Nike Coupon Code 2026 - 20% Off"
 slug: "nike"
 description: "Nike Coupon Code 2026. Grab Nike coupon codes & sneaker deals. Save on running shoes, activewear & sports gear."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Nike"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Nike Coupon Code 2026 - 20% Off"
 store_title: "Nike Coupon Code 2026 - 20% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "nike"
+
 coupons:
   - coupon_id: "1013"
     coupon_title: "Nike Shoes 10% Off"

@@ -3,6 +3,9 @@ title: "Walmart Coupon Code 2026 - 20% Off"
 slug: "walmart"
 description: "Walmart Coupon Code 2026. Discover Walmart promo codes & rollback deals. Save on groceries, tech & everyday items."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Walmart"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Walmart Coupon Code 2026 - 20% Off"
 store_title: "Walmart Coupon Code 2026 - 20% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "walmart"
+
 coupons:
   - coupon_id: "1023"
     coupon_title: "Walmart Essentials 5%"

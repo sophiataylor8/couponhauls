@@ -3,6 +3,9 @@ title: "Overstock Coupon Code 2026 - 40% Off"
 slug: "overstock"
 description: "Overstock Coupon Code 2026. Save with verified Overstock promo codes & clearance deals on furniture, rugs & home essentials."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Overstock"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Overstock Coupon Code 2026 - 40% Off"
 store_title: "Overstock Coupon Code 2026 - 40% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: true
 coupon_count: 2
 store_id: "overstock"
+
 coupons:
   - coupon_id: "1015"
     coupon_title: "Rugs Extra 5%"

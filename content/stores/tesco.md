@@ -3,6 +3,9 @@ title: "Tesco Coupon Code 2026 - 20% Off"
 slug: "tesco"
 description: "Tesco Coupon Code 2026. Save with Tesco promo codes & grocery deals. Find discounts on food, household & essentials."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Tesco"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Tesco Coupon Code 2026 - 20% Off"
 store_title: "Tesco Coupon Code 2026 - 20% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: true
 coupon_count: 2
 store_id: "tesco"
+
 coupons:
   - coupon_id: "1032"
     coupon_title: "Groceries 7% Off"

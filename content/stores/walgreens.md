@@ -3,6 +3,9 @@ title: "Walgreens Coupon Code 2026 - 40% Off"
 slug: "walgreens"
 description: "Walgreens Coupon Code 2026. Save with Walgreens coupon codes & pharmacy offers. Find discounts on health & daily essentials."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Walgreens"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Walgreens Coupon Code 2026 - 40% Off"
 store_title: "Walgreens Coupon Code 2026 - 40% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "walgreens"
+
 coupons:
   - coupon_id: "1021"
     coupon_title: "10% Off Prescriptions"

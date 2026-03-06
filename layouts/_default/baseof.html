@@ -3,15 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ block "title" . }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
-<meta name="description" content="{{ block "description" . }}{{ .Site.Params.description }}{{ end }}">
+<title>{{- block "title" . }}{{ .Title }} - {{ .Site.Title }}{{ end -}}</title>
+<meta name="description" content="{{- block "description" . }}{{ .Site.Params.description }}{{ end -}}">
 <meta name="author" content="{{ .Site.Params.author }}">
+{{- block "canonical" . }}
 <link rel="canonical" href="{{ .Permalink }}">
-<meta name="robots" content="index, follow">
-<meta name="googlebot" content="index, follow">
-
-{{/* OG tags — store pages override this entire block via {{ define "og_meta" }} in single.html */}}
-{{ block "og_meta" . }}
+{{- end }}
+{{- block "og_meta" . }}
 <meta property="og:title"       content="{{ .Title }}">
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta property="og:type"        content="website">
@@ -22,29 +20,24 @@
 <meta name="twitter:site"        content="{{ .Site.Params.twitter_handle }}">
 <meta name="twitter:title"       content="{{ .Title }}">
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-{{ end }}
-
+{{- end }}
 <link rel="stylesheet" href="/css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-
-{{/* Page-specific stylesheets — store pages inject store-single.css here */}}
-{{ block "extra_head" . }}{{ end }}
-
-{{ block "schema" . }}{{ end }}
-
+{{- block "extra_head" . }}{{ end }}
+{{- block "schema" . }}{{ end }}
 <script>
-window.STORES_DATA = [{{ range where .Site.RegularPages "Section" "stores" }}{{ if and .Params.slug .Params.is_active }}{"n":{{ .Title | jsonify }},"s":{{ .Params.slug | jsonify }},"l":{{ .Params.logo_url | jsonify }},"c":{{ .Params.coupon_count | default 0 }}},{{ end }}{{ end }}];
+window.STORES_DATA = [{{ range where .Site.RegularPages "Section" "stores" }}{{ if and .Params.slug .Params.is_active }}{"n":{{ (.Params.store_name | default .Title) | jsonify }},"t":{{ .Title | jsonify }},"s":{{ .Params.slug | jsonify }},"l":{{ .Params.logo_url | jsonify }},"c":{{ .Params.coupon_count | default 0 }}},{{ end }}{{ end }}];
 </script>
 </head>
 <body class="flex flex-col min-h-screen">
-{{ partial "header.html" . }}
+{{- partial "header.html" . }}
 <main class="flex-grow">
-{{ block "main" . }}{{ end }}
+{{- block "main" . }}{{ end }}
 </main>
-{{ partial "footer.html" . }}
+{{- partial "footer.html" . }}
 <script src="/js/app.js"></script>
 </body>
 </html>

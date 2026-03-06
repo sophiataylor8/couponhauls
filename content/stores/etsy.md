@@ -3,6 +3,9 @@ title: "Etsy Coupon Code 2026 - 30% Off"
 slug: "etsy"
 description: "Etsy Coupon Code 2026. Discover working Etsy coupon codes & handmade deals. Save on unique gifts, crafts & custom items."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Etsy"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Etsy Coupon Code 2026 - 30% Off"
 store_title: "Etsy Coupon Code 2026 - 30% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "etsy"
+
 coupons:
   - coupon_id: "1009"
     coupon_title: "10% Craft Supplies Sale"

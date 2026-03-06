@@ -3,6 +3,9 @@ title: "CVS Coupon Code 2026 - 20% Off"
 slug: "cvs"
 description: "CVS Coupon Code 2026. Find working CVS coupon codes & pharmacy deals. Save on prescriptions, beauty & essentials."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "CVS"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "CVS Coupon Code 2026 - 20% Off"
 store_title: "CVS Coupon Code 2026 - 20% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "cvs"
+
 coupons:
   - coupon_id: "1017"
     coupon_title: "Beauty Deals 8%"

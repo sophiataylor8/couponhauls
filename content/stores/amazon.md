@@ -3,6 +3,9 @@ title: "Amazon Coupon Code 2026 - 20% Off"
 slug: "amazon"
 description: "Amazon Coupon Code 2026. Save more with verified Amazon coupon codes, promo deals & discounts. Updated daily for the best online savings."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Amazon"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Amazon Coupon Code 2026 - 20% Off"
 store_title: "Amazon Coupon Code 2026 - 20% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "amazon"
+
 coupons:
   - coupon_id: "1001"
     coupon_title: "Free Shipping on Orders Over $25"

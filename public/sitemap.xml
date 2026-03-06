@@ -2,59 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:9002/blog/best-stores-for-coupons/</loc>
+    <loc>https://www.couponhauls.com/blog/best-stores-for-coupons/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:9002/blog/</loc>
+    <loc>https://www.couponhauls.com/blog/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:9002/</loc>
+    <loc>https://www.couponhauls.com/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:9002/blog/coupon-stacking-guide/</loc>
+    <loc>https://www.couponhauls.com/blog/coupon-stacking-guide/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:9002/blog/amazon-freebies/</loc>
+    <loc>https://www.couponhauls.com/blog/amazon-freebies/</loc>
     <lastmod>2025-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:9002/undefined/</loc>
+    <loc>https://www.couponhauls.com/about/</loc>
   </url><url>
-    <loc>http://localhost:9002/adidas/</loc>
+    <loc>https://www.couponhauls.com/adidas/</loc>
   </url><url>
-    <loc>http://localhost:9002/amazon/</loc>
+    <loc>https://www.couponhauls.com/affiliate-disclaimer/</loc>
   </url><url>
-    <loc>http://localhost:9002/bestbuy/</loc>
+    <loc>https://www.couponhauls.com/amazon/</loc>
   </url><url>
-    <loc>http://localhost:9002/categories/</loc>
+    <loc>https://www.couponhauls.com/bestbuy/</loc>
   </url><url>
-    <loc>http://localhost:9002/costco/</loc>
+    <loc>https://www.couponhauls.com/categories/</loc>
   </url><url>
-    <loc>http://localhost:9002/cvs/</loc>
+    <loc>https://www.couponhauls.com/contact/</loc>
   </url><url>
-    <loc>http://localhost:9002/etsy/</loc>
+    <loc>https://www.couponhauls.com/costco/</loc>
   </url><url>
-    <loc>http://localhost:9002/homedepot/</loc>
+    <loc>https://www.couponhauls.com/cvs/</loc>
   </url><url>
-    <loc>http://localhost:9002/kohls/</loc>
+    <loc>https://www.couponhauls.com/etsy/</loc>
   </url><url>
-    <loc>http://localhost:9002/macys/</loc>
+    <loc>https://www.couponhauls.com/homedepot/</loc>
   </url><url>
-    <loc>http://localhost:9002/nike/</loc>
+    <loc>https://www.couponhauls.com/kohls/</loc>
   </url><url>
-    <loc>http://localhost:9002/overstock/</loc>
+    <loc>https://www.couponhauls.com/macys/</loc>
   </url><url>
-    <loc>http://localhost:9002/stores/</loc>
+    <loc>https://www.couponhauls.com/nike/</loc>
   </url><url>
-    <loc>http://localhost:9002/tags/</loc>
+    <loc>https://www.couponhauls.com/overstock/</loc>
   </url><url>
-    <loc>http://localhost:9002/target/</loc>
+    <loc>https://www.couponhauls.com/stores/</loc>
   </url><url>
-    <loc>http://localhost:9002/tesco/</loc>
+    <loc>https://www.couponhauls.com/tags/</loc>
   </url><url>
-    <loc>http://localhost:9002/walgreens/</loc>
+    <loc>https://www.couponhauls.com/target/</loc>
   </url><url>
-    <loc>http://localhost:9002/walmart/</loc>
+    <loc>https://www.couponhauls.com/tesco/</loc>
   </url><url>
-    <loc>http://localhost:9002/wayfair/</loc>
+    <loc>https://www.couponhauls.com/walgreens/</loc>
+  </url><url>
+    <loc>https://www.couponhauls.com/walmart/</loc>
+  </url><url>
+    <loc>https://www.couponhauls.com/wayfair/</loc>
   </url>
 </urlset>

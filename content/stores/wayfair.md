@@ -3,6 +3,9 @@ title: "Wayfair Coupon Code 2026 - 20% Off"
 slug: "wayfair"
 description: "Wayfair Coupon Code 2026. Get verified Wayfair coupon codes & furniture deals. Save big on home decor, bedding & more today."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Wayfair"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Wayfair Coupon Code 2026 - 20% Off"
 store_title: "Wayfair Coupon Code 2026 - 20% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "wayfair"
+
 coupons:
   - coupon_id: "1005"
     coupon_title: "5% Off Home Decor"

@@ -3,6 +3,9 @@ title: "Target Coupon Code 2026 - 20% Off"
 slug: "target"
 description: "Target Coupon Code 2026. Get Target promo codes & weekly deals. Save on groceries, fashion, electronics & more."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Target"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Target Coupon Code 2026 - 20% Off"
 store_title: "Target Coupon Code 2026 - 20% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: true
 coupon_count: 2
 store_id: "target"
+
 coupons:
   - coupon_id: "1019"
     coupon_title: "$10 Off Orders $75+"

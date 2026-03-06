@@ -19,13 +19,14 @@
   <li><a href="/stores/" class="hover:text-white transition-colors">All Stores</a></li>
   <li><a href="/blog/" class="hover:text-white transition-colors">Blog</a></li>
   <li><a href="/about/" class="hover:text-white transition-colors">About Us</a></li>
+  <li><a href="/contact/" class="hover:text-white transition-colors">Contact Us</a></li>
   </ul>
   </div>
   <div>
   <h3 class="text-white font-bold text-lg mb-4">Popular Stores</h3>
   <ul class="space-y-2 text-sm">
   {{ range first 6 (where (where .Site.RegularPages "Section" "stores") ".Params.is_active" true) }}
-  <li><a href="{{ .Permalink }}" class="hover:text-white transition-colors">{{ .Title }}</a></li>
+  <li><a href="{{ .Permalink }}" class="hover:text-white transition-colors">{{ .Params.store_name | default .Title }}</a></li>
   {{ end }}
   </ul>
   </div>
@@ -33,8 +34,7 @@
   <h3 class="text-white font-bold text-lg mb-4">Legal</h3>
   <ul class="space-y-2 text-sm">
   <li><a href="/privacy/" class="hover:text-white transition-colors">Privacy Policy</a></li>
-  <li><a href="/terms/" class="hover:text-white transition-colors">Terms of Service</a></li>
-  <li><a href="/contact/" class="hover:text-white transition-colors">Contact Us</a></li>
+  <li><a href="/affiliate-disclaimer/" class="hover:text-white transition-colors">Affiliate Disclaimer</a></li>
   </ul>
   </div>
   </div>

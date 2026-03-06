@@ -3,6 +3,9 @@ title: "Kohls Coupon Code 2026 - 10% Off"
 slug: "kohls"
 description: "Kohls Coupon Code 2026. Get verified Kohls coupon codes & storewide deals. Save on clothing, shoes & home products."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Kohls"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Kohls Coupon Code 2026 - 10% Off"
 store_title: "Kohls Coupon Code 2026 - 10% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 3
 store_id: "kohls"
+
 coupons:
   - coupon_id: "1025"
     coupon_title: "Buy 2 Get 10%"

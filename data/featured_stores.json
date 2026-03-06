@@ -1,5 +1,6 @@
 [
   {
+    "store_name": "Adidas",
     "website_name": "Adidas",
     "slug": "adidas",
     "logo_url": "",
@@ -8,6 +9,7 @@
     "coupon_count": 2
   },
   {
+    "store_name": "Overstock",
     "website_name": "Overstock",
     "slug": "overstock",
     "logo_url": "",
@@ -16,6 +18,7 @@
     "coupon_count": 2
   },
   {
+    "store_name": "Target",
     "website_name": "Target",
     "slug": "target",
     "logo_url": "",
@@ -24,6 +27,7 @@
     "coupon_count": 2
   },
   {
+    "store_name": "Macys",
     "website_name": "Macys",
     "slug": "macys",
     "logo_url": "",
@@ -32,6 +36,7 @@
     "coupon_count": 2
   },
   {
+    "store_name": "Tesco",
     "website_name": "Tesco",
     "slug": "tesco",
     "logo_url": "",

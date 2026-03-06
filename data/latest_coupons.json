@@ -9,6 +9,7 @@
     "coupon_start": "14/02/2026",
     "expires_at": "31/12/2030",
     "stores": {
+      "store_name": "Amazon",
       "website_name": "Amazon",
       "slug": "amazon",
       "logo_url": ""
@@ -24,6 +25,7 @@
     "coupon_start": "14/02/2026",
     "expires_at": "31/12/2030",
     "stores": {
+      "store_name": "Amazon",
       "website_name": "Amazon",
       "slug": "amazon",
       "logo_url": ""
@@ -39,6 +41,7 @@
     "coupon_start": "14/02/2026",
     "expires_at": "31/12/2030",
     "stores": {
+      "store_name": "Costco",
       "website_name": "Costco",
       "slug": "costco",
       "logo_url": ""
@@ -54,6 +57,7 @@
     "coupon_start": "14/02/2026",
     "expires_at": "31/12/2030",
     "stores": {
+      "store_name": "Costco",
       "website_name": "Costco",
       "slug": "costco",
       "logo_url": ""
@@ -69,6 +73,7 @@
     "coupon_start": "14/02/2026",
     "expires_at": "31/12/2030",
     "stores": {
+      "store_name": "Wayfair",
       "website_name": "Wayfair",
       "slug": "wayfair",
       "logo_url": ""
@@ -84,6 +89,7 @@
     "coupon_start": "14/02/2026",
     "expires_at": "31/12/2030",
     "stores": {
+      "store_name": "Wayfair",
       "website_name": "Wayfair",
       "slug": "wayfair",
       "logo_url": ""
@@ -99,6 +105,7 @@
     "coupon_start": "14/02/2026",
     "expires_at": "31/12/2030",
     "stores": {
+      "store_name": "Adidas",
       "website_name": "Adidas",
       "slug": "adidas",
       "logo_url": ""
@@ -114,6 +121,7 @@
     "coupon_start": "14/02/2026",
     "expires_at": "31/12/2030",
     "stores": {
+      "store_name": "Adidas",
       "website_name": "Adidas",
       "slug": "adidas",
       "logo_url": ""
@@ -129,6 +137,7 @@
     "coupon_start": "14/02/2026",
     "expires_at": "31/12/2030",
     "stores": {
+      "store_name": "Etsy",
       "website_name": "Etsy",
       "slug": "etsy",
       "logo_url": ""
@@ -144,6 +153,7 @@
     "coupon_start": "14/02/2026",
     "expires_at": "31/12/2030",
     "stores": {
+      "store_name": "Etsy",
       "website_name": "Etsy",
       "slug": "etsy",
       "logo_url": ""
@@ -159,6 +169,7 @@
     "coupon_start": "14/02/2026",
     "expires_at": "31/12/2030",
     "stores": {
+      "store_name": "Home Depot",
       "website_name": "Home Depot",
       "slug": "homedepot",
       "logo_url": ""
@@ -174,6 +185,7 @@
     "coupon_start": "14/02/2026",
     "expires_at": "31/12/2030",
     "stores": {
+      "store_name": "Home Depot",
       "website_name": "Home Depot",
       "slug": "homedepot",
       "logo_url": ""

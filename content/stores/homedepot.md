@@ -3,6 +3,9 @@ title: "Home Depot Coupon Code 2026 - 20% Off"
 slug: "homedepot"
 description: "Home Depot Coupon Code 2026. Get Home Depot promo codes & tool discounts. Save on appliances, DIY supplies & home upgrades."
 
+# ── Display name (used in UI: buttons, footer, cards, search) ───────
+store_name: "Home Depot"
+
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Home Depot Coupon Code 2026 - 20% Off"
 store_title: "Home Depot Coupon Code 2026 - 20% Off"
@@ -23,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "homedepot"
+
 coupons:
   - coupon_id: "1011"
     coupon_title: "Free Shipping over $50"
