@@ -1,0 +1,385 @@
+{{- define "title" }}{{ .Params.store_title | default .Title }}{{ end -}}
+{{- define "description" }}{{ .Params.store_meta_description | default .Params.description }}{{ end -}}
+
+{{- define "canonical" -}}
+{{- $slug := .Params.slug | default .Params.store_id -}}
+{{- if and $slug (strings.Contains .Site.BaseURL "couponhauls.com") -}}
+{{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
+<link rel="canonical" href="https://{{ $slug }}.{{ $baseHost }}/">
+{{- else -}}
+<link rel="canonical" href="{{ .Permalink }}">
+{{- end -}}
+{{- end -}}
+
+{{- define "extra_head" -}}
+<link rel="stylesheet" href="/css/store-single.css">
+{{- end -}}
+
+{{- define "og_meta" -}}
+{{- $ogTitle  := .Params.store_og_title | default .Params.store_title | default .Title -}}
+{{- $ogDesc   := .Params.store_og_description | default .Params.store_meta_description | default .Params.description | default .Site.Params.description -}}
+{{- $ogType   := .Params.store_og_type | default "website" -}}
+{{- $slug     := .Params.slug | default .Params.store_id -}}
+{{- $ogURL    := .Permalink -}}
+{{- if and $slug (strings.Contains .Site.BaseURL "couponhauls.com") -}}
+{{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
+{{- $ogURL     = printf "https://%s.%s/" $slug $baseHost -}}
+{{- end -}}
+{{- $ogImage  := cond (ne .Params.store_og_image "") .Params.store_og_image (cond (ne .Params.logo_url "") .Params.logo_url (printf "%s%s" .Site.BaseURL .Site.Params.og_image)) -}}
+<meta property="og:title" content="{{ $ogTitle }}">
+<meta property="og:description" content="{{ $ogDesc }}">
+<meta property="og:type" content="{{ $ogType }}">
+<meta property="og:url" content="{{ $ogURL }}">
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:image:alt" content="{{ $ogTitle }} — {{ .Site.Title }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="{{ .Site.Params.twitter_handle }}">
+<meta name="twitter:title" content="{{ $ogTitle }}">
+<meta name="twitter:description" content="{{ $ogDesc }}">
+<meta name="twitter:image" content="{{ $ogImage }}">
+<meta name="twitter:image:alt" content="{{ $ogTitle }} — {{ .Site.Title }}">
+{{- with .Params.store_keywords }}
+<meta name="keywords" content="{{ . }}">
+{{- end -}}
+{{- end -}}
+
+{{- define "schema" -}}
+{{- $storeName   := .Params.store_name | default .Title -}}
+{{- $couponCount := len (.Params.coupons | default slice) -}}
+{{- $bestDiscount := .Params.best_discount | default "" -}}
+{{- $storeURL    := .Params.website_url | default .Permalink -}}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Store","name":{{ $storeName | jsonify }},"url":{{ $storeURL | jsonify }},"description":{{ (.Params.store_meta_description | default .Params.description) | jsonify }},"sameAs":{{ $storeURL | jsonify }},"mainEntityOfPage":{"@type":"WebPage","@id":{{ .Permalink | jsonify }}}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{{ .Site.BaseURL | strings.TrimRight "/" | jsonify }}},{"@type":"ListItem","position":2,"name":"All Stores","item":{{ (printf "%s/stores/" (.Site.BaseURL | strings.TrimRight "/")) | jsonify }}},{"@type":"ListItem","position":3,"name":{{ (printf "%s Coupons" $storeName) | jsonify }},"item":{{ .Permalink | jsonify }}}]}
+</script>
+{{- range .Params.coupons }}{{- if .coupon_code }}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Offer","name":{{ .coupon_title | jsonify }},"description":{{ .coupon_description | jsonify }},"couponCode":{{ .coupon_code | jsonify }},"category":{{ .coupon_type | default "Coupon" | jsonify }},"url":{{ $.Permalink | jsonify }}{{- with .expires_at }},"validThrough":{{ . | jsonify }}{{- end }},"seller":{"@type":"Organization","name":{{ $.Params.store_name | default $.Title | jsonify }}}}
+</script>
+{{- end }}{{- end }}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":{{ (printf "How many %s coupon codes are available right now?" $storeName) | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ (printf "CouponHauls currently lists %d verified %s coupon codes and deals. We verify and update all %s offers daily so you always get working promo codes — no expired duds." $couponCount $storeName $storeName) | jsonify }}}},{"@type":"Question","name":{{ (printf "What is the best %s discount available today?" $storeName) | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ if $bestDiscount }}{{ (printf "The best %s discount right now is %s off. Apply the coupon code at checkout on the %s website to redeem instantly." $storeName $bestDiscount $storeName) | jsonify }}{{ else }}{{ (printf "The top %s deals include percentage-off discounts, free shipping codes, and seasonal promotions. Click any deal to reveal the latest savings." $storeName) | jsonify }}{{ end }}}},{"@type":"Question","name":{{ (printf "How do I use a %s promo code?" $storeName) | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ (printf "To use a %s promo code: 1) Find a deal and click Copy Code. 2) Visit %s and add items to your cart. 3) At checkout, paste the code into the promo field and click Apply." $storeName $storeURL) | jsonify }}}]}
+</script>
+{{- end -}}
+
+{{- define "main" -}}
+{{- $storeCoupons := .Params.coupons | default slice -}}
+{{- $couponCount  := len $storeCoupons -}}
+{{- $storeName    := .Params.store_name | default .Title -}}
+{{- $bestDiscount := .Params.best_discount | default "" -}}
+{{- $storeURL     := .Params.website_url | default .Permalink -}}
+{{- $affURL       := .Params.website_aff_url | default $storeURL -}}
+{{- partial "breadcrumb.html" . -}}
+
+<div class="sp-hero">
+  <div class="sp-hero-inner">
+    <div class="sp-avatar">
+      <span class="sp-avatar-letter">{{ substr $storeName 0 1 }}</span>
+    </div>
+    <div class="sp-hero-body">
+      <div class="sp-hero-top">
+        <div>
+          <h1 class="sp-title">{{- with .Params.store_h1 }}{{ . }}{{- else }}{{ $storeName }} Coupons &amp; Promo Codes{{- end }}</h1>
+          <p class="sp-updated">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Updated {{ now.Format "January 2, 2006" }}
+          </p>
+        </div>
+        {{- if .Params.website_url }}
+        <a href="{{ $affURL }}" target="_blank" rel="noopener noreferrer sponsored" class="sp-visit-btn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+          Shop at {{ $storeName }}
+        </a>
+        {{- end }}
+      </div>
+      <div class="sp-stats">
+        <div class="sp-stat">
+          <span class="sp-stat-n">{{ $couponCount }}</span>
+          <span class="sp-stat-l">Active Deals</span>
+        </div>
+        {{- with .Params.best_discount }}<div class="sp-stat"><span class="sp-stat-n">{{ . }}</span><span class="sp-stat-l">Best Discount</span></div>{{- end }}
+        {{- with .Params.verified_date }}<div class="sp-stat"><span class="sp-stat-n">{{ . }}</span><span class="sp-stat-l">Last Verified</span></div>{{- end }}
+        {{- with .Params.avg_saving }}<div class="sp-stat"><span class="sp-stat-n">{{ . }}</span><span class="sp-stat-l">Avg Saving</span></div>{{- end }}
+      </div>
+      {{- with (.Params.store_meta_description | default .Params.description) }}
+      <p class="sp-desc">{{ . }}</p>
+      {{- end }}
+
+      <!-- Share Bar -->
+      <div class="sp-share">
+        <span class="sp-share-label">Share</span>
+        <a href="https://x.com/intent/tweet?url={{ .Permalink | absURL }}&text={{ .Title | urlize }}"
+           target="_blank" rel="noopener"
+           class="sp-share-btn sp-share-tw">
+          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink | absURL }}"
+           target="_blank" rel="noopener"
+           class="sp-share-btn sp-share-fb">
+          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <button
+          onclick="navigator.clipboard.writeText(window.location.href).then(function(){ var b=this; b.textContent='Copied!'; setTimeout(function(){ b.textContent='Copy Link'; },2000); }.bind(this))"
+          class="sp-share-btn sp-share-copy">
+          <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+          Copy Link
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="sp-body">
+  <div class="sp-container">
+    {{- if $storeCoupons }}
+    <div class="cl-header">
+      <div>
+        <h2 class="cl-title">All {{ $storeName }} Coupon Codes</h2>
+        <p class="cl-sub">{{ $couponCount }} offer{{ if ne $couponCount 1 }}s{{ end }} available &middot; verified {{ now.Format "Jan 2006" }}</p>
+      </div>
+    </div>
+    <div class="cl-list">
+      {{- range $storeCoupons }}
+      <div class="ci {{ if .coupon_code }}ci-code{{ else }}ci-deal{{ end }}">
+        <div class="ci-badge {{ if .coupon_code }}ci-badge-blue{{ else }}ci-badge-green{{ end }}">
+          {{- if .discount_value }}
+          <span class="ci-badge-val">{{ .discount_value }}</span>
+          <span class="ci-badge-type">{{ .coupon_type | default "OFF" }}</span>
+          {{- else }}
+          <span class="ci-badge-icon">🏷️</span>
+          <span class="ci-badge-type">{{ .coupon_type | default "Deal" }}</span>
+          {{- end }}
+        </div>
+        <div class="ci-info">
+          <h3 class="ci-title">{{ .coupon_title }}</h3>
+          {{- with .coupon_description }}<p class="ci-desc">{{ . }}</p>{{- end }}
+          <div class="ci-meta">
+            {{- if .coupon_code }}<span class="ci-tag ci-tag-code">Promo Code</span>{{- else }}<span class="ci-tag ci-tag-deal">No Code Needed</span>{{- end }}
+            {{- with .expires_at }}<span class="ci-exp">Expires {{ . }}</span>{{- else }}<span class="ci-exp ci-exp-ok">✓ No Expiration</span>{{- end }}
+          </div>
+        </div>
+        {{- if .coupon_code }}
+        <div class="ci-codebox" data-code="{{ .coupon_code }}" data-url="{{ .coupon_aff_url | default $affURL }}">
+          <span class="ci-codetext ci-blur">••••••••</span>
+          <button class="ci-copybtn" type="button">Reveal Code</button>
+        </div>
+        {{- else }}
+        <a href="{{ .coupon_aff_url | default $affURL }}" target="_blank" rel="noopener noreferrer sponsored" class="ci-dealbtn">
+          Get Deal
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+        </a>
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+    {{- else }}
+    <div class="cl-empty">
+      <div class="cl-empty-icon">🏷️</div>
+      <h3 class="cl-empty-title">No coupons listed yet</h3>
+      <p class="cl-empty-desc">We update codes every day.</p>
+      <a href="/stores/" class="cl-empty-btn">Browse Other Stores</a>
+    </div>
+    {{- end }}
+
+    <section class="faq" aria-labelledby="faq-h">
+      <h2 id="faq-h" class="faq-title">Frequently Asked Questions</h2>
+      <p class="faq-sub">Common questions about {{ $storeName }} coupon codes</p>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-q">
+            How many {{ $storeName }} coupon codes are available right now?
+            <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-a">
+            <p>CouponHauls currently lists <strong>{{ $couponCount }} verified {{ $storeName }} coupon codes</strong> and deals. We check and refresh all {{ $storeName }} offers daily so you always land on working promo codes — no expired duds, ever.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">
+            What is the best {{ $storeName }} discount available today?
+            <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-a">
+            {{- if $bestDiscount }}
+            <p>The top {{ $storeName }} deal right now takes <strong>{{ $bestDiscount }} off</strong> your order. Apply the coupon code at checkout on the {{ $storeName }} website to redeem instantly.</p>
+            {{- else }}
+            <p>The best current {{ $storeName }} deals include percentage-off discounts, free-shipping codes, and exclusive seasonal promotions. Browse the full list above and click any deal to copy the code or activate the offer automatically.</p>
+            {{- end }}
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">
+            How do I use a {{ $storeName }} promo code?
+            <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-a">
+            <ol class="faq-steps">
+              <li>Find a deal on this page and click <strong>Reveal Code</strong>.</li>
+              <li>Visit <a href="{{ $storeURL }}" target="_blank" rel="noopener noreferrer sponsored">{{ $storeName }}</a> and add items to your cart.</li>
+              <li>At checkout, paste the code into the <em>Promo / Coupon</em> field and click <strong>Apply</strong>.</li>
+              <li>No code? Click <strong>Get Deal</strong> — the discount activates automatically at checkout.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    {{/* ── Related Stores ── */}}
+    {{- $allStores := where .Site.RegularPages "Section" "stores" -}}
+    {{- $activeStores := where $allStores ".Params.is_active" true -}}
+    {{- $otherStores := slice -}}
+    {{- range $activeStores -}}
+      {{- if ne .Permalink $.Permalink -}}
+        {{- $otherStores = $otherStores | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $relatedStores := first 9 $otherStores -}}
+
+    {{ if $relatedStores }}
+    <section class="rs-section">
+      <div class="rs-header">
+        <div>
+          <h2 class="rs-title">Related Stores</h2>
+          <p class="rs-sub">More coupon codes from top retailers</p>
+        </div>
+        <a href="/stores/" class="rs-all">View All Stores →</a>
+      </div>
+      <div class="rs-grid">
+        {{- range $relatedStores }}
+        {{- $rName := .Params.store_name | default .Title -}}
+        {{- $rCount := .Params.coupon_count | default 0 -}}
+        <a href="{{ .Permalink }}" class="rs-card">
+          <div class="rs-avatar">
+            <span>{{ substr $rName 0 1 }}</span>
+          </div>
+          <div class="rs-info">
+            <h3 class="rs-name">{{ $rName }}</h3>
+            <p class="rs-count">{{ $rCount }} Coupons</p>
+          </div>
+          <div class="rs-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 18l6-6-6-6"/></svg>
+          </div>
+        </a>
+        {{- end }}
+      </div>
+    </section>
+    {{ end }}
+
+    {{/* ── Prev / Next Navigation ── */}}
+    {{- $pages := where .Site.RegularPages "Section" "stores" -}}
+    {{- $pages = where $pages ".Params.is_active" true -}}
+    {{- $prev := .PrevInSection -}}
+    {{- $next := .NextInSection -}}
+    {{/* Walk to find active prev */}}
+    {{- range seq 10 -}}
+      {{- if and $prev (not $prev.Params.is_active) -}}
+        {{- $prev = $prev.PrevInSection -}}
+      {{- end -}}
+    {{- end -}}
+    {{- range seq 10 -}}
+      {{- if and $next (not $next.Params.is_active) -}}
+        {{- $next = $next.NextInSection -}}
+      {{- end -}}
+    {{- end -}}
+
+    <div class="pn-nav">
+      <div class="pn-prev">
+        {{- if $prev }}
+        <a href="{{ $prev.Permalink }}" class="pn-btn">
+          <div class="pn-dir">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            Previous Store
+          </div>
+          <div class="pn-name">{{ $prev.Params.store_name | default $prev.Title }}</div>
+        </a>
+        {{- else }}
+        <div class="pn-btn pn-disabled">
+          <div class="pn-dir">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            Previous Store
+          </div>
+          <div class="pn-name">No previous store</div>
+        </div>
+        {{- end }}
+      </div>
+
+      <a href="/stores/" class="pn-home">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9"/></svg>
+        All Stores
+      </a>
+
+      <div class="pn-next">
+        {{- if $next }}
+        <a href="{{ $next.Permalink }}" class="pn-btn pn-btn-right">
+          <div class="pn-dir">
+            Next Store
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="pn-name">{{ $next.Params.store_name | default $next.Title }}</div>
+        </a>
+        {{- else }}
+        <div class="pn-btn pn-btn-right pn-disabled">
+          <div class="pn-dir">
+            Next Store
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="pn-name">No next store</div>
+        </div>
+        {{- end }}
+      </div>
+    </div>
+
+    <div class="sp-back">
+      <a href="/stores/" class="sp-back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Back to All Stores
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<script>
+document.querySelectorAll('.ci-codebox').forEach(function(box) {
+  box.addEventListener('click', function() {
+    var code   = box.dataset.code;
+    var affUrl = box.dataset.url;
+    var span   = box.querySelector('.ci-codetext');
+    var btn    = box.querySelector('.ci-copybtn');
+    if (!code) return;
+    if (!box.classList.contains('revealed')) {
+      box.classList.add('revealed');
+      span.textContent = code;
+      btn.textContent  = '✓ Copied!';
+      btn.classList.add('copied');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).catch(function() { _fbCopy(code); });
+      } else { _fbCopy(code); }
+      if (affUrl) { setTimeout(function() { window.open(affUrl, '_blank', 'noopener,noreferrer'); }, 400); }
+      setTimeout(function() { btn.textContent = 'Copy Code'; btn.classList.remove('copied'); }, 2500);
+    } else {
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).catch(function() { _fbCopy(code); });
+      } else { _fbCopy(code); }
+      setTimeout(function() { btn.textContent = 'Copy Code'; btn.classList.remove('copied'); }, 2500);
+    }
+  });
+});
+function _fbCopy(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
+}
+</script>
+{{- end -}}

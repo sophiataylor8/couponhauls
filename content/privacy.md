@@ -7,7 +7,7 @@ layout: "page"
 
 ## Privacy Policy
 
-*Last updated: March 2025*
+*Last updated: March 2026*
 
 CouponHauls ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at couponhauls.com.
 

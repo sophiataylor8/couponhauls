@@ -7,7 +7,7 @@ layout: "page"
 
 ## Affiliate Disclaimer
 
-*Last updated: March 2025*
+*Last updated: March 2026*
 
 CouponHauls participates in affiliate marketing programs. This page explains what that means and how it affects you.
 
