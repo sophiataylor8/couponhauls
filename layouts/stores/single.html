@@ -12,7 +12,15 @@
 {{- end -}}
 
 {{- define "extra_head" -}}
-<link rel="stylesheet" href="/css/store-single.css">
+{{- with resources.Get "css/store-single.css" }}
+  {{- if hugo.IsDevelopment }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{- else }}
+    {{- with . | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{- end }}
+  {{- end }}
+{{- end }}
 {{- end -}}
 
 {{- define "og_meta" -}}
@@ -273,11 +281,8 @@
     {{ end }}
 
     {{/* ── Prev / Next Navigation ── */}}
-    {{- $pages := where .Site.RegularPages "Section" "stores" -}}
-    {{- $pages = where $pages ".Params.is_active" true -}}
     {{- $prev := .PrevInSection -}}
     {{- $next := .NextInSection -}}
-    {{/* Walk to find active prev */}}
     {{- range seq 10 -}}
       {{- if and $prev (not $prev.Params.is_active) -}}
         {{- $prev = $prev.PrevInSection -}}
