@@ -10,7 +10,7 @@ store_name: "Adidas"
 store_h1: "Adidas Coupon Code 2026 - 30% Off"
 store_title: "Adidas Coupon Code 2026 - 30% Off"
 store_meta_description: "Adidas Coupon Code 2026. Unlock Adidas promo codes & sportswear discounts. Shop shoes, apparel & accessories for less."
-store_keywords: "adidas coupon code, adidas promo code, adidas discounts, adidas deals 2026, adidas offers, adidas sale"
+store_keywords: "adidas coupon code, adidas promo code, adidas discount code, adidas deals, adidas offers, adidas sale, adidas coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
 store_og_title: "Adidas Coupon Code 2026 - 30% Off"

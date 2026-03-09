@@ -10,7 +10,7 @@ store_name: "Costco"
 store_h1: "Costco Coupon Code 2026 - 20% Off"
 store_title: "Costco Coupon Code 2026 - 20% Off"
 store_meta_description: "Costco Coupon Code 2026. Find latest Costco coupon codes, member deals & warehouse savings. Updated offers to maximize your shopping."
-store_keywords: "costco coupon code, costco promo code, costco discounts, costco deals 2026, costco offers, costco sale"
+store_keywords: "costco coupon code, costco promo code, costco discount code, costco deals, costco offers, costco sale, costco coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
 store_og_title: "Costco Coupon Code 2026 - 20% Off"

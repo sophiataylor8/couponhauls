@@ -18,14 +18,24 @@
 <h1 class="text-5xl md:text-6xl font-bold mb-6 text-balance">Save Big with the Best Coupon Codes</h1>
 <p class="text-xl md:text-2xl mb-8 text-primary-100">Discover thousands of verified coupon codes and deals from top stores</p>
 <div class="max-w-2xl mx-auto">
-<form id="searchForm" class="relative" action="/stores/">
-<input type="text" id="storeSearch" name="q" placeholder="Search for stores..." class="w-full px-6 py-4 rounded-full text-gray-900 text-lg focus:outline-none focus:ring-4 focus:ring-primary-300">
-<button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 bg-accent-500 hover:bg-accent-600 text-white px-8 py-3 rounded-full font-semibold transition-colors">Search</button>
-</form>
+  <div class="relative">
+    <input
+      type="text"
+      id="storeSearch"
+      placeholder="Search for stores..."
+      class="w-full px-6 py-4 rounded-full text-gray-900 text-lg focus:outline-none focus:ring-4 focus:ring-primary-300"
+    >
+    <button
+      type="button"
+      onclick="doSearch()"
+      class="absolute right-2 top-1/2 -translate-y-1/2 bg-accent-500 hover:bg-accent-600 text-white px-8 py-3 rounded-full font-semibold transition-colors"
+    >
+      Search
+    </button>
+  </div>
 </div>
 <div class="mt-8 flex flex-wrap justify-center gap-4">
 <span class="text-primary-200">Popular:</span>
-{{/* Use store_name for clean display in popular links */}}
 {{ range first 4 $featuredStores }}
 <a href="{{ .Permalink }}" class="text-white hover:text-primary-200 transition-colors">{{ .Params.store_name | default .Title }}</a>
 {{ else }}
@@ -71,7 +81,6 @@
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 {{ if $featuredStores }}
 {{ range $featuredStores }}
-{{/* Use store_name for avatar initial and card title */}}
 {{ $displayName := .Params.store_name | default .Title }}
 <a href="{{ .Permalink }}" class="coupon-card block hover:scale-105 transition-transform">
 <div class="p-6">
@@ -108,7 +117,6 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 {{ range first 6 $activeStores }}
   {{ $store := . }}
-  {{/* Use store_name for the store label on each coupon card */}}
   {{ $displayName := .Params.store_name | default .Title }}
   {{ $coupons := .Params.coupons }}
   {{ if $coupons }}
@@ -156,16 +164,30 @@
 </div>
 </section>
 
+<!-- ═══════════════════════════════════════════
+     NEVER MISS A DEAL
+════════════════════════════════════════════ -->
 <section class="py-16 bg-gradient-to-r from-primary-600 to-primary-700 text-white">
 <div class="container mx-auto px-4">
 <div class="max-w-3xl mx-auto text-center">
 <h2 class="text-4xl font-bold mb-4">Never Miss a Deal</h2>
 <p class="text-xl mb-8 text-primary-100">Subscribe to get the latest coupon codes delivered to your inbox</p>
-<form id="newsletterForm" class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-<input type="email" id="emailInput" placeholder="Enter your email" required class="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-4 focus:ring-primary-300">
-<button type="submit" class="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors whitespace-nowrap">Subscribe</button>
-</form>
-<p class="text-sm text-primary-200 mt-4">Join 50,000+ subscribers. No spam, ever.</p>
+<div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+  <input
+    type="email"
+    id="emailInput"
+    placeholder="Enter your email"
+    class="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-4 focus:ring-primary-300"
+  >
+  <button
+    type="button"
+    onclick="handleSubscribe()"
+    class="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors whitespace-nowrap"
+  >
+    Subscribe
+  </button>
+</div>
+<p id="subscribe-msg" class="text-sm text-primary-200 mt-4">Join 50,000+ subscribers. No spam, ever.</p>
 </div>
 </div>
 </section>
@@ -185,4 +207,62 @@
 .coupon-card:nth-child(11) .store-letter-avatar { background: #0284c7; }
 .coupon-card:nth-child(12) .store-letter-avatar { background: #7c3aed; }
 </style>
+
+<script>
+/* ── Homepage store search ── */
+function doSearch() {
+  var q = document.getElementById('storeSearch').value.trim();
+  if (!q) {
+    window.location.href = '/stores/';
+    return;
+  }
+  window.location.href = '/stores/?q=' + encodeURIComponent(q);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  /* Enter key on search input */
+  var searchInput = document.getElementById('storeSearch');
+  if (searchInput) {
+    searchInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') doSearch();
+    });
+  }
+
+  /* Enter key on email input */
+  var emailInput = document.getElementById('emailInput');
+  if (emailInput) {
+    emailInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') handleSubscribe();
+    });
+  }
+});
+
+/* ── Newsletter / Google Group subscribe ── */
+function handleSubscribe() {
+  var email = document.getElementById('emailInput').value.trim();
+  var msg   = document.getElementById('subscribe-msg');
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    document.getElementById('emailInput').focus();
+    msg.textContent = '⚠️ Please enter a valid email address.';
+    msg.style.color = '#fde68a';
+    setTimeout(function () {
+      msg.textContent = 'Join 50,000+ subscribers. No spam, ever.';
+      msg.style.color = '';
+    }, 3000);
+    return;
+  }
+
+  window.open('https://groups.google.com/g/couponhauls/', '_blank', 'noopener,noreferrer');
+
+  msg.textContent = '🎉 Opening the subscription page — complete sign-up there!';
+  msg.style.color = '#bbf7d0';
+  document.getElementById('emailInput').value = '';
+  setTimeout(function () {
+    msg.textContent = 'Join 50,000+ subscribers. No spam, ever.';
+    msg.style.color = '';
+  }, 5000);
+}
+</script>
+
 {{ end }}

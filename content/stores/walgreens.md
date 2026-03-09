@@ -10,7 +10,7 @@ store_name: "Walgreens"
 store_h1: "Walgreens Coupon Code 2026 - 40% Off"
 store_title: "Walgreens Coupon Code 2026 - 40% Off"
 store_meta_description: "Walgreens Coupon Code 2026. Save with Walgreens coupon codes & pharmacy offers. Find discounts on health & daily essentials."
-store_keywords: "walgreens coupon code, walgreens promo code, walgreens discounts, walgreens deals 2026, walgreens offers, walgreens sale"
+store_keywords: "walgreens coupon code, walgreens promo code, walgreens discount code, walgreens deals, walgreens offers, walgreens sale, walgreens coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
 store_og_title: "Walgreens Coupon Code 2026 - 40% Off"

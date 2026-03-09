@@ -12,15 +12,756 @@
 {{- end -}}
 
 {{- define "extra_head" -}}
-{{- with resources.Get "css/store-single.css" }}
-  {{- if hugo.IsDevelopment }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}">
-  {{- else }}
-    {{- with . | minify | fingerprint }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-    {{- end }}
-  {{- end }}
-{{- end }}
+<style>
+/* ============================================================
+   store-single — individual store page styles
+   ============================================================ */
+
+/* ── Hero ───────────────────────────────────────────────────────── */
+.sp-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0284c7 100%);
+  padding: 2.5rem 1.5rem;
+}
+.sp-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75rem;
+}
+
+/* Avatar */
+.sp-avatar {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 1rem;
+  background: rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sp-avatar-letter {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* Hero body */
+.sp-hero-body { flex: 1; min-width: 0; }
+.sp-hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.sp-title {
+  font-size: clamp(1.375rem, 3vw, 1.875rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 .25rem;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+}
+.sp-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .8125rem;
+  color: rgba(255,255,255,.55);
+}
+
+/* Visit button */
+.sp-visit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: #fff;
+  color: #0284c7;
+  font-size: .875rem;
+  font-weight: 700;
+  padding: .65rem 1.25rem;
+  border-radius: .625rem;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background .15s, transform .15s;
+}
+.sp-visit-btn:hover { background: #f0f9ff; transform: translateY(-1px); }
+
+/* Stats */
+.sp-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 1.25rem;
+}
+.sp-stat {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: .625rem;
+  padding: .5rem 1rem;
+  min-width: 80px;
+  transition: border-color .15s;
+}
+.sp-stat:hover { border-color: rgba(255,255,255,.3); }
+.sp-stat-n {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+}
+.sp-stat-l {
+  font-size: .6875rem;
+  color: rgba(255,255,255,.55);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-top: .1rem;
+  white-space: nowrap;
+}
+
+/* Description */
+.sp-desc {
+  font-size: .9375rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,.72);
+  margin: 0 0 1rem;
+}
+
+/* Share bar */
+.sp-share {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+.sp-share-label {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: rgba(255,255,255,.55);
+}
+.sp-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .75rem;
+  font-weight: 600;
+  padding: .35rem .85rem;
+  border-radius: 999px;
+  transition: opacity .15s, transform .15s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+.sp-share-btn:hover { opacity: .85; transform: translateY(-1px); }
+.sp-share-tw   { background: #1da1f2; color: #fff; }
+.sp-share-fb   { background: #1877f2; color: #fff; }
+.sp-share-copy { background: rgba(255,255,255,.15); color: #fff; }
+
+/* Mobile hero */
+@media (max-width: 600px) {
+  .sp-hero-inner { flex-direction: column; align-items: center; text-align: center; }
+  .sp-hero-top   { justify-content: center; }
+  .sp-stats      { justify-content: center; }
+  .sp-desc       { text-align: left; }
+}
+
+/* ── Body wrapper ───────────────────────────────────────────────── */
+.sp-body {
+  background: #f1f5f9;
+  min-height: 60vh;
+  padding: 2.5rem 0 4rem;
+}
+.sp-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Coupon list header ─────────────────────────────────────────── */
+.cl-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.cl-title {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 .2rem;
+}
+.cl-sub {
+  font-size: .875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── Coupon list ────────────────────────────────────────────────── */
+.cl-list {
+  display: flex;
+  flex-direction: column;
+  gap: .875rem;
+}
+
+/* Individual coupon item */
+.ci {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: box-shadow .15s, border-color .15s, transform .15s;
+}
+.ci:hover {
+  box-shadow: 0 4px 22px rgba(0,0,0,.07);
+  border-color: #bae6fd;
+  transform: translateY(-1px);
+}
+.ci-code { border-left: 3px solid #0284c7; }
+.ci-deal { border-left: 3px solid #10b981; }
+
+/* Badge */
+.ci-badge {
+  flex-shrink: 0;
+  width: 72px;
+  min-height: 72px;
+  border-radius: .75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: .5rem;
+}
+.ci-badge-blue  { background: #f0f9ff; border: 1.5px solid #bae6fd; }
+.ci-badge-green { background: #f0fdf4; border: 1.5px solid #bbf7d0; }
+.ci-badge-val {
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+.ci-badge-blue  .ci-badge-val { color: #0284c7; }
+.ci-badge-green .ci-badge-val { color: #059669; }
+.ci-badge-type {
+  font-size: .625rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: .125rem;
+}
+.ci-badge-icon { font-size: 1.5rem; }
+
+/* Info */
+.ci-info { flex: 1; min-width: 0; }
+.ci-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 .3rem;
+  line-height: 1.35;
+}
+.ci-desc {
+  font-size: .875rem;
+  color: #64748b;
+  margin: 0 0 .5rem;
+  line-height: 1.5;
+}
+.ci-meta { display: flex; flex-wrap: wrap; gap: .375rem; align-items: center; }
+.ci-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .275rem;
+  font-size: .72rem;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: .2rem .6rem;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #94a3b8;
+}
+.ci-exp {
+  font-size: .72rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+.ci-exp-ok { color: #059669; }
+
+/* CTA */
+.ci-action { flex-shrink: 0; }
+
+/* ── Codebox ── */
+.ci-codebox {
+  display: flex;
+  align-items: stretch;
+  border: 2px dashed #93c5fd;
+  border-radius: .625rem;
+  overflow: hidden;
+  background: #eff6ff;
+  cursor: pointer;
+  flex-shrink: 0;
+  min-width: 180px;
+}
+.ci-codetext {
+  font-family: 'Courier New', monospace;
+  font-size: .9375rem;
+  font-weight: 800;
+  color: #1d4ed8;
+  padding: .6rem .875rem;
+  letter-spacing: .12em;
+  white-space: nowrap;
+  user-select: none;
+  filter: blur(4px);
+  transition: filter .25s ease;
+  pointer-events: none;
+}
+.ci-codebox.revealed .ci-codetext {
+  filter: none;
+  user-select: all;
+  letter-spacing: .08em;
+}
+.ci-copybtn {
+  background: #0284c7;
+  color: #fff;
+  font-size: .8125rem;
+  font-weight: 700;
+  padding: .6rem 1rem;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .15s;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+.ci-copybtn:hover  { background: #0369a1; }
+.ci-copybtn.copied { background: #059669; }
+
+.ci-dealbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: .375rem;
+  background: #059669;
+  color: #fff;
+  font-size: .875rem;
+  font-weight: 700;
+  padding: .65rem 1.25rem;
+  border-radius: .625rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .15s, transform .15s;
+}
+.ci-dealbtn:hover { background: #047857; transform: translateY(-1px); }
+
+/* Mobile coupon */
+@media (max-width: 640px) {
+  .ci         { flex-wrap: wrap; gap: .875rem; }
+  .ci-badge   { width: 60px; min-height: 60px; }
+  .ci-codebox { width: 100%; min-width: unset; }
+  .ci-dealbtn { width: 100%; justify-content: center; }
+}
+
+/* ── Empty state ────────────────────────────────────────────────── */
+.cl-empty {
+  text-align: center;
+  padding: 5rem 1rem;
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 1rem;
+  color: #64748b;
+}
+.cl-empty-icon  { font-size: 3.5rem; margin-bottom: 1rem; }
+.cl-empty-title { font-size: 1.375rem; font-weight: 700; color: #0f172a; margin: 0 0 .5rem; }
+.cl-empty-desc  { margin: 0 0 1.5rem; max-width: 34ch; margin-left: auto; margin-right: auto; }
+.cl-empty-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #0284c7;
+  color: #fff;
+  font-weight: 700;
+  padding: .7rem 1.5rem;
+  border-radius: .625rem;
+  text-decoration: none;
+  transition: background .15s;
+}
+.cl-empty-btn:hover { background: #0369a1; }
+
+/* ── Store Description ──────────────────────────────────────────── */
+.sd-section {
+  margin-top: 2.5rem;
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 1.25rem;
+  padding: 2rem 2rem 1.75rem;
+}
+.sd-title {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 1rem;
+  letter-spacing: -.02em;
+  padding-bottom: .75rem;
+  border-bottom: 2px solid #f1f5f9;
+}
+.sd-body {
+  font-size: .9375rem;
+  line-height: 1.8;
+  color: #475569;
+}
+.sd-body p { margin: 0 0 .875rem; }
+.sd-body p:last-child { margin-bottom: 0; }
+.sd-body a {
+  color: #0284c7;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1.5px solid #bae6fd;
+  transition: color .12s;
+}
+.sd-body a:hover { color: #0369a1; }
+@media (max-width: 600px) {
+  .sd-section { padding: 1.25rem 1rem 1rem; }
+}
+
+/* ── FAQ ────────────────────────────────────────────────────────── */
+.faq {
+  margin-top: 2.5rem;
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 1.25rem;
+  padding: 2rem 2rem 1.5rem;
+}
+.faq-title {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 .25rem;
+  letter-spacing: -.02em;
+}
+.faq-sub {
+  font-size: .875rem;
+  color: #64748b;
+  margin: 0 0 1.5rem;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.faq-item {
+  border: 1.5px solid #e2e8f0;
+  border-radius: .75rem;
+  background: #f8fafc;
+  overflow: hidden;
+  transition: border-color .15s;
+}
+.faq-item[open] {
+  border-color: #bae6fd;
+  background: #fff;
+}
+.faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  font-size: .9375rem;
+  font-weight: 600;
+  color: #0f172a;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: color .12s;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q:hover { color: #0284c7; }
+.faq-item[open] .faq-q { color: #0284c7; }
+.faq-chev {
+  flex-shrink: 0;
+  color: #94a3b8;
+  transition: transform .2s ease, color .15s;
+}
+.faq-item[open] .faq-chev { transform: rotate(180deg); color: #0284c7; }
+.faq-a {
+  padding: 0 1.25rem 1.1rem;
+  animation: faqIn .18s ease;
+}
+.faq-a p {
+  font-size: .9375rem;
+  line-height: 1.75;
+  color: #475569;
+  margin: 0;
+}
+.faq-a a {
+  color: #0284c7;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1.5px solid #bae6fd;
+  transition: color .12s;
+}
+.faq-a a:hover { color: #0369a1; }
+.faq-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: fs;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.faq-steps li {
+  counter-increment: fs;
+  font-size: .9375rem;
+  line-height: 1.65;
+  color: #475569;
+  padding-left: 2.1rem;
+  position: relative;
+}
+.faq-steps li::before {
+  content: counter(fs);
+  position: absolute;
+  left: 0;
+  top: .1em;
+  width: 1.35rem;
+  height: 1.35rem;
+  background: #0284c7;
+  color: #fff;
+  font-size: .6875rem;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+@keyframes faqIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 600px) {
+  .faq   { padding: 1.25rem 1rem 1rem; }
+  .faq-q { font-size: .875rem; padding: .875rem 1rem; }
+  .faq-a { padding: 0 1rem 1rem; }
+}
+
+/* ── Related Stores ─────────────────────────────────────────────── */
+.rs-section {
+  margin-top: 2.5rem;
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 1.25rem;
+  padding: 1.75rem 2rem;
+}
+.rs-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.rs-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 .2rem;
+}
+.rs-sub {
+  font-size: .875rem;
+  color: #64748b;
+  margin: 0;
+}
+.rs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: .75rem;
+}
+.rs-card {
+  display: flex;
+  align-items: center;
+  gap: .875rem;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: .875rem;
+  padding: .875rem 1rem;
+  text-decoration: none;
+  transition: border-color .15s, box-shadow .15s, transform .15s;
+}
+.rs-card:hover {
+  border-color: #bae6fd;
+  box-shadow: 0 2px 12px rgba(0,0,0,.07);
+  transform: translateY(-1px);
+}
+.rs-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: .5rem;
+  background: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.rs-avatar span {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.rs-info { flex: 1; min-width: 0; }
+.rs-name {
+  font-size: .9rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 .125rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rs-card:hover .rs-name { color: #0284c7; }
+.rs-count {
+  font-size: .75rem;
+  color: #94a3b8;
+  margin: 0;
+}
+.rs-arrow { color: #cbd5e1; flex-shrink: 0; }
+.rs-card:hover .rs-arrow { color: #0284c7; }
+
+/* ── Prev / Next navigation ─────────────────────────────────────── */
+.pn-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+.pn-prev, .pn-next { flex: 1; min-width: 0; }
+.pn-next { text-align: right; }
+.pn-btn {
+  display: inline-flex;
+  flex-direction: column;
+  gap: .2rem;
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: .875rem;
+  padding: .875rem 1.125rem;
+  text-decoration: none;
+  transition: border-color .15s, box-shadow .15s;
+  max-width: 220px;
+}
+.pn-btn:hover { border-color: #bae6fd; box-shadow: 0 2px 12px rgba(0,0,0,.07); }
+.pn-btn-right { margin-left: auto; text-align: right; }
+.pn-disabled { opacity: .45; pointer-events: none; }
+.pn-dir {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #94a3b8;
+}
+.pn-btn-right .pn-dir { justify-content: flex-end; }
+.pn-name {
+  font-size: .875rem;
+  font-weight: 600;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pn-btn:hover .pn-name { color: #0284c7; }
+
+/* ── Back link ──────────────────────────────────────────────────── */
+.sp-back { margin-top: 2rem; }
+.sp-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .375rem;
+  color: #64748b;
+  font-size: .875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .12s;
+}
+.sp-back-link:hover { color: #0284c7; }
+
+/* ── Breadcrumb (from partials/breadcrumb.html) ─────────────────── */
+.breadcrumb-bar {
+  background: #fff;
+  border-bottom: 1px solid #f1f5f9;
+}
+.breadcrumb-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .125rem;
+  list-style: none;
+  padding: .75rem 0;
+  margin: 0;
+  font-size: .8125rem;
+}
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: .125rem;
+}
+.breadcrumb-link {
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  padding: .125rem .25rem;
+  border-radius: .25rem;
+  transition: color .12s, background .12s;
+}
+.breadcrumb-link:hover {
+  color: #0284c7;
+  background: #f0f9ff;
+}
+.breadcrumb-sep {
+  width: 14px;
+  height: 14px;
+  color: #cbd5e1;
+  flex-shrink: 0;
+  margin: 0 .1rem;
+}
+.breadcrumb-current {
+  color: #0f172a;
+  font-weight: 600;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: bottom;
+}
+@media (min-width: 640px) {
+  .breadcrumb-current { max-width: 420px; }
+}
+</style>
 {{- end -}}
 
 {{- define "og_meta" -}}
@@ -169,13 +910,13 @@
           <h3 class="ci-title">{{ .coupon_title }}</h3>
           {{- with .coupon_description }}<p class="ci-desc">{{ . }}</p>{{- end }}
           <div class="ci-meta">
-            {{- if .coupon_code }}<span class="ci-tag ci-tag-code">Promo Code</span>{{- else }}<span class="ci-tag ci-tag-deal">No Code Needed</span>{{- end }}
+            {{- if .coupon_code }}<span class="ci-tag">Promo Code</span>{{- else }}<span class="ci-tag">No Code Needed</span>{{- end }}
             {{- with .expires_at }}<span class="ci-exp">Expires {{ . }}</span>{{- else }}<span class="ci-exp ci-exp-ok">✓ No Expiration</span>{{- end }}
           </div>
         </div>
         {{- if .coupon_code }}
         <div class="ci-codebox" data-code="{{ .coupon_code }}" data-url="{{ .coupon_aff_url | default $affURL }}">
-          <span class="ci-codetext ci-blur">••••••••</span>
+          <span class="ci-codetext">••••••••</span>
           <button class="ci-copybtn" type="button">Reveal Code</button>
         </div>
         {{- else }}
@@ -194,6 +935,14 @@
       <p class="cl-empty-desc">We update codes every day.</p>
       <a href="/stores/" class="cl-empty-btn">Browse Other Stores</a>
     </div>
+    {{- end }}
+
+    {{/* ── Store Description ── */}}
+    {{- with .Content }}
+    <section class="sd-section">
+      <h2 class="sd-title">{{ $storeName }} Details</h2>
+      <div class="sd-body">{{ . }}</div>
+    </section>
     {{- end }}
 
     <section class="faq" aria-labelledby="faq-h">
@@ -253,11 +1002,8 @@
     {{ if $relatedStores }}
     <section class="rs-section">
       <div class="rs-header">
-        <div>
-          <h2 class="rs-title">Related Stores</h2>
-          <p class="rs-sub">More coupon codes from top retailers</p>
-        </div>
-        <a href="/stores/" class="rs-all">View All Stores →</a>
+        <h2 class="rs-title">Related Stores</h2>
+        <p class="rs-sub">More coupon codes from top retailers</p>
       </div>
       <div class="rs-grid">
         {{- range $relatedStores }}
@@ -315,11 +1061,6 @@
         {{- end }}
       </div>
 
-      <a href="/stores/" class="pn-home">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9"/></svg>
-        All Stores
-      </a>
-
       <div class="pn-next">
         {{- if $next }}
         <a href="{{ $next.Permalink }}" class="pn-btn pn-btn-right">
@@ -368,7 +1109,7 @@ document.querySelectorAll('.ci-codebox').forEach(function(box) {
         navigator.clipboard.writeText(code).catch(function() { _fbCopy(code); });
       } else { _fbCopy(code); }
       if (affUrl) { setTimeout(function() { window.open(affUrl, '_blank', 'noopener,noreferrer'); }, 400); }
-      setTimeout(function() { btn.textContent = 'Copy Code'; btn.classList.remove('copied'); }, 2500);
+      setTimeout(function() { btn.textContent = 'Reveal Code'; btn.classList.remove('copied'); }, 2500);
     } else {
       btn.textContent = '✓ Copied!';
       btn.classList.add('copied');

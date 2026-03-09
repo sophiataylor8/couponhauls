@@ -10,7 +10,7 @@ store_name: "Tesco"
 store_h1: "Tesco Coupon Code 2026 - 20% Off"
 store_title: "Tesco Coupon Code 2026 - 20% Off"
 store_meta_description: "Tesco Coupon Code 2026. Save with Tesco promo codes & grocery deals. Find discounts on food, household & essentials."
-store_keywords: "tesco coupon code, tesco promo code, tesco discounts, tesco deals 2026, tesco offers, tesco sale"
+store_keywords: "tesco coupon code, tesco promo code, tesco discount code, tesco deals, tesco offers, tesco sale, tesco coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
 store_og_title: "Tesco Coupon Code 2026 - 20% Off"

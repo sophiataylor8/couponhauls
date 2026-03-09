@@ -10,7 +10,7 @@ store_name: "Nike"
 store_h1: "Nike Coupon Code 2026 - 20% Off"
 store_title: "Nike Coupon Code 2026 - 20% Off"
 store_meta_description: "Nike Coupon Code 2026. Grab Nike coupon codes & sneaker deals. Save on running shoes, activewear & sports gear."
-store_keywords: "nike coupon code, nike promo code, nike discounts, nike deals 2026, nike offers, nike sale"
+store_keywords: "nike coupon code, nike promo code, nike discount code, nike deals, nike offers, nike sale, nike coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
 store_og_title: "Nike Coupon Code 2026 - 20% Off"

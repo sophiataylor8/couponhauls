@@ -10,7 +10,7 @@ store_name: "Kohls"
 store_h1: "Kohls Coupon Code 2026 - 10% Off"
 store_title: "Kohls Coupon Code 2026 - 10% Off"
 store_meta_description: "Kohls Coupon Code 2026. Get verified Kohls coupon codes & storewide deals. Save on clothing, shoes & home products."
-store_keywords: "kohls coupon code, kohls promo code, kohls discounts, kohls deals 2026, kohls offers, kohls sale"
+store_keywords: "kohls coupon code, kohls promo code, kohls discount code, kohls deals, kohls offers, kohls sale, kohls coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
 store_og_title: "Kohls Coupon Code 2026 - 10% Off"
@@ -54,4 +54,4 @@ coupons:
     expires_at: "31/12/2030"
 ---
 
-Kohl's is a department store known for affordable fashion, home goods, and beauty products. Customers can shop popular brands as well as exclusive collections. Kohl’s Cash rewards program allows shoppers to earn additional savings during promotional periods. With frequent discounts, clearance events, and seasonal sales, Kohl’s offers strong value for budget-conscious families.
+Kohl's is a department store known for affordable fashion, home goods, and beauty products. Customers can shop popular brands as well as exclusive collections. Kohl�s Cash rewards program allows shoppers to earn additional savings during promotional periods. With frequent discounts, clearance events, and seasonal sales, Kohl�s offers strong value for budget-conscious families.

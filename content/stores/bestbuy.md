@@ -10,7 +10,7 @@ store_name: "Best Buy"
 store_h1: "Best Buy Coupon Code 2026 - 15% Off"
 store_title: "Best Buy Coupon Code 2026 - 15% Off"
 store_meta_description: "Best Buy Coupon Code 2026. Unlock Best Buy coupon codes & tech deals. Save on laptops, TVs, appliances & gadgets."
-store_keywords: "best buy coupon code, best buy promo code, best buy discounts, best buy deals 2026, best buy offers, best buy sale"
+store_keywords: "best buy coupon code, best buy promo code, best buy discount code, best buy deals, best buy offers, best buy sale, best buy coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
 store_og_title: "Best Buy Coupon Code 2026 - 15% Off"

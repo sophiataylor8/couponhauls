@@ -10,7 +10,7 @@ store_name: "CVS"
 store_h1: "CVS Coupon Code 2026 - 20% Off"
 store_title: "CVS Coupon Code 2026 - 20% Off"
 store_meta_description: "CVS Coupon Code 2026. Find working CVS coupon codes & pharmacy deals. Save on prescriptions, beauty & essentials."
-store_keywords: "cvs coupon code, cvs promo code, cvs discounts, cvs deals 2026, cvs offers, cvs sale"
+store_keywords: "cvs coupon code, cvs promo code, cvs discount code, cvs deals, cvs offers, cvs pharmacy coupons, cvs coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
 store_og_title: "CVS Coupon Code 2026 - 20% Off"
@@ -24,7 +24,7 @@ website_url: "https://www.cvs.com/"
 website_aff_url: "https://www.cvs.com/"
 is_active: true
 website_featured: false
-coupon_count: 2
+coupon_count: 4
 store_id: "cvs"
 
 coupons:
@@ -44,6 +44,30 @@ coupons:
     coupon_type: "Coupon"
     coupon_start: "14/02/2026"
     expires_at: "31/12/2030"
+  - coupon_id: "1058"
+    coupon_title: "CVS ExtraCare Rewards Deals"
+    coupon_code: ""
+    coupon_description: "Join CVS ExtraCare to earn ExtraBucks rewards and access exclusive discounts on health, beauty, and everyday essentials."
+    coupon_aff_url: "https://www.cvs.com/"
+    coupon_type: "Deal"
+    coupon_start: "09/03/2026"
+    expires_at: "31/12/2026"
+  - coupon_id: "1059"
+    coupon_title: "CVS Weekly Ad Pharmacy & Beauty Deals"
+    coupon_code: ""
+    coupon_description: "Shop the CVS weekly ad for limited-time deals on pharmacy items, beauty products, snacks, and household essentials."
+    coupon_aff_url: "https://www.cvs.com/"
+    coupon_type: "Deal"
+    coupon_start: "09/03/2026"
+    expires_at: "31/12/2026"
 ---
 
-CVS Pharmacy is a leading pharmacy and retail store offering prescription medications, health products, beauty items, snacks, and household essentials. CVS provides convenient in-store and online shopping options, along with health services such as vaccinations and wellness screenings. Customers can join the ExtraCare rewards program to earn discounts and personalized coupons. With frequent promotions and savings events, CVS makes healthcare and everyday essentials more affordable.
+CVS is one of the largest pharmacy and retail chains in the United States, offering a wide range of health, wellness, and everyday products. The company operates thousands of stores nationwide and provides convenient access to pharmacy services, over-the-counter medications, beauty products, and household essentials.
+
+Many customers visit CVS for prescription services and health products, but the store also offers a large variety of retail items. Shoppers can find vitamins, skincare products, cosmetics, snacks, beverages, and basic grocery items. CVS stores also carry personal care products, cleaning supplies, and seasonal merchandise.
+
+The brand is well known for its ExtraCare rewards program, which allows customers to earn points and receive personalized discounts. Combined with weekly promotions and digital coupons, these rewards programs help shoppers save money on everyday purchases.
+
+CVS also provides online shopping options that allow customers to browse products and place orders from home. Items can be delivered directly to customers or picked up at nearby stores. This flexibility makes CVS a convenient option for quick purchases and health-related needs.
+
+On this page, you can discover the latest CVS coupon codes and deals that help shoppers save on pharmacy products, beauty items, and household essentials. Applying these coupons during checkout can reduce the cost of your purchase and make everyday shopping more affordable.

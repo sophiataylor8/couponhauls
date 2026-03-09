@@ -17,7 +17,7 @@
       {{ if .Description }}
       <p class="text-xl text-gray-600">{{ .Description }}</p>
       {{ else }}
-      <p class="text-xl text-gray-600">Browse {{ len $validPages }} stores and find the best coupon codes & deals</p>
+      <p class="text-xl text-gray-600">Browse {{ len $validPages }} stores and find the best coupon codes &amp; deals</p>
       {{ end }}
     </div>
 
@@ -45,22 +45,40 @@
 </section>
 
 <script>
-const filterInput = document.getElementById('storeFilterInput');
-const grid = document.getElementById('storesGrid');
-const noResults = document.getElementById('noResults');
-if (filterInput && grid) {
-  filterInput.addEventListener('input', function() {
-    const q = this.value.toLowerCase().trim();
-    let visible = 0;
-    grid.querySelectorAll('a').forEach(card => {
-      const name = card.querySelector('h3')?.textContent.toLowerCase() || '';
-      const show = !q || name.includes(q);
+(function () {
+  var filterInput = document.getElementById('storeFilterInput');
+  var grid        = document.getElementById('storesGrid');
+  var noResults   = document.getElementById('noResults');
+
+  function filterStores(q) {
+    q = (q || '').toLowerCase().trim();
+    var visible = 0;
+    grid.querySelectorAll('a').forEach(function (card) {
+      var name = (card.querySelector('h3') ? card.querySelector('h3').textContent : '').toLowerCase();
+      var show = !q || name.includes(q);
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
     noResults.classList.toggle('hidden', visible > 0);
-  });
-}
+  }
+
+  /* Live typing filter */
+  if (filterInput) {
+    filterInput.addEventListener('input', function () {
+      filterStores(this.value);
+    });
+  }
+
+  /* ── Read ?q= param from homepage search and auto-filter ── */
+  var params = new URLSearchParams(window.location.search);
+  var q      = params.get('q');
+  if (q && filterInput) {
+    filterInput.value = q;
+    filterStores(q);
+    /* Scroll the filter input into view so the user sees results */
+    filterInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+})();
 </script>
 
 {{ end }}

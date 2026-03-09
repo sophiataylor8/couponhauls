@@ -10,7 +10,7 @@ store_name: "Target"
 store_h1: "Target Coupon Code 2026 - 20% Off"
 store_title: "Target Coupon Code 2026 - 20% Off"
 store_meta_description: "Target Coupon Code 2026. Get Target promo codes & weekly deals. Save on groceries, fashion, electronics & more."
-store_keywords: "target coupon code, target promo code, target discounts, target deals 2026, target offers, target sale"
+store_keywords: "target coupon code, target promo code, target discount code, target deals, target offers, target sale, target coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
 store_og_title: "Target Coupon Code 2026 - 20% Off"
@@ -46,4 +46,4 @@ coupons:
     expires_at: "31/12/2030"
 ---
 
-Target is a popular retail chain offering stylish and affordable products across categories including fashion, home décor, electronics, groceries, and beauty. Known for designer collaborations and exclusive in-house brands, Target combines value with trend-forward design. Customers benefit from weekly deals, clearance discounts, and the Target Circle rewards program. Both online and in-store shopping options make Target a convenient destination for everyday needs.
+Target is a popular retail chain offering stylish and affordable products across categories including fashion, home d�cor, electronics, groceries, and beauty. Known for designer collaborations and exclusive in-house brands, Target combines value with trend-forward design. Customers benefit from weekly deals, clearance discounts, and the Target Circle rewards program. Both online and in-store shopping options make Target a convenient destination for everyday needs.

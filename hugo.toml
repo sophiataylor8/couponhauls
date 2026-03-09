@@ -1,18 +1,19 @@
-baseURL = "https://www.couponhauls.com/"
+baseURL      = "https://www.couponhauls.com/"
 languageCode = "en-us"
-title = "CouponHauls - Best Coupon Codes & Deals"
+title        = "CouponHauls.com - Best Coupon Code, Deals"
 
-# THIS IS THE KEY LINE — removes /stores/ from all store URLs
-# /stores/target/  →  /target/
-# Each store lives at  amazon.couponhauls.com  (not /stores/amazon/)
-# Store content pages are still generated under content/stores/<slug>.md
-# but their URLs are rewritten via the [permalinks] section below.
+# Disable taxonomy & term pages (no /tags/ or /categories/ pages needed)
+disableKinds = ["taxonomy", "term"]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Permalink rewrite:  /stores/<slug>/  →  /<slug>/
+# Each store lives at amazon.couponhauls.com (not /stores/amazon/)
+# Store .md files stay in content/stores/ but URLs are flattened here.
 # On your CDN/host (Netlify, Cloudflare, etc.) you need wildcard subdomain
 # routing pointing to the same build output. See README for details.
 # ─────────────────────────────────────────────────────────────────────────────
 
 [permalinks]
-  # /stores/<slug>/ → /<slug>/   (subdomain-friendly flat path)
   stores = "/:slug/"
 
 [params]
