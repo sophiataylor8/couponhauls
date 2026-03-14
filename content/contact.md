@@ -11,7 +11,7 @@ Have a question, found a broken coupon, or want to work with us? We'd love to he
 
 ## How to Reach Us
 
-**Email:** hello@couponhauls.com
+**Email:** info@couponhauls.com
 
 We typically respond within 1–2 business days. Please include as much detail as possible so we can help you quickly.
 

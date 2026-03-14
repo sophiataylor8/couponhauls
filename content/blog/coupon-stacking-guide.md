@@ -2,7 +2,7 @@
 title: "Coupon Stacking 101: How to Save 50% or More on Every Purchase"
 slug: "coupon-stacking-guide"
 description: "Learn the art of coupon stacking — combining promo codes, cashback apps, store rewards, and sale prices to maximize your savings on every online purchase."
-date: 2025-02-08
+date: 2026-02-08
 category: "Savings Tips"
 emoji: "🏷️"
 read_time: "7"

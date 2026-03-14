@@ -1,8 +1,8 @@
 ---
-title: "10 Best Stores for Coupon Codes in 2025 (Biggest Discounts Guaranteed)"
+title: "10 Best Stores for Coupon Codes in 2026 (Biggest Discounts Guaranteed)"
 slug: "best-stores-for-coupons"
 description: "Not all stores are created equal when it comes to coupons. These 10 retailers consistently offer the deepest discounts and most reliable promo codes — saving you hundreds every year."
-date: 2025-02-15
+date: 2026-02-15
 category: "Store Guides"
 emoji: "🏪"
 read_time: "5"
