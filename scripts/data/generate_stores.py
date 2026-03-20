@@ -43,6 +43,7 @@ def slugify(text: str) -> str:
 
 
 def safe_yaml(value: str) -> str:
+    """Escape a string for use inside double-quoted YAML values."""
     return (value or "").replace("\\", "\\\\").replace('"', '\\"')
 
 
@@ -71,10 +72,38 @@ def read_csv(path: Path) -> list:
 _INVALID = {"undefined", "null", "none", "n/a", ""}
 
 
+def clean_str(value: str) -> str:
+    """
+    Strip leading/trailing whitespace AND any surrounding quote characters
+    that some CSV editors preserve as literal characters in the cell value.
+
+    Examples:
+        '"Amazon"'  → 'Amazon'
+        "'Amazon'"  → 'Amazon'
+        'Amazon'    → 'Amazon'   (unchanged)
+    """
+    value = (value or "").strip()
+    # Remove a matching pair of surrounding double-quotes
+    if len(value) >= 2 and value[0] == '"' and value[-1] == '"':
+        value = value[1:-1].strip()
+    # Remove a matching pair of surrounding single-quotes
+    elif len(value) >= 2 and value[0] == "'" and value[-1] == "'":
+        value = value[1:-1].strip()
+    return value
+
+
 def pick(row: dict, *keys: str, fallback: str = "") -> str:
-    """Return the first non-empty value found among the given keys."""
+    """
+    Return the first non-empty, clean value found among the given keys.
+
+    'Clean' means:
+      • leading/trailing whitespace removed
+      • surrounding quote characters (added by some CSV editors) stripped
+      • values matching _INVALID sentinel words skipped
+    """
     for key in keys:
-        val = (row.get(key) or row.get(key.strip()) or "").strip()
+        raw = row.get(key) or row.get(key.strip()) or ""
+        val = clean_str(raw)
         if val.lower() not in _INVALID:
             return val
     return fallback
@@ -83,12 +112,8 @@ def pick(row: dict, *keys: str, fallback: str = "") -> str:
 # ── Markdown builder ──────────────────────────────────────────────────────────
 
 def build_markdown(store: dict, coupons: list) -> str:
-    # ── Core store fields ─────────────────────────────────────────────────────
-    # store_name  = clean UI display name e.g. "Amazon", "Best Buy"
-    # title       = full SEO title  e.g. "Amazon Coupon Code 2026 - 20% Off"
-    # Both fall back to each other so nothing is ever blank.
     store_name = pick(store, "store_name", "website_name", "name")
-    name       = pick(store, "website_name", "store_name", "name")   # SEO title base
+    name       = pick(store, "website_name", "store_name", "name")
     slug       = pick(store, "slug", "store_slug", "id", "store_id") or slugify(store_name or name)
     desc       = pick(store, "website_desc", "store_description", "description")
     logo       = pick(store, "logo_url", "store_logo_url")
@@ -98,24 +123,20 @@ def build_markdown(store: dict, coupons: list) -> str:
     featured   = bool_field(pick(store, "website_featured", "store_featured", fallback="false"))
     count      = len(coupons)
 
-    # Extra optional store metadata
     best_discount = pick(store, "best_discount")
     verified_date = pick(store, "verified_date")
     avg_saving    = pick(store, "avg_saving")
 
-    # ── SEO fields ────────────────────────────────────────────────────────────
     store_h1       = pick(store, "store_h1")               or store_name or name
     store_title    = pick(store, "store_title")            or name
     store_meta     = pick(store, "store_meta_description") or desc
     store_keywords = pick(store, "store_keywords")
 
-    # ── OG / Social fields ────────────────────────────────────────────────────
     store_og_image = pick(store, "store_og_image") or logo
     store_og_type  = pick(store, "store_og_type",  fallback="website")
 
     lines = [
         "---",
-        # ── Hugo built-ins ────────────────────────────────────────────────────
         f'title: "{safe_yaml(store_title)}"',
         f'slug: "{safe_yaml(slug)}"',
         f'description: "{safe_yaml(store_meta)}"',
@@ -145,7 +166,6 @@ def build_markdown(store: dict, coupons: list) -> str:
         f'store_id: "{safe_yaml(slug)}"',
     ]
 
-    # Optional stat fields — only written if present in CSV
     if best_discount:
         lines.append(f'best_discount: "{safe_yaml(best_discount)}"')
     if verified_date:
@@ -181,7 +201,6 @@ def build_markdown(store: dict, coupons: list) -> str:
 # ── JSON builders ─────────────────────────────────────────────────────────────
 
 def build_featured_stores(stores: list, coupons_by_store_id: dict) -> list:
-    """Returns stores where website_featured == true, with store_name included."""
     featured = []
     for store in stores:
         if not is_true(pick(store, "website_featured", "store_featured", fallback="false")):
@@ -197,8 +216,8 @@ def build_featured_stores(stores: list, coupons_by_store_id: dict) -> list:
         count      = len(coupons_by_store_id.get(raw_id, []))
 
         featured.append({
-            "store_name":      store_name or name,   # clean display name
-            "website_name":    name,                  # full SEO title
+            "store_name":      store_name or name,
+            "website_name":    name,
             "slug":            slug,
             "logo_url":        logo,
             "website_url":     url,
@@ -210,7 +229,6 @@ def build_featured_stores(stores: list, coupons_by_store_id: dict) -> list:
 
 
 def build_latest_coupons(coupons: list, stores_by_raw_id: dict, limit: int = 12) -> list:
-    """Returns most recent coupons with store info nested, including store_name."""
     latest = []
     for c in coupons[:limit]:
         raw_id = pick(c, "store_id", "storeId")
@@ -231,7 +249,7 @@ def build_latest_coupons(coupons: list, stores_by_raw_id: dict, limit: int = 12)
             "coupon_start":       pick(c, "coupon_start"),
             "expires_at":         pick(c, "coupon_expired", "expires_at"),
             "stores": {
-                "store_name":   store_name or name,   # clean display name
+                "store_name":   store_name or name,
                 "website_name": name,
                 "slug":         slug,
                 "logo_url":     logo,
@@ -261,7 +279,6 @@ def main() -> None:
     out_dir          = Path(args.out_dir)      if args.out_dir     else root / "content" / "stores"
     data_dir         = Path(args.data_dir)     if args.data_dir    else root / "data"
 
-    # ── Validate ──────────────────────────────────────────────────────────────
     errors = []
     if not stores_csv_path.exists():
         errors.append(f"  ✗ stores.csv not found at: {stores_csv_path}")
@@ -271,36 +288,39 @@ def main() -> None:
         print("❌ Missing required files:\n" + "\n".join(errors))
         sys.exit(1)
 
-    # ── Read ──────────────────────────────────────────────────────────────────
     stores  = read_csv(stores_csv_path)
     coupons = read_csv(coupons_csv_path)
     print(f"📦 {len(stores)} stores | 🎫 {len(coupons)} coupons")
 
-    # ── Column detection report ───────────────────────────────────────────────
     if stores:
         sample_keys = {k.strip() for k in stores[0].keys()}
         required_cols = {"store_name"}
         seo_cols      = {"store_h1", "store_title", "store_meta_description", "store_keywords"}
         og_cols       = {"store_og_image", "store_og_type"}
 
-        missing_required = required_cols - sample_keys
-        missing_seo      = seo_cols - sample_keys
-        missing_og       = og_cols  - sample_keys
-
-        if missing_required:
-            print(f"  ⚠️  store_name column missing! Display names will fall back to website_name/title.")
+        if required_cols - sample_keys:
+            print(f"  ⚠️  store_name column missing — falling back to website_name/title.")
         else:
-            print(f"  ✅ store_name column found — clean display names will be used everywhere")
+            print(f"  ✅ store_name column found")
 
-        if missing_seo:
-            print(f"  ⚠️  SEO columns missing (fallbacks apply): {missing_seo}")
+        if seo_cols - sample_keys:
+            print(f"  ⚠️  SEO columns missing (fallbacks apply): {seo_cols - sample_keys}")
         else:
-            print(f"  ✅ SEO columns found: {seo_cols}")
+            print(f"  ✅ SEO columns found")
 
-        if missing_og:
-            print(f"  ℹ️  OG columns missing (logo_url used as og:image fallback): {missing_og}")
+        if og_cols - sample_keys:
+            print(f"  ℹ️  OG columns missing (logo_url used as og:image fallback): {og_cols - sample_keys}")
         else:
-            print(f"  ✅ OG columns found: {og_cols}")
+            print(f"  ✅ OG columns found")
+
+    # Sample the first store_name value to warn about embedded quotes
+    if stores:
+        sample_name = (stores[0].get("store_name") or "").strip()
+        if sample_name and sample_name[0] == '"':
+            print(
+                f"  ⚠️  store_name values appear to have embedded quotes (e.g. {sample_name!r}). "
+                f"clean_str() will strip them automatically."
+            )
 
     # ── Group coupons by store_id ─────────────────────────────────────────────
     coupons_by_store_id: dict = defaultdict(list)

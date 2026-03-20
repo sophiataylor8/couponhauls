@@ -72,9 +72,39 @@
 {{- partial "affiliate-bar.html" . }}
 {{- partial "footer.html" . }}
 
-{{/* ─── Inline JS ───────────────────────────────────────────────────────── */}}
+{{/*
+  ─── STORES_DATA inline JSON ──────────────────────────────────────────────────
+
+  FIX: Previously each field was rendered as a raw Hugo string inside a JS
+  string literal, e.g.  "n":"\"Amazon\""  because .Params.store_name was
+  "Amazon" with surrounding YAML quotes preserved by the CSV generator.
+
+  Now we use Hugo's `jsonify` pipe on each value so the Go value is properly
+  serialised to a JSON string token.  With clean .md front-matter (no embedded
+  surrounding quotes) this produces:  "n":"Amazon"  ✓
+
+  The subdomain URL is also built here so search-dropdown links work on both
+  production (subdomain per store) and local dev (path-based).
+*/}}
 <script>
-window.STORES_DATA = [{{ range where .Site.RegularPages "Section" "stores" }}{{ if and .Params.slug .Params.is_active }}{"n":{{ (.Params.store_name | default .Title) | jsonify }},"t":{{ .Title | jsonify }},"s":{{ .Params.slug | jsonify }},"l":{{ .Params.logo_url | jsonify }},"c":{{ .Params.coupon_count | default 0 }}},{{ end }}{{ end }}];
+window.STORES_DATA = [
+  {{- $isProduction := strings.Contains .Site.BaseURL "couponhauls.com" -}}
+  {{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
+  {{- range $i, $page := where .Site.RegularPages "Section" "stores" -}}
+    {{- if and $page.Params.slug $page.Params.is_active -}}
+      {{- $slug      := $page.Params.slug -}}
+      {{- $name      := $page.Params.store_name | default $page.Title -}}
+      {{- $title     := $page.Title -}}
+      {{- $logo      := $page.Params.logo_url | default "" -}}
+      {{- $count     := $page.Params.coupon_count | default 0 -}}
+      {{- $storeURL  := $page.Permalink -}}
+      {{- if $isProduction -}}
+        {{- $storeURL = printf "https://%s.%s/" $slug $baseHost -}}
+      {{- end -}}
+      {"n":{{ $name | jsonify }},"t":{{ $title | jsonify }},"s":{{ $slug | jsonify }},"l":{{ $logo | jsonify }},"c":{{ $count }},"u":{{ $storeURL | jsonify }}},
+    {{- end -}}
+  {{- end -}}
+];
 {{ readFile "static/js/app.js" | safeJS }}
 </script>
 
