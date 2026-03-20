@@ -1,20 +1,20 @@
 ---
-title: "Tony's Fresh Market Coupon Code 2026 - Grocery Savings"
+title: "Tony's Fresh Market Weekly Ad (March 2026)"
 slug: "tonysfreshmarket"
-description: "Tony's Fresh Market Coupon Code 2026. Find verified Tony's Fresh Market promo codes, grocery coupons, and weekly deals to save on fresh foods and essentials."
+description: "Tony's fresh market weekly ad April 2026.  Find Tony's Fresh Market flyer, promo codes, grocery coupons, and deals to save on fresh foods and essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Tony's Fresh Market"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Tony's Fresh Market Coupon Code 2026 - Grocery Savings"
-store_title: "Tony's Fresh Market Coupon Code 2026 - Grocery Savings"
-store_meta_description: "Tony's Fresh Market Coupon Code 2026. Find verified Tony's Fresh Market promo codes, grocery coupons, and weekly deals to save on fresh foods and essentials."
+store_h1: "Tony's Fresh Market Weekly Ad (March 2026)"
+store_title: "Tony's Fresh Market Weekly Ad (March 2026)"
+store_meta_description: "Tony's fresh market weekly ad April 2026.  Find Tony's Fresh Market flyer, promo codes, grocery coupons, and deals to save on fresh foods and essentials."
 store_keywords: "tonys fresh market coupon code, tonys fresh market promo code, tonys fresh market discount code, tonys fresh market deals, tonys fresh market offers, tonys fresh market grocery coupons, tonys fresh market coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Tony's Fresh Market Coupon Code 2026 - Grocery Savings"
-store_og_description: "Tony's Fresh Market Coupon Code 2026. Find verified Tony's Fresh Market promo codes, grocery coupons, and weekly deals to save on fresh foods and essentials."
+store_og_title: "Tony's Fresh Market Weekly Ad (March 2026)"
+store_og_description: "Tony's fresh market weekly ad April 2026.  Find Tony's Fresh Market flyer, promo codes, grocery coupons, and deals to save on fresh foods and essentials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "tonysfreshmarket"
 
 coupons:
-  - coupon_id: "1088"
-    coupon_title: "Whole Foods Weekly Sales"
+  - coupon_id: "1092"
+    coupon_title: "Tony's Weekly Market Specials"
     coupon_code: ""
-    coupon_description: "Explore Whole Foods weekly sales to save on organic produce, natural groceries, snacks, and specialty foods."
-    coupon_aff_url: "https://www.wholefoodsmarket.com/"
+    coupon_description: "Browse Tony's Fresh Market weekly specials to save on fresh produce, meats, bakery items, and grocery essentials."
+    coupon_aff_url: "https://www.tonysfreshmarket.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1089"
-    coupon_title: "Amazon Prime Member Deals at Whole Foods"
+  - coupon_id: "1093"
+    coupon_title: "Tony's Fresh Market In-Store Promotions"
     coupon_code: ""
-    coupon_description: "Amazon Prime members can access exclusive discounts and special pricing on select products at Whole Foods Market."
-    coupon_aff_url: "https://www.wholefoodsmarket.com/"
+    coupon_description: "Find rotating in-store promotions and seasonal grocery savings at participating Tony's Fresh Market locations."
+    coupon_aff_url: "https://www.tonysfreshmarket.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
@@ -48,13 +48,13 @@ coupons:
 
 Tony's Fresh Market is a grocery retailer known for its diverse food selection, fresh ingredients, and strong connection to local communities. With multiple store locations serving customers across the Midwest, the market has earned recognition for offering both everyday grocery staples and a variety of international products that reflect the multicultural neighborhoods it serves.
 
-A visit to Tony's Fresh Market typically reveals a wide assortment of fresh produce, meats, seafood, dairy items, and pantry essentials. Many shoppers appreciate the store�s produce department, which often features vibrant fruits and vegetables sourced from both local farms and global suppliers. This variety makes it easier for customers to prepare meals inspired by different cuisines and culinary traditions.
+A visit to Tony's Fresh Market typically reveals a wide assortment of fresh produce, meats, seafood, dairy items, and pantry essentials. Many shoppers appreciate the store’s produce department, which often features vibrant fruits and vegetables sourced from both local farms and global suppliers. This variety makes it easier for customers to prepare meals inspired by different cuisines and culinary traditions.
 
 Tony's Fresh Market is also known for offering international grocery items that can be difficult to find in traditional supermarkets. From specialty spices and imported sauces to unique snacks and ingredients used in global recipes, the store provides shoppers with the opportunity to explore flavors from around the world without leaving their neighborhood.
 
 In addition to groceries, Tony's Fresh Market locations often include full-service deli counters, bakeries, and prepared food sections. These departments provide freshly made meals, baked goods, and ready-to-eat dishes that appeal to customers looking for convenient dining options.
 
-Savings remain an important part of the Tony's Fresh Market shopping experience. Weekly promotions highlight discounts on popular grocery items, seasonal produce, and household essentials. Shoppers who regularly check the store�s online deals or weekly ads can often find attractive price reductions on everyday purchases.
+Savings remain an important part of the Tony's Fresh Market shopping experience. Weekly promotions highlight discounts on popular grocery items, seasonal produce, and household essentials. Shoppers who regularly check the store’s online deals or weekly ads can often find attractive price reductions on everyday purchases.
 
 The official Tony's Fresh Market website allows customers to explore store locations, browse current promotions, and stay informed about upcoming deals. These online tools make it easier for shoppers to plan their grocery trips and take advantage of limited-time offers.
 

@@ -1,20 +1,20 @@
 ---
-title: "Walgreens Coupon Code 2026 - 40% Off"
+title: "Walgreens Photo Coupon 4x6 (April 2026) 50% Off"
 slug: "walgreens"
-description: "Walgreens Coupon Code 2026. Save with Walgreens coupon codes & pharmacy offers. Find discounts on health & daily essentials."
+description: "Walgreens photo coupon 4x6 April 2026. Save with Walgreens promo code, 8x10 photo cards free shipping. Find discounts on contact lens deals."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Walgreens"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Walgreens Coupon Code 2026 - 40% Off"
-store_title: "Walgreens Coupon Code 2026 - 40% Off"
-store_meta_description: "Walgreens Coupon Code 2026. Save with Walgreens coupon codes & pharmacy offers. Find discounts on health & daily essentials."
+store_h1: "Walgreens Photo Coupon 4x6 (April 2026) 50% Off"
+store_title: "Walgreens Photo Coupon 4x6 (April 2026) 50% Off"
+store_meta_description: "Walgreens photo coupon 4x6 April 2026. Save with Walgreens promo code, 8x10 photo cards free shipping. Find discounts on contact lens deals."
 store_keywords: "walgreens coupon code, walgreens promo code, walgreens discount code, walgreens deals, walgreens offers, walgreens sale, walgreens coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Walgreens Coupon Code 2026 - 40% Off"
-store_og_description: "Walgreens Coupon Code 2026. Save with Walgreens coupon codes & pharmacy offers. Find discounts on health & daily essentials."
+store_og_title: "Walgreens Photo Coupon 4x6 (April 2026) 50% Off"
+store_og_description: "Walgreens photo coupon 4x6 April 2026. Save with Walgreens promo code, 8x10 photo cards free shipping. Find discounts on contact lens deals."
 store_og_image: ""
 store_og_type: "website"
 

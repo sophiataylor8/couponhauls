@@ -1,20 +1,20 @@
 ---
-title: "Superior Grocers Coupon Code 2026 - Weekly Deals"
+title: "Superior Grocers Weekly Ad (April 2026) Store Ad"
 slug: "superiorgrocers"
-description: "Superior Grocers Coupon Code 2026. Save more with the latest Superior Grocers promo codes, grocery coupons, and weekly store deals."
+description: "Superior Grocers weekly ad 2026. Save more with the Superior Grocers store ad, promo code, grocery coupons, and deals for bakery, dairy."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Superior Grocers"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Superior Grocers Coupon Code 2026 - Weekly Deals"
-store_title: "Superior Grocers Coupon Code 2026 - Weekly Deals"
-store_meta_description: "Superior Grocers Coupon Code 2026. Save more with the latest Superior Grocers promo codes, grocery coupons, and weekly store deals."
+store_h1: "Superior Grocers Weekly Ad (April 2026) Store Ad"
+store_title: "Superior Grocers Weekly Ad (April 2026) Store Ad"
+store_meta_description: "Superior Grocers weekly ad 2026. Save more with the Superior Grocers store ad, promo code, grocery coupons, and deals for bakery, dairy."
 store_keywords: "superior grocers coupon code, superior grocers promo code, superior grocers discount code, superior grocers deals, superior grocers offers, superior grocers grocery coupons, superior grocers coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Superior Grocers Coupon Code 2026 - Weekly Deals"
-store_og_description: "Superior Grocers Coupon Code 2026. Save more with the latest Superior Grocers promo codes, grocery coupons, and weekly store deals."
+store_og_title: "Superior Grocers Weekly Ad (April 2026) Store Ad"
+store_og_description: "Superior Grocers weekly ad 2026. Save more with the Superior Grocers store ad, promo code, grocery coupons, and deals for bakery, dairy."
 store_og_image: ""
 store_og_type: "website"
 

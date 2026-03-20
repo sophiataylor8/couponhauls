@@ -1,20 +1,20 @@
 ---
-title: "Kroger Coupon Code 2026 - Latest Grocery Deals"
+title: "Kroger Digital Coupons This Week (March 2026)"
 slug: "kroger"
-description: "Kroger Coupon Code 2026. Discover verified Kroger promo codes, digital coupons, and weekly grocery deals for extra savings on everyday essentials."
+description: "Kroger digital coupons this week April 2026. Discover kroger weekly grocery ad, coupons and deals. Extra savings on $20 on first order, meat and foods."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Kroger"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Kroger Coupon Code 2026 - Latest Grocery Deals"
-store_title: "Kroger Coupon Code 2026 - Latest Grocery Deals"
-store_meta_description: "Kroger Coupon Code 2026. Discover verified Kroger promo codes, digital coupons, and weekly grocery deals for extra savings on everyday essentials."
+store_h1: "Kroger Digital Coupons This Week (March 2026)"
+store_title: "Kroger Digital Coupons This Week (March 2026)"
+store_meta_description: "Kroger digital coupons this week April 2026. Discover kroger weekly grocery ad, coupons and deals. Extra savings on $20 on first order, meat and foods."
 store_keywords: "kroger coupon code, kroger promo code, kroger discount code, kroger deals, kroger offers, kroger grocery coupons, kroger coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Kroger Coupon Code 2026 - Latest Grocery Deals"
-store_og_description: "Kroger Coupon Code 2026. Discover verified Kroger promo codes, digital coupons, and weekly grocery deals for extra savings on everyday essentials."
+store_og_title: "Kroger Digital Coupons This Week (March 2026)"
+store_og_description: "Kroger digital coupons this week April 2026. Discover kroger weekly grocery ad, coupons and deals. Extra savings on $20 on first order, meat and foods."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "kroger"
 
 coupons:
-  - coupon_id: "1066"
-    coupon_title: "QFC Weekly Grocery Deals"
+  - coupon_id: "1068"
+    coupon_title: "Kroger Weekly Ad Savings"
     coupon_code: ""
-    coupon_description: "Check the QFC weekly ad to find discounts on fresh produce, meats, bakery items, and everyday grocery essentials."
-    coupon_aff_url: "https://www.qfc.com/"
+    coupon_description: "Explore the Kroger weekly ad for limited-time discounts on fresh foods, snacks, beverages, and household essentials."
+    coupon_aff_url: "https://www.kroger.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1067"
-    coupon_title: "QFC Digital Coupons & Rewards"
+  - coupon_id: "1069"
+    coupon_title: "Kroger Digital Coupons"
     coupon_code: ""
-    coupon_description: "Sign in to your QFC account to clip digital coupons and access personalized grocery deals and member savings."
-    coupon_aff_url: "https://www.qfc.com/"
+    coupon_description: "Clip Kroger digital coupons through your account to enjoy personalized grocery discounts and exclusive online deals."
+    coupon_aff_url: "https://www.kroger.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"

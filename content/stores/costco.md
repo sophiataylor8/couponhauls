@@ -1,20 +1,20 @@
 ---
-title: "Costco Coupon Code 2026 - 20% Off"
+title: "Costco Online Promo Code $25 Off (March 2026)"
 slug: "costco"
-description: "Costco Coupon Code 2026. Find latest Costco coupon codes, member deals & warehouse savings. Updated offers to maximize your shopping."
+description: "Costco online promo code $25 off. Find latest costco discount code, member deals and savings. Updated offers to tires, appliance and refrigerator."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Costco"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Costco Coupon Code 2026 - 20% Off"
-store_title: "Costco Coupon Code 2026 - 20% Off"
-store_meta_description: "Costco Coupon Code 2026. Find latest Costco coupon codes, member deals & warehouse savings. Updated offers to maximize your shopping."
+store_h1: "Costco Online Promo Code $25 Off (March 2026)"
+store_title: "Costco Online Promo Code $25 Off (March 2026)"
+store_meta_description: "Costco online promo code $25 off. Find latest costco discount code, member deals and savings. Updated offers to tires, appliance and refrigerator."
 store_keywords: "costco coupon code, costco promo code, costco discount code, costco deals, costco offers, costco sale, costco coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Costco Coupon Code 2026 - 20% Off"
-store_og_description: "Costco Coupon Code 2026. Find latest Costco coupon codes, member deals & warehouse savings. Updated offers to maximize your shopping."
+store_og_title: "Costco Online Promo Code $25 Off (March 2026)"
+store_og_description: "Costco online promo code $25 off. Find latest costco discount code, member deals and savings. Updated offers to tires, appliance and refrigerator."
 store_og_image: ""
 store_og_type: "website"
 

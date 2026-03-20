@@ -1,20 +1,20 @@
 ---
-title: "ACME Coupon Code 2026 - Grocery Savings"
+title: "Acme Markets Weekly Ad (April 2026) Flyer This Week"
 slug: "acme"
-description: "ACME Coupon Code 2026. Discover verified ACME promo codes, grocery coupons, and weekly deals to save more on fresh groceries and essentials."
+description: "Acme markets weekly ad april 2026. Discover ACME flyer this week, promo codes, grocery coupons, and deals to save more on fresh groceries."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "ACME"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "ACME Coupon Code 2026 - Grocery Savings"
-store_title: "ACME Coupon Code 2026 - Grocery Savings"
-store_meta_description: "ACME Coupon Code 2026. Discover verified ACME promo codes, grocery coupons, and weekly deals to save more on fresh groceries and essentials."
+store_h1: "Acme Markets Weekly Ad (April 2026) Flyer This Week"
+store_title: "Acme Markets Weekly Ad (April 2026) Flyer This Week"
+store_meta_description: "Acme markets weekly ad april 2026. Discover ACME flyer this week, promo codes, grocery coupons, and deals to save more on fresh groceries."
 store_keywords: "acme coupon code, acme promo code, acme discount code, acme deals, acme offers, acme grocery coupons, acme coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "ACME Coupon Code 2026 - Grocery Savings"
-store_og_description: "ACME Coupon Code 2026. Discover verified ACME promo codes, grocery coupons, and weekly deals to save more on fresh groceries and essentials."
+store_og_title: "Acme Markets Weekly Ad (April 2026) Flyer This Week"
+store_og_description: "Acme markets weekly ad april 2026. Discover ACME flyer this week, promo codes, grocery coupons, and deals to save more on fresh groceries."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "acme"
 
 coupons:
-  - coupon_id: "1122"
-    coupon_title: "Metro Market Weekly Ad Deals"
+  - coupon_id: "1126"
+    coupon_title: "ACME for U Digital Coupons"
     coupon_code: ""
-    coupon_description: "Check the Metro Market weekly ad to find grocery discounts on fresh produce, meats, bakery items, and beverages."
-    coupon_aff_url: "https://www.metromarket.net/"
+    coupon_description: "Sign up for ACME for U to access digital coupons and personalized grocery deals."
+    coupon_aff_url: "https://www.acmemarkets.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1123"
-    coupon_title: "Metro Market Digital Coupons"
+  - coupon_id: "1127"
+    coupon_title: "ACME Weekly Grocery Deals"
     coupon_code: ""
-    coupon_description: "Clip digital coupons through your Metro Market account to enjoy personalized grocery savings."
-    coupon_aff_url: "https://www.metromarket.net/"
+    coupon_description: "Browse the ACME weekly ad to discover discounts on produce, meats, bakery items, and pantry staples."
+    coupon_aff_url: "https://www.acmemarkets.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"

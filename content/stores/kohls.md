@@ -1,20 +1,20 @@
 ---
-title: "Kohls Coupon Code 2026 - 10% Off"
+title: "20 Percent Off Kohl's Coupon Code (March 2026)"
 slug: "kohls"
-description: "Kohls Coupon Code 2026. Get verified Kohls coupon codes & storewide deals. Save on clothing, shoes & home products."
+description: "20 percent off kohl's coupon code April 2026. Get kohls discount code, printable coupons and deals. Save on clothing, shoes and home products."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Kohls"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Kohls Coupon Code 2026 - 10% Off"
-store_title: "Kohls Coupon Code 2026 - 10% Off"
-store_meta_description: "Kohls Coupon Code 2026. Get verified Kohls coupon codes & storewide deals. Save on clothing, shoes & home products."
+store_h1: "20 Percent Off Kohl's Coupon Code (March 2026)"
+store_title: "20 Percent Off Kohl's Coupon Code (March 2026)"
+store_meta_description: "20 percent off kohl's coupon code April 2026. Get kohls discount code, printable coupons and deals. Save on clothing, shoes and home products."
 store_keywords: "kohls coupon code, kohls promo code, kohls discount code, kohls deals, kohls offers, kohls sale, kohls coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Kohls Coupon Code 2026 - 10% Off"
-store_og_description: "Kohls Coupon Code 2026. Get verified Kohls coupon codes & storewide deals. Save on clothing, shoes & home products."
+store_og_title: "20 Percent Off Kohl's Coupon Code (March 2026)"
+store_og_description: "20 percent off kohl's coupon code April 2026. Get kohls discount code, printable coupons and deals. Save on clothing, shoes and home products."
 store_og_image: ""
 store_og_type: "website"
 
@@ -54,4 +54,4 @@ coupons:
     expires_at: "31/12/2030"
 ---
 
-Kohl's is a department store known for affordable fashion, home goods, and beauty products. Customers can shop popular brands as well as exclusive collections. Kohl�s Cash rewards program allows shoppers to earn additional savings during promotional periods. With frequent discounts, clearance events, and seasonal sales, Kohl�s offers strong value for budget-conscious families.
+Kohl's is a department store known for affordable fashion, home goods, and beauty products. Customers can shop popular brands as well as exclusive collections. Kohl’s Cash rewards program allows shoppers to earn additional savings during promotional periods. With frequent discounts, clearance events, and seasonal sales, Kohl’s offers strong value for budget-conscious families.

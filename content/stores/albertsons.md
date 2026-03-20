@@ -1,20 +1,20 @@
 ---
-title: "Albertsons Coupon Code 2026 - Save on Groceries"
+title: "Albertsons Weekly Ad (April 2026) Grocery Ad"
 slug: "albertsons"
-description: "Albertsons Coupon Code 2026. Discover verified Albertsons promo codes, digital grocery coupons, and weekly deals for extra savings."
+description: "Albertsons weekly ad April 2026. Discover verified Albertsons grocery ad, promo code, digital grocery coupons, and weekly deals for extra savings."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Albertsons"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Albertsons Coupon Code 2026 - Save on Groceries"
-store_title: "Albertsons Coupon Code 2026 - Save on Groceries"
-store_meta_description: "Albertsons Coupon Code 2026. Discover verified Albertsons promo codes, digital grocery coupons, and weekly deals for extra savings."
+store_h1: "Albertsons Weekly Ad (April 2026) Grocery Ad"
+store_title: "Albertsons Weekly Ad (April 2026) Grocery Ad"
+store_meta_description: "Albertsons weekly ad April 2026. Discover verified Albertsons grocery ad, promo code, digital grocery coupons, and weekly deals for extra savings."
 store_keywords: "albertsons coupon code, albertsons promo code, albertsons discount code, albertsons deals, albertsons offers, albertsons grocery coupons, albertsons coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Albertsons Coupon Code 2026 - Save on Groceries"
-store_og_description: "Albertsons Coupon Code 2026. Discover verified Albertsons promo codes, digital grocery coupons, and weekly deals for extra savings."
+store_og_title: "Albertsons Weekly Ad (April 2026) Grocery Ad"
+store_og_description: "Albertsons weekly ad April 2026. Discover verified Albertsons grocery ad, promo code, digital grocery coupons, and weekly deals for extra savings."
 store_og_image: ""
 store_og_type: "website"
 

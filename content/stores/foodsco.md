@@ -1,20 +1,20 @@
 ---
-title: "Foods Co Coupon Code 2026 - Grocery Discounts"
+title: "Foods Co Weekly Ad (April 2026) Flyer"
 slug: "foodsco"
-description: "Foods Co Coupon Code 2026. Save more with verified Foods Co promo codes, digital coupons, and weekly grocery deals on everyday shopping."
+description: "Foods Co weekly ad april 2026. Save more with Foods Co flyer, promo codes, digital coupons, and grocery deals on everyday shopping."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Foods Co"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Foods Co Coupon Code 2026 - Grocery Discounts"
-store_title: "Foods Co Coupon Code 2026 - Grocery Discounts"
-store_meta_description: "Foods Co Coupon Code 2026. Save more with verified Foods Co promo codes, digital coupons, and weekly grocery deals on everyday shopping."
+store_h1: "Foods Co Weekly Ad (April 2026) Flyer"
+store_title: "Foods Co Weekly Ad (April 2026) Flyer"
+store_meta_description: "Foods Co weekly ad april 2026. Save more with Foods Co flyer, promo codes, digital coupons, and grocery deals on everyday shopping."
 store_keywords: "foods co coupon code, foods co promo code, foods co discount code, foods co deals, foods co offers, foods co grocery coupons, foods co coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Foods Co Coupon Code 2026 - Grocery Discounts"
-store_og_description: "Foods Co Coupon Code 2026. Save more with verified Foods Co promo codes, digital coupons, and weekly grocery deals on everyday shopping."
+store_og_title: "Foods Co Weekly Ad (April 2026) Flyer"
+store_og_description: "Foods Co weekly ad april 2026. Save more with Foods Co flyer, promo codes, digital coupons, and grocery deals on everyday shopping."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "foodsco"
 
 coupons:
-  - coupon_id: "1104"
-    coupon_title: "No Frills Weekly Flyer Savings"
+  - coupon_id: "1108"
+    coupon_title: "Foods Co Weekly Ad Deals"
     coupon_code: ""
-    coupon_description: "Check the No Frills weekly flyer to find deals on produce, meats, packaged foods, and everyday groceries."
-    coupon_aff_url: "https://www.nofrills.ca/"
+    coupon_description: "Check the Foods Co weekly ad to find discounts on fresh produce, meats, dairy, and grocery staples."
+    coupon_aff_url: "https://www.foodsco.net/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1105"
-    coupon_title: "PC Optimum Points Offers"
+  - coupon_id: "1109"
+    coupon_title: "Foods Co Digital Coupons"
     coupon_code: ""
-    coupon_description: "Earn and redeem PC Optimum points on eligible purchases at No Frills and enjoy exclusive member deals."
-    coupon_aff_url: "https://www.nofrills.ca/"
+    coupon_description: "Clip digital coupons through your Foods Co account to unlock additional grocery savings."
+    coupon_aff_url: "https://www.foodsco.net/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
@@ -48,7 +48,7 @@ coupons:
 
 Foods Co is a grocery retailer designed to provide customers with an efficient and affordable way to shop for everyday food items. Known for its warehouse-style layout and competitive pricing, the store attracts shoppers who want to stock up on groceries without paying the higher prices often found in traditional supermarkets.
 
-One of the defining characteristics of Foods Co is its focus on delivering value. The store emphasizes bulk purchasing, straightforward merchandising, and limited d�cor so it can keep operational costs low. These savings are then reflected in the store�s pricing, allowing customers to find attractive deals on a wide range of grocery products.
+One of the defining characteristics of Foods Co is its focus on delivering value. The store emphasizes bulk purchasing, straightforward merchandising, and limited décor so it can keep operational costs low. These savings are then reflected in the store’s pricing, allowing customers to find attractive deals on a wide range of grocery products.
 
 Inside a Foods Co location, shoppers can browse an extensive selection of fruits and vegetables, fresh meats, dairy products, frozen foods, snacks, beverages, and essential pantry items. Many locations also carry large-size packages that appeal to families, small businesses, and anyone looking to buy frequently used products in larger quantities.
 

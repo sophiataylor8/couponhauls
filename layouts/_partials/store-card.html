@@ -1,29 +1,28 @@
 {{/*
   layouts/partials/store-card.html
-  URL is now /<slug>/  (subdomain routing via config.toml [permalinks])
-  On production: amazon.couponhauls.com  resolves to this page.
-
-  store_name = clean display name (e.g. "Amazon")  ← shown in card title + avatar
-  .Title     = full SEO title (e.g. "Amazon Coupon Code 2026 - 20% Off")  ← NOT shown
+  Links to subdomain URL: adidas.couponhauls.com
 */}}
 {{ $displayName := .Params.store_name | default .Title }}
-<a href="{{ .Permalink }}" class="coupon-card block hover:scale-105 transition-transform">
-<div class="p-6">
+{{ $slug := .Params.slug | default .Params.store_id | default (.Title | urlize) }}
 
-  {{/* Avatar initial — uses first letter of clean store_name */}}
+{{/* On production use subdomain URL, on dev/local use permalink */}}
+{{ $storeURL := .Permalink }}
+{{ if and $slug (strings.Contains .Site.BaseURL "couponhauls.com") }}
+  {{ $storeURL = printf "https://%s.couponhauls.com/" $slug }}
+{{ end }}
+
+<a href="{{ $storeURL }}" class="coupon-card block hover:scale-105 transition-transform">
+<div class="p-6">
   <div class="w-20 h-20 mx-auto mb-4 rounded-lg shadow flex items-center justify-center"
        style="background:#0284c7;">
     <span style="font-size:2rem;font-weight:900;color:#fff;line-height:1;text-transform:uppercase;font-family:Inter,system-ui,sans-serif;">
       {{ substr $displayName 0 1 }}
     </span>
   </div>
-
-  {{/* Card title — uses clean store_name */}}
   <h3 class="text-lg font-semibold text-center mb-2">{{ $displayName }}</h3>
   <p class="text-sm text-gray-600 text-center mb-3">{{ .Params.coupon_count | default "0" }} Coupons</p>
   <div class="text-center">
     <span class="text-primary-600 font-medium text-sm">View Deals →</span>
   </div>
-
 </div>
 </a>

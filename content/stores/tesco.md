@@ -1,20 +1,20 @@
 ---
-title: "Tesco Coupon Code 2026 - 20% Off"
+title: "Tesco Discount Code (April 2026) 20% Off Promo Code"
 slug: "tesco"
-description: "Tesco Coupon Code 2026. Save with Tesco promo codes & grocery deals. Find discounts on food, household & essentials."
+description: "Tesco discount code 2026. Save with tesco promo code, coupon and grocery deals. Find offers on food, household and essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Tesco"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Tesco Coupon Code 2026 - 20% Off"
-store_title: "Tesco Coupon Code 2026 - 20% Off"
-store_meta_description: "Tesco Coupon Code 2026. Save with Tesco promo codes & grocery deals. Find discounts on food, household & essentials."
+store_h1: "Tesco Discount Code (April 2026) 20% Off Promo Code"
+store_title: "Tesco Discount Code (April 2026) 20% Off Promo Code"
+store_meta_description: "Tesco discount code 2026. Save with tesco promo code, coupon and grocery deals. Find offers on food, household and essentials."
 store_keywords: "tesco coupon code, tesco promo code, tesco discount code, tesco deals, tesco offers, tesco sale, tesco coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Tesco Coupon Code 2026 - 20% Off"
-store_og_description: "Tesco Coupon Code 2026. Save with Tesco promo codes & grocery deals. Find discounts on food, household & essentials."
+store_og_title: "Tesco Discount Code (April 2026) 20% Off Promo Code"
+store_og_description: "Tesco discount code 2026. Save with tesco promo code, coupon and grocery deals. Find offers on food, household and essentials."
 store_og_image: ""
 store_og_type: "website"
 

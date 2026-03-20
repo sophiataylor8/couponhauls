@@ -1,20 +1,20 @@
 ---
-title: "Smith's Coupon Code 2026 - Grocery Savings"
+title: "Smith's Weekly Digital Deals (April 2026) Weekly Ad"
 slug: "smiths"
-description: "Smith's Coupon Code 2026. Find verified Smith's promo codes, digital coupons, and weekly grocery deals to save more on everyday shopping."
+description: "Smith's weekly digital deals April 2026. Find smith's coupons, promo codes, discounts, and weekly grocery to save more on everyday shopping."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Smith's"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Smith's Coupon Code 2026 - Grocery Savings"
-store_title: "Smith's Coupon Code 2026 - Grocery Savings"
-store_meta_description: "Smith's Coupon Code 2026. Find verified Smith's promo codes, digital coupons, and weekly grocery deals to save more on everyday shopping."
+store_h1: "Smith's Weekly Digital Deals (April 2026) Weekly Ad"
+store_title: "Smith's Weekly Digital Deals (April 2026) Weekly Ad"
+store_meta_description: "Smith's weekly digital deals April 2026. Find smith's coupons, promo codes, discounts, and weekly grocery to save more on everyday shopping."
 store_keywords: "smith's coupon code, smith's promo code, smith's discount code, smith's deals, smith's offers, smith's grocery coupons, smith's coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Smith's Coupon Code 2026 - Grocery Savings"
-store_og_description: "Smith's Coupon Code 2026. Find verified Smith's promo codes, digital coupons, and weekly grocery deals to save more on everyday shopping."
+store_og_title: "Smith's Weekly Digital Deals (April 2026) Weekly Ad"
+store_og_description: "Smith's weekly digital deals April 2026. Find smith's coupons, promo codes, discounts, and weekly grocery to save more on everyday shopping."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "smiths"
 
 coupons:
-  - coupon_id: "1074"
-    coupon_title: "Boscov's Clearance & Doorbuster Deals"
+  - coupon_id: "1076"
+    coupon_title: "Smith's Digital Coupons"
     coupon_code: ""
-    coupon_description: "Shop Boscov's clearance and doorbuster promotions to save on clothing, shoes, home goods, and seasonal products."
-    coupon_aff_url: "https://www.boscovs.com/"
+    coupon_description: "Clip digital coupons through your Smith's account to unlock savings on groceries, beverages, and household essentials."
+    coupon_aff_url: "https://www.smithsfoodanddrug.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1075"
-    coupon_title: "Boscov's Weekly Sales & Promotions"
+  - coupon_id: "1077"
+    coupon_title: "Smith's Weekly Ad Grocery Deals"
     coupon_code: ""
-    coupon_description: "Check Boscov's latest sales for limited-time discounts on fashion, beauty products, and home essentials."
-    coupon_aff_url: "https://www.boscovs.com/"
+    coupon_description: "Browse the Smith's weekly ad to discover discounts on produce, meats, dairy products, and pantry staples."
+    coupon_aff_url: "https://www.smithsfoodanddrug.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"

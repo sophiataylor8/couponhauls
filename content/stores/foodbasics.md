@@ -1,20 +1,20 @@
 ---
-title: "Food Basics Coupon Code 2026 - Grocery Savings"
+title: "Food Basic Food Flyer (April 2026) Weekly Ad"
 slug: "foodbasics"
-description: "Food Basics Coupon Code 2026. Save more with verified Food Basics promo codes, grocery coupons, and weekly deals on fresh food and everyday essentials."
+description: "Food basic food flyer April 2026. Save with Food Basics weekly ad, promo codes, grocery coupons, and deals on fresh online everyday essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Food Basics"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Food Basics Coupon Code 2026 - Grocery Savings"
-store_title: "Food Basics Coupon Code 2026 - Grocery Savings"
-store_meta_description: "Food Basics Coupon Code 2026. Save more with verified Food Basics promo codes, grocery coupons, and weekly deals on fresh food and everyday essentials."
+store_h1: "Food Basic Food Flyer (April 2026) Weekly Ad"
+store_title: "Food Basic Food Flyer (April 2026) Weekly Ad"
+store_meta_description: "Food basic food flyer April 2026. Save with Food Basics weekly ad, promo codes, grocery coupons, and deals on fresh online everyday essentials."
 store_keywords: "food basics coupon code, food basics promo code, food basics discount code, food basics deals, food basics offers, food basics grocery coupons, food basics coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Food Basics Coupon Code 2026 - Grocery Savings"
-store_og_description: "Food Basics Coupon Code 2026. Save more with verified Food Basics promo codes, grocery coupons, and weekly deals on fresh food and everyday essentials."
+store_og_title: "Food Basic Food Flyer (April 2026) Weekly Ad"
+store_og_description: "Food basic food flyer April 2026. Save with Food Basics weekly ad, promo codes, grocery coupons, and deals on fresh online everyday essentials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "foodbasics"
 
 coupons:
-  - coupon_id: "1098"
-    coupon_title: "Big 5 Weekly Sporting Goods Deals"
+  - coupon_id: "1102"
+    coupon_title: "Food Basics Weekly Flyer Deals"
     coupon_code: ""
-    coupon_description: "Check the Big 5 weekly ad to save on athletic footwear, outdoor gear, sports equipment, and apparel."
-    coupon_aff_url: "https://www.big5sportinggoods.com/"
+    coupon_description: "Browse the Food Basics weekly flyer to discover savings on fresh produce, meats, dairy, and pantry staples."
+    coupon_aff_url: "https://www.foodbasics.ca/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1099"
-    coupon_title: "Big 5 Clearance & Seasonal Sales"
+  - coupon_id: "1103"
+    coupon_title: "Food Basics Grocery Specials"
     coupon_code: ""
-    coupon_description: "Shop clearance and seasonal promotions at Big 5 for discounts on camping gear, fitness equipment, and sportswear."
-    coupon_aff_url: "https://www.big5sportinggoods.com/"
+    coupon_description: "Shop weekly grocery specials at Food Basics for limited-time discounts on everyday essentials."
+    coupon_aff_url: "https://www.foodbasics.ca/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
@@ -48,9 +48,9 @@ coupons:
 
 Food Basics is a Canadian grocery retailer focused on delivering everyday food essentials at budget-friendly prices. The store follows a discount supermarket model that prioritizes value while still offering a solid range of fresh ingredients and household necessities.
 
-Customers visiting Food Basics can find a variety of grocery categories including produce, dairy products, meats, frozen foods, canned goods, and pantry staples. The store�s simplified layout and efficient operations help keep prices competitive, making it an appealing option for shoppers who want to manage grocery costs carefully.
+Customers visiting Food Basics can find a variety of grocery categories including produce, dairy products, meats, frozen foods, canned goods, and pantry staples. The store’s simplified layout and efficient operations help keep prices competitive, making it an appealing option for shoppers who want to manage grocery costs carefully.
 
-Fresh fruits and vegetables play an important role in the store�s selection, with seasonal produce often featured in weekly promotions. Shoppers can also discover store-brand products designed to offer dependable quality while maintaining lower prices compared to national brands.
+Fresh fruits and vegetables play an important role in the store’s selection, with seasonal produce often featured in weekly promotions. Shoppers can also discover store-brand products designed to offer dependable quality while maintaining lower prices compared to national brands.
 
 Weekly flyers and rotating deals allow customers to save even more on common grocery items. Many shoppers review these advertisements before visiting the store to plan their purchases around current discounts.
 

@@ -1,20 +1,20 @@
 ---
-title: "Home Depot Coupon Code 2026 - 20% Off"
+title: "20 Percent Off Home Depot Coupon (2026)"
 slug: "homedepot"
-description: "Home Depot Coupon Code 2026. Get Home Depot promo codes & tool discounts. Save on appliances, DIY supplies & home upgrades."
+description: "Home depot coupon code 2026. Get 20 percent off with home depot promo code, 4 july sale and tool. Discount on appliances, DIY supplies and home upgrades."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Home Depot"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Home Depot Coupon Code 2026 - 20% Off"
-store_title: "Home Depot Coupon Code 2026 - 20% Off"
-store_meta_description: "Home Depot Coupon Code 2026. Get Home Depot promo codes & tool discounts. Save on appliances, DIY supplies & home upgrades."
+store_h1: "20 Percent Off Home Depot Coupon (2026)"
+store_title: "20 Percent Off Home Depot Coupon (2026)"
+store_meta_description: "Home depot coupon code 2026. Get 20 percent off with home depot promo code, 4 july sale and tool. Discount on appliances, DIY supplies and home upgrades."
 store_keywords: "home depot coupon code, home depot promo code, home depot discount code, home depot deals, home depot offers, home depot sale, home depot coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Home Depot Coupon Code 2026 - 20% Off"
-store_og_description: "Home Depot Coupon Code 2026. Get Home Depot promo codes & tool discounts. Save on appliances, DIY supplies & home upgrades."
+store_og_title: "20 Percent Off Home Depot Coupon (2026)"
+store_og_description: "Home depot coupon code 2026. Get 20 percent off with home depot promo code, 4 july sale and tool. Discount on appliances, DIY supplies and home upgrades."
 store_og_image: ""
 store_og_type: "website"
 
@@ -46,4 +46,4 @@ coupons:
     expires_at: "31/12/2030"
 ---
 
-The Home Depot is a leading retailer for home improvement products, tools, building materials, appliances, and garden supplies. Catering to DIY enthusiasts and professional contractors alike, Home Depot offers competitive pricing, installation services, and project guides. Customers can shop online or in-store for renovation essentials, seasonal d�cor, and outdoor equipment. Frequent sales events and bulk discounts help homeowners save on big projects and everyday maintenance needs.
+The Home Depot is a leading retailer for home improvement products, tools, building materials, appliances, and garden supplies. Catering to DIY enthusiasts and professional contractors alike, Home Depot offers competitive pricing, installation services, and project guides. Customers can shop online or in-store for renovation essentials, seasonal décor, and outdoor equipment. Frequent sales events and bulk discounts help homeowners save on big projects and everyday maintenance needs.

@@ -1,8 +1,9 @@
-{{ define "title" }}{{ .Title }} - All Coupon Codes & Deals{{ end }}
+{{ define "title" }}All Stores - Coupon Codes & Deals | {{ .Site.Title }}{{ end }}
+{{ define "description" }}Browse {{ len (where (where .Site.RegularPages "Section" "stores") ".Params.is_active" true) }} stores and find the best verified coupon codes, promo codes & deals. Updated daily.{{ end }}
 
 {{ define "main" }}
 
-{{/* Filter out invalid/undefined stores */}}
+{{/* ─── Data prep ────────────────────────────────────────────────────────── */}}
 {{ $validPages := slice }}
 {{ range .Pages }}
   {{ if and .Title (ne .Title "") (ne .Params.slug "undefined") .Params.is_active }}
@@ -10,75 +11,534 @@
   {{ end }}
 {{ end }}
 
-<section class="py-12 bg-gray-50 min-h-screen">
-  <div class="container mx-auto px-4">
-    <div class="mb-12 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ .Title }}</h1>
-      {{ if .Description }}
-      <p class="text-xl text-gray-600">{{ .Description }}</p>
-      {{ else }}
-      <p class="text-xl text-gray-600">Browse {{ len $validPages }} stores and find the best coupon codes &amp; deals</p>
-      {{ end }}
-    </div>
+{{/* Sort A→Z by store_name */}}
+{{ $sorted := sort $validPages ".Params.store_name" "asc" }}
 
-    {{/* Search bar */}}
-    <div class="max-w-xl mx-auto mb-10">
-      <div class="relative">
-        <input type="text" id="storeFilterInput" placeholder="Filter stores..."
-          class="w-full px-5 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 text-gray-900">
-        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
+{{/* Total coupon count */}}
+{{ $totalCoupons := 0 }}
+{{ range $validPages }}
+  {{ $totalCoupons = add $totalCoupons (len (.Params.coupons | default slice)) }}
+{{ end }}
+
+{{/* Collect all first letters for A-Z bar */}}
+{{ $letters := slice }}
+{{ range $sorted }}
+  {{ $name := .Params.store_name | default .Title }}
+  {{ $first := upper (substr $name 0 1) }}
+  {{ $letters = $letters | append $first }}
+{{ end }}
+{{ $activeLetters := $letters | uniq }}
+
+{{/* ─── Hero ───────────────────────────────────────────────────────────── */}}
+<section class="sl-hero">
+  <div class="sl-hero-inner">
+    <nav class="sl-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      <span>All Stores</span>
+    </nav>
+    <h1 class="sl-hero-title">All Coupon Stores</h1>
+    <p class="sl-hero-desc">Browse {{ len $validPages }} stores and find the best verified coupon codes &amp; deals — updated daily.</p>
+
+    {{/* Stats */}}
+    <div class="sl-stats">
+      <div class="sl-stat">
+        <span class="sl-stat-n">{{ len $validPages }}+</span>
+        <span class="sl-stat-l">Stores</span>
+      </div>
+      <div class="sl-stat-div"></div>
+      <div class="sl-stat">
+        <span class="sl-stat-n">{{ $totalCoupons }}+</span>
+        <span class="sl-stat-l">Coupons</span>
+      </div>
+      <div class="sl-stat-div"></div>
+      <div class="sl-stat">
+        <span class="sl-stat-n">Daily</span>
+        <span class="sl-stat-l">Updated</span>
+      </div>
+      <div class="sl-stat-div"></div>
+      <div class="sl-stat">
+        <span class="sl-stat-n">Free</span>
+        <span class="sl-stat-l">No Sign-up</span>
       </div>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="storesGrid">
-      {{ range $validPages }}
-      {{ partial "store-card.html" . }}
+    {{/* Search bar */}}
+    <div class="sl-search-wrap">
+      <div class="sl-search-inner">
+        <svg class="sl-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input
+          type="text"
+          id="storeFilterInput"
+          placeholder="Search stores... (e.g. Nike, Amazon)"
+          class="sl-search-input"
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <button id="searchClear" class="sl-search-clear" aria-label="Clear search" style="display:none">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ─── A–Z Filter bar ──────────────────────────────────────────────────── */}}
+<div class="sl-az-bar" id="azBar">
+  <div class="sl-az-inner">
+    <button class="sl-az-btn sl-az-all active" data-letter="all">All</button>
+    {{ range seq 26 }}
+      {{ $letter := printf "%c" (add 64 .) }}
+      {{ $isActive := false }}
+      {{ range $activeLetters }}
+        {{ if eq . $letter }}{{ $isActive = true }}{{ end }}
+      {{ end }}
+      <button
+        class="sl-az-btn{{ if not $isActive }} sl-az-disabled{{ end }}"
+        data-letter="{{ $letter }}"
+        {{ if not $isActive }}disabled{{ end }}
+      >{{ $letter }}</button>
+    {{ end }}
+  </div>
+</div>
+
+{{/* ─── Main content ────────────────────────────────────────────────────── */}}
+<section class="sl-body">
+  <div class="sl-container">
+
+    {{/* Results count */}}
+    <div class="sl-results-bar">
+      <p class="sl-results-count" id="resultsCount">Showing <strong>{{ len $validPages }}</strong> stores</p>
+      <div class="sl-sort-wrap">
+        <label class="sl-sort-label" for="sortSelect">Sort:</label>
+        <select id="sortSelect" class="sl-sort-select">
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+          <option value="coupons">Most Coupons</option>
+        </select>
+      </div>
+    </div>
+
+    {{/* Store grid */}}
+    <div class="sl-grid" id="storesGrid">
+      {{ range $sorted }}
+        {{ $displayName := .Params.store_name | default .Title }}
+        {{ $slug := .Params.slug | default .Params.store_id | default (.Title | urlize) }}
+        {{ $storeURL := .Permalink }}
+        {{ if and $slug (strings.Contains $.Site.BaseURL "couponhauls.com") }}
+          {{ $storeURL = printf "https://%s.couponhauls.com/" $slug }}
+        {{ end }}
+        {{ $couponCount := .Params.coupon_count | default 0 }}
+        {{ $firstLetter := upper (substr $displayName 0 1) }}
+        <a
+          href="{{ $storeURL }}"
+          class="sl-card"
+          data-name="{{ lower $displayName }}"
+          data-letter="{{ $firstLetter }}"
+          data-coupons="{{ $couponCount }}"
+        >
+          <div class="sl-card-avatar">
+            <span>{{ $firstLetter }}</span>
+          </div>
+          <h3 class="sl-card-name">{{ $displayName }}</h3>
+          <p class="sl-card-count">{{ $couponCount }} {{ if eq $couponCount 1 }}Coupon{{ else }}Coupons{{ end }}</p>
+          <span class="sl-card-cta">View Deals →</span>
+        </a>
       {{ end }}
     </div>
 
-    <div id="noResults" class="hidden text-center py-16 text-gray-500">
-      <div class="text-5xl mb-4">🔍</div>
-      <p class="text-xl">No stores found matching your search.</p>
+    {{/* No results */}}
+    <div id="noResults" class="sl-empty" style="display:none">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <h3>No stores found</h3>
+      <p>Try a different search term or browse all stores.</p>
+      <button class="sl-empty-reset" onclick="resetFilters()">Show all stores</button>
     </div>
 
   </div>
 </section>
 
+{{/* ─── Styles ──────────────────────────────────────────────────────────── */}}
+<style>
+/* ── Hero ── */
+.sl-hero {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 3rem 1.5rem 3.5rem;
+}
+.sl-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.sl-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: .375rem;
+  font-size: .8125rem;
+  color: #94a3b8;
+  margin-bottom: 1.25rem;
+}
+.sl-breadcrumb a { color: #64748b; text-decoration: none; transition: color .15s; }
+.sl-breadcrumb a:hover { color: #0284c7; }
+.sl-breadcrumb svg { opacity: .4; flex-shrink: 0; }
+.sl-hero-title {
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 .625rem;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+.sl-hero-desc {
+  font-size: 1.0625rem;
+  color: #64748b;
+  line-height: 1.65;
+  max-width: 580px;
+  margin: 0 0 1.75rem;
+}
+
+/* Stats */
+.sl-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.sl-stat { display: flex; flex-direction: column; gap: .1rem; }
+.sl-stat-n { font-size: 1.25rem; font-weight: 800; color: #0284c7; line-height: 1; }
+.sl-stat-l { font-size: .7rem; color: #94a3b8; text-transform: uppercase; letter-spacing: .07em; }
+.sl-stat-div { width: 1px; height: 32px; background: #e2e8f0; }
+
+/* Search */
+.sl-search-wrap { max-width: 560px; }
+.sl-search-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.sl-search-icon {
+  position: absolute;
+  left: 1.125rem;
+  color: #94a3b8;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+.sl-search-input {
+  width: 100%;
+  padding: .875rem 3rem .875rem 3rem;
+  border-radius: 999px;
+  border: 2px solid #e2e8f0;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.sl-search-input::placeholder { color: #94a3b8; }
+.sl-search-input:focus {
+  border-color: #0284c7;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(2,132,199,.1);
+}
+.sl-search-clear {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: .25rem;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  transition: color .15s, background .15s;
+}
+.sl-search-clear:hover { color: #475569; background: #f1f5f9; }
+
+/* ── A–Z Bar ── */
+.sl-az-bar {
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 64px;
+  z-index: 40;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+.sl-az-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: .625rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  align-items: center;
+}
+.sl-az-btn {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 .375rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: .375rem;
+  background: #fff;
+  color: #475569;
+  font-size: .8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .15s;
+  font-family: inherit;
+  line-height: 1;
+}
+.sl-az-btn:hover:not(:disabled) { border-color: #0284c7; color: #0284c7; background: #f0f9ff; }
+.sl-az-btn.active { background: #0284c7; border-color: #0284c7; color: #fff; }
+.sl-az-all { min-width: 44px; }
+.sl-az-disabled { opacity: .3; cursor: not-allowed; }
+
+/* ── Body ── */
+.sl-body {
+  background: #f8fafc;
+  min-height: 60vh;
+  padding: 2rem 1.25rem 4rem;
+}
+.sl-container { max-width: 1100px; margin: 0 auto; }
+
+/* Results bar */
+.sl-results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.sl-results-count {
+  font-size: .9375rem;
+  color: #64748b;
+  margin: 0;
+}
+.sl-results-count strong { color: #0f172a; font-weight: 700; }
+.sl-sort-wrap { display: flex; align-items: center; gap: .5rem; }
+.sl-sort-label { font-size: .8125rem; color: #64748b; font-weight: 600; }
+.sl-sort-select {
+  font-size: .8125rem;
+  padding: .375rem .75rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: .5rem;
+  background: #fff;
+  color: #0f172a;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  transition: border-color .15s;
+}
+.sl-sort-select:focus { border-color: #0284c7; }
+
+/* ── Store grid ── */
+.sl-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+@media (min-width: 480px) { .sl-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 768px) { .sl-grid { grid-template-columns: repeat(4, 1fr); gap: 1.125rem; } }
+@media (min-width: 1024px) { .sl-grid { grid-template-columns: repeat(5, 1fr); } }
+
+/* ── Store card ── */
+.sl-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.375rem 1rem 1.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  text-decoration: none;
+  transition: box-shadow .18s, border-color .18s, transform .18s;
+  cursor: pointer;
+}
+.sl-card:hover {
+  box-shadow: 0 6px 24px rgba(2,132,199,.12);
+  border-color: #bae6fd;
+  transform: translateY(-2px);
+}
+.sl-card-avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: .75rem;
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(2,132,199,.25);
+}
+.sl-card-avatar span {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: Inter, system-ui, sans-serif;
+}
+.sl-card-name {
+  font-size: .9375rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin: 0;
+  line-height: 1.3;
+  word-break: break-word;
+}
+.sl-card:hover .sl-card-name { color: #0284c7; }
+.sl-card-count {
+  font-size: .8rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+}
+.sl-card-cta {
+  font-size: .8125rem;
+  color: #0284c7;
+  font-weight: 700;
+  margin-top: .125rem;
+}
+
+/* ── Empty state ── */
+.sl-empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #94a3b8;
+}
+.sl-empty svg { margin: 0 auto 1rem; opacity: .4; display: block; }
+.sl-empty h3 { font-size: 1.25rem; font-weight: 700; color: #475569; margin: 0 0 .5rem; }
+.sl-empty p  { font-size: .9375rem; color: #94a3b8; margin: 0 0 1.25rem; }
+.sl-empty-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: .375rem;
+  padding: .625rem 1.375rem;
+  background: #0284c7;
+  color: #fff;
+  border: none;
+  border-radius: .625rem;
+  font-size: .9rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background .15s;
+}
+.sl-empty-reset:hover { background: #0369a1; }
+</style>
+
+{{/* ─── JS: search + A–Z filter + sort ─────────────────────────────────── */}}
 <script>
 (function () {
-  var filterInput = document.getElementById('storeFilterInput');
-  var grid        = document.getElementById('storesGrid');
-  var noResults   = document.getElementById('noResults');
+  var input      = document.getElementById('storeFilterInput');
+  var clearBtn   = document.getElementById('searchClear');
+  var grid       = document.getElementById('storesGrid');
+  var noResults  = document.getElementById('noResults');
+  var countEl    = document.getElementById('resultsCount');
+  var sortSel    = document.getElementById('sortSelect');
+  var azBtns     = document.querySelectorAll('.sl-az-btn');
 
-  function filterStores(q) {
-    q = (q || '').toLowerCase().trim();
+  var activeLetter = 'all';
+  var activeQuery  = '';
+
+  function getCards() {
+    return Array.from(grid.querySelectorAll('.sl-card'));
+  }
+
+  function applyFilters() {
+    var q = activeQuery.toLowerCase().trim();
+    var l = activeLetter;
     var visible = 0;
-    grid.querySelectorAll('a').forEach(function (card) {
-      var name = (card.querySelector('h3') ? card.querySelector('h3').textContent : '').toLowerCase();
-      var show = !q || name.includes(q);
+
+    getCards().forEach(function (card) {
+      var name   = card.dataset.name || '';
+      var letter = card.dataset.letter || '';
+      var matchQ = !q || name.includes(q);
+      var matchL = l === 'all' || letter === l;
+      var show   = matchQ && matchL;
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
-    noResults.classList.toggle('hidden', visible > 0);
+
+    noResults.style.display   = visible === 0 ? '' : 'none';
+    countEl.innerHTML = 'Showing <strong>' + visible + '</strong> store' + (visible !== 1 ? 's' : '');
+    clearBtn.style.display = q ? '' : 'none';
   }
 
-  /* Live typing filter */
-  if (filterInput) {
-    filterInput.addEventListener('input', function () {
-      filterStores(this.value);
+  function sortCards(order) {
+    var cards = getCards();
+    cards.sort(function (a, b) {
+      if (order === 'az')      return a.dataset.name.localeCompare(b.dataset.name);
+      if (order === 'za')      return b.dataset.name.localeCompare(a.dataset.name);
+      if (order === 'coupons') return parseInt(b.dataset.coupons || 0) - parseInt(a.dataset.coupons || 0);
+      return 0;
+    });
+    cards.forEach(function (c) { grid.appendChild(c); });
+    applyFilters();
+  }
+
+  /* Search input */
+  if (input) {
+    input.addEventListener('input', function () {
+      activeQuery = this.value;
+      applyFilters();
     });
   }
 
-  /* ── Read ?q= param from homepage search and auto-filter ── */
+  /* Clear button */
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function () {
+      input.value = '';
+      activeQuery = '';
+      applyFilters();
+      input.focus();
+    });
+  }
+
+  /* A–Z buttons */
+  azBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (this.disabled) return;
+      activeLetter = this.dataset.letter;
+      azBtns.forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      applyFilters();
+    });
+  });
+
+  /* Sort */
+  if (sortSel) {
+    sortSel.addEventListener('change', function () { sortCards(this.value); });
+  }
+
+  /* ?q= from homepage search */
   var params = new URLSearchParams(window.location.search);
-  var q      = params.get('q');
-  if (q && filterInput) {
-    filterInput.value = q;
-    filterStores(q);
-    /* Scroll the filter input into view so the user sees results */
-    filterInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  var qParam = params.get('q');
+  if (qParam && input) {
+    input.value = qParam;
+    activeQuery  = qParam;
+    applyFilters();
+    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 })();
+
+function resetFilters() {
+  document.getElementById('storeFilterInput').value = '';
+  document.querySelectorAll('.sl-az-btn').forEach(function (b) {
+    b.classList.remove('active');
+  });
+  document.querySelector('.sl-az-all').classList.add('active');
+  document.querySelectorAll('.sl-card').forEach(function (c) { c.style.display = ''; });
+  document.getElementById('noResults').style.display = 'none';
+  var total = document.querySelectorAll('.sl-card').length;
+  document.getElementById('resultsCount').innerHTML = 'Showing <strong>' + total + '</strong> stores';
+  document.getElementById('storeFilterInput').dispatchEvent(new Event('input'));
+}
 </script>
 
 {{ end }}

@@ -1,20 +1,20 @@
 ---
-title: "Shaw's Coupon Code 2026 - Grocery Deals"
+title: "Shaws Supermarket Weekly Flyer (April 2026) Ad"
 slug: "shaws"
-description: "Shaw's Coupon Code 2026. Find verified Shaw's promo codes, digital coupons, and weekly grocery deals to save more on everyday essentials."
+description: "Shaws supermarket weekly flyer 2026. Find shaw's weekly ad, promo codes, digital coupons, and grocery deals to save on meat, seafood and bakery."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Shaw's"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Shaw's Coupon Code 2026 - Grocery Deals"
-store_title: "Shaw's Coupon Code 2026 - Grocery Deals"
-store_meta_description: "Shaw's Coupon Code 2026. Find verified Shaw's promo codes, digital coupons, and weekly grocery deals to save more on everyday essentials."
+store_h1: "Shaws Supermarket Weekly Flyer (April 2026) Ad"
+store_title: "Shaws Supermarket Weekly Flyer (April 2026) Ad"
+store_meta_description: "Shaws supermarket weekly flyer 2026. Find shaw's weekly ad, promo codes, digital coupons, and grocery deals to save on meat, seafood and bakery."
 store_keywords: "shaws coupon code, shaws promo code, shaws discount code, shaws deals, shaws offers, shaws grocery coupons, shaws coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Shaw's Coupon Code 2026 - Grocery Deals"
-store_og_description: "Shaw's Coupon Code 2026. Find verified Shaw's promo codes, digital coupons, and weekly grocery deals to save more on everyday essentials."
+store_og_title: "Shaws Supermarket Weekly Flyer (April 2026) Ad"
+store_og_description: "Shaws supermarket weekly flyer 2026. Find shaw's weekly ad, promo codes, digital coupons, and grocery deals to save on meat, seafood and bakery."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "shaws"
 
 coupons:
-  - coupon_id: "1110"
-    coupon_title: "County Market Weekly Ad Specials"
+  - coupon_id: "1114"
+    coupon_title: "Shaw's for U Digital Coupons"
     coupon_code: ""
-    coupon_description: "Browse the County Market weekly ad to discover deals on fresh foods, bakery items, and household products."
-    coupon_aff_url: "https://www.mycountymarket.com/"
+    coupon_description: "Sign up for Shaw's for U to clip digital coupons and unlock personalized savings on groceries and household essentials."
+    coupon_aff_url: "https://www.shaws.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1111"
-    coupon_title: "County Market Digital Coupons"
+  - coupon_id: "1115"
+    coupon_title: "Shaw's Weekly Grocery Deals"
     coupon_code: ""
-    coupon_description: "Clip County Market digital coupons to save on groceries, beverages, snacks, and everyday essentials."
-    coupon_aff_url: "https://www.mycountymarket.com/"
+    coupon_description: "Browse the Shaw's weekly ad to find discounts on fresh produce, meats, bakery items, and everyday grocery products."
+    coupon_aff_url: "https://www.shaws.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"

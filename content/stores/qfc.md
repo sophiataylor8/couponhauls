@@ -1,20 +1,20 @@
 ---
-title: "QFC Coupon Code 2026 - Grocery Savings"
+title: "QFC Weekly Ad Preview (April 2026) Sale Ad"
 slug: "qfc"
-description: "QFC Coupon Code 2026. Find verified QFC promo codes, digital coupons, and weekly grocery deals to save more on everyday shopping."
+description: "QFC weekly ad preview April 2026. Find QFC sale ad, promo code, digital coupons, and grocery deals to save more on everyday shopping."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "QFC"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "QFC Coupon Code 2026 - Grocery Savings"
-store_title: "QFC Coupon Code 2026 - Grocery Savings"
-store_meta_description: "QFC Coupon Code 2026. Find verified QFC promo codes, digital coupons, and weekly grocery deals to save more on everyday shopping."
+store_h1: "QFC Weekly Ad Preview (April 2026) Sale Ad"
+store_title: "QFC Weekly Ad Preview (April 2026) Sale Ad"
+store_meta_description: "QFC weekly ad preview April 2026. Find QFC sale ad, promo code, digital coupons, and grocery deals to save more on everyday shopping."
 store_keywords: "qfc coupon code, qfc promo code, qfc discount code, qfc deals, qfc offers, qfc grocery coupons, qfc coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "QFC Coupon Code 2026 - Grocery Savings"
-store_og_description: "QFC Coupon Code 2026. Find verified QFC promo codes, digital coupons, and weekly grocery deals to save more on everyday shopping."
+store_og_title: "QFC Weekly Ad Preview (April 2026) Sale Ad"
+store_og_description: "QFC weekly ad preview April 2026. Find QFC sale ad, promo code, digital coupons, and grocery deals to save more on everyday shopping."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "qfc"
 
 coupons:
-  - coupon_id: "1064"
-    coupon_title: "Sprouts Weekly Ad Fresh Deals"
+  - coupon_id: "1066"
+    coupon_title: "QFC Weekly Grocery Deals"
     coupon_code: ""
-    coupon_description: "Browse the Sprouts weekly ad to save on fresh produce, natural groceries, vitamins, and organic products."
-    coupon_aff_url: "https://www.sprouts.com/"
+    coupon_description: "Check the QFC weekly ad to find discounts on fresh produce, meats, bakery items, and everyday grocery essentials."
+    coupon_aff_url: "https://www.qfc.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1065"
-    coupon_title: "Sprouts Digital Coupons"
+  - coupon_id: "1067"
+    coupon_title: "QFC Digital Coupons & Rewards"
     coupon_code: ""
-    coupon_description: "Clip Sprouts digital coupons through your account to unlock savings on healthy foods, snacks, supplements, and household items."
-    coupon_aff_url: "https://www.sprouts.com/"
+    coupon_description: "Sign in to your QFC account to clip digital coupons and access personalized grocery deals and member savings."
+    coupon_aff_url: "https://www.qfc.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"

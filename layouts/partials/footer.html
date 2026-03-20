@@ -1,6 +1,11 @@
+{{/* ── Base URL without trailing slash for link building ── */}}
+{{ $base := .Site.BaseURL | strings.TrimRight "/" }}
+
 <footer class="bg-gray-900 text-gray-300">
   <div class="container mx-auto px-4 py-12">
   <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+  {{/* ── Brand column ── */}}
   <div>
   <h3 class="text-white font-bold text-lg mb-4">CouponHauls</h3>
   <p class="text-sm mb-4">Your trusted source for the latest coupon codes and deals from top retailers.</p>
@@ -13,30 +18,42 @@
   </a>
   </div>
   </div>
+
+  {{/* ── Quick links column ── */}}
   <div>
   <h3 class="text-white font-bold text-lg mb-4">Quick Links</h3>
   <ul class="space-y-2 text-sm">
-  <li><a href="/stores/" class="hover:text-white transition-colors">All Stores</a></li>
-  <li><a href="/blog/" class="hover:text-white transition-colors">Blog</a></li>
-  <li><a href="/about/" class="hover:text-white transition-colors">About Us</a></li>
-  <li><a href="/contact/" class="hover:text-white transition-colors">Contact Us</a></li>
+  <li><a href="{{ $base }}/stores/" class="hover:text-white transition-colors">All Stores</a></li>
+  <li><a href="{{ $base }}/blog/"   class="hover:text-white transition-colors">Blog</a></li>
+  <li><a href="{{ $base }}/about/"  class="hover:text-white transition-colors">About Us</a></li>
+  <li><a href="{{ $base }}/contact/" class="hover:text-white transition-colors">Contact Us</a></li>
   </ul>
   </div>
+
+  {{/* ── Popular stores column ── */}}
   <div>
   <h3 class="text-white font-bold text-lg mb-4">Popular Stores</h3>
   <ul class="space-y-2 text-sm">
   {{ range first 6 (where (where .Site.RegularPages "Section" "stores") ".Params.is_active" true) }}
-  <li><a href="{{ .Permalink }}" class="hover:text-white transition-colors">{{ .Params.store_name | default .Title }}</a></li>
+    {{ $slug := .Params.slug | default .Params.store_id }}
+    {{ $storeURL := .Permalink }}
+    {{ if and $slug (strings.Contains $.Site.BaseURL "couponhauls.com") }}
+      {{ $storeURL = printf "https://%s.couponhauls.com/" $slug }}
+    {{ end }}
+  <li><a href="{{ $storeURL }}" class="hover:text-white transition-colors">{{ .Params.store_name | default .Title }}</a></li>
   {{ end }}
   </ul>
   </div>
+
+  {{/* ── Legal column ── */}}
   <div>
   <h3 class="text-white font-bold text-lg mb-4">Legal</h3>
   <ul class="space-y-2 text-sm">
-  <li><a href="/privacy/" class="hover:text-white transition-colors">Privacy Policy</a></li>
-  <li><a href="/affiliate-disclaimer/" class="hover:text-white transition-colors">Affiliate Disclaimer</a></li>
+  <li><a href="{{ $base }}/privacy/"              class="hover:text-white transition-colors">Privacy Policy</a></li>
+  <li><a href="{{ $base }}/affiliate-disclaimer/" class="hover:text-white transition-colors">Affiliate Disclaimer</a></li>
   </ul>
   </div>
+
   </div>
   <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
   <p>&copy; {{ now.Year }} CouponHauls. All rights reserved.</p>

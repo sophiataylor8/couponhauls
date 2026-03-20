@@ -1,20 +1,20 @@
 ---
-title: "Randalls Coupon Code 2026 - Latest Grocery Offers"
+title: "Randalls Weekly Ad (April 2026) Weekly Flyer"
 slug: "randalls"
-description: "Randalls Coupon Code 2026. Discover the latest Randalls promo codes, grocery coupons, and weekly deals to save more on everyday shopping."
+description: "Randalls weekly ad 2026. Discover the latest Randalls weekly flyer, promo code, grocery coupons, and deals to save more on everyday shopping."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Randalls"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Randalls Coupon Code 2026 - Latest Grocery Offers"
-store_title: "Randalls Coupon Code 2026 - Latest Grocery Offers"
-store_meta_description: "Randalls Coupon Code 2026. Discover the latest Randalls promo codes, grocery coupons, and weekly deals to save more on everyday shopping."
+store_h1: "Randalls Weekly Ad (April 2026) Weekly Flyer"
+store_title: "Randalls Weekly Ad (April 2026) Weekly Flyer"
+store_meta_description: "Randalls weekly ad 2026. Discover the latest Randalls weekly flyer, promo code, grocery coupons, and deals to save more on everyday shopping."
 store_keywords: "randalls coupon code, randalls promo code, randalls discount code, randalls deals, randalls offers, randalls grocery coupons, randalls coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Randalls Coupon Code 2026 - Latest Grocery Offers"
-store_og_description: "Randalls Coupon Code 2026. Discover the latest Randalls promo codes, grocery coupons, and weekly deals to save more on everyday shopping."
+store_og_title: "Randalls Weekly Ad (April 2026) Weekly Flyer"
+store_og_description: "Randalls weekly ad 2026. Discover the latest Randalls weekly flyer, promo code, grocery coupons, and deals to save more on everyday shopping."
 store_og_image: ""
 store_og_type: "website"
 

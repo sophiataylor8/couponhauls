@@ -1,20 +1,20 @@
 ---
-title: "Big Lots Coupon Code 2026 - Save on Home & More"
+title: "Big Lots Sale Ad for This Week (April 2026) Weekly Ad"
 slug: "biglots"
-description: "Big Lots Coupon Code 2026. Get the latest Big Lots promo codes, discount deals, and coupons for furniture, home goods, and everyday essentials."
+description: "Big lots sale ad for this week April 2026. Get Big Lots weekly ad, promo code, deals, and coupons for furniture, home goods and everyday essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Big Lots"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Big Lots Coupon Code 2026 - Save on Home & More"
-store_title: "Big Lots Coupon Code 2026 - Save on Home & More"
-store_meta_description: "Big Lots Coupon Code 2026. Get the latest Big Lots promo codes, discount deals, and coupons for furniture, home goods, and everyday essentials."
+store_h1: "Big Lots Sale Ad for This Week (April 2026) Weekly Ad"
+store_title: "Big Lots Sale Ad for This Week (April 2026) Weekly Ad"
+store_meta_description: "Big lots sale ad for this week April 2026. Get Big Lots weekly ad, promo code, deals, and coupons for furniture, home goods and everyday essentials."
 store_keywords: "big lots coupon code, big lots promo code, big lots discount code, big lots deals, big lots offers, big lots sale, big lots coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Big Lots Coupon Code 2026 - Save on Home & More"
-store_og_description: "Big Lots Coupon Code 2026. Get the latest Big Lots promo codes, discount deals, and coupons for furniture, home goods, and everyday essentials."
+store_og_title: "Big Lots Sale Ad for This Week (April 2026) Weekly Ad"
+store_og_description: "Big lots sale ad for this week April 2026. Get Big Lots weekly ad, promo code, deals, and coupons for furniture, home goods and everyday essentials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "biglots"
 
 coupons:
-  - coupon_id: "1068"
-    coupon_title: "Kroger Weekly Ad Savings"
+  - coupon_id: "1070"
+    coupon_title: "Big Lots Clearance Deals"
     coupon_code: ""
-    coupon_description: "Explore the Kroger weekly ad for limited-time discounts on fresh foods, snacks, beverages, and household essentials."
-    coupon_aff_url: "https://www.kroger.com/"
+    coupon_description: "Shop Big Lots clearance section to find deep discounts on furniture, home decor, seasonal items, and household essentials."
+    coupon_aff_url: "https://www.biglots.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1069"
-    coupon_title: "Kroger Digital Coupons"
+  - coupon_id: "1071"
+    coupon_title: "Big Rewards Member Savings"
     coupon_code: ""
-    coupon_description: "Clip Kroger digital coupons through your account to enjoy personalized grocery discounts and exclusive online deals."
-    coupon_aff_url: "https://www.kroger.com/"
+    coupon_description: "Join Big Rewards to access exclusive coupons, member-only pricing, and special promotions at Big Lots."
+    coupon_aff_url: "https://www.biglots.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
@@ -48,7 +48,7 @@ coupons:
 
 Big Lots is a retail chain known for offering discounted merchandise across a variety of product categories. The store has become popular among shoppers who want to find deals on home goods, furniture, food products, and seasonal merchandise. With hundreds of locations, Big Lots provides customers with access to a constantly changing selection of products at competitive prices.
 
-Unlike traditional grocery stores or department stores, Big Lots focuses on closeout deals and discounted inventory. This means shoppers may find brand-name products at lower prices than they might see at other retailers. The store�s inventory often includes furniture, home d�cor, cleaning supplies, snacks, packaged foods, and everyday household essentials.
+Unlike traditional grocery stores or department stores, Big Lots focuses on closeout deals and discounted inventory. This means shoppers may find brand-name products at lower prices than they might see at other retailers. The store’s inventory often includes furniture, home décor, cleaning supplies, snacks, packaged foods, and everyday household essentials.
 
 Big Lots also carries seasonal merchandise that changes throughout the year. Customers can shop for holiday decorations, outdoor furniture, gardening supplies, and back-to-school items depending on the season. Because the product selection frequently changes, many shoppers enjoy visiting the store regularly to discover new deals.
 

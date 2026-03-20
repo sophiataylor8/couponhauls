@@ -1,20 +1,20 @@
 ---
-title: "Stop and Shop Coupon Code 2026 - Save on Groceries"
+title: "Stop and Shop Weekly Circular (April 2026) Flyer"
 slug: "stopandshop"
-description: "Stop and Shop Coupon Code 2026. Discover verified Stop and Shop promo codes, digital coupons, and weekly grocery deals for maximum savings."
+description: "Stop and Shop weekly circular April 2026. Discover Stop and Shop weekly flyer, promo code, digital coupons, and grocery deals for maximum savings."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Stop and Shop"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Stop and Shop Coupon Code 2026 - Save on Groceries"
-store_title: "Stop and Shop Coupon Code 2026 - Save on Groceries"
-store_meta_description: "Stop and Shop Coupon Code 2026. Discover verified Stop and Shop promo codes, digital coupons, and weekly grocery deals for maximum savings."
+store_h1: "Stop and Shop Weekly Circular (April 2026) Flyer"
+store_title: "Stop and Shop Weekly Circular (April 2026) Flyer"
+store_meta_description: "Stop and Shop weekly circular April 2026. Discover Stop and Shop weekly flyer, promo code, digital coupons, and grocery deals for maximum savings."
 store_keywords: "stop and shop coupon code, stop and shop promo code, stop and shop discount code, stop and shop deals, stop and shop offers, stop and shop grocery coupons, stop and shop coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Stop and Shop Coupon Code 2026 - Save on Groceries"
-store_og_description: "Stop and Shop Coupon Code 2026. Discover verified Stop and Shop promo codes, digital coupons, and weekly grocery deals for maximum savings."
+store_og_title: "Stop and Shop Weekly Circular (April 2026) Flyer"
+store_og_description: "Stop and Shop weekly circular April 2026. Discover Stop and Shop weekly flyer, promo code, digital coupons, and grocery deals for maximum savings."
 store_og_image: ""
 store_og_type: "website"
 

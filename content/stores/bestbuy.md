@@ -1,20 +1,20 @@
 ---
-title: "Best Buy Coupon Code 2026 - 15% Off"
+title: "Best Buy Offer Code (April 2026) 15% Off Promo Code"
 slug: "bestbuy"
-description: "Best Buy Coupon Code 2026. Unlock Best Buy coupon codes & tech deals. Save on laptops, TVs, appliances & gadgets."
+description: "Best Buy offer code April 2026. Unlock Best buy coupon code, coupons and tech deals. Save on laptops, TVs, appliances and gadgets."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Best Buy"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Best Buy Coupon Code 2026 - 15% Off"
-store_title: "Best Buy Coupon Code 2026 - 15% Off"
-store_meta_description: "Best Buy Coupon Code 2026. Unlock Best Buy coupon codes & tech deals. Save on laptops, TVs, appliances & gadgets."
+store_h1: "Best Buy Offer Code (April 2026) 15% Off Promo Code"
+store_title: "Best Buy Offer Code (April 2026) 15% Off Promo Code"
+store_meta_description: "Best Buy offer code April 2026. Unlock Best buy coupon code, coupons and tech deals. Save on laptops, TVs, appliances and gadgets."
 store_keywords: "best buy coupon code, best buy promo code, best buy discount code, best buy deals, best buy offers, best buy sale, best buy coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Best Buy Coupon Code 2026 - 15% Off"
-store_og_description: "Best Buy Coupon Code 2026. Unlock Best Buy coupon codes & tech deals. Save on laptops, TVs, appliances & gadgets."
+store_og_title: "Best Buy Offer Code (April 2026) 15% Off Promo Code"
+store_og_description: "Best Buy offer code April 2026. Unlock Best buy coupon code, coupons and tech deals. Save on laptops, TVs, appliances and gadgets."
 store_og_image: ""
 store_og_type: "website"
 

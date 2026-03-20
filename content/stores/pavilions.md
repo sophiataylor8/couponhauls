@@ -1,20 +1,20 @@
 ---
-title: "Pavilions Coupon Code 2026 - Grocery Deals"
+title: "Pavilions Weekly Ad (April 2026) Weekly Flyer"
 slug: "pavilions"
-description: "Pavilions Coupon Code 2026. Save on groceries with verified Pavilions promo codes, digital coupons, and weekly deals updated daily."
+description: "Pavilions weekly ad April 2026. Save on groceries with verified Pavilions promo codes, digital coupons, and weekly flyer deals updated daily."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Pavilions"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Pavilions Coupon Code 2026 - Grocery Deals"
-store_title: "Pavilions Coupon Code 2026 - Grocery Deals"
-store_meta_description: "Pavilions Coupon Code 2026. Save on groceries with verified Pavilions promo codes, digital coupons, and weekly deals updated daily."
+store_h1: "Pavilions Weekly Ad (April 2026) Weekly Flyer"
+store_title: "Pavilions Weekly Ad (April 2026) Weekly Flyer"
+store_meta_description: "Pavilions weekly ad April 2026. Save on groceries with verified Pavilions promo codes, digital coupons, and weekly flyer deals updated daily."
 store_keywords: "pavilions coupon code, pavilions promo code, pavilions discount code, pavilions deals, pavilions offers, pavilions grocery coupons, pavilions coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Pavilions Coupon Code 2026 - Grocery Deals"
-store_og_description: "Pavilions Coupon Code 2026. Save on groceries with verified Pavilions promo codes, digital coupons, and weekly deals updated daily."
+store_og_title: "Pavilions Weekly Ad (April 2026) Weekly Flyer"
+store_og_description: "Pavilions weekly ad April 2026. Save on groceries with verified Pavilions promo codes, digital coupons, and weekly flyer deals updated daily."
 store_og_image: ""
 store_og_type: "website"
 
@@ -56,4 +56,4 @@ Pavilions frequently runs weekly ads and special promotions on popular grocery i
 
 This page gathers the latest Pavilions coupons and promotional offers in one convenient place. Before placing your order or heading to the store, check the available deals to see which discounts apply to your shopping list. Simply copy the coupon code or activate the deal and apply it at checkout to enjoy instant savings.
 
-Whether you�re stocking up on groceries for the week or searching for fresh ingredients for a special meal, Pavilions offers a convenient and reliable shopping experience. With the help of the latest coupon codes and deals listed here, you can enjoy high-quality groceries while keeping your shopping budget under control.
+Whether you’re stocking up on groceries for the week or searching for fresh ingredients for a special meal, Pavilions offers a convenient and reliable shopping experience. With the help of the latest coupon codes and deals listed here, you can enjoy high-quality groceries while keeping your shopping budget under control.

@@ -1,20 +1,20 @@
 ---
-title: "CVS Coupon Code 2026 - 20% Off"
+title: "CVS Coupon $10 (April 2026) $5 Off $20 Coupon"
 slug: "cvs"
-description: "CVS Coupon Code 2026. Find working CVS coupon codes & pharmacy deals. Save on prescriptions, beauty & essentials."
+description: "CVS Coupon $10 April 2026. Find working CVS $5 off $20 coupon code, discount code and 4x6 photo prints promo code. Save on gifts, beauty and essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "CVS"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "CVS Coupon Code 2026 - 20% Off"
-store_title: "CVS Coupon Code 2026 - 20% Off"
-store_meta_description: "CVS Coupon Code 2026. Find working CVS coupon codes & pharmacy deals. Save on prescriptions, beauty & essentials."
+store_h1: "CVS Coupon $10 (April 2026) $5 Off $20 Coupon"
+store_title: "CVS Coupon $10 (April 2026) $5 Off $20 Coupon"
+store_meta_description: "CVS Coupon $10 April 2026. Find working CVS $5 off $20 coupon code, discount code and 4x6 photo prints promo code. Save on gifts, beauty and essentials."
 store_keywords: "cvs coupon code, cvs promo code, cvs discount code, cvs deals, cvs offers, cvs pharmacy coupons, cvs coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "CVS Coupon Code 2026 - 20% Off"
-store_og_description: "CVS Coupon Code 2026. Find working CVS coupon codes & pharmacy deals. Save on prescriptions, beauty & essentials."
+store_og_title: "CVS Coupon $10 (April 2026) $5 Off $20 Coupon"
+store_og_description: "CVS Coupon $10 April 2026. Find working CVS $5 off $20 coupon code, discount code and 4x6 photo prints promo code. Save on gifts, beauty and essentials."
 store_og_image: ""
 store_og_type: "website"
 

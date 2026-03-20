@@ -1,20 +1,20 @@
 ---
-title: "Foodtown Coupon Code 2026 - Grocery Discounts"
+title: "Foodtown Weekly Ad (April 2026) Flyer, Circular"
 slug: "foodtown"
-description: "Foodtown Coupon Code 2026. Find verified Foodtown promo codes, grocery coupons, and weekly deals for extra savings on everyday shopping."
+description: "Foodtown weekly ad april 2026. Find Foodtown weekly flyer, promo codes, grocery coupons, and deals for extra savings on fresh market shopping."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Foodtown"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Foodtown Coupon Code 2026 - Grocery Discounts"
-store_title: "Foodtown Coupon Code 2026 - Grocery Discounts"
-store_meta_description: "Foodtown Coupon Code 2026. Find verified Foodtown promo codes, grocery coupons, and weekly deals for extra savings on everyday shopping."
+store_h1: "Foodtown Weekly Ad (April 2026) Flyer, Circular"
+store_title: "Foodtown Weekly Ad (April 2026) Flyer, Circular"
+store_meta_description: "Foodtown weekly ad april 2026. Find Foodtown weekly flyer, promo codes, grocery coupons, and deals for extra savings on fresh market shopping."
 store_keywords: "foodtown coupon code, foodtown promo code, foodtown discount code, foodtown deals, foodtown offers, foodtown grocery coupons, foodtown coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Foodtown Coupon Code 2026 - Grocery Discounts"
-store_og_description: "Foodtown Coupon Code 2026. Find verified Foodtown promo codes, grocery coupons, and weekly deals for extra savings on everyday shopping."
+store_og_title: "Foodtown Weekly Ad (April 2026) Flyer, Circular"
+store_og_description: "Foodtown weekly ad april 2026. Find Foodtown weekly flyer, promo codes, grocery coupons, and deals for extra savings on fresh market shopping."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "foodtown"
 
 coupons:
-  - coupon_id: "1124"
-    coupon_title: "Big Y myPicks Digital Coupons"
+  - coupon_id: "1128"
+    coupon_title: "Foodtown Weekly Ad Savings"
     coupon_code: ""
-    coupon_description: "Join Big Y myPicks to clip digital coupons and access exclusive grocery savings and personalized offers."
-    coupon_aff_url: "https://www.bigy.com/"
+    coupon_description: "Check the Foodtown weekly circular for deals on fresh produce, meats, dairy, and grocery essentials."
+    coupon_aff_url: "https://www.foodtown.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1125"
-    coupon_title: "Big Y Weekly Grocery Specials"
+  - coupon_id: "1129"
+    coupon_title: "Foodtown Digital Coupon Deals"
     coupon_code: ""
-    coupon_description: "Shop Big Y weekly specials to save on fresh produce, meats, dairy products, and everyday groceries."
-    coupon_aff_url: "https://www.bigy.com/"
+    coupon_description: "Clip Foodtown digital coupons to unlock extra savings on groceries and household products."
+    coupon_aff_url: "https://www.foodtown.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"

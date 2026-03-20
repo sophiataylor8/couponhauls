@@ -1,20 +1,20 @@
 ---
-title: "Nike Coupon Code 2026 - 20% Off"
+title: "Nike App Promo Code (April 2026) - 20% Off"
 slug: "nike"
-description: "Nike Coupon Code 2026. Grab Nike coupon codes & sneaker deals. Save on running shoes, activewear & sports gear."
+description: "Nike app promo code 2026. Grab Nike discount code, free shipping coupon and sneaker deals. Save on running shoes, activewear and sports gear."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Nike"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Nike Coupon Code 2026 - 20% Off"
-store_title: "Nike Coupon Code 2026 - 20% Off"
-store_meta_description: "Nike Coupon Code 2026. Grab Nike coupon codes & sneaker deals. Save on running shoes, activewear & sports gear."
+store_h1: "Nike App Promo Code (April 2026) - 20% Off"
+store_title: "Nike App Promo Code (April 2026) - 20% Off"
+store_meta_description: "Nike app promo code 2026. Grab Nike discount code, free shipping coupon and sneaker deals. Save on running shoes, activewear and sports gear."
 store_keywords: "nike coupon code, nike promo code, nike discount code, nike deals, nike offers, nike sale, nike coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Nike Coupon Code 2026 - 20% Off"
-store_og_description: "Nike Coupon Code 2026. Grab Nike coupon codes & sneaker deals. Save on running shoes, activewear & sports gear."
+store_og_title: "Nike App Promo Code (April 2026) - 20% Off"
+store_og_description: "Nike app promo code 2026. Grab Nike discount code, free shipping coupon and sneaker deals. Save on running shoes, activewear and sports gear."
 store_og_image: ""
 store_og_type: "website"
 

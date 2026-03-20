@@ -1,20 +1,20 @@
 ---
-title: "Tom Thumb Coupon Code 2026 - Save on Groceries"
+title: "Tom Thumb Weekly Ad (April 2026) Grocery Ad"
 slug: "tomthumb"
-description: "Tom Thumb Coupon Code 2026. Get the latest Tom Thumb promo codes, digital coupons, and grocery deals to save more on everyday essentials."
+description: "Tom Thumb weekly ad 2026. Get the latest Tom Thumb grocery ad, promo code, digital coupons, and deals to save more on everyday essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Tom Thumb"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Tom Thumb Coupon Code 2026 - Save on Groceries"
-store_title: "Tom Thumb Coupon Code 2026 - Save on Groceries"
-store_meta_description: "Tom Thumb Coupon Code 2026. Get the latest Tom Thumb promo codes, digital coupons, and grocery deals to save more on everyday essentials."
+store_h1: "Tom Thumb Weekly Ad (April 2026) Grocery Ad"
+store_title: "Tom Thumb Weekly Ad (April 2026) Grocery Ad"
+store_meta_description: "Tom Thumb weekly ad 2026. Get the latest Tom Thumb grocery ad, promo code, digital coupons, and deals to save more on everyday essentials."
 store_keywords: "tom thumb coupon code, tom thumb promo code, tom thumb discount code, tom thumb deals, tom thumb offers, tom thumb grocery coupons, tom thumb coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Tom Thumb Coupon Code 2026 - Save on Groceries"
-store_og_description: "Tom Thumb Coupon Code 2026. Get the latest Tom Thumb promo codes, digital coupons, and grocery deals to save more on everyday essentials."
+store_og_title: "Tom Thumb Weekly Ad (April 2026) Grocery Ad"
+store_og_description: "Tom Thumb weekly ad 2026. Get the latest Tom Thumb grocery ad, promo code, digital coupons, and deals to save more on everyday essentials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -54,7 +54,7 @@ Saving money at Tom Thumb is easy when you take advantage of the latest coupon c
 
 On this page, you can discover the newest Tom Thumb coupon codes and deals available online. These promotions may include discounts on groceries, limited-time offers on selected items, and special savings events. By using these coupons during checkout, shoppers can enjoy additional savings on their purchases.
 
-Many customers also combine coupon codes with weekly ads and store promotions to maximize their savings. Whether you�re buying fresh produce, pantry staples, or household supplies, applying a valid coupon code can help you stretch your grocery budget even further.
+Many customers also combine coupon codes with weekly ads and store promotions to maximize their savings. Whether you’re buying fresh produce, pantry staples, or household supplies, applying a valid coupon code can help you stretch your grocery budget even further.
 
 This page is regularly updated with the latest Tom Thumb coupons and deals to help you find the best available discounts. Before placing an order or heading to the store, browse the listed promotions and select the one that best fits your shopping needs.
 

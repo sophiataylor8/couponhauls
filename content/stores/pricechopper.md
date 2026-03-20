@@ -1,20 +1,20 @@
 ---
-title: "Price Chopper Coupon Code 2026 - Grocery Discounts"
+title: "Price Chopper Weekly Flyer (April 2026) Circular"
 slug: "pricechopper"
-description: "Price Chopper Coupon Code 2026. Discover verified Price Chopper promo codes, digital coupons, and weekly grocery deals for extra savings."
+description: "Price Chopper weekly flyer April 2026. Discover Price Chopper weekly circular, promo code, digital coupons, and grocery deals for extra savings."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Price Chopper"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Price Chopper Coupon Code 2026 - Grocery Discounts"
-store_title: "Price Chopper Coupon Code 2026 - Grocery Discounts"
-store_meta_description: "Price Chopper Coupon Code 2026. Discover verified Price Chopper promo codes, digital coupons, and weekly grocery deals for extra savings."
+store_h1: "Price Chopper Weekly Flyer (April 2026) Circular"
+store_title: "Price Chopper Weekly Flyer (April 2026) Circular"
+store_meta_description: "Price Chopper weekly flyer April 2026. Discover Price Chopper weekly circular, promo code, digital coupons, and grocery deals for extra savings."
 store_keywords: "price chopper coupon code, price chopper promo code, price chopper discount code, price chopper deals, price chopper offers, price chopper grocery coupons, price chopper coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Price Chopper Coupon Code 2026 - Grocery Discounts"
-store_og_description: "Price Chopper Coupon Code 2026. Discover verified Price Chopper promo codes, digital coupons, and weekly grocery deals for extra savings."
+store_og_title: "Price Chopper Weekly Flyer (April 2026) Circular"
+store_og_description: "Price Chopper weekly flyer April 2026. Discover Price Chopper weekly circular, promo code, digital coupons, and grocery deals for extra savings."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "pricechopper"
 
 coupons:
-  - coupon_id: "1060"
-    coupon_title: "Market Basket Weekly Flyer Deals"
+  - coupon_id: "1062"
+    coupon_title: "Price Chopper AdvantEdge Digital Coupons"
     coupon_code: ""
-    coupon_description: "View the Market Basket weekly flyer to discover discounts on fresh produce, meats, dairy, and grocery staples."
-    coupon_aff_url: "https://www.shopmarketbasket.com/"
+    coupon_description: "Sign up for AdvantEdge Rewards to clip digital coupons and receive exclusive savings on groceries and household essentials."
+    coupon_aff_url: "https://www.pricechopper.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1061"
-    coupon_title: "In-Store Grocery Specials at Market Basket"
+  - coupon_id: "1063"
+    coupon_title: "Price Chopper Weekly Grocery Deals"
     coupon_code: ""
-    coupon_description: "Find rotating in-store promotions and seasonal grocery savings available at participating Market Basket locations."
-    coupon_aff_url: "https://www.shopmarketbasket.com/"
+    coupon_description: "Browse the Price Chopper weekly ad for special discounts on fresh foods, snacks, beverages, and everyday grocery items."
+    coupon_aff_url: "https://www.pricechopper.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"

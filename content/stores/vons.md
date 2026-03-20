@@ -1,20 +1,20 @@
 ---
-title: "Vons Coupon Code 2026 - Latest Grocery Savings"
+title: "Vons Weekly Ad (April 2026) $5 Friday This Week"
 slug: "vons"
-description: "Vons Coupon Code 2026. Find verified Vons promo codes, digital coupons, and weekly grocery deals to save more on everyday shopping."
+description: "Vons weekly ad April 2026. Find verified Vons $5 friday this week, promo code, digital coupons, and weekly grocery deals to save on everyday shopping."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Vons"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Vons Coupon Code 2026 - Latest Grocery Savings"
-store_title: "Vons Coupon Code 2026 - Latest Grocery Savings"
-store_meta_description: "Vons Coupon Code 2026. Find verified Vons promo codes, digital coupons, and weekly grocery deals to save more on everyday shopping."
+store_h1: "Vons Weekly Ad (April 2026) $5 Friday This Week"
+store_title: "Vons Weekly Ad (April 2026) $5 Friday This Week"
+store_meta_description: "Vons weekly ad April 2026. Find verified Vons $5 friday this week, promo code, digital coupons, and weekly grocery deals to save on everyday shopping."
 store_keywords: "vons coupon code, vons promo code, vons discount code, vons deals, vons offers, vons grocery coupons, vons coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Vons Coupon Code 2026 - Latest Grocery Savings"
-store_og_description: "Vons Coupon Code 2026. Find verified Vons promo codes, digital coupons, and weekly grocery deals to save more on everyday shopping."
+store_og_title: "Vons Weekly Ad (April 2026) $5 Friday This Week"
+store_og_description: "Vons weekly ad April 2026. Find verified Vons $5 friday this week, promo code, digital coupons, and weekly grocery deals to save on everyday shopping."
 store_og_image: ""
 store_og_type: "website"
 

@@ -1,20 +1,20 @@
 ---
-title: "Cabela's Coupon Code 2026 - Outdoor Gear Deals"
+title: "Cabela's Weekly Ad (April 2026) Deals"
 slug: "cabelas"
-description: "Cabela's Coupon Code 2026. Discover verified Cabela's promo codes, outdoor gear deals, and discounts on hunting, fishing, camping, and more."
+description: "Cabela's weekly ad April 2026. Discover Cabela's coupons, promo codes, outdoor gear deals, and discounts on hunting, fishing, camping, and more."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Cabela's"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Cabela's Coupon Code 2026 - Outdoor Gear Deals"
-store_title: "Cabela's Coupon Code 2026 - Outdoor Gear Deals"
-store_meta_description: "Cabela's Coupon Code 2026. Discover verified Cabela's promo codes, outdoor gear deals, and discounts on hunting, fishing, camping, and more."
+store_h1: "Cabela's Weekly Ad (April 2026) Deals"
+store_title: "Cabela's Weekly Ad (April 2026) Deals"
+store_meta_description: "Cabela's weekly ad April 2026. Discover Cabela's coupons, promo codes, outdoor gear deals, and discounts on hunting, fishing, camping, and more."
 store_keywords: "cabela's coupon code, cabela's promo code, cabela's discount code, cabelas deals, cabelas offers, cabelas sale, cabelas coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Cabela's Coupon Code 2026 - Outdoor Gear Deals"
-store_og_description: "Cabela's Coupon Code 2026. Discover verified Cabela's promo codes, outdoor gear deals, and discounts on hunting, fishing, camping, and more."
+store_og_title: "Cabela's Weekly Ad (April 2026) Deals"
+store_og_description: "Cabela's weekly ad April 2026. Discover Cabela's coupons, promo codes, outdoor gear deals, and discounts on hunting, fishing, camping, and more."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "cabelas"
 
 coupons:
-  - coupon_id: "1076"
-    coupon_title: "Smith's Digital Coupons"
+  - coupon_id: "1078"
+    coupon_title: "Cabela's Outdoor Gear Clearance"
     coupon_code: ""
-    coupon_description: "Clip digital coupons through your Smith's account to unlock savings on groceries, beverages, and household essentials."
-    coupon_aff_url: "https://www.smithsfoodanddrug.com/"
+    coupon_description: "Save on hunting gear, fishing equipment, camping essentials, and outdoor apparel in the Cabela's clearance section."
+    coupon_aff_url: "https://www.cabelas.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1077"
-    coupon_title: "Smith's Weekly Ad Grocery Deals"
+  - coupon_id: "1079"
+    coupon_title: "Cabela's Seasonal Sales Event"
     coupon_code: ""
-    coupon_description: "Browse the Smith's weekly ad to discover discounts on produce, meats, dairy products, and pantry staples."
-    coupon_aff_url: "https://www.smithsfoodanddrug.com/"
+    coupon_description: "Shop seasonal promotions at Cabela's for discounts on outdoor gear, footwear, and sporting goods."
+    coupon_aff_url: "https://www.cabelas.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"

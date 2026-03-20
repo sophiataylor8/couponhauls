@@ -1,20 +1,20 @@
 ---
-title: "Macys Coupon Code 2026 - 20% Off"
+title: "Macy's Newsletter Coupon Code (April 2026) 25% Off"
 slug: "macys"
-description: "Macys Coupon Code 2026. Find working Macys promo codes & sale offers. Save on fashion, beauty & home essentials."
+description: "Macy's newsletter coupon code 2026. Find macys promo code,  discount code and sale offers. Save on fashion, beauty and home essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Macys"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Macys Coupon Code 2026 - 20% Off"
-store_title: "Macys Coupon Code 2026 - 20% Off"
-store_meta_description: "Macys Coupon Code 2026. Find working Macys promo codes & sale offers. Save on fashion, beauty & home essentials."
+store_h1: "Macy's Newsletter Coupon Code (April 2026) 25% Off"
+store_title: "Macy's Newsletter Coupon Code (April 2026) 25% Off"
+store_meta_description: "Macy's newsletter coupon code 2026. Find macys promo code,  discount code and sale offers. Save on fashion, beauty and home essentials."
 store_keywords: "macys coupon code, macys promo code, macys discount code, macys deals, macys offers, macys sale, macys coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Macys Coupon Code 2026 - 20% Off"
-store_og_description: "Macys Coupon Code 2026. Find working Macys promo codes & sale offers. Save on fashion, beauty & home essentials."
+store_og_title: "Macy's Newsletter Coupon Code (April 2026) 25% Off"
+store_og_description: "Macy's newsletter coupon code 2026. Find macys promo code,  discount code and sale offers. Save on fashion, beauty and home essentials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -46,4 +46,4 @@ coupons:
     expires_at: "31/12/2030"
 ---
 
-Macy's is a well-known department store offering fashion apparel, accessories, beauty products, and home goods. Macy�s carries premium and designer brands, making it a destination for both everyday wear and special occasions. Seasonal sales, clearance events, and promotional coupons provide opportunities for significant savings. Customers can shop online or in-store for a comprehensive retail experience.
+Macy's is a well-known department store offering fashion apparel, accessories, beauty products, and home goods. Macy’s carries premium and designer brands, making it a destination for both everyday wear and special occasions. Seasonal sales, clearance events, and promotional coupons provide opportunities for significant savings. Customers can shop online or in-store for a comprehensive retail experience.

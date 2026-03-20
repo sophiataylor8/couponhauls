@@ -1,20 +1,20 @@
 ---
-title: "Safeway Coupon Code 2026 - Grocery Deals"
+title: "Safeway Weekly Ad (April 2026) $5 Friday Deals"
 slug: "safeway"
-description: "Safeway Coupon Code 2026. Save more with verified Safeway promo codes, digital coupons, and weekly grocery deals updated daily."
+description: "Safeway weekly ad April 2026. Save more with verified Safeway $5 friday deals, promo codes, digital coupons, and weekly grocery updated daily."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Safeway"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Safeway Coupon Code 2026 - Grocery Deals"
-store_title: "Safeway Coupon Code 2026 - Grocery Deals"
-store_meta_description: "Safeway Coupon Code 2026. Save more with verified Safeway promo codes, digital coupons, and weekly grocery deals updated daily."
+store_h1: "Safeway Weekly Ad (April 2026) $5 Friday Deals"
+store_title: "Safeway Weekly Ad (April 2026) $5 Friday Deals"
+store_meta_description: "Safeway weekly ad April 2026. Save more with verified Safeway $5 friday deals, promo codes, digital coupons, and weekly grocery updated daily."
 store_keywords: "safeway coupon code, safeway promo code, safeway discount code, safeway deals, safeway offers, safeway grocery coupons, safeway coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Safeway Coupon Code 2026 - Grocery Deals"
-store_og_description: "Safeway Coupon Code 2026. Save more with verified Safeway promo codes, digital coupons, and weekly grocery deals updated daily."
+store_og_title: "Safeway Weekly Ad (April 2026) $5 Friday Deals"
+store_og_description: "Safeway weekly ad April 2026. Save more with verified Safeway $5 friday deals, promo codes, digital coupons, and weekly grocery updated daily."
 store_og_image: ""
 store_og_type: "website"
 

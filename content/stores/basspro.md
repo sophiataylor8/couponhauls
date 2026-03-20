@@ -1,20 +1,20 @@
 ---
-title: "Bass Pro Coupon Code 2026 - Outdoor Gear Deals"
+title: "Bass Pro Weekly Ad (April 2026) Sale Flyer"
 slug: "basspro"
-description: "Bass Pro Coupon Code 2026. Discover verified Bass Pro promo codes, outdoor gear deals, and discounts on fishing, hunting, camping, and more."
+description: "Bass Pro weekly ad april 2026. Discover Bass Pro sale flyer, promo codes, outdoor gear deals, and discounts on fishing, hunting, camping, and more."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Bass Pro"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Bass Pro Coupon Code 2026 - Outdoor Gear Deals"
-store_title: "Bass Pro Coupon Code 2026 - Outdoor Gear Deals"
-store_meta_description: "Bass Pro Coupon Code 2026. Discover verified Bass Pro promo codes, outdoor gear deals, and discounts on fishing, hunting, camping, and more."
+store_h1: "Bass Pro Weekly Ad (April 2026) Sale Flyer"
+store_title: "Bass Pro Weekly Ad (April 2026) Sale Flyer"
+store_meta_description: "Bass Pro weekly ad april 2026. Discover Bass Pro sale flyer, promo codes, outdoor gear deals, and discounts on fishing, hunting, camping, and more."
 store_keywords: "bass pro coupon code, bass pro promo code, bass pro discount code, bass pro deals, bass pro offers, bass pro sale, bass pro coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Bass Pro Coupon Code 2026 - Outdoor Gear Deals"
-store_og_description: "Bass Pro Coupon Code 2026. Discover verified Bass Pro promo codes, outdoor gear deals, and discounts on fishing, hunting, camping, and more."
+store_og_title: "Bass Pro Weekly Ad (April 2026) Sale Flyer"
+store_og_description: "Bass Pro weekly ad april 2026. Discover Bass Pro sale flyer, promo codes, outdoor gear deals, and discounts on fishing, hunting, camping, and more."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "basspro"
 
 coupons:
-  - coupon_id: "1112"
-    coupon_title: "FreshCo Weekly Flyer Deals"
+  - coupon_id: "1116"
+    coupon_title: "Bass Pro Outdoor Gear Clearance"
     coupon_code: ""
-    coupon_description: "Check the FreshCo weekly flyer to save on fresh produce, meats, pantry items, and grocery essentials."
-    coupon_aff_url: "https://freshco.com/"
+    coupon_description: "Shop Bass Pro clearance section for discounts on fishing gear, hunting equipment, camping supplies, and outdoor apparel."
+    coupon_aff_url: "https://www.basspro.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1113"
-    coupon_title: "Scene+ Rewards Offers at FreshCo"
+  - coupon_id: "1117"
+    coupon_title: "Bass Pro Seasonal Outdoor Sale"
     coupon_code: ""
-    coupon_description: "Earn Scene+ points and access exclusive member promotions while shopping at FreshCo stores."
-    coupon_aff_url: "https://freshco.com/"
+    coupon_description: "Find seasonal promotions on outdoor gear, footwear, and sporting equipment at Bass Pro Shops."
+    coupon_aff_url: "https://www.basspro.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"

@@ -2,16 +2,12 @@ baseURL      = "https://www.couponhauls.com/"
 languageCode = "en-us"
 title        = "CouponHauls.com - Best Coupon Code, Deals"
 
-# Disable taxonomy & term pages (no /tags/ or /categories/ pages needed)
-disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+enableGitInfo   = false
+canonifyURLs    = false
+relativeURLs    = false
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Permalink rewrite:  /stores/<slug>/  →  /<slug>/
-# Each store lives at amazon.couponhauls.com (not /stores/amazon/)
-# Store .md files stay in content/stores/ but URLs are flattened here.
-# On your CDN/host (Netlify, Cloudflare, etc.) you need wildcard subdomain
-# routing pointing to the same build output. See README for details.
-# ─────────────────────────────────────────────────────────────────────────────
+disableKinds = ["taxonomy", "term"]
 
 [permalinks]
   stores = "/:slug/"
@@ -19,7 +15,7 @@ disableKinds = ["taxonomy", "term"]
 [params]
   description    = "Find the best coupon codes, promo codes, and deals from top stores. Save money on your online shopping with CouponHauls."
   author         = "CouponHauls"
-  og_image       = "images/couponhaulslogo.jpg"
+  og_image       = "images/couponhaulslogo.png"
   twitter_handle = "@couponhauls"
 
 [menu]
@@ -33,10 +29,39 @@ disableKinds = ["taxonomy", "term"]
   weight = 2
 
 [outputs]
-  home    = ["HTML", "RSS"]
-  section = ["HTML", "RSS"]
+  home    = ["HTML", "RSS", "Sitemap"]
+  section = ["HTML"]
+  page    = ["HTML"]
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[build]
+  writeStats = true
+
+[minify]
+  disableHTML  = true
+  disableCSS   = false
+  disableJS    = false
+  disableJSON  = false
+  disableSVG   = false
+  disableXML   = false
+  minifyOutput = true
+
+[sitemap]
+  changefreq = "weekly"
+  priority   = 0.8
+
+[mediaTypes]
+  [mediaTypes."application/xml"]
+    suffixes = ["xml"]
+
+[outputFormats]
+  [outputFormats.Sitemap]
+    mediaType      = "application/xml"
+    baseName       = "sitemap"
+    isPlainText    = true
+    notAlternative = true
+    rel            = "sitemap"

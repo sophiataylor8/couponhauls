@@ -1,267 +1,741 @@
 {{ define "title" }}{{ .Site.Title }} - Best Coupon Codes & Deals{{ end }}
+{{ define "description" }}Find the best verified coupon codes, promo codes and deals from {{ len (where (where .Site.RegularPages "Section" "stores") ".Params.is_active" true) }}+ top stores. Save money on every order — updated daily.{{ end }}
+
 {{ define "main" }}
 
-{{/* Get all stores from content/stores/*.md */}}
-{{ $allStores := where .Site.RegularPages "Section" "stores" }}
-{{ $activeStores := where $allStores ".Params.is_active" true }}
-{{ $featuredStores := where $activeStores ".Params.website_featured" true }}
+{{/* ─── Data from pre-built JSON (fast — no ranging 15k pages) ─────────── */}}
+{{ $featuredStores := site.Data.featured_stores | default slice }}
+{{ $latestCoupons  := site.Data.latest_coupons  | default slice }}
 
-{{/* Count total coupons across all stores */}}
+{{/* Fallback: count active stores from pages only if JSON missing */}}
+{{ $allStores    := where .Site.RegularPages "Section" "stores" }}
+{{ $activeStores := where $allStores ".Params.is_active" true }}
+{{ $storeCount   := len $activeStores }}
+
+{{/* Total coupons from active stores */}}
 {{ $totalCoupons := 0 }}
 {{ range $activeStores }}
   {{ $totalCoupons = add $totalCoupons (len (.Params.coupons | default slice)) }}
 {{ end }}
 
-<section class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
-<div class="container mx-auto px-4">
-<div class="max-w-4xl mx-auto text-center">
-<h1 class="text-5xl md:text-6xl font-bold mb-6 text-balance">Save Big with the Best Coupon Codes</h1>
-<p class="text-xl md:text-2xl mb-8 text-primary-100">Discover thousands of verified coupon codes and deals from top stores</p>
-<div class="max-w-2xl mx-auto">
-  <div class="relative">
-    <input
-      type="text"
-      id="storeSearch"
-      placeholder="Search for stores..."
-      class="w-full px-6 py-4 rounded-full text-gray-900 text-lg focus:outline-none focus:ring-4 focus:ring-primary-300"
-    >
-    <button
-      type="button"
-      onclick="doSearch()"
-      class="absolute right-2 top-1/2 -translate-y-1/2 bg-accent-500 hover:bg-accent-600 text-white px-8 py-3 rounded-full font-semibold transition-colors"
-    >
-      Search
-    </button>
-  </div>
-</div>
-<div class="mt-8 flex flex-wrap justify-center gap-4">
-<span class="text-primary-200">Popular:</span>
-{{ range first 4 $featuredStores }}
-<a href="{{ .Permalink }}" class="text-white hover:text-primary-200 transition-colors">{{ .Params.store_name | default .Title }}</a>
-{{ else }}
-<a href="/walmart/" class="text-white hover:text-primary-200 transition-colors">Walmart</a>
-<a href="/target/" class="text-white hover:text-primary-200 transition-colors">Target</a>
-<a href="/amazon/" class="text-white hover:text-primary-200 transition-colors">Amazon</a>
-<a href="/kohls/" class="text-white hover:text-primary-200 transition-colors">Kohl's</a>
-{{ end }}
-</div>
-</div>
-</div>
-</section>
+{{/* ─── Helper: build store URL (subdomain on prod, path on dev) ── */}}
+{{/* Used inline below for each store card */}}
 
-<section class="py-12 bg-white border-b">
-<div class="container mx-auto px-4">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-<div>
-<div class="text-4xl font-bold text-primary-600">{{ len $activeStores }}+</div>
-<div class="text-gray-600 mt-2">Stores</div>
-</div>
-<div>
-<div class="text-4xl font-bold text-primary-600">{{ $totalCoupons }}+</div>
-<div class="text-gray-600 mt-2">Coupons</div>
-</div>
-<div>
-<div class="text-4xl font-bold text-primary-600">$2M+</div>
-<div class="text-gray-600 mt-2">Saved</div>
-</div>
-<div>
-<div class="text-4xl font-bold text-primary-600">98%</div>
-<div class="text-gray-600 mt-2">Success Rate</div>
-</div>
-</div>
-</div>
-</section>
+<!-- ═══════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="hp-hero">
+  <div class="hp-hero-inner">
+    <div class="hp-hero-text">
+      <h1 class="hp-hero-title">Save Big with the Best<br><span class="hp-hero-accent">Coupon Codes</span></h1>
+      <p class="hp-hero-sub">Discover thousands of verified coupon codes and deals from top stores — updated daily, always free.</p>
 
-<section class="py-16 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<h2 class="text-4xl font-bold mb-4">Trending Stores</h2>
-<p class="text-xl text-gray-600">Shop at your favorite stores and save more</p>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-{{ if $featuredStores }}
-{{ range $featuredStores }}
-{{ $displayName := .Params.store_name | default .Title }}
-<a href="{{ .Permalink }}" class="coupon-card block hover:scale-105 transition-transform">
-<div class="p-6">
-<div class="w-20 h-20 mx-auto mb-4 rounded-xl shadow flex items-center justify-center store-letter-avatar">
-  <span class="text-2xl font-extrabold text-white uppercase">{{ substr $displayName 0 1 }}</span>
-</div>
-<h3 class="text-lg font-semibold text-center mb-2">{{ $displayName }}</h3>
-<p class="text-sm text-gray-600 text-center mb-3">{{ .Params.coupon_count | default 0 }} Coupons</p>
-<div class="text-center">
-<span class="text-primary-600 font-medium text-sm">View Deals →</span>
-</div>
-</div>
-</a>
-{{ end }}
-{{ else }}
-<div class="col-span-full text-center py-12">
-<p class="text-gray-600 text-lg">No featured stores yet. Set <code class="bg-gray-200 px-2 py-1 rounded">website_featured: true</code> in a store's front matter.</p>
-</div>
-{{ end }}
-</div>
-<div class="text-center mt-10">
-<a href="/stores/" class="btn btn-primary">View All {{ len $activeStores }} Stores →</a>
-</div>
-</div>
-</section>
+      {{/* Search */}}
+      <div class="hp-search-wrap">
+        <div class="hp-search-box">
+          <svg class="hp-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input
+            type="text"
+            id="storeSearch"
+            placeholder="Search stores... (e.g. Nike, Amazon, Target)"
+            class="hp-search-input"
+            autocomplete="off"
+          >
+          <button type="button" onclick="doSearch()" class="hp-search-btn">Search</button>
+        </div>
+      </div>
 
-<section class="py-16 bg-white">
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<h2 class="text-4xl font-bold mb-4">Latest Coupon Codes</h2>
-<p class="text-xl text-gray-600">Fresh deals updated daily</p>
-</div>
-{{ if $activeStores }}
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-{{ range first 6 $activeStores }}
-  {{ $store := . }}
-  {{ $displayName := .Params.store_name | default .Title }}
-  {{ $coupons := .Params.coupons }}
-  {{ if $coupons }}
-  {{ range first 1 $coupons }}
-  <div class="coupon-card">
-  <div class="p-6">
-  <div class="flex justify-between items-start mb-4">
-  <div class="flex-1">
-  <a href="{{ $store.Permalink }}" class="text-primary-600 font-medium text-sm hover:underline mb-1 block">{{ $displayName }}</a>
-  <h3 class="text-xl font-semibold mb-2 text-gray-900">{{ .coupon_title }}</h3>
-  <p class="text-gray-600 text-sm">{{ .coupon_description }}</p>
+      {{/* Popular quick links */}}
+      <div class="hp-popular">
+        <span class="hp-popular-label">Popular:</span>
+        {{ range first 5 $featuredStores }}
+          {{ $slug := .slug }}
+          {{ $storeURL := printf "/%s/" $slug }}
+          {{ if strings.Contains $.Site.BaseURL "couponhauls.com" }}
+            {{ $storeURL = printf "https://%s.couponhauls.com/" $slug }}
+          {{ end }}
+          <a href="{{ $storeURL }}" class="hp-popular-link">{{ .store_name }}</a>
+        {{ else }}
+          <a href="/walmart/" class="hp-popular-link">Walmart</a>
+          <a href="/target/" class="hp-popular-link">Target</a>
+          <a href="/amazon/" class="hp-popular-link">Amazon</a>
+          <a href="/nike/" class="hp-popular-link">Nike</a>
+        {{ end }}
+      </div>
+    </div>
   </div>
-  <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full ml-2 shrink-0">{{ .coupon_type | default "Deal" }}</span>
-  </div>
-  {{ if .coupon_code }}
-  <div class="bg-gray-50 rounded-lg p-4 mb-4 border-2 border-dashed border-gray-300">
-  <div class="flex items-center justify-between">
-  <code class="text-lg font-mono font-bold text-primary-600">{{ .coupon_code }}</code>
-  <button onclick="copyCoupon('{{ .coupon_code }}', '{{ .coupon_aff_url }}')" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Copy Code</button>
-  </div>
-  </div>
-  {{ else }}
-  <div class="mb-4">
-  <a href="{{ .coupon_aff_url }}" target="_blank" rel="noopener noreferrer" class="block w-full bg-primary-600 hover:bg-primary-700 text-white px-4 py-3 rounded-lg text-center font-semibold transition-colors">Get Deal →</a>
-  </div>
-  {{ end }}
-  <div class="flex items-center justify-between text-sm text-gray-500">
-  <span>{{ if .coupon_code }}Code{{ else }}No Code Needed{{ end }}</span>
-  {{ if .expires_at }}<span>Expires: {{ .expires_at }}</span>{{ else }}<span>✅ No Expiration</span>{{ end }}
-  </div>
-  </div>
-  </div>
-  {{ end }}
-  {{ end }}
-{{ end }}
-</div>
-{{ else }}
-<div class="text-center py-12">
-<p class="text-gray-600 text-lg">No coupons found. Add store <code class="bg-gray-200 px-2 py-1 rounded">.md</code> files to <code class="bg-gray-200 px-2 py-1 rounded">content/stores/</code></p>
-</div>
-{{ end }}
-<div class="text-center mt-12">
-<a href="/stores/" class="btn btn-primary">View All Stores</a>
-</div>
-</div>
 </section>
 
 <!-- ═══════════════════════════════════════════
-     NEVER MISS A DEAL
+     STATS BAR
 ════════════════════════════════════════════ -->
-<section class="py-16 bg-gradient-to-r from-primary-600 to-primary-700 text-white">
-<div class="container mx-auto px-4">
-<div class="max-w-3xl mx-auto text-center">
-<h2 class="text-4xl font-bold mb-4">Never Miss a Deal</h2>
-<p class="text-xl mb-8 text-primary-100">Subscribe to get the latest coupon codes delivered to your inbox</p>
-<div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-  <input
-    type="email"
-    id="emailInput"
-    placeholder="Enter your email"
-    class="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-4 focus:ring-primary-300"
-  >
-  <button
-    type="button"
-    onclick="handleSubscribe()"
-    class="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors whitespace-nowrap"
-  >
-    Subscribe
-  </button>
-</div>
-<p id="subscribe-msg" class="text-sm text-primary-200 mt-4">Join 50,000+ subscribers. No spam, ever.</p>
-</div>
-</div>
+<section class="hp-stats-bar">
+  <div class="hp-stats-inner">
+    <div class="hp-stat">
+      <strong>{{ $storeCount }}+</strong>
+      <span>Stores</span>
+    </div>
+    <div class="hp-stat-div"></div>
+    <div class="hp-stat">
+      <strong>{{ $totalCoupons }}+</strong>
+      <span>Coupons</span>
+    </div>
+    <div class="hp-stat-div"></div>
+    <div class="hp-stat">
+      <strong>$2M+</strong>
+      <span>Saved</span>
+    </div>
+    <div class="hp-stat-div"></div>
+    <div class="hp-stat">
+      <strong>98%</strong>
+      <span>Success Rate</span>
+    </div>
+    <div class="hp-stat-div"></div>
+    <div class="hp-stat">
+      <strong>Daily</strong>
+      <span>Updated</span>
+    </div>
+  </div>
 </section>
 
+<!-- ═══════════════════════════════════════════
+     TRENDING STORES
+════════════════════════════════════════════ -->
+<section class="hp-section hp-section-gray">
+  <div class="hp-container">
+    <div class="hp-section-head">
+      <div>
+        <h2 class="hp-section-title">Trending Stores</h2>
+        <p class="hp-section-sub">Shop at your favourite stores and save more</p>
+      </div>
+      <a href="/stores/" class="hp-section-all">View all {{ $storeCount }} stores →</a>
+    </div>
+
+    {{ if $featuredStores }}
+    <div class="hp-stores-grid">
+      {{ range $featuredStores }}
+        {{ $displayName := .store_name }}
+        {{ $slug        := .slug }}
+        {{ $count       := .coupon_count | default 0 }}
+        {{ $storeURL    := printf "/%s/" $slug }}
+        {{ if strings.Contains $.Site.BaseURL "couponhauls.com" }}
+          {{ $storeURL = printf "https://%s.couponhauls.com/" $slug }}
+        {{ end }}
+        <a href="{{ $storeURL }}" class="hp-store-card">
+          <div class="hp-store-avatar">
+            <span>{{ upper (substr $displayName 0 1) }}</span>
+          </div>
+          <h3 class="hp-store-name">{{ $displayName }}</h3>
+          <p class="hp-store-count">{{ $count }} Coupons</p>
+          <span class="hp-store-cta">View Deals →</span>
+        </a>
+      {{ end }}
+    </div>
+    {{ else }}
+    <div class="hp-empty">
+      <p>No featured stores yet. Set <code>website_featured: true</code> in a store's front matter or CSV.</p>
+    </div>
+    {{ end }}
+
+    <div class="hp-section-footer">
+      <a href="/stores/" class="btn btn-primary">Browse All {{ $storeCount }} Stores →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     LATEST COUPON CODES
+════════════════════════════════════════════ -->
+<section class="hp-section hp-section-white">
+  <div class="hp-container">
+    <div class="hp-section-head">
+      <div>
+        <h2 class="hp-section-title">Latest Coupon Codes</h2>
+        <p class="hp-section-sub">Fresh verified deals updated daily</p>
+      </div>
+      <a href="/stores/" class="hp-section-all">See all coupons →</a>
+    </div>
+
+    {{ if $latestCoupons }}
+    <div class="hp-coupons-grid">
+      {{ range first 6 $latestCoupons }}
+        {{ $store     := .stores }}
+        {{ $slug      := $store.slug }}
+        {{ $storeName := $store.store_name }}
+        {{ $storeURL  := printf "/%s/" $slug }}
+        {{ if strings.Contains $.Site.BaseURL "couponhauls.com" }}
+          {{ $storeURL = printf "https://%s.couponhauls.com/" $slug }}
+        {{ end }}
+        <div class="hp-coupon-card">
+          <div class="hp-coupon-head">
+            <div class="hp-coupon-avatar">
+              <span>{{ upper (substr $storeName 0 1) }}</span>
+            </div>
+            <div class="hp-coupon-meta">
+              <a href="{{ $storeURL }}" class="hp-coupon-store">{{ $storeName }}</a>
+              <span class="hp-coupon-type {{ if eq .coupon_type "Deal" }}hp-type-deal{{ else }}hp-type-code{{ end }}">
+                {{ .coupon_type | default "Deal" }}
+              </span>
+            </div>
+          </div>
+          <h3 class="hp-coupon-title">{{ .coupon_title }}</h3>
+          <p class="hp-coupon-desc">{{ .coupon_description }}</p>
+
+          {{ if .coupon_code }}
+          <div class="hp-code-box">
+            <code class="hp-code" id="code-{{ .coupon_id }}">{{ .coupon_code }}</code>
+            <button
+              class="hp-code-copy"
+              onclick="copyCoupon('{{ .coupon_code }}', '{{ .coupon_aff_url }}', this)"
+              aria-label="Copy coupon code"
+            >Copy</button>
+          </div>
+          {{ else }}
+          <a href="{{ .coupon_aff_url }}" target="_blank" rel="noopener noreferrer" class="hp-deal-btn">
+            Get Deal →
+          </a>
+          {{ end }}
+
+          <div class="hp-coupon-foot">
+            <span>{{ if .coupon_code }}🏷 Code required{{ else }}✅ No code needed{{ end }}</span>
+            {{ if .expires_at }}<span>Expires: {{ .expires_at }}</span>{{ else }}<span>No expiry</span>{{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+
+    {{ else }}
+    {{/* Fallback: use page data if JSON not generated yet */}}
+    <div class="hp-coupons-grid">
+      {{ range first 6 $activeStores }}
+        {{ $store       := . }}
+        {{ $displayName := .Params.store_name | default .Title }}
+        {{ $slug        := .Params.slug | default .Params.store_id }}
+        {{ $storeURL    := .Permalink }}
+        {{ if and $slug (strings.Contains $.Site.BaseURL "couponhauls.com") }}
+          {{ $storeURL = printf "https://%s.couponhauls.com/" $slug }}
+        {{ end }}
+        {{ range first 1 (.Params.coupons | default slice) }}
+        <div class="hp-coupon-card">
+          <div class="hp-coupon-head">
+            <div class="hp-coupon-avatar">
+              <span>{{ upper (substr $displayName 0 1) }}</span>
+            </div>
+            <div class="hp-coupon-meta">
+              <a href="{{ $storeURL }}" class="hp-coupon-store">{{ $displayName }}</a>
+              <span class="hp-coupon-type hp-type-deal">{{ .coupon_type | default "Deal" }}</span>
+            </div>
+          </div>
+          <h3 class="hp-coupon-title">{{ .coupon_title }}</h3>
+          <p class="hp-coupon-desc">{{ .coupon_description }}</p>
+          {{ if .coupon_code }}
+          <div class="hp-code-box">
+            <code class="hp-code">{{ .coupon_code }}</code>
+            <button class="hp-code-copy" onclick="copyCoupon('{{ .coupon_code }}', '{{ .coupon_aff_url }}', this)">Copy</button>
+          </div>
+          {{ else }}
+          <a href="{{ .coupon_aff_url }}" target="_blank" rel="noopener noreferrer" class="hp-deal-btn">Get Deal →</a>
+          {{ end }}
+          <div class="hp-coupon-foot">
+            <span>{{ if .coupon_code }}🏷 Code required{{ else }}✅ No code needed{{ end }}</span>
+            {{ if .expires_at }}<span>Expires: {{ .expires_at }}</span>{{ else }}<span>No expiry</span>{{ end }}
+          </div>
+        </div>
+        {{ end }}
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="hp-section-footer">
+      <a href="/stores/" class="btn btn-primary">View All Stores →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════════════════ -->
+<section class="hp-section hp-section-gray">
+  <div class="hp-container">
+    <div class="hp-section-head hp-section-head-center">
+      <h2 class="hp-section-title">How It Works</h2>
+      <p class="hp-section-sub">Start saving in 3 simple steps</p>
+    </div>
+    <div class="hp-steps">
+      <div class="hp-step">
+        <div class="hp-step-num">1</div>
+        <h3 class="hp-step-title">Find Your Store</h3>
+        <p class="hp-step-desc">Search or browse {{ $storeCount }}+ stores to find the one you want to shop at.</p>
+      </div>
+      <div class="hp-step-arrow">→</div>
+      <div class="hp-step">
+        <div class="hp-step-num">2</div>
+        <h3 class="hp-step-title">Copy the Code</h3>
+        <p class="hp-step-desc">Click any coupon to instantly copy the promo code — no sign-up needed.</p>
+      </div>
+      <div class="hp-step-arrow">→</div>
+      <div class="hp-step">
+        <div class="hp-step-num">3</div>
+        <h3 class="hp-step-title">Save at Checkout</h3>
+        <p class="hp-step-desc">Paste the code at checkout and watch your total drop instantly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     NEWSLETTER CTA
+════════════════════════════════════════════ -->
+<section class="hp-cta-section">
+  <div class="hp-container">
+    <div class="hp-cta-inner">
+      <div class="hp-cta-text">
+        <h2 class="hp-cta-title">Never Miss a Deal</h2>
+        <p class="hp-cta-sub">Join 50,000+ subscribers. Get the best coupon codes delivered to your inbox. No spam, ever.</p>
+      </div>
+      <div class="hp-cta-form">
+        <div class="hp-cta-inputs">
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="Enter your email address"
+            class="hp-cta-email"
+          >
+          <button type="button" onclick="handleSubscribe()" class="hp-cta-btn">Subscribe</button>
+        </div>
+        <p id="subscribe-msg" class="hp-cta-msg">Free forever. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     STYLES
+════════════════════════════════════════════ -->
 <style>
-.store-letter-avatar { background: #0284c7; }
-.coupon-card:nth-child(1)  .store-letter-avatar { background: #0284c7; }
-.coupon-card:nth-child(2)  .store-letter-avatar { background: #7c3aed; }
-.coupon-card:nth-child(3)  .store-letter-avatar { background: #059669; }
-.coupon-card:nth-child(4)  .store-letter-avatar { background: #dc2626; }
-.coupon-card:nth-child(5)  .store-letter-avatar { background: #d97706; }
-.coupon-card:nth-child(6)  .store-letter-avatar { background: #0891b2; }
-.coupon-card:nth-child(7)  .store-letter-avatar { background: #9333ea; }
-.coupon-card:nth-child(8)  .store-letter-avatar { background: #16a34a; }
-.coupon-card:nth-child(9)  .store-letter-avatar { background: #e11d48; }
-.coupon-card:nth-child(10) .store-letter-avatar { background: #ea580c; }
-.coupon-card:nth-child(11) .store-letter-avatar { background: #0284c7; }
-.coupon-card:nth-child(12) .store-letter-avatar { background: #7c3aed; }
+/* ── Hero ── */
+.hp-hero {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 4rem 1.5rem 5rem;
+}
+.hp-hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.hp-hero-title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+.hp-hero-accent {
+  background: linear-gradient(90deg, #0284c7, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hp-hero-sub {
+  font-size: 1.125rem;
+  color: #64748b;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 2.25rem;
+  text-align: center;
+}
+
+/* Search */
+.hp-search-wrap { max-width: 620px; margin: 0 auto 1.5rem; }
+.hp-search-box {
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 999px;
+  padding: .375rem .375rem .375rem 1.25rem;
+  gap: .75rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+.hp-search-box:focus-within {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 4px rgba(2,132,199,.1);
+}
+.hp-search-icon { color: #94a3b8; flex-shrink: 0; }
+.hp-search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #0f172a;
+  font-family: inherit;
+  min-width: 0;
+}
+.hp-search-input::placeholder { color: #94a3b8; }
+.hp-search-btn {
+  background: #0284c7;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: .7rem 1.75rem;
+  font-size: .9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background .15s, transform .15s;
+  flex-shrink: 0;
+}
+.hp-search-btn:hover { background: #0369a1; transform: translateY(-1px); }
+
+/* Popular links */
+.hp-popular {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .625rem;
+}
+.hp-popular-label { font-size: .875rem; color: #94a3b8; font-weight: 600; }
+.hp-popular-link {
+  font-size: .875rem;
+  color: #475569;
+  text-decoration: none;
+  padding: .3rem .75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  background: #f8fafc;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.hp-popular-link:hover { background: #e0f2fe; color: #0284c7; border-color: #bae6fd; }
+
+/* ── Stats bar ── */
+.hp-stats-bar {
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1.25rem 1.5rem;
+}
+.hp-stats-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.hp-stat { display: flex; flex-direction: column; align-items: center; gap: .1rem; }
+.hp-stat strong { font-size: 1.5rem; font-weight: 800; color: #0284c7; line-height: 1; }
+.hp-stat span { font-size: .75rem; color: #64748b; text-transform: uppercase; letter-spacing: .07em; font-weight: 600; }
+.hp-stat-div { width: 1px; height: 36px; background: #e2e8f0; }
+@media (max-width: 480px) { .hp-stat-div { display: none; } }
+
+/* ── Sections ── */
+.hp-section { padding: 4rem 1.5rem; }
+.hp-section-gray  { background: #f8fafc; }
+.hp-section-white { background: #fff; }
+.hp-container { max-width: 1100px; margin: 0 auto; }
+.hp-section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.hp-section-head-center { flex-direction: column; align-items: center; text-align: center; }
+.hp-section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; color: #0f172a; margin: 0 0 .25rem; letter-spacing: -.02em; }
+.hp-section-sub   { font-size: 1rem; color: #64748b; margin: 0; }
+.hp-section-all   { font-size: .875rem; font-weight: 700; color: #0284c7; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+.hp-section-all:hover { color: #0369a1; text-decoration: underline; }
+.hp-section-footer { text-align: center; margin-top: 2.5rem; }
+
+/* ── Store cards grid ── */
+.hp-stores-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+@media (min-width: 480px) { .hp-stores-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 768px) { .hp-stores-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 1024px) { .hp-stores-grid { grid-template-columns: repeat(5, 1fr); } }
+
+.hp-store-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.375rem 1rem 1.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  text-decoration: none;
+  transition: box-shadow .18s, border-color .18s, transform .18s;
+}
+.hp-store-card:hover {
+  box-shadow: 0 6px 24px rgba(2,132,199,.12);
+  border-color: #bae6fd;
+  transform: translateY(-2px);
+}
+.hp-store-avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: .75rem;
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(2,132,199,.25);
+  flex-shrink: 0;
+}
+.hp-store-avatar span { font-size: 1.5rem; font-weight: 900; color: #fff; line-height: 1; text-transform: uppercase; font-family: Inter, system-ui, sans-serif; }
+.hp-store-name  { font-size: .9375rem; font-weight: 700; color: #0f172a; text-align: center; margin: 0; line-height: 1.3; word-break: break-word; }
+.hp-store-card:hover .hp-store-name { color: #0284c7; }
+.hp-store-count { font-size: .8rem; color: #64748b; margin: 0; font-weight: 500; }
+.hp-store-cta   { font-size: .8125rem; color: #0284c7; font-weight: 700; }
+
+/* ── Coupon cards grid ── */
+.hp-coupons-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.125rem;
+}
+@media (min-width: 640px)  { .hp-coupons-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .hp-coupons-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.hp-coupon-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: .625rem;
+  transition: box-shadow .18s, border-color .18s;
+}
+.hp-coupon-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.07); border-color: #cbd5e1; }
+
+.hp-coupon-head { display: flex; align-items: center; gap: .75rem; }
+.hp-coupon-avatar {
+  width: 2.5rem; height: 2.5rem; border-radius: .5rem; flex-shrink: 0;
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  display: flex; align-items: center; justify-content: center;
+}
+.hp-coupon-avatar span { font-size: 1.125rem; font-weight: 900; color: #fff; text-transform: uppercase; font-family: Inter, system-ui, sans-serif; }
+.hp-coupon-meta { display: flex; flex-direction: column; gap: .2rem; min-width: 0; }
+.hp-coupon-store { font-size: .8125rem; font-weight: 700; color: #0284c7; text-decoration: none; }
+.hp-coupon-store:hover { text-decoration: underline; }
+.hp-coupon-type {
+  font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  padding: .15rem .5rem; border-radius: 999px; width: fit-content;
+}
+.hp-type-code { background: #dbeafe; color: #1d4ed8; }
+.hp-type-deal { background: #dcfce7; color: #15803d; }
+
+.hp-coupon-title { font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0; line-height: 1.35; }
+.hp-coupon-desc  { font-size: .875rem; color: #64748b; margin: 0; line-height: 1.55; flex: 1; }
+
+/* Code box */
+.hp-code-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: .625rem;
+  padding: .625rem .875rem;
+}
+.hp-code { font-family: ui-monospace, monospace; font-size: 1rem; font-weight: 800; color: #0284c7; letter-spacing: .04em; word-break: break-all; }
+.hp-code-copy {
+  background: #0284c7;
+  color: #fff;
+  border: none;
+  border-radius: .5rem;
+  padding: .4rem .875rem;
+  font-size: .8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background .15s;
+}
+.hp-code-copy:hover { background: #0369a1; }
+.hp-code-copy.copied { background: #16a34a; }
+
+/* Deal button */
+.hp-deal-btn {
+  display: block;
+  text-align: center;
+  background: #0284c7;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: .9375rem;
+  padding: .75rem 1rem;
+  border-radius: .625rem;
+  transition: background .15s;
+}
+.hp-deal-btn:hover { background: #0369a1; }
+
+.hp-coupon-foot {
+  display: flex;
+  justify-content: space-between;
+  font-size: .75rem;
+  color: #94a3b8;
+  padding-top: .25rem;
+  border-top: 1px solid #f1f5f9;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+/* ── How it works ── */
+.hp-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.hp-step {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  max-width: 280px;
+}
+.hp-step-num {
+  width: 3rem; height: 3rem;
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 12px rgba(2,132,199,.3);
+}
+.hp-step-title { font-size: 1.0625rem; font-weight: 700; color: #0f172a; margin: 0 0 .5rem; }
+.hp-step-desc  { font-size: .875rem; color: #64748b; margin: 0; line-height: 1.6; }
+.hp-step-arrow { font-size: 1.5rem; color: #cbd5e1; font-weight: 300; }
+@media (max-width: 640px) { .hp-step-arrow { transform: rotate(90deg); } }
+
+/* ── CTA section ── */
+.hp-cta-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 55%, #0284c7 100%);
+  padding: 4rem 1.5rem;
+}
+.hp-cta-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.hp-cta-text { flex: 1; min-width: 260px; }
+.hp-cta-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; color: #fff; margin: 0 0 .5rem; }
+.hp-cta-sub   { font-size: 1rem; color: rgba(255,255,255,.7); margin: 0; line-height: 1.65; }
+.hp-cta-form  { flex: 1; min-width: 280px; }
+.hp-cta-inputs { display: flex; gap: .5rem; flex-wrap: wrap; }
+.hp-cta-email {
+  flex: 1;
+  min-width: 200px;
+  padding: .875rem 1.25rem;
+  border-radius: .625rem;
+  border: 2px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.1);
+  color: #fff;
+  font-size: .9375rem;
+  font-family: inherit;
+  outline: none;
+  backdrop-filter: blur(8px);
+  transition: border-color .2s;
+}
+.hp-cta-email::placeholder { color: rgba(255,255,255,.4); }
+.hp-cta-email:focus { border-color: rgba(255,255,255,.5); }
+.hp-cta-btn {
+  background: #0ea5e9;
+  color: #fff;
+  border: none;
+  border-radius: .625rem;
+  padding: .875rem 1.75rem;
+  font-size: .9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background .15s;
+}
+.hp-cta-btn:hover { background: #0284c7; }
+.hp-cta-msg { font-size: .8125rem; color: rgba(255,255,255,.5); margin: .625rem 0 0; }
+
+/* ── Empty state ── */
+.hp-empty { text-align: center; padding: 3rem 1rem; color: #94a3b8; font-size: .9375rem; }
 </style>
 
+<!-- ═══════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════ -->
 <script>
-/* ── Homepage store search ── */
+/* ── Search ── */
 function doSearch() {
-  var q = document.getElementById('storeSearch').value.trim();
-  if (!q) {
-    window.location.href = '/stores/';
-    return;
-  }
-  window.location.href = '/stores/?q=' + encodeURIComponent(q);
+  var q = (document.getElementById('storeSearch').value || '').trim();
+  window.location.href = q ? '/stores/?q=' + encodeURIComponent(q) : '/stores/';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  /* Enter key on search input */
-  var searchInput = document.getElementById('storeSearch');
-  if (searchInput) {
-    searchInput.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') doSearch();
-    });
-  }
+  var s = document.getElementById('storeSearch');
+  if (s) s.addEventListener('keydown', function (e) { if (e.key === 'Enter') doSearch(); });
 
-  /* Enter key on email input */
-  var emailInput = document.getElementById('emailInput');
-  if (emailInput) {
-    emailInput.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') handleSubscribe();
-    });
-  }
+  var e = document.getElementById('emailInput');
+  if (e) e.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') handleSubscribe(); });
 });
 
-/* ── Newsletter / Google Group subscribe ── */
+/* ── Copy coupon ── */
+function copyCoupon(code, affUrl, btn) {
+  if (!code) return;
+  navigator.clipboard.writeText(code).then(function () {
+    if (btn) {
+      var orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(function () { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
+    }
+    if (affUrl) setTimeout(function () { window.open(affUrl, '_blank', 'noopener,noreferrer'); }, 600);
+  }).catch(function () {
+    if (affUrl) window.open(affUrl, '_blank', 'noopener,noreferrer');
+  });
+}
+
+/* ── Newsletter ── */
 function handleSubscribe() {
-  var email = document.getElementById('emailInput').value.trim();
-  var msg   = document.getElementById('subscribe-msg');
+  var emailEl = document.getElementById('emailInput');
+  var msgEl   = document.getElementById('subscribe-msg');
+  var email   = (emailEl.value || '').trim();
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    document.getElementById('emailInput').focus();
-    msg.textContent = '⚠️ Please enter a valid email address.';
-    msg.style.color = '#fde68a';
-    setTimeout(function () {
-      msg.textContent = 'Join 50,000+ subscribers. No spam, ever.';
-      msg.style.color = '';
-    }, 3000);
+    emailEl.focus();
+    msgEl.textContent = '⚠️ Please enter a valid email address.';
+    msgEl.style.color = '#fde68a';
+    setTimeout(function () { msgEl.textContent = 'Free forever. Unsubscribe anytime.'; msgEl.style.color = ''; }, 3000);
     return;
   }
 
   window.open('https://groups.google.com/g/couponhauls/', '_blank', 'noopener,noreferrer');
-
-  msg.textContent = '🎉 Opening the subscription page — complete sign-up there!';
-  msg.style.color = '#bbf7d0';
-  document.getElementById('emailInput').value = '';
-  setTimeout(function () {
-    msg.textContent = 'Join 50,000+ subscribers. No spam, ever.';
-    msg.style.color = '';
-  }, 5000);
+  msgEl.textContent = '🎉 Opening subscription page — complete sign-up there!';
+  msgEl.style.color = '#bbf7d0';
+  emailEl.value = '';
+  setTimeout(function () { msgEl.textContent = 'Free forever. Unsubscribe anytime.'; msgEl.style.color = ''; }, 5000);
 }
 </script>
 

@@ -1,20 +1,20 @@
 ---
-title: "Adidas Coupon Code 2026 - 30% Off"
+title: "Adidas Coupon Code Free Shipping (April 2026) 30% Off"
 slug: "adidas"
-description: "Adidas Coupon Code 2026. Unlock Adidas promo codes & sportswear discounts. Shop shoes, apparel & accessories for less."
+description: "Adidas coupon code free shipping 2026. Unlock Adidas promo code, coupons and sportswear discount code. Shop shoes, apparel and accessories for less."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Adidas"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Adidas Coupon Code 2026 - 30% Off"
-store_title: "Adidas Coupon Code 2026 - 30% Off"
-store_meta_description: "Adidas Coupon Code 2026. Unlock Adidas promo codes & sportswear discounts. Shop shoes, apparel & accessories for less."
+store_h1: "Adidas Coupon Code Free Shipping (April 2026) 30% Off"
+store_title: "Adidas Coupon Code Free Shipping (April 2026) 30% Off"
+store_meta_description: "Adidas coupon code free shipping 2026. Unlock Adidas promo code, coupons and sportswear discount code. Shop shoes, apparel and accessories for less."
 store_keywords: "adidas coupon code, adidas promo code, adidas discount code, adidas deals, adidas offers, adidas sale, adidas coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Adidas Coupon Code 2026 - 30% Off"
-store_og_description: "Adidas Coupon Code 2026. Unlock Adidas promo codes & sportswear discounts. Shop shoes, apparel & accessories for less."
+store_og_title: "Adidas Coupon Code Free Shipping (April 2026) 30% Off"
+store_og_description: "Adidas coupon code free shipping 2026. Unlock Adidas promo code, coupons and sportswear discount code. Shop shoes, apparel and accessories for less."
 store_og_image: ""
 store_og_type: "website"
 

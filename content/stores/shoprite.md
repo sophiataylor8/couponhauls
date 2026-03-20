@@ -1,20 +1,20 @@
 ---
-title: "ShopRite Coupon Code 2026 - Grocery Deals"
+title: "ShopRite Grocery Circular (April 2026) Weekly Ad"
 slug: "shoprite"
-description: "ShopRite Coupon Code 2026. Find verified ShopRite promo codes, digital coupons, and weekly grocery deals to save more on everyday shopping."
+description: "ShopRite grocery circular April 2026. Find ShopRite weekly ad, promo code, digital coupons, and deals to save more on liquors, party foods and soda."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "ShopRite"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "ShopRite Coupon Code 2026 - Grocery Deals"
-store_title: "ShopRite Coupon Code 2026 - Grocery Deals"
-store_meta_description: "ShopRite Coupon Code 2026. Find verified ShopRite promo codes, digital coupons, and weekly grocery deals to save more on everyday shopping."
+store_h1: "ShopRite Grocery Circular (April 2026) Weekly Ad"
+store_title: "ShopRite Grocery Circular (April 2026) Weekly Ad"
+store_meta_description: "ShopRite grocery circular April 2026. Find ShopRite weekly ad, promo code, digital coupons, and deals to save more on liquors, party foods and soda."
 store_keywords: "shoprite coupon code, shoprite promo code, shoprite discount code, shoprite deals, shoprite offers, shoprite grocery coupons, shoprite coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "ShopRite Coupon Code 2026 - Grocery Deals"
-store_og_description: "ShopRite Coupon Code 2026. Find verified ShopRite promo codes, digital coupons, and weekly grocery deals to save more on everyday shopping."
+store_og_title: "ShopRite Grocery Circular (April 2026) Weekly Ad"
+store_og_description: "ShopRite grocery circular April 2026. Find ShopRite weekly ad, promo code, digital coupons, and deals to save more on liquors, party foods and soda."
 store_og_image: ""
 store_og_type: "website"
 

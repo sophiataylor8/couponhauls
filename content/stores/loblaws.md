@@ -1,20 +1,20 @@
 ---
-title: "Loblaws Coupon Code 2026 - Grocery Discounts"
+title: "Loblaws Sale This Week (April 2026) Flyer Ad"
 slug: "loblaws"
-description: "Loblaws Coupon Code 2026. Find verified Loblaws promo codes, grocery coupons, and weekly deals to save more on fresh groceries and essentials."
+description: "Loblaws sale this week April 2026. Find Loblaws weekly ad, flyers, grocery coupons, and deals to save more on fresh groceries and essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Loblaws"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Loblaws Coupon Code 2026 - Grocery Discounts"
-store_title: "Loblaws Coupon Code 2026 - Grocery Discounts"
-store_meta_description: "Loblaws Coupon Code 2026. Find verified Loblaws promo codes, grocery coupons, and weekly deals to save more on fresh groceries and essentials."
+store_h1: "Loblaws Sale This Week (April 2026) Flyer Ad"
+store_title: "Loblaws Sale This Week (April 2026) Flyer Ad"
+store_meta_description: "Loblaws sale this week April 2026. Find Loblaws weekly ad, flyers, grocery coupons, and deals to save more on fresh groceries and essentials."
 store_keywords: "loblaws coupon code, loblaws promo code, loblaws discount code, loblaws deals, loblaws offers, loblaws grocery coupons, loblaws coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Loblaws Coupon Code 2026 - Grocery Discounts"
-store_og_description: "Loblaws Coupon Code 2026. Find verified Loblaws promo codes, grocery coupons, and weekly deals to save more on fresh groceries and essentials."
+store_og_title: "Loblaws Sale This Week (April 2026) Flyer Ad"
+store_og_description: "Loblaws sale this week April 2026. Find Loblaws weekly ad, flyers, grocery coupons, and deals to save more on fresh groceries and essentials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,25 +28,25 @@ coupon_count: 2
 store_id: "loblaws"
 
 coupons:
-  - coupon_id: "1070"
-    coupon_title: "Big Lots Clearance Deals"
+  - coupon_id: "1072"
+    coupon_title: "Loblaws Weekly Flyer Deals"
     coupon_code: ""
-    coupon_description: "Shop Big Lots clearance section to find deep discounts on furniture, home decor, seasonal items, and household essentials."
-    coupon_aff_url: "https://www.biglots.com/"
+    coupon_description: "Check the Loblaws weekly flyer to discover grocery discounts on fresh produce, bakery goods, meats, and pantry staples."
+    coupon_aff_url: "https://www.loblaws.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1071"
-    coupon_title: "Big Rewards Member Savings"
+  - coupon_id: "1073"
+    coupon_title: "PC Optimum Rewards Offers"
     coupon_code: ""
-    coupon_description: "Join Big Rewards to access exclusive coupons, member-only pricing, and special promotions at Big Lots."
-    coupon_aff_url: "https://www.biglots.com/"
+    coupon_description: "Earn and redeem points with PC Optimum while shopping at Loblaws and enjoy exclusive member-only grocery deals."
+    coupon_aff_url: "https://www.loblaws.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
 ---
 
-Loblaws is one of Canada�s most recognized grocery retailers, offering a wide selection of food products and household essentials. The company operates numerous supermarkets that provide fresh ingredients, packaged groceries, and convenient shopping services for customers across the country.
+Loblaws is one of Canada’s most recognized grocery retailers, offering a wide selection of food products and household essentials. The company operates numerous supermarkets that provide fresh ingredients, packaged groceries, and convenient shopping services for customers across the country.
 
 Inside Loblaws stores, shoppers can find multiple departments that make grocery shopping easy. Fresh produce sections offer fruits and vegetables, while meat and seafood counters provide options for preparing home-cooked meals. Customers can also explore bakery goods, dairy products, frozen foods, and pantry staples.
 

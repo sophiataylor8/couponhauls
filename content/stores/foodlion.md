@@ -1,20 +1,20 @@
 ---
-title: "Food Lion Coupon Code 2026 - Grocery Deals"
+title: "Food Lion Advertisement For This Week (March 2026)"
 slug: "foodlion"
-description: "Food Lion Coupon Code 2026. Save more with verified Food Lion promo codes, digital coupons, and weekly grocery deals on everyday essentials."
+description: "Food lion advertisement for this week April 2026. Save more with food lion promo codes, digital coupons and weekly grocery deals on everyday essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Food Lion"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Food Lion Coupon Code 2026 - Grocery Deals"
-store_title: "Food Lion Coupon Code 2026 - Grocery Deals"
-store_meta_description: "Food Lion Coupon Code 2026. Save more with verified Food Lion promo codes, digital coupons, and weekly grocery deals on everyday essentials."
+store_h1: "Food Lion Advertisement For This Week (March 2026)"
+store_title: "Food Lion Advertisement For This Week (March 2026)"
+store_meta_description: "Food lion advertisement for this week April 2026. Save more with food lion promo codes, digital coupons and weekly grocery deals on everyday essentials."
 store_keywords: "food lion coupon code, food lion promo code, food lion discount code, food lion deals, food lion offers, food lion grocery coupons, food lion coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Food Lion Coupon Code 2026 - Grocery Deals"
-store_og_description: "Food Lion Coupon Code 2026. Save more with verified Food Lion promo codes, digital coupons, and weekly grocery deals on everyday essentials."
+store_og_title: "Food Lion Advertisement For This Week (March 2026)"
+store_og_description: "Food lion advertisement for this week April 2026. Save more with food lion promo codes, digital coupons and weekly grocery deals on everyday essentials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "foodlion"
 
 coupons:
-  - coupon_id: "1078"
-    coupon_title: "Cabela's Outdoor Gear Clearance"
+  - coupon_id: "1080"
+    coupon_title: "Food Lion MVP Digital Coupons"
     coupon_code: ""
-    coupon_description: "Save on hunting gear, fishing equipment, camping essentials, and outdoor apparel in the Cabela's clearance section."
-    coupon_aff_url: "https://www.cabelas.com/"
+    coupon_description: "Join Food Lion MVP to clip digital coupons and receive exclusive grocery discounts and personalized deals."
+    coupon_aff_url: "https://www.foodlion.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1079"
-    coupon_title: "Cabela's Seasonal Sales Event"
+  - coupon_id: "1081"
+    coupon_title: "Food Lion Weekly Grocery Specials"
     coupon_code: ""
-    coupon_description: "Shop seasonal promotions at Cabela's for discounts on outdoor gear, footwear, and sporting goods."
-    coupon_aff_url: "https://www.cabelas.com/"
+    coupon_description: "Check Food Lion weekly specials to save on fresh produce, meats, snacks, and household essentials."
+    coupon_aff_url: "https://www.foodlion.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"

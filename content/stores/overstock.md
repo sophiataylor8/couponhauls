@@ -1,20 +1,20 @@
 ---
-title: "Overstock Coupon Code 2026 - 40% Off"
+title: "Overstock Coupon Codes (April 2026) 40% Off"
 slug: "overstock"
-description: "Overstock Coupon Code 2026. Save with verified Overstock promo codes & clearance deals on furniture, rugs & home essentials."
+description: "Overstock coupon codes April 2026. Save with verified Overstock promo code, clearance deals on furniture, rugs and home essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Overstock"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Overstock Coupon Code 2026 - 40% Off"
-store_title: "Overstock Coupon Code 2026 - 40% Off"
-store_meta_description: "Overstock Coupon Code 2026. Save with verified Overstock promo codes & clearance deals on furniture, rugs & home essentials."
+store_h1: "Overstock Coupon Codes (April 2026) 40% Off"
+store_title: "Overstock Coupon Codes (April 2026) 40% Off"
+store_meta_description: "Overstock coupon codes April 2026. Save with verified Overstock promo code, clearance deals on furniture, rugs and home essentials."
 store_keywords: "overstock coupon code, overstock promo code, overstock discount code, overstock deals, overstock offers, overstock sale, overstock coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Overstock Coupon Code 2026 - 40% Off"
-store_og_description: "Overstock Coupon Code 2026. Save with verified Overstock promo codes & clearance deals on furniture, rugs & home essentials."
+store_og_title: "Overstock Coupon Codes (April 2026) 40% Off"
+store_og_description: "Overstock coupon codes April 2026. Save with verified Overstock promo code, clearance deals on furniture, rugs and home essentials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -46,4 +46,4 @@ coupons:
     expires_at: "31/12/2030"
 ---
 
-Overstock.com offers discounted furniture, home d�cor, rugs, bedding, jewelry, and more. Known for clearance deals and competitive pricing, Overstock helps customers furnish homes affordably. The platform features daily deals, flash sales, and promotional offers. With detailed product filters and customer reviews, shoppers can find stylish pieces at reduced prices, making Overstock a smart option for budget-conscious home shoppers.
+Overstock.com offers discounted furniture, home décor, rugs, bedding, jewelry, and more. Known for clearance deals and competitive pricing, Overstock helps customers furnish homes affordably. The platform features daily deals, flash sales, and promotional offers. With detailed product filters and customer reviews, shoppers can find stylish pieces at reduced prices, making Overstock a smart option for budget-conscious home shoppers.

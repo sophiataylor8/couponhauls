@@ -1,20 +1,20 @@
 ---
-title: "Harbor Freight Coupon Code 2026 - Tool Deals"
+title: "20 Percent Off Harbor Freight Coupons (March 2026)"
 slug: "harborfreight"
-description: "Harbor Freight Coupon Code 2026. Find verified Harbor Freight promo codes, tool coupons, and discounts on power tools, equipment, and workshop essentials."
+description: "20 percent off Harbor Freight coupons April 2026. Find Harbor Freight promo code, coupon code, and discounts on power tools and equipment."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Harbor Freight"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Harbor Freight Coupon Code 2026 - Tool Deals"
-store_title: "Harbor Freight Coupon Code 2026 - Tool Deals"
-store_meta_description: "Harbor Freight Coupon Code 2026. Find verified Harbor Freight promo codes, tool coupons, and discounts on power tools, equipment, and workshop essentials."
+store_h1: "20 Percent Off Harbor Freight Coupons (March 2026)"
+store_title: "20 Percent Off Harbor Freight Coupons (March 2026)"
+store_meta_description: "20 percent off Harbor Freight coupons April 2026. Find Harbor Freight promo code, coupon code, and discounts on power tools and equipment."
 store_keywords: "harbor freight coupon code, harbor freight promo code, harbor freight discount code, harbor freight deals, harbor freight offers, harbor freight tool coupons, harbor freight coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Harbor Freight Coupon Code 2026 - Tool Deals"
-store_og_description: "Harbor Freight Coupon Code 2026. Find verified Harbor Freight promo codes, tool coupons, and discounts on power tools, equipment, and workshop essentials."
+store_og_title: "20 Percent Off Harbor Freight Coupons (March 2026)"
+store_og_description: "20 percent off Harbor Freight coupons April 2026. Find Harbor Freight promo code, coupon code, and discounts on power tools and equipment."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,19 +28,19 @@ coupon_count: 2
 store_id: "harborfreight"
 
 coupons:
-  - coupon_id: "1096"
-    coupon_title: "PetSmart Treats Rewards Member Deals"
+  - coupon_id: "1100"
+    coupon_title: "Harbor Freight Inside Track Club Savings"
     coupon_code: ""
-    coupon_description: "Join PetSmart Treats Rewards to earn points on purchases and unlock exclusive member-only discounts on pet products."
-    coupon_aff_url: "https://www.petsmart.com/"
+    coupon_description: "Join Harbor Freight Inside Track Club to access exclusive discounts, special pricing, and member-only deals."
+    coupon_aff_url: "https://www.harborfreight.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1097"
-    coupon_title: "PetSmart Weekly Pet Supplies Sale"
+  - coupon_id: "1101"
+    coupon_title: "Harbor Freight Clearance & Parking Lot Sales"
     coupon_code: ""
-    coupon_description: "Shop PetSmart weekly sales for discounts on pet food, toys, grooming products, and accessories."
-    coupon_aff_url: "https://www.petsmart.com/"
+    coupon_description: "Find major discounts on tools and equipment during Harbor Freight clearance events and Parking Lot sales."
+    coupon_aff_url: "https://www.harborfreight.com/"
     coupon_type: "Deal"
     coupon_start: "09/03/2026"
     expires_at: "31/12/2026"
@@ -50,7 +50,7 @@ Harbor Freight is widely recognized as a value-focused retailer specializing in 
 
 The store offers a wide selection of hand tools, power tools, automotive equipment, hardware, and workshop accessories. From basic repair tools to specialized equipment used in construction, automotive maintenance, and home improvement projects, Harbor Freight provides practical solutions for a wide range of tasks.
 
-Many customers appreciate Harbor Freight�s focus on affordability. The retailer frequently introduces special promotions, coupons, and seasonal sales that make it easier for shoppers to purchase tools without exceeding their budgets. These discounts often apply to both essential tools and larger equipment items.
+Many customers appreciate Harbor Freight’s focus on affordability. The retailer frequently introduces special promotions, coupons, and seasonal sales that make it easier for shoppers to purchase tools without exceeding their budgets. These discounts often apply to both essential tools and larger equipment items.
 
 In addition to tools, Harbor Freight also carries safety gear, storage systems, generators, lighting equipment, and outdoor power tools. This variety allows customers to build complete tool collections while shopping in one convenient location.
 
