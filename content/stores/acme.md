@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Sign up for ACME for U to access digital coupons and personalized grocery deals."
     coupon_aff_url: "https://www.acmemarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1127"
     coupon_title: "ACME Weekly Grocery Deals"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Browse the ACME weekly ad to discover discounts on produce, meats, bakery items, and pantry staples."
     coupon_aff_url: "https://www.acmemarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

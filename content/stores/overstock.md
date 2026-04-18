@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Rug category discount"
     coupon_aff_url: "https://www.overstock.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
   - coupon_id: "1016"
     coupon_title: "Furniture Clearance 10%"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Home items discount"
     coupon_aff_url: "https://www.overstock.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
 ---
 

@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Check the King Kullen weekly circular to save on fresh produce, meats, dairy products, and grocery essentials."
     coupon_aff_url: "https://kingkullen.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1119"
     coupon_title: "King Kullen Digital Coupons"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Clip digital coupons through your King Kullen account to unlock extra grocery savings each week."
     coupon_aff_url: "https://kingkullen.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

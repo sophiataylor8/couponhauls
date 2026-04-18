@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Join United Rewards to clip digital coupons and enjoy personalized savings on groceries and household items."
     coupon_aff_url: "https://www.unitedsupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1091"
     coupon_title: "United Supermarkets Weekly Ad Deals"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Check the weekly ad to find special discounts on produce, meats, bakery items, and everyday groceries."
     coupon_aff_url: "https://www.unitedsupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

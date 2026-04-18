@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Sign up for myMixx to clip digital coupons and enjoy exclusive savings on groceries, beverages, snacks, and household essentials."
     coupon_aff_url: "https://www.jewelosco.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1043"
     coupon_title: "Jewel-Osco Weekly Grocery Deals"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Check the Jewel-Osco weekly ad to discover limited-time discounts on fresh produce, bakery items, meats, and everyday grocery staples."
     coupon_aff_url: "https://www.jewelosco.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

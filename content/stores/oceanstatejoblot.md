@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Shop select Crazy Deals items and receive a store gift card worth a percentage of the purchase value after buying qualifying products."
     coupon_aff_url: "https://www.oceanstatejoblot.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
   - coupon_id: "1035"
     coupon_title: "Job Lot Insider Club Exclusive Savings"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Join the free Insider Club to unlock member-only pricing, special promotions, and seasonal discounts across many store items."
     coupon_aff_url: "https://www.oceanstatejoblot.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

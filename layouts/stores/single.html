@@ -1,8 +1,52 @@
-{{- define "title" }}{{ .Params.store_title | default .Title }}{{ end -}}
-{{- define "description" }}{{ .Params.store_meta_description | default .Params.description }}{{ end -}}
+{{- define "title" -}}
+{{- /*
+  Title priority:
+  1. store_title  (from CSV → front-matter)
+  2. store_h1     (from CSV → front-matter)
+  3. store_name + site title fallback
+  All values are sanitised: surrounding YAML/CSV quotes stripped.
+*/ -}}
+{{- $rawTitle := .Params.store_title | default .Params.store_h1 | default "" -}}
+{{- $cleanTitle := $rawTitle | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
+{{- if $cleanTitle -}}
+  {{- $cleanTitle -}}
+{{- else -}}
+  {{- $storeName := .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+  {{- printf "%s Coupons & Promo Codes (%s)" $storeName (now.Format "January 2006") -}}
+{{- end -}}
+{{- end -}}
+
+
+{{- define "description" -}}
+{{- /*
+  Meta description priority:
+  1. store_meta_description  (from CSV → front-matter)
+  2. description              (generic front-matter fallback)
+  3. Dynamically built from coupon count + store name
+  All values are sanitised.
+*/ -}}
+{{- $rawDesc := .Params.store_meta_description | default .Params.description | default "" -}}
+{{- $cleanDesc := $rawDesc | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
+{{- if $cleanDesc -}}
+  {{- $cleanDesc -}}
+{{- else -}}
+  {{- $storeName  := .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+  {{- $count      := len (.Params.coupons | default slice) -}}
+  {{- $bestTitle  := "" -}}
+  {{- range first 1 (.Params.coupons | default slice) -}}
+    {{- $bestTitle = .coupon_title | replaceRE `^"(.*)"$` "$1" -}}
+  {{- end -}}
+  {{- if $bestTitle -}}
+    {{- printf "Save with %d verified %s coupon codes — %s. Best deal: %s. Updated daily, no sign‑up needed." $count $storeName (now.Format "January 2006") $bestTitle -}}
+  {{- else -}}
+    {{- printf "Find %d verified %s coupon codes & promo codes for %s. Updated daily — 100%% free, no sign‑up required." $count $storeName (now.Format "January 2006") -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}
+
 
 {{- define "canonical" -}}
-{{- $slug := .Params.slug | default .Params.store_id -}}
+{{- $slug := .Params.slug | default .Params.store_id | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
 {{- if and $slug (strings.Contains .Site.BaseURL "couponhauls.com") -}}
 {{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
 <link rel="canonical" href="https://{{ $slug }}.{{ $baseHost }}/">
@@ -10,6 +54,7 @@
 <link rel="canonical" href="{{ .Permalink }}">
 {{- end -}}
 {{- end -}}
+
 
 {{- define "extra_head" -}}
 <style>
@@ -168,7 +213,7 @@
 .sp-share-btn:hover { opacity: .85; transform: translateY(-1px); }
 .sp-share-tw   { background: #1da1f2; color: #fff; }
 .sp-share-fb   { background: #1877f2; color: #fff; }
-.sp-share-copy { background: rgba(255,255,255,.15); color: #fff; }
+.sp-share-copy { background: rgba(255,255,255,.15); color: #fff; backdrop-filter: blur(4px); }
 
 /* Mobile hero */
 @media (max-width: 600px) {
@@ -237,6 +282,25 @@
 .ci-code { border-left: 3px solid #0284c7; }
 .ci-deal { border-left: 3px solid #10b981; }
 
+/* Expired coupon styling */
+.ci-expired {
+  opacity: 0.6;
+  border-left-color: #94a3b8 !important;
+}
+.ci-expired-notice {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .7rem;
+  font-weight: 600;
+  color: #92400e;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  padding: .2rem .6rem;
+  border-radius: 999px;
+  margin-bottom: .375rem;
+}
+
 /* Badge */
 .ci-badge {
   flex-shrink: 0;
@@ -252,6 +316,7 @@
 }
 .ci-badge-blue  { background: #f0f9ff; border: 1.5px solid #bae6fd; }
 .ci-badge-green { background: #f0fdf4; border: 1.5px solid #bbf7d0; }
+.ci-badge-gray  { background: #f8fafc; border: 1.5px solid #e2e8f0; }
 .ci-badge-val {
   font-size: 1.25rem;
   font-weight: 900;
@@ -259,6 +324,7 @@
 }
 .ci-badge-blue  .ci-badge-val { color: #0284c7; }
 .ci-badge-green .ci-badge-val { color: #059669; }
+.ci-badge-gray  .ci-badge-val { color: #94a3b8; }
 .ci-badge-type {
   font-size: .625rem;
   font-weight: 700;
@@ -297,12 +363,10 @@
   background: #f8fafc;
   color: #94a3b8;
 }
-.ci-exp {
-  font-size: .72rem;
-  color: #94a3b8;
-  font-weight: 500;
-}
-.ci-exp-ok { color: #059669; }
+.ci-exp       { font-size: .72rem; color: #94a3b8; font-weight: 500; }
+.ci-exp-ok    { color: #059669; }
+.ci-exp-soon  { color: #d97706; }
+.ci-exp-dead  { color: #dc2626; }
 
 /* CTA */
 .ci-action { flex-shrink: 0; }
@@ -728,70 +792,135 @@
 </style>
 {{- end -}}
 
+
 {{- define "og_meta" -}}
-{{- $ogTitle  := .Params.store_og_title | default .Params.store_title | default .Title -}}
-{{- $ogDesc   := .Params.store_og_description | default .Params.store_meta_description | default .Params.description | default .Site.Params.description -}}
-{{- $ogType   := .Params.store_og_type | default "website" -}}
-{{- $slug     := .Params.slug | default .Params.store_id -}}
-{{- $ogURL    := .Permalink -}}
-{{- if and $slug (strings.Contains .Site.BaseURL "couponhauls.com") -}}
+{{- /*
+  OG / Twitter meta — all values cleaned of surrounding CSV quotes.
+  Priority order mirrors title/description defines above.
+*/ -}}
+{{- $slug     := .Params.slug | default .Params.store_id | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
 {{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
-{{- $ogURL     = printf "https://%s.%s/" $slug $baseHost -}}
+
+{{- /* Resolved canonical URL for this store page */ -}}
+{{- $ogURL := .Permalink -}}
+{{- if and $slug (strings.Contains .Site.BaseURL "couponhauls.com") -}}
+  {{- $ogURL = printf "https://%s.%s/" $slug $baseHost -}}
 {{- end -}}
-{{- $ogImage  := cond (ne .Params.store_og_image "") .Params.store_og_image (cond (ne .Params.logo_url "") .Params.logo_url (printf "%s%s" .Site.BaseURL .Site.Params.og_image)) -}}
-<meta property="og:title" content="{{ $ogTitle }}">
+
+{{- /* Title — same priority chain as define "title" */ -}}
+{{- $rawTitle   := .Params.store_og_title | default .Params.store_title | default .Params.store_h1 | default "" -}}
+{{- $ogTitle    := $rawTitle | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
+{{- if not $ogTitle -}}
+  {{- $storeName := .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+  {{- $ogTitle    = printf "%s Coupons & Promo Codes (%s)" $storeName (now.Format "January 2006") -}}
+{{- end -}}
+
+{{- /* Description — same priority chain as define "description" */ -}}
+{{- $rawDesc  := .Params.store_og_description | default .Params.store_meta_description | default .Params.description | default "" -}}
+{{- $ogDesc   := $rawDesc | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
+{{- if not $ogDesc -}}
+  {{- $storeName  := .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+  {{- $count      := len (.Params.coupons | default slice) -}}
+  {{- $ogDesc      = printf "Find %d verified %s coupon codes & promo codes. Updated daily — 100%% free." $count $storeName -}}
+{{- end -}}
+
+{{- /* OG image */ -}}
+{{- $ogImage := .Params.store_og_image | default .Params.logo_url | default "" -}}
+{{- $ogImage  = $ogImage | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+{{- if not $ogImage -}}
+  {{- $ogImage = printf "%simages/couponhaulslogo.png" .Site.BaseURL -}}
+{{- end -}}
+
+{{- $ogType := .Params.store_og_type | default "website" | replaceRE `^"(.*)"$` "$1" -}}
+
+<meta property="og:title"       content="{{ $ogTitle }}">
 <meta property="og:description" content="{{ $ogDesc }}">
-<meta property="og:type" content="{{ $ogType }}">
-<meta property="og:url" content="{{ $ogURL }}">
-<meta property="og:image" content="{{ $ogImage }}">
-<meta property="og:image:alt" content="{{ $ogTitle }} — {{ .Site.Title }}">
-<meta property="og:site_name" content="{{ .Site.Title }}">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="{{ .Site.Params.twitter_handle }}">
-<meta name="twitter:title" content="{{ $ogTitle }}">
+<meta property="og:type"        content="{{ $ogType }}">
+<meta property="og:url"         content="{{ $ogURL }}">
+<meta property="og:image"       content="{{ $ogImage }}">
+<meta property="og:image:alt"   content="{{ $ogTitle }} — {{ .Site.Title }}">
+<meta property="og:site_name"   content="{{ .Site.Title }}">
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:site"        content="{{ .Site.Params.twitter_handle }}">
+<meta name="twitter:title"       content="{{ $ogTitle }}">
 <meta name="twitter:description" content="{{ $ogDesc }}">
-<meta name="twitter:image" content="{{ $ogImage }}">
-<meta name="twitter:image:alt" content="{{ $ogTitle }} — {{ .Site.Title }}">
-{{- with .Params.store_keywords }}
-<meta name="keywords" content="{{ . }}">
+<meta name="twitter:image"       content="{{ $ogImage }}">
+<meta name="twitter:image:alt"   content="{{ $ogTitle }} — {{ .Site.Title }}">
+{{- with .Params.store_keywords -}}
+  {{- $kw := . | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+  {{- if $kw }}
+<meta name="keywords" content="{{ $kw }}">
+  {{- end -}}
 {{- end -}}
 {{- end -}}
 
-{{/*
-  ┌─────────────────────────────────────────────────────────────┐
-  │  define "schema"                                            │
-  │                                                             │
-  │  FIX: All .Params.* values are already plain Go strings.   │
-  │  Passing them through Hugo's `jsonify` is correct for      │
-  │  safe JSON encoding, BUT only when the YAML front-matter   │
-  │  contains clean values (no embedded surrounding quotes).   │
-  │                                                             │
-  │  The generate_stores.py script now strips those embedded   │
-  │  quotes via clean_str(), so the values arriving here are   │
-  │  e.g. "Home Depot" — not "\"Home Depot\"".                 │
-  │                                                             │
-  │  Result: "name":"Home Depot"  ✓  (was "\"Home Depot\"" ✗) │
-  └─────────────────────────────────────────────────────────────┘
-*/}}
+
 {{- define "schema" -}}
-{{- $storeName    := .Params.store_name | default .Title -}}
-{{- $couponCount  := len (.Params.coupons | default slice) -}}
-{{- $bestDiscount := .Params.best_discount | default "" -}}
-{{- $storeURL     := .Params.website_url | default .Permalink -}}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Store",
-  "name": {{ $storeName | jsonify }},
-  "url": {{ $storeURL | jsonify }},
-  "description": {{ (.Params.store_meta_description | default .Params.description) | jsonify }},
-  "sameAs": {{ $storeURL | jsonify }},
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": {{ .Permalink | jsonify }}
-  }
-}
-</script>
+{{- /*
+  ═══════════════════════════════════════════════════════════════
+  SCHEMA BLOCK
+
+  ALL values go through:
+    1. replaceRE  — strips surrounding CSV/YAML quotes → clean Go string
+    2. | jsonify  — produces a valid JSON string token
+
+  Schema types emitted:
+    • BreadcrumbList  — breadcrumb trail (item omitted on last node)
+    • Store           — entity for this retailer
+    • ItemList        — carousel of Offer items, one per coupon
+    • FAQPage         — 3 Q&A pairs
+
+  Key fixes vs previous version
+  ─────────────────────────────
+  BreadcrumbList:
+    • Last ListItem (current page) omits "item" — Google flags a
+      subdomain URL as mismatched when the test runs from www.
+      Omitting it is explicitly allowed and resolves the error.
+
+  ItemList / Offer:
+    • priceValidUntil converted from DD/MM/YYYY → YYYY-MM-DD (ISO 8601).
+      Google rejects any other date format here.
+    • Removed "offeredBy" — not a valid Offer property in Google's spec.
+    • Removed "category" — not recognised by Google's Offer validator.
+    • Removed "availability" — triggers warnings without an accompanying
+      "price" / "priceCurrency"; coupons don't carry a price value.
+    • Kept "seller", "couponCode", "priceValidUntil", "url", "name",
+      "description" — all valid and useful for rich results.
+  ═══════════════════════════════════════════════════════════════
+*/ -}}
+
+{{- /* ── Shared clean variables ──────────────────────────────────── */ -}}
+{{- $storeName := .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
+{{- $storeURL  := .Params.website_url | default .Permalink | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+{{- $storeDesc := .Params.store_meta_description | default .Params.description | default "" | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
+{{- $slug      := .Params.slug | default .Params.store_id | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+
+{{- /* Canonical URL — subdomain on prod, permalink on dev/local */ -}}
+{{- $pageURL  := .Permalink -}}
+{{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
+{{- if and $slug (strings.Contains .Site.BaseURL "couponhauls.com") -}}
+  {{- $pageURL = printf "https://%s.%s/" $slug $baseHost -}}
+{{- end -}}
+
+{{- $coupons     := .Params.coupons | default slice -}}
+{{- $couponCount := len $coupons -}}
+{{- $siteBase    := .Site.BaseURL | strings.TrimRight "/" -}}
+
+{{- /* Best coupon title used in FAQ answer */ -}}
+{{- $bestCoupon := "" -}}
+{{- range first 1 $coupons -}}
+  {{- $bestCoupon = .coupon_title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+{{- end -}}
+
+
+{{- /* ── 1. BreadcrumbList ──────────────────────────────────────── */ -}}
+{{- /*
+  FIX: "item" is intentionally omitted from the last ListItem.
+  Google allows omitting "item" on the final node and recommends it
+  when the canonical URL differs from the tested URL (e.g. subdomain
+  vs www). Including a subdomain URL here while Google tests from www
+  is what caused the "Some are invalid" BreadcrumbList error.
+*/ -}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -801,41 +930,106 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": {{ .Site.BaseURL | strings.TrimRight "/" | jsonify }}
+      "item": {{ .Site.BaseURL | jsonify }}
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "All Stores",
-      "item": {{ (printf "%s/stores/" (.Site.BaseURL | strings.TrimRight "/")) | jsonify }}
+      "item": {{ (printf "%s/stores/" $siteBase) | jsonify }}
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": {{ (printf "%s Coupons" $storeName) | jsonify }},
-      "item": {{ .Permalink | jsonify }}
+      "name": {{ (printf "%s Coupons" $storeName) | jsonify }}
     }
   ]
 }
 </script>
-{{- range .Params.coupons }}{{- if .coupon_code }}
+
+
+{{- /* ── 2. Store entity ─────────────────────────────────────────── */ -}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Offer",
-  "name": {{ .coupon_title | jsonify }},
-  "description": {{ .coupon_description | jsonify }},
-  "couponCode": {{ .coupon_code | jsonify }},
-  "category": {{ (.coupon_type | default "Coupon") | jsonify }},
-  "url": {{ $.Permalink | jsonify }}{{ with .expires_at }},
-  "validThrough": {{ . | jsonify }}{{ end }},
-  "seller": {
-    "@type": "Organization",
-    "name": {{ $.Params.store_name | default $.Title | jsonify }}
-  }
+  "@type": "Store",
+  "name": {{ $storeName | jsonify }},
+  "url": {{ $storeURL | jsonify }},
+  "description": {{ $storeDesc | jsonify }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ $pageURL | jsonify }}
+  },
+  "sameAs": {{ $storeURL | jsonify }}
 }
 </script>
-{{- end }}{{- end }}
+
+
+{{- /* ── 3. ItemList + Offer per coupon ───────────────────────────── */ -}}
+{{- /*
+  FIX SUMMARY for each Offer item:
+  ① priceValidUntil  — converted from DD/MM/YYYY → YYYY-MM-DD (ISO 8601).
+                        Google rejects any other format.
+  ② offeredBy        — removed; not in Google's Offer property set.
+  ③ category         — removed; not recognised by Google's Offer validator.
+  ④ availability     — removed; raises warnings without price/priceCurrency.
+  Properties kept: name, description, url, seller, couponCode, priceValidUntil.
+*/ -}}
+{{- if $coupons }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": {{ (printf "%s Coupon Codes — %s" $storeName (now.Format "January 2006")) | jsonify }},
+  "description": {{ (printf "Verified %s promo codes and deals, updated daily." $storeName) | jsonify }},
+  "numberOfItems": {{ $couponCount }},
+  "itemListElement": [
+    {{- range $i, $c := $coupons -}}
+    {{- $cTitle := $c.coupon_title       | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+    {{- $cDesc  := $c.coupon_description | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+    {{- $cCode  := $c.coupon_code        | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+    {{- $cURL   := $c.coupon_aff_url     | default $storeURL | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+    {{- $cExp   := $c.expires_at         | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+
+    {{- /* Convert DD/MM/YYYY → YYYY-MM-DD for priceValidUntil.
+         Google's Rich Results Test rejects any other date format. */ -}}
+    {{- $cExpISO := "" -}}
+    {{- if $cExp -}}
+      {{- $parts := split $cExp "/" -}}
+      {{- if eq (len $parts) 3 -}}
+        {{- $cExpISO = printf "%s-%s-%s" (index $parts 2) (index $parts 1) (index $parts 0) -}}
+      {{- end -}}
+    {{- end -}}
+
+    {
+      "@type": "ListItem",
+      "position": {{ add $i 1 }},
+      "item": {
+        "@type": "Offer",
+        "name": {{ $cTitle | jsonify }},
+        "description": {{ $cDesc | jsonify }},
+        "url": {{ $pageURL | jsonify }},
+        "seller": {
+          "@type": "Organization",
+          "name": {{ $storeName | jsonify }},
+          "url": {{ $storeURL | jsonify }}
+        }
+        {{- if $cCode }},
+        "couponCode": {{ $cCode | jsonify }}
+        {{- end -}}
+        {{- if $cExpISO }},
+        "priceValidUntil": {{ $cExpISO | jsonify }}
+        {{- end }}
+      }
+    }{{ if lt $i (sub $couponCount 1) }},{{ end }}
+    {{- end }}
+  ]
+}
+</script>
+{{- end }}
+
+
+{{- /* ── 4. FAQPage ───────────────────────────────────────────────── */ -}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -846,7 +1040,7 @@
       "name": {{ (printf "How many %s coupon codes are available right now?" $storeName) | jsonify }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {{ (printf "CouponHauls currently lists %d verified %s coupon codes and deals. We verify and update all %s offers daily so you always get working promo codes — no expired duds." $couponCount $storeName $storeName) | jsonify }}
+        "text": {{ (printf "CouponHauls currently lists %d verified %s coupon codes and deals. We verify and update all offers daily so you always get working promo codes." $couponCount $storeName) | jsonify }}
       }
     },
     {
@@ -854,7 +1048,7 @@
       "name": {{ (printf "What is the best %s discount available today?" $storeName) | jsonify }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {{ if $bestDiscount }}{{ (printf "The best %s discount right now is %s off. Apply the coupon code at checkout on the %s website to redeem instantly." $storeName $bestDiscount $storeName) | jsonify }}{{ else }}{{ (printf "The top %s deals include percentage-off discounts, free shipping codes, and seasonal promotions. Click any deal to reveal the latest savings." $storeName) | jsonify }}{{ end }}
+        "text": {{ if $bestCoupon }}{{ (printf "The top %s deal right now is: %s. Click Reveal Code to copy it instantly and apply at checkout." $storeName $bestCoupon) | jsonify }}{{ else }}{{ (printf "Browse the latest %s deals above. Our top offers include percentage-off codes, free shipping deals, and seasonal promotions." $storeName) | jsonify }}{{ end }}
       }
     },
     {
@@ -862,7 +1056,7 @@
       "name": {{ (printf "How do I use a %s promo code?" $storeName) | jsonify }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {{ (printf "To use a %s promo code: 1) Find a deal and click Copy Code. 2) Visit %s and add items to your cart. 3) At checkout, paste the code into the promo field and click Apply." $storeName $storeURL) | jsonify }}
+        "text": {{ (printf "To use a %s promo code: (1) Click Reveal Code on any offer above. (2) Visit %s and add items to your cart. (3) At checkout, paste the code into the promo or coupon field and click Apply. Your discount is applied instantly." $storeName $storeURL) | jsonify }}
       }
     }
   ]
@@ -870,13 +1064,27 @@
 </script>
 {{- end -}}
 
+
 {{- define "main" -}}
+
+{{- /* ── Shared clean variables (needed throughout main) ───────── */ -}}
 {{- $storeCoupons := .Params.coupons | default slice -}}
 {{- $couponCount  := len $storeCoupons -}}
-{{- $storeName    := .Params.store_name | default .Title -}}
-{{- $bestDiscount := .Params.best_discount | default "" -}}
-{{- $storeURL     := .Params.website_url | default .Permalink -}}
-{{- $affURL       := .Params.website_aff_url | default $storeURL -}}
+{{- $storeName    := .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+{{- $bestDiscount := .Params.best_discount | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+{{- $storeURL     := .Params.website_url | default .Permalink | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+{{- $affURL       := .Params.website_aff_url | default $storeURL | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+
+{{- /* Resolve store H1 — priority: store_h1 → store_title → generated */ -}}
+{{- $storeH1Raw := .Params.store_h1 | default .Params.store_title | default "" -}}
+{{- $storeH1    := $storeH1Raw | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
+{{- if not $storeH1 -}}
+  {{- $storeH1 = printf "%s Coupons & Promo Codes (%s)" $storeName (now.Format "January 2006") -}}
+{{- end -}}
+
+{{- /* Current time for expiry checks */ -}}
+{{- $now := now -}}
+
 {{- partial "breadcrumb.html" . -}}
 
 <div class="sp-hero">
@@ -887,7 +1095,8 @@
     <div class="sp-hero-body">
       <div class="sp-hero-top">
         <div>
-          <h1 class="sp-title">{{- with .Params.store_h1 }}{{ . }}{{- else }}{{ $storeName }} Coupons &amp; Promo Codes{{- end }}</h1>
+          {{- /* H1 uses the clean store_h1 value from CSV */ -}}
+          <h1 class="sp-title">{{ $storeH1 }}</h1>
           <p class="sp-updated">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             Updated {{ now.Format "January 2, 2006" }}
@@ -900,20 +1109,49 @@
         </a>
         {{- end }}
       </div>
+
       <div class="sp-stats">
         <div class="sp-stat">
           <span class="sp-stat-n">{{ $couponCount }}</span>
           <span class="sp-stat-l">Active Deals</span>
         </div>
-        {{- with .Params.best_discount }}<div class="sp-stat"><span class="sp-stat-n">{{ . }}</span><span class="sp-stat-l">Best Discount</span></div>{{- end }}
-        {{- with .Params.verified_date }}<div class="sp-stat"><span class="sp-stat-n">{{ . }}</span><span class="sp-stat-l">Last Verified</span></div>{{- end }}
-        {{- with .Params.avg_saving }}<div class="sp-stat"><span class="sp-stat-n">{{ . }}</span><span class="sp-stat-l">Avg Saving</span></div>{{- end }}
+        {{- with $bestDiscount -}}
+        <div class="sp-stat">
+          <span class="sp-stat-n">{{ . }}</span>
+          <span class="sp-stat-l">Best Discount</span>
+        </div>
+        {{- end -}}
+        {{- with .Params.verified_date -}}
+        {{- $vd := . | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+        {{- if $vd -}}
+        <div class="sp-stat">
+          <span class="sp-stat-n">{{ $vd }}</span>
+          <span class="sp-stat-l">Last Verified</span>
+        </div>
+        {{- end -}}
+        {{- end -}}
+        {{- with .Params.avg_saving -}}
+        {{- $as := . | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+        {{- if $as -}}
+        <div class="sp-stat">
+          <span class="sp-stat-n">{{ $as }}</span>
+          <span class="sp-stat-l">Avg Saving</span>
+        </div>
+        {{- end -}}
+        {{- end -}}
       </div>
-      {{- with (.Params.store_meta_description | default .Params.description) }}
+
+      {{- /*
+        Description shown in hero — priority:
+          store_meta_description → description → nothing
+        Sanitise surrounding CSV/YAML quotes before display.
+      */ -}}
+      {{- $heroDesc := .Params.store_meta_description | default .Params.description | default "" -}}
+      {{- $heroDesc  = $heroDesc | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
+      {{- with $heroDesc }}
       <p class="sp-desc">{{ . }}</p>
       {{- end }}
 
-      <!-- Share Bar -->
       <div class="sp-share">
         <span class="sp-share-label">Share</span>
         <a href="https://x.com/intent/tweet?url={{ .Permalink | absURL }}&text={{ .Title | urlize }}"
@@ -943,40 +1181,98 @@
 
 <div class="sp-body">
   <div class="sp-container">
+
+    {{- /* ── Coupon list ──────────────────────────────────────── */ -}}
     {{- if $storeCoupons }}
     <div class="cl-header">
       <div>
         <h2 class="cl-title">All {{ $storeName }} Coupon Codes</h2>
-        <p class="cl-sub">{{ $couponCount }} offer{{ if ne $couponCount 1 }}s{{ end }} available &middot; verified {{ now.Format "Jan 2006" }}</p>
+        <p class="cl-sub">{{ $couponCount }} offer{{ if ne $couponCount 1 }}s{{ end }} available · verified {{ now.Format "Jan 2006" }}</p>
       </div>
     </div>
     <div class="cl-list">
-      {{- range $storeCoupons }}
-      <div class="ci {{ if .coupon_code }}ci-code{{ else }}ci-deal{{ end }}">
-        <div class="ci-badge {{ if .coupon_code }}ci-badge-blue{{ else }}ci-badge-green{{ end }}">
+      {{- range $storeCoupons -}}
+
+      {{- /* Clean all coupon field values */ -}}
+      {{- $cTitle  := .coupon_title       | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+      {{- $cDesc   := .coupon_description | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+      {{- $cCode   := .coupon_code        | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+      {{- $cAffURL := .coupon_aff_url     | default $affURL | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+      {{- $cType   := .coupon_type        | default "Deal"  | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+      {{- $cExp    := .expires_at         | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+
+      {{- /* ── Expiry detection (DD/MM/YYYY format) ─────────── */ -}}
+      {{- $isExpired := false -}}
+      {{- $expiringSoon := false -}}
+      {{- if $cExp -}}
+        {{- $parts := split $cExp "/" -}}
+        {{- if eq (len $parts) 3 -}}
+          {{- $iso := printf "%s-%s-%sT00:00:00Z" (index $parts 2) (index $parts 1) (index $parts 0) -}}
+          {{- $expTime := time $iso -}}
+          {{- if $expTime.Before $now -}}
+            {{- $isExpired = true -}}
+          {{- else -}}
+            {{- /* Mark as expiring soon if within 14 days */ -}}
+            {{- $soon := $now.AddDate 0 0 14 -}}
+            {{- if $expTime.Before $soon -}}
+              {{- $expiringSoon = true -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- /* Badge colour — grey for expired, blue for code, green for deal */ -}}
+      {{- $badgeClass := "ci-badge-green" -}}
+      {{- if $isExpired -}}
+        {{- $badgeClass = "ci-badge-gray" -}}
+      {{- else if $cCode -}}
+        {{- $badgeClass = "ci-badge-blue" -}}
+      {{- end -}}
+
+      <div class="ci {{ if $cCode }}ci-code{{ else }}ci-deal{{ end }}{{ if $isExpired }} ci-expired{{ end }}">
+
+        {{- if $isExpired }}
+        <div class="ci-expired-notice">⚠️ Possibly Expired — Try Anyway</div>
+        {{- end }}
+
+        <div class="ci-badge {{ $badgeClass }}">
           {{- if .discount_value }}
-          <span class="ci-badge-val">{{ .discount_value }}</span>
-          <span class="ci-badge-type">{{ .coupon_type | default "OFF" }}</span>
+          <span class="ci-badge-val">{{ .discount_value | replaceRE `^"(.*)"$` "$1" }}</span>
+          <span class="ci-badge-type">{{ $cType }}</span>
           {{- else }}
           <span class="ci-badge-icon">🏷️</span>
-          <span class="ci-badge-type">{{ .coupon_type | default "Deal" }}</span>
+          <span class="ci-badge-type">{{ $cType }}</span>
           {{- end }}
         </div>
+
         <div class="ci-info">
-          <h3 class="ci-title">{{ .coupon_title }}</h3>
-          {{- with .coupon_description }}<p class="ci-desc">{{ . }}</p>{{- end }}
+          <h3 class="ci-title">{{ $cTitle }}</h3>
+          {{- with $cDesc }}<p class="ci-desc">{{ . }}</p>{{- end }}
           <div class="ci-meta">
-            {{- if .coupon_code }}<span class="ci-tag">Promo Code</span>{{- else }}<span class="ci-tag">No Code Needed</span>{{- end }}
-            {{- with .expires_at }}<span class="ci-exp">Expires {{ . }}</span>{{- else }}<span class="ci-exp ci-exp-ok">✓ No Expiration</span>{{- end }}
+            {{- if $cCode -}}
+              <span class="ci-tag">Promo Code</span>
+            {{- else -}}
+              <span class="ci-tag">No Code Needed</span>
+            {{- end -}}
+            {{- if $isExpired -}}
+              <span class="ci-exp ci-exp-dead">Expired: {{ $cExp }}</span>
+            {{- else if $expiringSoon -}}
+              <span class="ci-exp ci-exp-soon">⚡ Expires soon: {{ $cExp }}</span>
+            {{- else if $cExp -}}
+              <span class="ci-exp ci-exp-ok">Expires: {{ $cExp }}</span>
+            {{- else -}}
+              <span class="ci-exp ci-exp-ok">✓ No Expiration</span>
+            {{- end -}}
           </div>
         </div>
-        {{- if .coupon_code }}
-        <div class="ci-codebox" data-code="{{ .coupon_code }}" data-url="{{ .coupon_aff_url | default $affURL }}">
+
+        {{- if $cCode }}
+        <div class="ci-codebox" data-code="{{ $cCode }}" data-url="{{ $cAffURL }}">
           <span class="ci-codetext">••••••••</span>
           <button class="ci-copybtn" type="button">Reveal Code</button>
         </div>
         {{- else }}
-        <a href="{{ .coupon_aff_url | default $affURL }}" target="_blank" rel="noopener noreferrer sponsored" class="ci-dealbtn">
+        <a href="{{ $cAffURL }}" target="_blank" rel="noopener noreferrer sponsored" class="ci-dealbtn">
           Get Deal
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
         </a>
@@ -984,27 +1280,32 @@
       </div>
       {{- end }}
     </div>
+
     {{- else }}
     <div class="cl-empty">
       <div class="cl-empty-icon">🏷️</div>
       <h3 class="cl-empty-title">No coupons listed yet</h3>
-      <p class="cl-empty-desc">We update codes every day.</p>
+      <p class="cl-empty-desc">We update codes every day — check back soon.</p>
       <a href="/stores/" class="cl-empty-btn">Browse Other Stores</a>
     </div>
     {{- end }}
 
-    {{/* ── Store Description ── */}}
+
+    {{- /* ── Store Description ──────────────────────────────── */ -}}
     {{- with .Content }}
     <section class="sd-section">
-      <h2 class="sd-title">{{ $storeName }} Details</h2>
+      <h2 class="sd-title">About {{ $storeName }}</h2>
       <div class="sd-body">{{ . }}</div>
     </section>
     {{- end }}
 
+
+    {{- /* ── FAQ ────────────────────────────────────────────── */ -}}
     <section class="faq" aria-labelledby="faq-h">
       <h2 id="faq-h" class="faq-title">Frequently Asked Questions</h2>
       <p class="faq-sub">Common questions about {{ $storeName }} coupon codes</p>
       <div class="faq-list">
+
         <details class="faq-item">
           <summary class="faq-q">
             How many {{ $storeName }} coupon codes are available right now?
@@ -1014,19 +1315,27 @@
             <p>CouponHauls currently lists <strong>{{ $couponCount }} verified {{ $storeName }} coupon codes</strong> and deals. We check and refresh all {{ $storeName }} offers daily so you always land on working promo codes — no expired duds, ever.</p>
           </div>
         </details>
+
         <details class="faq-item">
           <summary class="faq-q">
             What is the best {{ $storeName }} discount available today?
             <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </summary>
           <div class="faq-a">
+            {{- $bestForFaq := "" -}}
+            {{- range first 1 $storeCoupons -}}
+              {{- $bestForFaq = .coupon_title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+            {{- end -}}
             {{- if $bestDiscount }}
             <p>The top {{ $storeName }} deal right now takes <strong>{{ $bestDiscount }} off</strong> your order. Apply the coupon code at checkout on the {{ $storeName }} website to redeem instantly.</p>
+            {{- else if $bestForFaq }}
+            <p>The best current {{ $storeName }} offer is: <strong>{{ $bestForFaq }}</strong>. Click Reveal Code above to copy it and apply at checkout for instant savings.</p>
             {{- else }}
             <p>The best current {{ $storeName }} deals include percentage-off discounts, free-shipping codes, and exclusive seasonal promotions. Browse the full list above and click any deal to copy the code or activate the offer automatically.</p>
             {{- end }}
           </div>
         </details>
+
         <details class="faq-item">
           <summary class="faq-q">
             How do I use a {{ $storeName }} promo code?
@@ -1041,13 +1350,15 @@
             </ol>
           </div>
         </details>
+
       </div>
     </section>
 
-    {{/* ── Related Stores ── */}}
-    {{- $allStores := where .Site.RegularPages "Section" "stores" -}}
+
+    {{- /* ── Related Stores ─────────────────────────────────── */ -}}
+    {{- $allStores    := where .Site.RegularPages "Section" "stores" -}}
     {{- $activeStores := where $allStores ".Params.is_active" true -}}
-    {{- $otherStores := slice -}}
+    {{- $otherStores  := slice -}}
     {{- range $activeStores -}}
       {{- if ne .Permalink $.Permalink -}}
         {{- $otherStores = $otherStores | append . -}}
@@ -1055,26 +1366,26 @@
     {{- end -}}
     {{- $relatedStores := first 9 $otherStores -}}
 
-    {{ if $relatedStores }}
+    {{- if $relatedStores }}
     <section class="rs-section">
       <div class="rs-header">
-        <h2 class="rs-title">Related Stores</h2>
-        <p class="rs-sub">More coupon codes from top retailers</p>
+        <div>
+          <h2 class="rs-title">Related Stores</h2>
+          <p class="rs-sub">More coupon codes from top retailers</p>
+        </div>
       </div>
       <div class="rs-grid">
-        {{- range $relatedStores }}
-        {{- $rName  := .Params.store_name | default .Title -}}
+        {{- range $relatedStores -}}
+        {{- $rName  := .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
         {{- $rCount := .Params.coupon_count | default 0 -}}
-        {{- $rSlug  := .Params.slug | default .Params.store_id -}}
+        {{- $rSlug  := .Params.slug | default .Params.store_id | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
         {{- $rURL   := .Permalink -}}
         {{- if and $rSlug (strings.Contains $.Site.BaseURL "couponhauls.com") -}}
-          {{- $baseHost := $.Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
-          {{- $rURL = printf "https://%s.%s/" $rSlug $baseHost -}}
+          {{- $rBaseHost := $.Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
+          {{- $rURL = printf "https://%s.%s/" $rSlug $rBaseHost -}}
         {{- end }}
         <a href="{{ $rURL }}" class="rs-card">
-          <div class="rs-avatar">
-            <span>{{ substr $rName 0 1 }}</span>
-          </div>
+          <div class="rs-avatar"><span>{{ substr $rName 0 1 }}</span></div>
           <div class="rs-info">
             <h3 class="rs-name">{{ $rName }}</h3>
             <p class="rs-count">{{ $rCount }} Coupons</p>
@@ -1086,70 +1397,61 @@
         {{- end }}
       </div>
     </section>
-    {{ end }}
+    {{- end }}
 
-    {{/* ── Prev / Next Navigation ── */}}
+
+    {{- /* ── Prev / Next navigation ──────────────────────────── */ -}}
     {{- $prev := .PrevInSection -}}
     {{- $next := .NextInSection -}}
     {{- range seq 10 -}}
-      {{- if and $prev (not $prev.Params.is_active) -}}
-        {{- $prev = $prev.PrevInSection -}}
-      {{- end -}}
+      {{- if and $prev (not $prev.Params.is_active) -}}{{- $prev = $prev.PrevInSection -}}{{- end -}}
     {{- end -}}
     {{- range seq 10 -}}
-      {{- if and $next (not $next.Params.is_active) -}}
-        {{- $next = $next.NextInSection -}}
-      {{- end -}}
+      {{- if and $next (not $next.Params.is_active) -}}{{- $next = $next.NextInSection -}}{{- end -}}
     {{- end -}}
 
     <div class="pn-nav">
       <div class="pn-prev">
-        {{- if $prev }}
-        {{- $prevSlug := $prev.Params.slug | default $prev.Params.store_id -}}
+        {{- if $prev -}}
+        {{- $prevSlug := $prev.Params.slug | default $prev.Params.store_id | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
         {{- $prevURL  := $prev.Permalink -}}
         {{- if and $prevSlug (strings.Contains $.Site.BaseURL "couponhauls.com") -}}
-          {{- $baseHost := $.Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
-          {{- $prevURL = printf "https://%s.%s/" $prevSlug $baseHost -}}
+          {{- $ph := $.Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
+          {{- $prevURL = printf "https://%s.%s/" $prevSlug $ph -}}
         {{- end }}
         <a href="{{ $prevURL }}" class="pn-btn">
           <div class="pn-dir">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 5l-7 7 7 7"/></svg>
             Previous Store
           </div>
-          <div class="pn-name">{{ $prev.Params.store_name | default $prev.Title }}</div>
+          <div class="pn-name">{{ $prev.Params.store_name | default $prev.Title | replaceRE `^"(.*)"$` "$1" }}</div>
         </a>
         {{- else }}
         <div class="pn-btn pn-disabled">
-          <div class="pn-dir">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 5l-7 7 7 7"/></svg>
-            Previous Store
-          </div>
+          <div class="pn-dir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 5l-7 7 7 7"/></svg>Previous Store</div>
           <div class="pn-name">No previous store</div>
         </div>
         {{- end }}
       </div>
 
       <div class="pn-next">
-        {{- if $next }}
-        {{- $nextSlug := $next.Params.slug | default $next.Params.store_id -}}
+        {{- if $next -}}
+        {{- $nextSlug := $next.Params.slug | default $next.Params.store_id | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
         {{- $nextURL  := $next.Permalink -}}
         {{- if and $nextSlug (strings.Contains $.Site.BaseURL "couponhauls.com") -}}
-          {{- $baseHost := $.Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
-          {{- $nextURL = printf "https://%s.%s/" $nextSlug $baseHost -}}
+          {{- $nh := $.Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
+          {{- $nextURL = printf "https://%s.%s/" $nextSlug $nh -}}
         {{- end }}
         <a href="{{ $nextURL }}" class="pn-btn pn-btn-right">
           <div class="pn-dir">
             Next Store
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
           </div>
-          <div class="pn-name">{{ $next.Params.store_name | default $next.Title }}</div>
+          <div class="pn-name">{{ $next.Params.store_name | default $next.Title | replaceRE `^"(.*)"$` "$1" }}</div>
         </a>
         {{- else }}
         <div class="pn-btn pn-btn-right pn-disabled">
-          <div class="pn-dir">
-            Next Store
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
+          <div class="pn-dir">Next Store<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg></div>
           <div class="pn-name">No next store</div>
         </div>
         {{- end }}
@@ -1162,6 +1464,7 @@
         Back to All Stores
       </a>
     </div>
+
   </div>
 </div>
 
@@ -1179,25 +1482,33 @@ document.querySelectorAll('.ci-codebox').forEach(function(box) {
       span.textContent = code;
       btn.textContent  = '✓ Copied!';
       btn.classList.add('copied');
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(code).catch(function() { _fbCopy(code); });
-      } else { _fbCopy(code); }
+      _copyToClipboard(code);
       if (affUrl) { setTimeout(function() { window.open(affUrl, '_blank', 'noopener,noreferrer'); }, 400); }
-      setTimeout(function() { btn.textContent = 'Reveal Code'; btn.classList.remove('copied'); }, 2500);
+      setTimeout(function() { btn.textContent = 'Copy Code'; btn.classList.remove('copied'); }, 2500);
     } else {
       btn.textContent = '✓ Copied!';
       btn.classList.add('copied');
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(code).catch(function() { _fbCopy(code); });
-      } else { _fbCopy(code); }
+      _copyToClipboard(code);
       setTimeout(function() { btn.textContent = 'Copy Code'; btn.classList.remove('copied'); }, 2500);
     }
   });
 });
+
+function _copyToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).catch(function() { _fbCopy(text); });
+  } else {
+    _fbCopy(text);
+  }
+}
+
 function _fbCopy(text) {
   var ta = document.createElement('textarea');
-  ta.value = text; ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
-  document.body.appendChild(ta); ta.focus(); ta.select();
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
   try { document.execCommand('copy'); } catch(e) {}
   document.body.removeChild(ta);
 }

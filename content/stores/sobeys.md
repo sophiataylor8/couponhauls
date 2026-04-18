@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Browse the Sobeys weekly flyer to save on fresh foods, snacks, beverages, and everyday grocery essentials."
     coupon_aff_url: "https://www.sobeys.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1107"
     coupon_title: "Scene+ Rewards Member Offers"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Earn and redeem Scene+ points while shopping at Sobeys and enjoy special member-only grocery deals."
     coupon_aff_url: "https://www.sobeys.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

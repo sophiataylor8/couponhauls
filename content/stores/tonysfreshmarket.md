@@ -1,5 +1,5 @@
 ---
-title: "Tony's Fresh Market Weekly Ad (March 2026)"
+title: "Tony's Fresh Market Weekly Ad (April 2026)"
 slug: "tonysfreshmarket"
 description: "Tony's fresh market weekly ad April 2026.  Find Tony's Fresh Market flyer, promo codes, grocery coupons, and deals to save on fresh foods and essentials."
 
@@ -7,13 +7,13 @@ description: "Tony's fresh market weekly ad April 2026.  Find Tony's Fresh Marke
 store_name: "Tony's Fresh Market"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Tony's Fresh Market Weekly Ad (March 2026)"
-store_title: "Tony's Fresh Market Weekly Ad (March 2026)"
+store_h1: "Tony's Fresh Market Weekly Ad (April 2026)"
+store_title: "Tony's Fresh Market Weekly Ad (April 2026)"
 store_meta_description: "Tony's fresh market weekly ad April 2026.  Find Tony's Fresh Market flyer, promo codes, grocery coupons, and deals to save on fresh foods and essentials."
 store_keywords: "tonys fresh market coupon code, tonys fresh market promo code, tonys fresh market discount code, tonys fresh market deals, tonys fresh market offers, tonys fresh market grocery coupons, tonys fresh market coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Tony's Fresh Market Weekly Ad (March 2026)"
+store_og_title: "Tony's Fresh Market Weekly Ad (April 2026)"
 store_og_description: "Tony's fresh market weekly ad April 2026.  Find Tony's Fresh Market flyer, promo codes, grocery coupons, and deals to save on fresh foods and essentials."
 store_og_image: ""
 store_og_type: "website"
@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Browse Tony's Fresh Market weekly specials to save on fresh produce, meats, bakery items, and grocery essentials."
     coupon_aff_url: "https://www.tonysfreshmarket.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1093"
     coupon_title: "Tony's Fresh Market In-Store Promotions"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Find rotating in-store promotions and seasonal grocery savings at participating Tony's Fresh Market locations."
     coupon_aff_url: "https://www.tonysfreshmarket.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

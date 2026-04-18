@@ -1,5 +1,5 @@
 ---
-title: "20 Percent Off Kohl's Coupon Code (March 2026)"
+title: "20 Percent Off Kohl's Coupon Code (April 2026)"
 slug: "kohls"
 description: "20 percent off kohl's coupon code April 2026. Get kohls discount code, printable coupons and deals. Save on clothing, shoes and home products."
 
@@ -7,13 +7,13 @@ description: "20 percent off kohl's coupon code April 2026. Get kohls discount c
 store_name: "Kohls"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "20 Percent Off Kohl's Coupon Code (March 2026)"
-store_title: "20 Percent Off Kohl's Coupon Code (March 2026)"
+store_h1: "20 Percent Off Kohl's Coupon Code (April 2026)"
+store_title: "20 Percent Off Kohl's Coupon Code (April 2026)"
 store_meta_description: "20 percent off kohl's coupon code April 2026. Get kohls discount code, printable coupons and deals. Save on clothing, shoes and home products."
 store_keywords: "kohls coupon code, kohls promo code, kohls discount code, kohls deals, kohls offers, kohls sale, kohls coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "20 Percent Off Kohl's Coupon Code (March 2026)"
+store_og_title: "20 Percent Off Kohl's Coupon Code (April 2026)"
 store_og_description: "20 percent off kohl's coupon code April 2026. Get kohls discount code, printable coupons and deals. Save on clothing, shoes and home products."
 store_og_image: ""
 store_og_type: "website"
@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Multi-buy savings"
     coupon_aff_url: "https://www.kohls.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
   - coupon_id: "1026"
     coupon_title: "12% Off Fashion"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Apparel discount"
     coupon_aff_url: "https://www.kohls.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
   - coupon_id: "1027"
     coupon_title: "20% Off"
@@ -50,7 +50,7 @@ coupons:
     coupon_description: "discount on sale"
     coupon_aff_url: "https://www.kohls.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
 ---
 

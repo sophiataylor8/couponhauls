@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Shop Big Lots clearance section to find deep discounts on furniture, home decor, seasonal items, and household essentials."
     coupon_aff_url: "https://www.biglots.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1071"
     coupon_title: "Big Rewards Member Savings"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Join Big Rewards to access exclusive coupons, member-only pricing, and special promotions at Big Lots."
     coupon_aff_url: "https://www.biglots.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

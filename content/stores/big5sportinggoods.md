@@ -1,5 +1,5 @@
 ---
-title: "Big 5 Sporting Goods Coupons (March 2026)"
+title: "Big 5 Sporting Goods Coupons (April 2026)"
 slug: "big5sportinggoods"
 description: "Big 5 sporting goods coupons April 2026. Discover Big 5 Sporting Goods promo code, sports gear deals, and discounts on outdoor equipment and apparel."
 
@@ -7,13 +7,13 @@ description: "Big 5 sporting goods coupons April 2026. Discover Big 5 Sporting G
 store_name: "Big 5 Sporting Goods"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Big 5 Sporting Goods Coupons (March 2026)"
-store_title: "Big 5 Sporting Goods Coupons (March 2026)"
+store_h1: "Big 5 Sporting Goods Coupons (April 2026)"
+store_title: "Big 5 Sporting Goods Coupons (April 2026)"
 store_meta_description: "Big 5 sporting goods coupons April 2026. Discover Big 5 Sporting Goods promo code, sports gear deals, and discounts on outdoor equipment and apparel."
 store_keywords: "big 5 sporting goods coupon code, big 5 sporting goods promo code, big 5 sporting goods discount code, big 5 sporting goods deals, big 5 sporting goods offers, big 5 sporting goods sale, big 5 sporting goods coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Big 5 Sporting Goods Coupons (March 2026)"
+store_og_title: "Big 5 Sporting Goods Coupons (April 2026)"
 store_og_description: "Big 5 sporting goods coupons April 2026. Discover Big 5 Sporting Goods promo code, sports gear deals, and discounts on outdoor equipment and apparel."
 store_og_image: ""
 store_og_type: "website"
@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Check the Big 5 weekly ad to save on athletic footwear, outdoor gear, sports equipment, and apparel."
     coupon_aff_url: "https://www.big5sportinggoods.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1099"
     coupon_title: "Big 5 Clearance & Seasonal Sales"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Shop clearance and seasonal promotions at Big 5 for discounts on camping gear, fitness equipment, and sportswear."
     coupon_aff_url: "https://www.big5sportinggoods.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

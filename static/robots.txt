@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block unnecessary pages
+Disallow: /stores/?q=
+
+Sitemap: https://www.couponhauls.com/sitemap.xml

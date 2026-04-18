@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Sign in to your Safeway account and clip Safeway for U digital coupons to unlock personalized grocery discounts and weekly savings."
     coupon_aff_url: "https://www.safeway.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1045"
     coupon_title: "Safeway Weekly Ad Grocery Deals"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Check the Safeway weekly ad to find limited-time deals on fresh produce, meats, bakery items, snacks, and household essentials."
     coupon_aff_url: "https://www.safeway.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

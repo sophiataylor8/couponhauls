@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Join Big Y myPicks to clip digital coupons and access exclusive grocery savings and personalized offers."
     coupon_aff_url: "https://www.bigy.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1125"
     coupon_title: "Big Y Weekly Grocery Specials"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Shop Big Y weekly specials to save on fresh produce, meats, dairy products, and everyday groceries."
     coupon_aff_url: "https://www.bigy.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

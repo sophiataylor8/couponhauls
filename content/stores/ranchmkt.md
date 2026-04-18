@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Shop the Ranch Market weekly specials for savings on fresh produce, meats, and everyday groceries."
     coupon_aff_url: "https://www.ranchmkt.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1133"
     coupon_title: "Ranch Market Fresh Food Deals"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Find rotating grocery deals and in-store promotions at Ranch Market locations."
     coupon_aff_url: "https://www.ranchmkt.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

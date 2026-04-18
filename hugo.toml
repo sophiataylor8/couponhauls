@@ -1,9 +1,9 @@
 baseURL      = "https://www.couponhauls.com/"
 languageCode = "en-us"
 title        = "CouponHauls.com"
-disableHugoGeneratorInject  = true
+disableHugoGeneratorInject = true
 
-enableRobotsTXT = true
+enableRobotsTXT = false
 enableGitInfo   = false
 canonifyURLs    = false
 relativeURLs    = false

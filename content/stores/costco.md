@@ -1,5 +1,5 @@
 ---
-title: "Costco Online Promo Code $25 Off (March 2026)"
+title: "Costco Online Promo Code $25 Off (April 2026)"
 slug: "costco"
 description: "Costco online promo code $25 off. Find latest costco discount code, member deals and savings. Updated offers to tires, appliance and refrigerator."
 
@@ -7,13 +7,13 @@ description: "Costco online promo code $25 off. Find latest costco discount code
 store_name: "Costco"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Costco Online Promo Code $25 Off (March 2026)"
-store_title: "Costco Online Promo Code $25 Off (March 2026)"
+store_h1: "Costco Online Promo Code $25 Off (April 2026)"
+store_title: "Costco Online Promo Code $25 Off (April 2026)"
 store_meta_description: "Costco online promo code $25 off. Find latest costco discount code, member deals and savings. Updated offers to tires, appliance and refrigerator."
 store_keywords: "costco coupon code, costco promo code, costco discount code, costco deals, costco offers, costco sale, costco coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Costco Online Promo Code $25 Off (March 2026)"
+store_og_title: "Costco Online Promo Code $25 Off (April 2026)"
 store_og_description: "Costco online promo code $25 off. Find latest costco discount code, member deals and savings. Updated offers to tires, appliance and refrigerator."
 store_og_image: ""
 store_og_type: "website"
@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Big savings on bulk checkout"
     coupon_aff_url: "https://www.costco.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
   - coupon_id: "1004"
     coupon_title: "Grocery Savings 10%"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Grocery onsite discount"
     coupon_aff_url: "https://www.costco.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
 ---
 

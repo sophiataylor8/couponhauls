@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Clip ShopRite digital coupons through your account to unlock weekly savings on groceries, snacks, beverages, and household essentials."
     coupon_aff_url: "https://www.shoprite.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1055"
     coupon_title: "ShopRite Weekly Ad Grocery Deals"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Browse the ShopRite weekly circular to find limited-time discounts on fresh produce, meats, dairy products, and pantry staples."
     coupon_aff_url: "https://www.shoprite.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

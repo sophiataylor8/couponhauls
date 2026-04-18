@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Sign in to your Randalls account to access personalized digital coupons and exclusive savings through the Randalls for U program."
     coupon_aff_url: "https://www.randalls.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1039"
     coupon_title: "Weekly Ad Grocery Discounts"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Browse Randalls weekly ad to save on fresh foods, pantry items, beverages, and seasonal grocery promotions."
     coupon_aff_url: "https://www.randalls.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

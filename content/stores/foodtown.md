@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Check the Foodtown weekly circular for deals on fresh produce, meats, dairy, and grocery essentials."
     coupon_aff_url: "https://www.foodtown.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1129"
     coupon_title: "Foodtown Digital Coupon Deals"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Clip Foodtown digital coupons to unlock extra savings on groceries and household products."
     coupon_aff_url: "https://www.foodtown.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

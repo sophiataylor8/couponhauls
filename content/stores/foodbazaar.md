@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Check the Food Bazaar weekly ad for savings on fresh produce, meats, seafood, and grocery items."
     coupon_aff_url: "https://www.foodbazaar.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1137"
     coupon_title: "Food Bazaar In-Store Promotions"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Find rotating in-store deals and seasonal grocery discounts at Food Bazaar Supermarket locations."
     coupon_aff_url: "https://www.foodbazaar.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Save on activewear"
     coupon_aff_url: "https://www.adidas.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
   - coupon_id: "1008"
     coupon_title: "Extra 10% On Shoes"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Discount on footwear"
     coupon_aff_url: "https://www.adidas.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
 ---
 

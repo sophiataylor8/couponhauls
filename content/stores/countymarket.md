@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Browse the County Market weekly ad to discover deals on fresh foods, bakery items, and household products."
     coupon_aff_url: "https://www.mycountymarket.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1111"
     coupon_title: "County Market Digital Coupons"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Clip County Market digital coupons to save on groceries, beverages, snacks, and everyday essentials."
     coupon_aff_url: "https://www.mycountymarket.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

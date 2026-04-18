@@ -1,5 +1,5 @@
 ---
-title: "Times Supermarkets Weekly Ad (March 2026)"
+title: "Times Supermarkets Weekly Ad (April 2026)"
 slug: "timessupermarkets"
 description: "Times Supermarket weekly ad April 2026. Find Times Supermarket flyer, promo codes, grocery coupons, and deals to save more on everyday essentials."
 
@@ -7,13 +7,13 @@ description: "Times Supermarket weekly ad April 2026. Find Times Supermarket fly
 store_name: "Times Supermarket"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Times Supermarkets Weekly Ad (March 2026)"
-store_title: "Times Supermarkets Weekly Ad (March 2026)"
+store_h1: "Times Supermarkets Weekly Ad (April 2026)"
+store_title: "Times Supermarkets Weekly Ad (April 2026)"
 store_meta_description: "Times Supermarket weekly ad April 2026. Find Times Supermarket flyer, promo codes, grocery coupons, and deals to save more on everyday essentials."
 store_keywords: "times supermarket coupon code, times supermarket promo code, times supermarket discount code, times supermarket deals, times supermarket offers, times supermarket grocery coupons, times supermarket coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Times Supermarkets Weekly Ad (March 2026)"
+store_og_title: "Times Supermarkets Weekly Ad (April 2026)"
 store_og_description: "Times Supermarket weekly ad April 2026. Find Times Supermarket flyer, promo codes, grocery coupons, and deals to save more on everyday essentials."
 store_og_image: ""
 store_og_type: "website"
@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Check the Times Supermarket weekly ad to save on fresh produce, meats, seafood, and everyday grocery items."
     coupon_aff_url: "https://www.timessupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1095"
     coupon_title: "Times Supermarket In-Store Specials"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Find rotating in-store promotions and limited-time discounts on groceries and household essentials."
     coupon_aff_url: "https://www.timessupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

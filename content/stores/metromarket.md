@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Check the Metro Market weekly ad to find grocery discounts on fresh produce, meats, bakery items, and beverages."
     coupon_aff_url: "https://www.metromarket.net/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1123"
     coupon_title: "Metro Market Digital Coupons"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Clip digital coupons through your Metro Market account to enjoy personalized grocery savings."
     coupon_aff_url: "https://www.metromarket.net/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Check the FreshCo weekly flyer to save on fresh produce, meats, pantry items, and grocery essentials."
     coupon_aff_url: "https://freshco.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1113"
     coupon_title: "Scene+ Rewards Offers at FreshCo"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Earn Scene+ points and access exclusive member promotions while shopping at FreshCo stores."
     coupon_aff_url: "https://freshco.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

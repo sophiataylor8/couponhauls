@@ -26,7 +26,7 @@
     {{ $items = $items | append (dict "name" "Blog" "url" (printf "%s/blog" $siteURL)) }}
     {{ $items = $items | append (dict "name" .Title "url" $pageURL) }}
   {{ else if eq $section "stores" }}
-    {{ $items = $items | append (dict "name" "All Stores" "url" (printf "%s/stores" $siteURL)) }}
+    {{ $items = $items | append (dict "name" "All Stores" "url" (printf "%s/stores/" $siteURL)) }}
     {{ $items = $items | append (dict "name" (printf "%s Coupons" .Title) "url" $pageURL) }}
   {{ else }}
     {{/* Fallback for any other section */}}

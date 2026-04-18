@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Browse the Food Basics weekly flyer to discover savings on fresh produce, meats, dairy, and pantry staples."
     coupon_aff_url: "https://www.foodbasics.ca/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1103"
     coupon_title: "Food Basics Grocery Specials"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Shop weekly grocery specials at Food Basics for limited-time discounts on everyday essentials."
     coupon_aff_url: "https://www.foodbasics.ca/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

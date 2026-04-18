@@ -1,5 +1,5 @@
 ---
-title: "Sprouts Farmers Market Weekly Ad (March 2026)"
+title: "Sprouts Farmers Market Weekly Ad (April 2026)"
 slug: "sprouts"
 description: "Sprouts farmers market weekly ad April 2026. Save more with Sprouts sales ad, promo code, organic grocery deals, and discounts on fresh food."
 
@@ -7,13 +7,13 @@ description: "Sprouts farmers market weekly ad April 2026. Save more with Sprout
 store_name: "Sprouts"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Sprouts Farmers Market Weekly Ad (March 2026)"
-store_title: "Sprouts Farmers Market Weekly Ad (March 2026)"
+store_h1: "Sprouts Farmers Market Weekly Ad (April 2026)"
+store_title: "Sprouts Farmers Market Weekly Ad (April 2026)"
 store_meta_description: "Sprouts farmers market weekly ad April 2026. Save more with Sprouts sales ad, promo code, organic grocery deals, and discounts on fresh food."
 store_keywords: "sprouts coupon code, sprouts promo code, sprouts discount code, sprouts deals, sprouts offers, sprouts grocery coupons, sprouts coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Sprouts Farmers Market Weekly Ad (March 2026)"
+store_og_title: "Sprouts Farmers Market Weekly Ad (April 2026)"
 store_og_description: "Sprouts farmers market weekly ad April 2026. Save more with Sprouts sales ad, promo code, organic grocery deals, and discounts on fresh food."
 store_og_image: ""
 store_og_type: "website"
@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Browse the Sprouts weekly ad to save on fresh produce, natural groceries, vitamins, and organic products."
     coupon_aff_url: "https://www.sprouts.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1065"
     coupon_title: "Sprouts Digital Coupons"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Clip Sprouts digital coupons through your account to unlock savings on healthy foods, snacks, supplements, and household items."
     coupon_aff_url: "https://www.sprouts.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

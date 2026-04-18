@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Browse Shoppers weekly deals to discover savings on fresh foods, pantry staples, and household products."
     coupon_aff_url: "https://www.shoppersfood.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1121"
     coupon_title: "Shoppers Digital Coupon Savings"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Access digital coupons through the Shoppers website or app to save on groceries and everyday essentials."
     coupon_aff_url: "https://www.shoppersfood.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

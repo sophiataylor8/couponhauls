@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Grocery & fresh products"
     coupon_aff_url: "https://www.tesco.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
   - coupon_id: "1033"
     coupon_title: "Free Delivery $40+"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Delivery discount"
     coupon_aff_url: "https://www.tesco.com/"
     coupon_type: "Deal"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
 ---
 

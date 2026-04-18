@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Home decor discount"
     coupon_aff_url: "https://www.wayfair.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
   - coupon_id: "1006"
     coupon_title: "Extra 12% Furniture Sale"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Discount on select furniture"
     coupon_aff_url: "https://www.wayfair.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
 ---
 

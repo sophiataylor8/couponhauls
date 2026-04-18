@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Browse the Key Food weekly circular to save on fresh foods, beverages, snacks, and everyday essentials."
     coupon_aff_url: "https://www.keyfood.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1131"
     coupon_title: "Key Food In-Store Promotions"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Find rotating in-store promotions and seasonal grocery specials at participating Key Food locations."
     coupon_aff_url: "https://www.keyfood.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

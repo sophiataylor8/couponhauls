@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Footwear promo"
     coupon_aff_url: "https://www.macys.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
   - coupon_id: "1029"
     coupon_title: "15% Clothing Sale"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Apparel discount"
     coupon_aff_url: "https://www.macys.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
 ---
 

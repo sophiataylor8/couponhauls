@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Shop Ulta weekly deals to save on makeup, skincare, haircare, and beauty tools from top brands."
     coupon_aff_url: "https://www.ulta.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1141"
     coupon_title: "Ulta Ultamate Rewards Points Offers"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Earn and redeem points with Ultamate Rewards and access exclusive member-only discounts on beauty products."
     coupon_aff_url: "https://www.ulta.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

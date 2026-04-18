@@ -6,15 +6,20 @@
 <title>{{- block "title" . }}{{ .Title }} - {{ .Site.Title }}{{ end -}}</title>
 <meta name="description" content="{{- block "description" . }}{{ .Site.Params.description }}{{ end -}}">
 <meta name="author" content="{{ .Site.Params.author }}">
-<link rel="icon" type="image/x-icon"  href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180"    href="/apple-touch-icon.png">
+
+{{/* ─── Favicons — absolute URLs so all subdomains resolve correctly ── */}}
+<link rel="icon" type="image/x-icon" href="https://www.couponhauls.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.couponhauls.com/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.couponhauls.com/apple-touch-icon.png">
+
+{{/* ─── Sitemap tag removed — submit via Google Search Console instead ── */}}
+
 {{- block "canonical" . }}
 <link rel="canonical" href="{{ .Permalink }}">
 {{- end }}
 {{- block "og_meta" . }}
 <meta property="og:title"       content="{{ .Title }}">
-<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ $.Site.Params.description }}{{ end }}">
 <meta property="og:type"        content="website">
 <meta property="og:url"         content="{{ .Permalink }}">
 <meta property="og:image"       content="{{ .Site.BaseURL }}{{ .Site.Params.og_image }}">
@@ -24,7 +29,6 @@
 <meta name="twitter:title"       content="{{ .Title }}">
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 {{- end }}
-<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 {{- block "extra_head" . }}{{ end }}
 {{- block "schema" . }}{{ end }}
 
@@ -72,41 +76,34 @@
 {{- partial "affiliate-bar.html" . }}
 {{- partial "footer.html" . }}
 
-{{/*
-  ─── STORES_DATA inline JSON ──────────────────────────────────────────────────
-
-  FIX: Previously each field was rendered as a raw Hugo string inside a JS
-  string literal, e.g.  "n":"\"Amazon\""  because .Params.store_name was
-  "Amazon" with surrounding YAML quotes preserved by the CSV generator.
-
-  Now we use Hugo's `jsonify` pipe on each value so the Go value is properly
-  serialised to a JSON string token.  With clean .md front-matter (no embedded
-  surrounding quotes) this produces:  "n":"Amazon"  ✓
-
-  The subdomain URL is also built here so search-dropdown links work on both
-  production (subdomain per store) and local dev (path-based).
-*/}}
 <script>
-window.STORES_DATA = [
+(function () {
   {{- $isProduction := strings.Contains .Site.BaseURL "couponhauls.com" -}}
   {{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
-  {{- range $i, $page := where .Site.RegularPages "Section" "stores" -}}
-    {{- if and $page.Params.slug $page.Params.is_active -}}
-      {{- $slug      := $page.Params.slug -}}
-      {{- $name      := $page.Params.store_name | default $page.Title -}}
-      {{- $title     := $page.Title -}}
-      {{- $logo      := $page.Params.logo_url | default "" -}}
-      {{- $count     := $page.Params.coupon_count | default 0 -}}
-      {{- $storeURL  := $page.Permalink -}}
+
+  {{- $entries := slice -}}
+  {{- range where .Site.RegularPages "Section" "stores" -}}
+    {{- if and .Params.slug .Params.is_active -}}
+      {{- $slug     := .Params.slug -}}
+      {{- $name     := .Params.store_name | default .Title -}}
+      {{- $title    := .Title -}}
+      {{- $logo     := .Params.logo_url | default "" -}}
+      {{- $count    := .Params.coupon_count | default 0 -}}
+      {{- $storeURL := .Permalink -}}
       {{- if $isProduction -}}
         {{- $storeURL = printf "https://%s.%s/" $slug $baseHost -}}
       {{- end -}}
-      {"n":{{ $name | jsonify }},"t":{{ $title | jsonify }},"s":{{ $slug | jsonify }},"l":{{ $logo | jsonify }},"c":{{ $count }},"u":{{ $storeURL | jsonify }}},
+      {{- $entry := printf `{"n":%s,"t":%s,"s":%s,"l":%s,"c":%s,"u":%s}` ($name | jsonify) ($title | jsonify) ($slug | jsonify) ($logo | jsonify) ($count | jsonify) ($storeURL | jsonify) -}}
+      {{- $entries = $entries | append $entry -}}
     {{- end -}}
   {{- end -}}
-];
-{{ readFile "static/js/app.js" | safeJS }}
+
+  window.STORES_DATA = [{{ delimit $entries "," }}];
+})();
 </script>
+
+{{/* ─── app.js as external file — errors surface properly in DevTools ── */}}
+<script src="https://www.couponhauls.com/js/app.js"></script>
 
 </body>
 </html>

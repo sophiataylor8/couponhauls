@@ -1,5 +1,5 @@
 ---
-title: "Kroger Digital Coupons This Week (March 2026)"
+title: "Kroger Digital Coupons This Week (April 2026)"
 slug: "kroger"
 description: "Kroger digital coupons this week April 2026. Discover kroger weekly grocery ad, coupons and deals. Extra savings on $20 on first order, meat and foods."
 
@@ -7,13 +7,13 @@ description: "Kroger digital coupons this week April 2026. Discover kroger weekl
 store_name: "Kroger"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Kroger Digital Coupons This Week (March 2026)"
-store_title: "Kroger Digital Coupons This Week (March 2026)"
+store_h1: "Kroger Digital Coupons This Week (April 2026)"
+store_title: "Kroger Digital Coupons This Week (April 2026)"
 store_meta_description: "Kroger digital coupons this week April 2026. Discover kroger weekly grocery ad, coupons and deals. Extra savings on $20 on first order, meat and foods."
 store_keywords: "kroger coupon code, kroger promo code, kroger discount code, kroger deals, kroger offers, kroger grocery coupons, kroger coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Kroger Digital Coupons This Week (March 2026)"
+store_og_title: "Kroger Digital Coupons This Week (April 2026)"
 store_og_description: "Kroger digital coupons this week April 2026. Discover kroger weekly grocery ad, coupons and deals. Extra savings on $20 on first order, meat and foods."
 store_og_image: ""
 store_og_type: "website"
@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Explore the Kroger weekly ad for limited-time discounts on fresh foods, snacks, beverages, and household essentials."
     coupon_aff_url: "https://www.kroger.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1069"
     coupon_title: "Kroger Digital Coupons"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Clip Kroger digital coupons through your account to enjoy personalized grocery discounts and exclusive online deals."
     coupon_aff_url: "https://www.kroger.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

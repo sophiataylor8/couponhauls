@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Savings on pharmacy items"
     coupon_aff_url: "https://www.walgreens.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
   - coupon_id: "1022"
     coupon_title: "Buy 1 Get 1 Beauty"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Select cosmetics offer"
     coupon_aff_url: "https://www.walgreens.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
 ---
 

@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Check the QFC weekly ad to find discounts on fresh produce, meats, bakery items, and everyday grocery essentials."
     coupon_aff_url: "https://www.qfc.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1067"
     coupon_title: "QFC Digital Coupons & Rewards"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Sign in to your QFC account to clip digital coupons and access personalized grocery deals and member savings."
     coupon_aff_url: "https://www.qfc.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

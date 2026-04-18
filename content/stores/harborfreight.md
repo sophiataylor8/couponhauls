@@ -1,5 +1,5 @@
 ---
-title: "20 Percent Off Harbor Freight Coupons (March 2026)"
+title: "20 Percent Off Harbor Freight Coupons (April 2026)"
 slug: "harborfreight"
 description: "20 percent off Harbor Freight coupons April 2026. Find Harbor Freight promo code, coupon code, and discounts on power tools and equipment."
 
@@ -7,13 +7,13 @@ description: "20 percent off Harbor Freight coupons April 2026. Find Harbor Frei
 store_name: "Harbor Freight"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "20 Percent Off Harbor Freight Coupons (March 2026)"
-store_title: "20 Percent Off Harbor Freight Coupons (March 2026)"
+store_h1: "20 Percent Off Harbor Freight Coupons (April 2026)"
+store_title: "20 Percent Off Harbor Freight Coupons (April 2026)"
 store_meta_description: "20 percent off Harbor Freight coupons April 2026. Find Harbor Freight promo code, coupon code, and discounts on power tools and equipment."
 store_keywords: "harbor freight coupon code, harbor freight promo code, harbor freight discount code, harbor freight deals, harbor freight offers, harbor freight tool coupons, harbor freight coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "20 Percent Off Harbor Freight Coupons (March 2026)"
+store_og_title: "20 Percent Off Harbor Freight Coupons (April 2026)"
 store_og_description: "20 percent off Harbor Freight coupons April 2026. Find Harbor Freight promo code, coupon code, and discounts on power tools and equipment."
 store_og_image: ""
 store_og_type: "website"
@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Join Harbor Freight Inside Track Club to access exclusive discounts, special pricing, and member-only deals."
     coupon_aff_url: "https://www.harborfreight.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1101"
     coupon_title: "Harbor Freight Clearance & Parking Lot Sales"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Find major discounts on tools and equipment during Harbor Freight clearance events and Parking Lot sales."
     coupon_aff_url: "https://www.harborfreight.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 

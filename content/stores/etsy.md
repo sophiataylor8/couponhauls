@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Handmade crafts discount"
     coupon_aff_url: "https://www.etsy.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
   - coupon_id: "1010"
     coupon_title: "5% Off Vintage Gifts"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Save on vintage products"
     coupon_aff_url: "https://www.etsy.com/"
     coupon_type: "Coupon"
-    coupon_start: "14/02/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2030"
 ---
 

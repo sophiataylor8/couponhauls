@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Browse the CTown weekly ad to find discounts on fresh produce, meats, and pantry staples."
     coupon_aff_url: "https://www.ctownsupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1135"
     coupon_title: "CTown Grocery Specials"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Discover rotating grocery specials and in-store deals at CTown Supermarkets."
     coupon_aff_url: "https://www.ctownsupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "09/03/2026"
+    coupon_start: "03/04/2026"
     expires_at: "31/12/2026"
 ---
 
