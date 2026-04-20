@@ -1,73 +1,165 @@
 {{/*
   layouts/partials/breadcrumb.html
   ─────────────────────────────────────────────────────────────────
-  Usage (in any layout's {{ define "main" }} block):
+  Usage (call from any layout's {{ define "main" }} block):
     {{ partial "breadcrumb.html" . }}
 
-  IMPORTANT — Schema removed from this partial intentionally.
-  ──────────────────────────────────────────────────────────────
-  Previously this partial emitted TWO schema representations:
-    1. A <script type="application/ld+json"> BreadcrumbList block
-    2. Microdata attributes on the <ol> / <li> elements
-       (itemscope, itemtype, itemprop)
+  What this file does:
+    1. Renders a visual breadcrumb nav (semantic HTML, no microdata)
+    2. Emits ONE BreadcrumbList JSON-LD schema block (saver.com style)
+       — each item uses "item" as a Thing with @id, url (where needed),
+         name, and on the final node: inLanguage, description, publisher,
+         copyrightHolder, and about (Brand) — matching the target pattern.
 
-  Combined with the single BreadcrumbList in {{ define "schema" }}
-  inside layouts/stores/single.html, Google was detecting THREE
-  separate BreadcrumbList objects — causing "Some are invalid".
-
-  Rule: one schema type, one place.
-  The canonical BreadcrumbList JSON-LD lives in {{ define "schema" }}
-  in the relevant layout file (single.html, blog/single.html, etc.).
-  This partial renders clean semantic HTML only — no schema markup.
+  NOTE: The FAQPage schema lives in a separate partial:
+    {{ partial "store-faq-schema.html" . }}
+  Call that one separately in layouts/stores/single.html {{ define "schema" }}.
   ─────────────────────────────────────────────────────────────────
 */}}
 
-{{/* ── Determine breadcrumb items by section ── */}}
-{{ $section  := .Section }}
-{{ $siteURL  := .Site.BaseURL | strings.TrimRight "/" }}
-{{ $pageURL  := .Permalink | strings.TrimRight "/" }}
+{{/* ── Shared variables ──────────────────────────────────────────── */}}
+{{- $section  := .Section -}}
+{{- $siteURL  := .Site.BaseURL | strings.TrimRight "/" -}}
+{{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
 
-{{ $items := slice
-(dict "name" "Home" "url" $siteURL)
-}}
+{{/* ── Store-specific values (only used when Section == "stores") ── */}}
+{{- $storeName    := "" -}}
+{{- $storeURL     := "" -}}
+{{- $storeDesc    := "" -}}
+{{- $storeLogoURL := "" -}}
+{{- $slug         := "" -}}
+{{- $pageURL      := .Permalink -}}
 
-{{ if eq $section "blog" }}
-{{ $items = $items | append (dict "name" "Blog" "url" (printf "%s/blog" $siteURL)) }}
-{{ $items = $items | append (dict "name" .Title "url" $pageURL) }}
-{{ else if eq $section "stores" }}
-{{ $items = $items | append (dict "name" "All Stores" "url" (printf "%s/stores" $siteURL)) }}
-{{ $items = $items | append (dict "name" (printf "%s Coupons" .Title) "url" $pageURL) }}
-{{ else }}
-{{ with .CurrentSection }}
-  {{ $items = $items | append (dict "name" .Title "url" (.Permalink | strings.TrimRight "/")) }}
-{{ end }}
-{{ $items = $items | append (dict "name" $.Title "url" $pageURL) }}
-{{ end }}
+{{- if eq $section "stores" -}}
+  {{- $storeName    = .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+  {{- $storeURL     = .Params.website_url | default .Permalink | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+  {{- $slug         = .Params.slug | default .Params.store_id | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+  {{- $storeLogoURL = .Params.logo_url | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
 
-{{/* ── Visual breadcrumb bar — semantic HTML, no schema markup ── */}}
+  {{- $rawDesc   := .Params.store_meta_description | default .Params.description | default "" -}}
+  {{- $storeDesc  = $rawDesc | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
+
+  {{/* Resolve subdomain canonical URL on production */}}
+  {{- if and $slug (strings.Contains .Site.BaseURL "couponhauls.com") -}}
+    {{- $pageURL = printf "https://%s.%s/" $slug $baseHost -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* ── Build breadcrumb items list ────────────────────────────────── */}}
+{{- $items := slice (dict "name" "Home" "url" (printf "%s/" $siteURL)) -}}
+
+{{- if eq $section "blog" -}}
+  {{- $items = $items | append (dict "name" "Blog" "url" (printf "%s/blog/" $siteURL)) -}}
+  {{- $items = $items | append (dict "name" .Title "url" $pageURL) -}}
+{{- else if eq $section "stores" -}}
+  {{- $items = $items | append (dict "name" "Stores" "url" (printf "%s/stores/" $siteURL)) -}}
+  {{- $items = $items | append (dict "name" (printf "%s Coupon Codes & Deals" $storeName) "url" $pageURL) -}}
+{{- else -}}
+  {{- with .CurrentSection -}}
+    {{- $items = $items | append (dict "name" .Title "url" (.Permalink | strings.TrimRight "/")) -}}
+  {{- end -}}
+  {{- $items = $items | append (dict "name" $.Title "url" $pageURL) -}}
+{{- end -}}
+
+{{/* ── Coupon count for schema description ─────────────────────────── */}}
+{{- $couponCount := 0 -}}
+{{- if eq $section "stores" -}}
+  {{- $couponCount = len (.Params.coupons | default slice) -}}
+{{- end -}}
+
+{{/* ════════════════════════════════════════════════════════════════
+     SCHEMA: BreadcrumbList (saver.com style)
+     — Final ListItem includes full WebPage + publisher + about (Brand)
+     ════════════════════════════════════════════════════════════════ */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {{- range $i, $item := $items -}}
+    {{- $isLast := eq $i (sub (len $items) 1) -}}
+    {
+      "@type": "ListItem",
+      "position": {{ add $i 1 }},
+      "item": {
+        {{- if $isLast -}}
+        {{- /* ── Final crumb: full WebPage entity with publisher + about ── */}}
+        "@type": "WebPage",
+        "@id": {{ $pageURL | jsonify }},
+        "url": {{ $pageURL | jsonify }},
+        "name": {{ $item.name | jsonify }},
+        {{- if $storeDesc }}
+        "description": {{ $storeDesc | jsonify }},
+        {{- else }}
+        "description": {{ $item.name | jsonify }},
+        {{- end }}
+        "inLanguage": "en-US",
+        "publisher": {
+          "@type": "Organization",
+          "name": {{ $.Site.Title | jsonify }},
+          "url": {{ $.Site.BaseURL | jsonify }},
+          "logo": {
+            "@type": "ImageObject",
+            "url": {{ (printf "%simages/couponhaulslogo.png" $.Site.BaseURL) | jsonify }}
+          }
+        },
+        "copyrightHolder": {
+          "@type": "Organization",
+          "name": {{ $.Site.Title | jsonify }},
+          "url": {{ $.Site.BaseURL | jsonify }}
+        }
+        {{- if and (eq $section "stores") $storeName }}
+        ,
+        "about": {
+          "@type": ["Organization", "Brand"],
+          "name": {{ $storeName | jsonify }}
+          {{- if $storeURL }},
+          "sameAs": {{ $storeURL | jsonify }}
+          {{- end }}
+          {{- if $storeLogoURL }},
+          "logo": {
+            "@type": "ImageObject",
+            "url": {{ $storeLogoURL | jsonify }},
+            "caption": {{ (printf "%s logo" $storeName) | jsonify }}
+          }
+          {{- end }}
+        }
+        {{- end }}
+        {{- else -}}
+        {{- /* ── Intermediate crumb: simple Thing with @id + name ── */}}
+        "@type": "Thing",
+        "@id": {{ $item.url | jsonify }},
+        "name": {{ $item.name | jsonify }}
+        {{- end }}
+      }
+    }{{ if not $isLast }},{{ end }}
+    {{- end }}
+  ]
+}
+</script>
+
+{{/* ════════════════════════════════════════════════════════════════
+     VISUAL BREADCRUMB — semantic HTML, no microdata attributes
+     ════════════════════════════════════════════════════════════════ */}}
 <nav aria-label="Breadcrumb" class="breadcrumb-bar">
-<div class="breadcrumb-inner">
-  <ol class="breadcrumb-list">
-    {{ range $i, $item := $items }}
-    <li class="breadcrumb-item">
-
-      {{ if lt $i (sub (len $items) 1) }}
-        {{/* Linked crumb */}}
-        <a href="{{ $item.url }}" class="breadcrumb-link">{{ $item.name }}</a>
-        {{/* Chevron separator */}}
-        <svg class="breadcrumb-sep" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      {{ else }}
-        {{/* Current page — not linked, aria-current for accessibility */}}
-        <span class="breadcrumb-current" aria-current="page">{{ $item.name }}</span>
+  <div class="breadcrumb-inner">
+    <ol class="breadcrumb-list">
+      {{ range $i, $item := $items }}
+      {{ $isLast := eq $i (sub (len $items) 1) }}
+      <li class="breadcrumb-item">
+        {{ if not $isLast }}
+          <a href="{{ $item.url }}" class="breadcrumb-link">{{ $item.name }}</a>
+          <svg class="breadcrumb-sep" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        {{ else }}
+          <span class="breadcrumb-current" aria-current="page">{{ $item.name }}</span>
+        {{ end }}
+      </li>
       {{ end }}
-
-    </li>
-    {{ end }}
-  </ol>
-</div>
+    </ol>
+  </div>
 </nav>
 
 <style>
