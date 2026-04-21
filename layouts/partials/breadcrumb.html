@@ -1,37 +1,24 @@
 {{/*
   layouts/partials/breadcrumb.html
-  ─────────────────────────────────────────────────────────────────
-  Usage: {{ partial "breadcrumb.html" . }}
-  Emits BreadcrumbList JSON-LD + visual nav.
 */}}
 
-{{/* ── Clean BaseURL ───────────────────────────────────────────────── */}}
 {{- $rawBase  := .Site.BaseURL | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
 {{- $siteURL  := $rawBase | strings.TrimRight "/" -}}
 {{- $baseHost := $rawBase | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
 {{- $section  := .Section -}}
 
-{{/* ── Store-specific values ─────────────────────────────────────── */}}
-{{- $storeName    := "" -}}
-{{- $storeURL     := "" -}}
-{{- $storeDesc    := "" -}}
-{{- $storeLogoURL := "" -}}
-{{- $slug         := "" -}}
-{{- $pageURL      := .Permalink -}}
+{{- $storeName := "" -}}
+{{- $slug      := "" -}}
+{{- $pageURL   := .Permalink -}}
 
 {{- if eq $section "stores" -}}
-  {{- $storeName    = .Params.store_name | default .Title | replaceRE `^["'](.*)["']$` "$1" | strings.TrimSpace -}}
-  {{- $storeURL     = .Params.website_url | default .Permalink | replaceRE `^["'](.*)["']$` "$1" | strings.TrimSpace -}}
-  {{- $slug         = .Params.slug | default .Params.store_id | replaceRE `^["'](.*)["']$` "$1" | strings.TrimSpace -}}
-  {{- $storeLogoURL = .Params.logo_url | default "" | replaceRE `^["'](.*)["']$` "$1" | strings.TrimSpace -}}
-  {{- $rawDesc      := .Params.store_meta_description | default .Params.description | default "" -}}
-  {{- $storeDesc     = $rawDesc | replaceRE `^["'](.*)["']$` "$1" | strings.TrimSpace -}}
+  {{- $storeName = .Params.store_name | default .Title | replaceRE `^["'](.*)["']$` "$1" | strings.TrimSpace -}}
+  {{- $slug      = .Params.slug | default .Params.store_id | replaceRE `^["'](.*)["']$` "$1" | strings.TrimSpace -}}
   {{- if and $slug (strings.Contains $rawBase "couponhauls.com") -}}
     {{- $pageURL = printf "https://%s.%s/" $slug $baseHost -}}
   {{- end -}}
 {{- end -}}
 
-{{/* ── Build breadcrumb items slice ──────────────────────────────── */}}
 {{- $items := slice (dict "name" "Home" "url" (printf "%s/" $siteURL)) -}}
 
 {{- if eq $section "blog" -}}
@@ -47,47 +34,6 @@
   {{- $items = $items | append (dict "name" $.Title "url" $pageURL) -}}
 {{- end -}}
 
-{{/* ── Last item ───────────────────────────────────────────────────── */}}
-{{- $lastIdx      := sub (len $items) 1 -}}
-{{- $lastItemName := (index $items $lastIdx).name -}}
-{{- $lastItemDesc := $storeDesc -}}
-{{- if not $lastItemDesc -}}{{- $lastItemDesc = $lastItemName -}}{{- end -}}
-
-{{/* ── Publisher / copyright dicts ───────────────────────────────── */}}
-{{- $siteHome  := printf "%s/" $siteURL -}}
-{{- $logoURL   := printf "%s/images/couponhaulslogo.png" $siteURL -}}
-{{- $publisher := dict "@type" "Organization" "name" .Site.Title "url" $siteHome "logo" (dict "@type" "ImageObject" "url" $logoURL) -}}
-{{- $copyright := dict "@type" "Organization" "name" .Site.Title "url" $siteHome -}}
-
-{{/* ── WebPage dict for last crumb ────────────────────────────────── */}}
-{{- $webPage := dict "@type" "WebPage" "@id" $pageURL "url" $pageURL "name" $lastItemName "description" $lastItemDesc "inLanguage" "en-US" "publisher" $publisher "copyrightHolder" $copyright -}}
-
-{{- if and (eq $section "stores") $storeName -}}
-  {{- $about := dict "@type" (slice "Organization" "Brand") "name" $storeName -}}
-  {{- if $storeURL    -}}{{- $about = merge $about (dict "sameAs" $storeURL) -}}{{- end -}}
-  {{- if $storeLogoURL -}}
-    {{- $about = merge $about (dict "logo" (dict "@type" "ImageObject" "url" $storeLogoURL "caption" (printf "%s logo" $storeName))) -}}
-  {{- end -}}
-  {{- $webPage = merge $webPage (dict "about" $about) -}}
-{{- end -}}
-
-{{/* ── Build itemListElement ──────────────────────────────────────── */}}
-{{- $listItems := slice -}}
-{{- range $i, $item := $items -}}
-  {{- if eq $i $lastIdx -}}
-    {{- $listItems = $listItems | append (dict "@type" "ListItem" "position" (add $i 1) "item" $webPage) -}}
-  {{- else -}}
-    {{- $listItems = $listItems | append (dict "@type" "ListItem" "position" (add $i 1) "item" (dict "@type" "Thing" "@id" $item.url "name" $item.name)) -}}
-  {{- end -}}
-{{- end -}}
-
-{{/* ── Output as one clean JSON block — no inline template interpolation ── */}}
-{{- $schema := dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $listItems -}}
-<script type="application/ld+json">{{ $schema | jsonify | safeHTML }}</script>
-
-{{/* ════════════════════════════════════════════════════════════════
-     VISUAL BREADCRUMB
-     ════════════════════════════════════════════════════════════════ */}}
 <nav aria-label="Breadcrumb" class="breadcrumb-bar">
   <div class="breadcrumb-inner">
     <ol class="breadcrumb-list">

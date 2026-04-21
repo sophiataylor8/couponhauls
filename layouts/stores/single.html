@@ -42,16 +42,6 @@
 {{- end -}}
 
 
-{{- define "schema" -}}
-{{- /*
-  Only FAQPage schema here.
-  BreadcrumbList schema is emitted inside {{ partial "breadcrumb.html" . }}
-  which is called from {{ define "main" }} below.
-*/ -}}
-{{ partial "store-faq-schema.html" . }}
-{{- end -}}
-
-
 {{- define "og_meta" -}}
 {{- $slug     := .Params.slug | default .Params.store_id | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
 {{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
@@ -112,158 +102,81 @@
    store-single — individual store page styles
    ============================================================ */
 
-/* ── Hero ───────────────────────────────────────────────────────── */
+/* ── NEW ── (replace the above with this) */
+ 
 .sp-hero {
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0284c7 100%);
+  background: #fff;
+  border-bottom: 2px solid #e2e8f0;
   padding: 2.5rem 1.5rem;
 }
-.sp-hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: flex-start;
-  gap: 1.75rem;
-}
-
-/* Avatar */
+ 
 .sp-avatar {
-  flex-shrink: 0;
-  width: 80px;
-  height: 80px;
-  border-radius: 1rem;
-  background: rgba(255,255,255,.12);
-  border: 2px solid rgba(255,255,255,.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  border: 2px solid #bae6fd;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.2);
 }
+ 
 .sp-avatar-letter {
-  font-size: 2.25rem;
-  font-weight: 900;
-  color: #fff;
-  line-height: 1;
-  text-transform: uppercase;
-  font-family: Inter, system-ui, sans-serif;
+  color: #fff; /* keep white — sits on blue avatar bg */
 }
-
-/* Hero body */
-.sp-hero-body { flex: 1; min-width: 0; }
-.sp-hero-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-}
+ 
 .sp-title {
-  font-size: clamp(1.375rem, 3vw, 1.875rem);
-  font-weight: 800;
-  color: #fff;
-  margin: 0 0 .25rem;
-  line-height: 1.2;
-  letter-spacing: -.02em;
+  color: #0f172a; /* near-black, easy to read */
 }
+ 
 .sp-updated {
-  display: inline-flex;
-  align-items: center;
-  gap: .3rem;
-  font-size: .8125rem;
-  color: #fff;
+  color: #64748b;
 }
-
-/* Visit button */
+ 
+/* "Shop at Store" button — flip to filled blue */
 .sp-visit-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  background: #fff;
-  color: #0284c7;
-  font-size: .875rem;
-  font-weight: 700;
-  padding: .65rem 1.25rem;
-  border-radius: .625rem;
-  text-decoration: none;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: background .15s, transform .15s;
-}
-.sp-visit-btn:hover { background: #f0f9ff; transform: translateY(-1px); }
-
-/* Stats */
-.sp-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-  margin-bottom: 1.25rem;
-}
-.sp-stat {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: .625rem;
-  padding: .5rem 1rem;
-  min-width: 80px;
-  transition: border-color .15s;
-}
-.sp-stat:hover { border-color: rgba(255,255,255,.3); }
-.sp-stat-n {
-  font-size: 1.125rem;
-  font-weight: 800;
+  background: #0284c7;
   color: #fff;
-  line-height: 1.2;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
+}
+.sp-visit-btn:hover {
+  background: #0369a1;
+  transform: translateY(-1px);
+}
+ 
+/* Stats pills — light blue tint matching coupon dashed box */
+.sp-stat {
+  background: #f0f9ff;
+  border: 1.5px solid #bae6fd;
+}
+.sp-stat:hover {
+  background: #e0f2fe;
+  border-color: #0284c7;
+}
+.sp-stat-n {
+  color: #0284c7;
 }
 .sp-stat-l {
-  font-size: .6875rem;
-  color: #fff;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-  margin-top: .1rem;
-  white-space: nowrap;
-}
-
-/* Description */
-.sp-desc {
-  font-size: .9375rem;
-  line-height: 1.75;
-  color: #fff;
-  margin: 0 0 1rem;
-}
-
-/* Share bar */
-.sp-share {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  flex-wrap: wrap;
-}
-.sp-share-label {
-  font-size: .7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: #fff;
-}
-.sp-share-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: .35rem;
-  font-size: .75rem;
+  color: #64748b;
   font-weight: 600;
-  padding: .35rem .85rem;
-  border-radius: 999px;
-  transition: opacity .15s, transform .15s;
-  cursor: pointer;
-  border: none;
-  text-decoration: none;
 }
-.sp-share-btn:hover { opacity: .85; transform: translateY(-1px); }
-.sp-share-tw   { background: #1da1f2; color: #fff; }
-.sp-share-fb   { background: #1877f2; color: #fff; }
-.sp-share-copy { background: rgba(255,255,255,.15); color: #fff; backdrop-filter: blur(4px); }
+ 
+/* Store description text */
+.sp-desc {
+  color: #475569;
+}
+ 
+/* Share label */
+.sp-share-label {
+  color: #94a3b8;
+}
+ 
+/* Copy Link button — light pill (matches sidebar buttons) */
+.sp-share-copy {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1.5px solid #e2e8f0;
+  backdrop-filter: none;
+}
+.sp-share-copy:hover {
+  background: #e2e8f0;
+  opacity: 1;
+}
 
 /* Mobile hero */
 @media (max-width: 600px) {
@@ -839,7 +752,7 @@
 
 {{- $now := now -}}
 
-{{- /* ── Breadcrumb — visual HTML + BreadcrumbList schema ────────── */ -}}
+{{- /* ── Breadcrumb — visual HTML only (no schema) ────────────────── */ -}}
 {{- partial "breadcrumb.html" . -}}
 
 <div class="sp-hero">
@@ -1046,7 +959,7 @@
     {{- end }}
 
 
-    {{- /* ── FAQ (visual accordion) ──────────────────────────── */ -}}
+    {{- /* ── FAQ (visual accordion only, no schema) ─────────── */ -}}
     <section class="faq" aria-labelledby="faq-h">
       <h2 id="faq-h" class="faq-title">Frequently Asked Questions</h2>
       <p class="faq-sub">Common questions about {{ $storeName }} coupon codes</p>
