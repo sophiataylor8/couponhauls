@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "smartandfinal"
 
 coupons:
-  - coupon_id: "1084"
+  - coupon_id: "1099"
     coupon_title: "Smart & Final Weekly Deals"
     coupon_code: ""
     coupon_description: "Check Smart & Final weekly ads to save on bulk groceries, fresh produce, meats, and household essentials."
     coupon_aff_url: "https://www.smartandfinal.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1085"
+  - coupon_id: "1100"
     coupon_title: "Smart & Final Digital Coupons"
     coupon_code: ""
     coupon_description: "Clip Smart & Final digital coupons to unlock additional discounts on groceries and everyday products."
     coupon_aff_url: "https://www.smartandfinal.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

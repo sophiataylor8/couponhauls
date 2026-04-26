@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "superiorgrocers"
 
 coupons:
-  - coupon_id: "1050"
+  - coupon_id: "1065"
     coupon_title: "Superior Grocers Weekly Ad Deals"
     coupon_code: ""
     coupon_description: "Shop the Superior Grocers weekly ad for discounts on fresh fruits, vegetables, meats, and everyday grocery essentials."
     coupon_aff_url: "https://superiorgrocers.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1051"
+  - coupon_id: "1066"
     coupon_title: "In-Store Weekly Specials"
     coupon_code: ""
     coupon_description: "Find rotating in-store promotions and limited-time grocery specials across produce, pantry staples, and household products."
     coupon_aff_url: "https://superiorgrocers.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

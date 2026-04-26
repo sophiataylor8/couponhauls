@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "tomthumb"
 
 coupons:
-  - coupon_id: "1040"
+  - coupon_id: "1055"
     coupon_title: "Tom Thumb for U Digital Deals"
     coupon_code: ""
     coupon_description: "Unlock weekly grocery discounts and personalized offers by clipping digital coupons through the Tom Thumb for U rewards program."
     coupon_aff_url: "https://www.tomthumb.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1041"
+  - coupon_id: "1056"
     coupon_title: "BOGO Grocery Promotions"
     coupon_code: ""
     coupon_description: "Find buy-one-get-one free offers on select snacks, beverages, frozen foods, and pantry items during weekly Tom Thumb promotions."
     coupon_aff_url: "https://www.tomthumb.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

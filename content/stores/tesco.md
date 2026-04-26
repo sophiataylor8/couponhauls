@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "tesco"
 
 coupons:
-  - coupon_id: "1032"
+  - coupon_id: "1047"
     coupon_title: "Groceries 7% Off"
     coupon_code: "TESCOGROC7"
     coupon_description: "Grocery & fresh products"
     coupon_aff_url: "https://www.tesco.com/"
     coupon_type: "Coupon"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2030"
-  - coupon_id: "1033"
+  - coupon_id: "1048"
     coupon_title: "Free Delivery $40+"
     coupon_code: ""
     coupon_description: "Delivery discount"
     coupon_aff_url: "https://www.tesco.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2030"
 ---
 

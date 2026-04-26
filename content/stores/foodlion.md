@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "foodlion"
 
 coupons:
-  - coupon_id: "1080"
+  - coupon_id: "1095"
     coupon_title: "Food Lion MVP Digital Coupons"
     coupon_code: ""
     coupon_description: "Join Food Lion MVP to clip digital coupons and receive exclusive grocery discounts and personalized deals."
     coupon_aff_url: "https://www.foodlion.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1081"
+  - coupon_id: "1096"
     coupon_title: "Food Lion Weekly Grocery Specials"
     coupon_code: ""
     coupon_description: "Check Food Lion weekly specials to save on fresh produce, meats, snacks, and household essentials."
     coupon_aff_url: "https://www.foodlion.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

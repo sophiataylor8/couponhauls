@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "boscovs"
 
 coupons:
-  - coupon_id: "1074"
+  - coupon_id: "1089"
     coupon_title: "Boscov's Clearance & Doorbuster Deals"
     coupon_code: ""
     coupon_description: "Shop Boscov's clearance and doorbuster promotions to save on clothing, shoes, home goods, and seasonal products."
     coupon_aff_url: "https://www.boscovs.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1075"
+  - coupon_id: "1090"
     coupon_title: "Boscov's Weekly Sales & Promotions"
     coupon_code: ""
     coupon_description: "Check Boscov's latest sales for limited-time discounts on fashion, beauty products, and home essentials."
     coupon_aff_url: "https://www.boscovs.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

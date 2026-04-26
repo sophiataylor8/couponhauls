@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "albertsons"
 
 coupons:
-  - coupon_id: "1048"
+  - coupon_id: "1063"
     coupon_title: "Albertsons for U Digital Deals"
     coupon_code: ""
     coupon_description: "Sign up for Albertsons for U to clip digital coupons and enjoy personalized grocery discounts and weekly promotions."
     coupon_aff_url: "https://www.albertsons.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1049"
+  - coupon_id: "1064"
     coupon_title: "Albertsons Weekly Ad Savings"
     coupon_code: ""
     coupon_description: "Explore Albertsons weekly ad to save on fresh produce, meats, bakery goods, beverages, and everyday grocery items."
     coupon_aff_url: "https://www.albertsons.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

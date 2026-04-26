@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "cabelas"
 
 coupons:
-  - coupon_id: "1078"
+  - coupon_id: "1093"
     coupon_title: "Cabela's Outdoor Gear Clearance"
     coupon_code: ""
     coupon_description: "Save on hunting gear, fishing equipment, camping essentials, and outdoor apparel in the Cabela's clearance section."
     coupon_aff_url: "https://www.cabelas.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1079"
+  - coupon_id: "1094"
     coupon_title: "Cabela's Seasonal Sales Event"
     coupon_code: ""
     coupon_description: "Shop seasonal promotions at Cabela's for discounts on outdoor gear, footwear, and sporting goods."
     coupon_aff_url: "https://www.cabelas.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

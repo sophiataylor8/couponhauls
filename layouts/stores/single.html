@@ -45,19 +45,16 @@
 {{- define "og_meta" -}}
 {{- $slug     := .Params.slug | default .Params.store_id | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
 {{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
-
 {{- $ogURL := .Permalink -}}
 {{- if and $slug (strings.Contains .Site.BaseURL "couponhauls.com") -}}
   {{- $ogURL = printf "https://%s.%s/" $slug $baseHost -}}
 {{- end -}}
-
 {{- $rawTitle   := .Params.store_og_title | default .Params.store_title | default .Params.store_h1 | default "" -}}
 {{- $ogTitle    := $rawTitle | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
 {{- if not $ogTitle -}}
   {{- $storeName := .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
   {{- $ogTitle    = printf "%s Coupons & Promo Codes (%s)" $storeName (now.Format "January 2006") -}}
 {{- end -}}
-
 {{- $rawDesc  := .Params.store_og_description | default .Params.store_meta_description | default .Params.description | default "" -}}
 {{- $ogDesc   := $rawDesc | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
 {{- if not $ogDesc -}}
@@ -65,15 +62,12 @@
   {{- $count      := len (.Params.coupons | default slice) -}}
   {{- $ogDesc      = printf "Find %d verified %s coupon codes & promo codes. Updated daily — 100%% free." $count $storeName -}}
 {{- end -}}
-
 {{- $ogImage := .Params.store_og_image | default .Params.logo_url | default "" -}}
 {{- $ogImage  = $ogImage | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
 {{- if not $ogImage -}}
   {{- $ogImage = printf "%simages/couponhaulslogo.png" .Site.BaseURL -}}
 {{- end -}}
-
 {{- $ogType := .Params.store_og_type | default "website" | replaceRE `^"(.*)"$` "$1" -}}
-
 <meta property="og:title"       content="{{ $ogTitle }}">
 <meta property="og:description" content="{{ $ogDesc }}">
 <meta property="og:type"        content="{{ $ogType }}">
@@ -99,265 +93,465 @@
 {{- define "extra_head" -}}
 <style>
 /* ============================================================
-   store-single — individual store page styles
+   STORE PAGE — SINGLE.HTML STYLES
+   Light, clean design matching coupon card color scheme
    ============================================================ */
 
-/* ── NEW ── (replace the above with this) */
- 
+/* ── Breadcrumb ─────────────────────────────────────────────────── */
+.sp-breadcrumb {
+  background: #fff;
+  border-bottom: 1px solid #f1f5f9;
+  padding: .625rem 1.5rem;
+}
+.sp-breadcrumb-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.sp-breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .125rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: .8125rem;
+}
+.sp-breadcrumb-item { display: flex; align-items: center; gap: .125rem; }
+.sp-breadcrumb-link {
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  padding: .125rem .3rem;
+  border-radius: .25rem;
+  transition: color .12s, background .12s;
+}
+.sp-breadcrumb-link:hover { color: #0284c7; background: #f0f9ff; }
+.sp-breadcrumb-sep { width: 14px; height: 14px; color: #cbd5e1; flex-shrink: 0; }
+.sp-breadcrumb-current {
+  color: #0f172a;
+  font-weight: 600;
+  max-width: 260px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (min-width: 640px) { .sp-breadcrumb-current { max-width: 480px; } }
+
+/* ── Hero ───────────────────────────────────────────────────────── */
 .sp-hero {
   background: #fff;
   border-bottom: 2px solid #e2e8f0;
-  padding: 2.5rem 1.5rem;
+  padding: 2rem 1.5rem 2.25rem;
 }
- 
+.sp-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75rem;
+}
+
+/* Avatar */
 .sp-avatar {
-  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  flex-shrink: 0;
+  width: 76px;
+  height: 76px;
+  border-radius: 1.125rem;
+  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
   border: 2px solid #bae6fd;
-  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(2,132,199,.22);
 }
- 
 .sp-avatar-letter {
-  color: #fff; /* keep white — sits on blue avatar bg */
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: Inter, system-ui, sans-serif;
 }
- 
+
+/* Hero body */
+.sp-hero-body { flex: 1; min-width: 0; }
+.sp-hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: .875rem;
+  flex-wrap: wrap;
+}
+
+/* Title + updated */
+.sp-title-wrap { display: flex; flex-direction: column; gap: .25rem; flex: 1; min-width: 0; }
 .sp-title {
-  color: #0f172a; /* near-black, easy to read */
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -.02em;
 }
- 
 .sp-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .8rem;
   color: #64748b;
+  font-weight: 500;
 }
- 
-/* "Shop at Store" button — flip to filled blue */
+.sp-updated svg { color: #94a3b8; flex-shrink: 0; }
+
+/* Visit button */
 .sp-visit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
   background: #0284c7;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
+  font-size: .875rem;
+  font-weight: 700;
+  padding: .65rem 1.25rem;
+  border-radius: .625rem;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background .15s, transform .15s, box-shadow .15s;
+  box-shadow: 0 2px 10px rgba(2,132,199,.3);
 }
-.sp-visit-btn:hover {
-  background: #0369a1;
-  transform: translateY(-1px);
+.sp-visit-btn:hover { background: #0369a1; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(2,132,199,.38); }
+
+/* Stats row */
+.sp-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 1.125rem;
 }
- 
-/* Stats pills — light blue tint matching coupon dashed box */
 .sp-stat {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
   background: #f0f9ff;
   border: 1.5px solid #bae6fd;
+  border-radius: .625rem;
+  padding: .45rem .9rem;
+  min-width: 78px;
+  transition: border-color .15s, background .15s, transform .15s;
+  cursor: default;
 }
-.sp-stat:hover {
-  background: #e0f2fe;
-  border-color: #0284c7;
-}
+.sp-stat:hover { background: #e0f2fe; border-color: #0284c7; transform: translateY(-1px); }
 .sp-stat-n {
+  font-size: 1.0625rem;
+  font-weight: 800;
   color: #0284c7;
+  line-height: 1.25;
 }
 .sp-stat-l {
+  font-size: .625rem;
   color: #64748b;
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-top: .1rem;
+  white-space: nowrap;
 }
- 
-/* Store description text */
+
+/* Description */
 .sp-desc {
+  font-size: .9375rem;
+  line-height: 1.75;
   color: #475569;
+  margin: 0 0 1rem;
+  max-width: 720px;
 }
- 
-/* Share label */
+
+/* Verified badge row */
+.sp-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+.sp-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .75rem;
+  font-weight: 600;
+  color: #059669;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: .25rem .65rem;
+  border-radius: 999px;
+}
+.sp-trust-badge-gray {
+  color: #64748b;
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+/* Share bar */
+.sp-share {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
 .sp-share-label {
+  font-size: .6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
   color: #94a3b8;
 }
- 
-/* Copy Link button — light pill (matches sidebar buttons) */
-.sp-share-copy {
-  background: #f1f5f9;
-  color: #475569;
-  border: 1.5px solid #e2e8f0;
-  backdrop-filter: none;
+.sp-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .75rem;
+  font-weight: 600;
+  padding: .35rem .8rem;
+  border-radius: 999px;
+  transition: opacity .15s, transform .15s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  line-height: 1;
 }
-.sp-share-copy:hover {
-  background: #e2e8f0;
-  opacity: 1;
-}
+.sp-share-btn:hover { opacity: .82; transform: translateY(-1px); }
+.sp-share-tw   { background: #1da1f2; color: #fff; }
+.sp-share-fb   { background: #1877f2; color: #fff; }
+.sp-share-copy { background: #f1f5f9; color: #475569; border: 1.5px solid #e2e8f0; }
+.sp-share-copy:hover { background: #e2e8f0; opacity: 1; }
 
 /* Mobile hero */
 @media (max-width: 600px) {
-  .sp-hero-inner { flex-direction: column; align-items: center; text-align: center; }
-  .sp-hero-top   { justify-content: center; }
-  .sp-stats      { justify-content: center; }
-  .sp-desc       { text-align: left; }
+  .sp-hero-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .sp-hero-top   { flex-direction: column; }
+  .sp-visit-btn  { width: 100%; justify-content: center; }
+  .sp-stats      { gap: .375rem; }
 }
 
-/* ── Body wrapper ───────────────────────────────────────────────── */
+/* ── Page body ──────────────────────────────────────────────────── */
 .sp-body {
   background: #f1f5f9;
   min-height: 60vh;
-  padding: 2.5rem 0 4rem;
+  padding: 2rem 1.5rem 4rem;
 }
 .sp-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1.5rem;
 }
 
-/* ── Coupon list header ─────────────────────────────────────────── */
-.cl-header {
+/* ── Section header ─────────────────────────────────────────────── */
+.sp-section-head {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
   gap: 1rem;
+  margin-bottom: 1.125rem;
   flex-wrap: wrap;
 }
-.cl-title {
-  font-size: 1.375rem;
+.sp-section-title {
+  font-size: 1.25rem;
   font-weight: 800;
   color: #0f172a;
-  margin: 0 0 .2rem;
-}
-.cl-sub {
-  font-size: .875rem;
-  color: #64748b;
   margin: 0;
+  letter-spacing: -.015em;
+}
+.sp-section-sub {
+  font-size: .8125rem;
+  color: #64748b;
+  margin: .2rem 0 0;
+}
+.sp-section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .75rem;
+  font-weight: 700;
+  color: #059669;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: .25rem .65rem;
+  border-radius: 999px;
+  white-space: nowrap;
 }
 
 /* ── Coupon list ────────────────────────────────────────────────── */
 .cl-list {
   display: flex;
   flex-direction: column;
-  gap: .875rem;
+  gap: .75rem;
 }
 
-/* Individual coupon item */
+/* ── Coupon card ────────────────────────────────────────────────── */
 .ci {
   background: #fff;
   border: 1.5px solid #e2e8f0;
   border-radius: 1rem;
-  padding: 1.25rem 1.5rem;
-  display: flex;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 1.25rem;
-  transition: box-shadow .15s, border-color .15s, transform .15s;
+  gap: 0;
+  transition: box-shadow .18s, border-color .18s, transform .18s;
+  position: relative;
 }
 .ci:hover {
   box-shadow: 0 4px 22px rgba(0,0,0,.07);
   border-color: #bae6fd;
   transform: translateY(-1px);
 }
-.ci-code { border-left: 3px solid #0284c7; }
-.ci-deal { border-left: 3px solid #10b981; }
 
-/* Expired coupon styling */
-.ci-expired {
-  opacity: 0.6;
-  border-left-color: #94a3b8 !important;
+/* Left accent stripe */
+.ci-stripe {
+  width: 4px;
+  align-self: stretch;
+  flex-shrink: 0;
+  border-radius: 4px 0 0 4px;
 }
-.ci-expired-notice {
-  display: inline-flex;
+.ci-stripe-blue  { background: #0284c7; }
+.ci-stripe-green { background: #10b981; }
+.ci-stripe-gray  { background: #cbd5e1; }
+
+/* Coupon inner — padding wrapper */
+.ci-inner {
+  display: flex;
   align-items: center;
-  gap: .3rem;
-  font-size: .7rem;
-  font-weight: 600;
-  color: #92400e;
-  background: #fef3c7;
-  border: 1px solid #fcd34d;
-  padding: .2rem .6rem;
-  border-radius: 999px;
-  margin-bottom: .375rem;
+  gap: 1.125rem;
+  padding: 1.125rem 1.375rem 1.125rem 1.25rem;
+  flex: 1;
+  min-width: 0;
 }
 
-/* Badge */
+/* Badge icon */
 .ci-badge {
   flex-shrink: 0;
-  width: 72px;
-  min-height: 72px;
-  border-radius: .75rem;
+  width: 64px;
+  height: 64px;
+  border-radius: .875rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: .5rem;
+  padding: .375rem;
 }
-.ci-badge-blue  { background: #f0f9ff; border: 1.5px solid #bae6fd; }
+.ci-badge-blue  { background: #eff6ff; border: 1.5px solid #bfdbfe; }
 .ci-badge-green { background: #f0fdf4; border: 1.5px solid #bbf7d0; }
-.ci-badge-gray  { background: #f8fafc; border: 1.5px solid #e2e8f0; }
+.ci-badge-gray  { background: #f8fafc; border: 1.5px solid #e2e8f0; opacity: .7; }
 .ci-badge-val {
-  font-size: 1.25rem;
+  font-size: 1.1875rem;
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1;
+  font-family: Inter, system-ui, sans-serif;
 }
-.ci-badge-blue  .ci-badge-val { color: #0284c7; }
+.ci-badge-blue  .ci-badge-val { color: #1d4ed8; }
 .ci-badge-green .ci-badge-val { color: #059669; }
 .ci-badge-gray  .ci-badge-val { color: #94a3b8; }
 .ci-badge-type {
-  font-size: .625rem;
+  font-size: .5625rem;
   font-weight: 700;
-  color: #64748b;
   text-transform: uppercase;
-  letter-spacing: .06em;
-  margin-top: .125rem;
+  letter-spacing: .05em;
+  color: #64748b;
+  margin-top: .2rem;
+  line-height: 1;
 }
-.ci-badge-icon { font-size: 1.5rem; }
+.ci-badge-emoji { font-size: 1.625rem; }
 
 /* Info */
 .ci-info { flex: 1; min-width: 0; }
+.ci-expired-notice {
+  display: inline-flex;
+  align-items: center;
+  gap: .275rem;
+  font-size: .6875rem;
+  font-weight: 600;
+  color: #92400e;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  padding: .175rem .55rem;
+  border-radius: 999px;
+  margin-bottom: .375rem;
+}
 .ci-title {
-  font-size: 1rem;
+  font-size: .9375rem;
   font-weight: 700;
   color: #0f172a;
   margin: 0 0 .3rem;
   line-height: 1.35;
 }
 .ci-desc {
-  font-size: .875rem;
+  font-size: .8375rem;
   color: #64748b;
   margin: 0 0 .5rem;
-  line-height: 1.5;
+  line-height: 1.55;
 }
-.ci-meta { display: flex; flex-wrap: wrap; gap: .375rem; align-items: center; }
+.ci-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  align-items: center;
+}
 .ci-tag {
   display: inline-flex;
   align-items: center;
-  gap: .275rem;
-  font-size: .72rem;
-  font-weight: 500;
+  gap: .25rem;
+  font-size: .6875rem;
+  font-weight: 600;
   border-radius: 999px;
-  padding: .2rem .6rem;
+  padding: .175rem .55rem;
   border: 1px solid #e2e8f0;
   background: #f8fafc;
-  color: #94a3b8;
+  color: #64748b;
 }
-.ci-exp       { font-size: .72rem; color: #94a3b8; font-weight: 500; }
-.ci-exp-ok    { color: #059669; }
-.ci-exp-soon  { color: #d97706; }
-.ci-exp-dead  { color: #dc2626; }
+.ci-tag-blue { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; }
+.ci-tag-green { background: #f0fdf4; border-color: #bbf7d0; color: #059669; }
+.ci-exp      { font-size: .6875rem; font-weight: 500; color: #94a3b8; }
+.ci-exp-ok   { color: #059669; }
+.ci-exp-soon { color: #d97706; }
+.ci-exp-dead { color: #dc2626; }
 
-/* CTA */
-.ci-action { flex-shrink: 0; }
+/* CTA area */
+.ci-action {
+  padding: 1.125rem 1.375rem 1.125rem 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
 
-/* ── Codebox ── */
+/* Code box */
 .ci-codebox {
   display: flex;
   align-items: stretch;
   border: 2px dashed #93c5fd;
-  border-radius: .625rem;
+  border-radius: .75rem;
   overflow: hidden;
   background: #eff6ff;
   cursor: pointer;
-  flex-shrink: 0;
-  min-width: 180px;
+  min-width: 190px;
+  transition: border-color .15s, background .15s;
 }
+.ci-codebox:hover { border-color: #0284c7; background: #dbeafe; }
 .ci-codetext {
-  font-family: 'Courier New', monospace;
-  font-size: .9375rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: .9rem;
   font-weight: 800;
   color: #1d4ed8;
-  padding: .6rem .875rem;
-  letter-spacing: .12em;
+  padding: .65rem .875rem;
+  letter-spacing: .14em;
   white-space: nowrap;
   user-select: none;
-  filter: blur(4px);
+  filter: blur(5px);
   transition: filter .25s ease;
   pointer-events: none;
+  flex: 1;
 }
 .ci-codebox.revealed .ci-codetext {
   filter: none;
@@ -369,83 +563,96 @@
   color: #fff;
   font-size: .8125rem;
   font-weight: 700;
-  padding: .6rem 1rem;
+  padding: .65rem 1rem;
   border: none;
   cursor: pointer;
   white-space: nowrap;
   transition: background .15s;
   font-family: inherit;
   flex-shrink: 0;
+  line-height: 1;
 }
 .ci-copybtn:hover  { background: #0369a1; }
 .ci-copybtn.copied { background: #059669; }
 
+/* Deal button */
 .ci-dealbtn {
   display: inline-flex;
   align-items: center;
-  gap: .375rem;
+  gap: .4rem;
   background: #059669;
   color: #fff;
   font-size: .875rem;
   font-weight: 700;
   padding: .65rem 1.25rem;
-  border-radius: .625rem;
+  border-radius: .75rem;
   text-decoration: none;
   white-space: nowrap;
-  transition: background .15s, transform .15s;
+  transition: background .15s, transform .15s, box-shadow .15s;
+  box-shadow: 0 2px 8px rgba(5,150,105,.25);
 }
-.ci-dealbtn:hover { background: #047857; transform: translateY(-1px); }
+.ci-dealbtn:hover { background: #047857; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(5,150,105,.32); }
 
 /* Mobile coupon */
 @media (max-width: 640px) {
-  .ci         { flex-wrap: wrap; gap: .875rem; }
-  .ci-badge   { width: 60px; min-height: 60px; }
+  .ci { grid-template-columns: 4px 1fr; }
+  .ci-inner   { flex-wrap: wrap; gap: .75rem; padding: 1rem 1rem 1rem .875rem; }
+  .ci-action  { grid-column: 2; padding: 0 1rem 1rem; }
   .ci-codebox { width: 100%; min-width: unset; }
   .ci-dealbtn { width: 100%; justify-content: center; }
+  .ci-badge   { width: 52px; height: 52px; }
 }
 
 /* ── Empty state ────────────────────────────────────────────────── */
 .cl-empty {
   text-align: center;
-  padding: 5rem 1rem;
+  padding: 4.5rem 1rem;
   background: #fff;
   border: 1.5px solid #e2e8f0;
   border-radius: 1rem;
   color: #64748b;
 }
-.cl-empty-icon  { font-size: 3.5rem; margin-bottom: 1rem; }
-.cl-empty-title { font-size: 1.375rem; font-weight: 700; color: #0f172a; margin: 0 0 .5rem; }
-.cl-empty-desc  { margin: 0 0 1.5rem; max-width: 34ch; margin-left: auto; margin-right: auto; }
+.cl-empty-icon  { font-size: 3rem; margin-bottom: 1rem; display: block; }
+.cl-empty-title { font-size: 1.25rem; font-weight: 700; color: #0f172a; margin: 0 0 .5rem; }
+.cl-empty-desc  { font-size: .9375rem; margin: 0 0 1.5rem; max-width: 34ch; margin-left: auto; margin-right: auto; }
 .cl-empty-btn {
-  display: inline-flex;
-  align-items: center;
-  background: #0284c7;
-  color: #fff;
-  font-weight: 700;
-  padding: .7rem 1.5rem;
-  border-radius: .625rem;
-  text-decoration: none;
+  display: inline-flex; align-items: center;
+  background: #0284c7; color: #fff;
+  font-weight: 700; padding: .7rem 1.5rem;
+  border-radius: .625rem; text-decoration: none;
   transition: background .15s;
 }
 .cl-empty-btn:hover { background: #0369a1; }
 
-/* ── Store Description ──────────────────────────────────────────── */
-.sd-section {
-  margin-top: 2.5rem;
+/* ── Info cards (description, FAQ, related) ─────────────────────── */
+.sp-card {
   background: #fff;
   border: 1.5px solid #e2e8f0;
-  border-radius: 1.25rem;
-  padding: 2rem 2rem 1.75rem;
+  border-radius: 1.125rem;
+  overflow: hidden;
+  margin-top: 1.5rem;
 }
-.sd-title {
-  font-size: 1.375rem;
+.sp-card-head {
+  padding: 1.25rem 1.625rem .875rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+.sp-card-title {
+  font-size: 1.125rem;
   font-weight: 800;
   color: #0f172a;
-  margin: 0 0 1rem;
-  letter-spacing: -.02em;
-  padding-bottom: .75rem;
-  border-bottom: 2px solid #f1f5f9;
+  margin: 0 0 .125rem;
+  letter-spacing: -.015em;
 }
+.sp-card-sub {
+  font-size: .8125rem;
+  color: #64748b;
+  margin: 0;
+}
+.sp-card-body {
+  padding: 1.375rem 1.625rem 1.625rem;
+}
+
+/* Store description */
 .sd-body {
   font-size: .9375rem;
   line-height: 1.8;
@@ -454,42 +661,15 @@
 .sd-body p { margin: 0 0 .875rem; }
 .sd-body p:last-child { margin-bottom: 0; }
 .sd-body a {
-  color: #0284c7;
-  font-weight: 500;
+  color: #0284c7; font-weight: 500;
   text-decoration: none;
   border-bottom: 1.5px solid #bae6fd;
-  transition: color .12s;
+  transition: color .12s, border-color .12s;
 }
-.sd-body a:hover { color: #0369a1; }
-@media (max-width: 600px) {
-  .sd-section { padding: 1.25rem 1rem 1rem; }
-}
+.sd-body a:hover { color: #0369a1; border-color: #0369a1; }
 
 /* ── FAQ ────────────────────────────────────────────────────────── */
-.faq {
-  margin-top: 2.5rem;
-  background: #fff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 1.25rem;
-  padding: 2rem 2rem 1.5rem;
-}
-.faq-title {
-  font-size: 1.375rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin: 0 0 .25rem;
-  letter-spacing: -.02em;
-}
-.faq-sub {
-  font-size: .875rem;
-  color: #64748b;
-  margin: 0 0 1.5rem;
-}
-.faq-list {
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-}
+.faq-list { display: flex; flex-direction: column; gap: .5rem; }
 .faq-item {
   border: 1.5px solid #e2e8f0;
   border-radius: .75rem;
@@ -497,16 +677,13 @@
   overflow: hidden;
   transition: border-color .15s;
 }
-.faq-item[open] {
-  border-color: #bae6fd;
-  background: #fff;
-}
+.faq-item[open] { border-color: #bae6fd; background: #fff; }
 .faq-q {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 1.25rem;
+  padding: .9375rem 1.125rem;
   font-size: .9375rem;
   font-weight: 600;
   color: #0f172a;
@@ -525,31 +702,17 @@
 }
 .faq-item[open] .faq-chev { transform: rotate(180deg); color: #0284c7; }
 .faq-a {
-  padding: 0 1.25rem 1.1rem;
+  padding: 0 1.125rem 1.125rem;
   animation: faqIn .18s ease;
 }
-.faq-a p {
-  font-size: .9375rem;
-  line-height: 1.75;
-  color: #475569;
-  margin: 0;
-}
-.faq-a a {
-  color: #0284c7;
-  font-weight: 500;
-  text-decoration: none;
-  border-bottom: 1.5px solid #bae6fd;
-  transition: color .12s;
-}
+.faq-a p { font-size: .9375rem; line-height: 1.75; color: #475569; margin: 0; }
+.faq-a a { color: #0284c7; font-weight: 500; text-decoration: none; border-bottom: 1.5px solid #bae6fd; transition: color .12s; }
 .faq-a a:hover { color: #0369a1; }
 .faq-steps {
-  margin: 0;
-  padding: 0;
   list-style: none;
   counter-reset: fs;
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
+  padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: .5rem;
 }
 .faq-steps li {
   counter-increment: fs;
@@ -562,57 +725,19 @@
 .faq-steps li::before {
   content: counter(fs);
   position: absolute;
-  left: 0;
-  top: .1em;
-  width: 1.35rem;
-  height: 1.35rem;
-  background: #0284c7;
-  color: #fff;
-  font-size: .6875rem;
-  font-weight: 800;
+  left: 0; top: .1em;
+  width: 1.375rem; height: 1.375rem;
+  background: #0284c7; color: #fff;
+  font-size: .6875rem; font-weight: 800;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
+  display: flex; align-items: center; justify-content: center;
 }
 @keyframes faqIn {
   from { opacity: 0; transform: translateY(-4px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-@media (max-width: 600px) {
-  .faq   { padding: 1.25rem 1rem 1rem; }
-  .faq-q { font-size: .875rem; padding: .875rem 1rem; }
-  .faq-a { padding: 0 1rem 1rem; }
-}
 
-/* ── Related Stores ─────────────────────────────────────────────── */
-.rs-section {
-  margin-top: 2.5rem;
-  background: #fff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 1.25rem;
-  padding: 1.75rem 2rem;
-}
-.rs-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 1.25rem;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.rs-title {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin: 0 0 .2rem;
-}
-.rs-sub {
-  font-size: .875rem;
-  color: #64748b;
-  margin: 0;
-}
+/* ── Related stores grid ────────────────────────────────────────── */
 .rs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -629,114 +754,82 @@
   text-decoration: none;
   transition: border-color .15s, box-shadow .15s, transform .15s;
 }
-.rs-card:hover {
-  border-color: #bae6fd;
-  box-shadow: 0 2px 12px rgba(0,0,0,.07);
-  transform: translateY(-1px);
-}
+.rs-card:hover { border-color: #bae6fd; box-shadow: 0 2px 14px rgba(0,0,0,.07); transform: translateY(-1px); }
 .rs-avatar {
-  width: 40px;
-  height: 40px;
+  width: 40px; height: 40px;
   border-radius: .5rem;
-  background: #0284c7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
-.rs-avatar span {
-  font-size: 1.1rem;
-  font-weight: 900;
-  color: #fff;
-  text-transform: uppercase;
-  line-height: 1;
-}
+.rs-avatar span { font-size: 1.125rem; font-weight: 900; color: #fff; text-transform: uppercase; line-height: 1; }
 .rs-info { flex: 1; min-width: 0; }
-.rs-name {
-  font-size: .9rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 0 0 .125rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+.rs-name { font-size: .875rem; font-weight: 700; color: #0f172a; margin: 0 0 .125rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .rs-card:hover .rs-name { color: #0284c7; }
-.rs-count {
-  font-size: .75rem;
-  color: #94a3b8;
-  margin: 0;
-}
+.rs-count { font-size: .75rem; color: #94a3b8; margin: 0; }
 .rs-arrow { color: #cbd5e1; flex-shrink: 0; }
 .rs-card:hover .rs-arrow { color: #0284c7; }
 
-/* ── Prev / Next navigation ─────────────────────────────────────── */
+/* ── Prev / Next ────────────────────────────────────────────────── */
 .pn-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   flex-wrap: wrap;
 }
 .pn-prev, .pn-next { flex: 1; min-width: 0; }
 .pn-next { text-align: right; }
 .pn-btn {
-  display: inline-flex;
-  flex-direction: column;
-  gap: .2rem;
+  display: inline-flex; flex-direction: column; gap: .2rem;
   background: #fff;
   border: 1.5px solid #e2e8f0;
   border-radius: .875rem;
   padding: .875rem 1.125rem;
   text-decoration: none;
-  transition: border-color .15s, box-shadow .15s;
+  transition: border-color .15s, box-shadow .15s, transform .15s;
   max-width: 220px;
 }
-.pn-btn:hover { border-color: #bae6fd; box-shadow: 0 2px 12px rgba(0,0,0,.07); }
+.pn-btn:hover { border-color: #bae6fd; box-shadow: 0 2px 12px rgba(0,0,0,.07); transform: translateY(-1px); }
 .pn-btn-right { margin-left: auto; text-align: right; }
-.pn-disabled { opacity: .45; pointer-events: none; }
+.pn-disabled  { opacity: .4; pointer-events: none; }
 .pn-dir {
-  display: flex;
-  align-items: center;
-  gap: .3rem;
-  font-size: .7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .06em;
+  display: flex; align-items: center; gap: .3rem;
+  font-size: .6875rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em;
   color: #94a3b8;
 }
 .pn-btn-right .pn-dir { justify-content: flex-end; }
-.pn-name {
-  font-size: .875rem;
-  font-weight: 600;
-  color: #0f172a;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+.pn-name { font-size: .875rem; font-weight: 600; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .pn-btn:hover .pn-name { color: #0284c7; }
 
 /* ── Back link ──────────────────────────────────────────────────── */
-.sp-back { margin-top: 2rem; }
+.sp-back { margin-top: 1.5rem; }
 .sp-back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: .375rem;
-  color: #64748b;
-  font-size: .875rem;
-  font-weight: 600;
+  display: inline-flex; align-items: center; gap: .375rem;
+  color: #64748b; font-size: .875rem; font-weight: 600;
   text-decoration: none;
-  transition: color .12s;
+  padding: .5rem .875rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: .625rem;
+  background: #fff;
+  transition: color .12s, border-color .12s, background .12s;
 }
-.sp-back-link:hover { color: #0284c7; }
+.sp-back-link:hover { color: #0284c7; border-color: #bae6fd; background: #f0f9ff; }
+
+@media (max-width: 600px) {
+  .sp-body { padding: 1.5rem 1rem 3rem; }
+  .sp-card-head { padding: 1rem 1.125rem .75rem; }
+  .sp-card-body { padding: 1.125rem; }
+}
 </style>
 {{- end -}}
 
 
 {{- define "main" -}}
 
-{{- /* ── Shared clean variables ───────────────────────────────────── */ -}}
+{{- /* ── Data variables ──────────────────────────────────────────── */ -}}
 {{- $storeCoupons := .Params.coupons | default slice -}}
 {{- $couponCount  := len $storeCoupons -}}
 {{- $storeName    := .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
@@ -752,22 +845,58 @@
 
 {{- $now := now -}}
 
-{{- /* ── Breadcrumb — visual HTML only (no schema) ────────────────── */ -}}
-{{- partial "breadcrumb.html" . -}}
+{{- $siteURL  := .Site.BaseURL | strings.TrimRight "/" -}}
+{{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
+{{- $isProduction := strings.Contains .Site.BaseURL "couponhauls.com" -}}
+{{- $slug     := .Params.slug | default .Params.store_id | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+{{- $pageURL  := .Permalink -}}
+{{- if and $slug $isProduction -}}
+  {{- $pageURL = printf "https://%s.%s/" $slug $baseHost -}}
+{{- end -}}
 
-<div class="sp-hero">
+
+<!-- ═══════════════════════════════════════════
+     BREADCRUMB
+════════════════════════════════════════════ -->
+<nav aria-label="Breadcrumb" class="sp-breadcrumb">
+  <div class="sp-breadcrumb-inner">
+    <ol class="sp-breadcrumb-list">
+      <li class="sp-breadcrumb-item">
+        <a href="{{ $siteURL }}/" class="sp-breadcrumb-link">Home</a>
+        <svg class="sp-breadcrumb-sep" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </li>
+      <li class="sp-breadcrumb-item">
+        <a href="{{ $siteURL }}/stores/" class="sp-breadcrumb-link">Stores</a>
+        <svg class="sp-breadcrumb-sep" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </li>
+      <li class="sp-breadcrumb-item">
+        <span class="sp-breadcrumb-current" aria-current="page">{{ $storeName }} Coupon Codes & Deals</span>
+      </li>
+    </ol>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="sp-hero">
   <div class="sp-hero-inner">
-    <div class="sp-avatar">
+
+    <!-- Avatar -->
+    <div class="sp-avatar" aria-hidden="true">
       <span class="sp-avatar-letter">{{ substr $storeName 0 1 }}</span>
     </div>
+
+    <!-- Body -->
     <div class="sp-hero-body">
       <div class="sp-hero-top">
-        <div>
+        <div class="sp-title-wrap">
           <h1 class="sp-title">{{ $storeH1 }}</h1>
-          <p class="sp-updated">
+          <span class="sp-updated">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             Updated {{ now.Format "January 2, 2006" }}
-          </p>
+          </span>
         </div>
         {{- if .Params.website_url }}
         <a href="{{ $affURL }}" target="_blank" rel="noopener noreferrer sponsored" class="sp-visit-btn">
@@ -777,81 +906,106 @@
         {{- end }}
       </div>
 
+      <!-- Stats pills -->
       <div class="sp-stats">
         <div class="sp-stat">
           <span class="sp-stat-n">{{ $couponCount }}</span>
           <span class="sp-stat-l">Active Deals</span>
         </div>
-        {{- with $bestDiscount -}}
+        {{- with $bestDiscount }}
         <div class="sp-stat">
           <span class="sp-stat-n">{{ . }}</span>
           <span class="sp-stat-l">Best Discount</span>
         </div>
-        {{- end -}}
-        {{- with .Params.verified_date -}}
-        {{- $vd := . | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
-        {{- if $vd -}}
+        {{- end }}
+        {{- with .Params.verified_date }}
+        {{- $vd := . | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace }}
+        {{- if $vd }}
         <div class="sp-stat">
           <span class="sp-stat-n">{{ $vd }}</span>
           <span class="sp-stat-l">Last Verified</span>
         </div>
-        {{- end -}}
-        {{- end -}}
-        {{- with .Params.avg_saving -}}
-        {{- $as := . | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
-        {{- if $as -}}
+        {{- end }}
+        {{- end }}
+        {{- with .Params.avg_saving }}
+        {{- $as := . | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace }}
+        {{- if $as }}
         <div class="sp-stat">
           <span class="sp-stat-n">{{ $as }}</span>
           <span class="sp-stat-l">Avg Saving</span>
         </div>
-        {{- end -}}
-        {{- end -}}
+        {{- end }}
+        {{- end }}
       </div>
 
+      <!-- Trust badges -->
+      <div class="sp-trust">
+        <span class="sp-trust-badge">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Verified Codes
+        </span>
+        <span class="sp-trust-badge">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          100% Free
+        </span>
+        <span class="sp-trust-badge sp-trust-badge-gray">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          Daily Updates
+        </span>
+      </div>
+
+      <!-- Description -->
       {{- $heroDesc := .Params.store_meta_description | default .Params.description | default "" -}}
       {{- $heroDesc  = $heroDesc | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
       {{- with $heroDesc }}
       <p class="sp-desc">{{ . }}</p>
       {{- end }}
 
+      <!-- Share bar -->
       <div class="sp-share">
         <span class="sp-share-label">Share</span>
-        <a href="https://x.com/intent/tweet?url={{ .Permalink | absURL }}&text={{ .Title | urlize }}"
-           target="_blank" rel="noopener"
-           class="sp-share-btn sp-share-tw">
-          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <a href="https://x.com/intent/tweet?url={{ $pageURL | absURL }}&text={{ .Title | urlize }}"
+           target="_blank" rel="noopener" class="sp-share-btn sp-share-tw">
+          <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           X
         </a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink | absURL }}"
-           target="_blank" rel="noopener"
-           class="sp-share-btn sp-share-fb">
-          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ $pageURL | absURL }}"
+           target="_blank" rel="noopener" class="sp-share-btn sp-share-fb">
+          <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           Facebook
         </a>
-        <button
-          onclick="navigator.clipboard.writeText(window.location.href).then(function(){ var b=this; b.textContent='Copied!'; setTimeout(function(){ b.textContent='Copy Link'; },2000); }.bind(this))"
-          class="sp-share-btn sp-share-copy">
-          <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+        <button onclick="navigator.clipboard.writeText(window.location.href).then(function(){this.textContent='✓ Copied!';setTimeout(function(btn){btn.textContent='Copy Link'}.bind(null,this),2000)}.bind(this))"
+                class="sp-share-btn sp-share-copy">
+          <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
           Copy Link
         </button>
       </div>
 
-    </div>
-  </div>
-</div>
+    </div><!-- /.sp-hero-body -->
+  </div><!-- /.sp-hero-inner -->
+</section>
 
 
+<!-- ═══════════════════════════════════════════
+     BODY
+════════════════════════════════════════════ -->
 <div class="sp-body">
   <div class="sp-container">
 
-    {{- /* ── Coupon list ──────────────────────────────────────── */ -}}
+    <!-- ── Coupon list ──────────────────────────────────────────── -->
     {{- if $storeCoupons }}
-    <div class="cl-header">
+
+    <div class="sp-section-head">
       <div>
-        <h2 class="cl-title">All {{ $storeName }} Coupon Codes</h2>
-        <p class="cl-sub">{{ $couponCount }} offer{{ if ne $couponCount 1 }}s{{ end }} available · verified {{ now.Format "Jan 2006" }}</p>
+        <h2 class="sp-section-title">All {{ $storeName }} Coupons & Deals</h2>
+        <p class="sp-section-sub">{{ $couponCount }} offer{{ if ne $couponCount 1 }}s{{ end }} available · verified {{ now.Format "Jan 2006" }}</p>
       </div>
+      <span class="sp-section-badge">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Verified Daily
+      </span>
     </div>
+
     <div class="cl-list">
       {{- range $storeCoupons -}}
 
@@ -862,159 +1016,182 @@
       {{- $cType   := .coupon_type        | default "Deal"  | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
       {{- $cExp    := .expires_at         | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
 
-      {{- /* ── Expiry detection (DD/MM/YYYY format) ─────────── */ -}}
-      {{- $isExpired := false -}}
+      {{- $isExpired    := false -}}
       {{- $expiringSoon := false -}}
       {{- if $cExp -}}
         {{- $parts := split $cExp "/" -}}
         {{- if eq (len $parts) 3 -}}
-          {{- $iso := printf "%s-%s-%sT00:00:00Z" (index $parts 2) (index $parts 1) (index $parts 0) -}}
+          {{- $iso     := printf "%s-%s-%sT00:00:00Z" (index $parts 2) (index $parts 1) (index $parts 0) -}}
           {{- $expTime := time $iso -}}
           {{- if $expTime.Before $now -}}
             {{- $isExpired = true -}}
           {{- else -}}
             {{- $soon := $now.AddDate 0 0 14 -}}
-            {{- if $expTime.Before $soon -}}
-              {{- $expiringSoon = true -}}
-            {{- end -}}
+            {{- if $expTime.Before $soon -}}{{- $expiringSoon = true -}}{{- end -}}
           {{- end -}}
         {{- end -}}
       {{- end -}}
 
-      {{- $badgeClass := "ci-badge-green" -}}
+      {{- $stripeClass := "ci-stripe-green" -}}
+      {{- $badgeClass  := "ci-badge-green" -}}
       {{- if $isExpired -}}
-        {{- $badgeClass = "ci-badge-gray" -}}
+        {{- $stripeClass = "ci-stripe-gray" -}}
+        {{- $badgeClass  = "ci-badge-gray" -}}
       {{- else if $cCode -}}
-        {{- $badgeClass = "ci-badge-blue" -}}
+        {{- $stripeClass = "ci-stripe-blue" -}}
+        {{- $badgeClass  = "ci-badge-blue" -}}
       {{- end -}}
 
-      <div class="ci {{ if $cCode }}ci-code{{ else }}ci-deal{{ end }}{{ if $isExpired }} ci-expired{{ end }}">
-
-        {{- if $isExpired }}
-        <div class="ci-expired-notice">⚠️ Possibly Expired — Try Anyway</div>
-        {{- end }}
-
-        <div class="ci-badge {{ $badgeClass }}">
-          {{- if .discount_value }}
-          <span class="ci-badge-val">{{ .discount_value | replaceRE `^"(.*)"$` "$1" }}</span>
-          <span class="ci-badge-type">{{ $cType }}</span>
-          {{- else }}
-          <span class="ci-badge-icon">🏷️</span>
-          <span class="ci-badge-type">{{ $cType }}</span>
-          {{- end }}
-        </div>
-
-        <div class="ci-info">
-          <h3 class="ci-title">{{ $cTitle }}</h3>
-          {{- with $cDesc }}<p class="ci-desc">{{ . }}</p>{{- end }}
-          <div class="ci-meta">
-            {{- if $cCode -}}
-              <span class="ci-tag">Promo Code</span>
-            {{- else -}}
-              <span class="ci-tag">No Code Needed</span>
-            {{- end -}}
-            {{- if $isExpired -}}
-              <span class="ci-exp ci-exp-dead">Expired: {{ $cExp }}</span>
-            {{- else if $expiringSoon -}}
-              <span class="ci-exp ci-exp-soon">⚡ Expires soon: {{ $cExp }}</span>
-            {{- else if $cExp -}}
-              <span class="ci-exp ci-exp-ok">Expires: {{ $cExp }}</span>
-            {{- else -}}
-              <span class="ci-exp ci-exp-ok">✓ No Expiration</span>
-            {{- end -}}
+      <div class="ci{{ if $isExpired }} ci-expired{{ end }}">
+        <div class="ci-stripe {{ $stripeClass }}"></div>
+        <div class="ci-inner">
+          <div class="ci-badge {{ $badgeClass }}">
+            {{- if .discount_value }}
+              <span class="ci-badge-val">{{ .discount_value | replaceRE `^"(.*)"$` "$1" }}</span>
+              <span class="ci-badge-type">{{ $cType }}</span>
+            {{- else if $cCode }}
+              <span class="ci-badge-emoji">🏷️</span>
+              <span class="ci-badge-type">Code</span>
+            {{- else }}
+              <span class="ci-badge-emoji">✅</span>
+              <span class="ci-badge-type">Deal</span>
+            {{- end }}
+          </div>
+          <div class="ci-info">
+            {{- if $isExpired }}
+            <div class="ci-expired-notice">⚠️ Possibly Expired — Try Anyway</div>
+            {{- end }}
+            <h3 class="ci-title">{{ $cTitle }}</h3>
+            {{- with $cDesc }}<p class="ci-desc">{{ . }}</p>{{- end }}
+            <div class="ci-meta">
+              {{- if $cCode -}}
+                <span class="ci-tag ci-tag-blue">🏷 Promo Code</span>
+              {{- else -}}
+                <span class="ci-tag ci-tag-green">✅ No Code Needed</span>
+              {{- end -}}
+              {{- if $isExpired -}}
+                <span class="ci-exp ci-exp-dead">⛔ Expired: {{ $cExp }}</span>
+              {{- else if $expiringSoon -}}
+                <span class="ci-exp ci-exp-soon">⚡ Expires soon: {{ $cExp }}</span>
+              {{- else if $cExp -}}
+                <span class="ci-exp ci-exp-ok">📅 Expires: {{ $cExp }}</span>
+              {{- else -}}
+                <span class="ci-exp ci-exp-ok">✓ No Expiration</span>
+              {{- end -}}
+            </div>
           </div>
         </div>
-
-        {{- if $cCode }}
-        <div class="ci-codebox" data-code="{{ $cCode }}" data-url="{{ $cAffURL }}">
-          <span class="ci-codetext">••••••••</span>
-          <button class="ci-copybtn" type="button">Reveal Code</button>
+        <div class="ci-action">
+          {{- if $cCode }}
+          <div class="ci-codebox" data-code="{{ $cCode }}" data-url="{{ $cAffURL }}">
+            <span class="ci-codetext">••••••••</span>
+            <button class="ci-copybtn" type="button">Reveal Code</button>
+          </div>
+          {{- else }}
+          <a href="{{ $cAffURL }}" target="_blank" rel="noopener noreferrer sponsored" class="ci-dealbtn">
+            Get Deal
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+          </a>
+          {{- end }}
         </div>
-        {{- else }}
-        <a href="{{ $cAffURL }}" target="_blank" rel="noopener noreferrer sponsored" class="ci-dealbtn">
-          Get Deal
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
-        </a>
-        {{- end }}
       </div>
       {{- end }}
     </div>
 
     {{- else }}
     <div class="cl-empty">
-      <div class="cl-empty-icon">🏷️</div>
-      <h3 class="cl-empty-title">No coupons listed yet</h3>
-      <p class="cl-empty-desc">We update codes every day — check back soon.</p>
-      <a href="/stores/" class="cl-empty-btn">Browse Other Stores</a>
+      <span class="cl-empty-icon">🏷️</span>
+      <h2 class="cl-empty-title">No coupons listed yet</h2>
+      <p class="cl-empty-desc">We update codes every day — check back soon for fresh deals.</p>
+      <a href="{{ $siteURL }}/stores/" class="cl-empty-btn">Browse Other Stores</a>
     </div>
     {{- end }}
 
 
-    {{- /* ── Store Description ──────────────────────────────── */ -}}
+    <!-- ── Store Description ─────────────────────────────────────── -->
     {{- with .Content }}
-    <section class="sd-section">
-      <h2 class="sd-title">About {{ $storeName }}</h2>
-      <div class="sd-body">{{ . }}</div>
-    </section>
+    <div class="sp-card">
+      <div class="sp-card-head">
+        <h2 class="sp-card-title">About {{ $storeName }}</h2>
+        <p class="sp-card-sub">What you need to know before you shop</p>
+      </div>
+      <div class="sp-card-body">
+        <div class="sd-body">{{ . }}</div>
+      </div>
+    </div>
     {{- end }}
 
 
-    {{- /* ── FAQ (visual accordion only, no schema) ─────────── */ -}}
-    <section class="faq" aria-labelledby="faq-h">
-      <h2 id="faq-h" class="faq-title">Frequently Asked Questions</h2>
-      <p class="faq-sub">Common questions about {{ $storeName }} coupon codes</p>
-      <div class="faq-list">
-
-        <details class="faq-item">
-          <summary class="faq-q">
-            How many {{ $storeName }} coupon codes are available right now?
-            <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </summary>
-          <div class="faq-a">
-            <p>CouponHauls currently lists <strong>{{ $couponCount }} verified {{ $storeName }} coupon codes</strong> and deals. We check and refresh all {{ $storeName }} offers daily so you always land on working promo codes — no expired duds, ever.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-q">
-            What is the best {{ $storeName }} discount available today?
-            <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </summary>
-          <div class="faq-a">
-            {{- $bestForFaq := "" -}}
-            {{- range first 1 $storeCoupons -}}
-              {{- $bestForFaq = .coupon_title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
-            {{- end -}}
-            {{- if $bestDiscount }}
-            <p>The top {{ $storeName }} deal right now takes <strong>{{ $bestDiscount }} off</strong> your order. Apply the coupon code at checkout on the {{ $storeName }} website to redeem instantly.</p>
-            {{- else if $bestForFaq }}
-            <p>The best current {{ $storeName }} offer is: <strong>{{ $bestForFaq }}</strong>. Click Reveal Code above to copy it and apply at checkout for instant savings.</p>
-            {{- else }}
-            <p>The best current {{ $storeName }} deals include percentage-off discounts, free-shipping codes, and exclusive seasonal promotions. Browse the full list above and click any deal to copy the code or activate the offer automatically.</p>
-            {{- end }}
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-q">
-            How do I use a {{ $storeName }} promo code?
-            <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </summary>
-          <div class="faq-a">
-            <ol class="faq-steps">
-              <li>Find a deal on this page and click <strong>Reveal Code</strong>.</li>
-              <li>Visit <a href="{{ $storeURL }}" target="_blank" rel="noopener noreferrer sponsored">{{ $storeName }}</a> and add items to your cart.</li>
-              <li>At checkout, paste the code into the <em>Promo / Coupon</em> field and click <strong>Apply</strong>.</li>
-              <li>No code? Click <strong>Get Deal</strong> — the discount activates automatically at checkout.</li>
-            </ol>
-          </div>
-        </details>
-
+    <!-- ── FAQ ──────────────────────────────────────────────────── -->
+    <div class="sp-card">
+      <div class="sp-card-head">
+        <h2 class="sp-card-title" id="faq-h">Frequently Asked Questions</h2>
+        <p class="sp-card-sub">Common questions about {{ $storeName }} coupon codes</p>
       </div>
-    </section>
+      <div class="sp-card-body">
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary class="faq-q">
+              How many {{ $storeName }} coupon codes are available right now?
+              <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-a">
+              <p>CouponHauls currently lists <strong>{{ $couponCount }} verified {{ $storeName }} coupon codes</strong> and deals. We check and refresh all {{ $storeName }} offers daily so you always land on working promo codes — no expired duds.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">
+              What is the best {{ $storeName }} discount available today?
+              <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-a">
+              {{- $bestForFaq := "" -}}
+              {{- range first 1 $storeCoupons -}}
+                {{- $bestForFaq = .coupon_title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+              {{- end -}}
+              {{- if $bestDiscount }}
+              <p>The top {{ $storeName }} deal right now takes <strong>{{ $bestDiscount }} off</strong> your order. Apply the coupon code at checkout on the {{ $storeName }} website to redeem instantly.</p>
+              {{- else if $bestForFaq }}
+              <p>The best current {{ $storeName }} offer is: <strong>{{ $bestForFaq }}</strong>. Click Reveal Code above to copy it and apply at checkout for instant savings.</p>
+              {{- else }}
+              <p>Browse the full list above — current deals include percentage-off discounts, free-shipping codes, and seasonal promotions. Click any deal to copy the code or activate the offer.</p>
+              {{- end }}
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">
+              How do I use a {{ $storeName }} promo code?
+              <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-a">
+              <ol class="faq-steps">
+                <li>Find a deal on this page and click <strong>Reveal Code</strong>.</li>
+                <li>Visit <a href="{{ $storeURL }}" target="_blank" rel="noopener noreferrer sponsored">{{ $storeName }}</a> and add items to your cart.</li>
+                <li>At checkout, paste the code into the <em>Promo / Coupon</em> field and click <strong>Apply</strong>.</li>
+                <li>No code? Click <strong>Get Deal</strong> — the discount activates automatically at checkout.</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">
+              Are {{ $storeName }} coupon codes verified?
+              <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-a">
+              <p>Yes. Every {{ $storeName }} code listed on CouponHauls is tested before publishing. We remove expired offers daily and only keep codes with a confirmed working status. Our verified success rate is over <strong>98%</strong>.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </div>
 
 
-    {{- /* ── Related Stores ─────────────────────────────────── */ -}}
+    <!-- ── Related Stores ──────────────────────────────────────── -->
     {{- $allStores    := where .Site.RegularPages "Section" "stores" -}}
     {{- $activeStores := where $allStores ".Params.is_active" true -}}
     {{- $otherStores  := slice -}}
@@ -1026,40 +1203,39 @@
     {{- $relatedStores := first 9 $otherStores -}}
 
     {{- if $relatedStores }}
-    <section class="rs-section">
-      <div class="rs-header">
-        <div>
-          <h2 class="rs-title">Related Stores</h2>
-          <p class="rs-sub">More coupon codes from top retailers</p>
+    <div class="sp-card">
+      <div class="sp-card-head">
+        <h2 class="sp-card-title">More Coupon Stores</h2>
+        <p class="sp-card-sub">Verified deals from more top retailers</p>
+      </div>
+      <div class="sp-card-body">
+        <div class="rs-grid">
+          {{- range $relatedStores -}}
+          {{- $rName  := .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+          {{- $rCount := .Params.coupon_count | default 0 -}}
+          {{- $rSlug  := .Params.slug | default .Params.store_id | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+          {{- $rURL   := .Permalink -}}
+          {{- if and $rSlug $isProduction -}}
+            {{- $rURL = printf "https://%s.%s/" $rSlug $baseHost -}}
+          {{- end }}
+          <a href="{{ $rURL }}" class="rs-card">
+            <div class="rs-avatar"><span>{{ substr $rName 0 1 }}</span></div>
+            <div class="rs-info">
+              <h3 class="rs-name">{{ $rName }}</h3>
+              <p class="rs-count">{{ $rCount }} Coupon{{ if ne $rCount 1 }}s{{ end }}</p>
+            </div>
+            <div class="rs-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 18l6-6-6-6"/></svg>
+            </div>
+          </a>
+          {{- end }}
         </div>
       </div>
-      <div class="rs-grid">
-        {{- range $relatedStores -}}
-        {{- $rName  := .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
-        {{- $rCount := .Params.coupon_count | default 0 -}}
-        {{- $rSlug  := .Params.slug | default .Params.store_id | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
-        {{- $rURL   := .Permalink -}}
-        {{- if and $rSlug (strings.Contains $.Site.BaseURL "couponhauls.com") -}}
-          {{- $rBaseHost := $.Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
-          {{- $rURL = printf "https://%s.%s/" $rSlug $rBaseHost -}}
-        {{- end }}
-        <a href="{{ $rURL }}" class="rs-card">
-          <div class="rs-avatar"><span>{{ substr $rName 0 1 }}</span></div>
-          <div class="rs-info">
-            <h3 class="rs-name">{{ $rName }}</h3>
-            <p class="rs-count">{{ $rCount }} Coupons</p>
-          </div>
-          <div class="rs-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 18l6-6-6-6"/></svg>
-          </div>
-        </a>
-        {{- end }}
-      </div>
-    </section>
+    </div>
     {{- end }}
 
 
-    {{- /* ── Prev / Next navigation ──────────────────────────── */ -}}
+    <!-- ── Prev / Next navigation ─────────────────────────────── -->
     {{- $prev := .PrevInSection -}}
     {{- $next := .NextInSection -}}
     {{- range seq 10 -}}
@@ -1074,21 +1250,20 @@
         {{- if $prev -}}
         {{- $prevSlug := $prev.Params.slug | default $prev.Params.store_id | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
         {{- $prevURL  := $prev.Permalink -}}
-        {{- if and $prevSlug (strings.Contains $.Site.BaseURL "couponhauls.com") -}}
-          {{- $ph := $.Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
-          {{- $prevURL = printf "https://%s.%s/" $prevSlug $ph -}}
+        {{- if and $prevSlug $isProduction -}}
+          {{- $prevURL = printf "https://%s.%s/" $prevSlug $baseHost -}}
         {{- end }}
         <a href="{{ $prevURL }}" class="pn-btn">
           <div class="pn-dir">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 5l-7 7 7 7"/></svg>
             Previous Store
           </div>
           <div class="pn-name">{{ $prev.Params.store_name | default $prev.Title | replaceRE `^"(.*)"$` "$1" }}</div>
         </a>
         {{- else }}
         <div class="pn-btn pn-disabled">
-          <div class="pn-dir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 5l-7 7 7 7"/></svg>Previous Store</div>
-          <div class="pn-name">No previous store</div>
+          <div class="pn-dir"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 5l-7 7 7 7"/></svg>Previous Store</div>
+          <div class="pn-name">—</div>
         </div>
         {{- end }}
       </div>
@@ -1097,79 +1272,85 @@
         {{- if $next -}}
         {{- $nextSlug := $next.Params.slug | default $next.Params.store_id | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
         {{- $nextURL  := $next.Permalink -}}
-        {{- if and $nextSlug (strings.Contains $.Site.BaseURL "couponhauls.com") -}}
-          {{- $nh := $.Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
-          {{- $nextURL = printf "https://%s.%s/" $nextSlug $nh -}}
+        {{- if and $nextSlug $isProduction -}}
+          {{- $nextURL = printf "https://%s.%s/" $nextSlug $baseHost -}}
         {{- end }}
         <a href="{{ $nextURL }}" class="pn-btn pn-btn-right">
           <div class="pn-dir">
             Next Store
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
           </div>
           <div class="pn-name">{{ $next.Params.store_name | default $next.Title | replaceRE `^"(.*)"$` "$1" }}</div>
         </a>
         {{- else }}
         <div class="pn-btn pn-btn-right pn-disabled">
-          <div class="pn-dir">Next Store<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          <div class="pn-name">No next store</div>
+          <div class="pn-dir">Next Store<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div class="pn-name">—</div>
         </div>
         {{- end }}
       </div>
     </div>
 
+    <!-- Back link -->
     <div class="sp-back">
-      <a href="/stores/" class="sp-back-link">
+      <a href="{{ $siteURL }}/stores/" class="sp-back-link">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 5l-7 7 7 7"/></svg>
         Back to All Stores
       </a>
     </div>
 
-  </div>
-</div>
+  </div><!-- /.sp-container -->
+</div><!-- /.sp-body -->
 
 
 <script>
-document.querySelectorAll('.ci-codebox').forEach(function(box) {
-  box.addEventListener('click', function() {
-    var code   = box.dataset.code;
-    var affUrl = box.dataset.url;
-    var span   = box.querySelector('.ci-codetext');
-    var btn    = box.querySelector('.ci-copybtn');
-    if (!code) return;
-    if (!box.classList.contains('revealed')) {
-      box.classList.add('revealed');
-      span.textContent = code;
-      btn.textContent  = '✓ Copied!';
-      btn.classList.add('copied');
-      _copyToClipboard(code);
-      if (affUrl) { setTimeout(function() { window.open(affUrl, '_blank', 'noopener,noreferrer'); }, 400); }
-      setTimeout(function() { btn.textContent = 'Copy Code'; btn.classList.remove('copied'); }, 2500);
-    } else {
+(function () {
+  document.querySelectorAll('.ci-codebox').forEach(function (box) {
+    box.addEventListener('click', function () {
+      var code   = box.dataset.code;
+      var affUrl = box.dataset.url;
+      var span   = box.querySelector('.ci-codetext');
+      var btn    = box.querySelector('.ci-copybtn');
+      if (!code) return;
+
+      if (!box.classList.contains('revealed')) {
+        box.classList.add('revealed');
+        span.textContent = code;
+      }
+
       btn.textContent = '✓ Copied!';
       btn.classList.add('copied');
-      _copyToClipboard(code);
-      setTimeout(function() { btn.textContent = 'Copy Code'; btn.classList.remove('copied'); }, 2500);
-    }
+      _copy(code);
+
+      if (affUrl && !box.dataset.opened) {
+        box.dataset.opened = '1';
+        setTimeout(function () { window.open(affUrl, '_blank', 'noopener,noreferrer'); }, 400);
+      }
+
+      setTimeout(function () {
+        btn.textContent = 'Copy Code';
+        btn.classList.remove('copied');
+      }, 2500);
+    });
   });
-});
 
-function _copyToClipboard(text) {
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).catch(function() { _fbCopy(text); });
-  } else {
-    _fbCopy(text);
+  function _copy(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).catch(function () { _fb(text); });
+    } else {
+      _fb(text);
+    }
   }
-}
-
-function _fbCopy(text) {
-  var ta = document.createElement('textarea');
-  ta.value = text;
-  ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
-  document.body.appendChild(ta);
-  ta.focus();
-  ta.select();
-  try { document.execCommand('copy'); } catch(e) {}
-  document.body.removeChild(ta);
-}
+  function _fb(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none';
+    document.body.appendChild(ta);
+    ta.focus(); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+})();
 </script>
+
 {{- end -}}

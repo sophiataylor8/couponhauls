@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "big5sportinggoods"
 
 coupons:
-  - coupon_id: "1098"
+  - coupon_id: "1113"
     coupon_title: "Big 5 Weekly Sporting Goods Deals"
     coupon_code: ""
     coupon_description: "Check the Big 5 weekly ad to save on athletic footwear, outdoor gear, sports equipment, and apparel."
     coupon_aff_url: "https://www.big5sportinggoods.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1099"
+  - coupon_id: "1114"
     coupon_title: "Big 5 Clearance & Seasonal Sales"
     coupon_code: ""
     coupon_description: "Shop clearance and seasonal promotions at Big 5 for discounts on camping gear, fitness equipment, and sportswear."
     coupon_aff_url: "https://www.big5sportinggoods.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "pricechopper"
 
 coupons:
-  - coupon_id: "1062"
+  - coupon_id: "1077"
     coupon_title: "Price Chopper AdvantEdge Digital Coupons"
     coupon_code: ""
     coupon_description: "Sign up for AdvantEdge Rewards to clip digital coupons and receive exclusive savings on groceries and household essentials."
     coupon_aff_url: "https://www.pricechopper.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1063"
+  - coupon_id: "1078"
     coupon_title: "Price Chopper Weekly Grocery Deals"
     coupon_code: ""
     coupon_description: "Browse the Price Chopper weekly ad for special discounts on fresh foods, snacks, beverages, and everyday grocery items."
     coupon_aff_url: "https://www.pricechopper.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

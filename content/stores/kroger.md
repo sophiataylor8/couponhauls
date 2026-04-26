@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "kroger"
 
 coupons:
-  - coupon_id: "1068"
+  - coupon_id: "1083"
     coupon_title: "Kroger Weekly Ad Savings"
     coupon_code: ""
     coupon_description: "Explore the Kroger weekly ad for limited-time discounts on fresh foods, snacks, beverages, and household essentials."
     coupon_aff_url: "https://www.kroger.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1069"
+  - coupon_id: "1084"
     coupon_title: "Kroger Digital Coupons"
     coupon_code: ""
     coupon_description: "Clip Kroger digital coupons through your account to enjoy personalized grocery discounts and exclusive online deals."
     coupon_aff_url: "https://www.kroger.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

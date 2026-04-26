@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "nofrills"
 
 coupons:
-  - coupon_id: "1104"
+  - coupon_id: "1119"
     coupon_title: "No Frills Weekly Flyer Savings"
     coupon_code: ""
     coupon_description: "Check the No Frills weekly flyer to find deals on produce, meats, packaged foods, and everyday groceries."
     coupon_aff_url: "https://www.nofrills.ca/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1105"
+  - coupon_id: "1120"
     coupon_title: "PC Optimum Points Offers"
     coupon_code: ""
     coupon_description: "Earn and redeem PC Optimum points on eligible purchases at No Frills and enjoy exclusive member deals."
     coupon_aff_url: "https://www.nofrills.ca/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "vons"
 
 coupons:
-  - coupon_id: "1046"
+  - coupon_id: "1061"
     coupon_title: "Vons for U Member Savings"
     coupon_code: ""
     coupon_description: "Join the Vons for U loyalty program to access digital coupons, personalized offers, and exclusive weekly grocery savings."
     coupon_aff_url: "https://www.vons.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1047"
+  - coupon_id: "1062"
     coupon_title: "Vons Weekly Grocery Promotions"
     coupon_code: ""
     coupon_description: "Browse the Vons weekly ad to discover special discounts on produce, deli foods, beverages, and pantry staples."
     coupon_aff_url: "https://www.vons.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

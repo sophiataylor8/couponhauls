@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "loblaws"
 
 coupons:
-  - coupon_id: "1072"
+  - coupon_id: "1087"
     coupon_title: "Loblaws Weekly Flyer Deals"
     coupon_code: ""
     coupon_description: "Check the Loblaws weekly flyer to discover grocery discounts on fresh produce, bakery goods, meats, and pantry staples."
     coupon_aff_url: "https://www.loblaws.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1073"
+  - coupon_id: "1088"
     coupon_title: "PC Optimum Rewards Offers"
     coupon_code: ""
     coupon_description: "Earn and redeem points with PC Optimum while shopping at Loblaws and enjoy exclusive member-only grocery deals."
     coupon_aff_url: "https://www.loblaws.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

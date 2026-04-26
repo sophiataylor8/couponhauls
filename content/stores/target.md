@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "target"
 
 coupons:
-  - coupon_id: "1019"
+  - coupon_id: "1034"
     coupon_title: "$10 Off Orders $75+"
     coupon_code: "TARGETSAVE10"
     coupon_description: "Minimum spend discount"
     coupon_aff_url: "https://www.target.com/"
     coupon_type: "Coupon"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2030"
-  - coupon_id: "1020"
+  - coupon_id: "1035"
     coupon_title: "Grocery 5% Discount"
     coupon_code: "TARGETGROC5"
     coupon_description: "Grocery & essentials"
     coupon_aff_url: "https://www.target.com/"
     coupon_type: "Coupon"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2030"
 ---
 

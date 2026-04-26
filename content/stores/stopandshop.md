@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "stopandshop"
 
 coupons:
-  - coupon_id: "1056"
+  - coupon_id: "1071"
     coupon_title: "Stop & Shop GO Rewards Savings"
     coupon_code: ""
     coupon_description: "Join Stop & Shop GO Rewards to earn points on purchases and redeem them for grocery discounts and fuel savings."
     coupon_aff_url: "https://stopandshop.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1057"
+  - coupon_id: "1072"
     coupon_title: "Stop & Shop Weekly Grocery Specials"
     coupon_code: ""
     coupon_description: "Check the Stop & Shop weekly ad to save on produce, meats, snacks, frozen foods, and everyday grocery essentials."
     coupon_aff_url: "https://stopandshop.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

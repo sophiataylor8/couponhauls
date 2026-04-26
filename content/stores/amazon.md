@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Free delivery on qualifying deals"
     coupon_aff_url: "https://www.amazon.com/"
     coupon_type: "Coupon"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2030"
   - coupon_id: "1002"
     coupon_title: "Flat 10% Off on Select Items"
@@ -42,7 +42,7 @@ coupons:
     coupon_description: "Discount on eligible products"
     coupon_aff_url: "https://www.amazon.com/"
     coupon_type: "Coupon"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2030"
 ---
 

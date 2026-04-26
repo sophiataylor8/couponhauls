@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "petsmart"
 
 coupons:
-  - coupon_id: "1096"
+  - coupon_id: "1111"
     coupon_title: "PetSmart Treats Rewards Member Deals"
     coupon_code: ""
     coupon_description: "Join PetSmart Treats Rewards to earn points on purchases and unlock exclusive member-only discounts on pet products."
     coupon_aff_url: "https://www.petsmart.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1097"
+  - coupon_id: "1112"
     coupon_title: "PetSmart Weekly Pet Supplies Sale"
     coupon_code: ""
     coupon_description: "Shop PetSmart weekly sales for discounts on pet food, toys, grooming products, and accessories."
     coupon_aff_url: "https://www.petsmart.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

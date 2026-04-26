@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "pavilions"
 
 coupons:
-  - coupon_id: "1036"
+  - coupon_id: "1051"
     coupon_title: "Pavilions for U Digital Coupons"
     coupon_code: ""
     coupon_description: "Clip digital coupons through the Pavilions for U program and save on groceries, produce, meat, and household essentials each week."
     coupon_aff_url: "https://www.pavilions.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1037"
+  - coupon_id: "1052"
     coupon_title: "Weekly Grocery Deals at Pavilions"
     coupon_code: ""
     coupon_description: "Shop the weekly ad to find limited-time discounts on fresh produce, deli items, snacks, beverages, and everyday groceries."
     coupon_aff_url: "https://www.pavilions.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

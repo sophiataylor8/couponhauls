@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "countymarket"
 
 coupons:
-  - coupon_id: "1110"
+  - coupon_id: "1125"
     coupon_title: "County Market Weekly Ad Specials"
     coupon_code: ""
     coupon_description: "Browse the County Market weekly ad to discover deals on fresh foods, bakery items, and household products."
     coupon_aff_url: "https://www.mycountymarket.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1111"
+  - coupon_id: "1126"
     coupon_title: "County Market Digital Coupons"
     coupon_code: ""
     coupon_description: "Clip County Market digital coupons to save on groceries, beverages, snacks, and everyday essentials."
     coupon_aff_url: "https://www.mycountymarket.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

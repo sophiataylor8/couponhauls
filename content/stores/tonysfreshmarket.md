@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "tonysfreshmarket"
 
 coupons:
-  - coupon_id: "1092"
+  - coupon_id: "1107"
     coupon_title: "Tony's Weekly Market Specials"
     coupon_code: ""
     coupon_description: "Browse Tony's Fresh Market weekly specials to save on fresh produce, meats, bakery items, and grocery essentials."
     coupon_aff_url: "https://www.tonysfreshmarket.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1093"
+  - coupon_id: "1108"
     coupon_title: "Tony's Fresh Market In-Store Promotions"
     coupon_code: ""
     coupon_description: "Find rotating in-store promotions and seasonal grocery savings at participating Tony's Fresh Market locations."
     coupon_aff_url: "https://www.tonysfreshmarket.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

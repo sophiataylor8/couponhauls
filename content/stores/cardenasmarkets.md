@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "cardenasmarkets"
 
 coupons:
-  - coupon_id: "1052"
+  - coupon_id: "1067"
     coupon_title: "Cardenas Weekly Market Specials"
     coupon_code: ""
     coupon_description: "Browse Cardenas Markets weekly specials to save on fresh produce, meats, bakery items, and authentic Hispanic groceries."
     coupon_aff_url: "https://www.cardenasmarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1053"
+  - coupon_id: "1068"
     coupon_title: "Fresh Produce Weekly Discounts"
     coupon_code: ""
     coupon_description: "Enjoy weekly discounts on fresh fruits, vegetables, and traditional grocery products available in Cardenas Markets stores."
     coupon_aff_url: "https://www.cardenasmarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "marketbasket"
 
 coupons:
-  - coupon_id: "1060"
+  - coupon_id: "1075"
     coupon_title: "Market Basket Weekly Flyer Deals"
     coupon_code: ""
     coupon_description: "View the Market Basket weekly flyer to discover discounts on fresh produce, meats, dairy, and grocery staples."
     coupon_aff_url: "https://www.shopmarketbasket.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1061"
+  - coupon_id: "1076"
     coupon_title: "In-Store Grocery Specials at Market Basket"
     coupon_code: ""
     coupon_description: "Find rotating in-store promotions and seasonal grocery savings available at participating Market Basket locations."
     coupon_aff_url: "https://www.shopmarketbasket.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

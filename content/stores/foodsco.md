@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "foodsco"
 
 coupons:
-  - coupon_id: "1108"
+  - coupon_id: "1123"
     coupon_title: "Foods Co Weekly Ad Deals"
     coupon_code: ""
     coupon_description: "Check the Foods Co weekly ad to find discounts on fresh produce, meats, dairy, and grocery staples."
     coupon_aff_url: "https://www.foodsco.net/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1109"
+  - coupon_id: "1124"
     coupon_title: "Foods Co Digital Coupons"
     coupon_code: ""
     coupon_description: "Clip digital coupons through your Foods Co account to unlock additional grocery savings."
     coupon_aff_url: "https://www.foodsco.net/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

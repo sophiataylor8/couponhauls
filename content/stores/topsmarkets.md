@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "topsmarkets"
 
 coupons:
-  - coupon_id: "1086"
+  - coupon_id: "1101"
     coupon_title: "Tops BonusPlus Rewards Deals"
     coupon_code: ""
     coupon_description: "Sign up for Tops BonusPlus to access digital coupons, personalized grocery deals, and member savings."
     coupon_aff_url: "https://www.topsmarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1087"
+  - coupon_id: "1102"
     coupon_title: "Tops Weekly Grocery Specials"
     coupon_code: ""
     coupon_description: "Browse the Tops weekly ad for discounts on fresh produce, meats, dairy products, and pantry staples."
     coupon_aff_url: "https://www.topsmarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

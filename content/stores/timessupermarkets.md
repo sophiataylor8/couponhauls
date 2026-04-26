@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "timessupermarkets"
 
 coupons:
-  - coupon_id: "1094"
+  - coupon_id: "1109"
     coupon_title: "Times Supermarket Weekly Ad Deals"
     coupon_code: ""
     coupon_description: "Check the Times Supermarket weekly ad to save on fresh produce, meats, seafood, and everyday grocery items."
     coupon_aff_url: "https://www.timessupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1095"
+  - coupon_id: "1110"
     coupon_title: "Times Supermarket In-Store Specials"
     coupon_code: ""
     coupon_description: "Find rotating in-store promotions and limited-time discounts on groceries and household essentials."
     coupon_aff_url: "https://www.timessupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

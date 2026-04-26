@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "wholefoodsmarket"
 
 coupons:
-  - coupon_id: "1088"
+  - coupon_id: "1103"
     coupon_title: "Whole Foods Weekly Sales"
     coupon_code: ""
     coupon_description: "Explore Whole Foods weekly sales to save on organic produce, natural groceries, snacks, and specialty foods."
     coupon_aff_url: "https://www.wholefoodsmarket.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1089"
+  - coupon_id: "1104"
     coupon_title: "Amazon Prime Member Deals at Whole Foods"
     coupon_code: ""
     coupon_description: "Amazon Prime members can access exclusive discounts and special pricing on select products at Whole Foods Market."
     coupon_aff_url: "https://www.wholefoodsmarket.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

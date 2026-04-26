@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "overstock"
 
 coupons:
-  - coupon_id: "1015"
+  - coupon_id: "1030"
     coupon_title: "Rugs Extra 5%"
     coupon_code: "OSTRUGS5"
     coupon_description: "Rug category discount"
     coupon_aff_url: "https://www.overstock.com/"
     coupon_type: "Coupon"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2030"
-  - coupon_id: "1016"
+  - coupon_id: "1031"
     coupon_title: "Furniture Clearance 10%"
     coupon_code: "OSTOCK10"
     coupon_description: "Home items discount"
     coupon_aff_url: "https://www.overstock.com/"
     coupon_type: "Coupon"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2030"
 ---
 

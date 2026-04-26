@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "kingkullen"
 
 coupons:
-  - coupon_id: "1118"
+  - coupon_id: "1133"
     coupon_title: "King Kullen Weekly Ad Specials"
     coupon_code: ""
     coupon_description: "Check the King Kullen weekly circular to save on fresh produce, meats, dairy products, and grocery essentials."
     coupon_aff_url: "https://kingkullen.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1119"
+  - coupon_id: "1134"
     coupon_title: "King Kullen Digital Coupons"
     coupon_code: ""
     coupon_description: "Clip digital coupons through your King Kullen account to unlock extra grocery savings each week."
     coupon_aff_url: "https://kingkullen.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

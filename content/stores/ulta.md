@@ -10,7 +10,7 @@ store_name: "Ulta"
 store_h1: "Ulta Coupon Code $15 Off $75, $3.50 Coupon"
 store_title: "Ulta Coupon Code $15 Off $75, $3.50 Coupon"
 store_meta_description: "Ulta Coupon Code $15 Off $75. Ulta Discount Code: 20% off first order, promo codes and coupons. Ulta $3.50 coupon code with free shipping no minimum."
-store_keywords: ""
+store_keywords: "ulta coupon code, ulta promo code, ulta discount code, ulta coupon code 2026, ulta offers, ulta sale"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
 store_og_title: "Ulta Coupon Code $15 Off $75, $3.50 Coupon"
@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "ulta"
 
 coupons:
-  - coupon_id: "1140"
+  - coupon_id: "1155"
     coupon_title: "Ulta Beauty Weekly Beauty Deals"
     coupon_code: ""
     coupon_description: "Shop Ulta weekly deals to save on makeup, skincare, haircare, and beauty tools from top brands."
     coupon_aff_url: "https://www.ulta.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1141"
+  - coupon_id: "1156"
     coupon_title: "Ulta Ultamate Rewards Points Offers"
     coupon_code: ""
     coupon_description: "Earn and redeem points with Ultamate Rewards and access exclusive member-only discounts on beauty products."
     coupon_aff_url: "https://www.ulta.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

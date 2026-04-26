@@ -24,7 +24,7 @@ website_url: "https://www.costco.com/"
 website_aff_url: "https://www.costco.com/"
 is_active: true
 website_featured: false
-coupon_count: 2
+coupon_count: 3
 store_id: "costco"
 
 coupons:
@@ -34,7 +34,7 @@ coupons:
     coupon_description: "Big savings on bulk checkout"
     coupon_aff_url: "https://www.costco.com/"
     coupon_type: "Coupon"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2030"
   - coupon_id: "1004"
     coupon_title: "Grocery Savings 10%"
@@ -42,7 +42,15 @@ coupons:
     coupon_description: "Grocery onsite discount"
     coupon_aff_url: "https://www.costco.com/"
     coupon_type: "Coupon"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
+    expires_at: "31/12/2030"
+  - coupon_id: "1005"
+    coupon_title: "Get a $45 Digital Costco Shop Card"
+    coupon_code: "SPRING26"
+    coupon_description: "Sign Up for Costco Membership"
+    coupon_aff_url: "https://www.costco.com/"
+    coupon_type: "Coupon"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2030"
 ---
 

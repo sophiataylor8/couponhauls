@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "shaws"
 
 coupons:
-  - coupon_id: "1114"
+  - coupon_id: "1129"
     coupon_title: "Shaw's for U Digital Coupons"
     coupon_code: ""
     coupon_description: "Sign up for Shaw's for U to clip digital coupons and unlock personalized savings on groceries and household essentials."
     coupon_aff_url: "https://www.shaws.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1115"
+  - coupon_id: "1130"
     coupon_title: "Shaw's Weekly Grocery Deals"
     coupon_code: ""
     coupon_description: "Browse the Shaw's weekly ad to find discounts on fresh produce, meats, bakery items, and everyday grocery products."
     coupon_aff_url: "https://www.shaws.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

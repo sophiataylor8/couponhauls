@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "sprouts"
 
 coupons:
-  - coupon_id: "1064"
+  - coupon_id: "1079"
     coupon_title: "Sprouts Weekly Ad Fresh Deals"
     coupon_code: ""
     coupon_description: "Browse the Sprouts weekly ad to save on fresh produce, natural groceries, vitamins, and organic products."
     coupon_aff_url: "https://www.sprouts.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1065"
+  - coupon_id: "1080"
     coupon_title: "Sprouts Digital Coupons"
     coupon_code: ""
     coupon_description: "Clip Sprouts digital coupons through your account to unlock savings on healthy foods, snacks, supplements, and household items."
     coupon_aff_url: "https://www.sprouts.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

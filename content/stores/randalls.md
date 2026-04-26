@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "randalls"
 
 coupons:
-  - coupon_id: "1038"
+  - coupon_id: "1053"
     coupon_title: "Randalls for U Member Savings"
     coupon_code: ""
     coupon_description: "Sign in to your Randalls account to access personalized digital coupons and exclusive savings through the Randalls for U program."
     coupon_aff_url: "https://www.randalls.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1039"
+  - coupon_id: "1054"
     coupon_title: "Weekly Ad Grocery Discounts"
     coupon_code: ""
     coupon_description: "Browse Randalls weekly ad to save on fresh foods, pantry items, beverages, and seasonal grocery promotions."
     coupon_aff_url: "https://www.randalls.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -28,21 +28,21 @@ coupon_count: 2
 store_id: "harborfreight"
 
 coupons:
-  - coupon_id: "1100"
+  - coupon_id: "1115"
     coupon_title: "Harbor Freight Inside Track Club Savings"
     coupon_code: ""
     coupon_description: "Join Harbor Freight Inside Track Club to access exclusive discounts, special pricing, and member-only deals."
     coupon_aff_url: "https://www.harborfreight.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
-  - coupon_id: "1101"
+  - coupon_id: "1116"
     coupon_title: "Harbor Freight Clearance & Parking Lot Sales"
     coupon_code: ""
     coupon_description: "Find major discounts on tools and equipment during Harbor Freight clearance events and Parking Lot sales."
     coupon_aff_url: "https://www.harborfreight.com/"
     coupon_type: "Deal"
-    coupon_start: "03/04/2026"
+    coupon_start: "21/04/2026"
     expires_at: "31/12/2026"
 ---
 
