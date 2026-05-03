@@ -1,20 +1,20 @@
 ---
-title: "QFC Weekly Ad Preview (April 2026) Sale Ad"
+title: "QFC Weekly Ad Preview May 2026 Sale Ad"
 slug: "qfc"
-description: "QFC weekly ad preview April 2026. Find QFC sale ad, promo code, digital coupons, and grocery deals to save more on everyday shopping."
+description: "QFC weekly ad preview May 2026. Find QFC sale ad, promo code, digital coupons, and grocery deals to save more on everyday shopping."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "QFC"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "QFC Weekly Ad Preview (April 2026) Sale Ad"
-store_title: "QFC Weekly Ad Preview (April 2026) Sale Ad"
-store_meta_description: "QFC weekly ad preview April 2026. Find QFC sale ad, promo code, digital coupons, and grocery deals to save more on everyday shopping."
+store_h1: "QFC Weekly Ad Preview May 2026 Sale Ad"
+store_title: "QFC Weekly Ad Preview May 2026 Sale Ad"
+store_meta_description: "QFC weekly ad preview May 2026. Find QFC sale ad, promo code, digital coupons, and grocery deals to save more on everyday shopping."
 store_keywords: "qfc coupon code, qfc promo code, qfc discount code, qfc deals, qfc offers, qfc grocery coupons, qfc coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "QFC Weekly Ad Preview (April 2026) Sale Ad"
-store_og_description: "QFC weekly ad preview April 2026. Find QFC sale ad, promo code, digital coupons, and grocery deals to save more on everyday shopping."
+store_og_title: "QFC Weekly Ad Preview May 2026 Sale Ad"
+store_og_description: "QFC weekly ad preview May 2026. Find QFC sale ad, promo code, digital coupons, and grocery deals to save more on everyday shopping."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "qfc"
 
 coupons:
-  - coupon_id: "1081"
+  - coupon_id: "1066"
     coupon_title: "QFC Weekly Grocery Deals"
     coupon_code: ""
     coupon_description: "Check the QFC weekly ad to find discounts on fresh produce, meats, bakery items, and everyday grocery essentials."
     coupon_aff_url: "https://www.qfc.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1082"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1067"
     coupon_title: "QFC Digital Coupons & Rewards"
     coupon_code: ""
     coupon_description: "Sign in to your QFC account to clip digital coupons and access personalized grocery deals and member savings."
     coupon_aff_url: "https://www.qfc.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 QFC, also known as Quality Food Centers, is a supermarket chain that serves shoppers primarily in the Pacific Northwest. The retailer has built a reputation for offering fresh groceries, convenient shopping environments, and a wide range of everyday food products. Many customers choose QFC because it combines the selection of a large grocery store with the convenience of neighborhood locations.

@@ -1,20 +1,20 @@
 ---
-title: "Big Lots Sale Ad for This Week (April 2026) Weekly Ad"
+title: "Big Lots Sale Ad for This Week May 2026 Weekly Ad"
 slug: "biglots"
-description: "Big lots sale ad for this week April 2026. Get Big Lots weekly ad, promo code, deals, and coupons for furniture, home goods and everyday essentials."
+description: "Big lots sale ad for this week May 2026. Get Big Lots weekly ad, promo code, deals, and coupons for furniture, home goods and everyday essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Big Lots"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Big Lots Sale Ad for This Week (April 2026) Weekly Ad"
-store_title: "Big Lots Sale Ad for This Week (April 2026) Weekly Ad"
-store_meta_description: "Big lots sale ad for this week April 2026. Get Big Lots weekly ad, promo code, deals, and coupons for furniture, home goods and everyday essentials."
+store_h1: "Big Lots Sale Ad for This Week May 2026 Weekly Ad"
+store_title: "Big Lots Sale Ad for This Week May 2026 Weekly Ad"
+store_meta_description: "Big lots sale ad for this week May 2026. Get Big Lots weekly ad, promo code, deals, and coupons for furniture, home goods and everyday essentials."
 store_keywords: "big lots coupon code, big lots promo code, big lots discount code, big lots deals, big lots offers, big lots sale, big lots coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Big Lots Sale Ad for This Week (April 2026) Weekly Ad"
-store_og_description: "Big lots sale ad for this week April 2026. Get Big Lots weekly ad, promo code, deals, and coupons for furniture, home goods and everyday essentials."
+store_og_title: "Big Lots Sale Ad for This Week May 2026 Weekly Ad"
+store_og_description: "Big lots sale ad for this week May 2026. Get Big Lots weekly ad, promo code, deals, and coupons for furniture, home goods and everyday essentials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "biglots"
 
 coupons:
-  - coupon_id: "1085"
+  - coupon_id: "1070"
     coupon_title: "Big Lots Clearance Deals"
     coupon_code: ""
     coupon_description: "Shop Big Lots clearance section to find deep discounts on furniture, home decor, seasonal items, and household essentials."
     coupon_aff_url: "https://www.biglots.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1086"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1071"
     coupon_title: "Big Rewards Member Savings"
     coupon_code: ""
     coupon_description: "Join Big Rewards to access exclusive coupons, member-only pricing, and special promotions at Big Lots."
     coupon_aff_url: "https://www.biglots.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 Big Lots is a retail chain known for offering discounted merchandise across a variety of product categories. The store has become popular among shoppers who want to find deals on home goods, furniture, food products, and seasonal merchandise. With hundreds of locations, Big Lots provides customers with access to a constantly changing selection of products at competitive prices.

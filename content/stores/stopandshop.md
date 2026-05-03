@@ -1,20 +1,20 @@
 ---
-title: "Stop and Shop Weekly Circular (April 2026) Flyer"
+title: "Stop and Shop Weekly Circular May 2026 Flyer"
 slug: "stopandshop"
-description: "Stop and Shop weekly circular April 2026. Discover Stop and Shop weekly flyer, promo code, digital coupons, and grocery deals for maximum savings."
+description: "Stop and Shop weekly circular May 2026. Discover Stop and Shop weekly flyer, promo code, digital coupons, and grocery deals for maximum savings."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Stop and Shop"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Stop and Shop Weekly Circular (April 2026) Flyer"
-store_title: "Stop and Shop Weekly Circular (April 2026) Flyer"
-store_meta_description: "Stop and Shop weekly circular April 2026. Discover Stop and Shop weekly flyer, promo code, digital coupons, and grocery deals for maximum savings."
+store_h1: "Stop and Shop Weekly Circular May 2026 Flyer"
+store_title: "Stop and Shop Weekly Circular May 2026 Flyer"
+store_meta_description: "Stop and Shop weekly circular May 2026. Discover Stop and Shop weekly flyer, promo code, digital coupons, and grocery deals for maximum savings."
 store_keywords: "stop and shop coupon code, stop and shop promo code, stop and shop discount code, stop and shop deals, stop and shop offers, stop and shop grocery coupons, stop and shop coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Stop and Shop Weekly Circular (April 2026) Flyer"
-store_og_description: "Stop and Shop weekly circular April 2026. Discover Stop and Shop weekly flyer, promo code, digital coupons, and grocery deals for maximum savings."
+store_og_title: "Stop and Shop Weekly Circular May 2026 Flyer"
+store_og_description: "Stop and Shop weekly circular May 2026. Discover Stop and Shop weekly flyer, promo code, digital coupons, and grocery deals for maximum savings."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "stopandshop"
 
 coupons:
-  - coupon_id: "1071"
+  - coupon_id: "1056"
     coupon_title: "Stop & Shop GO Rewards Savings"
     coupon_code: ""
     coupon_description: "Join Stop & Shop GO Rewards to earn points on purchases and redeem them for grocery discounts and fuel savings."
     coupon_aff_url: "https://stopandshop.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1072"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1057"
     coupon_title: "Stop & Shop Weekly Grocery Specials"
     coupon_code: ""
     coupon_description: "Check the Stop & Shop weekly ad to save on produce, meats, snacks, frozen foods, and everyday grocery essentials."
     coupon_aff_url: "https://stopandshop.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 Stop & Shop is a popular grocery retailer that has served communities across the northeastern United States for many years. The supermarket is known for its large selection of groceries, fresh foods, and household products that meet the needs of everyday shoppers. With numerous store locations and convenient shopping options, Stop & Shop continues to be a trusted destination for weekly grocery trips.

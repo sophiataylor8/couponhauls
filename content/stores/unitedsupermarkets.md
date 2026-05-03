@@ -1,5 +1,5 @@
 ---
-title: "United Supermarket Weekly Ad (April 2026) Sales Add"
+title: "United Supermarket Weekly Ad May 2026 Sales Add"
 slug: "unitedsupermarkets"
 description: "United supermarket weekly ad 2026. Save with United Supermarkets sales ad, promo codes, digital coupons, and weekly grocery deals updated daily."
 
@@ -7,13 +7,13 @@ description: "United supermarket weekly ad 2026. Save with United Supermarkets s
 store_name: "United Supermarkets"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "United Supermarket Weekly Ad (April 2026) Sales Add"
-store_title: "United Supermarket Weekly Ad (April 2026) Sales Add"
+store_h1: "United Supermarket Weekly Ad May 2026 Sales Add"
+store_title: "United Supermarket Weekly Ad May 2026 Sales Add"
 store_meta_description: "United supermarket weekly ad 2026. Save with United Supermarkets sales ad, promo codes, digital coupons, and weekly grocery deals updated daily."
 store_keywords: "united supermarkets coupon code, united supermarkets promo code, united supermarkets discount code, united supermarkets deals, united supermarkets offers, united supermarkets grocery coupons, united supermarkets coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "United Supermarket Weekly Ad (April 2026) Sales Add"
+store_og_title: "United Supermarket Weekly Ad May 2026 Sales Add"
 store_og_description: "United supermarket weekly ad 2026. Save with United Supermarkets sales ad, promo codes, digital coupons, and weekly grocery deals updated daily."
 store_og_image: ""
 store_og_type: "website"
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "unitedsupermarkets"
 
 coupons:
-  - coupon_id: "1105"
+  - coupon_id: "1090"
     coupon_title: "United Rewards Digital Coupons"
     coupon_code: ""
     coupon_description: "Join United Rewards to clip digital coupons and enjoy personalized savings on groceries and household items."
     coupon_aff_url: "https://www.unitedsupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1106"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1091"
     coupon_title: "United Supermarkets Weekly Ad Deals"
     coupon_code: ""
     coupon_description: "Check the weekly ad to find special discounts on produce, meats, bakery items, and everyday groceries."
     coupon_aff_url: "https://www.unitedsupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 United Supermarkets has developed a strong reputation as a dependable grocery retailer focused on delivering fresh food, convenient shopping, and friendly customer service. With stores located primarily across Texas and nearby regions, the brand plays an important role in serving local communities with reliable grocery options and competitive pricing.

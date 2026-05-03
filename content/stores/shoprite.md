@@ -1,20 +1,20 @@
 ---
-title: "ShopRite Grocery Circular (April 2026) Weekly Ad"
+title: "ShopRite Grocery Circular May 2026 Weekly Ad"
 slug: "shoprite"
-description: "ShopRite grocery circular April 2026. Find ShopRite weekly ad, promo code, digital coupons, and deals to save more on liquors, party foods and soda."
+description: "ShopRite grocery circular May 2026. Find ShopRite weekly ad, promo code, digital coupons, and deals to save more on liquors, party foods and soda."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "ShopRite"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "ShopRite Grocery Circular (April 2026) Weekly Ad"
-store_title: "ShopRite Grocery Circular (April 2026) Weekly Ad"
-store_meta_description: "ShopRite grocery circular April 2026. Find ShopRite weekly ad, promo code, digital coupons, and deals to save more on liquors, party foods and soda."
+store_h1: "ShopRite Grocery Circular May 2026 Weekly Ad"
+store_title: "ShopRite Grocery Circular May 2026 Weekly Ad"
+store_meta_description: "ShopRite grocery circular May 2026. Find ShopRite weekly ad, promo code, digital coupons, and deals to save more on liquors, party foods and soda."
 store_keywords: "shoprite coupon code, shoprite promo code, shoprite discount code, shoprite deals, shoprite offers, shoprite grocery coupons, shoprite coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "ShopRite Grocery Circular (April 2026) Weekly Ad"
-store_og_description: "ShopRite grocery circular April 2026. Find ShopRite weekly ad, promo code, digital coupons, and deals to save more on liquors, party foods and soda."
+store_og_title: "ShopRite Grocery Circular May 2026 Weekly Ad"
+store_og_description: "ShopRite grocery circular May 2026. Find ShopRite weekly ad, promo code, digital coupons, and deals to save more on liquors, party foods and soda."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "shoprite"
 
 coupons:
-  - coupon_id: "1069"
+  - coupon_id: "1054"
     coupon_title: "ShopRite Digital Coupons"
     coupon_code: ""
     coupon_description: "Clip ShopRite digital coupons through your account to unlock weekly savings on groceries, snacks, beverages, and household essentials."
     coupon_aff_url: "https://www.shoprite.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1070"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1055"
     coupon_title: "ShopRite Weekly Ad Grocery Deals"
     coupon_code: ""
     coupon_description: "Browse the ShopRite weekly circular to find limited-time discounts on fresh produce, meats, dairy products, and pantry staples."
     coupon_aff_url: "https://www.shoprite.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 ShopRite is a well-known supermarket chain that serves millions of shoppers across the northeastern United States. The brand has built a reputation for offering affordable groceries, fresh ingredients, and a wide range of everyday products. Many customers rely on ShopRite for weekly grocery shopping because of its competitive pricing, convenient store locations, and frequent promotional offers.

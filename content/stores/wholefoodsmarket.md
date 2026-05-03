@@ -1,5 +1,5 @@
 ---
-title: "Whole Foods Market Weekly Flyer (April 2026)"
+title: "Whole Foods Market Weekly Flyer May 2026"
 slug: "wholefoodsmarket"
 description: "Whole foods market weekly flyer 2026. Discover whole foods market weekly ad, promo code, organic grocery deals, and discounts on healthy foods."
 
@@ -7,13 +7,13 @@ description: "Whole foods market weekly flyer 2026. Discover whole foods market 
 store_name: "Whole Foods Market"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Whole Foods Market Weekly Flyer (April 2026)"
-store_title: "Whole Foods Market Weekly Flyer (April 2026)"
+store_h1: "Whole Foods Market Weekly Flyer May 2026"
+store_title: "Whole Foods Market Weekly Flyer May 2026"
 store_meta_description: "Whole foods market weekly flyer 2026. Discover whole foods market weekly ad, promo code, organic grocery deals, and discounts on healthy foods."
 store_keywords: "whole foods market coupon code, whole foods market promo code, whole foods market discount code, whole foods market deals, whole foods market offers, whole foods market grocery coupons, whole foods market coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Whole Foods Market Weekly Flyer (April 2026)"
+store_og_title: "Whole Foods Market Weekly Flyer May 2026"
 store_og_description: "Whole foods market weekly flyer 2026. Discover whole foods market weekly ad, promo code, organic grocery deals, and discounts on healthy foods."
 store_og_image: ""
 store_og_type: "website"
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "wholefoodsmarket"
 
 coupons:
-  - coupon_id: "1103"
+  - coupon_id: "1088"
     coupon_title: "Whole Foods Weekly Sales"
     coupon_code: ""
     coupon_description: "Explore Whole Foods weekly sales to save on organic produce, natural groceries, snacks, and specialty foods."
     coupon_aff_url: "https://www.wholefoodsmarket.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1104"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1089"
     coupon_title: "Amazon Prime Member Deals at Whole Foods"
     coupon_code: ""
     coupon_description: "Amazon Prime members can access exclusive discounts and special pricing on select products at Whole Foods Market."
     coupon_aff_url: "https://www.wholefoodsmarket.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 Whole Foods Market is widely recognized as a leading retailer for natural, organic, and responsibly sourced food products. Known for its commitment to quality ingredients and transparent sourcing practices, the store has become a go-to destination for shoppers who prioritize healthy lifestyles and environmentally conscious choices.

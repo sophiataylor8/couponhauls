@@ -1,20 +1,20 @@
 ---
-title: "Food Lion Advertisement For This Week (April 2026)"
+title: "Food Lion Advertisement For This Week May 2026"
 slug: "foodlion"
-description: "Food lion advertisement for this week April 2026. Save more with food lion promo codes, digital coupons and weekly grocery deals on everyday essentials."
+description: "Food lion advertisement for this week May 2026. Save more with food lion promo codes, digital coupons and weekly grocery deals on everyday essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Food Lion"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Food Lion Advertisement For This Week (April 2026)"
-store_title: "Food Lion Advertisement For This Week (April 2026)"
-store_meta_description: "Food lion advertisement for this week April 2026. Save more with food lion promo codes, digital coupons and weekly grocery deals on everyday essentials."
+store_h1: "Food Lion Advertisement For This Week May 2026"
+store_title: "Food Lion Advertisement For This Week May 2026"
+store_meta_description: "Food lion advertisement for this week May 2026. Save more with food lion promo codes, digital coupons and weekly grocery deals on everyday essentials."
 store_keywords: "food lion coupon code, food lion promo code, food lion discount code, food lion deals, food lion offers, food lion grocery coupons, food lion coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Food Lion Advertisement For This Week (April 2026)"
-store_og_description: "Food lion advertisement for this week April 2026. Save more with food lion promo codes, digital coupons and weekly grocery deals on everyday essentials."
+store_og_title: "Food Lion Advertisement For This Week May 2026"
+store_og_description: "Food lion advertisement for this week May 2026. Save more with food lion promo codes, digital coupons and weekly grocery deals on everyday essentials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "foodlion"
 
 coupons:
-  - coupon_id: "1095"
+  - coupon_id: "1080"
     coupon_title: "Food Lion MVP Digital Coupons"
     coupon_code: ""
     coupon_description: "Join Food Lion MVP to clip digital coupons and receive exclusive grocery discounts and personalized deals."
     coupon_aff_url: "https://www.foodlion.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1096"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1081"
     coupon_title: "Food Lion Weekly Grocery Specials"
     coupon_code: ""
     coupon_description: "Check Food Lion weekly specials to save on fresh produce, meats, snacks, and household essentials."
     coupon_aff_url: "https://www.foodlion.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 Food Lion is a grocery retailer that serves communities across the southeastern United States. The supermarket chain focuses on providing affordable groceries, convenient store locations, and reliable customer service.

@@ -1,5 +1,5 @@
 ---
-title: "Jewel Osco Weekly Ad (April 2026) Weekly Flyer"
+title: "Jewel Osco Weekly Ad May 2026 Weekly Flyer"
 slug: "jewelosco"
 description: "Jewel Osco weekly ad 2026. Find verified Jewel Osco weekly flyer, promo code, digital grocery coupons, and deals for maximum savings."
 
@@ -7,13 +7,13 @@ description: "Jewel Osco weekly ad 2026. Find verified Jewel Osco weekly flyer, 
 store_name: "Jewel Osco"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Jewel Osco Weekly Ad (April 2026) Weekly Flyer"
-store_title: "Jewel Osco Weekly Ad (April 2026) Weekly Flyer"
+store_h1: "Jewel Osco Weekly Ad May 2026 Weekly Flyer"
+store_title: "Jewel Osco Weekly Ad May 2026 Weekly Flyer"
 store_meta_description: "Jewel Osco weekly ad 2026. Find verified Jewel Osco weekly flyer, promo code, digital grocery coupons, and deals for maximum savings."
 store_keywords: "jewel osco coupon code, jewel osco promo code, jewel osco discount code, jewel osco deals, jewel osco offers, jewel osco grocery coupons, jewel osco coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Jewel Osco Weekly Ad (April 2026) Weekly Flyer"
+store_og_title: "Jewel Osco Weekly Ad May 2026 Weekly Flyer"
 store_og_description: "Jewel Osco weekly ad 2026. Find verified Jewel Osco weekly flyer, promo code, digital grocery coupons, and deals for maximum savings."
 store_og_image: ""
 store_og_type: "website"
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "jewelosco"
 
 coupons:
-  - coupon_id: "1057"
+  - coupon_id: "1042"
     coupon_title: "myMixx Digital Coupons"
     coupon_code: ""
     coupon_description: "Sign up for myMixx to clip digital coupons and enjoy exclusive savings on groceries, beverages, snacks, and household essentials."
     coupon_aff_url: "https://www.jewelosco.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1058"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1043"
     coupon_title: "Jewel-Osco Weekly Grocery Deals"
     coupon_code: ""
     coupon_description: "Check the Jewel-Osco weekly ad to discover limited-time discounts on fresh produce, bakery items, meats, and everyday grocery staples."
     coupon_aff_url: "https://www.jewelosco.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 Jewel Osco is a well-known grocery retailer that offers a broad range of fresh foods, household products, and pharmacy services. The store has built a strong reputation for providing quality groceries, convenient shopping options, and competitive prices. Many customers rely on Jewel Osco for their everyday grocery needs, thanks to its wide product selection and reliable service.

@@ -1,20 +1,20 @@
 ---
-title: "Foods Co Weekly Ad (April 2026) Flyer"
+title: "Foods Co Weekly Ad May 2026 Flyer"
 slug: "foodsco"
-description: "Foods Co weekly ad april 2026. Save more with Foods Co flyer, promo codes, digital coupons, and grocery deals on everyday shopping."
+description: "Foods Co weekly ad May 2026. Save more with Foods Co flyer, promo codes, digital coupons, and grocery deals on everyday shopping."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Foods Co"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Foods Co Weekly Ad (April 2026) Flyer"
-store_title: "Foods Co Weekly Ad (April 2026) Flyer"
-store_meta_description: "Foods Co weekly ad april 2026. Save more with Foods Co flyer, promo codes, digital coupons, and grocery deals on everyday shopping."
+store_h1: "Foods Co Weekly Ad May 2026 Flyer"
+store_title: "Foods Co Weekly Ad May 2026 Flyer"
+store_meta_description: "Foods Co weekly ad May 2026. Save more with Foods Co flyer, promo codes, digital coupons, and grocery deals on everyday shopping."
 store_keywords: "foods co coupon code, foods co promo code, foods co discount code, foods co deals, foods co offers, foods co grocery coupons, foods co coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Foods Co Weekly Ad (April 2026) Flyer"
-store_og_description: "Foods Co weekly ad april 2026. Save more with Foods Co flyer, promo codes, digital coupons, and grocery deals on everyday shopping."
+store_og_title: "Foods Co Weekly Ad May 2026 Flyer"
+store_og_description: "Foods Co weekly ad May 2026. Save more with Foods Co flyer, promo codes, digital coupons, and grocery deals on everyday shopping."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "foodsco"
 
 coupons:
-  - coupon_id: "1123"
+  - coupon_id: "1108"
     coupon_title: "Foods Co Weekly Ad Deals"
     coupon_code: ""
     coupon_description: "Check the Foods Co weekly ad to find discounts on fresh produce, meats, dairy, and grocery staples."
     coupon_aff_url: "https://www.foodsco.net/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1124"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1109"
     coupon_title: "Foods Co Digital Coupons"
     coupon_code: ""
     coupon_description: "Clip digital coupons through your Foods Co account to unlock additional grocery savings."
     coupon_aff_url: "https://www.foodsco.net/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 Foods Co is a grocery retailer designed to provide customers with an efficient and affordable way to shop for everyday food items. Known for its warehouse-style layout and competitive pricing, the store attracts shoppers who want to stock up on groceries without paying the higher prices often found in traditional supermarkets.

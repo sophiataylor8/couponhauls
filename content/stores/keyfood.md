@@ -1,20 +1,20 @@
 ---
-title: "Key Food Supermarket Circular (April 2026) Weekly Ad"
+title: "Key Food Supermarket Circular May 2026 Weekly Ad"
 slug: "keyfood"
-description: "Key food supermarket circular april 2026. Save with Key Food weekly ad, promo codes, grocery coupons, and weekly deals on fresh essentials."
+description: "Key food supermarket circular May 2026. Save with Key Food weekly ad, promo codes, grocery coupons, and weekly deals on fresh essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Key Food"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Key Food Supermarket Circular (April 2026) Weekly Ad"
-store_title: "Key Food Supermarket Circular (April 2026) Weekly Ad"
-store_meta_description: "Key food supermarket circular april 2026. Save with Key Food weekly ad, promo codes, grocery coupons, and weekly deals on fresh essentials."
+store_h1: "Key Food Supermarket Circular May 2026 Weekly Ad"
+store_title: "Key Food Supermarket Circular May 2026 Weekly Ad"
+store_meta_description: "Key food supermarket circular May 2026. Save with Key Food weekly ad, promo codes, grocery coupons, and weekly deals on fresh essentials."
 store_keywords: "key food coupon code, key food promo code, key food discount code, key food deals, key food offers, key food grocery coupons, key food coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Key Food Supermarket Circular (April 2026) Weekly Ad"
-store_og_description: "Key food supermarket circular april 2026. Save with Key Food weekly ad, promo codes, grocery coupons, and weekly deals on fresh essentials."
+store_og_title: "Key Food Supermarket Circular May 2026 Weekly Ad"
+store_og_description: "Key food supermarket circular May 2026. Save with Key Food weekly ad, promo codes, grocery coupons, and weekly deals on fresh essentials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "keyfood"
 
 coupons:
-  - coupon_id: "1145"
+  - coupon_id: "1130"
     coupon_title: "Key Food Weekly Grocery Deals"
     coupon_code: ""
     coupon_description: "Browse the Key Food weekly circular to save on fresh foods, beverages, snacks, and everyday essentials."
     coupon_aff_url: "https://www.keyfood.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1146"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1131"
     coupon_title: "Key Food In-Store Promotions"
     coupon_code: ""
     coupon_description: "Find rotating in-store promotions and seasonal grocery specials at participating Key Food locations."
     coupon_aff_url: "https://www.keyfood.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 Key Food is a grocery retailer that emphasizes community-based shopping while offering a broad selection of everyday food items and household products. Many customers appreciate the store’s convenient locations and diverse product offerings, which make it easy to complete weekly grocery shopping close to home.

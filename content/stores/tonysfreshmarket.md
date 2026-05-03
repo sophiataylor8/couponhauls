@@ -1,20 +1,20 @@
 ---
-title: "Tony's Fresh Market Weekly Ad (April 2026)"
+title: "Tony's Fresh Market Weekly Ad May 2026"
 slug: "tonysfreshmarket"
-description: "Tony's fresh market weekly ad April 2026.  Find Tony's Fresh Market flyer, promo codes, grocery coupons, and deals to save on fresh foods and essentials."
+description: "Tony's fresh market weekly ad May 2026.  Find Tony's Fresh Market flyer, promo codes, grocery coupons, and deals to save on fresh foods and essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Tony's Fresh Market"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Tony's Fresh Market Weekly Ad (April 2026)"
-store_title: "Tony's Fresh Market Weekly Ad (April 2026)"
-store_meta_description: "Tony's fresh market weekly ad April 2026.  Find Tony's Fresh Market flyer, promo codes, grocery coupons, and deals to save on fresh foods and essentials."
+store_h1: "Tony's Fresh Market Weekly Ad May 2026"
+store_title: "Tony's Fresh Market Weekly Ad May 2026"
+store_meta_description: "Tony's fresh market weekly ad May 2026.  Find Tony's Fresh Market flyer, promo codes, grocery coupons, and deals to save on fresh foods and essentials."
 store_keywords: "tonys fresh market coupon code, tonys fresh market promo code, tonys fresh market discount code, tonys fresh market deals, tonys fresh market offers, tonys fresh market grocery coupons, tonys fresh market coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Tony's Fresh Market Weekly Ad (April 2026)"
-store_og_description: "Tony's fresh market weekly ad April 2026.  Find Tony's Fresh Market flyer, promo codes, grocery coupons, and deals to save on fresh foods and essentials."
+store_og_title: "Tony's Fresh Market Weekly Ad May 2026"
+store_og_description: "Tony's fresh market weekly ad May 2026.  Find Tony's Fresh Market flyer, promo codes, grocery coupons, and deals to save on fresh foods and essentials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "tonysfreshmarket"
 
 coupons:
-  - coupon_id: "1107"
+  - coupon_id: "1092"
     coupon_title: "Tony's Weekly Market Specials"
     coupon_code: ""
     coupon_description: "Browse Tony's Fresh Market weekly specials to save on fresh produce, meats, bakery items, and grocery essentials."
     coupon_aff_url: "https://www.tonysfreshmarket.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1108"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1093"
     coupon_title: "Tony's Fresh Market In-Store Promotions"
     coupon_code: ""
     coupon_description: "Find rotating in-store promotions and seasonal grocery savings at participating Tony's Fresh Market locations."
     coupon_aff_url: "https://www.tonysfreshmarket.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 Tony's Fresh Market is a grocery retailer known for its diverse food selection, fresh ingredients, and strong connection to local communities. With multiple store locations serving customers across the Midwest, the market has earned recognition for offering both everyday grocery staples and a variety of international products that reflect the multicultural neighborhoods it serves.

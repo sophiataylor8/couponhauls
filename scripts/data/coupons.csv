@@ -1,157 +1,257 @@
 store_id,store_name,coupon_id,coupon_title,coupon_code,coupon_description,coupon_aff_url,coupon_type,coupon_start,coupon_expired,coupon_created
-1,Amazon,1001,Free Shipping on Orders Over $25,FREESHIPAMZ,Free delivery on qualifying deals,https://www.amazon.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-1,Amazon,1002,Flat 10% Off on Select Items,SAVE10AMZ,Discount on eligible products,https://www.amazon.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-2,Costco,1003,$15 Off Orders $100+,COST15OFF,Big savings on bulk checkout,https://www.costco.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-2,Costco,1004,Grocery Savings 10%,COSTGROC10,Grocery onsite discount,https://www.costco.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-2,Costco,1005,Get a $45 Digital Costco Shop Card,SPRING26,Sign Up for Costco Membership,https://www.costco.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-3,Wayfair,1006,5% Off Home Decor,HOME5WAYF,Home decor discount,https://www.wayfair.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-3,Wayfair,1007,Extra 12% Furniture Sale,WAY12SAVE,Discount on select furniture,https://www.wayfair.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-3,Wayfair,1008,Furniture and decor at up to 70% off,,,https://www.wayfair.com/daily-sales,Deal,21/04/2026,31/12/2030,21/04/2026
-3,Wayfair,1009,Free Shipping Over $35,,,https://www.wayfair.com/wayfair-rewards,Deal,21/04/2026,31/12/2030,21/04/2026
-3,Wayfair,1010,"Get 10% off one qualifying order, up to $150",,Customer’s first order only,https://www.wayfair.com/coupon-codes-policy,Deal,21/04/2026,31/12/2030,21/04/2026
-4,Adidas,1011,15% Off Sports Clothing,ADI15FIT,Save on activewear,https://www.adidas.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-4,Adidas,1012,Extra 10% On Shoes,ADISHOES10,Discount on footwear,https://www.adidas.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-4,Adidas,1013,15% Off,FC15,,https://www.adidas.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-4,Adidas,1014,15% Off,SD15,,https://www.adidas.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-4,Adidas,1015,25% Off,ADP22GCHS,,https://www.adidas.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-4,Adidas,1016,15% Off,OFF15,,https://www.adidas.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-5,Etsy,1017,10% Craft Supplies Sale,ETSYCRAFT10,Handmade crafts discount,https://www.etsy.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-5,Etsy,1018,25% Off,COMEBACK,shop: Forestfablesshop,https://www.etsy.com/shop/ForestFablesShop,Coupon,21/04/2026,31/12/2030,21/04/2026
-5,Etsy,1019,$5 Off,FIRST5,,https://www.etsy.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-5,Etsy,1020,5% Off Vintage Gifts,ETSYGIFT5,Save on vintage products,https://www.etsy.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-6,Home Depot,1021,Free Shipping over $50,HDFREESHIP50,Shipping discount,https://www.homedepot.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-6,Home Depot,1022,20% Off,ELECTROLUX20,,https://www.homedepot.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-6,Home Depot,1023,1% Off,SAMPLESAVE10,,https://www.homedepot.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-6,Home Depot,1024,Tools Extra 8% Off,HDTOOL8,Save on tools,https://www.homedepot.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-7,Nike,1025,Nike Shoes 10% Off,NIKESHOE10,Discount on footwear,https://www.nike.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-7,Nike,1026,20% Off,AE66C4E0,,https://www.nike.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-7,Nike,1027,15% Off,15EXTRA,,https://www.nike.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-7,Nike,1028,25% Off,STRONG,,https://www.nike.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-7,Nike,1029,7% Off Fitness Gear,NIKEFIT7,Activewear discount,https://www.nike.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-8,Overstock,1030,Rugs Extra 5%,OSTRUGS5,Rug category discount,https://www.overstock.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-8,Overstock,1031,Furniture Clearance 10%,OSTOCK10,Home items discount,https://www.overstock.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-9,CVS,1032,Beauty Deals 8%,CVSBEAUTY8,Cosmetics savings,https://www.cvs.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-9,CVS,1033,10% on Health Products,CVSHEALTH10,Pharmacy discount,https://www.cvs.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-10,Target,1034,$10 Off Orders $75+,TARGETSAVE10,Minimum spend discount,https://www.target.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-10,Target,1035,Grocery 5% Discount,TARGETGROC5,Grocery & essentials,https://www.target.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-11,Walgreens,1036,10% Off Prescriptions,WGPRES10,Savings on pharmacy items,https://www.walgreens.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-11,Walgreens,1037,Buy 1 Get 1 Beauty,WGBEAUTY,Select cosmetics offer,https://www.walgreens.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-12,Walmart,1038,Walmart Essentials 5%,WMTESS5,Groceries & essentials,https://www.walmart.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-12,Walmart,1039,Electronics Extra 8%,WMTECH8,Tech discount,https://www.walmart.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-13,Kohls,1040,Buy 2 Get 10%,KOHLBUY2,Multi-buy savings,https://www.kohls.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-13,Kohls,1041,12% Off Fashion,KOHL12SAVE,Apparel discount,https://www.kohls.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-13,Kohls,1042,20% Off,CODE20OFF,discount on sale,https://www.kohls.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-14,Macys,1043,Shoes Extra 7%,MACSHOE7,Footwear promo,https://www.macys.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-14,Macys,1044,15% Clothing Sale,MACYS15,Apparel discount,https://www.macys.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-15,Best Buy,1045,10% On Laptops,BBYLAB10,Save on computing,https://www.bestbuy.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-15,Best Buy,1046,Smart TV Savings 8%,,Electronics discount,https://www.bestbuy.com/,Deal,21/04/2026,31/12/2030,21/04/2026
-16,Tesco,1047,Groceries 7% Off,TESCOGROC7,Grocery & fresh products,https://www.tesco.com/,Coupon,21/04/2026,31/12/2030,21/04/2026
-16,Tesco,1048,Free Delivery $40+,,Delivery discount,https://www.tesco.com/,Deal,21/04/2026,31/12/2030,21/04/2026
-17,Ocean State Job Lot,1049,Crazy Deals Gift Card Offers,,Shop select Crazy Deals items and receive a store gift card worth a percentage of the purchase value after buying qualifying products.,https://www.oceanstatejoblot.com/,Deal,21/04/2026,31/12/2030,21/04/2026
-17,Ocean State Job Lot,1050,Job Lot Insider Club Exclusive Savings,,"Join the free Insider Club to unlock member-only pricing, special promotions, and seasonal discounts across many store items.",https://www.oceanstatejoblot.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-18,Pavilions,1051,Pavilions for U Digital Coupons,,"Clip digital coupons through the Pavilions for U program and save on groceries, produce, meat, and household essentials each week.",https://www.pavilions.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-18,Pavilions,1052,Weekly Grocery Deals at Pavilions,,"Shop the weekly ad to find limited-time discounts on fresh produce, deli items, snacks, beverages, and everyday groceries.",https://www.pavilions.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-19,Randalls,1053,Randalls for U Member Savings,,Sign in to your Randalls account to access personalized digital coupons and exclusive savings through the Randalls for U program.,https://www.randalls.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-19,Randalls,1054,Weekly Ad Grocery Discounts,,"Browse Randalls weekly ad to save on fresh foods, pantry items, beverages, and seasonal grocery promotions.",https://www.randalls.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-20,Tom Thumb,1055,Tom Thumb for U Digital Deals,,Unlock weekly grocery discounts and personalized offers by clipping digital coupons through the Tom Thumb for U rewards program.,https://www.tomthumb.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-20,Tom Thumb,1056,BOGO Grocery Promotions,,"Find buy-one-get-one free offers on select snacks, beverages, frozen foods, and pantry items during weekly Tom Thumb promotions.",https://www.tomthumb.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-21,Jewel Osco,1057,myMixx Digital Coupons,,"Sign up for myMixx to clip digital coupons and enjoy exclusive savings on groceries, beverages, snacks, and household essentials.",https://www.jewelosco.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-21,Jewel Osco,1058,Jewel-Osco Weekly Grocery Deals,,"Check the Jewel-Osco weekly ad to discover limited-time discounts on fresh produce, bakery items, meats, and everyday grocery staples.",https://www.jewelosco.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-22,Safeway,1059,Safeway for U Digital Coupons,,Sign in to your Safeway account and clip Safeway for U digital coupons to unlock personalized grocery discounts and weekly savings.,https://www.safeway.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-22,Safeway,1060,Safeway Weekly Ad Grocery Deals,,"Check the Safeway weekly ad to find limited-time deals on fresh produce, meats, bakery items, snacks, and household essentials.",https://www.safeway.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-23,Vons,1061,Vons for U Member Savings,,"Join the Vons for U loyalty program to access digital coupons, personalized offers, and exclusive weekly grocery savings.",https://www.vons.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-23,Vons,1062,Vons Weekly Grocery Promotions,,"Browse the Vons weekly ad to discover special discounts on produce, deli foods, beverages, and pantry staples.",https://www.vons.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-24,Albertsons,1063,Albertsons for U Digital Deals,,Sign up for Albertsons for U to clip digital coupons and enjoy personalized grocery discounts and weekly promotions.,https://www.albertsons.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-24,Albertsons,1064,Albertsons Weekly Ad Savings,,"Explore Albertsons weekly ad to save on fresh produce, meats, bakery goods, beverages, and everyday grocery items.",https://www.albertsons.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-25,Superior Grocers,1065,Superior Grocers Weekly Ad Deals,,"Shop the Superior Grocers weekly ad for discounts on fresh fruits, vegetables, meats, and everyday grocery essentials.",https://superiorgrocers.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-25,Superior Grocers,1066,In-Store Weekly Specials,,"Find rotating in-store promotions and limited-time grocery specials across produce, pantry staples, and household products.",https://superiorgrocers.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-26,Cardenas,1067,Cardenas Weekly Market Specials,,"Browse Cardenas Markets weekly specials to save on fresh produce, meats, bakery items, and authentic Hispanic groceries.",https://www.cardenasmarkets.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-26,Cardenas,1068,Fresh Produce Weekly Discounts,,"Enjoy weekly discounts on fresh fruits, vegetables, and traditional grocery products available in Cardenas Markets stores.",https://www.cardenasmarkets.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-27,ShopRite,1069,ShopRite Digital Coupons,,"Clip ShopRite digital coupons through your account to unlock weekly savings on groceries, snacks, beverages, and household essentials.",https://www.shoprite.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-27,ShopRite,1070,ShopRite Weekly Ad Grocery Deals,,"Browse the ShopRite weekly circular to find limited-time discounts on fresh produce, meats, dairy products, and pantry staples.",https://www.shoprite.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-28,Stop and Shop,1071,Stop & Shop GO Rewards Savings,,Join Stop & Shop GO Rewards to earn points on purchases and redeem them for grocery discounts and fuel savings.,https://stopandshop.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-28,Stop and Shop,1072,Stop & Shop Weekly Grocery Specials,,"Check the Stop & Shop weekly ad to save on produce, meats, snacks, frozen foods, and everyday grocery essentials.",https://stopandshop.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-9,CVS,1073,CVS ExtraCare Rewards Deals,,"Join CVS ExtraCare to earn ExtraBucks rewards and access exclusive discounts on health, beauty, and everyday essentials.",https://www.cvs.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-9,CVS,1074,CVS Weekly Ad Pharmacy & Beauty Deals,,"Shop the CVS weekly ad for limited-time deals on pharmacy items, beauty products, snacks, and household essentials.",https://www.cvs.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-29,Market Basket,1075,Market Basket Weekly Flyer Deals,,"View the Market Basket weekly flyer to discover discounts on fresh produce, meats, dairy, and grocery staples.",https://www.shopmarketbasket.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-29,Market Basket,1076,In-Store Grocery Specials at Market Basket,,Find rotating in-store promotions and seasonal grocery savings available at participating Market Basket locations.,https://www.shopmarketbasket.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-30,Price Chopper,1077,Price Chopper AdvantEdge Digital Coupons,,Sign up for AdvantEdge Rewards to clip digital coupons and receive exclusive savings on groceries and household essentials.,https://www.pricechopper.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-30,Price Chopper,1078,Price Chopper Weekly Grocery Deals,,"Browse the Price Chopper weekly ad for special discounts on fresh foods, snacks, beverages, and everyday grocery items.",https://www.pricechopper.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-31,Sprouts,1079,Sprouts Weekly Ad Fresh Deals,,"Browse the Sprouts weekly ad to save on fresh produce, natural groceries, vitamins, and organic products.",https://www.sprouts.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-31,Sprouts,1080,Sprouts Digital Coupons,,"Clip Sprouts digital coupons through your account to unlock savings on healthy foods, snacks, supplements, and household items.",https://www.sprouts.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-32,QFC,1081,QFC Weekly Grocery Deals,,"Check the QFC weekly ad to find discounts on fresh produce, meats, bakery items, and everyday grocery essentials.",https://www.qfc.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-32,QFC,1082,QFC Digital Coupons & Rewards,,Sign in to your QFC account to clip digital coupons and access personalized grocery deals and member savings.,https://www.qfc.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-33,Kroger,1083,Kroger Weekly Ad Savings,,"Explore the Kroger weekly ad for limited-time discounts on fresh foods, snacks, beverages, and household essentials.",https://www.kroger.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-33,Kroger,1084,Kroger Digital Coupons,,Clip Kroger digital coupons through your account to enjoy personalized grocery discounts and exclusive online deals.,https://www.kroger.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-34,Big Lots,1085,Big Lots Clearance Deals,,"Shop Big Lots clearance section to find deep discounts on furniture, home decor, seasonal items, and household essentials.",https://www.biglots.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-34,Big Lots,1086,Big Rewards Member Savings,,"Join Big Rewards to access exclusive coupons, member-only pricing, and special promotions at Big Lots.",https://www.biglots.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-35,Loblaws,1087,Loblaws Weekly Flyer Deals,,"Check the Loblaws weekly flyer to discover grocery discounts on fresh produce, bakery goods, meats, and pantry staples.",https://www.loblaws.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-35,Loblaws,1088,PC Optimum Rewards Offers,,Earn and redeem points with PC Optimum while shopping at Loblaws and enjoy exclusive member-only grocery deals.,https://www.loblaws.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-36,Boscov's,1089,Boscov's Clearance & Doorbuster Deals,,"Shop Boscov's clearance and doorbuster promotions to save on clothing, shoes, home goods, and seasonal products.",https://www.boscovs.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-36,Boscov's,1090,Boscov's Weekly Sales & Promotions,,"Check Boscov's latest sales for limited-time discounts on fashion, beauty products, and home essentials.",https://www.boscovs.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-37,Smith's,1091,Smith's Digital Coupons,,"Clip digital coupons through your Smith's account to unlock savings on groceries, beverages, and household essentials.",https://www.smithsfoodanddrug.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-37,Smith's,1092,Smith's Weekly Ad Grocery Deals,,"Browse the Smith's weekly ad to discover discounts on produce, meats, dairy products, and pantry staples.",https://www.smithsfoodanddrug.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-38,Cabela's,1093,Cabela's Outdoor Gear Clearance,,"Save on hunting gear, fishing equipment, camping essentials, and outdoor apparel in the Cabela's clearance section.",https://www.cabelas.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-38,Cabela's,1094,Cabela's Seasonal Sales Event,,"Shop seasonal promotions at Cabela's for discounts on outdoor gear, footwear, and sporting goods.",https://www.cabelas.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-39,Food Lion,1095,Food Lion MVP Digital Coupons,,Join Food Lion MVP to clip digital coupons and receive exclusive grocery discounts and personalized deals.,https://www.foodlion.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-39,Food Lion,1096,Food Lion Weekly Grocery Specials,,"Check Food Lion weekly specials to save on fresh produce, meats, snacks, and household essentials.",https://www.foodlion.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-12,Walmart,1097,Walmart Rollback Deals,,"Shop Walmart Rollback deals for temporary price reductions on electronics, groceries, home products, and more.",https://www.walmart.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-12,Walmart,1098,Walmart Clearance & Special Buys,,"Find major discounts in Walmart's clearance section on electronics, apparel, home goods, and seasonal items.",https://www.walmart.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-40,Smart and Final,1099,Smart & Final Weekly Deals,,"Check Smart & Final weekly ads to save on bulk groceries, fresh produce, meats, and household essentials.",https://www.smartandfinal.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-40,Smart and Final,1100,Smart & Final Digital Coupons,,Clip Smart & Final digital coupons to unlock additional discounts on groceries and everyday products.,https://www.smartandfinal.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-41,Tops Friendly Markets,1101,Tops BonusPlus Rewards Deals,,"Sign up for Tops BonusPlus to access digital coupons, personalized grocery deals, and member savings.",https://www.topsmarkets.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-41,Tops Friendly Markets,1102,Tops Weekly Grocery Specials,,"Browse the Tops weekly ad for discounts on fresh produce, meats, dairy products, and pantry staples.",https://www.topsmarkets.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-42,Whole Foods Market,1103,Whole Foods Weekly Sales,,"Explore Whole Foods weekly sales to save on organic produce, natural groceries, snacks, and specialty foods.",https://www.wholefoodsmarket.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-42,Whole Foods Market,1104,Amazon Prime Member Deals at Whole Foods,,Amazon Prime members can access exclusive discounts and special pricing on select products at Whole Foods Market.,https://www.wholefoodsmarket.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-43,United Supermarkets,1105,United Rewards Digital Coupons,,Join United Rewards to clip digital coupons and enjoy personalized savings on groceries and household items.,https://www.unitedsupermarkets.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-43,United Supermarkets,1106,United Supermarkets Weekly Ad Deals,,"Check the weekly ad to find special discounts on produce, meats, bakery items, and everyday groceries.",https://www.unitedsupermarkets.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-44,Tony's Fresh Market,1107,Tony's Weekly Market Specials,,"Browse Tony's Fresh Market weekly specials to save on fresh produce, meats, bakery items, and grocery essentials.",https://www.tonysfreshmarket.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-44,Tony's Fresh Market,1108,Tony's Fresh Market In-Store Promotions,,Find rotating in-store promotions and seasonal grocery savings at participating Tony's Fresh Market locations.,https://www.tonysfreshmarket.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-45,Times Supermarket,1109,Times Supermarket Weekly Ad Deals,,"Check the Times Supermarket weekly ad to save on fresh produce, meats, seafood, and everyday grocery items.",https://www.timessupermarkets.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-45,Times Supermarket,1110,Times Supermarket In-Store Specials,,Find rotating in-store promotions and limited-time discounts on groceries and household essentials.,https://www.timessupermarkets.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-46,PetSmart,1111,PetSmart Treats Rewards Member Deals,,Join PetSmart Treats Rewards to earn points on purchases and unlock exclusive member-only discounts on pet products.,https://www.petsmart.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-46,PetSmart,1112,PetSmart Weekly Pet Supplies Sale,,"Shop PetSmart weekly sales for discounts on pet food, toys, grooming products, and accessories.",https://www.petsmart.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-47,Big 5 Sporting Goods,1113,Big 5 Weekly Sporting Goods Deals,,"Check the Big 5 weekly ad to save on athletic footwear, outdoor gear, sports equipment, and apparel.",https://www.big5sportinggoods.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-47,Big 5 Sporting Goods,1114,Big 5 Clearance & Seasonal Sales,,"Shop clearance and seasonal promotions at Big 5 for discounts on camping gear, fitness equipment, and sportswear.",https://www.big5sportinggoods.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-48,Harbor Freight,1115,Harbor Freight Inside Track Club Savings,,"Join Harbor Freight Inside Track Club to access exclusive discounts, special pricing, and member-only deals.",https://www.harborfreight.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-48,Harbor Freight,1116,Harbor Freight Clearance & Parking Lot Sales,,Find major discounts on tools and equipment during Harbor Freight clearance events and Parking Lot sales.,https://www.harborfreight.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-49,Food Basics,1117,Food Basics Weekly Flyer Deals,,"Browse the Food Basics weekly flyer to discover savings on fresh produce, meats, dairy, and pantry staples.",https://www.foodbasics.ca/,Deal,21/04/2026,31/12/2026,21/04/2026
-49,Food Basics,1118,Food Basics Grocery Specials,,Shop weekly grocery specials at Food Basics for limited-time discounts on everyday essentials.,https://www.foodbasics.ca/,Deal,21/04/2026,31/12/2026,21/04/2026
-50,No Frills,1119,No Frills Weekly Flyer Savings,,"Check the No Frills weekly flyer to find deals on produce, meats, packaged foods, and everyday groceries.",https://www.nofrills.ca/,Deal,21/04/2026,31/12/2026,21/04/2026
-50,No Frills,1120,PC Optimum Points Offers,,Earn and redeem PC Optimum points on eligible purchases at No Frills and enjoy exclusive member deals.,https://www.nofrills.ca/,Deal,21/04/2026,31/12/2026,21/04/2026
-51,Sobeys,1121,Sobeys Weekly Flyer Grocery Deals,,"Browse the Sobeys weekly flyer to save on fresh foods, snacks, beverages, and everyday grocery essentials.",https://www.sobeys.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-51,Sobeys,1122,Scene+ Rewards Member Offers,,Earn and redeem Scene+ points while shopping at Sobeys and enjoy special member-only grocery deals.,https://www.sobeys.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-52,Foods Co,1123,Foods Co Weekly Ad Deals,,"Check the Foods Co weekly ad to find discounts on fresh produce, meats, dairy, and grocery staples.",https://www.foodsco.net/,Deal,21/04/2026,31/12/2026,21/04/2026
-52,Foods Co,1124,Foods Co Digital Coupons,,Clip digital coupons through your Foods Co account to unlock additional grocery savings.,https://www.foodsco.net/,Deal,21/04/2026,31/12/2026,21/04/2026
-53,County Market,1125,County Market Weekly Ad Specials,,"Browse the County Market weekly ad to discover deals on fresh foods, bakery items, and household products.",https://www.mycountymarket.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-53,County Market,1126,County Market Digital Coupons,,"Clip County Market digital coupons to save on groceries, beverages, snacks, and everyday essentials.",https://www.mycountymarket.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-54,FreshCo,1127,FreshCo Weekly Flyer Deals,,"Check the FreshCo weekly flyer to save on fresh produce, meats, pantry items, and grocery essentials.",https://freshco.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-54,FreshCo,1128,Scene+ Rewards Offers at FreshCo,,Earn Scene+ points and access exclusive member promotions while shopping at FreshCo stores.,https://freshco.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-55,Shaw's,1129,Shaw's for U Digital Coupons,,Sign up for Shaw's for U to clip digital coupons and unlock personalized savings on groceries and household essentials.,https://www.shaws.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-55,Shaw's,1130,Shaw's Weekly Grocery Deals,,"Browse the Shaw's weekly ad to find discounts on fresh produce, meats, bakery items, and everyday grocery products.",https://www.shaws.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-56,Bass Pro,1131,Bass Pro Outdoor Gear Clearance,,"Shop Bass Pro clearance section for discounts on fishing gear, hunting equipment, camping supplies, and outdoor apparel.",https://www.basspro.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-56,Bass Pro,1132,Bass Pro Seasonal Outdoor Sale,,"Find seasonal promotions on outdoor gear, footwear, and sporting equipment at Bass Pro Shops.",https://www.basspro.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-57,King Kullen,1133,King Kullen Weekly Ad Specials,,"Check the King Kullen weekly circular to save on fresh produce, meats, dairy products, and grocery essentials.",https://kingkullen.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-57,King Kullen,1134,King Kullen Digital Coupons,,Clip digital coupons through your King Kullen account to unlock extra grocery savings each week.,https://kingkullen.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-58,Shoppers,1135,Shoppers Weekly Grocery Specials,,"Browse Shoppers weekly deals to discover savings on fresh foods, pantry staples, and household products.",https://www.shoppersfood.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-58,Shoppers,1136,Shoppers Digital Coupon Savings,,Access digital coupons through the Shoppers website or app to save on groceries and everyday essentials.,https://www.shoppersfood.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-59,Metro Market,1137,Metro Market Weekly Ad Deals,,"Check the Metro Market weekly ad to find grocery discounts on fresh produce, meats, bakery items, and beverages.",https://www.metromarket.net/,Deal,21/04/2026,31/12/2026,21/04/2026
-59,Metro Market,1138,Metro Market Digital Coupons,,Clip digital coupons through your Metro Market account to enjoy personalized grocery savings.,https://www.metromarket.net/,Deal,21/04/2026,31/12/2026,21/04/2026
-60,Big Y,1139,Big Y myPicks Digital Coupons,,Join Big Y myPicks to clip digital coupons and access exclusive grocery savings and personalized offers.,https://www.bigy.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-60,Big Y,1140,Big Y Weekly Grocery Specials,,"Shop Big Y weekly specials to save on fresh produce, meats, dairy products, and everyday groceries.",https://www.bigy.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-61,ACME,1141,ACME for U Digital Coupons,,Sign up for ACME for U to access digital coupons and personalized grocery deals.,https://www.acmemarkets.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-61,ACME,1142,ACME Weekly Grocery Deals,,"Browse the ACME weekly ad to discover discounts on produce, meats, bakery items, and pantry staples.",https://www.acmemarkets.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-62,Foodtown,1143,Foodtown Weekly Ad Savings,,"Check the Foodtown weekly circular for deals on fresh produce, meats, dairy, and grocery essentials.",https://www.foodtown.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-62,Foodtown,1144,Foodtown Digital Coupon Deals,,Clip Foodtown digital coupons to unlock extra savings on groceries and household products.,https://www.foodtown.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-63,Key Food,1145,Key Food Weekly Grocery Deals,,"Browse the Key Food weekly circular to save on fresh foods, beverages, snacks, and everyday essentials.",https://www.keyfood.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-63,Key Food,1146,Key Food In-Store Promotions,,Find rotating in-store promotions and seasonal grocery specials at participating Key Food locations.,https://www.keyfood.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-64,Clayton Ranch Market,1147,Ranch Market Weekly Specials,,"Shop the Ranch Market weekly specials for savings on fresh produce, meats, and everyday groceries.",https://www.ranchmkt.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-64,Clayton Ranch Market,1148,Ranch Market Fresh Food Deals,,Find rotating grocery deals and in-store promotions at Ranch Market locations.,https://www.ranchmkt.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-65,CTown Supermarkets,1149,CTown Weekly Ad Deals,,"Browse the CTown weekly ad to find discounts on fresh produce, meats, and pantry staples.",https://www.ctownsupermarkets.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-65,CTown Supermarkets,1150,CTown Grocery Specials,,Discover rotating grocery specials and in-store deals at CTown Supermarkets.,https://www.ctownsupermarkets.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-66,Food Bazaar Supermarket,1151,Food Bazaar Weekly Market Deals,,"Check the Food Bazaar weekly ad for savings on fresh produce, meats, seafood, and grocery items.",https://www.foodbazaar.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-66,Food Bazaar Supermarket,1152,Food Bazaar In-Store Promotions,,Find rotating in-store deals and seasonal grocery discounts at Food Bazaar Supermarket locations.,https://www.foodbazaar.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-67,Charles Tyrwhitt,1153,Charles Tyrwhitt Multi-Buy Shirt Offer,,"Shop multi-buy deals on dress shirts, often featuring bundle pricing when purchasing multiple shirts in one order.",https://www.charlestyrwhitt.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-67,Charles Tyrwhitt,1154,Charles Tyrwhitt Seasonal Sale,,"Enjoy seasonal promotions with discounts on shirts, suits, shoes, and accessories during limited-time sales events.",https://www.charlestyrwhitt.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-68,Ulta,1155,Ulta Beauty Weekly Beauty Deals,,"Shop Ulta weekly deals to save on makeup, skincare, haircare, and beauty tools from top brands.",https://www.ulta.com/,Deal,21/04/2026,31/12/2026,21/04/2026
-68,Ulta,1156,Ulta Ultamate Rewards Points Offers,,Earn and redeem points with Ultamate Rewards and access exclusive member-only discounts on beauty products.,https://www.ulta.com/,Deal,21/04/2026,31/12/2026,21/04/2026
+1,Amazon,1001,Free Shipping on Orders Over $25,FREESHIPAMZ,Free delivery on qualifying deals,https://www.amazon.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+1,Amazon,1002,Flat 10% Off on Select Items,SAVE10AMZ,Discount on eligible products,https://www.amazon.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+2,Costco,1003,$15 Off Orders $100+,COST15OFF,Big savings on bulk checkout,https://www.costco.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+2,Costco,1004,Grocery Savings 10%,COSTGROC10,Grocery onsite discount,https://www.costco.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+3,Wayfair,1005,5% Off Home Decor,HOME5WAYF,Home decor discount,https://www.wayfair.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+3,Wayfair,1006,Extra 12% Furniture Sale,WAY12SAVE,Discount on select furniture,https://www.wayfair.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+4,Adidas,1007,15% Off Sports Clothing,ADI15FIT,Save on activewear,https://www.adidas.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+4,Adidas,1008,Extra 10% On Shoes,ADISHOES10,Discount on footwear,https://www.adidas.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+5,Etsy,1009,10% Craft Supplies Sale,ETSYCRAFT10,Handmade crafts discount,https://www.etsy.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+5,Etsy,1010,5% Off Vintage Gifts,ETSYGIFT5,Save on vintage products,https://www.etsy.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+6,Home Depot,1011,Free Shipping over $50,HDFREESHIP50,Shipping discount,https://www.homedepot.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+6,Home Depot,1012,Tools Extra 8% Off,HDTOOL8,Save on tools,https://www.homedepot.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+7,Nike,1013,Nike Shoes 10% Off,NIKESHOE10,Discount on footwear,https://www.nike.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+7,Nike,1014,7% Off Fitness Gear,NIKEFIT7,Activewear discount,https://www.nike.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+8,Overstock,1015,Rugs Extra 5%,OSTRUGS5,Rug category discount,https://www.overstock.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+8,Overstock,1016,Furniture Clearance 10%,OSTOCK10,Home items discount,https://www.overstock.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+9,CVS,1017,Beauty Deals 8%,CVSBEAUTY8,Cosmetics savings,https://www.cvs.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+9,CVS,1018,10% on Health Products,CVSHEALTH10,Pharmacy discount,https://www.cvs.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+10,Target,1019,$10 Off Orders $75+,TARGETSAVE10,Minimum spend discount,https://www.target.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+10,Target,1020,Grocery 5% Discount,TARGETGROC5,Grocery & essentials,https://www.target.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+11,Walgreens,1021,10% Off Prescriptions,WGPRES10,Savings on pharmacy items,https://www.walgreens.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+11,Walgreens,1022,Buy 1 Get 1 Beauty,WGBEAUTY,Select cosmetics offer,https://www.walgreens.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+12,Walmart,1023,Walmart Essentials 5%,WMTESS5,Groceries & essentials,https://www.walmart.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+12,Walmart,1024,Electronics Extra 8%,WMTECH8,Tech discount,https://www.walmart.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+13,Kohls,1025,Buy 2 Get 10%,KOHLBUY2,Multi-buy savings,https://www.kohls.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+13,Kohls,1026,12% Off Fashion,KOHL12SAVE,Apparel discount,https://www.kohls.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+13,Kohls,1027,20% Off,CODE20OFF,discount on sale,https://www.kohls.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+14,Macys,1028,Shoes Extra 7%,MACSHOE7,Footwear promo,https://www.macys.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+14,Macys,1029,15% Clothing Sale,MACYS15,Apparel discount,https://www.macys.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+15,Best Buy,1030,10% On Laptops,BBYLAB10,Save on computing,https://www.bestbuy.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+15,Best Buy,1031,Smart TV Savings 8%,,Electronics discount,https://www.bestbuy.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+16,Tesco,1032,Groceries 7% Off,TESCOGROC7,Grocery & fresh products,https://www.tesco.com/,Coupon,01/05/2026,30/06/2026,03/04/2026
+16,Tesco,1033,Free Delivery $40+,,Delivery discount,https://www.tesco.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+17,Ocean State Job Lot,1034,Crazy Deals Gift Card Offers,,Shop select Crazy Deals items and receive a store gift card worth a percentage of the purchase value after buying qualifying products.,https://www.oceanstatejoblot.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+17,Ocean State Job Lot,1035,Job Lot Insider Club Exclusive Savings,,"Join the free Insider Club to unlock member-only pricing, special promotions, and seasonal discounts across many store items.",https://www.oceanstatejoblot.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+18,Pavilions,1036,Pavilions for U Digital Coupons,,"Clip digital coupons through the Pavilions for U program and save on groceries, produce, meat, and household essentials each week.",https://www.pavilions.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+18,Pavilions,1037,Weekly Grocery Deals at Pavilions,,"Shop the weekly ad to find limited-time discounts on fresh produce, deli items, snacks, beverages, and everyday groceries.",https://www.pavilions.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+19,Randalls,1038,Randalls for U Member Savings,,Sign in to your Randalls account to access personalized digital coupons and exclusive savings through the Randalls for U program.,https://www.randalls.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+19,Randalls,1039,Weekly Ad Grocery Discounts,,"Browse Randalls weekly ad to save on fresh foods, pantry items, beverages, and seasonal grocery promotions.",https://www.randalls.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+20,Tom Thumb,1040,Tom Thumb for U Digital Deals,,Unlock weekly grocery discounts and personalized offers by clipping digital coupons through the Tom Thumb for U rewards program.,https://www.tomthumb.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+20,Tom Thumb,1041,BOGO Grocery Promotions,,"Find buy-one-get-one free offers on select snacks, beverages, frozen foods, and pantry items during weekly Tom Thumb promotions.",https://www.tomthumb.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+21,Jewel Osco,1042,myMixx Digital Coupons,,"Sign up for myMixx to clip digital coupons and enjoy exclusive savings on groceries, beverages, snacks, and household essentials.",https://www.jewelosco.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+21,Jewel Osco,1043,Jewel-Osco Weekly Grocery Deals,,"Check the Jewel-Osco weekly ad to discover limited-time discounts on fresh produce, bakery items, meats, and everyday grocery staples.",https://www.jewelosco.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+22,Safeway,1044,Safeway for U Digital Coupons,,Sign in to your Safeway account and clip Safeway for U digital coupons to unlock personalized grocery discounts and weekly savings.,https://www.safeway.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+22,Safeway,1045,Safeway Weekly Ad Grocery Deals,,"Check the Safeway weekly ad to find limited-time deals on fresh produce, meats, bakery items, snacks, and household essentials.",https://www.safeway.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+23,Vons,1046,Vons for U Member Savings,,"Join the Vons for U loyalty program to access digital coupons, personalized offers, and exclusive weekly grocery savings.",https://www.vons.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+23,Vons,1047,Vons Weekly Grocery Promotions,,"Browse the Vons weekly ad to discover special discounts on produce, deli foods, beverages, and pantry staples.",https://www.vons.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+24,Albertsons,1048,Albertsons for U Digital Deals,,Sign up for Albertsons for U to clip digital coupons and enjoy personalized grocery discounts and weekly promotions.,https://www.albertsons.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+24,Albertsons,1049,Albertsons Weekly Ad Savings,,"Explore Albertsons weekly ad to save on fresh produce, meats, bakery goods, beverages, and everyday grocery items.",https://www.albertsons.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+25,Superior Grocers,1050,Superior Grocers Weekly Ad Deals,,"Shop the Superior Grocers weekly ad for discounts on fresh fruits, vegetables, meats, and everyday grocery essentials.",https://superiorgrocers.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+25,Superior Grocers,1051,In-Store Weekly Specials,,"Find rotating in-store promotions and limited-time grocery specials across produce, pantry staples, and household products.",https://superiorgrocers.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+26,Cardenas,1052,Cardenas Weekly Market Specials,,"Browse Cardenas Markets weekly specials to save on fresh produce, meats, bakery items, and authentic Hispanic groceries.",https://www.cardenasmarkets.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+26,Cardenas,1053,Fresh Produce Weekly Discounts,,"Enjoy weekly discounts on fresh fruits, vegetables, and traditional grocery products available in Cardenas Markets stores.",https://www.cardenasmarkets.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+27,ShopRite,1054,ShopRite Digital Coupons,,"Clip ShopRite digital coupons through your account to unlock weekly savings on groceries, snacks, beverages, and household essentials.",https://www.shoprite.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+27,ShopRite,1055,ShopRite Weekly Ad Grocery Deals,,"Browse the ShopRite weekly circular to find limited-time discounts on fresh produce, meats, dairy products, and pantry staples.",https://www.shoprite.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+28,Stop and Shop,1056,Stop & Shop GO Rewards Savings,,Join Stop & Shop GO Rewards to earn points on purchases and redeem them for grocery discounts and fuel savings.,https://stopandshop.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+28,Stop and Shop,1057,Stop & Shop Weekly Grocery Specials,,"Check the Stop & Shop weekly ad to save on produce, meats, snacks, frozen foods, and everyday grocery essentials.",https://stopandshop.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+9,CVS,1058,CVS ExtraCare Rewards Deals,,"Join CVS ExtraCare to earn ExtraBucks rewards and access exclusive discounts on health, beauty, and everyday essentials.",https://www.cvs.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+9,CVS,1059,CVS Weekly Ad Pharmacy & Beauty Deals,,"Shop the CVS weekly ad for limited-time deals on pharmacy items, beauty products, snacks, and household essentials.",https://www.cvs.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+29,Market Basket,1060,Market Basket Weekly Flyer Deals,,"View the Market Basket weekly flyer to discover discounts on fresh produce, meats, dairy, and grocery staples.",https://www.shopmarketbasket.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+29,Market Basket,1061,In-Store Grocery Specials at Market Basket,,Find rotating in-store promotions and seasonal grocery savings available at participating Market Basket locations.,https://www.shopmarketbasket.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+30,Price Chopper,1062,Price Chopper AdvantEdge Digital Coupons,,Sign up for AdvantEdge Rewards to clip digital coupons and receive exclusive savings on groceries and household essentials.,https://www.pricechopper.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+30,Price Chopper,1063,Price Chopper Weekly Grocery Deals,,"Browse the Price Chopper weekly ad for special discounts on fresh foods, snacks, beverages, and everyday grocery items.",https://www.pricechopper.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+31,Sprouts,1064,Sprouts Weekly Ad Fresh Deals,,"Browse the Sprouts weekly ad to save on fresh produce, natural groceries, vitamins, and organic products.",https://www.sprouts.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+31,Sprouts,1065,Sprouts Digital Coupons,,"Clip Sprouts digital coupons through your account to unlock savings on healthy foods, snacks, supplements, and household items.",https://www.sprouts.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+32,QFC,1066,QFC Weekly Grocery Deals,,"Check the QFC weekly ad to find discounts on fresh produce, meats, bakery items, and everyday grocery essentials.",https://www.qfc.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+32,QFC,1067,QFC Digital Coupons & Rewards,,Sign in to your QFC account to clip digital coupons and access personalized grocery deals and member savings.,https://www.qfc.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+33,Kroger,1068,Kroger Weekly Ad Savings,,"Explore the Kroger weekly ad for limited-time discounts on fresh foods, snacks, beverages, and household essentials.",https://www.kroger.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+33,Kroger,1069,Kroger Digital Coupons,,Clip Kroger digital coupons through your account to enjoy personalized grocery discounts and exclusive online deals.,https://www.kroger.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+34,Big Lots,1070,Big Lots Clearance Deals,,"Shop Big Lots clearance section to find deep discounts on furniture, home decor, seasonal items, and household essentials.",https://www.biglots.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+34,Big Lots,1071,Big Rewards Member Savings,,"Join Big Rewards to access exclusive coupons, member-only pricing, and special promotions at Big Lots.",https://www.biglots.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+35,Loblaws,1072,Loblaws Weekly Flyer Deals,,"Check the Loblaws weekly flyer to discover grocery discounts on fresh produce, bakery goods, meats, and pantry staples.",https://www.loblaws.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+35,Loblaws,1073,PC Optimum Rewards Offers,,Earn and redeem points with PC Optimum while shopping at Loblaws and enjoy exclusive member-only grocery deals.,https://www.loblaws.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+36,Boscov's,1074,Boscov's Clearance & Doorbuster Deals,,"Shop Boscov's clearance and doorbuster promotions to save on clothing, shoes, home goods, and seasonal products.",https://www.boscovs.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+36,Boscov's,1075,Boscov's Weekly Sales & Promotions,,"Check Boscov's latest sales for limited-time discounts on fashion, beauty products, and home essentials.",https://www.boscovs.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+37,Smith's,1076,Smith's Digital Coupons,,"Clip digital coupons through your Smith's account to unlock savings on groceries, beverages, and household essentials.",https://www.smithsfoodanddrug.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+37,Smith's,1077,Smith's Weekly Ad Grocery Deals,,"Browse the Smith's weekly ad to discover discounts on produce, meats, dairy products, and pantry staples.",https://www.smithsfoodanddrug.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+38,Cabela's,1078,Cabela's Outdoor Gear Clearance,,"Save on hunting gear, fishing equipment, camping essentials, and outdoor apparel in the Cabela's clearance section.",https://www.cabelas.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+38,Cabela's,1079,Cabela's Seasonal Sales Event,,"Shop seasonal promotions at Cabela's for discounts on outdoor gear, footwear, and sporting goods.",https://www.cabelas.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+39,Food Lion,1080,Food Lion MVP Digital Coupons,,Join Food Lion MVP to clip digital coupons and receive exclusive grocery discounts and personalized deals.,https://www.foodlion.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+39,Food Lion,1081,Food Lion Weekly Grocery Specials,,"Check Food Lion weekly specials to save on fresh produce, meats, snacks, and household essentials.",https://www.foodlion.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+12,Walmart,1082,Walmart Rollback Deals,,"Shop Walmart Rollback deals for temporary price reductions on electronics, groceries, home products, and more.",https://www.walmart.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+12,Walmart,1083,Walmart Clearance & Special Buys,,"Find major discounts in Walmart's clearance section on electronics, apparel, home goods, and seasonal items.",https://www.walmart.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+40,Smart and Final,1084,Smart & Final Weekly Deals,,"Check Smart & Final weekly ads to save on bulk groceries, fresh produce, meats, and household essentials.",https://www.smartandfinal.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+40,Smart and Final,1085,Smart & Final Digital Coupons,,Clip Smart & Final digital coupons to unlock additional discounts on groceries and everyday products.,https://www.smartandfinal.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+41,Tops Friendly Markets,1086,Tops BonusPlus Rewards Deals,,"Sign up for Tops BonusPlus to access digital coupons, personalized grocery deals, and member savings.",https://www.topsmarkets.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+41,Tops Friendly Markets,1087,Tops Weekly Grocery Specials,,"Browse the Tops weekly ad for discounts on fresh produce, meats, dairy products, and pantry staples.",https://www.topsmarkets.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+42,Whole Foods Market,1088,Whole Foods Weekly Sales,,"Explore Whole Foods weekly sales to save on organic produce, natural groceries, snacks, and specialty foods.",https://www.wholefoodsmarket.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+42,Whole Foods Market,1089,Amazon Prime Member Deals at Whole Foods,,Amazon Prime members can access exclusive discounts and special pricing on select products at Whole Foods Market.,https://www.wholefoodsmarket.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+43,United Supermarkets,1090,United Rewards Digital Coupons,,Join United Rewards to clip digital coupons and enjoy personalized savings on groceries and household items.,https://www.unitedsupermarkets.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+43,United Supermarkets,1091,United Supermarkets Weekly Ad Deals,,"Check the weekly ad to find special discounts on produce, meats, bakery items, and everyday groceries.",https://www.unitedsupermarkets.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+44,Tony's Fresh Market,1092,Tony's Weekly Market Specials,,"Browse Tony's Fresh Market weekly specials to save on fresh produce, meats, bakery items, and grocery essentials.",https://www.tonysfreshmarket.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+44,Tony's Fresh Market,1093,Tony's Fresh Market In-Store Promotions,,Find rotating in-store promotions and seasonal grocery savings at participating Tony's Fresh Market locations.,https://www.tonysfreshmarket.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+45,Times Supermarket,1094,Times Supermarket Weekly Ad Deals,,"Check the Times Supermarket weekly ad to save on fresh produce, meats, seafood, and everyday grocery items.",https://www.timessupermarkets.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+45,Times Supermarket,1095,Times Supermarket In-Store Specials,,Find rotating in-store promotions and limited-time discounts on groceries and household essentials.,https://www.timessupermarkets.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+46,PetSmart,1096,PetSmart Treats Rewards Member Deals,,Join PetSmart Treats Rewards to earn points on purchases and unlock exclusive member-only discounts on pet products.,https://www.petsmart.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+46,PetSmart,1097,PetSmart Weekly Pet Supplies Sale,,"Shop PetSmart weekly sales for discounts on pet food, toys, grooming products, and accessories.",https://www.petsmart.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+47,Big 5 Sporting Goods,1098,Big 5 Weekly Sporting Goods Deals,,"Check the Big 5 weekly ad to save on athletic footwear, outdoor gear, sports equipment, and apparel.",https://www.big5sportinggoods.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+47,Big 5 Sporting Goods,1099,Big 5 Clearance & Seasonal Sales,,"Shop clearance and seasonal promotions at Big 5 for discounts on camping gear, fitness equipment, and sportswear.",https://www.big5sportinggoods.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+48,Harbor Freight,1100,Harbor Freight Inside Track Club Savings,,"Join Harbor Freight Inside Track Club to access exclusive discounts, special pricing, and member-only deals.",https://www.harborfreight.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+48,Harbor Freight,1101,Harbor Freight Clearance & Parking Lot Sales,,Find major discounts on tools and equipment during Harbor Freight clearance events and Parking Lot sales.,https://www.harborfreight.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+49,Food Basics,1102,Food Basics Weekly Flyer Deals,,"Browse the Food Basics weekly flyer to discover savings on fresh produce, meats, dairy, and pantry staples.",https://www.foodbasics.ca/,Deal,01/05/2026,30/06/2026,03/04/2026
+49,Food Basics,1103,Food Basics Grocery Specials,,Shop weekly grocery specials at Food Basics for limited-time discounts on everyday essentials.,https://www.foodbasics.ca/,Deal,01/05/2026,30/06/2026,03/04/2026
+50,No Frills,1104,No Frills Weekly Flyer Savings,,"Check the No Frills weekly flyer to find deals on produce, meats, packaged foods, and everyday groceries.",https://www.nofrills.ca/,Deal,01/05/2026,30/06/2026,03/04/2026
+50,No Frills,1105,PC Optimum Points Offers,,Earn and redeem PC Optimum points on eligible purchases at No Frills and enjoy exclusive member deals.,https://www.nofrills.ca/,Deal,01/05/2026,30/06/2026,03/04/2026
+51,Sobeys,1106,Sobeys Weekly Flyer Grocery Deals,,"Browse the Sobeys weekly flyer to save on fresh foods, snacks, beverages, and everyday grocery essentials.",https://www.sobeys.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+51,Sobeys,1107,Scene+ Rewards Member Offers,,Earn and redeem Scene+ points while shopping at Sobeys and enjoy special member-only grocery deals.,https://www.sobeys.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+52,Foods Co,1108,Foods Co Weekly Ad Deals,,"Check the Foods Co weekly ad to find discounts on fresh produce, meats, dairy, and grocery staples.",https://www.foodsco.net/,Deal,01/05/2026,30/06/2026,03/04/2026
+52,Foods Co,1109,Foods Co Digital Coupons,,Clip digital coupons through your Foods Co account to unlock additional grocery savings.,https://www.foodsco.net/,Deal,01/05/2026,30/06/2026,03/04/2026
+53,County Market,1110,County Market Weekly Ad Specials,,"Browse the County Market weekly ad to discover deals on fresh foods, bakery items, and household products.",https://www.mycountymarket.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+53,County Market,1111,County Market Digital Coupons,,"Clip County Market digital coupons to save on groceries, beverages, snacks, and everyday essentials.",https://www.mycountymarket.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+54,FreshCo,1112,FreshCo Weekly Flyer Deals,,"Check the FreshCo weekly flyer to save on fresh produce, meats, pantry items, and grocery essentials.",https://freshco.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+54,FreshCo,1113,Scene+ Rewards Offers at FreshCo,,Earn Scene+ points and access exclusive member promotions while shopping at FreshCo stores.,https://freshco.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+55,Shaw's,1114,Shaw's for U Digital Coupons,,Sign up for Shaw's for U to clip digital coupons and unlock personalized savings on groceries and household essentials.,https://www.shaws.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+55,Shaw's,1115,Shaw's Weekly Grocery Deals,,"Browse the Shaw's weekly ad to find discounts on fresh produce, meats, bakery items, and everyday grocery products.",https://www.shaws.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+56,Bass Pro,1116,Bass Pro Outdoor Gear Clearance,,"Shop Bass Pro clearance section for discounts on fishing gear, hunting equipment, camping supplies, and outdoor apparel.",https://www.basspro.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+56,Bass Pro,1117,Bass Pro Seasonal Outdoor Sale,,"Find seasonal promotions on outdoor gear, footwear, and sporting equipment at Bass Pro Shops.",https://www.basspro.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+57,King Kullen,1118,King Kullen Weekly Ad Specials,,"Check the King Kullen weekly circular to save on fresh produce, meats, dairy products, and grocery essentials.",https://kingkullen.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+57,King Kullen,1119,King Kullen Digital Coupons,,Clip digital coupons through your King Kullen account to unlock extra grocery savings each week.,https://kingkullen.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+58,Shoppers,1120,Shoppers Weekly Grocery Specials,,"Browse Shoppers weekly deals to discover savings on fresh foods, pantry staples, and household products.",https://www.shoppersfood.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+58,Shoppers,1121,Shoppers Digital Coupon Savings,,Access digital coupons through the Shoppers website or app to save on groceries and everyday essentials.,https://www.shoppersfood.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+59,Metro Market,1122,Metro Market Weekly Ad Deals,,"Check the Metro Market weekly ad to find grocery discounts on fresh produce, meats, bakery items, and beverages.",https://www.metromarket.net/,Deal,01/05/2026,30/06/2026,03/04/2026
+59,Metro Market,1123,Metro Market Digital Coupons,,Clip digital coupons through your Metro Market account to enjoy personalized grocery savings.,https://www.metromarket.net/,Deal,01/05/2026,30/06/2026,03/04/2026
+60,Big Y,1124,Big Y myPicks Digital Coupons,,Join Big Y myPicks to clip digital coupons and access exclusive grocery savings and personalized offers.,https://www.bigy.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+60,Big Y,1125,Big Y Weekly Grocery Specials,,"Shop Big Y weekly specials to save on fresh produce, meats, dairy products, and everyday groceries.",https://www.bigy.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+61,ACME,1126,ACME for U Digital Coupons,,Sign up for ACME for U to access digital coupons and personalized grocery deals.,https://www.acmemarkets.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+61,ACME,1127,ACME Weekly Grocery Deals,,"Browse the ACME weekly ad to discover discounts on produce, meats, bakery items, and pantry staples.",https://www.acmemarkets.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+62,Foodtown,1128,Foodtown Weekly Ad Savings,,"Check the Foodtown weekly circular for deals on fresh produce, meats, dairy, and grocery essentials.",https://www.foodtown.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+62,Foodtown,1129,Foodtown Digital Coupon Deals,,Clip Foodtown digital coupons to unlock extra savings on groceries and household products.,https://www.foodtown.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+63,Key Food,1130,Key Food Weekly Grocery Deals,,"Browse the Key Food weekly circular to save on fresh foods, beverages, snacks, and everyday essentials.",https://www.keyfood.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+63,Key Food,1131,Key Food In-Store Promotions,,Find rotating in-store promotions and seasonal grocery specials at participating Key Food locations.,https://www.keyfood.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+64,Clayton Ranch Market,1132,Ranch Market Weekly Specials,,"Shop the Ranch Market weekly specials for savings on fresh produce, meats, and everyday groceries.",https://www.ranchmkt.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+64,Clayton Ranch Market,1133,Ranch Market Fresh Food Deals,,Find rotating grocery deals and in-store promotions at Ranch Market locations.,https://www.ranchmkt.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+65,CTown Supermarkets,1134,CTown Weekly Ad Deals,,"Browse the CTown weekly ad to find discounts on fresh produce, meats, and pantry staples.",https://www.ctownsupermarkets.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+65,CTown Supermarkets,1135,CTown Grocery Specials,,Discover rotating grocery specials and in-store deals at CTown Supermarkets.,https://www.ctownsupermarkets.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+66,Food Bazaar Supermarket,1136,Food Bazaar Weekly Market Deals,,"Check the Food Bazaar weekly ad for savings on fresh produce, meats, seafood, and grocery items.",https://www.foodbazaar.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+66,Food Bazaar Supermarket,1137,Food Bazaar In-Store Promotions,,Find rotating in-store deals and seasonal grocery discounts at Food Bazaar Supermarket locations.,https://www.foodbazaar.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+67,Charles Tyrwhitt,1138,Charles Tyrwhitt Multi-Buy Shirt Offer,,"Shop multi-buy deals on dress shirts, often featuring bundle pricing when purchasing multiple shirts in one order.",https://www.charlestyrwhitt.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+67,Charles Tyrwhitt,1139,Charles Tyrwhitt Seasonal Sale,,"Enjoy seasonal promotions with discounts on shirts, suits, shoes, and accessories during limited-time sales events.",https://www.charlestyrwhitt.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+68,Ulta,1140,Ulta Beauty Weekly Beauty Deals,,"Shop Ulta weekly deals to save on makeup, skincare, haircare, and beauty tools from top brands.",https://www.ulta.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+68,Ulta,1141,Ulta Ultamate Rewards Points Offers,,Earn and redeem points with Ultamate Rewards and access exclusive member-only discounts on beauty products.,https://www.ulta.com/,Deal,01/05/2026,30/06/2026,03/04/2026
+69,1Password,1142,25% Off,SECURE,,https://1password.com/promo/password-manager-for-students,Coupon,01/05/2026,30/06/2026,03/04/2026
+69,1Password,1143,Purchase 1Password Business via Buy with AWS,,,https://1password.com/promo/password-manager-for-students,Deal,01/05/2026,30/06/2026,03/04/2026
+69,1Password,1144,Buy Enterprise Password Manager,,,https://1password.com/promo/password-manager-for-students,Deal,01/05/2026,30/06/2026,03/04/2026
+70,Hostinger,1145,75% Off Web Hosting Plan,,,https://www.hostinger.com/in?REFERRALCODE=digitalc,Deal,01/05/2026,30/06/2026,03/04/2026
+70,Hostinger,1146,64% Off Business Plan,,,https://www.hostinger.com/in?REFERRALCODE=digitalc,Deal,01/05/2026,30/06/2026,03/04/2026
+70,Hostinger,1147,65% Off Cloud Hosting,,,https://www.hostinger.com/in?REFERRALCODE=digitalc,Deal,01/05/2026,30/06/2026,03/04/2026
+71,Verpex,1148,25% Off,DEALVWANT25,,https://clients.verpex.com/aff/?a_aid=refid&a_aid=reviewsoffers,Coupon,01/05/2026,30/06/2026,03/04/2026
+71,Verpex,1149,5% Off,ELLIOTT25,,https://clients.verpex.com/aff/?a_aid=refid&a_aid=reviewsoffers,Coupon,01/05/2026,30/06/2026,03/04/2026
+71,Verpex,1150,20% Off,AWESOME,,https://clients.verpex.com/aff/?a_aid=refid&a_aid=reviewsoffers,Coupon,01/05/2026,30/06/2026,03/04/2026
+71,Verpex,1151,5% Off,5OFFNOW,,https://clients.verpex.com/aff/?a_aid=refid&a_aid=reviewsoffers,Coupon,01/05/2026,30/06/2026,03/04/2026
+71,Verpex,1152,22% Off,WPSH22,,https://clients.verpex.com/aff/?a_aid=refid&a_aid=reviewsoffers,Coupon,01/05/2026,30/06/2026,03/04/2026
+71,Verpex,1153,Unlimited Reseller Hosting Plans,,,https://clients.verpex.com/aff/?a_aid=refid&a_aid=reviewsoffers,Deal,01/05/2026,30/06/2026,03/04/2026
+72,ABC Carpet,1154,20% Off,ABCTRADE,,https://www.pjatr.com/t/8-12859-214799-285467,Coupon,01/05/2026,30/06/2026,03/04/2026
+72,ABC Carpet,1155,10% Off on Orders $500+ ,FINDMAGIC,,https://www.pjatr.com/t/8-12859-214799-285467,Coupon,01/05/2026,30/06/2026,03/04/2026
+72,ABC Carpet,1156,15% Off,ABCAFFILIATE,,https://www.pjatr.com/t/8-12859-214799-285467,Coupon,01/05/2026,30/06/2026,03/04/2026
+72,ABC Carpet,1157,$500 gift card plus 10% off your first order ,,Join email list for the chance to win,https://www.pjatr.com/t/8-12859-214799-285467,Deal,01/05/2026,30/06/2026,03/04/2026
+72,ABC Carpet,1158,Free Shipping on all Ethnicraft Furniture,,,https://www.pjatr.com/t/8-12859-214799-285467,Deal,01/05/2026,30/06/2026,03/04/2026
+72,ABC Carpet,1159,Up to 40% off one-of-a-kind Vintage + Antique Rugs,,,https://www.pjatr.com/t/8-12859-214799-285467,Deal,01/05/2026,30/06/2026,03/04/2026
+72,ABC Carpet,1160,abc carpet & rugs up to 60% off select styles,,,https://www.pjatr.com/t/8-12859-214799-285467,Deal,01/05/2026,30/06/2026,03/04/2026
+72,ABC Carpet,1161,Free Ground Shipping On Orders $250+,,,https://www.pjatr.com/t/8-12859-214799-285467,Deal,01/05/2026,30/06/2026,03/04/2026
+73,Aerosoles,1162,15% Off,GOODNEWS,,https://www.pjatr.com/t/8-12813-214799-272782,Coupon,01/05/2026,30/06/2026,03/04/2026
+73,Aerosoles,1163,Extra 25% Off,WELCOMEBACK,,https://www.pjatr.com/t/8-12813-214799-272782,Coupon,01/05/2026,30/06/2026,03/04/2026
+73,Aerosoles,1164,15% Off,GIFT15,,https://www.pjatr.com/t/8-12813-214799-272782,Coupon,01/05/2026,30/06/2026,03/04/2026
+73,Aerosoles,1165,Aerosoles Rewards,,Earn 1 point for every $1 you spend,https://www.pjatr.com/t/8-12813-214799-272782,Deal,01/05/2026,30/06/2026,03/04/2026
+73,Aerosoles,1166,Sign up and receive 15% OFF your first order,,,https://www.pjatr.com/t/8-12813-214799-272782,Deal,01/05/2026,30/06/2026,03/04/2026
+73,Aerosoles,1167,"Just reduced styles, up to 30% off",,NEW SPRING MARKDOWNS,https://www.pjatr.com/t/8-12813-214799-272782,Deal,01/05/2026,30/06/2026,03/04/2026
+74,Amazing Grass,1168,30% Off,SAVE30,,https://www.pntrs.com/t/8-12036-214799-174930,Coupon,01/05/2026,30/06/2026,03/04/2026
+74,Amazing Grass,1169,25% Off,DAILYNUTRITION,,https://www.pntrs.com/t/8-12036-214799-174930,Coupon,01/05/2026,30/06/2026,03/04/2026
+74,Amazing Grass,1170,40% Off,JILL40,,https://www.pntrs.com/t/8-12036-214799-174930,Coupon,01/05/2026,30/06/2026,03/04/2026
+74,Amazing Grass,1171,20% Off,WELCOMEBACK,,https://www.pntrs.com/t/8-12036-214799-174930,Coupon,01/05/2026,30/06/2026,03/04/2026
+74,Amazing Grass,1172,25% Off,FEELAMAZING25,,https://www.pntrs.com/t/8-12036-214799-174930,Coupon,01/05/2026,30/06/2026,03/04/2026
+74,Amazing Grass,1173,25% Off,WELCOME25,,https://www.pntrs.com/t/8-12036-214799-174930,Coupon,01/05/2026,30/06/2026,03/04/2026
+74,Amazing Grass,1174,20% Off,GRASSHEAD20,,https://www.pntrs.com/t/8-12036-214799-174930,Coupon,01/05/2026,30/06/2026,03/04/2026
+74,Amazing Grass,1175,25% Off,CART25,,https://www.pntrs.com/t/8-12036-214799-174930,Coupon,01/05/2026,30/06/2026,03/04/2026
+74,Amazing Grass,1176,FREE SHIPPING ON ALL ORDERS $59.99+ ,,,https://www.pntrs.com/t/8-12036-214799-174930,Deal,01/05/2026,30/06/2026,03/04/2026
+74,Amazing Grass,1177,"Refer a Friend - GIVE $10 OFF, GET 200 POINTS",,"Give your friends $10 off their first purchase of $50, and get 200 points for each successful referral.",https://www.pntrs.com/t/8-12036-214799-174930,Deal,01/05/2026,30/06/2026,03/04/2026
+74,Amazing Grass,1178,The Greens Club,,Earn points every time you shop to get exclusive rewards. It’s simple: Drink more plants. Earn more points.,https://www.pntrs.com/t/8-12036-214799-174930,Deal,01/05/2026,30/06/2026,03/04/2026
+74,Amazing Grass,1179,Greens Groupie - $0 - $149 or complete 1 Referrals,,,https://www.pntrs.com/t/8-12036-214799-174930,Deal,01/05/2026,30/06/2026,03/04/2026
+74,Amazing Grass,1180,Plant Insider - $150 - $359 or complete 3 Referrals,,,https://www.pntrs.com/t/8-12036-214799-174930,Deal,01/05/2026,30/06/2026,03/04/2026
+74,Amazing Grass,1181,Veggie VIP - Complete 5 Referrals or Spend $360,,,https://www.pntrs.com/t/8-12036-214799-174930,Deal,01/05/2026,30/06/2026,03/04/2026
+75,American Rag,1182,15% Off,AMRAG15,,https://www.pntra.com/t/8-12482-214799-217148,Coupon,01/05/2026,30/06/2026,03/04/2026
+75,American Rag,1183,15% Off,WELCOME15,,https://www.pntra.com/t/8-12482-214799-217148,Coupon,01/05/2026,30/06/2026,03/04/2026
+75,American Rag,1184,10% Off,ENJOY10,,https://www.pntra.com/t/8-12482-214799-217148,Coupon,01/05/2026,30/06/2026,03/04/2026
+75,American Rag,1185,15% Off,THANKYOU15,,https://www.pntra.com/t/8-12482-214799-217148,Coupon,01/05/2026,30/06/2026,03/04/2026
+75,American Rag,1186,Subscribe for 10% off your first order,,,https://www.pntra.com/t/8-12482-214799-217148,Deal,01/05/2026,30/06/2026,03/04/2026
+75,American Rag,1187,$10 Flat Rate or Free US Shipping On Orders $150+,,,https://www.pntra.com/t/8-12482-214799-217148,Deal,01/05/2026,30/06/2026,03/04/2026
+76,Araks,1188,20% Off,ARAKS20,,https://www.gopjn.com/t/8-12380-214799-199880,Coupon,01/05/2026,30/06/2026,03/04/2026
+76,Araks,1189,10% Off,SWIM10,,https://www.gopjn.com/t/8-12380-214799-199880,Coupon,01/05/2026,30/06/2026,03/04/2026
+76,Araks,1190,10% Off,WELCOME10,,https://www.gopjn.com/t/8-12380-214799-199880,Coupon,01/05/2026,30/06/2026,03/04/2026
+76,Araks,1191,15% Off,EXTRA15,,https://www.gopjn.com/t/8-12380-214799-199880,Coupon,01/05/2026,30/06/2026,03/04/2026
+76,Araks,1192,Enjoy 10% off when you sign up for emails and texts,,,https://www.gopjn.com/t/8-12380-214799-199880,Deal,01/05/2026,30/06/2026,03/04/2026
+76,Araks,1193,Enjoy complimentary shipping on domestic orders above $300,,,https://www.gopjn.com/t/8-12380-214799-199880,Deal,01/05/2026,30/06/2026,03/04/2026
+77,Audiobooks Now,1194,5% Off,ABNDFR,,https://www.pntrs.com/t/8-11203-214799-146749,Coupon,01/05/2026,30/06/2026,03/04/2026
+77,Audiobooks Now,1195,50% off your first audiobook,,,https://www.pntrs.com/t/8-11203-214799-146749,Deal,01/05/2026,30/06/2026,03/04/2026
+77,Audiobooks Now,1196,Download Audiobooks Instantly,3FA26,,https://www.pntrs.com/t/8-11203-214799-146749,Coupon,01/05/2026,30/06/2026,03/04/2026
+77,Audiobooks Now,1197,Start your 30 day free trial now,,,https://www.pntrs.com/t/8-11203-214799-146749,Deal,01/05/2026,30/06/2026,03/04/2026
+78,Beauty Care Choices,1198,Free Gift on Orders $200,SOFT26,,https://www.pjtra.com/t/8-9087-214799-88687,Coupon,01/05/2026,30/06/2026,03/04/2026
+78,Beauty Care Choices,1199,Free Gift on Orders $165 or More,MOIST26,,https://www.pjtra.com/t/8-9087-214799-88687,Coupon,01/05/2026,30/06/2026,03/04/2026
+78,Beauty Care Choices,1200,Free Gift on Orders $200,SUPPLEMENT26,,https://www.pjtra.com/t/8-9087-214799-88687,Coupon,01/05/2026,30/06/2026,03/04/2026
+78,Beauty Care Choices,1201,Free Gift on Orders $200,LONG26,,https://www.pjtra.com/t/8-9087-214799-88687,Coupon,01/05/2026,30/06/2026,03/04/2026
+78,Beauty Care Choices,1202,$10 Off on Orders $100+,10OFF100,,https://www.pjtra.com/t/8-9087-214799-88687,Coupon,01/05/2026,30/06/2026,03/04/2026
+78,Beauty Care Choices,1203,Free Gift $75+,GRIP26,,https://www.pjtra.com/t/8-9087-214799-88687,Coupon,01/05/2026,30/06/2026,03/04/2026
+78,Beauty Care Choices,1204,Free Gift $100+,FOIL26,,https://www.pjtra.com/t/8-9087-214799-88687,Coupon,01/05/2026,30/06/2026,03/04/2026
+78,Beauty Care Choices,1205,Free Gift on Orders $59 ,MOM26,,https://www.pjtra.com/t/8-9087-214799-88687,Coupon,01/05/2026,30/06/2026,03/04/2026
+78,Beauty Care Choices,1206,Up to 15% Off,RUBY,,https://www.pjtra.com/t/8-9087-214799-88687,Coupon,01/05/2026,30/06/2026,03/04/2026
+79,Blinds Express,1207,5% Off,SPRING5,,https://www.pntrac.com/t/8-1778-214799-17552,Coupon,01/05/2026,30/06/2026,03/04/2026
+79,Blinds Express,1208,Levolor 45% Off - Save BIG On Levolor Brand!,,,https://www.pntrac.com/t/8-1778-214799-17552,Deal,01/05/2026,30/06/2026,03/04/2026
+79,Blinds Express,1209,BALI Brand Products 15% Off ONLINE Price!,,,https://www.pntrac.com/t/8-1778-214799-17552,Deal,01/05/2026,30/06/2026,03/04/2026
+79,Blinds Express,1210,Quick Ship And Our Brand Pro,,,https://www.pntrac.com/t/8-1778-214799-17552,Deal,01/05/2026,30/06/2026,03/04/2026
+80,Blue Sky,1211,10% off your first purchase ,,,https://www.pntra.com/t/8-12232-214799-185387,Deal,01/05/2026,30/06/2026,03/04/2026
+80,Blue Sky,1212,20% Off,BSBIRTHDAY2026,,https://www.pntra.com/t/8-12232-214799-185387,Coupon,01/05/2026,30/06/2026,03/04/2026
+80,Blue Sky,1213,10% Off,BSWELCOME2026,,https://www.pntra.com/t/8-12232-214799-185387,Coupon,01/05/2026,30/06/2026,03/04/2026
+81,Chaser Brand,1214,15% Off,WELCOME,,https://www.pntrac.com/t/8-12248-214799-188835,Coupon,01/05/2026,30/06/2026,03/04/2026
+81,Chaser Brand,1215,10% Off,CHASERJAM,,https://www.pntrac.com/t/8-12248-214799-188835,Coupon,01/05/2026,30/06/2026,03/04/2026
+81,Chaser Brand,1216,15% Off,FAITH15,,https://www.pntrac.com/t/8-12248-214799-188835,Coupon,01/05/2026,30/06/2026,03/04/2026
+81,Chaser Brand,1217,10% Off,WELCOME10,,https://www.pntrac.com/t/8-12248-214799-188835,Coupon,01/05/2026,30/06/2026,03/04/2026
+81,Chaser Brand,1218,15% Off,15OFF,,https://www.pntrac.com/t/8-12248-214799-188835,Coupon,01/05/2026,30/06/2026,03/04/2026
+82,Codecademy,1219,50% Off,SAM50,,https://www.pjtra.com/t/8-12462-214799-213588,Coupon,01/05/2026,30/06/2026,03/04/2026
+82,Codecademy,1220,50% Off,SPRING26FLASH,,https://www.pjtra.com/t/8-12462-214799-213588,Coupon,01/05/2026,30/06/2026,03/04/2026
+82,Codecademy,1221,10% Off,MONTH10,,https://www.pjtra.com/t/8-12462-214799-213588,Coupon,01/05/2026,30/06/2026,03/04/2026
+83,Coffee Bean,1222,Join email newsletter for 10% off your first order,,,https://www.pntrs.com/t/8-11138-214799-145574,Deal,01/05/2026,30/06/2026,03/04/2026
+83,Coffee Bean,1223,50% Off Your First Drink - Download The Coffee Bean Rewards app,,,https://www.pntrs.com/t/8-11138-214799-145574,Deal,01/05/2026,30/06/2026,03/04/2026
+84,Diyanu,1224,15% Off,DEAL24,,https://www.gopjn.com/t/8-12127-214799-179096,Coupon,01/05/2026,30/06/2026,03/04/2026
+84,Diyanu,1225,15% Off,DAVO15,,https://www.gopjn.com/t/8-12127-214799-179096,Coupon,01/05/2026,30/06/2026,03/04/2026
+84,Diyanu,1226,10% Off,20WELCOME,,https://www.gopjn.com/t/8-12127-214799-179096,Coupon,01/05/2026,30/06/2026,03/04/2026
+84,Diyanu,1227,10% Off,SAVE10,,https://www.gopjn.com/t/8-12127-214799-179096,Coupon,01/05/2026,30/06/2026,03/04/2026
+84,Diyanu,1228,15% Off,CART15,,https://www.gopjn.com/t/8-12127-214799-179096,Coupon,01/05/2026,30/06/2026,03/04/2026
+84,Diyanu,1229,Free Shipping when you spend $130+,,,https://www.gopjn.com/t/8-12127-214799-179096,Deal,01/05/2026,30/06/2026,03/04/2026
+84,Diyanu,1230,30% Off with Promo Code,OFFER,,https://www.gopjn.com/t/8-12127-214799-179096,Coupon,01/05/2026,30/06/2026,03/04/2026
+85,Discount Surgical,1231,15% Off,SIGHEARTS,,https://www.pntrac.com/t/8-11741-214799-163321,Coupon,01/05/2026,30/06/2026,03/04/2026
+85,Discount Surgical,1232,Free Shipping over $25,,,https://www.pntrac.com/t/8-11741-214799-163321,Deal,01/05/2026,30/06/2026,03/04/2026
+85,Discount Surgical,1233,12% Off,UNCLESAM,,https://www.pntrac.com/t/8-11741-214799-163321,Coupon,01/05/2026,30/06/2026,03/04/2026
+85,Discount Surgical,1234,10% Off,COMPRESSION,,https://www.pntrac.com/t/8-11741-214799-163321,Coupon,01/05/2026,30/06/2026,03/04/2026
+85,Discount Surgical,1235,10% Off,APSYCHIC,,https://www.pntrac.com/t/8-11741-214799-163321,Coupon,01/05/2026,30/06/2026,03/04/2026
+86,Donald Pliner,1236,15% Off,15OFF,,https://www.pjatr.com/t/8-12484-214799-217151,Coupon,01/05/2026,30/06/2026,03/04/2026
+86,Donald Pliner,1237,20% Off,MISSYOU,,https://www.pjatr.com/t/8-12484-214799-217151,Coupon,01/05/2026,30/06/2026,03/04/2026
+86,Donald Pliner,1238,$50 Off,50OFF250,,https://www.pjatr.com/t/8-12484-214799-217151,Coupon,01/05/2026,30/06/2026,03/04/2026
+86,Donald Pliner,1239,15% Off,SAFEOPT,,https://www.pjatr.com/t/8-12484-214799-217151,Coupon,01/05/2026,30/06/2026,03/04/2026
+86,Donald Pliner,1240,15% Off,LASTCHANCE15,,https://www.pjatr.com/t/8-12484-214799-217151,Coupon,01/05/2026,30/06/2026,03/04/2026
+86,Donald Pliner,1241,15% Off,ENJOY15,,https://www.pjatr.com/t/8-12484-214799-217151,Coupon,01/05/2026,30/06/2026,03/04/2026
+86,Donald Pliner,1242,15% Off,WELCOME15,,https://www.pjatr.com/t/8-12484-214799-217151,Coupon,01/05/2026,30/06/2026,03/04/2026
+87,Driftaway Coffee,1243,10% Off,MD10,,https://www.gopjn.com/t/8-11612-214799-159065,Coupon,01/05/2026,30/06/2026,03/04/2026
+87,Driftaway Coffee,1244,Free Gift,HG50,,https://www.gopjn.com/t/8-11612-214799-159065,Coupon,01/05/2026,30/06/2026,03/04/2026
+88,Electric City Roasting,1245,20% Off,WELCOME20,,https://www.pntrac.com/t/8-12584-214799-229811,Coupon,01/05/2026,30/06/2026,03/04/2026
+88,Electric City Roasting,1246,20% Off,AFF20,,https://www.pntrac.com/t/8-12584-214799-229811,Coupon,01/05/2026,30/06/2026,03/04/2026
+88,Electric City Roasting,1247,20% Off,THEOFFICE,,https://www.pntrac.com/t/8-12584-214799-229811,Coupon,01/05/2026,30/06/2026,03/04/2026
+88,Electric City Roasting,1248,25% Off,SAFEOPT25,,https://www.pntrac.com/t/8-12584-214799-229811,Coupon,01/05/2026,30/06/2026,03/04/2026
+88,Electric City Roasting,1249,25% Off,ELECTRIC25,,https://www.pntrac.com/t/8-12584-214799-229811,Coupon,01/05/2026,30/06/2026,03/04/2026
+88,Electric City Roasting,1250,30% Off,SUB30,,https://www.pntrac.com/t/8-12584-214799-229811,Coupon,01/05/2026,30/06/2026,03/04/2026
+89,Everyman,1251,25% Off,BRASS25,,https://www.gopjn.com/t/8-11913-214799-170530,Coupon,01/05/2026,30/06/2026,03/04/2026
+89,Everyman,1252,20% Off,STPATS,,https://www.gopjn.com/t/8-11913-214799-170530,Coupon,01/05/2026,30/06/2026,03/04/2026
+89,Everyman,1253,20% Off,GIFTS,,https://www.gopjn.com/t/8-11913-214799-170530,Coupon,01/05/2026,30/06/2026,03/04/2026
+89,Everyman,1254,15% Off,GET15NOW,,https://www.gopjn.com/t/8-11913-214799-170530,Coupon,01/05/2026,30/06/2026,03/04/2026
+89,Everyman,1255,15% Off,WELCOME15,,https://www.gopjn.com/t/8-11913-214799-170530,Coupon,01/05/2026,30/06/2026,03/04/2026
+89,Everyman,1256,10% Off,EVERYMANFAM,,https://www.gopjn.com/t/8-11913-214799-170530,Coupon,01/05/2026,30/06/2026,03/04/2026

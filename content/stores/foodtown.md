@@ -1,20 +1,20 @@
 ---
-title: "Foodtown Weekly Ad (April 2026) Flyer, Circular"
+title: "Foodtown Weekly Ad May 2026 Flyer, Circular"
 slug: "foodtown"
-description: "Foodtown weekly ad april 2026. Find Foodtown weekly flyer, promo codes, grocery coupons, and deals for extra savings on fresh market shopping."
+description: "Foodtown weekly ad May 2026. Find Foodtown weekly flyer, promo codes, grocery coupons, and deals for extra savings on fresh market shopping."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Foodtown"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Foodtown Weekly Ad (April 2026) Flyer, Circular"
-store_title: "Foodtown Weekly Ad (April 2026) Flyer, Circular"
-store_meta_description: "Foodtown weekly ad april 2026. Find Foodtown weekly flyer, promo codes, grocery coupons, and deals for extra savings on fresh market shopping."
+store_h1: "Foodtown Weekly Ad May 2026 Flyer, Circular"
+store_title: "Foodtown Weekly Ad May 2026 Flyer, Circular"
+store_meta_description: "Foodtown weekly ad May 2026. Find Foodtown weekly flyer, promo codes, grocery coupons, and deals for extra savings on fresh market shopping."
 store_keywords: "foodtown coupon code, foodtown promo code, foodtown discount code, foodtown deals, foodtown offers, foodtown grocery coupons, foodtown coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Foodtown Weekly Ad (April 2026) Flyer, Circular"
-store_og_description: "Foodtown weekly ad april 2026. Find Foodtown weekly flyer, promo codes, grocery coupons, and deals for extra savings on fresh market shopping."
+store_og_title: "Foodtown Weekly Ad May 2026 Flyer, Circular"
+store_og_description: "Foodtown weekly ad May 2026. Find Foodtown weekly flyer, promo codes, grocery coupons, and deals for extra savings on fresh market shopping."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "foodtown"
 
 coupons:
-  - coupon_id: "1143"
+  - coupon_id: "1128"
     coupon_title: "Foodtown Weekly Ad Savings"
     coupon_code: ""
     coupon_description: "Check the Foodtown weekly circular for deals on fresh produce, meats, dairy, and grocery essentials."
     coupon_aff_url: "https://www.foodtown.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1144"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1129"
     coupon_title: "Foodtown Digital Coupon Deals"
     coupon_code: ""
     coupon_description: "Clip Foodtown digital coupons to unlock extra savings on groceries and household products."
     coupon_aff_url: "https://www.foodtown.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 Foodtown is a community-focused grocery retailer known for delivering convenient neighborhood shopping combined with a strong selection of fresh foods and everyday grocery essentials. With many locations serving local communities, the store aims to provide a friendly environment where customers can easily find quality ingredients for daily meals.

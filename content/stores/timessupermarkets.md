@@ -1,20 +1,20 @@
 ---
-title: "Times Supermarkets Weekly Ad (April 2026)"
+title: "Times Supermarkets Weekly Ad May 2026"
 slug: "timessupermarkets"
-description: "Times Supermarket weekly ad April 2026. Find Times Supermarket flyer, promo codes, grocery coupons, and deals to save more on everyday essentials."
+description: "Times Supermarket weekly ad May 2026. Find Times Supermarket flyer, promo codes, grocery coupons, and deals to save more on everyday essentials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Times Supermarket"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Times Supermarkets Weekly Ad (April 2026)"
-store_title: "Times Supermarkets Weekly Ad (April 2026)"
-store_meta_description: "Times Supermarket weekly ad April 2026. Find Times Supermarket flyer, promo codes, grocery coupons, and deals to save more on everyday essentials."
+store_h1: "Times Supermarkets Weekly Ad May 2026"
+store_title: "Times Supermarkets Weekly Ad May 2026"
+store_meta_description: "Times Supermarket weekly ad May 2026. Find Times Supermarket flyer, promo codes, grocery coupons, and deals to save more on everyday essentials."
 store_keywords: "times supermarket coupon code, times supermarket promo code, times supermarket discount code, times supermarket deals, times supermarket offers, times supermarket grocery coupons, times supermarket coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Times Supermarkets Weekly Ad (April 2026)"
-store_og_description: "Times Supermarket weekly ad April 2026. Find Times Supermarket flyer, promo codes, grocery coupons, and deals to save more on everyday essentials."
+store_og_title: "Times Supermarkets Weekly Ad May 2026"
+store_og_description: "Times Supermarket weekly ad May 2026. Find Times Supermarket flyer, promo codes, grocery coupons, and deals to save more on everyday essentials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "timessupermarkets"
 
 coupons:
-  - coupon_id: "1109"
+  - coupon_id: "1094"
     coupon_title: "Times Supermarket Weekly Ad Deals"
     coupon_code: ""
     coupon_description: "Check the Times Supermarket weekly ad to save on fresh produce, meats, seafood, and everyday grocery items."
     coupon_aff_url: "https://www.timessupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1110"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1095"
     coupon_title: "Times Supermarket In-Store Specials"
     coupon_code: ""
     coupon_description: "Find rotating in-store promotions and limited-time discounts on groceries and household essentials."
     coupon_aff_url: "https://www.timessupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 Times Supermarket is a familiar grocery destination for shoppers seeking fresh ingredients, everyday essentials, and convenient neighborhood service. With a long history of serving communities, the store focuses on providing a balanced mix of local favorites, international foods, and standard grocery items that support a wide variety of cooking styles and meal preferences.

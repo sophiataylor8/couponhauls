@@ -1,5 +1,5 @@
 ---
-title: "Randalls Weekly Ad (April 2026) Weekly Flyer"
+title: "Randalls Weekly Ad May 2026 Weekly Flyer"
 slug: "randalls"
 description: "Randalls weekly ad 2026. Discover the latest Randalls weekly flyer, promo code, grocery coupons, and deals to save more on everyday shopping."
 
@@ -7,13 +7,13 @@ description: "Randalls weekly ad 2026. Discover the latest Randalls weekly flyer
 store_name: "Randalls"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Randalls Weekly Ad (April 2026) Weekly Flyer"
-store_title: "Randalls Weekly Ad (April 2026) Weekly Flyer"
+store_h1: "Randalls Weekly Ad May 2026 Weekly Flyer"
+store_title: "Randalls Weekly Ad May 2026 Weekly Flyer"
 store_meta_description: "Randalls weekly ad 2026. Discover the latest Randalls weekly flyer, promo code, grocery coupons, and deals to save more on everyday shopping."
 store_keywords: "randalls coupon code, randalls promo code, randalls discount code, randalls deals, randalls offers, randalls grocery coupons, randalls coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Randalls Weekly Ad (April 2026) Weekly Flyer"
+store_og_title: "Randalls Weekly Ad May 2026 Weekly Flyer"
 store_og_description: "Randalls weekly ad 2026. Discover the latest Randalls weekly flyer, promo code, grocery coupons, and deals to save more on everyday shopping."
 store_og_image: ""
 store_og_type: "website"
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "randalls"
 
 coupons:
-  - coupon_id: "1053"
+  - coupon_id: "1038"
     coupon_title: "Randalls for U Member Savings"
     coupon_code: ""
     coupon_description: "Sign in to your Randalls account to access personalized digital coupons and exclusive savings through the Randalls for U program."
     coupon_aff_url: "https://www.randalls.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1054"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1039"
     coupon_title: "Weekly Ad Grocery Discounts"
     coupon_code: ""
     coupon_description: "Browse Randalls weekly ad to save on fresh foods, pantry items, beverages, and seasonal grocery promotions."
     coupon_aff_url: "https://www.randalls.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 Randalls is a trusted grocery store chain that provides customers with a wide range of fresh foods, pantry essentials, and household products. Known for its quality groceries and convenient locations, Randalls has become a favorite shopping destination for families and individuals looking for fresh ingredients and everyday essentials.

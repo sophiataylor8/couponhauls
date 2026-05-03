@@ -1,20 +1,20 @@
 ---
-title: "Vons Weekly Ad (April 2026) $5 Friday This Week"
+title: "Vons Weekly Ad May 2026 $5 Friday This Week"
 slug: "vons"
-description: "Vons weekly ad April 2026. Find verified Vons $5 friday this week, promo code, digital coupons, and weekly grocery deals to save on everyday shopping."
+description: "Vons weekly ad May 2026. Find verified Vons $5 friday this week, promo code, digital coupons, and weekly grocery deals to save on everyday shopping."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Vons"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Vons Weekly Ad (April 2026) $5 Friday This Week"
-store_title: "Vons Weekly Ad (April 2026) $5 Friday This Week"
-store_meta_description: "Vons weekly ad April 2026. Find verified Vons $5 friday this week, promo code, digital coupons, and weekly grocery deals to save on everyday shopping."
+store_h1: "Vons Weekly Ad May 2026 $5 Friday This Week"
+store_title: "Vons Weekly Ad May 2026 $5 Friday This Week"
+store_meta_description: "Vons weekly ad May 2026. Find verified Vons $5 friday this week, promo code, digital coupons, and weekly grocery deals to save on everyday shopping."
 store_keywords: "vons coupon code, vons promo code, vons discount code, vons deals, vons offers, vons grocery coupons, vons coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Vons Weekly Ad (April 2026) $5 Friday This Week"
-store_og_description: "Vons weekly ad April 2026. Find verified Vons $5 friday this week, promo code, digital coupons, and weekly grocery deals to save on everyday shopping."
+store_og_title: "Vons Weekly Ad May 2026 $5 Friday This Week"
+store_og_description: "Vons weekly ad May 2026. Find verified Vons $5 friday this week, promo code, digital coupons, and weekly grocery deals to save on everyday shopping."
 store_og_image: ""
 store_og_type: "website"
 
@@ -28,22 +28,22 @@ coupon_count: 2
 store_id: "vons"
 
 coupons:
-  - coupon_id: "1061"
+  - coupon_id: "1046"
     coupon_title: "Vons for U Member Savings"
     coupon_code: ""
     coupon_description: "Join the Vons for U loyalty program to access digital coupons, personalized offers, and exclusive weekly grocery savings."
     coupon_aff_url: "https://www.vons.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
-  - coupon_id: "1062"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
+  - coupon_id: "1047"
     coupon_title: "Vons Weekly Grocery Promotions"
     coupon_code: ""
     coupon_description: "Browse the Vons weekly ad to discover special discounts on produce, deli foods, beverages, and pantry staples."
     coupon_aff_url: "https://www.vons.com/"
     coupon_type: "Deal"
-    coupon_start: "21/04/2026"
-    expires_at: "31/12/2026"
+    coupon_start: "01/05/2026"
+    expires_at: "30/06/2026"
 ---
 
 Vons is a trusted grocery retailer that has served communities for more than a century. Known primarily across Southern California and nearby regions, the supermarket chain has built a strong reputation for providing fresh groceries, convenient store locations, and dependable customer service. Over the years, Vons has become a go-to shopping destination for families looking for quality food and everyday essentials.
