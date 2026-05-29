@@ -1,53 +1,30 @@
 #!/bin/bash
-# ============================================================
 # scripts/copy-static.sh
-# Runs after Hugo build — writes robots.txt and sitemap.xml
-# into every store subfolder inside /public
-# ============================================================
+# Writes robots.txt and sitemap.xml into every store subdomain folder
 
 PUBLIC_DIR="./public"
 BASE_DOMAIN="couponhauls.com"
 
-# ── Non-store folders to skip ────────────────────────────────
 SKIP_FOLDERS=(
-  "stores"
-  "blog"
-  "css"
-  "js"
-  "images"
-  "fonts"
-  "about"
-  "contact"
-  "privacy"
-  "affiliate-disclaimer"
-  "page"
-  "tags"
-  "categories"
+  "stores" "blog" "css" "js" "images" "fonts"
+  "about" "contact" "privacy" "affiliate-disclaimer"
+  "page" "tags" "categories"
 )
 
-# ── Check public folder exists ───────────────────────────────
 if [ ! -d "$PUBLIC_DIR" ]; then
-  echo ""
-  echo "ERROR: $PUBLIC_DIR folder not found."
-  echo "Run 'hugo --minify' first before this script."
-  echo ""
+  echo "ERROR: $PUBLIC_DIR not found. Run hugo first."
   exit 1
 fi
 
-echo ""
-echo "================================================"
-echo "  Writing robots.txt + sitemap.xml to subfolders"
-echo "================================================"
+echo "Writing robots.txt + sitemap.xml to store subfolders..."
 
 count=0
 skipped=0
 
 for dir in "$PUBLIC_DIR"/*/; do
   [ -d "$dir" ] || continue
-
   slug=$(basename "$dir")
 
-  # Skip non-store folders
   skip=false
   for folder in "${SKIP_FOLDERS[@]}"; do
     if [[ "$slug" == "$folder" ]]; then
@@ -57,23 +34,20 @@ for dir in "$PUBLIC_DIR"/*/; do
   done
 
   if $skip; then
-    echo "  — skipped: $slug"
     skipped=$((skipped + 1))
     continue
   fi
 
-  # ── Write robots.txt ──────────────────────────────────────
+  # ── robots.txt — reference BOTH subdomain and main sitemaps ──────────────
   cat > "$dir/robots.txt" << EOF
 User-agent: *
 Allow: /
 
-# Block search queries
-Disallow: /stores/?q=
-
+Sitemap: https://${slug}.${BASE_DOMAIN}/sitemap.xml
 Sitemap: https://www.${BASE_DOMAIN}/sitemap.xml
 EOF
 
-  # ── Write sitemap.xml ─────────────────────────────────────
+  # ── sitemap.xml — only the canonical subdomain URL ───────────────────────
   cat > "$dir/sitemap.xml" << EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -81,17 +55,13 @@ EOF
     <loc>https://${slug}.${BASE_DOMAIN}/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+    <lastmod>$(date +%Y-%m-%d)</lastmod>
   </url>
 </urlset>
 EOF
 
   echo "  ✓ ${slug}.${BASE_DOMAIN}"
   count=$((count + 1))
-
 done
 
-echo "------------------------------------------------"
-echo "  ✓ ${count} store folders updated"
-echo "  — ${skipped} folders skipped"
-echo "================================================"
-echo ""
+echo "Done: ${count} stores updated, ${skipped} skipped."

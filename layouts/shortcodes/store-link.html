@@ -1,0 +1,14 @@
+{{/*
+    Usage: {{< store-link slug="amazon" text="Amazon coupons" >}}
+    Generates the correct subdomain link in production, path in dev.
+  */}}
+  {{- $slug := .Get "slug" -}}
+  {{- $text := .Get "text" | default (.Get 0) | default $slug -}}
+  {{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
+  {{- $isProd   := strings.Contains .Site.BaseURL "couponhauls.com" -}}
+  
+  {{- if and $isProd $slug -}}
+  <a href="https://{{ $slug }}.{{ $baseHost }}/" rel="nofollow">{{ $text }}</a>
+  {{- else if $slug -}}
+  <a href="/{{ $slug }}/">{{ $text }}</a>
+  {{- end -}}

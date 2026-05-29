@@ -1,0 +1,30 @@
+{{/*
+    canonical-url.html
+    ==================
+    Returns the correct canonical URL for any page.
+  
+    For store pages in production:  https://[slug].couponhauls.com/
+    For store pages in development: http://localhost:1313/[slug]/
+    For all other pages:            standard Hugo permalink
+  
+    Usage in templates:
+      {{ $url := partial "canonical-url.html" . }}
+  */}}
+  
+  {{- $isStore      := eq .Section "stores" -}}
+  {{- $isProduction := strings.Contains .Site.BaseURL "couponhauls.com" -}}
+  {{- $baseHost     := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
+  
+  {{- if $isStore -}}
+    {{- $slug := .Params.slug | default .Params.store_id | default "" -}}
+    {{- $slug  = $slug | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+    {{- if and $slug $isProduction -}}
+      {{- printf "https://%s.%s/" $slug $baseHost -}}
+    {{- else if $slug -}}
+      {{- printf "%s%s/" (.Site.BaseURL | strings.TrimRight "/") $slug -}}
+    {{- else -}}
+      {{- .Permalink -}}
+    {{- end -}}
+  {{- else -}}
+    {{- .Permalink -}}
+  {{- end -}}

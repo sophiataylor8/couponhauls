@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>{{- block "title" . }}{{ .Title }} - {{ .Site.Title }}{{ end -}}</title>
 <meta name="description" content="{{- block "description" . }}{{ .Site.Params.description }}{{ end -}}">
 <meta name="author" content="{{ .Site.Params.author }}">
 
-{{/* ─── Favicons — absolute URLs so all subdomains resolve correctly ── */}}
-<link rel="icon" type="image/x-icon" href="https://www.couponhauls.com/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.couponhauls.com/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://www.couponhauls.com/apple-touch-icon.png">
+{{/* ── Robots ──────────────────────────────────────────────────────────── */}}
+{{- block "robots" . }}
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+{{ end }}
 
-{{/* ─── Sitemap tag removed — submit via Google Search Console instead ── */}}
+{{/* ── Favicons (served from CDN or static, not www-specific) ─────────── */}}
+<link rel="icon"            type="image/x-icon" href="/favicon.ico">
+<link rel="icon"            type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180"               href="/apple-touch-icon.png">
 
+{{/* ── Canonical ─────────────────────────────────────────────────────── */}}
 {{- block "canonical" . }}
 <link rel="canonical" href="{{ .Permalink }}">
 {{- end }}
+
+{{/* ── OG / Twitter ──────────────────────────────────────────────────── */}}
 {{- block "og_meta" . }}
 <meta property="og:title"       content="{{ .Title }}">
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ $.Site.Params.description }}{{ end }}">
@@ -28,82 +35,72 @@
 <meta name="twitter:site"        content="{{ .Site.Params.twitter_handle }}">
 <meta name="twitter:title"       content="{{ .Title }}">
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="twitter:image"       content="{{ .Site.BaseURL }}{{ .Site.Params.og_image }}">
 {{- end }}
+
+{{/* ── Per-template extra head content ──────────────────────────────── */}}
 {{- block "extra_head" . }}{{ end }}
+
+{{/* ── Structured data ───────────────────────────────────────────────── */}}
 {{- block "schema" . }}{{ end }}
 
-{{/* ─── Inline compiled Tailwind CSS ─────────────────────────────────────── */}}
+{{/* ── Tailwind CSS (inlined via Hugo Pipes) ────────────────────────── */}}
 {{ with resources.Get "css/main.css" }}
   {{ $css := . | css.TailwindCSS (dict "minify" true) }}
   <style>{{ $css.Content | safeCSS }}</style>
 {{ end }}
 
-{{/* ─── Affiliate-bar styles ──────────────────────────────────────────────── */}}
+{{/* ── Affiliate bar styles ──────────────────────────────────────────── */}}
 <style>
-  .affiliate-bar {
-    background: #f0f9ff;
-    border-bottom: 1px solid #bae6fd;
-    color: #0369a1;
-    font-size: .8rem;
-    font-weight: 500;
-    text-align: center;
-    padding: .45rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .35rem;
-    line-height: 1.4;
-    flex-wrap: wrap;
-  }
-  .affiliate-bar-link {
-    color: #0284c7;
-    font-weight: 700;
-    text-decoration: underline;
-    white-space: nowrap;
-  }
-  .affiliate-bar-link:hover { color: #0369a1; }
-  @media (max-width: 480px) {
-    .affiliate-bar { font-size: .75rem; padding: .4rem .75rem; }
-  }
+.affiliate-bar {
+  background: #f0f9ff;
+  border-bottom: 1px solid #bae6fd;
+  color: #0369a1;
+  font-size: .8rem;
+  font-weight: 500;
+  text-align: center;
+  padding: .45rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  line-height: 1.4;
+  flex-wrap: wrap;
+}
+.affiliate-bar-link {
+  color: #0284c7;
+  font-weight: 700;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+.affiliate-bar-link:hover { color: #0369a1; }
+@media (max-width: 480px) {
+  .affiliate-bar { font-size: .75rem; padding: .4rem .75rem; }
+}
 </style>
 
 </head>
 <body class="flex flex-col min-h-screen">
+
+{{/* ── Affiliate disclosure ABOVE main content (FTC compliance) ──────── */}}
+{{- partial "affiliate-bar.html" . }}
+
 {{- partial "header.html" . }}
+
 <main class="flex-grow">
 {{- block "main" . }}{{ end }}
 </main>
-{{- partial "affiliate-bar.html" . }}
+
 {{- partial "footer.html" . }}
 
+{{/* ── Store search data — lazy loaded ───────────────────────────────── */}}
 <script>
-(function () {
-  {{- $isProduction := strings.Contains .Site.BaseURL "couponhauls.com" -}}
-  {{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
-
-  {{- $entries := slice -}}
-  {{- range where .Site.RegularPages "Section" "stores" -}}
-    {{- if and .Params.slug .Params.is_active -}}
-      {{- $slug     := .Params.slug -}}
-      {{- $name     := .Params.store_name | default .Title -}}
-      {{- $title    := .Title -}}
-      {{- $logo     := .Params.logo_url | default "" -}}
-      {{- $count    := .Params.coupon_count | default 0 -}}
-      {{- $storeURL := .Permalink -}}
-      {{- if $isProduction -}}
-        {{- $storeURL = printf "https://%s.%s/" $slug $baseHost -}}
-      {{- end -}}
-      {{- $entry := printf `{"n":%s,"t":%s,"s":%s,"l":%s,"c":%s,"u":%s}` ($name | jsonify) ($title | jsonify) ($slug | jsonify) ($logo | jsonify) ($count | jsonify) ($storeURL | jsonify) -}}
-      {{- $entries = $entries | append $entry -}}
-    {{- end -}}
-  {{- end -}}
-
-  window.STORES_DATA = [{{ delimit $entries "," }}];
-})();
+  window.STORES_DATA_URL = '{{ .Site.BaseURL }}stores-search-data.json';
+  window.STORES_DATA = null;
 </script>
 
-{{/* ─── app.js as external file — errors surface properly in DevTools ── */}}
-<script src="https://www.couponhauls.com/js/app.js"></script>
+{{/* ── App JS — served relative so subdomains don't need cross-origin ── */}}
+<script src="/js/app.js" defer></script>
 
 </body>
 </html>

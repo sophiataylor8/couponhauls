@@ -1,0 +1,28 @@
+{{/*
+  layouts/partials/store-card.html
+  Store card for use on homepage and category pages.
+  Generates correct subdomain URL via the canonical-url partial.
+*/}}
+{{ $displayName := .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace }}
+{{ $storeURL    := partial "canonical-url.html" . }}
+{{ $couponCount := .Params.coupon_count | default 0 }}
+{{ $firstLetter := substr $displayName 0 1 }}
+
+<a href="{{ $storeURL }}" class="coupon-card block hover:scale-105 transition-transform">
+  <div class="p-6">
+    <div class="w-20 h-20 mx-auto mb-4 rounded-lg shadow flex items-center justify-center"
+         style="background:#0284c7;" aria-hidden="true">
+      <span style="font-size:2rem;font-weight:900;color:#fff;line-height:1;
+                   text-transform:uppercase;font-family:Inter,system-ui,sans-serif;">
+        {{ $firstLetter }}
+      </span>
+    </div>
+    <h3 class="text-lg font-semibold text-center mb-2">{{ $displayName }}</h3>
+    <p class="text-sm text-gray-600 text-center mb-3">
+      {{ $couponCount }} Coupon{{ if ne $couponCount 1 }}s{{ end }}
+    </p>
+    <div class="text-center">
+      <span class="text-primary-600 font-medium text-sm">View Deals →</span>
+    </div>
+  </div>
+</a>

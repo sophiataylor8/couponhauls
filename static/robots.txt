@@ -1,7 +1,24 @@
 User-agent: *
 Allow: /
 
-# Block unnecessary pages
+# Block search query URLs
 Disallow: /stores/?q=
+Disallow: /*?q=
+
+# Block duplicate/utility URLs
+Disallow: /index.xml
+
+# Block low-value pagination (when implemented)
+# Disallow: /*?page=
 
 Sitemap: https://www.couponhauls.com/sitemap.xml
+
+# Crawl-delay for bots that respect it
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10

@@ -1,599 +1,1280 @@
+{{/* ═══════════════════════════════════════════════════════════════════════
+  layouts/blog/single.html
+  Blog post single page — CouponHauls.com
+
+  Fixes applied:
+  - OG meta has article-specific tags (published_time, modified_time)
+  - Schema: BlogPosting + BreadcrumbList JSON-LD with dateModified fix
+  - Canonical uses standard .Permalink (blog lives on www)
+  - Share buttons use .Permalink directly (no absURL issues)
+  - Images have loading="lazy" / loading="eager" and alt text
+  - Related posts link to correct permalinks
+  - TOC scroll-spy improved with IntersectionObserver
+  - All CSS in define "extra_head" block
+  - Proper heading hierarchy throughout
+  - Accessibility: aria-labels, landmark roles, focus management
+  - Store links in content rewritten to subdomain format via JS
+  - No noindex logic anywhere
+═══════════════════════════════════════════════════════════════════════ */}}
+
+
+{{/* ── Title ──────────────────────────────────────────────────────────── */}}
 {{ define "title" }}{{ .Title }} – {{ .Site.Title }}{{ end }}
-{{ define "description" }}{{ .Params.description }}{{ end }}
 
+
+{{/* ── Meta Description ────────────────────────────────────────────────── */}}
+{{ define "description" }}{{ .Params.description | default .Site.Params.description }}{{ end }}
+
+
+{{/* ── Canonical ────────────────────────────────────────────────────────── */}}
+{{ define "canonical" }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{ end }}
+
+
+{{/* ── OG / Twitter Meta ───────────────────────────────────────────────── */}}
+{{ define "og_meta" }}
+{{- $ogImage := "" -}}
+{{- if .Params.featured_image -}}
+{{- $ogImage = .Params.featured_image -}}
+{{- else -}}
+{{- $ogImage = printf "%s%s" .Site.BaseURL .Site.Params.og_image -}}
+{{- end -}}
+{{- $desc := .Params.description | default .Site.Params.description -}}
+<meta property="og:title"              content="{{ .Title }}">
+<meta property="og:description"        content="{{ $desc }}">
+<meta property="og:type"               content="article">
+<meta property="og:url"                content="{{ .Permalink }}">
+<meta property="og:image"              content="{{ $ogImage }}">
+<meta property="og:image:alt"          content="{{ .Title }}">
+<meta property="og:site_name"          content="{{ .Site.Title }}">
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:modified_time"
+content="{{ with .Params.updated }}{{ . }}{{ else }}{{ now.Format "2006-01-02T15:04:05Z07:00" }}{{ end }}">
+<meta property="article:author"        content="{{ .Site.Params.author | default "CouponHauls" }}">
+{{ with .Params.category }}
+<meta property="article:section"       content="{{ . }}">
+{{ end }}
+{{ range .Params.tags }}
+<meta property="article:tag"           content="{{ . }}">
+{{ end }}
+<meta name="twitter:card"              content="summary_large_image">
+<meta name="twitter:site"              content="{{ .Site.Params.twitter_handle }}">
+<meta name="twitter:title"             content="{{ .Title }}">
+<meta name="twitter:description"       content="{{ $desc }}">
+<meta name="twitter:image"             content="{{ $ogImage }}">
+<meta name="twitter:image:alt"         content="{{ .Title }}">
+{{ end }}
+
+
+{{/* ── Schema Markup ───────────────────────────────────────────────────── */}}
 {{ define "schema" }}
+{{- $siteURL  := .Site.BaseURL | strings.TrimRight "/" -}}
+{{- $ogImage  := "" -}}
+{{- if .Params.featured_image -}}
+{{- $ogImage = .Params.featured_image -}}
+{{- else -}}
+{{- $ogImage = printf "%simages/couponhaulslogo.png" .Site.BaseURL -}}
+{{- end -}}
+
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": {{ .Title | jsonify }},
-  "description": {{ .Params.description | jsonify }},
-  "datePublished": "{{ .Date.Format "2006-01-02" }}",
-  "dateModified": "{{ with .Params.updated }}{{ . }}{{ else }}{{ $.Date.Format "2006-01-02" }}{{ end }}",
-  "author": { "@type": "Organization", "name": {{ .Site.Params.author | default "CouponHauls" | jsonify }}, "url": {{ .Site.BaseURL | jsonify }} },
-  "publisher": { "@type": "Organization", "name": "CouponHauls", "url": {{ .Site.BaseURL | jsonify }} },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": {{ .Permalink | jsonify }} },
-  "url": {{ .Permalink | jsonify }}{{ with .Params.featured_image }}, "image": {{ . | jsonify }}{{ end }}
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"@id": {{ (printf "%s#article" .Permalink) | jsonify }},
+"headline": {{ .Title | jsonify }},
+"description": {{ (.Params.description | default .Site.Params.description) | jsonify }},
+"url": {{ .Permalink | jsonify }},
+"datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+"dateModified": {{ with .Params.updated }}{{ . | jsonify }}{{ else }}{{ now.Format "2006-01-02T15:04:05Z07:00" | jsonify }}{{ end }},
+"author": {
+ "@type": "Organization",
+ "@id": {{ (printf "%s/#organization" $siteURL) | jsonify }},
+ "name": {{ (.Site.Params.author | default "CouponHauls") | jsonify }},
+ "url": {{ .Site.BaseURL | jsonify }}
+},
+"publisher": {
+ "@type": "Organization",
+ "@id": {{ (printf "%s/#organization" $siteURL) | jsonify }},
+ "name": "CouponHauls",
+ "url": {{ .Site.BaseURL | jsonify }},
+ "logo": {
+   "@type": "ImageObject",
+   "url": {{ (printf "%simages/couponhaulslogo.png" .Site.BaseURL) | jsonify }}
+ }
+},
+"image": {
+ "@type": "ImageObject",
+ "url": {{ $ogImage | jsonify }}
+},
+"mainEntityOfPage": {
+ "@type": "WebPage",
+ "@id": {{ .Permalink | jsonify }}
+},
+"isPartOf": {
+ "@type": "Blog",
+ "@id": {{ (printf "%s/blog/#blog" $siteURL) | jsonify }},
+ "name": {{ (printf "%s Savings Blog" .Site.Title) | jsonify }},
+ "url": {{ (printf "%s/blog/" $siteURL) | jsonify }}
+},
+"inLanguage": "en-US"
+{{ with .Params.category }},
+"articleSection": {{ . | jsonify }}
+{{ end }}
+{{ with .Params.tags }},
+"keywords": {{ delimit . ", " | jsonify }}
+{{ end }}
 }
 </script>
+
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ .Site.BaseURL | strings.TrimRight "/" | jsonify }} },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": {{ (printf "%s/blog/" (.Site.BaseURL | strings.TrimRight "/")) | jsonify }} },
-    { "@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}, "item": {{ .Permalink | jsonify }} }
-  ]
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+ {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": {{ .Site.BaseURL | jsonify }}
+ },
+ {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Blog",
+   "item": {{ (printf "%s/blog/" $siteURL) | jsonify }}
+ },
+ {
+   "@type": "ListItem",
+   "position": 3,
+   "name": {{ .Title | jsonify }},
+   "item": {{ .Permalink | jsonify }}
+ }
+]
 }
 </script>
 {{ end }}
 
-{{ define "main" }}
 
-<!-- ═══════════════════════════════════════════
-     HERO
-════════════════════════════════════════════ -->
-<section class="bs-hero">
-  <div class="bs-hero-bg"></div>
-  <div class="bs-hero-inner">
-
-    <!-- Breadcrumb -->
-    <div class="bs-breadcrumb">
-      <a href="/">Home</a>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      <a href="/blog/">Blog</a>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      <span>{{ .Title | truncate 45 }}</span>
-    </div>
-
-    <!-- Category -->
-    {{ if .Params.category }}
-    <span class="bs-cat">{{ .Params.category }}</span>
-    {{ end }}
-
-    <!-- Title -->
-    <h1 class="bs-hero-title">{{ .Title }}</h1>
-    <p class="bs-hero-desc">{{ .Params.description }}</p>
-
-    <!-- Meta -->
-    <div class="bs-meta">
-      <div class="bs-meta-author">
-        <div class="bs-meta-avatar">CH</div>
-        <span>{{ .Site.Params.author | default "CouponHauls Team" }}</span>
-      </div>
-      <span class="bs-meta-sep">·</span>
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-      <span class="bs-meta-sep">·</span>
-      <span>{{ .Params.read_time | default "5" }} min read</span>
-      {{ if .Params.updated }}
-      <span class="bs-meta-sep">·</span>
-      <span>Updated {{ .Params.updated }}</span>
-      {{ end }}
-    </div>
-
-    <!-- Share -->
-    <div class="bs-share">
-      <span class="bs-share-label">Share</span>
-      <a href="https://x.com/intent/tweet?url={{ .Permalink | absURL }}&text={{ .Title | urlize }}" target="_blank" rel="noopener" class="bs-share-btn bs-share-tw">
-        <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        X
-      </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink | absURL }}" target="_blank" rel="noopener" class="bs-share-btn bs-share-fb">
-        <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        Facebook
-      </a>
-      <button onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)})" class="bs-share-btn bs-share-copy">
-        Copy Link
-      </button>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     BODY
-════════════════════════════════════════════ -->
-<section class="bs-section">
-  <div class="bs-layout">
-
-    <!-- Article -->
-    <main class="bs-main">
-
-      {{ if .Params.featured_image }}
-      <div class="bs-cover">
-        <img src="{{ .Params.featured_image }}" alt="{{ .Title }}">
-      </div>
-      {{ end }}
-
-      <article class="bs-article" id="article-body">
-        {{ .Content }}
-      </article>
-
-      <!-- Inline CTA -->
-      <div class="bs-cta-card">
-        <div class="bs-cta-inner">
-          <div class="bs-cta-icon">🎫</div>
-          <div class="bs-cta-text">
-            <h3>Ready to Start Saving?</h3>
-            <p>Hundreds of verified codes from top stores, updated daily.</p>
-          </div>
-          <div class="bs-cta-actions">
-            <a href="/stores/" class="bs-cta-primary">Browse Coupons →</a>
-            <a href="/blog/" class="bs-cta-ghost">More Articles</a>
-          </div>
-        </div>
-        <div class="bs-cta-badges">
-          <span>✅ Free</span>
-          <span>🔒 No sign-up</span>
-          <span>🔄 Daily updates</span>
-        </div>
-      </div>
-
-      <!-- Tags -->
-      {{ if .Params.tags }}
-      <div class="bs-tags">
-        {{ range .Params.tags }}
-        <span class="bs-tag">#{{ . }}</span>
-        {{ end }}
-      </div>
-      {{ end }}
-
-      <!-- Back link -->
-      <div class="bs-back">
-        <a href="/blog/">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 5l-7 7 7 7"/></svg>
-          Back to Blog
-        </a>
-      </div>
-
-    </main>
-
-    <!-- Sidebar -->
-    <aside class="bs-sidebar">
-
-      <!-- TOC -->
-      <div class="sidebar-card" id="toc-box">
-        <div class="sidebar-card-header">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h10M4 14h12"/></svg>
-          In This Article
-        </div>
-        <nav id="toc-nav" class="bs-toc-nav">
-          <p class="bs-toc-loading">Loading…</p>
-        </nav>
-      </div>
-
-      <!-- Sidebar CTA -->
-      <div class="sidebar-cta">
-        <div class="sidebar-cta-icon">💸</div>
-        <h3>Don't Miss a Deal</h3>
-        <p>Browse verified coupons from 500+ top stores.</p>
-        <a href="/stores/" class="sidebar-cta-btn">Find Coupons Now →</a>
-      </div>
-
-      <!-- Recent posts -->
-      {{ $related := where (where .Site.RegularPages "Section" "blog") "Permalink" "ne" .Permalink }}
-      {{ if $related }}
-      <div class="sidebar-card">
-        <div class="sidebar-card-header">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          More Articles
-        </div>
-        <div class="sidebar-recent">
-          {{ range first 4 $related }}
-          <a href="{{ .Permalink }}" class="sidebar-recent-item">
-            <span class="sidebar-recent-emoji">{{ .Params.emoji | default "📄" }}</span>
-            <div>
-              <span class="sidebar-recent-title">{{ .Title }}</span>
-              <span class="sidebar-recent-date">{{ .Date.Format "Jan 2, 2006" }}</span>
-            </div>
-          </a>
-          {{ end }}
-        </div>
-      </div>
-      {{ end }}
-
-      <!-- Trust -->
-      <div class="sidebar-trust">
-        <div class="trust-item">
-          <span class="trust-icon">✅</span>
-          <div><strong>Verified Codes</strong><span>All coupons tested daily</span></div>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">🔒</span>
-          <div><strong>100% Free</strong><span>No sign-up required</span></div>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">🔄</span>
-          <div><strong>Daily Updates</strong><span>Fresh deals every day</span></div>
-        </div>
-      </div>
-
-    </aside>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     RELATED POSTS
-════════════════════════════════════════════ -->
-{{ $related := where (where .Site.RegularPages "Section" "blog") "Permalink" "ne" .Permalink }}
-{{ if $related }}
-<section class="bs-related">
-  <div class="bs-related-inner">
-    <div class="bs-related-head">
-      <div>
-        <h2>More Savings Tips</h2>
-        <p>Keep reading for more expert guides</p>
-      </div>
-      <a href="/blog/" class="bs-related-all">View all →</a>
-    </div>
-    <div class="bs-related-grid">
-      {{ range first 3 $related }}
-      <a href="{{ .Permalink }}" class="bs-rel-card">
-        <div class="bs-rel-img">
-          {{ if .Params.featured_image }}
-          <img src="{{ .Params.featured_image }}" alt="{{ .Title }}">
-          {{ else }}
-          <span>{{ .Params.emoji | default "💰" }}</span>
-          {{ end }}
-        </div>
-        <div class="bs-rel-body">
-          {{ if .Params.category }}<span class="bl-tag bl-tag-sm">{{ .Params.category }}</span>{{ end }}
-          <h3>{{ .Title }}</h3>
-          <p>{{ .Params.description | truncate 90 }}</p>
-          <div class="bs-rel-meta">
-            <span>{{ .Date.Format "Jan 2, 2006" }}</span>
-            <span>{{ .Params.read_time | default "5" }} min read</span>
-          </div>
-        </div>
-      </a>
-      {{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
-
+{{/* ── Page CSS ──────────────────────────────────────────────────────────── */}}
+{{ define "extra_head" }}
 <style>
+/* =====================================================================
+BLOG SINGLE PAGE STYLES — layouts/blog/single.html
+===================================================================== */
 
-/* ── Hero ── */
+/* ── Hero ─────────────────────────────────────────────────────────── */
 .bs-hero {
-  position: relative;
-  background: linear-gradient(135deg, #0369a1 0%, #0284c7 50%, #0ea5e9 100%);
-  padding: 3rem 1.25rem 3.5rem;
-  overflow: hidden;
+position: relative;
+background: linear-gradient(135deg, #0369a1 0%, #0284c7 50%, #0ea5e9 100%);
+padding: 3rem 1.25rem 3.5rem;
+overflow: hidden;
 }
 .bs-hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 15% 60%, rgba(255,255,255,0.07) 0%, transparent 50%),
-    radial-gradient(circle at 85% 15%, rgba(255,255,255,0.05) 0%, transparent 40%);
-  pointer-events: none;
+position: absolute;
+inset: 0;
+background-image:
+ radial-gradient(circle at 15% 60%, rgba(255,255,255,.07) 0%, transparent 50%),
+ radial-gradient(circle at 85% 15%, rgba(255,255,255,.05) 0%, transparent 40%);
+pointer-events: none;
 }
 .bs-hero-inner {
-  position: relative;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.875rem;
+position: relative;
+max-width: 1100px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+gap: .875rem;
 }
+
+/* ── Breadcrumb ──────────────────────────────────────────────────── */
 .bs-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8125rem;
-  color: rgba(255,255,255,0.7);
-  flex-wrap: wrap;
+display: flex;
+align-items: center;
+gap: .4rem;
+font-size: .8125rem;
+color: rgba(255,255,255,.7);
+flex-wrap: wrap;
 }
-.bs-breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.15s; }
+.bs-breadcrumb a {
+color: rgba(255,255,255,.7);
+text-decoration: none;
+transition: color .15s;
+}
 .bs-breadcrumb a:hover { color: #fff; }
-.bs-breadcrumb svg { opacity: 0.5; flex-shrink: 0; }
-.bs-breadcrumb span { color: rgba(255,255,255,0.55); }
+.bs-breadcrumb svg { opacity: .5; flex-shrink: 0; }
+.bs-breadcrumb span { color: rgba(255,255,255,.55); }
+
+/* ── Category badge ──────────────────────────────────────────────── */
 .bs-cat {
-  display: inline-block;
-  background: rgba(255,255,255,0.18);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  width: fit-content;
-  backdrop-filter: blur(4px);
+display: inline-block;
+background: rgba(255,255,255,.18);
+color: #fff;
+font-size: .7rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: .08em;
+padding: .3rem .75rem;
+border-radius: 999px;
+width: fit-content;
+backdrop-filter: blur(4px);
 }
+
+/* ── Hero title + desc ───────────────────────────────────────────── */
 .bs-hero-title {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  font-weight: 800;
-  color: #fff;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  margin: 0;
-  max-width: 780px;
+font-size: clamp(1.6rem, 4vw, 2.4rem);
+font-weight: 800;
+color: #fff;
+line-height: 1.2;
+letter-spacing: -.02em;
+margin: 0;
+max-width: 780px;
 }
 .bs-hero-desc {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.8);
-  line-height: 1.65;
-  max-width: 640px;
-  margin: 0;
+font-size: 1rem;
+color: rgba(255,255,255,.8);
+line-height: 1.65;
+max-width: 640px;
+margin: 0;
 }
+
+/* ── Author meta ─────────────────────────────────────────────────── */
 .bs-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  font-size: 0.8125rem;
-  color: rgba(255,255,255,0.72);
-  flex-wrap: wrap;
+display: flex;
+align-items: center;
+gap: .625rem;
+font-size: .8125rem;
+color: rgba(255,255,255,.72);
+flex-wrap: wrap;
 }
-.bs-meta-author { display: flex; align-items: center; gap: 0.5rem; }
+.bs-meta-author { display: flex; align-items: center; gap: .5rem; }
 .bs-meta-avatar {
-  width: 28px; height: 28px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.2);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.65rem; font-weight: 800; color: #fff;
-  backdrop-filter: blur(4px);
+width: 28px;
+height: 28px;
+border-radius: 50%;
+background: rgba(255,255,255,.2);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: .65rem;
+font-weight: 800;
+color: #fff;
+backdrop-filter: blur(4px);
+flex-shrink: 0;
 }
-.bs-meta-sep { opacity: 0.4; }
+.bs-meta-sep { opacity: .4; }
+
+/* ── Share bar ───────────────────────────────────────────────────── */
 .bs-share {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  padding-top: 0.25rem;
+display: flex;
+align-items: center;
+gap: .5rem;
+flex-wrap: wrap;
+padding-top: .25rem;
 }
 .bs-share-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.55);
+font-size: .7rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: .08em;
+color: rgba(255,255,255,.55);
 }
 .bs-share-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  transition: opacity 0.15s, transform 0.15s;
-  cursor: pointer;
-  border: none;
-  text-decoration: none;
+display: inline-flex;
+align-items: center;
+gap: .35rem;
+font-size: .75rem;
+font-weight: 600;
+padding: .35rem .85rem;
+border-radius: 999px;
+transition: opacity .15s, transform .15s;
+cursor: pointer;
+border: none;
+text-decoration: none;
 }
-.bs-share-btn:hover { opacity: 0.85; transform: translateY(-1px); }
-.bs-share-tw { background: #1da1f2; color: #fff; }
-.bs-share-fb { background: #1877f2; color: #fff; }
-.bs-share-copy { background: rgba(255,255,255,0.15); color: #fff; backdrop-filter: blur(4px); }
+.bs-share-btn:hover { opacity: .85; transform: translateY(-1px); }
+.bs-share-tw   { background: #1da1f2; color: #fff; }
+.bs-share-fb   { background: #1877f2; color: #fff; }
+.bs-share-copy {
+background: rgba(255,255,255,.15);
+color: #fff;
+backdrop-filter: blur(4px);
+}
 
-/* ── Section ── */
+/* ── Body layout ─────────────────────────────────────────────────── */
 .bs-section {
-  background: #f8fafc;
-  padding: 2.5rem 1.25rem 4rem;
+background: #f8fafc;
+padding: 2.5rem 1.25rem 4rem;
 }
 .bs-layout {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: start;
+max-width: 1100px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: 1fr;
+gap: 2rem;
+align-items: start;
 }
 @media (min-width: 1024px) {
-  .bs-layout { grid-template-columns: minmax(0, 1fr) 300px; gap: 2.5rem; }
+.bs-layout { grid-template-columns: minmax(0, 1fr) 300px; gap: 2.5rem; }
 }
 
-/* ── Article ── */
+/* ── Main column ─────────────────────────────────────────────────── */
 .bs-main { display: flex; flex-direction: column; gap: 1.5rem; }
-.bs-cover {
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-}
-.bs-cover img { width: 100%; height: 280px; object-fit: cover; display: block; }
 
+/* ── Cover image ─────────────────────────────────────────────────── */
+.bs-cover {
+border-radius: 1rem;
+overflow: hidden;
+box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+.bs-cover img {
+width: 100%;
+height: 280px;
+object-fit: cover;
+display: block;
+}
+
+/* ── Article body ────────────────────────────────────────────────── */
 .bs-article {
-  background: #fff;
-  border-radius: 1.25rem;
-  border: 1px solid #e5e7eb;
-  padding: 2.5rem;
-  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
-  font-size: 1rem;
-  line-height: 1.85;
-  color: #374151;
+background: #fff;
+border-radius: 1.25rem;
+border: 1px solid #e5e7eb;
+padding: 2.5rem;
+box-shadow: 0 1px 8px rgba(0,0,0,.05);
+font-size: 1rem;
+line-height: 1.85;
+color: #374151;
 }
 .bs-article h2 {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin: 2.25rem 0 0.75rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #f1f5f9;
-  letter-spacing: -0.015em;
-  line-height: 1.3;
-  scroll-margin-top: 80px;
+font-size: 1.4rem;
+font-weight: 800;
+color: #0f172a;
+margin: 2.25rem 0 .75rem;
+padding-bottom: .5rem;
+border-bottom: 2px solid #f1f5f9;
+letter-spacing: -.015em;
+line-height: 1.3;
+scroll-margin-top: 80px;
 }
 .bs-article h2:first-child { margin-top: 0; }
 .bs-article h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #1e3a5f;
-  margin: 1.75rem 0 0.5rem;
-  scroll-margin-top: 80px;
+font-size: 1.1rem;
+font-weight: 700;
+color: #1e3a5f;
+margin: 1.75rem 0 .5rem;
+scroll-margin-top: 80px;
 }
-.bs-article h4 { font-size: 1rem; font-weight: 700; color: #374151; margin: 1.25rem 0 0.4rem; }
+.bs-article h4 {
+font-size: 1rem;
+font-weight: 700;
+color: #374151;
+margin: 1.25rem 0 .4rem;
+}
 .bs-article p { margin: 0 0 1.15rem; color: #4b5563; }
 .bs-article p:last-child { margin-bottom: 0; }
-.bs-article a { color: #0284c7; font-weight: 500; text-decoration: none; border-bottom: 1.5px solid #bae6fd; transition: color 0.12s, border-color 0.12s; }
+.bs-article a {
+color: #0284c7;
+font-weight: 500;
+text-decoration: none;
+border-bottom: 1.5px solid #bae6fd;
+transition: color .12s, border-color .12s;
+}
 .bs-article a:hover { color: #0369a1; border-color: #0369a1; }
-.bs-article ul { list-style: none; padding: 0; margin: 0 0 1.15rem; }
-.bs-article ul li { position: relative; padding: 0.3rem 0 0.3rem 1.5rem; color: #4b5563; }
-.bs-article ul li::before { content: ""; position: absolute; left: 0.25rem; top: 0.78rem; width: 6px; height: 6px; border-radius: 50%; background: #0284c7; }
+.bs-article ul {
+list-style: none;
+padding: 0;
+margin: 0 0 1.15rem;
+}
+.bs-article ul li {
+position: relative;
+padding: .3rem 0 .3rem 1.5rem;
+color: #4b5563;
+}
+.bs-article ul li::before {
+content: "";
+position: absolute;
+left: .25rem;
+top: .78rem;
+width: 6px;
+height: 6px;
+border-radius: 50%;
+background: #0284c7;
+}
 .bs-article ol { padding-left: 1.5rem; margin: 0 0 1.15rem; }
-.bs-article ol li { padding: 0.25rem 0; color: #4b5563; }
+.bs-article ol li { padding: .25rem 0; color: #4b5563; }
 .bs-article strong { color: #111827; font-weight: 700; }
 .bs-article em { font-style: italic; color: #6b7280; }
-.bs-article code { background: #f0f9ff; color: #0369a1; padding: 0.125rem 0.4rem; border-radius: 0.25rem; font-size: 0.875em; border: 1px solid #bae6fd; }
-.bs-article blockquote { border-left: 3px solid #0284c7; background: #f0f9ff; margin: 1.5rem 0; padding: 0.875rem 1.25rem 0.875rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; color: #1e40af; font-style: italic; }
+.bs-article code {
+background: #f0f9ff;
+color: #0369a1;
+padding: .125rem .4rem;
+border-radius: .25rem;
+font-size: .875em;
+border: 1px solid #bae6fd;
+}
+.bs-article blockquote {
+border-left: 3px solid #0284c7;
+background: #f0f9ff;
+margin: 1.5rem 0;
+padding: .875rem 1.25rem .875rem 1.5rem;
+border-radius: 0 .5rem .5rem 0;
+color: #1e40af;
+font-style: italic;
+}
 .bs-article hr { border: none; border-top: 2px solid #f1f5f9; margin: 2rem 0; }
-.bs-article table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 1.5rem; font-size: 0.9375rem; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.07); }
-.bs-article th { background: #0f172a; color: #fff; padding: 0.7rem 1rem; text-align: left; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
-.bs-article td { padding: 0.65rem 1rem; border-bottom: 1px solid #e5e7eb; color: #4b5563; }
+.bs-article img {
+max-width: 100%;
+height: auto;
+border-radius: .75rem;
+display: block;
+margin: 1rem 0;
+}
+.bs-article table {
+width: 100%;
+border-collapse: collapse;
+margin: .5rem 0 1.5rem;
+font-size: .9375rem;
+border-radius: .75rem;
+overflow: hidden;
+box-shadow: 0 1px 8px rgba(0,0,0,.07);
+}
+.bs-article th {
+background: #0f172a;
+color: #fff;
+padding: .7rem 1rem;
+text-align: left;
+font-size: .8125rem;
+font-weight: 600;
+letter-spacing: .04em;
+text-transform: uppercase;
+}
+.bs-article td {
+padding: .65rem 1rem;
+border-bottom: 1px solid #e5e7eb;
+color: #4b5563;
+}
 .bs-article tr:last-child td { border-bottom: none; }
 .bs-article tr:nth-child(even) td { background: #f8fafc; }
 
-/* Inline CTA */
+/* ── Inline CTA ──────────────────────────────────────────────────── */
 .bs-cta-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 1.25rem;
-  overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+background: #fff;
+border: 1px solid #e5e7eb;
+border-radius: 1.25rem;
+overflow: hidden;
+box-shadow: 0 2px 12px rgba(0,0,0,.06);
 }
 .bs-cta-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1.75rem;
-  background: linear-gradient(135deg, #f0f9ff 0%, #fff 100%);
-  border-bottom: 1px solid #e0f2fe;
+display: flex;
+flex-direction: column;
+gap: 1rem;
+padding: 1.75rem;
+background: linear-gradient(135deg, #f0f9ff 0%, #fff 100%);
+border-bottom: 1px solid #e0f2fe;
 }
-@media (min-width: 640px) { .bs-cta-inner { flex-direction: row; align-items: center; } }
-.bs-cta-icon { font-size: 2.25rem; width: 52px; height: 52px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex-shrink: 0; }
+@media (min-width: 640px) {
+.bs-cta-inner { flex-direction: row; align-items: center; }
+}
+.bs-cta-icon {
+font-size: 2.25rem;
+width: 52px;
+height: 52px;
+background: #fff;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 2px 8px rgba(0,0,0,.1);
+flex-shrink: 0;
+}
 .bs-cta-text { flex: 1; }
-.bs-cta-text h3 { font-size: 1.1rem; font-weight: 800; color: #0f172a; margin: 0 0 0.25rem; }
-.bs-cta-text p { font-size: 0.875rem; color: #6b7280; margin: 0; }
-.bs-cta-actions { display: flex; gap: 0.5rem; flex-shrink: 0; flex-wrap: wrap; }
+.bs-cta-text h3 {
+font-size: 1.1rem;
+font-weight: 800;
+color: #0f172a;
+margin: 0 0 .25rem;
+}
+.bs-cta-text p { font-size: .875rem; color: #6b7280; margin: 0; }
+.bs-cta-actions {
+display: flex;
+gap: .5rem;
+flex-shrink: 0;
+flex-wrap: wrap;
+}
 .bs-cta-primary {
-  display: inline-flex; align-items: center;
-  background: #0284c7; color: #fff;
-  font-weight: 700; font-size: 0.875rem;
-  padding: 0.6rem 1.25rem; border-radius: 999px;
-  text-decoration: none; white-space: nowrap;
-  transition: background 0.15s, transform 0.15s;
-  box-shadow: 0 2px 8px rgba(2,132,199,0.3);
+display: inline-flex;
+align-items: center;
+background: #0284c7;
+color: #fff;
+font-weight: 700;
+font-size: .875rem;
+padding: .6rem 1.25rem;
+border-radius: 999px;
+text-decoration: none;
+white-space: nowrap;
+transition: background .15s, transform .15s;
+box-shadow: 0 2px 8px rgba(2,132,199,.3);
 }
 .bs-cta-primary:hover { background: #0369a1; transform: translateY(-1px); }
 .bs-cta-ghost {
-  display: inline-flex; align-items: center;
-  background: transparent; color: #0284c7;
-  font-weight: 600; font-size: 0.875rem;
-  padding: 0.6rem 1rem; border-radius: 999px;
-  text-decoration: none; border: 1.5px solid #bae6fd;
-  white-space: nowrap; transition: background 0.15s;
+display: inline-flex;
+align-items: center;
+background: transparent;
+color: #0284c7;
+font-weight: 600;
+font-size: .875rem;
+padding: .6rem 1rem;
+border-radius: 999px;
+text-decoration: none;
+border: 1.5px solid #bae6fd;
+white-space: nowrap;
+transition: background .15s;
 }
 .bs-cta-ghost:hover { background: #f0f9ff; }
-.bs-cta-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; padding: 0.875rem 1.75rem; background: #fafafa; }
-.bs-cta-badges span { font-size: 0.75rem; color: #6b7280; font-weight: 500; }
+.bs-cta-badges {
+display: flex;
+flex-wrap: wrap;
+gap: .75rem;
+padding: .875rem 1.75rem;
+background: #fafafa;
+}
+.bs-cta-badges span { font-size: .75rem; color: #6b7280; font-weight: 500; }
 
-/* Tags + Back */
-.bs-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.bs-tag { font-size: 0.75rem; background: #f1f5f9; color: #64748b; padding: 0.3rem 0.75rem; border-radius: 999px; font-weight: 500; }
+/* ── Tags ────────────────────────────────────────────────────────── */
+.bs-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.bs-tag {
+font-size: .75rem;
+background: #f1f5f9;
+color: #64748b;
+padding: .3rem .75rem;
+border-radius: 999px;
+font-weight: 500;
+}
+
+/* ── Back link ───────────────────────────────────────────────────── */
 .bs-back a {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  font-size: 0.875rem; font-weight: 600;
-  color: #6b7280; text-decoration: none;
-  padding: 0.5rem 1rem; border-radius: 0.5rem;
-  border: 1px solid #e5e7eb; background: #fff;
-  transition: color 0.12s, border-color 0.12s;
+display: inline-flex;
+align-items: center;
+gap: .4rem;
+font-size: .875rem;
+font-weight: 600;
+color: #6b7280;
+text-decoration: none;
+padding: .5rem 1rem;
+border-radius: .5rem;
+border: 1px solid #e5e7eb;
+background: #fff;
+transition: color .12s, border-color .12s;
 }
 .bs-back a:hover { color: #0284c7; border-color: #bae6fd; }
 
-/* ── Sidebar shared ── */
-.bs-sidebar { display: flex; flex-direction: column; gap: 1.25rem; }
-@media (min-width: 1024px) { .bs-sidebar { position: sticky; top: 88px; } }
+/* ── Sidebar ─────────────────────────────────────────────────────── */
+.bs-sidebar {
+display: flex;
+flex-direction: column;
+gap: 1.25rem;
+}
+@media (min-width: 1024px) {
+.bs-sidebar { position: sticky; top: 88px; }
+}
+.sidebar-card {
+background: #fff;
+border: 1px solid #e5e7eb;
+border-radius: 1rem;
+overflow: hidden;
+box-shadow: 0 1px 6px rgba(0,0,0,.05);
+}
+.sidebar-card-header {
+display: flex;
+align-items: center;
+gap: .5rem;
+font-size: .75rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: .07em;
+color: #6b7280;
+background: #fafafa;
+border-bottom: 1px solid #f1f5f9;
+padding: .875rem 1.125rem;
+}
+.sidebar-cta {
+background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+border-radius: 1rem;
+padding: 1.5rem;
+text-align: center;
+color: #fff;
+box-shadow: 0 4px 20px rgba(2,132,199,.22);
+}
+.sidebar-cta-icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
+.sidebar-cta h3 {
+font-size: 1.05rem;
+font-weight: 800;
+margin: 0 0 .375rem;
+color: #fff;
+}
+.sidebar-cta p {
+font-size: .8125rem;
+color: rgba(255,255,255,.78);
+margin: 0 0 1.1rem;
+line-height: 1.5;
+}
+.sidebar-cta-btn {
+display: inline-block;
+background: #fff;
+color: #0284c7;
+font-weight: 700;
+font-size: .875rem;
+padding: .6rem 1.4rem;
+border-radius: 999px;
+text-decoration: none;
+transition: transform .15s, box-shadow .15s;
+box-shadow: 0 2px 8px rgba(0,0,0,.12);
+}
+.sidebar-cta-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,.15); }
 
-.sidebar-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 1rem; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,0.05); }
-.sidebar-card-header { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #6b7280; background: #fafafa; border-bottom: 1px solid #f1f5f9; padding: 0.875rem 1.125rem; }
-.sidebar-cta { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); border-radius: 1rem; padding: 1.5rem; text-align: center; color: #fff; box-shadow: 0 4px 20px rgba(2,132,199,0.22); }
-.sidebar-cta-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
-.sidebar-cta h3 { font-size: 1.05rem; font-weight: 800; margin: 0 0 0.375rem; color: #fff; }
-.sidebar-cta p { font-size: 0.8125rem; color: rgba(255,255,255,0.78); margin: 0 0 1.1rem; line-height: 1.5; }
-.sidebar-cta-btn { display: inline-block; background: #fff; color: #0284c7; font-weight: 700; font-size: 0.875rem; padding: 0.6rem 1.4rem; border-radius: 999px; text-decoration: none; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
-.sidebar-cta-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+/* ── TOC ─────────────────────────────────────────────────────────── */
+.bs-toc-nav { padding: .5rem 0; }
+.bs-toc-empty {
+font-size: .8125rem;
+color: #9ca3af;
+font-style: italic;
+padding: .75rem 1.125rem;
+margin: 0;
+}
+.bs-toc-nav a {
+display: block;
+font-size: .875rem;
+color: #4b5563;
+padding: .4rem 1.125rem;
+border-left: 3px solid transparent;
+transition: all .12s;
+text-decoration: none;
+line-height: 1.4;
+}
+.bs-toc-nav a:hover,
+.bs-toc-nav a.toc-active {
+color: #0284c7;
+border-left-color: #0284c7;
+background: #f0f9ff;
+}
+.bs-toc-nav a.toc-h3 {
+padding-left: 1.875rem;
+font-size: .8125rem;
+color: #6b7280;
+}
 
-/* TOC */
-.bs-toc-nav { padding: 0.5rem 0; }
-.bs-toc-loading { font-size: 0.8125rem; color: #9ca3af; font-style: italic; padding: 0.75rem 1.125rem; margin: 0; }
-.bs-toc-nav a { display: block; font-size: 0.875rem; color: #4b5563; padding: 0.4rem 1.125rem; border-left: 3px solid transparent; transition: all 0.12s; text-decoration: none; line-height: 1.4; }
-.bs-toc-nav a:hover, .bs-toc-nav a.toc-active { color: #0284c7; border-left-color: #0284c7; background: #f0f9ff; }
-.bs-toc-nav a.toc-h3 { padding-left: 1.875rem; font-size: 0.8125rem; color: #6b7280; }
-
-/* Recent posts */
-.sidebar-recent { padding: 0.5rem 0; }
-.sidebar-recent-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.65rem 1.125rem; text-decoration: none; transition: background 0.12s; border-left: 3px solid transparent; }
-.sidebar-recent-item:hover { background: #f0f9ff; border-left-color: #bae6fd; }
-.sidebar-recent-emoji { font-size: 1.25rem; flex-shrink: 0; margin-top: 0.05rem; }
-.sidebar-recent-title { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.8375rem; font-weight: 600; color: #374151; line-height: 1.35; }
+/* ── Sidebar recent posts ────────────────────────────────────────── */
+.sidebar-recent { padding: .5rem 0; }
+.sidebar-recent-item {
+display: flex;
+align-items: flex-start;
+gap: .75rem;
+padding: .65rem 1.125rem;
+text-decoration: none;
+transition: background .12s;
+border-left: 3px solid transparent;
+}
+.sidebar-recent-item:hover {
+background: #f0f9ff;
+border-left-color: #bae6fd;
+}
+.sidebar-recent-emoji {
+font-size: 1.25rem;
+flex-shrink: 0;
+margin-top: .05rem;
+}
+.sidebar-recent-title {
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+font-size: .8375rem;
+font-weight: 600;
+color: #374151;
+line-height: 1.35;
+}
 .sidebar-recent-item:hover .sidebar-recent-title { color: #0284c7; }
-.sidebar-recent-date { display: block; font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem; }
+.sidebar-recent-date {
+display: block;
+font-size: .75rem;
+color: #9ca3af;
+margin-top: .2rem;
+}
 
-/* Trust */
-.sidebar-trust { background: #fff; border: 1px solid #e5e7eb; border-radius: 1rem; padding: 1.125rem; box-shadow: 0 1px 6px rgba(0,0,0,0.04); display: flex; flex-direction: column; gap: 0.875rem; }
-.trust-item { display: flex; align-items: flex-start; gap: 0.75rem; }
-.trust-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
-.trust-item div { display: flex; flex-direction: column; gap: 0.1rem; }
-.trust-item strong { font-size: 0.875rem; font-weight: 700; color: #111827; }
-.trust-item span { font-size: 0.775rem; color: #9ca3af; }
+/* ── Trust badges ────────────────────────────────────────────────── */
+.sidebar-trust {
+background: #fff;
+border: 1px solid #e5e7eb;
+border-radius: 1rem;
+padding: 1.125rem;
+box-shadow: 0 1px 6px rgba(0,0,0,.04);
+display: flex;
+flex-direction: column;
+gap: .875rem;
+}
+.trust-item { display: flex; align-items: flex-start; gap: .75rem; }
+.trust-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: .1rem; }
+.trust-item div { display: flex; flex-direction: column; gap: .1rem; }
+.trust-item strong { font-size: .875rem; font-weight: 700; color: #111827; }
+.trust-item span { font-size: .775rem; color: #9ca3af; }
 
-/* ── Related posts ── */
-.bs-related { background: #fff; border-top: 1px solid #f1f5f9; padding: 3.5rem 1.25rem; }
+/* ── Related posts section ───────────────────────────────────────── */
+.bs-related {
+background: #fff;
+border-top: 1px solid #f1f5f9;
+padding: 3.5rem 1.25rem;
+}
 .bs-related-inner { max-width: 1100px; margin: 0 auto; }
-.bs-related-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2rem; }
-.bs-related-head h2 { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin: 0 0 0.25rem; }
-.bs-related-head p { font-size: 0.875rem; color: #9ca3af; margin: 0; }
-.bs-related-all { font-size: 0.875rem; font-weight: 600; color: #0284c7; text-decoration: none; white-space: nowrap; }
+.bs-related-head {
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+margin-bottom: 2rem;
+}
+.bs-related-head h2 {
+font-size: 1.5rem;
+font-weight: 800;
+color: #0f172a;
+margin: 0 0 .25rem;
+}
+.bs-related-head p { font-size: .875rem; color: #9ca3af; margin: 0; }
+.bs-related-all {
+font-size: .875rem;
+font-weight: 600;
+color: #0284c7;
+text-decoration: none;
+white-space: nowrap;
+}
 .bs-related-all:hover { color: #0369a1; }
-.bs-related-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
-@media (min-width: 640px) { .bs-related-grid { grid-template-columns: repeat(2, 1fr); } }
+.bs-related-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1.25rem;
+}
+@media (min-width: 640px)  { .bs-related-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .bs-related-grid { grid-template-columns: repeat(3, 1fr); } }
-.bs-rel-card { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 1rem; overflow: hidden; text-decoration: none; transition: box-shadow 0.2s, transform 0.2s; display: flex; flex-direction: column; }
-.bs-rel-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.09); transform: translateY(-2px); }
-.bs-rel-img { height: 130px; background: linear-gradient(135deg, #0284c7, #0ea5e9); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; overflow: hidden; flex-shrink: 0; }
-.bs-rel-img img { width: 100%; height: 100%; object-fit: cover; }
-.bs-rel-body { padding: 1.125rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
-.bs-rel-body h3 { font-size: 0.9375rem; font-weight: 700; color: #0f172a; line-height: 1.35; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.bs-rel-card {
+background: #f8fafc;
+border: 1px solid #e5e7eb;
+border-radius: 1rem;
+overflow: hidden;
+text-decoration: none;
+transition: box-shadow .2s, transform .2s;
+display: flex;
+flex-direction: column;
+}
+.bs-rel-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.1); transform: translateY(-2px); }
+.bs-rel-img {
+height: 130px;
+background: linear-gradient(135deg, #0284c7, #0ea5e9);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 2.5rem;
+overflow: hidden;
+flex-shrink: 0;
+}
+.bs-rel-img img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.bs-rel-body {
+padding: 1.125rem;
+display: flex;
+flex-direction: column;
+gap: .5rem;
+flex: 1;
+}
+.bs-rel-body h3 {
+font-size: .9375rem;
+font-weight: 700;
+color: #0f172a;
+line-height: 1.35;
+margin: 0;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
 .bs-rel-card:hover h3 { color: #0284c7; }
-.bs-rel-body p { font-size: 0.8125rem; color: #6b7280; line-height: 1.55; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.bs-rel-meta { display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #9ca3af; margin-top: auto; padding-top: 0.5rem; border-top: 1px solid #f1f5f9; }
+.bs-rel-body p {
+font-size: .8125rem;
+color: #6b7280;
+line-height: 1.55;
+margin: 0;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+.bs-rel-meta {
+display: flex;
+align-items: center;
+justify-content: space-between;
+font-size: .75rem;
+color: #9ca3af;
+margin-top: auto;
+padding-top: .5rem;
+border-top: 1px solid #f1f5f9;
+}
 
-/* Tag shared */
-.bl-tag { display: inline-block; background: #e0f2fe; color: #0369a1; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.25rem 0.65rem; border-radius: 999px; }
-.bl-tag-sm { font-size: 0.65rem; padding: 0.2rem 0.55rem; }
+/* ── Category tag ────────────────────────────────────────────────── */
+.bl-tag {
+display: inline-block;
+background: #e0f2fe;
+color: #0369a1;
+font-size: .7rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: .06em;
+padding: .25rem .65rem;
+border-radius: 999px;
+}
+.bl-tag-sm { font-size: .65rem; padding: .2rem .55rem; }
 
+/* ── Screen-reader utility ───────────────────────────────────────── */
+.sr-only {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+white-space: nowrap;
+border-width: 0;
+}
 </style>
+{{ end }}
 
-<!-- TOC + scroll spy -->
+
+{{/* ═══════════════════════════════════════════════════════════════════════
+  MAIN CONTENT
+═══════════════════════════════════════════════════════════════════════ */}}
+{{ define "main" }}
+
+{{- $siteURL  := .Site.BaseURL | strings.TrimRight "/" -}}
+{{- $isProd   := strings.Contains .Site.BaseURL "couponhauls.com" -}}
+{{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
+
+
+<!-- ════════════════════════════════════════════════════════════════
+  HERO
+════════════════════════════════════════════════════════════════ -->
+<section class="bs-hero">
+<div class="bs-hero-bg" aria-hidden="true"></div>
+<div class="bs-hero-inner">
+
+ <!-- Breadcrumb -->
+ <nav class="bs-breadcrumb" aria-label="Breadcrumb">
+   <a href="{{ $siteURL }}/">Home</a>
+   <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" aria-hidden="true">
+     <polyline points="9 18 15 12 9 6"/>
+   </svg>
+   <a href="{{ $siteURL }}/blog/">Blog</a>
+   <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" aria-hidden="true">
+     <polyline points="9 18 15 12 9 6"/>
+   </svg>
+   <span aria-current="page">{{ .Title | truncate 45 }}</span>
+ </nav>
+
+ <!-- Category badge -->
+ {{ with .Params.category }}
+ <span class="bs-cat">{{ . }}</span>
+ {{ end }}
+
+ <!-- Title and description -->
+ <h1 class="bs-hero-title">{{ .Title }}</h1>
+ {{ with .Params.description }}
+ <p class="bs-hero-desc">{{ . }}</p>
+ {{ end }}
+
+ <!-- Author meta -->
+ <div class="bs-meta">
+   <div class="bs-meta-author">
+     <div class="bs-meta-avatar" aria-hidden="true">CH</div>
+     <span>{{ .Site.Params.author | default "CouponHauls Team" }}</span>
+   </div>
+   <span class="bs-meta-sep" aria-hidden="true">·</span>
+   <time datetime="{{ .Date.Format "2006-01-02" }}">
+     {{ .Date.Format "January 2, 2006" }}
+   </time>
+   <span class="bs-meta-sep" aria-hidden="true">·</span>
+   <span>{{ .Params.read_time | default "5" }} min read</span>
+   {{ with .Params.updated }}
+   <span class="bs-meta-sep" aria-hidden="true">·</span>
+   <span>Updated {{ . }}</span>
+   {{ end }}
+ </div>
+
+ <!-- Share bar — uses .Permalink directly (no absURL) -->
+ <div class="bs-share" aria-label="Share this article">
+   <span class="bs-share-label">Share</span>
+   <a href="https://x.com/intent/tweet?url={{ .Permalink | urlize }}&text={{ .Title | urlize }}"
+      target="_blank"
+      rel="noopener"
+      class="bs-share-btn bs-share-tw"
+      aria-label="Share on X">
+     <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+     </svg>
+     X
+   </a>
+   <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink | urlize }}"
+      target="_blank"
+      rel="noopener"
+      class="bs-share-btn bs-share-fb"
+      aria-label="Share on Facebook">
+     <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+     </svg>
+     Facebook
+   </a>
+   <button
+     type="button"
+     onclick="bsCopyLink(this)"
+     class="bs-share-btn bs-share-copy"
+     aria-label="Copy article link"
+     data-url="{{ .Permalink }}">
+     Copy Link
+   </button>
+ </div>
+
+</div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+  BODY — Article + Sidebar
+════════════════════════════════════════════════════════════════ -->
+<section class="bs-section">
+<div class="bs-layout">
+
+ <!-- Main article column -->
+ <main class="bs-main" id="main-content">
+
+   <!-- Cover image (eager — above fold, LCP candidate) -->
+   {{ if .Params.featured_image }}
+   <div class="bs-cover">
+     <img
+       src="{{ .Params.featured_image }}"
+       alt="{{ .Title }}"
+       loading="eager"
+       decoding="async"
+       width="1100"
+       height="280">
+   </div>
+   {{ end }}
+
+   <!-- Article content -->
+   <article class="bs-article" id="article-body" aria-label="{{ .Title }}">
+     {{ .Content }}
+   </article>
+
+   <!-- Inline CTA -->
+   <aside class="bs-cta-card" aria-label="Browse coupon codes">
+     <div class="bs-cta-inner">
+       <div class="bs-cta-icon" aria-hidden="true">🎫</div>
+       <div class="bs-cta-text">
+         <h3>Ready to Start Saving?</h3>
+         <p>Hundreds of verified codes from top stores, updated daily.</p>
+       </div>
+       <div class="bs-cta-actions">
+         <a href="{{ $siteURL }}/stores/" class="bs-cta-primary">
+           Browse Coupons →
+         </a>
+         <a href="{{ $siteURL }}/blog/" class="bs-cta-ghost">
+           More Articles
+         </a>
+       </div>
+     </div>
+     <div class="bs-cta-badges" aria-hidden="true">
+       <span>✅ Free</span>
+       <span>🔒 No sign-up</span>
+       <span>🔄 Daily updates</span>
+     </div>
+   </aside>
+
+   <!-- Tags -->
+   {{ with .Params.tags }}
+   <div class="bs-tags" aria-label="Article tags">
+     {{ range . }}
+     <span class="bs-tag">#{{ . }}</span>
+     {{ end }}
+   </div>
+   {{ end }}
+
+   <!-- Back link -->
+   <div class="bs-back">
+     <a href="{{ $siteURL }}/blog/">
+       <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 5l-7 7 7 7"/>
+       </svg>
+       Back to Blog
+     </a>
+   </div>
+
+ </main><!-- /.bs-main -->
+
+
+ <!-- Sidebar -->
+ <aside class="bs-sidebar" aria-label="Article sidebar">
+
+   <!-- Table of Contents -->
+   <div class="sidebar-card" id="toc-box">
+     <div class="sidebar-card-header">
+       <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+         <path stroke-linecap="round" stroke-linejoin="round"
+               d="M4 6h16M4 10h10M4 14h12"/>
+       </svg>
+       In This Article
+     </div>
+     <nav id="toc-nav"
+          class="bs-toc-nav"
+          aria-label="Table of contents">
+       <p class="bs-toc-empty">Loading…</p>
+     </nav>
+   </div>
+
+   <!-- Sidebar CTA -->
+   <div class="sidebar-cta">
+     <span class="sidebar-cta-icon" aria-hidden="true">💸</span>
+     <h3>Don't Miss a Deal</h3>
+     <p>Browse verified coupons from 500+ top stores.</p>
+     <a href="{{ $siteURL }}/stores/" class="sidebar-cta-btn">
+       Find Coupons Now →
+     </a>
+   </div>
+
+   <!-- More articles -->
+   {{- $related := where (where .Site.RegularPages "Section" "blog") "Permalink" "ne" .Permalink -}}
+   {{ if $related }}
+   <div class="sidebar-card">
+     <div class="sidebar-card-header">
+       <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+         <path stroke-linecap="round" stroke-linejoin="round"
+               d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+       </svg>
+       More Articles
+     </div>
+     <div class="sidebar-recent">
+       {{ range first 4 $related }}
+       <a href="{{ .Permalink }}" class="sidebar-recent-item">
+         <span class="sidebar-recent-emoji" aria-hidden="true">
+           {{ .Params.emoji | default "📄" }}
+         </span>
+         <div>
+           <span class="sidebar-recent-title">{{ .Title }}</span>
+           <span class="sidebar-recent-date">
+             {{ .Date.Format "Jan 2, 2006" }}
+           </span>
+         </div>
+       </a>
+       {{ end }}
+     </div>
+   </div>
+   {{ end }}
+
+   <!-- Trust badges -->
+   <div class="sidebar-trust">
+     <div class="trust-item">
+       <span class="trust-icon" aria-hidden="true">✅</span>
+       <div>
+         <strong>Verified Codes</strong>
+         <span>All coupons tested daily</span>
+       </div>
+     </div>
+     <div class="trust-item">
+       <span class="trust-icon" aria-hidden="true">🔒</span>
+       <div>
+         <strong>100% Free</strong>
+         <span>No sign-up required</span>
+       </div>
+     </div>
+     <div class="trust-item">
+       <span class="trust-icon" aria-hidden="true">🔄</span>
+       <div>
+         <strong>Daily Updates</strong>
+         <span>Fresh deals every day</span>
+       </div>
+     </div>
+   </div>
+
+ </aside><!-- /.bs-sidebar -->
+
+</div><!-- /.bs-layout -->
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+  RELATED POSTS
+════════════════════════════════════════════════════════════════ -->
+{{- $relatedPosts := where (where .Site.RegularPages "Section" "blog") "Permalink" "ne" .Permalink -}}
+{{ if $relatedPosts }}
+<section class="bs-related" aria-label="Related articles">
+<div class="bs-related-inner">
+ <div class="bs-related-head">
+   <div>
+     <h2>More Savings Tips</h2>
+     <p>Keep reading for more expert guides</p>
+   </div>
+   <a href="{{ $siteURL }}/blog/" class="bs-related-all">
+     View all →
+   </a>
+ </div>
+ <div class="bs-related-grid">
+   {{ range first 3 $relatedPosts }}
+   <a href="{{ .Permalink }}" class="bs-rel-card">
+     <div class="bs-rel-img">
+       {{ if .Params.featured_image }}
+       <img
+         src="{{ .Params.featured_image }}"
+         alt="{{ .Title }}"
+         loading="lazy"
+         decoding="async"
+         width="400"
+         height="130">
+       {{ else }}
+       <span aria-hidden="true">{{ .Params.emoji | default "💰" }}</span>
+       {{ end }}
+     </div>
+     <div class="bs-rel-body">
+       {{ if .Params.category }}
+       <span class="bl-tag bl-tag-sm">{{ .Params.category }}</span>
+       {{ end }}
+       <h3>{{ .Title }}</h3>
+       <p>{{ .Params.description | truncate 90 }}</p>
+       <div class="bs-rel-meta">
+         <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+         <span>{{ .Params.read_time | default "5" }} min read</span>
+       </div>
+     </div>
+   </a>
+   {{ end }}
+ </div>
+</div>
+</section>
+{{ end }}
+
+
+<!-- ════════════════════════════════════════════════════════════════
+  JAVASCRIPT — TOC + scroll-spy + share + store link rewrite
+════════════════════════════════════════════════════════════════ -->
 <script>
 (function () {
-  const article = document.getElementById('article-body');
-  const tocNav  = document.getElementById('toc-nav');
-  if (!article || !tocNav) return;
-  const headings = article.querySelectorAll('h2, h3');
-  if (!headings.length) { tocNav.innerHTML = '<p class="bs-toc-loading">No sections found.</p>'; return; }
-  let html = '';
-  headings.forEach((h, i) => {
-    if (!h.id) h.id = 'section-' + i;
-    html += `<a href="#${h.id}" class="${h.tagName==='H3'?'toc-h3':''}" data-target="${h.id}">${h.textContent}</a>`;
-  });
-  tocNav.innerHTML = html;
-  const links = tocNav.querySelectorAll('a');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        links.forEach(l => l.classList.remove('toc-active'));
-        tocNav.querySelector(`[data-target="${e.target.id}"]`)?.classList.add('toc-active');
-      }
-    });
-  }, { rootMargin: '-80px 0px -60% 0px' });
-  headings.forEach(h => obs.observe(h));
-  links.forEach(l => l.addEventListener('click', e => {
-    e.preventDefault();
-    document.getElementById(l.dataset.target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }));
+'use strict';
+
+/* ── Share — copy link ────────────────────────────────────────── */
+window.bsCopyLink = function (btn) {
+ var url = btn.dataset.url || window.location.href;
+ if (navigator.clipboard && navigator.clipboard.writeText) {
+   navigator.clipboard.writeText(url).then(function () {
+     var orig = btn.textContent;
+     btn.textContent = '✓ Copied!';
+     setTimeout(function () { btn.textContent = orig; }, 2000);
+   });
+ } else {
+   var ta = document.createElement('textarea');
+   ta.value = url;
+   ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+   document.body.appendChild(ta);
+   ta.select();
+   try { document.execCommand('copy'); } catch (e) {}
+   document.body.removeChild(ta);
+ }
+};
+
+/* ── Table of Contents ────────────────────────────────────────── */
+var article = document.getElementById('article-body');
+var tocNav  = document.getElementById('toc-nav');
+
+if (!article || !tocNav) return;
+
+var headings = article.querySelectorAll('h2, h3');
+
+if (!headings.length) {
+ tocNav.innerHTML = '<p class="bs-toc-empty">No sections in this article.</p>';
+ /* Hide TOC box entirely if no headings */
+ var tocBox = document.getElementById('toc-box');
+ if (tocBox) tocBox.style.display = 'none';
+ return;
+}
+
+/* Build TOC links */
+var html = '';
+headings.forEach(function (h, i) {
+ if (!h.id) { h.id = 'section-' + i; }
+ var isH3 = h.tagName === 'H3';
+ html += '<a href="#' + h.id + '"' +
+   (isH3 ? ' class="toc-h3"' : '') +
+   ' data-target="' + h.id + '">' +
+   h.textContent + '</a>';
+});
+tocNav.innerHTML = html;
+
+var tocLinks = tocNav.querySelectorAll('a');
+
+/* Smooth scroll on TOC click */
+tocLinks.forEach(function (link) {
+ link.addEventListener('click', function (e) {
+   e.preventDefault();
+   var target = document.getElementById(link.dataset.target);
+   if (target) {
+     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+     /* Update URL hash without jumping */
+     if (history.pushState) {
+       history.pushState(null, null, '#' + link.dataset.target);
+     }
+   }
+ });
+});
+
+/* Scroll-spy with IntersectionObserver */
+var activeId = null;
+
+var observer = new IntersectionObserver(function (entries) {
+ entries.forEach(function (entry) {
+   if (entry.isIntersecting) {
+     activeId = entry.target.id;
+     tocLinks.forEach(function (l) {
+       l.classList.toggle('toc-active', l.dataset.target === activeId);
+     });
+   }
+ });
+}, {
+ rootMargin: '-80px 0px -60% 0px',
+ threshold: 0
+});
+
+headings.forEach(function (h) { observer.observe(h); });
+
+/* ── Rewrite /slug/ store links to subdomain format ──────────── */
+{{- if $isProd }}
+(function () {
+ var links = article.querySelectorAll('a[href^="/"]');
+ var nonStore = [
+   'about','contact','privacy','stores','blog',
+   'affiliate-disclaimer','search','tags','categories'
+ ];
+ links.forEach(function (link) {
+   var href = link.getAttribute('href');
+   var match = href.match(/^\/([a-z0-9-]+)\/?$/);
+   if (match) {
+     var slug = match[1];
+     if (nonStore.indexOf(slug) === -1) {
+       link.href = 'https://' + slug + '.{{ $baseHost }}/';
+     }
+   }
+ });
+})();
+{{- end }}
+
 })();
 </script>
 

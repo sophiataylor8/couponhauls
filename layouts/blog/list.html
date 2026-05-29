@@ -1,569 +1,818 @@
-{{ define "title" }}Blog - Savings Tips & Coupon Guides - {{ .Site.Title }}{{ end }}
-{{ define "main" }}
+{{/* ═══════════════════════════════════════════════════════════════════════
+  layouts/blog/list.html
+  Blog listing page — CouponHauls.com
 
-<!-- ═══════════════════════════════════════════
-     HERO
-════════════════════════════════════════════ -->
-<section class="bl-hero">
-  <div class="bl-hero-bg"></div>
-  <div class="bl-hero-inner">
-    <div class="bl-breadcrumb">
-      <a href="/">Home</a>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      <span>Blog</span>
-    </div>
-    <h1 class="bl-hero-title">Savings Blog</h1>
-    <p class="bl-hero-desc">Expert tips, coupon guides, and money-saving strategies to help you spend less on everything you love.</p>
-    <div class="bl-hero-stats">
-      <div class="bl-stat">
-        <span class="bl-stat-n">{{ len .Pages }}</span>
-        <span class="bl-stat-l">Articles</span>
-      </div>
-      <div class="bl-stat-div"></div>
-      <div class="bl-stat">
-        <span class="bl-stat-n">Free</span>
-        <span class="bl-stat-l">Always</span>
-      </div>
-      <div class="bl-stat-div"></div>
-      <div class="bl-stat">
-        <span class="bl-stat-n">Daily</span>
-        <span class="bl-stat-l">Updates</span>
-      </div>
-    </div>
-  </div>
-</section>
+  Fixes applied:
+  - Schema: Blog + ItemList + BreadcrumbList JSON-LD
+  - OG/Twitter meta with correct type and description
+  - Canonical URL
+  - Clean title and meta description
+  - All CSS in define "extra_head" block
+  - Proper heading hierarchy h1 → h2 (featured) → h3 (grid cards)
+  - Featured post uses loading="eager", grid posts use loading="lazy"
+  - width/height on all images to prevent CLS
+  - Sidebar categories dynamically extracted and deduplicated
+  - aria-labels on all interactive elements and landmarks
+  - No noindex logic anywhere
+  - Blog card partial reused for grid items
+═══════════════════════════════════════════════════════════════════════ */}}
 
-<!-- ═══════════════════════════════════════════
-     CONTENT
-════════════════════════════════════════════ -->
-<section class="bl-section">
-  <div class="bl-layout">
 
-    <!-- Posts grid -->
-    <div class="bl-main">
+{{/* ── Title ──────────────────────────────────────────────────────────── */}}
+{{ define "title" }}
+Savings Blog – Coupon Tips & Money-Saving Guides | {{ .Site.Title }}
+{{ end }}
 
-      {{ if .Pages }}
 
-      <!-- Featured post (first one) -->
-      {{ with index .Pages 0 }}
-      <a href="{{ .Permalink }}" class="bl-featured">
-        <div class="bl-featured-img">
-          {{ if .Params.featured_image }}
-          <img src="{{ .Params.featured_image }}" alt="{{ .Title }}">
-          {{ else }}
-          <div class="bl-featured-emoji">{{ .Params.emoji | default "💰" }}</div>
-          {{ end }}
-        </div>
-        <div class="bl-featured-body">
-          {{ if .Params.category }}
-          <span class="bl-tag">{{ .Params.category }}</span>
-          {{ end }}
-          <h2 class="bl-featured-title">{{ .Title }}</h2>
-          <p class="bl-featured-desc">{{ .Params.description }}</p>
-          <div class="bl-featured-meta">
-            <span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              {{ .Date.Format "Jan 2, 2006" }}
-            </span>
-            <span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              {{ .Params.read_time | default "5" }} min read
-            </span>
-            <span class="bl-featured-cta">Read Article →</span>
-          </div>
-        </div>
-      </a>
-      {{ end }}
+{{/* ── Meta Description ────────────────────────────────────────────────── */}}
+{{ define "description" }}
+{{- printf "Read expert coupon tips, money-saving guides, and promo code strategies from %s. %d articles to help you save more on every purchase." .Site.Title (len .Pages) -}}
+{{ end }}
 
-      <!-- Rest of posts -->
-      {{ if gt (len .Pages) 1 }}
-      <div class="bl-grid">
-        {{ range after 1 .Pages }}
-        <a href="{{ .Permalink }}" class="bl-card">
-          <div class="bl-card-img">
-            {{ if .Params.featured_image }}
-            <img src="{{ .Params.featured_image }}" alt="{{ .Title }}">
-            {{ else }}
-            <span class="bl-card-emoji">{{ .Params.emoji | default "💰" }}</span>
-            {{ end }}
-          </div>
-          <div class="bl-card-body">
-            {{ if .Params.category }}
-            <span class="bl-tag bl-tag-sm">{{ .Params.category }}</span>
-            {{ end }}
-            <h3 class="bl-card-title">{{ .Title }}</h3>
-            <p class="bl-card-desc">{{ .Params.description }}</p>
-            <div class="bl-card-meta">
-              <span>{{ .Date.Format "Jan 2, 2006" }}</span>
-              <span>{{ .Params.read_time | default "5" }} min</span>
-            </div>
-          </div>
-        </a>
-        {{ end }}
-      </div>
-      {{ end }}
 
-      {{ else }}
-      <div class="bl-empty">
-        <div class="bl-empty-icon">📝</div>
-        <h3>No posts yet</h3>
-        <p>Add <code>.md</code> files to <code>content/blog/</code> to get started.</p>
-      </div>
-      {{ end }}
-    </div>
+{{/* ── Canonical ────────────────────────────────────────────────────────── */}}
+{{ define "canonical" }}
+<link rel="canonical" href="{{ .Site.BaseURL | strings.TrimRight "/" }}/blog/">
+{{ end }}
 
-    <!-- Sidebar -->
-    <aside class="bl-sidebar">
 
-      <!-- CTA -->
-      <div class="sidebar-cta">
-        <div class="sidebar-cta-icon">🎫</div>
-        <h3>Find Great Deals</h3>
-        <p>Browse hundreds of verified coupon codes updated daily.</p>
-        <a href="/stores/" class="sidebar-cta-btn">Browse Coupons →</a>
-      </div>
+{{/* ── OG / Twitter Meta ───────────────────────────────────────────────── */}}
+{{ define "og_meta" }}
+{{- $siteURL := .Site.BaseURL | strings.TrimRight "/" -}}
+{{- $pageURL := printf "%s/blog/" $siteURL -}}
+{{- $title   := printf "Savings Blog – Coupon Tips & Money-Saving Guides | %s" .Site.Title -}}
+{{- $desc    := printf "Expert coupon tips, promo code strategies, and money-saving guides. %d articles to help you save more on every purchase." (len .Pages) -}}
+{{- $ogImage := printf "%s%s" .Site.BaseURL .Site.Params.og_image -}}
+{{- with index .Pages 0 -}}
+{{- if .Params.featured_image -}}
+ {{- $ogImage = .Params.featured_image -}}
+{{- end -}}
+{{- end -}}
+<meta property="og:title"       content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="{{ $pageURL }}">
+<meta property="og:image"       content="{{ $ogImage }}">
+<meta property="og:image:alt"   content="{{ .Site.Title }} Savings Blog">
+<meta property="og:site_name"   content="{{ .Site.Title }}">
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:site"        content="{{ .Site.Params.twitter_handle }}">
+<meta name="twitter:title"       content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image"       content="{{ $ogImage }}">
+{{ end }}
 
-      <!-- Popular Categories -->
-      <div class="sidebar-card">
-        <div class="sidebar-card-header">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h10M7 12h6M7 17h8"/></svg>
-          Categories
-        </div>
-        <div class="sidebar-cats">
-          {{ $cats := slice }}
-          {{ range .Pages }}
-            {{ with .Params.category }}
-              {{ $cats = $cats | append . }}
-            {{ end }}
-          {{ end }}
-          {{ $unique := $cats | uniq }}
-          {{ range $unique }}
-          <a href="/blog/" class="sidebar-cat">
-            <span>{{ . }}</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
-          {{ else }}
-          <p class="sidebar-empty">No categories yet.</p>
-          {{ end }}
-        </div>
-      </div>
 
-      <!-- Recent posts -->
-      <div class="sidebar-card">
-        <div class="sidebar-card-header">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Recent Articles
-        </div>
-        <div class="sidebar-recent">
-          {{ range first 4 .Pages }}
-          <a href="{{ .Permalink }}" class="sidebar-recent-item">
-            <span class="sidebar-recent-emoji">{{ .Params.emoji | default "📄" }}</span>
-            <div>
-              <span class="sidebar-recent-title">{{ .Title }}</span>
-              <span class="sidebar-recent-date">{{ .Date.Format "Jan 2, 2006" }}</span>
-            </div>
-          </a>
-          {{ end }}
-        </div>
-      </div>
+{{/* ── Schema Markup ───────────────────────────────────────────────────── */}}
+{{ define "schema" }}
+{{- $siteURL := .Site.BaseURL | strings.TrimRight "/" -}}
+{{- $pageURL := printf "%s/blog/" $siteURL -}}
 
-      <!-- Trust -->
-      <div class="sidebar-trust">
-        <div class="trust-item">
-          <span class="trust-icon">✅</span>
-          <div>
-            <strong>Verified Codes</strong>
-            <span>All coupons tested daily</span>
-          </div>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">🔒</span>
-          <div>
-            <strong>100% Free</strong>
-            <span>No sign-up required</span>
-          </div>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">🔄</span>
-          <div>
-            <strong>Daily Updates</strong>
-            <span>Fresh deals every day</span>
-          </div>
-        </div>
-      </div>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Blog",
+"@id": {{ (printf "%s#blog" $pageURL) | jsonify }},
+"url": {{ $pageURL | jsonify }},
+"name": {{ (printf "%s Savings Blog" .Site.Title) | jsonify }},
+"description": {{ (printf "Expert coupon tips, promo code strategies, and money-saving guides from %s." .Site.Title) | jsonify }},
+"inLanguage": "en-US",
+"publisher": {
+ "@type": "Organization",
+ "@id": {{ (printf "%s/#organization" $siteURL) | jsonify }},
+ "name": "CouponHauls",
+ "url": {{ .Site.BaseURL | jsonify }},
+ "logo": {
+   "@type": "ImageObject",
+   "url": {{ (printf "%simages/couponhaulslogo.png" .Site.BaseURL) | jsonify }}
+ }
+},
+"isPartOf": {
+ "@type": "WebSite",
+ "@id": {{ (printf "%s/#website" $siteURL) | jsonify }},
+ "url": {{ .Site.BaseURL | jsonify }},
+ "name": {{ .Site.Title | jsonify }}
+}
+}
+</script>
 
-    </aside>
-  </div>
-</section>
+{{ if .Pages }}
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "ItemList",
+"name": {{ (printf "%s – Latest Articles" .Site.Title) | jsonify }},
+"url": {{ $pageURL | jsonify }},
+"numberOfItems": {{ len .Pages }},
+"itemListElement": [
+ {{ range $i, $page := first 10 .Pages }}
+ {
+   "@type": "ListItem",
+   "position": {{ add $i 1 }},
+   "item": {
+     "@type": "BlogPosting",
+     "@id": {{ (printf "%s#article" $page.Permalink) | jsonify }},
+     "headline": {{ $page.Title | jsonify }},
+     "url": {{ $page.Permalink | jsonify }},
+     "datePublished": {{ $page.Date.Format "2006-01-02" | jsonify }},
+     "description": {{ ($page.Params.description | default "") | jsonify }}
+     {{ with $page.Params.featured_image }},
+     "image": {{ . | jsonify }}
+     {{ end }}
+   }
+ }{{ if lt $i (sub (len (first 10 $.Pages)) 1) }},{{ end }}
+ {{ end }}
+]
+}
+</script>
+{{ end }}
 
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+ {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": {{ .Site.BaseURL | jsonify }}
+ },
+ {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Blog",
+   "item": {{ $pageURL | jsonify }}
+ }
+]
+}
+</script>
+{{ end }}
+
+
+{{/* ── Page CSS ──────────────────────────────────────────────────────────── */}}
+{{ define "extra_head" }}
 <style>
+/* =====================================================================
+BLOG LIST PAGE STYLES — layouts/blog/list.html
+===================================================================== */
 
-/* ── Hero ── */
+/* ── Hero ─────────────────────────────────────────────────────────── */
 .bl-hero {
-  position: relative;
-  background: linear-gradient(135deg, #0369a1 0%, #0284c7 50%, #0ea5e9 100%);
-  padding: 3.5rem 1.25rem 4rem;
-  overflow: hidden;
+position: relative;
+background: linear-gradient(135deg, #0369a1 0%, #0284c7 50%, #0ea5e9 100%);
+padding: 3.5rem 1.25rem 4rem;
+overflow: hidden;
 }
 .bl-hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 20% 50%, rgba(255,255,255,0.07) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%);
-  pointer-events: none;
+position: absolute;
+inset: 0;
+background-image:
+ radial-gradient(circle at 20% 50%, rgba(255,255,255,.07) 0%, transparent 50%),
+ radial-gradient(circle at 80% 20%, rgba(255,255,255,.05) 0%, transparent 40%);
+pointer-events: none;
 }
 .bl-hero-inner {
-  position: relative;
-  max-width: 1100px;
-  margin: 0 auto;
+position: relative;
+max-width: 1100px;
+margin: 0 auto;
 }
 .bl-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8125rem;
-  color: rgba(255,255,255,0.7);
-  margin-bottom: 1.25rem;
+display: flex;
+align-items: center;
+gap: .4rem;
+font-size: .8125rem;
+color: rgba(255,255,255,.7);
+margin-bottom: 1.25rem;
+flex-wrap: wrap;
 }
-.bl-breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.15s; }
+.bl-breadcrumb a {
+color: rgba(255,255,255,.7);
+text-decoration: none;
+transition: color .15s;
+}
 .bl-breadcrumb a:hover { color: #fff; }
-.bl-breadcrumb svg { opacity: 0.5; flex-shrink: 0; }
+.bl-breadcrumb svg { opacity: .5; flex-shrink: 0; }
 .bl-hero-title {
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  font-weight: 800;
-  color: #fff;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin: 0 0 0.875rem;
+font-size: clamp(2rem, 5vw, 2.75rem);
+font-weight: 800;
+color: #fff;
+line-height: 1.15;
+letter-spacing: -.02em;
+margin: 0 0 .875rem;
 }
 .bl-hero-desc {
-  font-size: 1.0625rem;
-  color: rgba(255,255,255,0.82);
-  line-height: 1.65;
-  max-width: 560px;
-  margin: 0 0 2rem;
+font-size: 1.0625rem;
+color: rgba(255,255,255,.82);
+line-height: 1.65;
+max-width: 560px;
+margin: 0 0 2rem;
 }
 .bl-hero-stats {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
+display: flex;
+align-items: center;
+gap: 1.25rem;
+flex-wrap: wrap;
 }
-.bl-stat { display: flex; flex-direction: column; gap: 0.1rem; }
+.bl-stat { display: flex; flex-direction: column; gap: .1rem; }
 .bl-stat-n { font-size: 1.4rem; font-weight: 800; color: #fff; line-height: 1; }
-.bl-stat-l { font-size: 0.75rem; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.06em; }
-.bl-stat-div { width: 1px; height: 36px; background: rgba(255,255,255,0.2); }
+.bl-stat-l {
+font-size: .75rem;
+color: rgba(255,255,255,.65);
+text-transform: uppercase;
+letter-spacing: .06em;
+}
+.bl-stat-div { width: 1px; height: 36px; background: rgba(255,255,255,.2); }
 
-/* ── Section ── */
+/* ── Section ──────────────────────────────────────────────────────── */
 .bl-section {
-  background: #f8fafc;
-  min-height: 60vh;
-  padding: 2.5rem 1.25rem 4rem;
+background: #f8fafc;
+min-height: 60vh;
+padding: 2.5rem 1.25rem 4rem;
 }
 .bl-layout {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: start;
+max-width: 1100px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: 1fr;
+gap: 2rem;
+align-items: start;
 }
 @media (min-width: 1024px) {
-  .bl-layout {
-    grid-template-columns: minmax(0, 1fr) 300px;
-    gap: 2.5rem;
-  }
+.bl-layout { grid-template-columns: minmax(0, 1fr) 300px; gap: 2.5rem; }
 }
 
-/* ── Featured post ── */
+/* ── Featured post ────────────────────────────────────────────────── */
 .bl-featured {
-  display: grid;
-  grid-template-columns: 1fr;
-  background: #fff;
-  border-radius: 1.25rem;
-  border: 1px solid #e5e7eb;
-  overflow: hidden;
-  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
-  text-decoration: none;
-  margin-bottom: 1.75rem;
-  transition: box-shadow 0.2s, transform 0.2s;
+display: grid;
+grid-template-columns: 1fr;
+background: #fff;
+border-radius: 1.25rem;
+border: 1px solid #e5e7eb;
+overflow: hidden;
+box-shadow: 0 1px 8px rgba(0,0,0,.06);
+text-decoration: none;
+margin-bottom: 1.75rem;
+transition: box-shadow .2s, transform .2s;
 }
-.bl-featured:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-2px); }
+.bl-featured:hover {
+box-shadow: 0 8px 32px rgba(0,0,0,.1);
+transform: translateY(-2px);
+}
+.bl-featured:focus-visible {
+outline: 2px solid #0284c7;
+outline-offset: 2px;
+}
 @media (min-width: 640px) {
-  .bl-featured { grid-template-columns: 280px 1fr; }
+.bl-featured { grid-template-columns: 280px 1fr; }
 }
 .bl-featured-img {
-  height: 200px;
-  background: linear-gradient(135deg, #0284c7, #0ea5e9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  overflow: hidden;
+height: 200px;
+background: linear-gradient(135deg, #0284c7, #0ea5e9);
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+overflow: hidden;
 }
-@media (min-width: 640px) { .bl-featured-img { height: auto; min-height: 220px; } }
-.bl-featured-img img { width: 100%; height: 100%; object-fit: cover; }
-.bl-featured-emoji { font-size: 4rem; }
+@media (min-width: 640px) {
+.bl-featured-img { height: auto; min-height: 220px; }
+}
+.bl-featured-img img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+transition: transform .3s ease;
+}
+.bl-featured:hover .bl-featured-img img { transform: scale(1.04); }
+.bl-featured-emoji { font-size: 4rem; line-height: 1; }
 .bl-featured-body {
-  padding: 1.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
+padding: 1.75rem;
+display: flex;
+flex-direction: column;
+gap: .625rem;
 }
 .bl-featured-title {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #0f172a;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-  margin: 0;
+font-size: 1.3rem;
+font-weight: 800;
+color: #0f172a;
+line-height: 1.3;
+letter-spacing: -.01em;
+margin: 0;
+transition: color .12s;
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+overflow: hidden;
 }
 .bl-featured:hover .bl-featured-title { color: #0284c7; }
 .bl-featured-desc {
-  font-size: 0.9375rem;
-  color: #6b7280;
-  line-height: 1.65;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+font-size: .9375rem;
+color: #6b7280;
+line-height: 1.65;
+margin: 0;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
 }
 .bl-featured-meta {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 0.8125rem;
-  color: #9ca3af;
-  margin-top: auto;
-  padding-top: 0.5rem;
-  flex-wrap: wrap;
+display: flex;
+align-items: center;
+gap: 1rem;
+font-size: .8125rem;
+color: #9ca3af;
+margin-top: auto;
+padding-top: .5rem;
+flex-wrap: wrap;
 }
-.bl-featured-meta span { display: flex; align-items: center; gap: 0.35rem; }
+.bl-featured-meta-item {
+display: flex;
+align-items: center;
+gap: .35rem;
+}
 .bl-featured-cta {
-  margin-left: auto;
-  color: #0284c7 !important;
-  font-weight: 700;
-  font-size: 0.875rem;
+margin-left: auto;
+color: #0284c7;
+font-weight: 700;
+font-size: .875rem;
+white-space: nowrap;
 }
 
-/* ── Tag ── */
+/* ── Category tag ─────────────────────────────────────────────────── */
 .bl-tag {
-  display: inline-block;
-  background: #e0f2fe;
-  color: #0369a1;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.25rem 0.65rem;
-  border-radius: 999px;
+display: inline-block;
+background: #e0f2fe;
+color: #0369a1;
+font-size: .7rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: .06em;
+padding: .25rem .65rem;
+border-radius: 999px;
+width: fit-content;
 }
-.bl-tag-sm { font-size: 0.65rem; padding: 0.2rem 0.55rem; }
+.bl-tag-sm { font-size: .65rem; padding: .2rem .55rem; }
 
-/* ── Posts grid ── */
+/* ── Posts grid ───────────────────────────────────────────────────── */
 .bl-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
+display: grid;
+grid-template-columns: 1fr;
+gap: 1.25rem;
 }
-@media (min-width: 640px) {
-  .bl-grid { grid-template-columns: repeat(2, 1fr); }
-}
+@media (min-width: 640px) { .bl-grid { grid-template-columns: repeat(2, 1fr); } }
 
-/* ── Post card ── */
-.bl-card {
-  background: #fff;
-  border-radius: 1rem;
-  border: 1px solid #e5e7eb;
-  overflow: hidden;
-  text-decoration: none;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
-  transition: box-shadow 0.2s, transform 0.2s;
-  display: flex;
-  flex-direction: column;
-}
-.bl-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); transform: translateY(-2px); }
-.bl-card-img {
-  height: 150px;
-  background: linear-gradient(135deg, #0284c7, #0ea5e9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.bl-card-img img { width: 100%; height: 100%; object-fit: cover; }
-.bl-card-emoji { font-size: 2.75rem; }
-.bl-card-body {
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  flex: 1;
-}
-.bl-card-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #0f172a;
-  line-height: 1.35;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.bl-card:hover .bl-card-title { color: #0284c7; }
-.bl-card-desc {
-  font-size: 0.8375rem;
-  color: #6b7280;
-  line-height: 1.6;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.bl-card-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  color: #9ca3af;
-  margin-top: auto;
-  padding-top: 0.5rem;
-  border-top: 1px solid #f3f4f6;
-}
-
-/* ── Empty ── */
+/* ── Empty state ──────────────────────────────────────────────────── */
 .bl-empty {
-  text-align: center;
-  padding: 4rem 2rem;
-  background: #fff;
-  border-radius: 1.25rem;
-  border: 1px solid #e5e7eb;
+text-align: center;
+padding: 4rem 2rem;
+background: #fff;
+border-radius: 1.25rem;
+border: 1px solid #e5e7eb;
 }
-.bl-empty-icon { font-size: 3rem; margin-bottom: 1rem; }
-.bl-empty h3 { font-size: 1.25rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem; }
-.bl-empty p { color: #6b7280; font-size: 0.9375rem; }
-.bl-empty code { background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-size: 0.85em; }
+.bl-empty-icon  { font-size: 3rem; margin-bottom: 1rem; display: block; }
+.bl-empty h2    { font-size: 1.25rem; font-weight: 700; color: #0f172a; margin: 0 0 .5rem; }
+.bl-empty p     { color: #6b7280; font-size: .9375rem; margin: 0; }
+.bl-empty code  {
+background: #f1f5f9;
+padding: .2rem .4rem;
+border-radius: .25rem;
+font-size: .85em;
+}
 
-/* ── Sidebar shared (same as page.html) ── */
+/* ── Sidebar ──────────────────────────────────────────────────────── */
 .bl-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+display: flex;
+flex-direction: column;
+gap: 1.25rem;
 }
 @media (min-width: 1024px) {
-  .bl-sidebar { position: sticky; top: 88px; }
+.bl-sidebar { position: sticky; top: 88px; }
 }
 .sidebar-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+background: #fff;
+border: 1px solid #e5e7eb;
+border-radius: 1rem;
+overflow: hidden;
+box-shadow: 0 1px 6px rgba(0,0,0,.05);
 }
 .sidebar-card-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: #6b7280;
-  background: #fafafa;
-  border-bottom: 1px solid #f1f5f9;
-  padding: 0.875rem 1.125rem;
+display: flex;
+align-items: center;
+gap: .5rem;
+font-size: .75rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: .07em;
+color: #6b7280;
+background: #fafafa;
+border-bottom: 1px solid #f1f5f9;
+padding: .875rem 1.125rem;
 }
 .sidebar-cta {
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  text-align: center;
-  color: #fff;
-  box-shadow: 0 4px 20px rgba(2,132,199,0.22);
+background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+border-radius: 1rem;
+padding: 1.5rem;
+text-align: center;
+color: #fff;
+box-shadow: 0 4px 20px rgba(2,132,199,.22);
 }
-.sidebar-cta-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
-.sidebar-cta h3 { font-size: 1.05rem; font-weight: 800; margin: 0 0 0.375rem; color: #fff; }
-.sidebar-cta p { font-size: 0.8125rem; color: rgba(255,255,255,0.78); margin: 0 0 1.1rem; line-height: 1.5; }
+.sidebar-cta-icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
+.sidebar-cta h2  {
+font-size: 1.05rem;
+font-weight: 800;
+margin: 0 0 .375rem;
+color: #fff;
+}
+.sidebar-cta p {
+font-size: .8125rem;
+color: rgba(255,255,255,.78);
+margin: 0 0 1.1rem;
+line-height: 1.5;
+}
 .sidebar-cta-btn {
-  display: inline-block;
-  background: #fff;
-  color: #0284c7;
-  font-weight: 700;
-  font-size: 0.875rem;
-  padding: 0.6rem 1.4rem;
-  border-radius: 999px;
-  text-decoration: none;
-  transition: transform 0.15s, box-shadow 0.15s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+display: inline-block;
+background: #fff;
+color: #0284c7;
+font-weight: 700;
+font-size: .875rem;
+padding: .6rem 1.4rem;
+border-radius: 999px;
+text-decoration: none;
+transition: transform .15s, box-shadow .15s;
+box-shadow: 0 2px 8px rgba(0,0,0,.12);
 }
-.sidebar-cta-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+.sidebar-cta-btn:hover {
+transform: translateY(-1px);
+box-shadow: 0 4px 14px rgba(0,0,0,.15);
+}
 
-/* Categories */
-.sidebar-cats { padding: 0.5rem 0; }
+/* ── Sidebar categories ───────────────────────────────────────────── */
+.sidebar-cats { padding: .5rem 0; }
 .sidebar-cat {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.6rem 1.125rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #4b5563;
-  text-decoration: none;
-  border-left: 3px solid transparent;
-  transition: all 0.12s;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: .6rem 1.125rem;
+font-size: .875rem;
+font-weight: 500;
+color: #4b5563;
+text-decoration: none;
+border-left: 3px solid transparent;
+transition: all .12s;
 }
-.sidebar-cat:hover { color: #0284c7; background: #f0f9ff; border-left-color: #bae6fd; }
-.sidebar-cat svg { opacity: 0.4; }
-.sidebar-empty { font-size: 0.8125rem; color: #9ca3af; padding: 0.75rem 1.125rem; margin: 0; }
+.sidebar-cat:hover {
+color: #0284c7;
+background: #f0f9ff;
+border-left-color: #bae6fd;
+}
+.sidebar-cat svg { opacity: .4; }
+.sidebar-cat:hover svg { opacity: 1; }
+.sidebar-empty {
+font-size: .8125rem;
+color: #9ca3af;
+padding: .75rem 1.125rem;
+margin: 0;
+}
 
-/* Recent posts */
-.sidebar-recent { padding: 0.5rem 0; }
+/* ── Sidebar recent posts ─────────────────────────────────────────── */
+.sidebar-recent { padding: .5rem 0; }
 .sidebar-recent-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 0.65rem 1.125rem;
-  text-decoration: none;
-  transition: background 0.12s;
-  border-left: 3px solid transparent;
+display: flex;
+align-items: flex-start;
+gap: .75rem;
+padding: .65rem 1.125rem;
+text-decoration: none;
+transition: background .12s;
+border-left: 3px solid transparent;
 }
-.sidebar-recent-item:hover { background: #f0f9ff; border-left-color: #bae6fd; }
-.sidebar-recent-emoji { font-size: 1.25rem; flex-shrink: 0; margin-top: 0.05rem; }
+.sidebar-recent-item:hover {
+background: #f0f9ff;
+border-left-color: #bae6fd;
+}
+.sidebar-recent-emoji {
+font-size: 1.25rem;
+flex-shrink: 0;
+margin-top: .05rem;
+}
 .sidebar-recent-title {
-  display: block;
-  font-size: 0.8375rem;
-  font-weight: 600;
-  color: #374151;
-  line-height: 1.35;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+font-size: .8375rem;
+font-weight: 600;
+color: #374151;
+line-height: 1.35;
 }
 .sidebar-recent-item:hover .sidebar-recent-title { color: #0284c7; }
-.sidebar-recent-date { display: block; font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem; }
-
-/* Trust */
-.sidebar-trust {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 1rem;
-  padding: 1.125rem;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
-  display: flex;
-  flex-direction: column;
-  gap: 0.875rem;
+.sidebar-recent-date {
+display: block;
+font-size: .75rem;
+color: #9ca3af;
+margin-top: .2rem;
 }
-.trust-item { display: flex; align-items: flex-start; gap: 0.75rem; }
-.trust-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
-.trust-item div { display: flex; flex-direction: column; gap: 0.1rem; }
-.trust-item strong { font-size: 0.875rem; font-weight: 700; color: #111827; }
-.trust-item span { font-size: 0.775rem; color: #9ca3af; }
 
+/* ── Trust badges ─────────────────────────────────────────────────── */
+.sidebar-trust {
+background: #fff;
+border: 1px solid #e5e7eb;
+border-radius: 1rem;
+padding: 1.125rem;
+box-shadow: 0 1px 6px rgba(0,0,0,.04);
+display: flex;
+flex-direction: column;
+gap: .875rem;
+}
+.trust-item { display: flex; align-items: flex-start; gap: .75rem; }
+.trust-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: .1rem; }
+.trust-item div { display: flex; flex-direction: column; gap: .1rem; }
+.trust-item strong { font-size: .875rem; font-weight: 700; color: #111827; }
+.trust-item span { font-size: .775rem; color: #9ca3af; }
+
+/* ── Screen-reader utility ────────────────────────────────────────── */
+.sr-only {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+white-space: nowrap;
+border-width: 0;
+}
 </style>
+{{ end }}
+
+
+{{/* ═══════════════════════════════════════════════════════════════════════
+  MAIN CONTENT
+═══════════════════════════════════════════════════════════════════════ */}}
+{{ define "main" }}
+
+{{- $siteURL := .Site.BaseURL | strings.TrimRight "/" -}}
+
+
+<!-- ════════════════════════════════════════════════════════════════
+  HERO
+════════════════════════════════════════════════════════════════ -->
+<section class="bl-hero">
+<div class="bl-hero-bg" aria-hidden="true"></div>
+<div class="bl-hero-inner">
+
+ <!-- Breadcrumb -->
+ <nav class="bl-breadcrumb" aria-label="Breadcrumb">
+   <a href="{{ $siteURL }}/">Home</a>
+   <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" aria-hidden="true">
+     <polyline points="9 18 15 12 9 6"/>
+   </svg>
+   <span aria-current="page">Blog</span>
+ </nav>
+
+ <!-- H1 -->
+ <h1 class="bl-hero-title">Savings Blog</h1>
+ <p class="bl-hero-desc">
+   Expert tips, coupon guides, and money-saving strategies to help
+   you spend less on everything you love.
+ </p>
+
+ <!-- Stats -->
+ <div class="bl-hero-stats" aria-label="Blog statistics">
+   <div class="bl-stat">
+     <span class="bl-stat-n">{{ len .Pages }}</span>
+     <span class="bl-stat-l">Articles</span>
+   </div>
+   <div class="bl-stat-div" aria-hidden="true"></div>
+   <div class="bl-stat">
+     <span class="bl-stat-n">Free</span>
+     <span class="bl-stat-l">Always</span>
+   </div>
+   <div class="bl-stat-div" aria-hidden="true"></div>
+   <div class="bl-stat">
+     <span class="bl-stat-n">Daily</span>
+     <span class="bl-stat-l">Updates</span>
+   </div>
+ </div>
+
+</div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+  CONTENT + SIDEBAR
+════════════════════════════════════════════════════════════════ -->
+<section class="bl-section">
+<div class="bl-layout">
+
+ <!-- ── Main content column ──────────────────────────────────── -->
+ <main aria-label="Blog posts">
+
+   {{ if .Pages }}
+
+   {{/* ── Featured post (first) ──────────────────────────────── */}}
+   {{ with index .Pages 0 }}
+   <a href="{{ .Permalink }}"
+      class="bl-featured"
+      aria-label="{{ .Title }}{{ if .Params.category }} – {{ .Params.category }}{{ end }}">
+
+     <!-- Featured image -->
+     <div class="bl-featured-img">
+       {{ if .Params.featured_image }}
+       <img
+         src="{{ .Params.featured_image }}"
+         alt="{{ .Title }}"
+         loading="eager"
+         decoding="async"
+         width="560"
+         height="220">
+       {{ else }}
+       <span class="bl-featured-emoji" aria-hidden="true">
+         {{ .Params.emoji | default "💰" }}
+       </span>
+       {{ end }}
+     </div>
+
+     <!-- Featured body -->
+     <div class="bl-featured-body">
+       {{ if .Params.category }}
+       <span class="bl-tag">{{ .Params.category }}</span>
+       {{ end }}
+
+       <!-- h2 for the featured post (page h1 is the blog title) -->
+       <h2 class="bl-featured-title">{{ .Title }}</h2>
+
+       {{ with .Params.description }}
+       <p class="bl-featured-desc">{{ . }}</p>
+       {{ end }}
+
+       <div class="bl-featured-meta">
+         <span class="bl-featured-meta-item">
+           <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" aria-hidden="true">
+             <rect x="3" y="4" width="18" height="18" rx="2"/>
+             <line x1="16" y1="2" x2="16" y2="6"/>
+             <line x1="8"  y1="2" x2="8"  y2="6"/>
+             <line x1="3"  y1="10" x2="21" y2="10"/>
+           </svg>
+           <time datetime="{{ .Date.Format "2006-01-02" }}">
+             {{ .Date.Format "Jan 2, 2006" }}
+           </time>
+         </span>
+         <span class="bl-featured-meta-item">
+           <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" aria-hidden="true">
+             <circle cx="12" cy="12" r="10"/>
+             <polyline points="12 6 12 12 16 14"/>
+           </svg>
+           {{ .Params.read_time | default "5" }} min read
+         </span>
+         <span class="bl-featured-cta" aria-hidden="true">
+           Read Article →
+         </span>
+       </div>
+     </div>
+
+   </a>
+   {{ end }}
+
+   {{/* ── Rest of posts grid ──────────────────────────────────── */}}
+   {{ if gt (len .Pages) 1 }}
+   <div class="bl-grid" role="list" aria-label="More articles">
+     {{ range after 1 .Pages }}
+     <div role="listitem">
+       {{ partial "_partials/blog-card.html" . }}
+     </div>
+     {{ end }}
+   </div>
+   {{ end }}
+
+   {{ else }}
+
+   {{/* ── Empty state ─────────────────────────────────────────── */}}
+   <div class="bl-empty">
+     <span class="bl-empty-icon" aria-hidden="true">📝</span>
+     <h2>No posts yet</h2>
+     <p>
+       Add <code>.md</code> files to <code>content/blog/</code>
+       to get started.
+     </p>
+   </div>
+
+   {{ end }}
+
+ </main><!-- /main -->
+
+
+ <!-- ── Sidebar ──────────────────────────────────────────────── -->
+ <aside class="bl-sidebar" aria-label="Blog sidebar">
+
+   <!-- CTA card -->
+   <div class="sidebar-cta">
+     <span class="sidebar-cta-icon" aria-hidden="true">🎫</span>
+     <h2>Find Great Deals</h2>
+     <p>Browse hundreds of verified coupon codes updated daily.</p>
+     <a href="{{ $siteURL }}/stores/" class="sidebar-cta-btn">
+       Browse Coupons →
+     </a>
+   </div>
+
+   <!-- Categories card -->
+   <div class="sidebar-card">
+     <div class="sidebar-card-header">
+       <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+         <path stroke-linecap="round" stroke-linejoin="round"
+               d="M7 7h10M7 12h6M7 17h8"/>
+       </svg>
+       Categories
+     </div>
+     <nav class="sidebar-cats" aria-label="Blog categories">
+
+       {{/* Deduplicated category list */}}
+       {{- $cats := slice -}}
+       {{- range .Pages -}}
+         {{- with .Params.category -}}
+           {{- $cats = $cats | append . -}}
+         {{- end -}}
+       {{- end -}}
+       {{- $uniqueCats := $cats | uniq -}}
+
+       {{ if $uniqueCats }}
+         {{ range $uniqueCats }}
+         <a href="{{ $siteURL }}/blog/" class="sidebar-cat">
+           <span>{{ . }}</span>
+           <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+             <polyline points="9 18 15 12 9 6"/>
+           </svg>
+         </a>
+         {{ end }}
+       {{ else }}
+         <p class="sidebar-empty">No categories yet.</p>
+       {{ end }}
+
+     </nav>
+   </div>
+
+   <!-- Recent posts card -->
+   <div class="sidebar-card">
+     <div class="sidebar-card-header">
+       <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+         <path stroke-linecap="round" stroke-linejoin="round"
+               d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+       </svg>
+       Recent Articles
+     </div>
+     <nav class="sidebar-recent" aria-label="Recent articles">
+       {{ range first 4 .Pages }}
+       <a href="{{ .Permalink }}" class="sidebar-recent-item">
+         <span class="sidebar-recent-emoji" aria-hidden="true">
+           {{ .Params.emoji | default "📄" }}
+         </span>
+         <div>
+           <span class="sidebar-recent-title">{{ .Title }}</span>
+           <time class="sidebar-recent-date"
+                 datetime="{{ .Date.Format "2006-01-02" }}">
+             {{ .Date.Format "Jan 2, 2006" }}
+           </time>
+         </div>
+       </a>
+       {{ end }}
+     </nav>
+   </div>
+
+   <!-- Trust badges -->
+   <div class="sidebar-trust" aria-label="Trust signals">
+     <div class="trust-item">
+       <span class="trust-icon" aria-hidden="true">✅</span>
+       <div>
+         <strong>Verified Codes</strong>
+         <span>All coupons tested daily</span>
+       </div>
+     </div>
+     <div class="trust-item">
+       <span class="trust-icon" aria-hidden="true">🔒</span>
+       <div>
+         <strong>100% Free</strong>
+         <span>No sign-up required</span>
+       </div>
+     </div>
+     <div class="trust-item">
+       <span class="trust-icon" aria-hidden="true">🔄</span>
+       <div>
+         <strong>Daily Updates</strong>
+         <span>Fresh deals every day</span>
+       </div>
+     </div>
+   </div>
+
+ </aside><!-- /.bl-sidebar -->
+
+</div><!-- /.bl-layout -->
+</section>
 
 {{ end }}

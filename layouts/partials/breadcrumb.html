@@ -1,59 +1,76 @@
 {{/*
-  layouts/partials/breadcrumb.html
+  breadcrumb.html
+  Renders HTML breadcrumb nav AND JSON-LD BreadcrumbList schema.
+  Works correctly for store pages (subdomain URLs) and all other pages.
 */}}
 
-{{- $rawBase  := .Site.BaseURL | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
-{{- $siteURL  := $rawBase | strings.TrimRight "/" -}}
-{{- $baseHost := $rawBase | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
+{{- $siteURL  := .Site.BaseURL | strings.TrimRight "/" -}}
 {{- $section  := .Section -}}
-
-{{- $storeName := "" -}}
-{{- $slug      := "" -}}
-{{- $pageURL   := .Permalink -}}
-
-{{- if eq $section "stores" -}}
-  {{- $storeName = .Params.store_name | default .Title | replaceRE `^["'](.*)["']$` "$1" | strings.TrimSpace -}}
-  {{- $slug      = .Params.slug | default .Params.store_id | replaceRE `^["'](.*)["']$` "$1" | strings.TrimSpace -}}
-  {{- if and $slug (strings.Contains $rawBase "couponhauls.com") -}}
-    {{- $pageURL = printf "https://%s.%s/" $slug $baseHost -}}
-  {{- end -}}
-{{- end -}}
-
-{{- $items := slice (dict "name" "Home" "url" (printf "%s/" $siteURL)) -}}
+{{- $items    := slice (dict "name" "Home" "url" (printf "%s/" $siteURL)) -}}
 
 {{- if eq $section "blog" -}}
   {{- $items = $items | append (dict "name" "Blog" "url" (printf "%s/blog/" $siteURL)) -}}
-  {{- $items = $items | append (dict "name" .Title "url" $pageURL) -}}
+  {{- $items = $items | append (dict "name" .Title "url" .Permalink) -}}
 {{- else if eq $section "stores" -}}
+  {{- $storeName := .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+  {{- $pageURL   := partial "canonical-url.html" . -}}
   {{- $items = $items | append (dict "name" "Stores" "url" (printf "%s/stores/" $siteURL)) -}}
-  {{- $items = $items | append (dict "name" (printf "%s Coupon Codes & Deals" $storeName) "url" $pageURL) -}}
+  {{- $items = $items | append (dict "name" (printf "%s Coupon Codes" $storeName) "url" $pageURL) -}}
 {{- else -}}
-  {{- with .CurrentSection -}}
-    {{- $items = $items | append (dict "name" .Title "url" (.Permalink | strings.TrimRight "/")) -}}
-  {{- end -}}
-  {{- $items = $items | append (dict "name" $.Title "url" $pageURL) -}}
+  {{- $items = $items | append (dict "name" .Title "url" .Permalink) -}}
 {{- end -}}
 
+{{/* ── HTML breadcrumb ─────────────────────────────────────────────── */}}
 <nav aria-label="Breadcrumb" class="breadcrumb-bar">
   <div class="breadcrumb-inner">
-    <ol class="breadcrumb-list">
+    <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
       {{ range $i, $item := $items }}
       {{ $isLast := eq $i (sub (len $items) 1) }}
-      <li class="breadcrumb-item">
+      <li class="breadcrumb-item"
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem">
         {{ if not $isLast }}
-          <a href="{{ $item.url }}" class="breadcrumb-link">{{ $item.name }}</a>
+          <a href="{{ $item.url }}"
+             class="breadcrumb-link"
+             itemprop="item">
+            <span itemprop="name">{{ $item.name }}</span>
+          </a>
+          <meta itemprop="position" content="{{ add $i 1 }}">
           <svg class="breadcrumb-sep" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="1.5"
                   stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         {{ else }}
-          <span class="breadcrumb-current" aria-current="page">{{ $item.name }}</span>
+          <span class="breadcrumb-current"
+                aria-current="page"
+                itemprop="name">{{ $item.name }}</span>
+          <meta itemprop="item" content="{{ $item.url }}">
+          <meta itemprop="position" content="{{ add $i 1 }}">
         {{ end }}
       </li>
       {{ end }}
     </ol>
   </div>
 </nav>
+
+{{/* ── JSON-LD BreadcrumbList ───────────────────────────────────────── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {{ range $i, $item := $items -}}
+    {
+      "@type": "ListItem",
+      "position": {{ add $i 1 }},
+      "name": {{ $item.name | jsonify }},
+      "item": {{ $item.url | jsonify }}
+    }{{ if lt $i (sub (len $items) 1) }},{{ end }}
+    {{ end }}
+  ]
+}
+</script>
 
 <style>
 .breadcrumb-bar {
@@ -69,24 +86,24 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.125rem;
+  gap: .125rem;
   list-style: none;
-  padding: 0.75rem 0;
+  padding: .75rem 0;
   margin: 0;
-  font-size: 0.8125rem;
+  font-size: .8125rem;
 }
 .breadcrumb-item {
   display: flex;
   align-items: center;
-  gap: 0.125rem;
+  gap: .125rem;
 }
 .breadcrumb-link {
   color: #64748b;
   text-decoration: none;
   font-weight: 500;
-  padding: 0.125rem 0.25rem;
-  border-radius: 0.25rem;
-  transition: color 0.12s, background 0.12s;
+  padding: .125rem .25rem;
+  border-radius: .25rem;
+  transition: color .12s, background .12s;
 }
 .breadcrumb-link:hover {
   color: #0284c7;
@@ -97,7 +114,7 @@
   height: 14px;
   color: #cbd5e1;
   flex-shrink: 0;
-  margin: 0 0.1rem;
+  margin: 0 .1rem;
 }
 .breadcrumb-current {
   color: #0f172a;

@@ -1,0 +1,13 @@
+{{- $entries := slice -}}
+{{- range where .Site.RegularPages "Section" "stores" -}}
+  {{- if and .Params.slug .Params.is_active -}}
+    {{- $slug  := .Params.slug -}}
+    {{- $name  := .Params.store_name | default .Title -}}
+    {{- $logo  := .Params.logo_url | default "" -}}
+    {{- $count := .Params.coupon_count | default 0 -}}
+    {{- $url   := partial "canonical-url.html" . -}}
+    {{- $entry := dict "n" $name "s" $slug "l" $logo "c" $count "u" $url -}}
+    {{- $entries = $entries | append $entry -}}
+  {{- end -}}
+{{- end -}}
+{{ $entries | jsonify }}

@@ -1,39 +1,189 @@
-{{- $baseHost := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{{/*
+  layouts/_default/sitemap.xml
+  ════════════════════════════════════════════════════════════════════════
+  Custom XML sitemap for CouponHauls.com.
+
+  Single-file design is valid for this site because:
+    • Google's per-sitemap limit is 50,000 URLs and 50 MB uncompressed.
+    • 15,000 store entries × ~250 bytes each ≈ 3.75 MB — well within limits.
+    • Each store SUBDOMAIN already has its own sitemap.xml written by
+      scripts/copy-static.sh; the main sitemap handles URL discovery.
+
+  When to switch to a sitemap index:
+    If total page count approaches 50,000, split into child sitemaps:
+      /sitemap-stores.xml, /sitemap-blog.xml, /sitemap-pages.xml
+    and make this file a <sitemapindex> referencing those three.
+
+  URL rules applied:
+    ┌───────────────────────────┬──────────┬───────────┬──────────────────────────────┐
+    │ Page type                 │ Priority │ Changefreq│ URL                          │
+    ├───────────────────────────┼──────────┼───────────┼──────────────────────────────┤
+    │ Homepage                  │ 1.0      │ daily     │ www.couponhauls.com/         │
+    │ /stores/ section index    │ 0.9      │ daily     │ www.couponhauls.com/stores/  │
+    │ /blog/   section index    │ 0.8      │ weekly    │ www.couponhauls.com/blog/    │
+    │ Store page (active)       │ 0.8      │ daily     │ {slug}.couponhauls.com/      │
+    │ Blog post                 │ 0.7      │ weekly    │ www.couponhauls.com/blog/…   │
+    │ Static page               │ 0.5      │ monthly   │ www.couponhauls.com/about/…  │
+    │ Store page (inactive)     │ excluded │ —         │ —                            │
+    │ Taxonomy / term           │ excluded │ —         │ — (disabled in hugo.toml)   │
+    └───────────────────────────┴──────────┴───────────┴──────────────────────────────┘
+
+  Fixes vs original:
+    - Inactive stores (is_active: false) are excluded entirely
+    - Slug values are stripped of embedded CSV quotes before use
+    - Lastmod falls back to .Date when .Lastmod is zero (enableGitInfo=false)
+    - Section index pages have distinct priority values (0.9 stores, 0.8 blog)
+    - image:image extension added for blog posts with featured_image
+    - Proper XML declaration (encoding="UTF-8", no standalone attribute)
+    - isPlainText output format preserved (already set in hugo.toml)
+    - Valid XML namespace declarations only (removed unused xhtml namespace)
+*/}}
+
+{{- /* ── Computed site-wide values ──────────────────────────────────────── */}}
+{{- $baseHost      := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
+{{- $siteURL       := .Site.BaseURL | strings.TrimRight "/" -}}
+{{- $isProduction  := strings.Contains .Site.BaseURL "couponhauls.com" -}}
+{{- $today         := now.Format "2006-01-02" -}}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+{{- /*
+  ════════════════════════════════════════════════════════════════════
+  ITERATE OVER ALL PAGES
+  ════════════════════════════════════════════════════════════════════
+  .Site.Pages.ByWeight gives pages in menu-weight order, which puts
+  the homepage and important sections near the top of the sitemap —
+  a minor crawl-budget hint for Googlebot.
+*/ -}}
 {{- range .Site.Pages.ByWeight }}
-  {{- $loc := .Permalink -}}
-  {{- $priority := "0.8" -}}
-  {{- $changefreq := "weekly" -}}
+  {{- /* ── Per-page working variables ─────────────────────────────── */}}
+  {{- $loc        := .Permalink -}}
+  {{- $priority   := "0.5" -}}
+  {{- $changefreq := "monthly" -}}
+  {{- $include    := true -}}
+
+  {{- /*
+    ── lastmod resolution ────────────────────────────────────────────
+    enableGitInfo = false in hugo.toml, so .Lastmod equals .Date for
+    most pages. We still prefer .Lastmod so git-based dates work if
+    enableGitInfo is ever turned on. Falls back to today for pages
+    with no date at all (shouldn't happen, but defensive).
+  */}}
+  {{- $lastmod := $today -}}
+  {{- if not .Lastmod.IsZero -}}
+    {{- $lastmod = .Lastmod.Format "2006-01-02" -}}
+  {{- else if not .Date.IsZero -}}
+    {{- $lastmod = .Date.Format "2006-01-02" -}}
+  {{- end -}}
+
+  {{- /* ── Classify by Kind then Section ───────────────────────────── */}}
 
   {{- if eq .Kind "home" -}}
-    {{- $priority = "1.0" -}}
+    {{- /*
+      Homepage — highest possible priority.
+      Signals to crawlers that this is the canonical entry point.
+    */}}
+    {{- $priority   = "1.0" -}}
     {{- $changefreq = "daily" -}}
+
   {{- else if eq .Kind "section" -}}
-    {{- $priority = "0.7" -}}
-    {{- $changefreq = "weekly" -}}
-  {{- else if eq .Section "stores" -}}
-    {{- $priority = "0.8" -}}
-    {{- $changefreq = "daily" -}}
-    {{- $slug := .Params.slug | default .Params.store_id -}}
-    {{- if $slug -}}
-      {{- $loc = printf "https://%s.%s/" $slug $baseHost -}}
+    {{- /*
+      Section index pages: /stores/ and /blog/
+      /stores/ gets the highest non-home priority because it is the
+      primary navigation destination and changes every time a new
+      store is added.
+    */}}
+    {{- if eq .Section "stores" -}}
+      {{- $priority   = "0.9" -}}
+      {{- $changefreq = "daily" -}}
+    {{- else if eq .Section "blog" -}}
+      {{- $priority   = "0.8" -}}
+      {{- $changefreq = "weekly" -}}
+    {{- else -}}
+      {{- $priority   = "0.7" -}}
+      {{- $changefreq = "weekly" -}}
     {{- end -}}
+
+  {{- else if eq .Section "stores" -}}
+    {{- /*
+      Individual store pages.
+
+      Excluded if is_active is not true — inactive stores should not
+      be crawled and serve no value in the index.
+
+      The canonical URL for every active store is its SUBDOMAIN, not
+      the www path Hugo generates internally.  We rewrite $loc here
+      using the same logic as layouts/partials/canonical-url.html.
+
+      Slug cleanup: some CSV editors wrap values in literal quote chars
+      (e.g. the slug field contains "amazon" instead of amazon).
+      replaceRE strips any surrounding double-quote pair.
+    */}}
+    {{- $active := .Params.is_active -}}
+    {{- if not (or (eq (printf "%v" $active) "true") (eq (printf "%v" $active) "<nil>")) -}}
+      {{- $include = false -}}
+    {{- end -}}
+
+    {{- if $include -}}
+      {{- $rawSlug := .Params.slug | default .Params.store_id | default "" -}}
+      {{- $slug    := $rawSlug | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
+
+      {{- if and $slug $isProduction -}}
+        {{- $loc = printf "https://%s.%s/" $slug $baseHost -}}
+      {{- end -}}
+
+      {{- $priority   = "0.8" -}}
+      {{- $changefreq = "daily" -}}
+    {{- end -}}
+
   {{- else if eq .Section "blog" -}}
-    {{- $priority = "0.7" -}}
+    {{- /*
+      Individual blog posts.
+      Priority 0.7 — important editorial content but less commercially
+      critical than store pages for this site's primary purpose.
+    */}}
+    {{- $priority   = "0.7" -}}
     {{- $changefreq = "weekly" -}}
-  {{- else -}}
-    {{- $priority = "0.5" -}}
+
+  {{- else if eq .Kind "page" -}}
+    {{- /*
+      Static pages: about, contact, privacy, affiliate-disclaimer.
+      Low priority; content rarely changes.
+    */}}
+    {{- $priority   = "0.5" -}}
     {{- $changefreq = "monthly" -}}
-  {{- end }}
+
+  {{- else -}}
+    {{- /*
+      Anything else (taxonomy, term, RSS output, etc.) is excluded.
+      Taxonomy is already disabled via disableKinds in hugo.toml, but
+      this guard future-proofs against any new kinds being added.
+    */}}
+    {{- $include = false -}}
+
+  {{- end -}}
+
+  {{- /* ── Emit <url> only for included pages ───────────────────────── */}}
+  {{- if $include }}
   <url>
     <loc>{{ $loc }}</loc>
-    {{- if not .Lastmod.IsZero }}
-    <lastmod>{{ .Lastmod.Format "2006-01-02" }}</lastmod>
-    {{- end }}
+    <lastmod>{{ $lastmod }}</lastmod>
     <changefreq>{{ $changefreq }}</changefreq>
     <priority>{{ $priority }}</priority>
+    {{- /*
+      Image extension — blog posts with a featured_image param.
+      Google uses image sitemap data to index images in Google Images
+      and to understand page content. Only emit for blog posts since
+      store pages use text-based letter avatars, not real images.
+    */}}
+    {{- if and (eq .Section "blog") (.Params.featured_image) }}
+    <image:image>
+      <image:loc>{{ .Params.featured_image | absURL }}</image:loc>
+      <image:title>{{ .Title | htmlEscape }}</image:title>
+    </image:image>
+    {{- end }}
   </url>
+  {{- end }}
 {{- end }}
 </urlset>

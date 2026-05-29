@@ -17,7 +17,7 @@ disableKinds = ["taxonomy", "term"]
   description    = "Find the best coupon codes, promo codes, and deals from top stores. Save money on your online shopping with CouponHauls."
   author         = "CouponHauls"
   og_image       = "images/couponhaulslogo.png"
-  twitter_handle = "@couponhauls"
+  twitter_handle = "@couponhauls_com"
 
 [menu]
 [[menu.main]]
@@ -30,7 +30,7 @@ disableKinds = ["taxonomy", "term"]
   weight = 2
 
 [outputs]
-  home    = ["HTML", "RSS", "Sitemap"]
+  home    = ["HTML", "Sitemap", "StoreSearchData"]
   section = ["HTML"]
   page    = ["HTML"]
 
@@ -43,21 +43,33 @@ disableKinds = ["taxonomy", "term"]
   writeStats = true
 
 [minify]
-  disableHTML  = true
+  disableHTML  = false
   disableCSS   = false
   disableJS    = false
   disableJSON  = false
   disableSVG   = false
   disableXML   = false
   minifyOutput = true
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      keepWhitespace       = false
+      keepDefaultAttrVals  = false
 
 [sitemap]
   changefreq = "weekly"
   priority   = 0.8
 
+[caches]
+  [caches.getjson]
+    maxAge = "10s"
+  [caches.images]
+    maxAge = "720h"
+
 [mediaTypes]
   [mediaTypes."application/xml"]
     suffixes = ["xml"]
+  [mediaTypes."application/json"]
+    suffixes = ["json"]
 
 [outputFormats]
   [outputFormats.Sitemap]
@@ -66,3 +78,8 @@ disableKinds = ["taxonomy", "term"]
     isPlainText    = true
     notAlternative = true
     rel            = "sitemap"
+  [outputFormats.StoreSearchData]
+    mediaType      = "application/json"
+    baseName       = "stores-search-data"
+    isPlainText    = true
+    notAlternative = true

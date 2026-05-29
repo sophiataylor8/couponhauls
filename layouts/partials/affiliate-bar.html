@@ -1,8 +1,13 @@
 <!-- layouts/partials/affiliate-bar.html -->
-<div class="affiliate-bar">
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 110 20A10 10 0 0112 2z"/>
+<div class="affiliate-bar" role="note" aria-label="Affiliate disclosure">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    stroke-width="2" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 110 20A10 10 0 0112 2z"/>
   </svg>
-  When you buy through links, we may earn a commission.
-  <a href="https://www.couponhauls.com/affiliate-disclaimer/" class="affiliate-bar-link">Learn more</a>
+  When you click links and buy, we may earn a commission at no extra cost to you.
+  <a href="{{ .Site.BaseURL | strings.TrimRight "/" }}/affiliate-disclaimer/"
+     class="affiliate-bar-link">
+    Learn more
+  </a>
 </div>

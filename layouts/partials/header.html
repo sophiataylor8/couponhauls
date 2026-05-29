@@ -1,37 +1,449 @@
-<header class="bg-white shadow-sm sticky top-0 z-50">
-  <nav class="container mx-auto px-4">
-  <div class="flex items-center justify-between h-16">
+{{/*
+  layouts/partials/header.html
+  ════════════════════════════════════════════════════════════════════════
+  Site-wide sticky header navigation.
 
-  {{/* ── Logo — always points to www.couponhauls.com ── */}}
-  <a href="{{ .Site.BaseURL }}" class="flex items-center space-x-2">
-    <div class="text-2xl font-bold text-primary-600">🎫 CouponHauls.com</div>
-  </a>
+  Works correctly on:
+    - www.couponhauls.com          (main site)
+    - nike.couponhauls.com         (store subdomains)
+    - localhost:1313               (Hugo dev server)
 
-  {{/* ── Desktop nav — absolute URLs so they work on subdomains ── */}}
-  <div class="hidden md:flex items-center space-x-8">
-    {{ range .Site.Menus.main }}
-    <a href="{{ $.Site.BaseURL | strings.TrimRight "/" }}{{ .URL }}"
-       class="text-gray-700 hover:text-primary-600 font-medium transition-colors">
-      {{ .Name }}
+  Fixes applied vs original:
+    - Skip-to-content link for keyboard and screen-reader users
+    - aria-label on <header>, <nav>, mobile <button>
+    - aria-expanded + aria-controls on mobile toggle button
+    - aria-current="page" on the active nav item
+    - role="menuitem" on mobile nav links
+    - Logo uses <span> instead of a bare div for semantic correctness
+    - All nav URLs are absolute (subdomain-safe) — unchanged from original
+    - Self-contained <style> block (no Tailwind utility dependency in markup)
+    - Mobile menu toggle JS is self-contained in this partial so app.js
+      does not need a matching initMobileMenu() call for ARIA support
+    - Visible focus rings on all interactive elements
+    - CTA "Browse Deals" button in desktop nav for conversion
+    - Smooth mobile menu open/close with height transition
+    - preconnect hint for Inter font (add to baseof.html <head> if not present)
+*/}}
+
+{{/* ── Computed values ─────────────────────────────────────────────────── */}}
+{{- $base    := .Site.BaseURL | strings.TrimRight "/" -}}
+{{- $section := .Section -}}
+{{- $isHome  := .IsHome -}}
+{{- $relPerma := .RelPermalink -}}
+
+
+<!-- ════════════════════════════════════════════════════════════════════
+     SKIP NAVIGATION  (first focusable element on every page)
+     Screen readers and keyboard users can jump straight to main content.
+════════════════════════════════════════════════════════════════════ -->
+<a href="#main-content" class="hdr-skip">Skip to main content</a>
+
+
+<!-- ════════════════════════════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════════════════════════════ -->
+<header class="hdr-root" role="banner">
+  <div class="hdr-inner">
+
+    <!-- ── Logo ───────────────────────────────────────────────────── -->
+    <a href="{{ .Site.BaseURL }}"
+       class="hdr-logo"
+       aria-label="{{ .Site.Title }} – Home">
+      <span class="hdr-logo-icon" aria-hidden="true">🎫</span>
+      <span class="hdr-logo-text">CouponHauls<span class="hdr-logo-dot">.com</span></span>
     </a>
-    {{ end }}
-  </div>
 
-  <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
-  </button>
-  </div>
+    <!-- ── Desktop navigation ─────────────────────────────────────── -->
+    <nav class="hdr-nav" aria-label="Main navigation">
+      {{ range .Site.Menus.main }}
+        {{- $menuURL   := .URL -}}
+        {{- $fullURL   := printf "%s%s" $base $menuURL -}}
+        {{- $isActive  := false -}}
+        {{- if eq $menuURL "/" -}}
+          {{- $isActive = $isHome -}}
+        {{- else if hasPrefix $relPerma $menuURL -}}
+          {{- $isActive = true -}}
+        {{- end }}
+        <a href="{{ $fullURL }}"
+           class="hdr-nav-link{{ if $isActive }} hdr-nav-link--active{{ end }}"
+           {{ if $isActive }}aria-current="page"{{ end }}>
+          {{ .Name }}
+        </a>
+      {{ end }}
 
-  {{/* ── Mobile nav — absolute URLs ── */}}
-  <div id="mobileMenu" class="hidden md:hidden pb-4">
+      <!-- CTA button — Browse Deals -->
+      <a href="{{ $base }}/stores/" class="hdr-nav-cta" aria-label="Browse all coupon stores">
+        Browse Deals
+      </a>
+    </nav>
+
+    <!-- ── Mobile menu toggle button ──────────────────────────────── -->
+    <button
+      id="hdr-mobile-btn"
+      class="hdr-mobile-btn"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="hdr-mobile-nav"
+      type="button">
+      <!-- Hamburger icon (shown when menu is closed) -->
+      <svg class="hdr-icon-open" width="24" height="24"
+           viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true">
+        <line x1="3"  y1="6"  x2="21" y2="6"/>
+        <line x1="3"  y1="12" x2="21" y2="12"/>
+        <line x1="3"  y1="18" x2="21" y2="18"/>
+      </svg>
+      <!-- X icon (shown when menu is open) -->
+      <svg class="hdr-icon-close" width="24" height="24"
+           viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true">
+        <line x1="18" y1="6"  x2="6"  y2="18"/>
+        <line x1="6"  y1="6"  x2="18" y2="18"/>
+      </svg>
+    </button>
+
+  </div><!-- /.hdr-inner -->
+
+  <!-- ── Mobile navigation panel ──────────────────────────────────── -->
+  <nav
+    id="hdr-mobile-nav"
+    class="hdr-mobile-nav"
+    aria-label="Mobile navigation"
+    aria-hidden="true"
+    role="menu">
+
     {{ range .Site.Menus.main }}
-    <a href="{{ $.Site.BaseURL | strings.TrimRight "/" }}{{ .URL }}"
-       class="block py-2 text-gray-700 hover:text-primary-600 font-medium">
-      {{ .Name }}
-    </a>
+      {{- $menuURL  := .URL -}}
+      {{- $fullURL  := printf "%s%s" $base $menuURL -}}
+      {{- $isActive := false -}}
+      {{- if eq $menuURL "/" -}}
+        {{- $isActive = $isHome -}}
+      {{- else if hasPrefix $relPerma $menuURL -}}
+        {{- $isActive = true -}}
+      {{- end }}
+      <a href="{{ $fullURL }}"
+         class="hdr-mobile-link{{ if $isActive }} hdr-mobile-link--active{{ end }}"
+         {{ if $isActive }}aria-current="page"{{ end }}
+         role="menuitem">
+        {{ .Name }}
+      </a>
     {{ end }}
-  </div>
-  </nav>
-</header>
+
+    <!-- Mobile CTA -->
+    <a href="{{ $base }}/stores/"
+       class="hdr-mobile-cta"
+       role="menuitem"
+       aria-label="Browse all coupon stores">
+      Browse All Deals →
+    </a>
+
+  </nav><!-- /#hdr-mobile-nav -->
+
+</header><!-- /.hdr-root -->
+
+
+<!-- ════════════════════════════════════════════════════════════════════
+     STYLES
+════════════════════════════════════════════════════════════════════ -->
+<style>
+/* =====================================================================
+   HEADER STYLES — layouts/partials/header.html
+   ===================================================================== */
+
+/* ── Skip link ────────────────────────────────────────────────────── */
+.hdr-skip {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  background: #0284c7;
+  color: #fff;
+  font-size: .9375rem;
+  font-weight: 700;
+  padding: .625rem 1.25rem;
+  border-radius: 0 0 .5rem .5rem;
+  text-decoration: none;
+  transition: top .15s ease;
+}
+.hdr-skip:focus {
+  top: 0;
+  outline: none;
+}
+
+/* ── Header root ──────────────────────────────────────────────────── */
+.hdr-root {
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 6px rgba(0,0,0,.06);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* ── Inner container ──────────────────────────────────────────────── */
+.hdr-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* ── Logo ─────────────────────────────────────────────────────────── */
+.hdr-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  border-radius: .375rem;
+  transition: opacity .15s;
+}
+.hdr-logo:hover          { opacity: .85; }
+.hdr-logo:focus-visible  {
+  outline: 2px solid #0284c7;
+  outline-offset: 3px;
+}
+.hdr-logo-icon {
+  font-size: 1.375rem;
+  line-height: 1;
+  display: block;
+}
+.hdr-logo-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0284c7;
+  letter-spacing: -.02em;
+  line-height: 1;
+  font-family: Inter, system-ui, sans-serif;
+}
+.hdr-logo-dot { color: #0ea5e9; }
+
+/* ── Desktop nav ──────────────────────────────────────────────────── */
+.hdr-nav {
+  display: none;
+  align-items: center;
+  gap: .125rem;
+}
+@media (min-width: 768px) {
+  .hdr-nav { display: flex; }
+}
+.hdr-nav-link {
+  display: inline-block;
+  padding: .4375rem .875rem;
+  font-size: .9375rem;
+  font-weight: 600;
+  color: #475569;
+  text-decoration: none;
+  border-radius: .5rem;
+  transition: color .12s, background .12s;
+  white-space: nowrap;
+}
+.hdr-nav-link:hover {
+  color: #0284c7;
+  background: #f0f9ff;
+}
+.hdr-nav-link:focus-visible {
+  outline: 2px solid #0284c7;
+  outline-offset: 2px;
+}
+.hdr-nav-link--active {
+  color: #0284c7;
+  background: #f0f9ff;
+  font-weight: 700;
+}
+
+/* ── Desktop CTA button ───────────────────────────────────────────── */
+.hdr-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  background: #0284c7;
+  color: #fff;
+  font-size: .875rem;
+  font-weight: 700;
+  padding: .5rem 1.125rem;
+  border-radius: .625rem;
+  text-decoration: none;
+  margin-left: .5rem;
+  white-space: nowrap;
+  transition: background .15s, transform .15s, box-shadow .15s;
+  box-shadow: 0 1px 6px rgba(2,132,199,.28);
+}
+.hdr-nav-cta:hover {
+  background: #0369a1;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(2,132,199,.35);
+}
+.hdr-nav-cta:focus-visible {
+  outline: 2px solid #0284c7;
+  outline-offset: 3px;
+}
+
+/* ── Mobile toggle button ─────────────────────────────────────────── */
+.hdr-mobile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  border: none;
+  border-radius: .5rem;
+  color: #475569;
+  cursor: pointer;
+  padding: 0;
+  transition: background .12s, color .12s;
+  flex-shrink: 0;
+}
+.hdr-mobile-btn:hover { background: #f1f5f9; color: #0f172a; }
+.hdr-mobile-btn:focus-visible {
+  outline: 2px solid #0284c7;
+  outline-offset: 2px;
+}
+@media (min-width: 768px) {
+  .hdr-mobile-btn { display: none; }
+}
+
+/* Hamburger / X icon switching */
+.hdr-icon-close { display: none; }
+.hdr-mobile-btn[aria-expanded="true"] .hdr-icon-open  { display: none; }
+.hdr-mobile-btn[aria-expanded="true"] .hdr-icon-close { display: block; }
+
+/* ── Mobile nav panel ─────────────────────────────────────────────── */
+.hdr-mobile-nav {
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height .25s ease, padding .2s ease;
+  border-top: 1px solid transparent;
+  padding: 0 1.25rem;
+}
+.hdr-mobile-nav.is-open {
+  max-height: 400px;
+  border-top-color: #e2e8f0;
+  padding: .75rem 1.25rem 1rem;
+}
+@media (min-width: 768px) {
+  .hdr-mobile-nav { display: none !important; }
+}
+
+/* Mobile nav links */
+.hdr-mobile-link {
+  display: flex;
+  align-items: center;
+  padding: .625rem .75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  text-decoration: none;
+  border-radius: .5rem;
+  border-left: 3px solid transparent;
+  transition: color .12s, background .12s, border-color .12s;
+}
+.hdr-mobile-link:hover {
+  color: #0284c7;
+  background: #f0f9ff;
+  border-left-color: #bae6fd;
+}
+.hdr-mobile-link:focus-visible {
+  outline: 2px solid #0284c7;
+  outline-offset: 2px;
+}
+.hdr-mobile-link--active {
+  color: #0284c7;
+  background: #f0f9ff;
+  border-left-color: #0284c7;
+  font-weight: 700;
+}
+
+/* Mobile CTA */
+.hdr-mobile-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: .5rem;
+  padding: .75rem;
+  background: #0284c7;
+  color: #fff;
+  font-size: .9375rem;
+  font-weight: 700;
+  border-radius: .625rem;
+  text-decoration: none;
+  transition: background .15s;
+}
+.hdr-mobile-cta:hover   { background: #0369a1; }
+.hdr-mobile-cta:focus-visible {
+  outline: 2px solid #0284c7;
+  outline-offset: 3px;
+}
+</style>
+
+
+<!-- ════════════════════════════════════════════════════════════════════
+     MOBILE MENU SCRIPT
+     Self-contained here so ARIA attributes stay in sync without
+     requiring changes to static/js/app.js.
+     IDs are kept compatible: #mobileMenuBtn and #mobileMenu aliases
+     are set so any existing app.js references still work.
+════════════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  var btn  = document.getElementById('hdr-mobile-btn');
+  var nav  = document.getElementById('hdr-mobile-nav');
+  if (!btn || !nav) return;
+
+  // Alias IDs so app.js initMobileMenu() still works if called
+  btn.id = 'mobileMenuBtn';
+  nav.id = 'mobileMenu';
+
+  function openMenu() {
+    nav.classList.add('is-open');
+    nav.setAttribute('aria-hidden', 'false');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'Close navigation menu');
+  }
+
+  function closeMenu() {
+    nav.classList.remove('is-open');
+    nav.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Open navigation menu');
+  }
+
+  btn.addEventListener('click', function () {
+    if (btn.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Close when a nav link is clicked (single-page-style navigation)
+  nav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+      btn.focus();
+    }
+  });
+
+  // Close when clicking outside the header
+  document.addEventListener('click', function (e) {
+    var header = btn.closest('header');
+    if (header && !header.contains(e.target)) {
+      closeMenu();
+    }
+  });
+})();
+</script>
