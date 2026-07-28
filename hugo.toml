@@ -59,9 +59,7 @@ disableKinds = ["taxonomy", "term"]
   changefreq = "weekly"
   priority   = 0.8
 
-[caches]
-  [caches.getjson]
-    maxAge = "10s"
+[caches]  
   [caches.images]
     maxAge = "720h"
 

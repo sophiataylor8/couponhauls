@@ -21,7 +21,7 @@
     {{- if and $slug $isProduction -}}
       {{- printf "https://%s.%s/" $slug $baseHost -}}
     {{- else if $slug -}}
-      {{- printf "%s%s/" (.Site.BaseURL | strings.TrimRight "/") $slug -}}
+      {{- printf "%s/%s/" (.Site.BaseURL | strings.TrimRight "/") $slug -}}
     {{- else -}}
       {{- .Permalink -}}
     {{- end -}}
