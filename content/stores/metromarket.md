@@ -1,20 +1,20 @@
 ---
-title: "Metro Market Weekly Ad May 2026 Digital Coupons"
+title: "Metro Market Weekly Ad Aug 2026 - Digital Coupons"
 slug: "metromarket"
-description: "Metro Market weekly ad May 2026. Discover Metro Market digital coupons, promo codes, grocery offers and weekly deals to save on flowers."
+description: "Metro Market Weekly Ad Aug 2026. Check the newest Metro Market ad with digital coupons, grocery specials, and weekly food savings."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Metro Market"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Metro Market Weekly Ad May 2026 Digital Coupons"
-store_title: "Metro Market Weekly Ad May 2026 Digital Coupons"
-store_meta_description: "Metro Market weekly ad May 2026. Discover Metro Market digital coupons, promo codes, grocery offers and weekly deals to save on flowers."
+store_h1: "Metro Market Weekly Ad Aug 2026 - Digital Coupons"
+store_title: "Metro Market Weekly Ad Aug 2026 - Digital Coupons"
+store_meta_description: "Metro Market Weekly Ad Aug 2026. Check the newest Metro Market ad with digital coupons, grocery specials, and weekly food savings."
 store_keywords: "metro market coupon code, metro market promo code, metro market discount code, metro market deals, metro market offers, metro market grocery coupons, metro market coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Metro Market Weekly Ad May 2026 Digital Coupons"
-store_og_description: "Metro Market weekly ad May 2026. Discover Metro Market digital coupons, promo codes, grocery offers and weekly deals to save on flowers."
+store_og_title: "Metro Market Weekly Ad Aug 2026 - Digital Coupons"
+store_og_description: "Metro Market Weekly Ad Aug 2026. Check the newest Metro Market ad with digital coupons, grocery specials, and weekly food savings."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "metromarket"
+verified_date: "July 2026"
 
 coupons:
   - coupon_id: "1122"
@@ -34,16 +35,16 @@ coupons:
     coupon_description: "Check the Metro Market weekly ad to find grocery discounts on fresh produce, meats, bakery items, and beverages."
     coupon_aff_url: "https://www.metromarket.net/"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1123"
     coupon_title: "Metro Market Digital Coupons"
     coupon_code: ""
     coupon_description: "Clip digital coupons through your Metro Market account to enjoy personalized grocery savings."
     coupon_aff_url: "https://www.metromarket.net/"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
 ---
 
 Metro Market is a grocery retailer that focuses on delivering fresh food selections, quality ingredients, and a modern shopping experience for customers seeking both convenience and variety. The store has become a popular choice for shoppers who want reliable grocery options along with opportunities to discover specialty and locally sourced products.

@@ -1,20 +1,20 @@
 ---
-title: "Smart and Final Weekly Ad May 2026 Weekly Flyer"
+title: "Smart and Final Weekly Ad Aug 2026 - Weekly Flyer"
 slug: "smartandfinal"
-description: "Smart and final weekly ad May 2026. Save more with Smart and Final weekly flyer,  promo code, grocery coupons and deals on everyday essentials."
+description: "Smart and Final Weekly Ad Aug 2026. Check the latest Smart and Final flyer for discounts on groceries, bulk products, beverages, and household items."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Smart and Final"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Smart and Final Weekly Ad May 2026 Weekly Flyer"
-store_title: "Smart and Final Weekly Ad May 2026 Weekly Flyer"
-store_meta_description: "Smart and final weekly ad May 2026. Save more with Smart and Final weekly flyer,  promo code, grocery coupons and deals on everyday essentials."
+store_h1: "Smart and Final Weekly Ad Aug 2026 - Weekly Flyer"
+store_title: "Smart and Final Weekly Ad Aug 2026 - Weekly Flyer"
+store_meta_description: "Smart and Final Weekly Ad Aug 2026. Check the latest Smart and Final flyer for discounts on groceries, bulk products, beverages, and household items."
 store_keywords: "smart and final coupon code, smart and final promo code, smart and final discount code, smart and final deals, smart and final offers, smart and final grocery coupons, smart and final coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Smart and Final Weekly Ad May 2026 Weekly Flyer"
-store_og_description: "Smart and final weekly ad May 2026. Save more with Smart and Final weekly flyer,  promo code, grocery coupons and deals on everyday essentials."
+store_og_title: "Smart and Final Weekly Ad Aug 2026 - Weekly Flyer"
+store_og_description: "Smart and Final Weekly Ad Aug 2026. Check the latest Smart and Final flyer for discounts on groceries, bulk products, beverages, and household items."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "smartandfinal"
+verified_date: "July 2026"
 
 coupons:
   - coupon_id: "1084"
@@ -34,16 +35,16 @@ coupons:
     coupon_description: "Check Smart & Final weekly ads to save on bulk groceries, fresh produce, meats, and household essentials."
     coupon_aff_url: "https://www.smartandfinal.com/"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1085"
     coupon_title: "Smart & Final Digital Coupons"
     coupon_code: ""
     coupon_description: "Clip Smart & Final digital coupons to unlock additional discounts on groceries and everyday products."
     coupon_aff_url: "https://www.smartandfinal.com/"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
 ---
 
 Smart and Final has built a strong reputation as a practical shopping destination for customers who want grocery store convenience combined with warehouse-style value. The retailer focuses on providing a wide selection of food, household essentials, and bulk products that work equally well for families, small businesses, and event planners. With both in-store and online shopping options available, Smart and Final makes it easy to stock up on everyday necessities while keeping spending under control.

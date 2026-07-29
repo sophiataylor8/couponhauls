@@ -1,20 +1,20 @@
 ---
-title: "Albertsons Weekly Ad May 2026 Grocery Ad"
+title: "Albertsons Weekly Ad Aug 2026 - Grocery Ad"
 slug: "albertsons"
-description: "Albertsons weekly ad May 2026. Discover verified Albertsons grocery ad, promo code, digital grocery coupons, and weekly deals for extra savings."
+description: "Albertsons Weekly Ad Aug 2026. Check the newest Albertsons grocery ad for weekly discounts on fresh produce, pantry items, beverages, and more."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Albertsons"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Albertsons Weekly Ad May 2026 Grocery Ad"
-store_title: "Albertsons Weekly Ad May 2026 Grocery Ad"
-store_meta_description: "Albertsons weekly ad May 2026. Discover verified Albertsons grocery ad, promo code, digital grocery coupons, and weekly deals for extra savings."
+store_h1: "Albertsons Weekly Ad Aug 2026 - Grocery Ad"
+store_title: "Albertsons Weekly Ad Aug 2026 - Grocery Ad"
+store_meta_description: "Albertsons Weekly Ad Aug 2026. Check the newest Albertsons grocery ad for weekly discounts on fresh produce, pantry items, beverages, and more."
 store_keywords: "albertsons coupon code, albertsons promo code, albertsons discount code, albertsons deals, albertsons offers, albertsons grocery coupons, albertsons coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Albertsons Weekly Ad May 2026 Grocery Ad"
-store_og_description: "Albertsons weekly ad May 2026. Discover verified Albertsons grocery ad, promo code, digital grocery coupons, and weekly deals for extra savings."
+store_og_title: "Albertsons Weekly Ad Aug 2026 - Grocery Ad"
+store_og_description: "Albertsons Weekly Ad Aug 2026. Check the newest Albertsons grocery ad for weekly discounts on fresh produce, pantry items, beverages, and more."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "albertsons"
+verified_date: "July 2026"
 
 coupons:
   - coupon_id: "1048"
@@ -34,16 +35,16 @@ coupons:
     coupon_description: "Sign up for Albertsons for U to clip digital coupons and enjoy personalized grocery discounts and weekly promotions."
     coupon_aff_url: "https://www.albertsons.com/"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1049"
     coupon_title: "Albertsons Weekly Ad Savings"
     coupon_code: ""
     coupon_description: "Explore Albertsons weekly ad to save on fresh produce, meats, bakery goods, beverages, and everyday grocery items."
     coupon_aff_url: "https://www.albertsons.com/"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
 ---
 
 Albertsons is one of the largest supermarket retailers in the United States, providing customers with a complete selection of groceries and everyday products. With hundreds of stores across multiple states, the company serves millions of shoppers who rely on the brand for fresh ingredients, pantry staples, and household necessities.

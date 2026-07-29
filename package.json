@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "CouponHauls - Coupon website",
   "scripts": {
-    "dev": "bash scripts/dev-server.sh",
+    "dev": "hugo server --bind 0.0.0.0 --port 1313 -D",
     "build": "hugo --minify && bash scripts/copy-static.sh",
     "build:preview": "hugo --minify && bash scripts/copy-static.sh && hugo server --renderToDisk",
     "build:css": "tailwindcss -i ./assets/css/main.css -o ./static/css/style.css --minify"

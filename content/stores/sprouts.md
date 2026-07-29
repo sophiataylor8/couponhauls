@@ -1,20 +1,20 @@
 ---
-title: "Sprouts Farmers Market Weekly Ad May 2026"
+title: "Sprouts Farmers Market Weekly Ad Aug 2026"
 slug: "sprouts"
-description: "Sprouts farmers market weekly ad May 2026. Save more with Sprouts sales ad, promo code, organic grocery deals, and discounts on fresh food."
+description: "Sprouts Farmers Market Weekly Ad Aug 2026. Discover fresh produce discounts, organic food deals, and grocery savings in the latest Sprouts weekly ad."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Sprouts"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Sprouts Farmers Market Weekly Ad May 2026"
-store_title: "Sprouts Farmers Market Weekly Ad May 2026"
-store_meta_description: "Sprouts farmers market weekly ad May 2026. Save more with Sprouts sales ad, promo code, organic grocery deals, and discounts on fresh food."
+store_h1: "Sprouts Farmers Market Weekly Ad Aug 2026"
+store_title: "Sprouts Farmers Market Weekly Ad Aug 2026"
+store_meta_description: "Sprouts Farmers Market Weekly Ad Aug 2026. Discover fresh produce discounts, organic food deals, and grocery savings in the latest Sprouts weekly ad."
 store_keywords: "sprouts coupon code, sprouts promo code, sprouts discount code, sprouts deals, sprouts offers, sprouts grocery coupons, sprouts coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Sprouts Farmers Market Weekly Ad May 2026"
-store_og_description: "Sprouts farmers market weekly ad May 2026. Save more with Sprouts sales ad, promo code, organic grocery deals, and discounts on fresh food."
+store_og_title: "Sprouts Farmers Market Weekly Ad Aug 2026"
+store_og_description: "Sprouts Farmers Market Weekly Ad Aug 2026. Discover fresh produce discounts, organic food deals, and grocery savings in the latest Sprouts weekly ad."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "sprouts"
+verified_date: "July 2026"
 
 coupons:
   - coupon_id: "1064"
@@ -34,16 +35,16 @@ coupons:
     coupon_description: "Browse the Sprouts weekly ad to save on fresh produce, natural groceries, vitamins, and organic products."
     coupon_aff_url: "https://www.sprouts.com/"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1065"
     coupon_title: "Sprouts Digital Coupons"
     coupon_code: ""
     coupon_description: "Clip Sprouts digital coupons through your account to unlock savings on healthy foods, snacks, supplements, and household items."
     coupon_aff_url: "https://www.sprouts.com/"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
 ---
 
 Sprouts Farmers Market is a grocery retailer known for its focus on fresh, natural, and organic foods. The company has grown into a popular destination for shoppers who want healthier grocery options and a wide selection of specialty products. Many customers visit Sprouts to find fresh produce, organic ingredients, and natural foods that support balanced lifestyles.

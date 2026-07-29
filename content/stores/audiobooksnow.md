@@ -1,20 +1,20 @@
 ---
-title: "Audiobooks Now Coupon Code May 2026 - 20% Off"
+title: "Audiobooks Now Promo Code Aug 2026 - 20% Off Coupon"
 slug: "audiobooksnow"
-description: "Get Audiobooks Now coupon code May 2026 and save 20% on audiobooks and memberships. Discover deals and discounts to enjoy your favorite titles for less."
+description: "Audiobooks Now Promo Code Aug 2026. Save up to 20% on audiobooks, memberships, and digital book downloads with verified Audiobooks Now coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Audiobooks Now"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Audiobooks Now Coupon Code May 2026 - 20% Off"
-store_title: "Audiobooks Now Coupon Code May 2026 - 20% Off"
-store_meta_description: "Get Audiobooks Now coupon code May 2026 and save 20% on audiobooks and memberships. Discover deals and discounts to enjoy your favorite titles for less."
+store_h1: "Audiobooks Now Promo Code Aug 2026 - 20% Off Coupon"
+store_title: "Audiobooks Now Promo Code Aug 2026 - 20% Off Coupon"
+store_meta_description: "Audiobooks Now Promo Code Aug 2026. Save up to 20% on audiobooks, memberships, and digital book downloads with verified Audiobooks Now coupon codes."
 store_keywords: "audiobooks now coupon, audiobooks now promo code, audiobooks now coupons, audiobooks now discount code, audiobooks now coupon codes, audiobooks now promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Audiobooks Now Coupon Code May 2026 - 20% Off"
-store_og_description: "Get Audiobooks Now coupon code May 2026 and save 20% on audiobooks and memberships. Discover deals and discounts to enjoy your favorite titles for less."
+store_og_title: "Audiobooks Now Promo Code Aug 2026 - 20% Off Coupon"
+store_og_description: "Audiobooks Now Promo Code Aug 2026. Save up to 20% on audiobooks, memberships, and digital book downloads with verified Audiobooks Now coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,6 +26,8 @@ is_active: true
 website_featured: false
 coupon_count: 4
 store_id: "audiobooksnow"
+best_discount: "Up to 50% Off"
+verified_date: "July 2026"
 
 coupons:
   - coupon_id: "1194"
@@ -34,32 +36,32 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrs.com/t/8-11203-214799-146749"
     coupon_type: "Coupon"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
-  - coupon_id: "1195"
-    coupon_title: "50% off your first audiobook"
-    coupon_code: ""
-    coupon_description: ""
-    coupon_aff_url: "https://www.pntrs.com/t/8-11203-214799-146749"
-    coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1196"
     coupon_title: "Download Audiobooks Instantly"
     coupon_code: "3FA26"
     coupon_description: ""
     coupon_aff_url: "https://www.pntrs.com/t/8-11203-214799-146749"
     coupon_type: "Coupon"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
+  - coupon_id: "1195"
+    coupon_title: "50% off your first audiobook"
+    coupon_code: ""
+    coupon_description: ""
+    coupon_aff_url: "https://www.pntrs.com/t/8-11203-214799-146749"
+    coupon_type: "Deal"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1197"
     coupon_title: "Start your 30 day free trial now"
     coupon_code: ""
     coupon_description: ""
     coupon_aff_url: "https://www.pntrs.com/t/8-11203-214799-146749"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
 ---
 
 AudiobooksNow is a popular online platform that offers a vast collection of audiobooks across multiple genres, making it easy for readers to enjoy their favorite titles on the go. From best-selling novels and self-help guides to educational content and children’s stories, AudiobooksNow provides instant access to thousands of titles from well-known authors and publishers. With its user-friendly website and mobile compatibility, listeners can conveniently stream or download audiobooks anytime, anywhere.

@@ -1,20 +1,20 @@
 ---
-title: "Discount Surgical Coupon Code May 2026 - 20% Off"
+title: "Discount Surgical Promo Code Aug 2026 - 20% Off"
 slug: "discountsurgical"
-description: "Get Discount Surgical coupon code May 2026 and save 20% on medical supplies and health essentials. Discover deals and discounts to shop for less today."
+description: "Discount Surgical Promo Code Aug 2026. Save up to 20% on socks, wellness products, and healthcare  with verified Discount Surgical coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Discount Surgical"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Discount Surgical Coupon Code May 2026 - 20% Off"
-store_title: "Discount Surgical Coupon Code May 2026 - 20% Off"
-store_meta_description: "Get Discount Surgical coupon code May 2026 and save 20% on medical supplies and health essentials. Discover deals and discounts to shop for less today."
+store_h1: "Discount Surgical Promo Code Aug 2026 - 20% Off"
+store_title: "Discount Surgical Promo Code Aug 2026 - 20% Off"
+store_meta_description: "Discount Surgical Promo Code Aug 2026. Save up to 20% on socks, wellness products, and healthcare  with verified Discount Surgical coupon codes."
 store_keywords: "discount surgical coupon, discount surgical promo code, discount surgical coupons, discount surgical discount code, discount surgical coupon codes, discount surgical promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Discount Surgical Coupon Code May 2026 - 20% Off"
-store_og_description: "Get Discount Surgical coupon code May 2026 and save 20% on medical supplies and health essentials. Discover deals and discounts to shop for less today."
+store_og_title: "Discount Surgical Promo Code Aug 2026 - 20% Off"
+store_og_description: "Discount Surgical Promo Code Aug 2026. Save up to 20% on socks, wellness products, and healthcare  with verified Discount Surgical coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,6 +26,8 @@ is_active: true
 website_featured: false
 coupon_count: 5
 store_id: "discountsurgical"
+best_discount: "Up to 15% Off"
+verified_date: "July 2026"
 
 coupons:
   - coupon_id: "1231"
@@ -34,40 +36,40 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-11741-214799-163321"
     coupon_type: "Coupon"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
-  - coupon_id: "1232"
-    coupon_title: "Free Shipping over $25"
-    coupon_code: ""
-    coupon_description: ""
-    coupon_aff_url: "https://www.pntrac.com/t/8-11741-214799-163321"
-    coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1233"
     coupon_title: "12% Off"
     coupon_code: "UNCLESAM"
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-11741-214799-163321"
     coupon_type: "Coupon"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1234"
     coupon_title: "10% Off"
     coupon_code: "COMPRESSION"
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-11741-214799-163321"
     coupon_type: "Coupon"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1235"
     coupon_title: "10% Off"
     coupon_code: "APSYCHIC"
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-11741-214799-163321"
     coupon_type: "Coupon"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
+  - coupon_id: "1232"
+    coupon_title: "Free Shipping over $25"
+    coupon_code: ""
+    coupon_description: ""
+    coupon_aff_url: "https://www.pntrac.com/t/8-11741-214799-163321"
+    coupon_type: "Deal"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
 ---
 
 Discount Surgical (discountsurgical.com) is a specialized online store offering a wide range of medical supplies, compression wear, and healthcare products at competitive prices. Catering to both individual customers and healthcare professionals, the platform provides essential items such as compression socks, braces, supports, and recovery aids. With a focus on quality and affordability, Discount Surgical makes it easier for people to access products that support mobility, comfort, and overall wellness.

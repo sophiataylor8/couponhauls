@@ -1,20 +1,20 @@
 ---
-title: "Boscov's Weekly Ad May 2026 Weekly Flyer"
+title: "Boscov's Weekly Ad Aug 2026 - Weekly Flyer"
 slug: "boscovs"
-description: "Boscov's  weekly ad 2026. Save with Boscov's weekly flyer, promo codes, department store deals, and discounts on clothing, home goods and more."
+description: "Boscov's Weekly Ad Aug 2026. Explore the newest Boscov's weekly flyer with savings on clothing, home products, shoes, and department store deals."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Boscov's"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Boscov's Weekly Ad May 2026 Weekly Flyer"
-store_title: "Boscov's Weekly Ad May 2026 Weekly Flyer"
-store_meta_description: "Boscov's  weekly ad 2026. Save with Boscov's weekly flyer, promo codes, department store deals, and discounts on clothing, home goods and more."
+store_h1: "Boscov's Weekly Ad Aug 2026 - Weekly Flyer"
+store_title: "Boscov's Weekly Ad Aug 2026 - Weekly Flyer"
+store_meta_description: "Boscov's Weekly Ad Aug 2026. Explore the newest Boscov's weekly flyer with savings on clothing, home products, shoes, and department store deals."
 store_keywords: "boscov's coupon code, boscov's promo code, boscov's discount code, boscov's deals, boscov's offers, boscov's sale, boscov's coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Boscov's Weekly Ad May 2026 Weekly Flyer"
-store_og_description: "Boscov's  weekly ad 2026. Save with Boscov's weekly flyer, promo codes, department store deals, and discounts on clothing, home goods and more."
+store_og_title: "Boscov's Weekly Ad Aug 2026 - Weekly Flyer"
+store_og_description: "Boscov's Weekly Ad Aug 2026. Explore the newest Boscov's weekly flyer with savings on clothing, home products, shoes, and department store deals."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "boscovs"
+verified_date: "July 2026"
 
 coupons:
   - coupon_id: "1074"
@@ -34,16 +35,16 @@ coupons:
     coupon_description: "Shop Boscov's clearance and doorbuster promotions to save on clothing, shoes, home goods, and seasonal products."
     coupon_aff_url: "https://www.boscovs.com/"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1075"
     coupon_title: "Boscov's Weekly Sales & Promotions"
     coupon_code: ""
     coupon_description: "Check Boscov's latest sales for limited-time discounts on fashion, beauty products, and home essentials."
     coupon_aff_url: "https://www.boscovs.com/"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
 ---
 
 Boscov's is a department store chain that offers a broad selection of clothing, home goods, and lifestyle products. The retailer has served customers for many years and is known for providing a variety of merchandise under one roof. Many shoppers visit Boscov's to find apparel, accessories, and home products at competitive prices.

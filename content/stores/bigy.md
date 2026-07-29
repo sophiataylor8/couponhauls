@@ -1,20 +1,20 @@
 ---
-title: "Big Y Weekly Flyer May 2026 Circular Next Week"
+title: "Big Y Weekly Flyer Aug 2026 - Circular Next Week"
 slug: "bigy"
-description: "Big y weekly flyer May 2026. Find Big Y circular next week, promo codes, digital coupons, and weekly grocery deals to save more on essentials."
+description: "Big Y Weekly Flyer Aug 2026. Explore the latest Big Y circular for next week’s grocery discounts, fresh food offers, and weekly deals."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Big Y"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Big Y Weekly Flyer May 2026 Circular Next Week"
-store_title: "Big Y Weekly Flyer May 2026 Circular Next Week"
-store_meta_description: "Big y weekly flyer May 2026. Find Big Y circular next week, promo codes, digital coupons, and weekly grocery deals to save more on essentials."
+store_h1: "Big Y Weekly Flyer Aug 2026 - Circular Next Week"
+store_title: "Big Y Weekly Flyer Aug 2026 - Circular Next Week"
+store_meta_description: "Big Y Weekly Flyer Aug 2026. Explore the latest Big Y circular for next week’s grocery discounts, fresh food offers, and weekly deals."
 store_keywords: "big y coupon code, big y promo code, big y discount code, big y deals, big y offers, big y grocery coupons, big y coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Big Y Weekly Flyer May 2026 Circular Next Week"
-store_og_description: "Big y weekly flyer May 2026. Find Big Y circular next week, promo codes, digital coupons, and weekly grocery deals to save more on essentials."
+store_og_title: "Big Y Weekly Flyer Aug 2026 - Circular Next Week"
+store_og_description: "Big Y Weekly Flyer Aug 2026. Explore the latest Big Y circular for next week’s grocery discounts, fresh food offers, and weekly deals."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "bigy"
+verified_date: "July 2026"
 
 coupons:
   - coupon_id: "1124"
@@ -34,16 +35,16 @@ coupons:
     coupon_description: "Join Big Y myPicks to clip digital coupons and access exclusive grocery savings and personalized offers."
     coupon_aff_url: "https://www.bigy.com/"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1125"
     coupon_title: "Big Y Weekly Grocery Specials"
     coupon_code: ""
     coupon_description: "Shop Big Y weekly specials to save on fresh produce, meats, dairy products, and everyday groceries."
     coupon_aff_url: "https://www.bigy.com/"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
 ---
 
 Big Y is a well-known regional grocery retailer that focuses on delivering fresh food, everyday essentials, and a welcoming shopping experience for families and local communities. With decades of history in the supermarket industry, the brand has earned a reputation for providing high-quality groceries while maintaining competitive pricing and regular promotional savings.

@@ -1,20 +1,20 @@
 ---
-title: "Hostinger Coupon Code May 2026 - 20% Off"
+title: "Hostinger Promo Code Aug 2026 - 20% Off Coupon"
 slug: "hostinger"
-description: "Get Hostinger coupon code May 2026 and save 20% on web hosting plans. Discover verified deals, discounts, and offers to launch your website for less."
+description: "Hostinger Promo Code Aug 2026. Get up to 20% off web hosting, domains, VPS hosting, and website tools with verified Hostinger coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Hostinger"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Hostinger Coupon Code May 2026 - 20% Off"
-store_title: "Hostinger Coupon Code May 2026 - 20% Off"
-store_meta_description: "Get Hostinger coupon code May 2026 and save 20% on web hosting plans. Discover verified deals, discounts, and offers to launch your website for less."
+store_h1: "Hostinger Promo Code Aug 2026 - 20% Off Coupon"
+store_title: "Hostinger Promo Code Aug 2026 - 20% Off Coupon"
+store_meta_description: "Hostinger Promo Code Aug 2026. Get up to 20% off web hosting, domains, VPS hosting, and website tools with verified Hostinger coupon codes."
 store_keywords: "hostinger coupon, hostinger promo code, hostinger coupons, hostinger discount code, hostinger coupon codes, hostinger promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Hostinger Coupon Code May 2026 - 20% Off"
-store_og_description: "Get Hostinger coupon code May 2026 and save 20% on web hosting plans. Discover verified deals, discounts, and offers to launch your website for less."
+store_og_title: "Hostinger Promo Code Aug 2026 - 20% Off Coupon"
+store_og_description: "Hostinger Promo Code Aug 2026. Get up to 20% off web hosting, domains, VPS hosting, and website tools with verified Hostinger coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,6 +26,8 @@ is_active: true
 website_featured: false
 coupon_count: 3
 store_id: "hostinger"
+best_discount: "Up to 75% Off"
+verified_date: "July 2026"
 
 coupons:
   - coupon_id: "1145"
@@ -34,24 +36,24 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.hostinger.com/in?REFERRALCODE=digitalc"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1146"
     coupon_title: "64% Off Business Plan"
     coupon_code: ""
     coupon_description: ""
     coupon_aff_url: "https://www.hostinger.com/in?REFERRALCODE=digitalc"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1147"
     coupon_title: "65% Off Cloud Hosting"
     coupon_code: ""
     coupon_description: ""
     coupon_aff_url: "https://www.hostinger.com/in?REFERRALCODE=digitalc"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
 ---
 
 Hostinger is a globally recognized web hosting provider known for delivering high-performance hosting solutions at affordable prices. Whether you’re launching a personal blog, an eCommerce store, or a large business website, Hostinger offers a range of services including shared hosting, cloud hosting, VPS hosting, and domain registration. With its intuitive control panel, fast loading speeds, and reliable uptime, Hostinger makes it easy for beginners and professionals alike to build and manage websites efficiently.

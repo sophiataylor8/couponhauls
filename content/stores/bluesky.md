@@ -1,20 +1,20 @@
 ---
-title: "Blue Sky Coupon Code May 2026 - 20% Off"
+title: "Blue Sky Promo Code Aug 2026 - 20% Off Coupon"
 slug: "bluesky"
-description: "Get Blue Sky coupon code May 2026 and save 20% on planners, calendars, and stationery. Discover verified deals and discounts to stay organized for less."
+description: "Blue Sky Promo Code Aug 2026. Save up to 20% on planners, calendars, notebooks, and office essentials with verified Blue Sky coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Blue Sky"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Blue Sky Coupon Code May 2026 - 20% Off"
-store_title: "Blue Sky Coupon Code May 2026 - 20% Off"
-store_meta_description: "Get Blue Sky coupon code May 2026 and save 20% on planners, calendars, and stationery. Discover verified deals and discounts to stay organized for less."
+store_h1: "Blue Sky Promo Code Aug 2026 - 20% Off Coupon"
+store_title: "Blue Sky Promo Code Aug 2026 - 20% Off Coupon"
+store_meta_description: "Blue Sky Promo Code Aug 2026. Save up to 20% on planners, calendars, notebooks, and office essentials with verified Blue Sky coupon codes."
 store_keywords: "blue sky coupon, blue sky promo code, blue sky coupons, blue sky discount code, blue sky coupon codes, blue sky promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Blue Sky Coupon Code May 2026 - 20% Off"
-store_og_description: "Get Blue Sky coupon code May 2026 and save 20% on planners, calendars, and stationery. Discover verified deals and discounts to stay organized for less."
+store_og_title: "Blue Sky Promo Code Aug 2026 - 20% Off Coupon"
+store_og_description: "Blue Sky Promo Code Aug 2026. Save up to 20% on planners, calendars, notebooks, and office essentials with verified Blue Sky coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,32 +26,34 @@ is_active: true
 website_featured: false
 coupon_count: 3
 store_id: "bluesky"
+best_discount: "Up to 20% Off"
+verified_date: "July 2026"
 
 coupons:
-  - coupon_id: "1211"
-    coupon_title: "10% off your first purchase"
-    coupon_code: ""
-    coupon_description: ""
-    coupon_aff_url: "https://www.pntra.com/t/8-12232-214799-185387"
-    coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
   - coupon_id: "1212"
     coupon_title: "20% Off"
     coupon_code: "BSBIRTHDAY2026"
     coupon_description: ""
     coupon_aff_url: "https://www.pntra.com/t/8-12232-214799-185387"
     coupon_type: "Coupon"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1213"
     coupon_title: "10% Off"
     coupon_code: "BSWELCOME2026"
     coupon_description: ""
     coupon_aff_url: "https://www.pntra.com/t/8-12232-214799-185387"
     coupon_type: "Coupon"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
+  - coupon_id: "1211"
+    coupon_title: "10% off your first purchase"
+    coupon_code: ""
+    coupon_description: ""
+    coupon_aff_url: "https://www.pntra.com/t/8-12232-214799-185387"
+    coupon_type: "Deal"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
 ---
 
 Bluesky is an emerging decentralized social networking platform designed to give users more control over their online experience. Built with a focus on transparency and user choice, Bluesky allows individuals to engage in conversations, share content, and discover communities without relying on traditional centralized systems. Its innovative approach to social media emphasizes open protocols, enabling greater flexibility, customization, and freedom in how users interact online.

@@ -1,20 +1,20 @@
 ---
-title: "Blinds Express Coupon Code May 2026 - 20% Off"
+title: "Blinds Express Promo Code Aug 2026 - 20% Off Coupon"
 slug: "blindsexpress"
-description: "Get Blinds Express coupon code May 2026 and save 20% on custom blinds, shades, and window treatments. Discover deals and discounts to upgrade your home."
+description: "Blinds Express Promo Code Aug 2026. Save up to 20% on custom blinds, shades, shutters, and window treatments with verified Blinds Express coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Blinds Express"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Blinds Express Coupon Code May 2026 - 20% Off"
-store_title: "Blinds Express Coupon Code May 2026 - 20% Off"
-store_meta_description: "Get Blinds Express coupon code May 2026 and save 20% on custom blinds, shades, and window treatments. Discover deals and discounts to upgrade your home."
+store_h1: "Blinds Express Promo Code Aug 2026 - 20% Off Coupon"
+store_title: "Blinds Express Promo Code Aug 2026 - 20% Off Coupon"
+store_meta_description: "Blinds Express Promo Code Aug 2026. Save up to 20% on custom blinds, shades, shutters, and window treatments with verified Blinds Express coupon codes."
 store_keywords: "blinds express coupon, blinds express promo code, blinds express coupons, blinds express discount code, blinds express coupon codes, blinds express promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Blinds Express Coupon Code May 2026 - 20% Off"
-store_og_description: "Get Blinds Express coupon code May 2026 and save 20% on custom blinds, shades, and window treatments. Discover deals and discounts to upgrade your home."
+store_og_title: "Blinds Express Promo Code Aug 2026 - 20% Off Coupon"
+store_og_description: "Blinds Express Promo Code Aug 2026. Save up to 20% on custom blinds, shades, shutters, and window treatments with verified Blinds Express coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,6 +26,8 @@ is_active: true
 website_featured: false
 coupon_count: 4
 store_id: "blindsexpress"
+best_discount: "Up to 45% Off"
+verified_date: "July 2026"
 
 coupons:
   - coupon_id: "1207"
@@ -34,32 +36,32 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-1778-214799-17552"
     coupon_type: "Coupon"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1208"
     coupon_title: "Levolor 45% Off - Save BIG On Levolor Brand!"
     coupon_code: ""
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-1778-214799-17552"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1209"
     coupon_title: "BALI Brand Products 15% Off ONLINE Price!"
     coupon_code: ""
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-1778-214799-17552"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1210"
     coupon_title: "Quick Ship And Our Brand Pro"
     coupon_code: ""
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-1778-214799-17552"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
 ---
 
 Blinds Express is a specialized online retailer offering a wide range of custom window treatments designed to enhance both style and functionality in any space. From elegant blinds and shades to durable shutters and drapery, Blinds Express provides solutions tailored to fit various window sizes and interior design preferences. With a focus on quality craftsmanship and affordability, the brand makes it easy for homeowners to upgrade their living spaces with stylish and practical window coverings.

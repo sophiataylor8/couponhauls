@@ -1,20 +1,20 @@
 ---
-title: "Tops Friendly Markets Weekly Ad May 2026 Flyer"
+title: "Tops Friendly Markets Weekly Ad Aug 2026 - Flyer"
 slug: "topsmarkets"
-description: "Tops friendly markets weekly ad May 2026. Find Tops Friendly Markets flyer, promo code, digital coupons, and grocery deals for extra savings."
+description: "Tops Friendly Markets Weekly Ad Aug 2026. Explore the newest Tops Friendly Markets flyer with grocery deals, fresh food savings, and weekly specials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Tops Friendly Markets"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Tops Friendly Markets Weekly Ad May 2026 Flyer"
-store_title: "Tops Friendly Markets Weekly Ad May 2026 Flyer"
-store_meta_description: "Tops friendly markets weekly ad May 2026. Find Tops Friendly Markets flyer, promo code, digital coupons, and grocery deals for extra savings."
+store_h1: "Tops Friendly Markets Weekly Ad Aug 2026 - Flyer"
+store_title: "Tops Friendly Markets Weekly Ad Aug 2026 - Flyer"
+store_meta_description: "Tops Friendly Markets Weekly Ad Aug 2026. Explore the newest Tops Friendly Markets flyer with grocery deals, fresh food savings, and weekly specials."
 store_keywords: "tops friendly markets coupon code, tops friendly markets promo code, tops friendly markets discount code, tops friendly markets deals, tops friendly markets offers, tops friendly markets grocery coupons, tops friendly markets coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Tops Friendly Markets Weekly Ad May 2026 Flyer"
-store_og_description: "Tops friendly markets weekly ad May 2026. Find Tops Friendly Markets flyer, promo code, digital coupons, and grocery deals for extra savings."
+store_og_title: "Tops Friendly Markets Weekly Ad Aug 2026 - Flyer"
+store_og_description: "Tops Friendly Markets Weekly Ad Aug 2026. Explore the newest Tops Friendly Markets flyer with grocery deals, fresh food savings, and weekly specials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,6 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "topsmarkets"
+verified_date: "July 2026"
 
 coupons:
   - coupon_id: "1086"
@@ -34,16 +35,16 @@ coupons:
     coupon_description: "Sign up for Tops BonusPlus to access digital coupons, personalized grocery deals, and member savings."
     coupon_aff_url: "https://www.topsmarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
   - coupon_id: "1087"
     coupon_title: "Tops Weekly Grocery Specials"
     coupon_code: ""
     coupon_description: "Browse the Tops weekly ad for discounts on fresh produce, meats, dairy products, and pantry staples."
     coupon_aff_url: "https://www.topsmarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "01/05/2026"
-    expires_at: "30/06/2026"
+    coupon_start: "01/06/2026"
+    expires_at: "31/12/2026"
 ---
 
 Tops Friendly Markets is a well-known regional grocery chain that focuses on delivering a welcoming shopping experience combined with a strong selection of everyday food essentials. Serving communities across the northeastern United States, the store emphasizes freshness, convenience, and customer service while offering a variety of products designed to meet the needs of busy households.
