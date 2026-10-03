@@ -1,5 +1,5 @@
 baseURL      = "https://www.couponhauls.com/"
-languageCode = "en-us"
+locale       = "en-US"
 title        = "CouponHauls.com"
 disableHugoGeneratorInject = true
 
@@ -81,3 +81,13 @@ disableKinds = ["taxonomy", "term"]
     baseName       = "stores-search-data"
     isPlainText    = true
     notAlternative = true
+
+[security]
+  [security.exec]
+    allow = ['^(dart-)?sass$', '^go$', '^git$', '^node$', '^postcss$', '^tailwindcss$']
+
+[security.node.permissions]
+allowRead = ["."]
+allowAddons = ["tailwindcss"]
+allowChildProcess = ["tailwindcss"]
+allowWorker = ["tailwindcss"]
