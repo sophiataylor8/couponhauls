@@ -1,20 +1,20 @@
 ---
-title: "Wayfair Promo Code Aug 2026 - 15% Off Coupon"
+title: "Wayfair Promo Code Oct 2026 - 15% Off Coupon"
 slug: "wayfair"
-description: "Wayfair Promo Code Aug 2026. Get up to 15% off furniture, home decor, and daily deals with verified Wayfair coupon codes."
+description: "Wayfair Promo Code Oct 2026. Get up to 15% off furniture, home decor, and daily deals with verified Wayfair coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Wayfair"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Wayfair Promo Code Aug 2026 - 15% Off Coupon"
-store_title: "Wayfair Promo Code Aug 2026 - 15% Off Coupon"
-store_meta_description: "Wayfair Promo Code Aug 2026. Get up to 15% off furniture, home decor, and daily deals with verified Wayfair coupon codes."
+store_h1: "Wayfair Promo Code Oct 2026 - 15% Off Coupon"
+store_title: "Wayfair Promo Code Oct 2026 - 15% Off Coupon"
+store_meta_description: "Wayfair Promo Code Oct 2026. Get up to 15% off furniture, home decor, and daily deals with verified Wayfair coupon codes."
 store_keywords: "wayfair coupon code, wayfair promo code, wayfair discount code, wayfair deals, wayfair offers, wayfair sale, wayfair coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Wayfair Promo Code Aug 2026 - 15% Off Coupon"
-store_og_description: "Wayfair Promo Code Aug 2026. Get up to 15% off furniture, home decor, and daily deals with verified Wayfair coupon codes."
+store_og_title: "Wayfair Promo Code Oct 2026 - 15% Off Coupon"
+store_og_description: "Wayfair Promo Code Oct 2026. Get up to 15% off furniture, home decor, and daily deals with verified Wayfair coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 10
 store_id: "wayfair"
 best_discount: "Up to 60% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1005"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: "Home decor discount"
     coupon_aff_url: "https://www.wayfair.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1006"
     coupon_title: "Extra 12% Furniture Sale"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: "Discount on select furniture"
     coupon_aff_url: "https://www.wayfair.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1280"
     coupon_title: "60% Off Outdoor & Patio Furniture"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.wayfair.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1281"
     coupon_title: "Get Free Shipping on Wayfair"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.wayfair.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1282"
     coupon_title: "Wayfair's Email Newsletter and Get Codes"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.wayfair.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1283"
     coupon_title: "Download the Wayfair App Today!"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.wayfair.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1284"
     coupon_title: "15% Off Home Accents & Room Decor"
@@ -84,7 +84,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.wayfair.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1285"
     coupon_title: "up to 60% OFF: Warehouse Clearout"
@@ -92,7 +92,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.wayfair.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1286"
     coupon_title: "American summer staples for less from $15"
@@ -100,7 +100,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.wayfair.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1287"
     coupon_title: "10% Off Your First Order"
@@ -108,7 +108,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.wayfair.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

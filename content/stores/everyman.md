@@ -1,20 +1,20 @@
 ---
-title: "Everyman Promo Code Aug 2026 - 20% Off Coupon"
+title: "Everyman Promo Code Oct 2026 - 20% Off Coupon"
 slug: "everyman"
-description: "Everyman Promo Code Aug 2026. Save up to 20% on men's grooming products, skincare, shaving, and self-care items with verified Everyman coupon codes."
+description: "Everyman Promo Code Oct 2026. Save up to 20% on men's grooming products, skincare, shaving, and self-care items with verified Everyman coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Everyman"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Everyman Promo Code Aug 2026 - 20% Off Coupon"
-store_title: "Everyman Promo Code Aug 2026 - 20% Off Coupon"
-store_meta_description: "Everyman Promo Code Aug 2026. Save up to 20% on men's grooming products, skincare, shaving, and self-care items with verified Everyman coupon codes."
+store_h1: "Everyman Promo Code Oct 2026 - 20% Off Coupon"
+store_title: "Everyman Promo Code Oct 2026 - 20% Off Coupon"
+store_meta_description: "Everyman Promo Code Oct 2026. Save up to 20% on men's grooming products, skincare, shaving, and self-care items with verified Everyman coupon codes."
 store_keywords: "everyman coupon, everyman promo code, everyman coupons, everyman discount code, everyman coupon codes, everyman promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Everyman Promo Code Aug 2026 - 20% Off Coupon"
-store_og_description: "Everyman Promo Code Aug 2026. Save up to 20% on men's grooming products, skincare, shaving, and self-care items with verified Everyman coupon codes."
+store_og_title: "Everyman Promo Code Oct 2026 - 20% Off Coupon"
+store_og_description: "Everyman Promo Code Oct 2026. Save up to 20% on men's grooming products, skincare, shaving, and self-care items with verified Everyman coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 6
 store_id: "everyman"
 best_discount: "Up to 25% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1251"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-11913-214799-170530"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1252"
     coupon_title: "20% Off"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-11913-214799-170530"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1253"
     coupon_title: "20% Off"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-11913-214799-170530"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1254"
     coupon_title: "15% Off"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-11913-214799-170530"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1255"
     coupon_title: "15% Off"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-11913-214799-170530"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1256"
     coupon_title: "10% Off"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-11913-214799-170530"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

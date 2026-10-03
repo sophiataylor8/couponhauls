@@ -1,20 +1,20 @@
 ---
-title: "Safeway Weekly Ad Aug 2026 - $5 Friday Deals"
+title: "Safeway Weekly Ad Oct 2026 - $5 Friday Deals"
 slug: "safeway"
-description: "Safeway Weekly Ad Aug 2026. Explore this week’s Safeway ad featuring $5 Friday deals, grocery discounts, fresh produce offers, and limited-time savings."
+description: "Safeway Weekly Ad Oct 2026. Explore this week’s Safeway ad featuring $5 Friday deals, grocery discounts, fresh produce offers, and limited-time savings."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Safeway"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Safeway Weekly Ad Aug 2026 - $5 Friday Deals"
-store_title: "Safeway Weekly Ad Aug 2026 - $5 Friday Deals"
-store_meta_description: "Safeway Weekly Ad Aug 2026. Explore this week’s Safeway ad featuring $5 Friday deals, grocery discounts, fresh produce offers, and limited-time savings."
+store_h1: "Safeway Weekly Ad Oct 2026 - $5 Friday Deals"
+store_title: "Safeway Weekly Ad Oct 2026 - $5 Friday Deals"
+store_meta_description: "Safeway Weekly Ad Oct 2026. Explore this week’s Safeway ad featuring $5 Friday deals, grocery discounts, fresh produce offers, and limited-time savings."
 store_keywords: "safeway coupon code, safeway promo code, safeway discount code, safeway deals, safeway offers, safeway grocery coupons, safeway coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Safeway Weekly Ad Aug 2026 - $5 Friday Deals"
-store_og_description: "Safeway Weekly Ad Aug 2026. Explore this week’s Safeway ad featuring $5 Friday deals, grocery discounts, fresh produce offers, and limited-time savings."
+store_og_title: "Safeway Weekly Ad Oct 2026 - $5 Friday Deals"
+store_og_description: "Safeway Weekly Ad Oct 2026. Explore this week’s Safeway ad featuring $5 Friday deals, grocery discounts, fresh produce offers, and limited-time savings."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "safeway"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1044"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Sign in to your Safeway account and clip Safeway for U digital coupons to unlock personalized grocery discounts and weekly savings."
     coupon_aff_url: "https://www.safeway.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1045"
     coupon_title: "Safeway Weekly Ad Grocery Deals"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Check the Safeway weekly ad to find limited-time deals on fresh produce, meats, bakery items, snacks, and household essentials."
     coupon_aff_url: "https://www.safeway.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

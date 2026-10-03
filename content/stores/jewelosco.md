@@ -1,20 +1,20 @@
 ---
-title: "Jewel Osco Weekly Ad Aug 2026 - Weekly Flyer"
+title: "Jewel Osco Weekly Ad Oct 2026 - Weekly Flyer"
 slug: "jewelosco"
-description: "Jewel Osco Weekly Ad Aug 2026. View the newest Jewel Osco weekly flyer for grocery specials, fresh produce offers, and supermarket discounts."
+description: "Jewel Osco Weekly Ad Oct 2026. View the newest Jewel Osco weekly flyer for grocery specials, fresh produce offers, and supermarket discounts."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Jewel Osco"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Jewel Osco Weekly Ad Aug 2026 - Weekly Flyer"
-store_title: "Jewel Osco Weekly Ad Aug 2026 - Weekly Flyer"
-store_meta_description: "Jewel Osco Weekly Ad Aug 2026. View the newest Jewel Osco weekly flyer for grocery specials, fresh produce offers, and supermarket discounts."
+store_h1: "Jewel Osco Weekly Ad Oct 2026 - Weekly Flyer"
+store_title: "Jewel Osco Weekly Ad Oct 2026 - Weekly Flyer"
+store_meta_description: "Jewel Osco Weekly Ad Oct 2026. View the newest Jewel Osco weekly flyer for grocery specials, fresh produce offers, and supermarket discounts."
 store_keywords: "jewel osco coupon code, jewel osco promo code, jewel osco discount code, jewel osco deals, jewel osco offers, jewel osco grocery coupons, jewel osco coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Jewel Osco Weekly Ad Aug 2026 - Weekly Flyer"
-store_og_description: "Jewel Osco Weekly Ad Aug 2026. View the newest Jewel Osco weekly flyer for grocery specials, fresh produce offers, and supermarket discounts."
+store_og_title: "Jewel Osco Weekly Ad Oct 2026 - Weekly Flyer"
+store_og_description: "Jewel Osco Weekly Ad Oct 2026. View the newest Jewel Osco weekly flyer for grocery specials, fresh produce offers, and supermarket discounts."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "jewelosco"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1042"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Sign up for myMixx to clip digital coupons and enjoy exclusive savings on groceries, beverages, snacks, and household essentials."
     coupon_aff_url: "https://www.jewelosco.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1043"
     coupon_title: "Jewel-Osco Weekly Grocery Deals"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Check the Jewel-Osco weekly ad to discover limited-time discounts on fresh produce, bakery items, meats, and everyday grocery staples."
     coupon_aff_url: "https://www.jewelosco.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

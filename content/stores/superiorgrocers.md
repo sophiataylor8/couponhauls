@@ -1,20 +1,20 @@
 ---
-title: "Superior Grocers Weekly Ad Aug 2026 - Store Ad"
+title: "Superior Grocers Weekly Ad Oct 2026 - Store Ad"
 slug: "superiorgrocers"
-description: "Superior Grocers Weekly Ad Aug 2026. Discover the latest Superior Grocers ad with savings on groceries, fresh meat, produce, and household products."
+description: "Superior Grocers Weekly Ad Oct 2026. Discover the latest Superior Grocers ad with savings on groceries, fresh meat, produce, and household products."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Superior Grocers"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Superior Grocers Weekly Ad Aug 2026 - Store Ad"
-store_title: "Superior Grocers Weekly Ad Aug 2026 - Store Ad"
-store_meta_description: "Superior Grocers Weekly Ad Aug 2026. Discover the latest Superior Grocers ad with savings on groceries, fresh meat, produce, and household products."
+store_h1: "Superior Grocers Weekly Ad Oct 2026 - Store Ad"
+store_title: "Superior Grocers Weekly Ad Oct 2026 - Store Ad"
+store_meta_description: "Superior Grocers Weekly Ad Oct 2026. Discover the latest Superior Grocers ad with savings on groceries, fresh meat, produce, and household products."
 store_keywords: "superior grocers coupon code, superior grocers promo code, superior grocers discount code, superior grocers deals, superior grocers offers, superior grocers grocery coupons, superior grocers coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Superior Grocers Weekly Ad Aug 2026 - Store Ad"
-store_og_description: "Superior Grocers Weekly Ad Aug 2026. Discover the latest Superior Grocers ad with savings on groceries, fresh meat, produce, and household products."
+store_og_title: "Superior Grocers Weekly Ad Oct 2026 - Store Ad"
+store_og_description: "Superior Grocers Weekly Ad Oct 2026. Discover the latest Superior Grocers ad with savings on groceries, fresh meat, produce, and household products."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "superiorgrocers"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1050"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Shop the Superior Grocers weekly ad for discounts on fresh fruits, vegetables, meats, and everyday grocery essentials."
     coupon_aff_url: "https://superiorgrocers.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1051"
     coupon_title: "In-Store Weekly Specials"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Find rotating in-store promotions and limited-time grocery specials across produce, pantry staples, and household products."
     coupon_aff_url: "https://superiorgrocers.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

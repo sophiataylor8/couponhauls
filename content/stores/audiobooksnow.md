@@ -1,20 +1,20 @@
 ---
-title: "Audiobooks Now Promo Code Aug 2026 - 20% Off Coupon"
+title: "Audiobooks Now Promo Code Oct 2026 - 20% Off Coupon"
 slug: "audiobooksnow"
-description: "Audiobooks Now Promo Code Aug 2026. Save up to 20% on audiobooks, memberships, and digital book downloads with verified Audiobooks Now coupon codes."
+description: "Audiobooks Now Promo Code Oct 2026. Save up to 20% on audiobooks, memberships, and digital book downloads with verified Audiobooks Now coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Audiobooks Now"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Audiobooks Now Promo Code Aug 2026 - 20% Off Coupon"
-store_title: "Audiobooks Now Promo Code Aug 2026 - 20% Off Coupon"
-store_meta_description: "Audiobooks Now Promo Code Aug 2026. Save up to 20% on audiobooks, memberships, and digital book downloads with verified Audiobooks Now coupon codes."
+store_h1: "Audiobooks Now Promo Code Oct 2026 - 20% Off Coupon"
+store_title: "Audiobooks Now Promo Code Oct 2026 - 20% Off Coupon"
+store_meta_description: "Audiobooks Now Promo Code Oct 2026. Save up to 20% on audiobooks, memberships, and digital book downloads with verified Audiobooks Now coupon codes."
 store_keywords: "audiobooks now coupon, audiobooks now promo code, audiobooks now coupons, audiobooks now discount code, audiobooks now coupon codes, audiobooks now promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Audiobooks Now Promo Code Aug 2026 - 20% Off Coupon"
-store_og_description: "Audiobooks Now Promo Code Aug 2026. Save up to 20% on audiobooks, memberships, and digital book downloads with verified Audiobooks Now coupon codes."
+store_og_title: "Audiobooks Now Promo Code Oct 2026 - 20% Off Coupon"
+store_og_description: "Audiobooks Now Promo Code Oct 2026. Save up to 20% on audiobooks, memberships, and digital book downloads with verified Audiobooks Now coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 4
 store_id: "audiobooksnow"
 best_discount: "Up to 50% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1194"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrs.com/t/8-11203-214799-146749"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1196"
     coupon_title: "Download Audiobooks Instantly"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrs.com/t/8-11203-214799-146749"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1195"
     coupon_title: "50% off your first audiobook"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrs.com/t/8-11203-214799-146749"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1197"
     coupon_title: "Start your 30 day free trial now"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrs.com/t/8-11203-214799-146749"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -1,20 +1,20 @@
 ---
-title: "Electric City Roasting Promo Code Aug 2026 - 20% Off"
+title: "Electric City Roasting Promo Code Oct 2026 - 20% Off"
 slug: "electriccityroasting"
-description: "Electric City Roasting Promo Code Aug 2026. Get up to 20% off artisan coffee beans, and coffee products with verified Electric City Roasting coupon codes."
+description: "Electric City Roasting Promo Code Oct 2026. Get up to 20% off artisan coffee beans, and coffee products with verified Electric City Roasting coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Electric City Roasting"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Electric City Roasting Promo Code Aug 2026 - 20% Off"
-store_title: "Electric City Roasting Promo Code Aug 2026 - 20% Off"
-store_meta_description: "Electric City Roasting Promo Code Aug 2026. Get up to 20% off artisan coffee beans, and coffee products with verified Electric City Roasting coupon codes."
+store_h1: "Electric City Roasting Promo Code Oct 2026 - 20% Off"
+store_title: "Electric City Roasting Promo Code Oct 2026 - 20% Off"
+store_meta_description: "Electric City Roasting Promo Code Oct 2026. Get up to 20% off artisan coffee beans, and coffee products with verified Electric City Roasting coupon codes."
 store_keywords: "electric city roasting coupon, electric city roasting promo code, electric city roasting coupons, electric city roasting discount code, electric city roasting coupon codes, electric city roasting promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Electric City Roasting Promo Code Aug 2026 - 20% Off"
-store_og_description: "Electric City Roasting Promo Code Aug 2026. Get up to 20% off artisan coffee beans, and coffee products with verified Electric City Roasting coupon codes."
+store_og_title: "Electric City Roasting Promo Code Oct 2026 - 20% Off"
+store_og_description: "Electric City Roasting Promo Code Oct 2026. Get up to 20% off artisan coffee beans, and coffee products with verified Electric City Roasting coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 6
 store_id: "electriccityroasting"
 best_discount: "Up to 30% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1245"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-12584-214799-229811"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1246"
     coupon_title: "20% Off"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-12584-214799-229811"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1247"
     coupon_title: "20% Off"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-12584-214799-229811"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1248"
     coupon_title: "25% Off"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-12584-214799-229811"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1249"
     coupon_title: "25% Off"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-12584-214799-229811"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1250"
     coupon_title: "30% Off"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-12584-214799-229811"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

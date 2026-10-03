@@ -1,20 +1,20 @@
 ---
-title: "Shaws Supermarket Weekly Flyer Aug 2026 - Ad"
+title: "Shaws Supermarket Weekly Flyer Oct 2026 - Ad"
 slug: "shaws"
-description: "Shaws Supermarket Weekly Flyer Aug 2026. View the newest Shaws weekly ad featuring grocery specials, fresh food savings, and weekly supermarket deals."
+description: "Shaws Supermarket Weekly Flyer Oct 2026. View the newest Shaws weekly ad featuring grocery specials, fresh food savings, and weekly supermarket deals."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Shaw's"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Shaws Supermarket Weekly Flyer Aug 2026 - Ad"
-store_title: "Shaws Supermarket Weekly Flyer Aug 2026 - Ad"
-store_meta_description: "Shaws Supermarket Weekly Flyer Aug 2026. View the newest Shaws weekly ad featuring grocery specials, fresh food savings, and weekly supermarket deals."
+store_h1: "Shaws Supermarket Weekly Flyer Oct 2026 - Ad"
+store_title: "Shaws Supermarket Weekly Flyer Oct 2026 - Ad"
+store_meta_description: "Shaws Supermarket Weekly Flyer Oct 2026. View the newest Shaws weekly ad featuring grocery specials, fresh food savings, and weekly supermarket deals."
 store_keywords: "shaws coupon code, shaws promo code, shaws discount code, shaws deals, shaws offers, shaws grocery coupons, shaws coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Shaws Supermarket Weekly Flyer Aug 2026 - Ad"
-store_og_description: "Shaws Supermarket Weekly Flyer Aug 2026. View the newest Shaws weekly ad featuring grocery specials, fresh food savings, and weekly supermarket deals."
+store_og_title: "Shaws Supermarket Weekly Flyer Oct 2026 - Ad"
+store_og_description: "Shaws Supermarket Weekly Flyer Oct 2026. View the newest Shaws weekly ad featuring grocery specials, fresh food savings, and weekly supermarket deals."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "shaws"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1114"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Sign up for Shaw's for U to clip digital coupons and unlock personalized savings on groceries and household essentials."
     coupon_aff_url: "https://www.shaws.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1115"
     coupon_title: "Shaw's Weekly Grocery Deals"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Browse the Shaw's weekly ad to find discounts on fresh produce, meats, bakery items, and everyday grocery products."
     coupon_aff_url: "https://www.shaws.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

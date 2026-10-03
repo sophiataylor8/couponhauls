@@ -6,7 +6,7 @@
     "coupon_description": "Free delivery on qualifying deals",
     "coupon_aff_url": "https://www.amazon.com/gp/goldbox",
     "coupon_type": "Coupon",
-    "coupon_start": "01/06/2026",
+    "coupon_start": "02/10/2026",
     "expires_at": "31/12/2026",
     "stores": {
       "store_name": "Amazon",
@@ -22,7 +22,7 @@
     "coupon_description": "Discount on eligible products",
     "coupon_aff_url": "https://www.amazon.com/gp/goldbox",
     "coupon_type": "Coupon",
-    "coupon_start": "01/06/2026",
+    "coupon_start": "02/10/2026",
     "expires_at": "31/12/2026",
     "stores": {
       "store_name": "Amazon",
@@ -38,7 +38,7 @@
     "coupon_description": "Big savings on bulk checkout",
     "coupon_aff_url": "https://www.costco.com/",
     "coupon_type": "Coupon",
-    "coupon_start": "01/06/2026",
+    "coupon_start": "02/10/2026",
     "expires_at": "31/12/2026",
     "stores": {
       "store_name": "Costco",
@@ -54,7 +54,7 @@
     "coupon_description": "Grocery onsite discount",
     "coupon_aff_url": "https://www.costco.com/",
     "coupon_type": "Coupon",
-    "coupon_start": "01/06/2026",
+    "coupon_start": "02/10/2026",
     "expires_at": "31/12/2026",
     "stores": {
       "store_name": "Costco",
@@ -70,7 +70,7 @@
     "coupon_description": "Home decor discount",
     "coupon_aff_url": "https://www.wayfair.com/",
     "coupon_type": "Coupon",
-    "coupon_start": "01/06/2026",
+    "coupon_start": "02/10/2026",
     "expires_at": "31/12/2026",
     "stores": {
       "store_name": "Wayfair",
@@ -86,7 +86,7 @@
     "coupon_description": "Discount on select furniture",
     "coupon_aff_url": "https://www.wayfair.com/",
     "coupon_type": "Coupon",
-    "coupon_start": "01/06/2026",
+    "coupon_start": "02/10/2026",
     "expires_at": "31/12/2026",
     "stores": {
       "store_name": "Wayfair",
@@ -102,7 +102,7 @@
     "coupon_description": "Save on activewear",
     "coupon_aff_url": "https://www.adidas.com/",
     "coupon_type": "Coupon",
-    "coupon_start": "01/06/2026",
+    "coupon_start": "02/10/2026",
     "expires_at": "31/12/2026",
     "stores": {
       "store_name": "Adidas",
@@ -118,7 +118,7 @@
     "coupon_description": "Discount on footwear",
     "coupon_aff_url": "https://www.adidas.com/",
     "coupon_type": "Coupon",
-    "coupon_start": "01/06/2026",
+    "coupon_start": "02/10/2026",
     "expires_at": "31/12/2026",
     "stores": {
       "store_name": "Adidas",
@@ -134,7 +134,7 @@
     "coupon_description": "Handmade crafts discount",
     "coupon_aff_url": "https://www.etsy.com/",
     "coupon_type": "Coupon",
-    "coupon_start": "01/06/2026",
+    "coupon_start": "02/10/2026",
     "expires_at": "31/12/2026",
     "stores": {
       "store_name": "Etsy",
@@ -150,7 +150,7 @@
     "coupon_description": "Save on vintage products",
     "coupon_aff_url": "https://www.etsy.com/",
     "coupon_type": "Coupon",
-    "coupon_start": "01/06/2026",
+    "coupon_start": "02/10/2026",
     "expires_at": "31/12/2026",
     "stores": {
       "store_name": "Etsy",
@@ -166,7 +166,7 @@
     "coupon_description": "Shipping discount",
     "coupon_aff_url": "https://www.homedepot.com/",
     "coupon_type": "Coupon",
-    "coupon_start": "01/06/2026",
+    "coupon_start": "02/10/2026",
     "expires_at": "31/12/2026",
     "stores": {
       "store_name": "Home Depot",
@@ -182,7 +182,7 @@
     "coupon_description": "Save on tools",
     "coupon_aff_url": "https://www.homedepot.com/",
     "coupon_type": "Coupon",
-    "coupon_start": "01/06/2026",
+    "coupon_start": "02/10/2026",
     "expires_at": "31/12/2026",
     "stores": {
       "store_name": "Home Depot",

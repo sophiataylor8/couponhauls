@@ -1,20 +1,20 @@
 ---
-title: "CTown Circular Next Week Aug 2026 - Flyer"
+title: "CTown Circular Next Week Oct 2026 - Flyer"
 slug: "ctownsupermarkets"
-description: "CTown Circular Next Week Aug 2026. Check the newest CTown flyer for next week’s grocery discounts, fresh food offers, and supermarket deals."
+description: "CTown Circular Next Week Oct 2026. Check the newest CTown flyer for next week’s grocery discounts, fresh food offers, and supermarket deals."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "CTown Supermarkets"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "CTown Circular Next Week Aug 2026 - Flyer"
-store_title: "CTown Circular Next Week Aug 2026 - Flyer"
-store_meta_description: "CTown Circular Next Week Aug 2026. Check the newest CTown flyer for next week’s grocery discounts, fresh food offers, and supermarket deals."
+store_h1: "CTown Circular Next Week Oct 2026 - Flyer"
+store_title: "CTown Circular Next Week Oct 2026 - Flyer"
+store_meta_description: "CTown Circular Next Week Oct 2026. Check the newest CTown flyer for next week’s grocery discounts, fresh food offers, and supermarket deals."
 store_keywords: "ctown supermarkets coupon code, ctown supermarkets promo code, ctown supermarkets discount code, ctown supermarkets deals, ctown supermarkets offers, ctown supermarkets grocery coupons, ctown supermarkets coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "CTown Circular Next Week Aug 2026 - Flyer"
-store_og_description: "CTown Circular Next Week Aug 2026. Check the newest CTown flyer for next week’s grocery discounts, fresh food offers, and supermarket deals."
+store_og_title: "CTown Circular Next Week Oct 2026 - Flyer"
+store_og_description: "CTown Circular Next Week Oct 2026. Check the newest CTown flyer for next week’s grocery discounts, fresh food offers, and supermarket deals."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "ctownsupermarkets"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1134"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Browse the CTown weekly ad to find discounts on fresh produce, meats, and pantry staples."
     coupon_aff_url: "https://www.ctownsupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1135"
     coupon_title: "CTown Grocery Specials"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Discover rotating grocery specials and in-store deals at CTown Supermarkets."
     coupon_aff_url: "https://www.ctownsupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

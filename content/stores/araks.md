@@ -1,20 +1,20 @@
 ---
-title: "Araks Promo Code Aug 2026 - 20% Off Coupon"
+title: "Araks Promo Code Oct 2026 - 20% Off Coupon"
 slug: "araks"
-description: "Araks Promo Code Aug 2026. Get up to 20% off luxury lingerie, swimwear, sleepwear, and designer essentials with verified Araks coupon codes."
+description: "Araks Promo Code Oct 2026. Get up to 20% off luxury lingerie, swimwear, sleepwear, and designer essentials with verified Araks coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Araks"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Araks Promo Code Aug 2026 - 20% Off Coupon"
-store_title: "Araks Promo Code Aug 2026 - 20% Off Coupon"
-store_meta_description: "Araks Promo Code Aug 2026. Get up to 20% off luxury lingerie, swimwear, sleepwear, and designer essentials with verified Araks coupon codes."
+store_h1: "Araks Promo Code Oct 2026 - 20% Off Coupon"
+store_title: "Araks Promo Code Oct 2026 - 20% Off Coupon"
+store_meta_description: "Araks Promo Code Oct 2026. Get up to 20% off luxury lingerie, swimwear, sleepwear, and designer essentials with verified Araks coupon codes."
 store_keywords: "araks coupon, araks promo code, araks coupons, araks discount code, araks coupon codes, araks promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Araks Promo Code Aug 2026 - 20% Off Coupon"
-store_og_description: "Araks Promo Code Aug 2026. Get up to 20% off luxury lingerie, swimwear, sleepwear, and designer essentials with verified Araks coupon codes."
+store_og_title: "Araks Promo Code Oct 2026 - 20% Off Coupon"
+store_og_description: "Araks Promo Code Oct 2026. Get up to 20% off luxury lingerie, swimwear, sleepwear, and designer essentials with verified Araks coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 6
 store_id: "araks"
 best_discount: "Up to 20% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1188"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-12380-214799-199880"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1189"
     coupon_title: "10% Off"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-12380-214799-199880"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1190"
     coupon_title: "10% Off"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-12380-214799-199880"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1191"
     coupon_title: "15% Off"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-12380-214799-199880"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1192"
     coupon_title: "Enjoy 10% off when you sign up for emails and texts"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-12380-214799-199880"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1193"
     coupon_title: "Enjoy complimentary shipping on domestic orders above $300"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-12380-214799-199880"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

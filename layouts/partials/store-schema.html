@@ -1,0 +1,165 @@
+{{/*
+  layouts/partials/store-schema.html
+  JSON-LD for store pages: WebPage (+ inline BreadcrumbList), ItemList, FAQPage.
+
+  Usage in layouts/stores/single.html:
+    {{ define "schema" }}{{ partial "store-schema.html" . }}{{ end }}
+
+  RULE: every "| jsonify" inside a ld+json script MUST be followed by "| safeJS",
+  otherwise Hugo's contextual escaping wraps the value in a second pair of quotes.
+  FAQ answers below mirror the visible FAQ in single.html (Google requires a match).
+*/}}
+
+{{- $canonicalURL := partial "canonical-url.html" . -}}
+{{- $siteURL      := .Site.BaseURL | strings.TrimRight "/" -}}
+{{- $storeName    := .Params.store_name | default .Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+{{- $coupons      := .Params.coupons | default slice -}}
+{{- $count        := len $coupons -}}
+{{- $storeSite    := .Params.website_url | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+{{- $affURL       := .Params.website_aff_url | default $storeSite | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+{{- $bestDiscount := .Params.best_discount | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+
+{{- $pageName := .Params.store_title | default .Params.store_h1 | default .Title | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
+{{- $pageDesc := .Params.store_meta_description | default .Params.description | default "" | replaceRE `^"(.*)"$` "$1" | replaceRE `^'(.*)'$` "$1" | strings.TrimSpace -}}
+{{- if not $pageDesc -}}
+  {{- $pageDesc = printf "Verified %s coupon codes and deals, updated daily." $storeName -}}
+{{- end -}}
+
+{{/* Best coupon title (first coupon that has a code), used by the FAQ answer */}}
+{{- $bestForFaq := "" -}}
+{{- range first 1 $coupons -}}
+  {{- if .coupon_code -}}
+    {{- $bestForFaq = .coupon_title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $bestAnswer := printf "Browse the full list of %s coupons above. Current deals include percentage-off discounts, free-shipping codes, and seasonal promotions. Click any deal to copy the code or activate the offer." $storeName -}}
+
+  {{- if $bestDiscount -}}
+  {{- $bestAnswer = printf "The top %s deal right now is %s. Click Reveal Code above to copy it, then paste it at checkout on the %s website to redeem instantly." $storeName $bestDiscount $storeName -}}
+
+{{- else if $bestForFaq -}}
+  {{- $bestAnswer = printf "The best current %s offer is: %s. Click Reveal Code above to copy it and apply at checkout for instant savings." $storeName $bestForFaq -}}
+{{- end -}}
+
+{{/* ---- 1. WebPage + inline BreadcrumbList ---- */}}
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "WebPage",
+"@id": {{ (printf "%s#webpage" $canonicalURL) | jsonify | safeJS }},
+"url": {{ $canonicalURL | jsonify | safeJS }},
+"name": {{ $pageName | jsonify | safeJS }},
+"description": {{ $pageDesc | jsonify | safeJS }},
+"dateModified": {{ now.Format "2006-01-02" | jsonify | safeJS }},
+"inLanguage": "en-US",
+"isPartOf": { "@id": {{ (printf "%s/#website" $siteURL) | jsonify | safeJS }} },
+"publisher": { "@id": {{ (printf "%s/#organization" $siteURL) | jsonify | safeJS }} },
+"about": {
+ "@type": "Organization",
+ "name": {{ $storeName | jsonify | safeJS }}{{ with $storeSite }},
+ "url": {{ . | jsonify | safeJS }}{{ end }}
+},
+"breadcrumb": {
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+   {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": {{ .Site.BaseURL | jsonify | safeJS }}
+   },
+   {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Stores",
+     "item": {{ (printf "%s/stores/" $siteURL) | jsonify | safeJS }}
+   },
+   {
+     "@type": "ListItem",
+     "position": 3,
+     "name": {{ (printf "%s Coupon Codes" $storeName) | jsonify | safeJS }},
+     "item": {{ $canonicalURL | jsonify | safeJS }}
+   }
+ ]
+}
+}
+</script>
+
+{{/* ---- 2. ItemList of coupons (first 10) ---- */}}
+{{- if $coupons }}
+{{- $items := first 10 $coupons -}}
+{{- $n := len $items -}}
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "ItemList",
+"name": {{ (printf "%s Coupon Codes and Deals" $storeName) | jsonify | safeJS }},
+"url": {{ $canonicalURL | jsonify | safeJS }},
+"numberOfItems": {{ $count }},
+"itemListElement": [
+ {{ range $i, $c := $items -}}
+ {{- $cTitle := $c.coupon_title | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
+ {{- $cDesc  := $c.coupon_description | default "" | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace }}
+ {
+   "@type": "ListItem",
+   "position": {{ add $i 1 }},
+   "name": {{ $cTitle | jsonify | safeJS }},
+   "url": {{ $canonicalURL | jsonify | safeJS }}{{ with $cDesc }},
+   "description": {{ . | jsonify | safeJS }}{{ end }}
+ }{{ if lt $i (sub $n 1) }},{{ end }}
+ {{ end -}}
+]
+}
+</script>
+{{- end }}
+
+{{/* ---- 3. FAQPage (matches the 5 visible questions, same order) ---- */}}
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+ {
+   "@type": "Question",
+   "name": {{ (printf "How many %s coupon codes are available right now?" $storeName) | jsonify | safeJS }},
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": {{ (printf "CouponHauls currently lists %d verified %s coupon codes and deals. We check and refresh all %s offers daily so you always find working promo codes - no expired ones cluttering the list." $count $storeName $storeName) | jsonify | safeJS }}
+   }
+ },
+ {
+   "@type": "Question",
+   "name": {{ (printf "What is the best %s discount available today?" $storeName) | jsonify | safeJS }},
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": {{ $bestAnswer | jsonify | safeJS }}
+   }
+ },
+ {
+   "@type": "Question",
+   "name": {{ (printf "How do I use a %s promo code?" $storeName) | jsonify | safeJS }},
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": {{ (printf "1. Find a deal on this page and click Reveal Code. 2. Visit %s and add items to your cart. 3. At checkout, paste the code into the Promo / Coupon Code field and click Apply. 4. No code? Click Get Deal - the discount activates automatically at checkout." $storeName) | jsonify | safeJS }}
+   }
+ },
+ {
+   "@type": "Question",
+   "name": {{ (printf "Are %s coupon codes verified?" $storeName) | jsonify | safeJS }},
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": {{ (printf "Yes. Every %s code listed on CouponHauls is tested before publishing. We remove expired offers daily and only keep codes with a confirmed working status. Our verified success rate is over 98%%." $storeName) | jsonify | safeJS }}
+   }
+ },
+ {
+   "@type": "Question",
+   "name": {{ (printf "Can I stack %s coupon codes with other discounts?" $storeName) | jsonify | safeJS }},
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": {{ (printf "Many retailers allow stacking a promo code on top of an existing sale price. For maximum savings at %s: activate a cashback portal before clicking through, apply a CouponHauls promo code at checkout, and pay with a rewards credit card to layer multiple discounts on a single order." $storeName) | jsonify | safeJS }}
+   }
+ }
+]
+}
+</script>

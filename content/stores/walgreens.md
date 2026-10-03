@@ -1,20 +1,20 @@
 ---
-title: "Walgreens Photo Promo Code Aug 2026 - 50% Off Coupon"
+title: "Walgreens Photo Promo Code Oct 2026 - 50% Off Coupon"
 slug: "walgreens"
-description: "Walgreens Photo Promo Code Aug 2026. Save up to 50% on photo prints, canvas, cards, and personalized gifts with verified Walgreens Photo coupon codes."
+description: "Walgreens Photo Promo Code Oct 2026. Save up to 50% on photo prints, canvas, cards, and personalized gifts with verified Walgreens Photo coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Walgreens"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Walgreens Photo Promo Code Aug 2026 - 50% Off Coupon"
-store_title: "Walgreens Photo Promo Code Aug 2026 - 50% Off Coupon"
-store_meta_description: "Walgreens Photo Promo Code Aug 2026. Save up to 50% on photo prints, canvas, cards, and personalized gifts with verified Walgreens Photo coupon codes."
+store_h1: "Walgreens Photo Promo Code Oct 2026 - 50% Off Coupon"
+store_title: "Walgreens Photo Promo Code Oct 2026 - 50% Off Coupon"
+store_meta_description: "Walgreens Photo Promo Code Oct 2026. Save up to 50% on photo prints, canvas, cards, and personalized gifts with verified Walgreens Photo coupon codes."
 store_keywords: "walgreens coupon code, walgreens promo code, walgreens discount code, walgreens deals, walgreens offers, walgreens sale, walgreens coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Walgreens Photo Promo Code Aug 2026 - 50% Off Coupon"
-store_og_description: "Walgreens Photo Promo Code Aug 2026. Save up to 50% on photo prints, canvas, cards, and personalized gifts with verified Walgreens Photo coupon codes."
+store_og_title: "Walgreens Photo Promo Code Oct 2026 - 50% Off Coupon"
+store_og_description: "Walgreens Photo Promo Code Oct 2026. Save up to 50% on photo prints, canvas, cards, and personalized gifts with verified Walgreens Photo coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 9
 store_id: "walgreens"
 best_discount: "Up to 60% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1021"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: "Savings on pharmacy items"
     coupon_aff_url: "https://www.walgreens.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1022"
     coupon_title: "Buy 1 Get 1 Beauty"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: "Select cosmetics offer"
     coupon_aff_url: "https://www.walgreens.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1354"
     coupon_title: "Extra 10% Off Your Order"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.walgreens.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1355"
     coupon_title: "Extra 10% Off Pickup Orders"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.walgreens.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1356"
     coupon_title: "Extra 20% Off $35+ Sitewide"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.walgreens.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1350"
     coupon_title: "60% Off All Photo Cards & Premium Stationery"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.walgreens.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1351"
     coupon_title: "40% Off Photo Gifts at Walgreens"
@@ -84,7 +84,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.walgreens.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1352"
     coupon_title: "Extra 20% Off With Orders Over $25 Sitewide for New Customers"
@@ -92,7 +92,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.walgreens.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1353"
     coupon_title: "30% Off Contact Lenses"
@@ -100,7 +100,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.walgreens.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

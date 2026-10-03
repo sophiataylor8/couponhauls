@@ -1,20 +1,20 @@
 ---
-title: "Diyanu Promo Code Aug 2026 - 20% Off Coupon"
+title: "Diyanu Promo Code Oct 2026 - 20% Off Coupon"
 slug: "diyanu"
-description: "Diyanu Promo Code Aug 2026. Save up to 20% on African-inspired clothing, accessories, and fashion essentials with verified Diyanu coupon codes."
+description: "Diyanu Promo Code Oct 2026. Save up to 20% on African-inspired clothing, accessories, and fashion essentials with verified Diyanu coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Diyanu"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Diyanu Promo Code Aug 2026 - 20% Off Coupon"
-store_title: "Diyanu Promo Code Aug 2026 - 20% Off Coupon"
-store_meta_description: "Diyanu Promo Code Aug 2026. Save up to 20% on African-inspired clothing, accessories, and fashion essentials with verified Diyanu coupon codes."
+store_h1: "Diyanu Promo Code Oct 2026 - 20% Off Coupon"
+store_title: "Diyanu Promo Code Oct 2026 - 20% Off Coupon"
+store_meta_description: "Diyanu Promo Code Oct 2026. Save up to 20% on African-inspired clothing, accessories, and fashion essentials with verified Diyanu coupon codes."
 store_keywords: "diyanu coupon, diyanu promo code, diyanu coupons, diyanu discount code, diyanu coupon codes, diyanu promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Diyanu Promo Code Aug 2026 - 20% Off Coupon"
-store_og_description: "Diyanu Promo Code Aug 2026. Save up to 20% on African-inspired clothing, accessories, and fashion essentials with verified Diyanu coupon codes."
+store_og_title: "Diyanu Promo Code Oct 2026 - 20% Off Coupon"
+store_og_description: "Diyanu Promo Code Oct 2026. Save up to 20% on African-inspired clothing, accessories, and fashion essentials with verified Diyanu coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 7
 store_id: "diyanu"
 best_discount: "Up to 30% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1224"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-12127-214799-179096"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1225"
     coupon_title: "15% Off"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-12127-214799-179096"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1226"
     coupon_title: "10% Off"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-12127-214799-179096"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1227"
     coupon_title: "10% Off"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-12127-214799-179096"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1228"
     coupon_title: "15% Off"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-12127-214799-179096"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1230"
     coupon_title: "30% Off with Promo Code"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-12127-214799-179096"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1229"
     coupon_title: "Free Shipping when you spend $130+"
@@ -84,7 +84,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-12127-214799-179096"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

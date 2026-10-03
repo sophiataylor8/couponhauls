@@ -1,20 +1,20 @@
 ---
-title: "American Rag Promo Code Aug 2026 - 20% Off Coupon"
+title: "American Rag Promo Code Oct 2026 - 20% Off Coupon"
 slug: "americanrag"
-description: "American Rag Promo Code Aug 2026. Save up to 20% on trendy clothing, denim, shoes, and fashion accessories with verified American Rag coupon codes."
+description: "American Rag Promo Code Oct 2026. Save up to 20% on trendy clothing, denim, shoes, and fashion accessories with verified American Rag coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "American Rag"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "American Rag Promo Code Aug 2026 - 20% Off Coupon"
-store_title: "American Rag Promo Code Aug 2026 - 20% Off Coupon"
-store_meta_description: "American Rag Promo Code Aug 2026. Save up to 20% on trendy clothing, denim, shoes, and fashion accessories with verified American Rag coupon codes."
+store_h1: "American Rag Promo Code Oct 2026 - 20% Off Coupon"
+store_title: "American Rag Promo Code Oct 2026 - 20% Off Coupon"
+store_meta_description: "American Rag Promo Code Oct 2026. Save up to 20% on trendy clothing, denim, shoes, and fashion accessories with verified American Rag coupon codes."
 store_keywords: "american rag coupon, american rag promo code, american rag coupons, american rag discount code, american rag coupon codes, american rag promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "American Rag Promo Code Aug 2026 - 20% Off Coupon"
-store_og_description: "American Rag Promo Code Aug 2026. Save up to 20% on trendy clothing, denim, shoes, and fashion accessories with verified American Rag coupon codes."
+store_og_title: "American Rag Promo Code Oct 2026 - 20% Off Coupon"
+store_og_description: "American Rag Promo Code Oct 2026. Save up to 20% on trendy clothing, denim, shoes, and fashion accessories with verified American Rag coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 6
 store_id: "americanrag"
 best_discount: "Up to 15% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1182"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntra.com/t/8-12482-214799-217148"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1183"
     coupon_title: "15% Off"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntra.com/t/8-12482-214799-217148"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1184"
     coupon_title: "10% Off"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntra.com/t/8-12482-214799-217148"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1185"
     coupon_title: "15% Off"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntra.com/t/8-12482-214799-217148"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1186"
     coupon_title: "Subscribe for 10% off your first order"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntra.com/t/8-12482-214799-217148"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1187"
     coupon_title: "$10 Flat Rate or Free US Shipping On Orders $150+"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntra.com/t/8-12482-214799-217148"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

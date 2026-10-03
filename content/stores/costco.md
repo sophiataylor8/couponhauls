@@ -1,20 +1,20 @@
 ---
-title: "Costco Promo Code Aug 2026 - 25% Off Coupon"
+title: "Costco Promo Code Oct 2026 - 25% Off Coupon"
 slug: "costco"
-description: "Costco Promo Code Aug 2026. Save up to 25% with verified Costco coupon codes, exclusive member deals, discounts, and limited-time offers."
+description: "Costco Promo Code Oct 2026. Save up to 25% with verified Costco coupon codes, exclusive member deals, discounts, and limited-time offers."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Costco"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Costco Promo Code Aug 2026 - 25% Off Coupon"
-store_title: "Costco Promo Code Aug 2026 - 25% Off Coupon"
-store_meta_description: "Costco Promo Code Aug 2026. Save up to 25% with verified Costco coupon codes, exclusive member deals, discounts, and limited-time offers."
+store_h1: "Costco Promo Code Oct 2026 - 25% Off Coupon"
+store_title: "Costco Promo Code Oct 2026 - 25% Off Coupon"
+store_meta_description: "Costco Promo Code Oct 2026. Save up to 25% with verified Costco coupon codes, exclusive member deals, discounts, and limited-time offers."
 store_keywords: "costco coupon code, costco promo code, costco discount code, costco deals, costco offers, costco sale, costco coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Costco Promo Code Aug 2026 - 25% Off Coupon"
-store_og_description: "Costco Promo Code Aug 2026. Save up to 25% with verified Costco coupon codes, exclusive member deals, discounts, and limited-time offers."
+store_og_title: "Costco Promo Code Oct 2026 - 25% Off Coupon"
+store_og_description: "Costco Promo Code Oct 2026. Save up to 25% with verified Costco coupon codes, exclusive member deals, discounts, and limited-time offers."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 10
 store_id: "costco"
 best_discount: "Up to 30% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1003"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: "Big savings on bulk checkout"
     coupon_aff_url: "https://www.costco.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1004"
     coupon_title: "Grocery Savings 10%"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: "Grocery onsite discount"
     coupon_aff_url: "https://www.costco.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1272"
     coupon_title: "Up to 30% Off Outdoor Toys"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.costco.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1273"
     coupon_title: "Shop and get up to 25% off furniture at Costco."
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.costco.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1274"
     coupon_title: "Executive Members earn an annual 2% Reward"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.costco.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1275"
     coupon_title: "Receive a $50 Digital Costco Shop Card"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.costco.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1276"
     coupon_title: "Save $300 on On Select Appliances"
@@ -84,7 +84,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.costco.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1277"
     coupon_title: "Save $80 on MICHELIN TIRES"
@@ -92,7 +92,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.costco.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1278"
     coupon_title: "Up to 10% Off on Summer Glow Up"
@@ -100,7 +100,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.costco.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1279"
     coupon_title: "20% Off on Everyday Essentials"
@@ -108,7 +108,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.costco.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

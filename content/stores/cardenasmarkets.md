@@ -1,20 +1,20 @@
 ---
-title: "Cardenas Weekly Ad Aug 2026 - Grocery Ad"
+title: "Cardenas Weekly Ad Oct 2026 - Grocery Ad"
 slug: "cardenasmarkets"
-description: "Cardenas Weekly Ad Aug 2026. View the newest Cardenas grocery ad featuring fresh produce, meat specials, bakery items, and weekly supermarket deals."
+description: "Cardenas Weekly Ad Oct 2026. View the newest Cardenas grocery ad featuring fresh produce, meat specials, bakery items, and weekly supermarket deals."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Cardenas"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Cardenas Weekly Ad Aug 2026 - Grocery Ad"
-store_title: "Cardenas Weekly Ad Aug 2026 - Grocery Ad"
-store_meta_description: "Cardenas Weekly Ad Aug 2026. View the newest Cardenas grocery ad featuring fresh produce, meat specials, bakery items, and weekly supermarket deals."
+store_h1: "Cardenas Weekly Ad Oct 2026 - Grocery Ad"
+store_title: "Cardenas Weekly Ad Oct 2026 - Grocery Ad"
+store_meta_description: "Cardenas Weekly Ad Oct 2026. View the newest Cardenas grocery ad featuring fresh produce, meat specials, bakery items, and weekly supermarket deals."
 store_keywords: "cardenas coupon code, cardenas promo code, cardenas discount code, cardenas deals, cardenas offers, cardenas grocery coupons, cardenas coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Cardenas Weekly Ad Aug 2026 - Grocery Ad"
-store_og_description: "Cardenas Weekly Ad Aug 2026. View the newest Cardenas grocery ad featuring fresh produce, meat specials, bakery items, and weekly supermarket deals."
+store_og_title: "Cardenas Weekly Ad Oct 2026 - Grocery Ad"
+store_og_description: "Cardenas Weekly Ad Oct 2026. View the newest Cardenas grocery ad featuring fresh produce, meat specials, bakery items, and weekly supermarket deals."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "cardenasmarkets"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1052"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Browse Cardenas Markets weekly specials to save on fresh produce, meats, bakery items, and authentic Hispanic groceries."
     coupon_aff_url: "https://www.cardenasmarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1053"
     coupon_title: "Fresh Produce Weekly Discounts"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Enjoy weekly discounts on fresh fruits, vegetables, and traditional grocery products available in Cardenas Markets stores."
     coupon_aff_url: "https://www.cardenasmarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

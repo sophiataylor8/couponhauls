@@ -1,20 +1,20 @@
 ---
-title: "CVS Promo Code Aug 2026 - 10% Off Coupon"
+title: "CVS Promo Code Oct 2026 - 10% Off Coupon"
 slug: "cvs"
-description: "CVS Promo Code Aug 2026. Save up to 10% on prescriptions, health products, beauty essentials, and everyday items with verified CVS coupon codes."
+description: "CVS Promo Code Oct 2026. Save up to 10% on prescriptions, health products, beauty essentials, and everyday items with verified CVS coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "CVS"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "CVS Promo Code Aug 2026 - 10% Off Coupon"
-store_title: "CVS Promo Code Aug 2026 - 10% Off Coupon"
-store_meta_description: "CVS Promo Code Aug 2026. Save up to 10% on prescriptions, health products, beauty essentials, and everyday items with verified CVS coupon codes."
+store_h1: "CVS Promo Code Oct 2026 - 10% Off Coupon"
+store_title: "CVS Promo Code Oct 2026 - 10% Off Coupon"
+store_meta_description: "CVS Promo Code Oct 2026. Save up to 10% on prescriptions, health products, beauty essentials, and everyday items with verified CVS coupon codes."
 store_keywords: "cvs coupon code, cvs promo code, cvs discount code, cvs deals, cvs offers, cvs pharmacy coupons, cvs coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "CVS Promo Code Aug 2026 - 10% Off Coupon"
-store_og_description: "CVS Promo Code Aug 2026. Save up to 10% on prescriptions, health products, beauty essentials, and everyday items with verified CVS coupon codes."
+store_og_title: "CVS Promo Code Oct 2026 - 10% Off Coupon"
+store_og_description: "CVS Promo Code Oct 2026. Save up to 10% on prescriptions, health products, beauty essentials, and everyday items with verified CVS coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 10
 store_id: "cvs"
 best_discount: "Up to 90% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1017"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: "Cosmetics savings"
     coupon_aff_url: "https://www.cvs.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1018"
     coupon_title: "10% on Health Products"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: "Pharmacy discount"
     coupon_aff_url: "https://www.cvs.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1334"
     coupon_title: "60% Off Premium Cards"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.cvs.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1336"
     coupon_title: "Buy 1, Get 1 Free Photo Prints & Gifts"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.cvs.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1337"
     coupon_title: "50% Off Photo Gifts And Calendars"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.cvs.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1338"
     coupon_title: "90% Off 11x14 Repositionable Poster"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.cvs.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1339"
     coupon_title: "CVS Photo - Free 8x10 Print With Code"
@@ -84,7 +84,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.cvs.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1058"
     coupon_title: "CVS ExtraCare Rewards Deals"
@@ -92,7 +92,7 @@ coupons:
     coupon_description: "Join CVS ExtraCare to earn ExtraBucks rewards and access exclusive discounts on health, beauty, and everyday essentials."
     coupon_aff_url: "https://www.cvs.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1059"
     coupon_title: "CVS Weekly Ad Pharmacy & Beauty Deals"
@@ -100,7 +100,7 @@ coupons:
     coupon_description: "Shop the CVS weekly ad for limited-time deals on pharmacy items, beauty products, snacks, and household essentials."
     coupon_aff_url: "https://www.cvs.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1335"
     coupon_title: "70% Off Posters at CVS Photo"
@@ -108,7 +108,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.cvs.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

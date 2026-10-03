@@ -1,20 +1,20 @@
 ---
-title: "Blue Sky Promo Code Aug 2026 - 20% Off Coupon"
+title: "Blue Sky Promo Code Oct 2026 - 20% Off Coupon"
 slug: "bluesky"
-description: "Blue Sky Promo Code Aug 2026. Save up to 20% on planners, calendars, notebooks, and office essentials with verified Blue Sky coupon codes."
+description: "Blue Sky Promo Code Oct 2026. Save up to 20% on planners, calendars, notebooks, and office essentials with verified Blue Sky coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Blue Sky"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Blue Sky Promo Code Aug 2026 - 20% Off Coupon"
-store_title: "Blue Sky Promo Code Aug 2026 - 20% Off Coupon"
-store_meta_description: "Blue Sky Promo Code Aug 2026. Save up to 20% on planners, calendars, notebooks, and office essentials with verified Blue Sky coupon codes."
+store_h1: "Blue Sky Promo Code Oct 2026 - 20% Off Coupon"
+store_title: "Blue Sky Promo Code Oct 2026 - 20% Off Coupon"
+store_meta_description: "Blue Sky Promo Code Oct 2026. Save up to 20% on planners, calendars, notebooks, and office essentials with verified Blue Sky coupon codes."
 store_keywords: "blue sky coupon, blue sky promo code, blue sky coupons, blue sky discount code, blue sky coupon codes, blue sky promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Blue Sky Promo Code Aug 2026 - 20% Off Coupon"
-store_og_description: "Blue Sky Promo Code Aug 2026. Save up to 20% on planners, calendars, notebooks, and office essentials with verified Blue Sky coupon codes."
+store_og_title: "Blue Sky Promo Code Oct 2026 - 20% Off Coupon"
+store_og_description: "Blue Sky Promo Code Oct 2026. Save up to 20% on planners, calendars, notebooks, and office essentials with verified Blue Sky coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 3
 store_id: "bluesky"
 best_discount: "Up to 20% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1212"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntra.com/t/8-12232-214799-185387"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1213"
     coupon_title: "10% Off"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntra.com/t/8-12232-214799-185387"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1211"
     coupon_title: "10% off your first purchase"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntra.com/t/8-12232-214799-185387"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

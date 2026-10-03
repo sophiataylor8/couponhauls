@@ -1,20 +1,20 @@
 ---
-title: "ABC Carpet Promo Code Aug 2026 - 20% Off Coupon"
+title: "ABC Carpet Promo Code Oct 2026 - 20% Off Coupon"
 slug: "abccarpet"
-description: "ABC Carpet Promo Code Aug 2026. Get up to 20% off luxury furniture, rugs, lighting, and home decor with verified ABC Carpet coupon codes."
+description: "ABC Carpet Promo Code Oct 2026. Get up to 20% off luxury furniture, rugs, lighting, and home decor with verified ABC Carpet coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "ABC Carpet"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "ABC Carpet Promo Code Aug 2026 - 20% Off Coupon"
-store_title: "ABC Carpet Promo Code Aug 2026 - 20% Off Coupon"
-store_meta_description: "ABC Carpet Promo Code Aug 2026. Get up to 20% off luxury furniture, rugs, lighting, and home decor with verified ABC Carpet coupon codes."
+store_h1: "ABC Carpet Promo Code Oct 2026 - 20% Off Coupon"
+store_title: "ABC Carpet Promo Code Oct 2026 - 20% Off Coupon"
+store_meta_description: "ABC Carpet Promo Code Oct 2026. Get up to 20% off luxury furniture, rugs, lighting, and home decor with verified ABC Carpet coupon codes."
 store_keywords: "abc carpet coupon, abc carpet promo code, abc carpet coupons, abc carpet discount code, abc carpet coupon codes, abc carpet promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "ABC Carpet Promo Code Aug 2026 - 20% Off Coupon"
-store_og_description: "ABC Carpet Promo Code Aug 2026. Get up to 20% off luxury furniture, rugs, lighting, and home decor with verified ABC Carpet coupon codes."
+store_og_title: "ABC Carpet Promo Code Oct 2026 - 20% Off Coupon"
+store_og_description: "ABC Carpet Promo Code Oct 2026. Get up to 20% off luxury furniture, rugs, lighting, and home decor with verified ABC Carpet coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 8
 store_id: "abccarpet"
 best_discount: "Up to 60% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1154"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12859-214799-285467"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1155"
     coupon_title: "10% Off on Orders $500+"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12859-214799-285467"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1156"
     coupon_title: "15% Off"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12859-214799-285467"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1157"
     coupon_title: "$500 gift card plus 10% off your first order"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: "Join email list for the chance to win"
     coupon_aff_url: "https://www.pjatr.com/t/8-12859-214799-285467"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1158"
     coupon_title: "Free Shipping on all Ethnicraft Furniture"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12859-214799-285467"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1159"
     coupon_title: "Up to 40% off one-of-a-kind Vintage + Antique Rugs"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12859-214799-285467"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1160"
     coupon_title: "abc carpet & rugs up to 60% off select styles"
@@ -84,7 +84,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12859-214799-285467"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1161"
     coupon_title: "Free Ground Shipping On Orders $250+"
@@ -92,7 +92,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12859-214799-285467"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

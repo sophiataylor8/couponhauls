@@ -1,20 +1,20 @@
 ---
-title: "Adidas Promo Code Aug 2026 - 30% Off Coupon"
+title: "Adidas Promo Code Oct 2026 - 30% Off Coupon"
 slug: "adidas"
-description: "Adidas Promo Code Aug 2026.  Save up to 30% on shoes, sportswear, and apparel with the latest verified Adidas coupon codes."
+description: "Adidas Promo Code Oct 2026.  Save up to 30% on shoes, sportswear, and apparel with the latest verified Adidas coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Adidas"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Adidas Promo Code Aug 2026 - 30% Off Coupon"
-store_title: "Adidas Promo Code Aug 2026 - 30% Off Coupon"
-store_meta_description: "Adidas Promo Code Aug 2026.  Save up to 30% on shoes, sportswear, and apparel with the latest verified Adidas coupon codes."
+store_h1: "Adidas Promo Code Oct 2026 - 30% Off Coupon"
+store_title: "Adidas Promo Code Oct 2026 - 30% Off Coupon"
+store_meta_description: "Adidas Promo Code Oct 2026.  Save up to 30% on shoes, sportswear, and apparel with the latest verified Adidas coupon codes."
 store_keywords: "adidas coupon code, adidas promo code, adidas discount code, adidas deals, adidas offers, adidas sale, adidas coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Adidas Promo Code Aug 2026 - 30% Off Coupon"
-store_og_description: "Adidas Promo Code Aug 2026.  Save up to 30% on shoes, sportswear, and apparel with the latest verified Adidas coupon codes."
+store_og_title: "Adidas Promo Code Oct 2026 - 30% Off Coupon"
+store_og_description: "Adidas Promo Code Oct 2026.  Save up to 30% on shoes, sportswear, and apparel with the latest verified Adidas coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: true
 coupon_count: 10
 store_id: "adidas"
 best_discount: "Up to 60% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1007"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: "Save on activewear"
     coupon_aff_url: "https://www.adidas.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1008"
     coupon_title: "Extra 10% On Shoes"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: "Discount on footwear"
     coupon_aff_url: "https://www.adidas.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1291"
     coupon_title: "15% Off Storewide"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.adidas.com/us/promotions"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1294"
     coupon_title: "25% Off Select Items"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.adidas.com/us/promotions"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1295"
     coupon_title: "15% Off Select Items"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.adidas.com/us/promotions"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1288"
     coupon_title: "Up to 25% Off Full Priced Items"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.adidas.com/us/promotions"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1289"
     coupon_title: "Free Backpack When You Spend Over $150"
@@ -84,7 +84,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.adidas.com/us/promotions"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1290"
     coupon_title: "Up to 60% Off Sale Styles"
@@ -92,7 +92,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.adidas.com/us/promotions"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1292"
     coupon_title: "FREE STANDARD SHIPPING WITH ADICLUB"
@@ -100,7 +100,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.adidas.com/us/promotions"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1293"
     coupon_title: "GET A $100 GIFT CARD FOR $80"
@@ -108,7 +108,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.adidas.com/us/promotions"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

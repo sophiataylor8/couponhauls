@@ -1,20 +1,20 @@
 ---
-title: "Sobeys Store Flyer Aug 2026 - Weekly Ad"
+title: "Sobeys Store Flyer Oct 2026 - Weekly Ad"
 slug: "sobeys"
-description: "Sobeys Store Flyer Aug 2026. Explore the latest Sobeys weekly ad with grocery savings, fresh produce discounts, and supermarket deals."
+description: "Sobeys Store Flyer Oct 2026. Explore the latest Sobeys weekly ad with grocery savings, fresh produce discounts, and supermarket deals."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Sobeys"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Sobeys Store Flyer Aug 2026 - Weekly Ad"
-store_title: "Sobeys Store Flyer Aug 2026 - Weekly Ad"
-store_meta_description: "Sobeys Store Flyer Aug 2026. Explore the latest Sobeys weekly ad with grocery savings, fresh produce discounts, and supermarket deals."
+store_h1: "Sobeys Store Flyer Oct 2026 - Weekly Ad"
+store_title: "Sobeys Store Flyer Oct 2026 - Weekly Ad"
+store_meta_description: "Sobeys Store Flyer Oct 2026. Explore the latest Sobeys weekly ad with grocery savings, fresh produce discounts, and supermarket deals."
 store_keywords: "sobeys coupon code, sobeys promo code, sobeys discount code, sobeys deals, sobeys offers, sobeys grocery coupons, sobeys coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Sobeys Store Flyer Aug 2026 - Weekly Ad"
-store_og_description: "Sobeys Store Flyer Aug 2026. Explore the latest Sobeys weekly ad with grocery savings, fresh produce discounts, and supermarket deals."
+store_og_title: "Sobeys Store Flyer Oct 2026 - Weekly Ad"
+store_og_description: "Sobeys Store Flyer Oct 2026. Explore the latest Sobeys weekly ad with grocery savings, fresh produce discounts, and supermarket deals."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "sobeys"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1106"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Browse the Sobeys weekly flyer to save on fresh foods, snacks, beverages, and everyday grocery essentials."
     coupon_aff_url: "https://www.sobeys.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1107"
     coupon_title: "Scene+ Rewards Member Offers"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Earn and redeem Scene+ points while shopping at Sobeys and enjoy special member-only grocery deals."
     coupon_aff_url: "https://www.sobeys.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

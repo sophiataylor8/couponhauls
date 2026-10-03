@@ -1,20 +1,20 @@
 ---
-title: "Walmart Photo Promo Code Aug 2026 - 10% Off Coupon"
+title: "Walmart Photo Promo Code Oct 2026 - 10% Off Coupon"
 slug: "walmart"
-description: "Walmart Photo Promo Code Aug 2026. Save up to 10% on photo prints, custom gifts, canvas, and photo products with verified Walmart Photo coupon codes."
+description: "Walmart Photo Promo Code Oct 2026. Save up to 10% on photo prints, custom gifts, canvas, and photo products with verified Walmart Photo coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Walmart"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Walmart Photo Promo Code Aug 2026 - 10% Off Coupon"
-store_title: "Walmart Photo Promo Code Aug 2026 - 10% Off Coupon"
-store_meta_description: "Walmart Photo Promo Code Aug 2026. Save up to 10% on photo prints, custom gifts, canvas, and photo products with verified Walmart Photo coupon codes."
+store_h1: "Walmart Photo Promo Code Oct 2026 - 10% Off Coupon"
+store_title: "Walmart Photo Promo Code Oct 2026 - 10% Off Coupon"
+store_meta_description: "Walmart Photo Promo Code Oct 2026. Save up to 10% on photo prints, custom gifts, canvas, and photo products with verified Walmart Photo coupon codes."
 store_keywords: "walmart coupon code, walmart promo code, walmart discount code, walmart deals, walmart offers, walmart sale, walmart coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Walmart Photo Promo Code Aug 2026 - 10% Off Coupon"
-store_og_description: "Walmart Photo Promo Code Aug 2026. Save up to 10% on photo prints, custom gifts, canvas, and photo products with verified Walmart Photo coupon codes."
+store_og_title: "Walmart Photo Promo Code Oct 2026 - 10% Off Coupon"
+store_og_description: "Walmart Photo Promo Code Oct 2026. Save up to 10% on photo prints, custom gifts, canvas, and photo products with verified Walmart Photo coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 9
 store_id: "walmart"
 best_discount: "Up to 65% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1023"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: "Groceries & essentials"
     coupon_aff_url: "https://www.walmart.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1024"
     coupon_title: "Electronics Extra 8%"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: "Tech discount"
     coupon_aff_url: "https://www.walmart.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1358"
     coupon_title: "25% Off Your Order"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.walmart.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1359"
     coupon_title: "22% Off Sitewide"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.walmart.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1360"
     coupon_title: "20% Off Sitewide"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.walmart.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1361"
     coupon_title: "$20 Off Your Order"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.walmart.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1082"
     coupon_title: "Walmart Rollback Deals"
@@ -84,7 +84,7 @@ coupons:
     coupon_description: "Shop Walmart Rollback deals for temporary price reductions on electronics, groceries, home products, and more."
     coupon_aff_url: "https://www.walmart.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1083"
     coupon_title: "Walmart Clearance & Special Buys"
@@ -92,7 +92,7 @@ coupons:
     coupon_description: "Find major discounts in Walmart's clearance section on electronics, apparel, home goods, and seasonal items."
     coupon_aff_url: "https://www.walmart.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1357"
     coupon_title: "Flash Sale - Up to 65% Off Selected Items"
@@ -100,7 +100,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.walmart.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

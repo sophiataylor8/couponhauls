@@ -1,20 +1,20 @@
 ---
-title: "1Password Promo Code Aug 2026 - 20% Off Coupon"
+title: "1Password Promo Code Oct 2026 - 20% Off Coupon"
 slug: "1password"
-description: "1Password Promo Code Aug 2026. Save up to 20% on password management plans, secure vaults, and online security tools with verified 1Password coupon codes."
+description: "1Password Promo Code Oct 2026. Save up to 20% on password management plans, secure vaults, and online security tools with verified 1Password coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "1Password"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "1Password Promo Code Aug 2026 - 20% Off Coupon"
-store_title: "1Password Promo Code Aug 2026 - 20% Off Coupon"
-store_meta_description: "1Password Promo Code Aug 2026. Save up to 20% on password management plans, secure vaults, and online security tools with verified 1Password coupon codes."
+store_h1: "1Password Promo Code Oct 2026 - 20% Off Coupon"
+store_title: "1Password Promo Code Oct 2026 - 20% Off Coupon"
+store_meta_description: "1Password Promo Code Oct 2026. Save up to 20% on password management plans, secure vaults, and online security tools with verified 1Password coupon codes."
 store_keywords: "1password coupon, 1password promo code, 1password coupons, 1password discount code, 1password coupon codes, 1password promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "1Password Promo Code Aug 2026 - 20% Off Coupon"
-store_og_description: "1Password Promo Code Aug 2026. Save up to 20% on password management plans, secure vaults, and online security tools with verified 1Password coupon codes."
+store_og_title: "1Password Promo Code Oct 2026 - 20% Off Coupon"
+store_og_description: "1Password Promo Code Oct 2026. Save up to 20% on password management plans, secure vaults, and online security tools with verified 1Password coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 3
 store_id: "1password"
 best_discount: "Up to 25% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1142"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://1password.com/promo/password-manager-for-students"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1143"
     coupon_title: "Purchase 1Password Business via Buy with AWS"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://1password.com/promo/password-manager-for-students"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1144"
     coupon_title: "Buy Enterprise Password Manager"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://1password.com/promo/password-manager-for-students"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

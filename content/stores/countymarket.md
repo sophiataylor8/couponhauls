@@ -1,20 +1,20 @@
 ---
-title: "County Market Weekly Ads Aug 2026 - Flyer"
+title: "County Market Weekly Ads Oct 2026 - Flyer"
 slug: "countymarket"
-description: "County Market Weekly Ads Aug 2026. Check the newest County Market flyer for grocery discounts, fresh food offers, and weekly store deals."
+description: "County Market Weekly Ads Oct 2026. Check the newest County Market flyer for grocery discounts, fresh food offers, and weekly store deals."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "County Market"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "County Market Weekly Ads Aug 2026 - Flyer"
-store_title: "County Market Weekly Ads Aug 2026 - Flyer"
-store_meta_description: "County Market Weekly Ads Aug 2026. Check the newest County Market flyer for grocery discounts, fresh food offers, and weekly store deals."
+store_h1: "County Market Weekly Ads Oct 2026 - Flyer"
+store_title: "County Market Weekly Ads Oct 2026 - Flyer"
+store_meta_description: "County Market Weekly Ads Oct 2026. Check the newest County Market flyer for grocery discounts, fresh food offers, and weekly store deals."
 store_keywords: "county market coupon code, county market promo code, county market discount code, county market deals, county market offers, county market grocery coupons, county market coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "County Market Weekly Ads Aug 2026 - Flyer"
-store_og_description: "County Market Weekly Ads Aug 2026. Check the newest County Market flyer for grocery discounts, fresh food offers, and weekly store deals."
+store_og_title: "County Market Weekly Ads Oct 2026 - Flyer"
+store_og_description: "County Market Weekly Ads Oct 2026. Check the newest County Market flyer for grocery discounts, fresh food offers, and weekly store deals."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "countymarket"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1110"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Browse the County Market weekly ad to discover deals on fresh foods, bakery items, and household products."
     coupon_aff_url: "https://www.mycountymarket.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1111"
     coupon_title: "County Market Digital Coupons"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Clip County Market digital coupons to save on groceries, beverages, snacks, and everyday essentials."
     coupon_aff_url: "https://www.mycountymarket.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

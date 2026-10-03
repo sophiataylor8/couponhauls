@@ -1,20 +1,20 @@
 ---
-title: "Food Bazaar Weekly Circular Aug 2026 - Weekly Ad"
+title: "Food Bazaar Weekly Circular Oct 2026 - Weekly Ad"
 slug: "foodbazaar"
-description: "Food Bazaar Weekly Circular Aug 2026. Explore the latest Food Bazaar weekly ad featuring grocery savings, fresh produce specials, and weekly  offers."
+description: "Food Bazaar Weekly Circular Oct 2026. Explore the latest Food Bazaar weekly ad featuring grocery savings, fresh produce specials, and weekly  offers."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Food Bazaar Supermarket"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Food Bazaar Weekly Circular Aug 2026 - Weekly Ad"
-store_title: "Food Bazaar Weekly Circular Aug 2026 - Weekly Ad"
-store_meta_description: "Food Bazaar Weekly Circular Aug 2026. Explore the latest Food Bazaar weekly ad featuring grocery savings, fresh produce specials, and weekly  offers."
+store_h1: "Food Bazaar Weekly Circular Oct 2026 - Weekly Ad"
+store_title: "Food Bazaar Weekly Circular Oct 2026 - Weekly Ad"
+store_meta_description: "Food Bazaar Weekly Circular Oct 2026. Explore the latest Food Bazaar weekly ad featuring grocery savings, fresh produce specials, and weekly  offers."
 store_keywords: "food bazaar supermarket coupon code, food bazaar supermarket promo code, food bazaar supermarket discount code, food bazaar supermarket deals, food bazaar supermarket offers, food bazaar supermarket grocery coupons, food bazaar supermarket coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Food Bazaar Weekly Circular Aug 2026 - Weekly Ad"
-store_og_description: "Food Bazaar Weekly Circular Aug 2026. Explore the latest Food Bazaar weekly ad featuring grocery savings, fresh produce specials, and weekly  offers."
+store_og_title: "Food Bazaar Weekly Circular Oct 2026 - Weekly Ad"
+store_og_description: "Food Bazaar Weekly Circular Oct 2026. Explore the latest Food Bazaar weekly ad featuring grocery savings, fresh produce specials, and weekly  offers."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "foodbazaar"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1136"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Check the Food Bazaar weekly ad for savings on fresh produce, meats, seafood, and grocery items."
     coupon_aff_url: "https://www.foodbazaar.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1137"
     coupon_title: "Food Bazaar In-Store Promotions"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Find rotating in-store deals and seasonal grocery discounts at Food Bazaar Supermarket locations."
     coupon_aff_url: "https://www.foodbazaar.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

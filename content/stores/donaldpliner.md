@@ -1,20 +1,20 @@
 ---
-title: "Donald Pliner Promo Code Aug 2026 - 20% Off Coupon"
+title: "Donald Pliner Promo Code Oct 2026 - 20% Off Coupon"
 slug: "donaldpliner"
-description: "Donald Pliner Promo Code Aug 2026. Get up to 20% off designer shoes, boots, handbags, and luxury fashion with verified Donald Pliner coupon codes."
+description: "Donald Pliner Promo Code Oct 2026. Get up to 20% off designer shoes, boots, handbags, and luxury fashion with verified Donald Pliner coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Donald Pliner"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Donald Pliner Promo Code Aug 2026 - 20% Off Coupon"
-store_title: "Donald Pliner Promo Code Aug 2026 - 20% Off Coupon"
-store_meta_description: "Donald Pliner Promo Code Aug 2026. Get up to 20% off designer shoes, boots, handbags, and luxury fashion with verified Donald Pliner coupon codes."
+store_h1: "Donald Pliner Promo Code Oct 2026 - 20% Off Coupon"
+store_title: "Donald Pliner Promo Code Oct 2026 - 20% Off Coupon"
+store_meta_description: "Donald Pliner Promo Code Oct 2026. Get up to 20% off designer shoes, boots, handbags, and luxury fashion with verified Donald Pliner coupon codes."
 store_keywords: "donald pliner coupon, donald pliner promo code, donald pliner coupons, donald pliner discount code, donald pliner coupon codes, donald pliner promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Donald Pliner Promo Code Aug 2026 - 20% Off Coupon"
-store_og_description: "Donald Pliner Promo Code Aug 2026. Get up to 20% off designer shoes, boots, handbags, and luxury fashion with verified Donald Pliner coupon codes."
+store_og_title: "Donald Pliner Promo Code Oct 2026 - 20% Off Coupon"
+store_og_description: "Donald Pliner Promo Code Oct 2026. Get up to 20% off designer shoes, boots, handbags, and luxury fashion with verified Donald Pliner coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 7
 store_id: "donaldpliner"
 best_discount: "Up to 20% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1236"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12484-214799-217151"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1237"
     coupon_title: "20% Off"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12484-214799-217151"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1238"
     coupon_title: "$50 Off"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12484-214799-217151"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1239"
     coupon_title: "15% Off"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12484-214799-217151"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1240"
     coupon_title: "15% Off"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12484-214799-217151"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1241"
     coupon_title: "15% Off"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12484-214799-217151"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1242"
     coupon_title: "15% Off"
@@ -84,7 +84,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12484-214799-217151"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

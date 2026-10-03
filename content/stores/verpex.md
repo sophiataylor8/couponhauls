@@ -1,20 +1,20 @@
 ---
-title: "Verpex Promo Code Aug 2026 - 20% Off Coupon"
+title: "Verpex Promo Code Oct 2026 - 20% Off Coupon"
 slug: "verpex"
-description: "Verpex Promo Code Aug 2026. Save up to 20% on cloud hosting, reseller hosting, domains, and website services with verified Verpex coupon codes."
+description: "Verpex Promo Code Oct 2026. Save up to 20% on cloud hosting, reseller hosting, domains, and website services with verified Verpex coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Verpex"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Verpex Promo Code Aug 2026 - 20% Off Coupon"
-store_title: "Verpex Promo Code Aug 2026 - 20% Off Coupon"
-store_meta_description: "Verpex Promo Code Aug 2026. Save up to 20% on cloud hosting, reseller hosting, domains, and website services with verified Verpex coupon codes."
+store_h1: "Verpex Promo Code Oct 2026 - 20% Off Coupon"
+store_title: "Verpex Promo Code Oct 2026 - 20% Off Coupon"
+store_meta_description: "Verpex Promo Code Oct 2026. Save up to 20% on cloud hosting, reseller hosting, domains, and website services with verified Verpex coupon codes."
 store_keywords: "verpex coupon, verpex promo code, verpex coupons, verpex discount code, verpex coupon codes, verpex promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Verpex Promo Code Aug 2026 - 20% Off Coupon"
-store_og_description: "Verpex Promo Code Aug 2026. Save up to 20% on cloud hosting, reseller hosting, domains, and website services with verified Verpex coupon codes."
+store_og_title: "Verpex Promo Code Oct 2026 - 20% Off Coupon"
+store_og_description: "Verpex Promo Code Oct 2026. Save up to 20% on cloud hosting, reseller hosting, domains, and website services with verified Verpex coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 6
 store_id: "verpex"
 best_discount: "Up to 25% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1148"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://clients.verpex.com/aff/?a_aid=refid&a_aid=reviewsoffers"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1149"
     coupon_title: "5% Off"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://clients.verpex.com/aff/?a_aid=refid&a_aid=reviewsoffers"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1150"
     coupon_title: "20% Off"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://clients.verpex.com/aff/?a_aid=refid&a_aid=reviewsoffers"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1151"
     coupon_title: "5% Off"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://clients.verpex.com/aff/?a_aid=refid&a_aid=reviewsoffers"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1152"
     coupon_title: "22% Off"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://clients.verpex.com/aff/?a_aid=refid&a_aid=reviewsoffers"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1153"
     coupon_title: "Unlimited Reseller Hosting Plans"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://clients.verpex.com/aff/?a_aid=refid&a_aid=reviewsoffers"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -1,20 +1,20 @@
 ---
-title: "Overstock Promo Code Aug 2026 - 40% Off Coupon"
+title: "Overstock Promo Code Oct 2026 - 40% Off Coupon"
 slug: "overstock"
-description: "Overstock Promo Code Aug 2026.  Save up to 40% on furniture, rugs, decor, and home essentials with verified Overstock coupon codes."
+description: "Overstock Promo Code Oct 2026.  Save up to 40% on furniture, rugs, decor, and home essentials with verified Overstock coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Overstock"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Overstock Promo Code Aug 2026 - 40% Off Coupon"
-store_title: "Overstock Promo Code Aug 2026 - 40% Off Coupon"
-store_meta_description: "Overstock Promo Code Aug 2026.  Save up to 40% on furniture, rugs, decor, and home essentials with verified Overstock coupon codes."
+store_h1: "Overstock Promo Code Oct 2026 - 40% Off Coupon"
+store_title: "Overstock Promo Code Oct 2026 - 40% Off Coupon"
+store_meta_description: "Overstock Promo Code Oct 2026.  Save up to 40% on furniture, rugs, decor, and home essentials with verified Overstock coupon codes."
 store_keywords: "overstock coupon code, overstock promo code, overstock discount code, overstock deals, overstock offers, overstock sale, overstock coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Overstock Promo Code Aug 2026 - 40% Off Coupon"
-store_og_description: "Overstock Promo Code Aug 2026.  Save up to 40% on furniture, rugs, decor, and home essentials with verified Overstock coupon codes."
+store_og_title: "Overstock Promo Code Oct 2026 - 40% Off Coupon"
+store_og_description: "Overstock Promo Code Oct 2026.  Save up to 40% on furniture, rugs, decor, and home essentials with verified Overstock coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: true
 coupon_count: 9
 store_id: "overstock"
 best_discount: "Up to 40% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1015"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: "Rug category discount"
     coupon_aff_url: "https://www.overstock.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1016"
     coupon_title: "Furniture Clearance 10%"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: "Home items discount"
     coupon_aff_url: "https://www.overstock.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1329"
     coupon_title: "EXTRA 15% OFF ALL SAFAVIEH"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.overstock.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1327"
     coupon_title: "Free Shipping Over $49.99"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.overstock.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1328"
     coupon_title: "Get 15% off when you sign up for emails"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.overstock.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1330"
     coupon_title: "Lamps starting at $39. Save Now"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.overstock.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1331"
     coupon_title: "Accent chairs starting at $149"
@@ -84,7 +84,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.overstock.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1332"
     coupon_title: "Nightstands under $199"
@@ -92,7 +92,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.overstock.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1333"
     coupon_title: "Up to 40% off Rustic furniture, vintage decor"
@@ -100,7 +100,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.overstock.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -1,20 +1,20 @@
 ---
-title: "Aerosoles Promo Code Aug 2026 - 20% Off Coupon"
+title: "Aerosoles Promo Code Oct 2026 - 20% Off Coupon"
 slug: "aerosoles"
-description: "Aerosoles Promo Code Aug 2026. Save up to 20% on comfortable shoes, sandals, boots, and everyday footwear with verified Aerosoles coupon codes."
+description: "Aerosoles Promo Code Oct 2026. Save up to 20% on comfortable shoes, sandals, boots, and everyday footwear with verified Aerosoles coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Aerosoles"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Aerosoles Promo Code Aug 2026 - 20% Off Coupon"
-store_title: "Aerosoles Promo Code Aug 2026 - 20% Off Coupon"
-store_meta_description: "Aerosoles Promo Code Aug 2026. Save up to 20% on comfortable shoes, sandals, boots, and everyday footwear with verified Aerosoles coupon codes."
+store_h1: "Aerosoles Promo Code Oct 2026 - 20% Off Coupon"
+store_title: "Aerosoles Promo Code Oct 2026 - 20% Off Coupon"
+store_meta_description: "Aerosoles Promo Code Oct 2026. Save up to 20% on comfortable shoes, sandals, boots, and everyday footwear with verified Aerosoles coupon codes."
 store_keywords: "aerosoles coupon, aerosoles promo code, aerosoles coupons, aerosoles discount code, aerosoles coupon codes, aerosoles promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Aerosoles Promo Code Aug 2026 - 20% Off Coupon"
-store_og_description: "Aerosoles Promo Code Aug 2026. Save up to 20% on comfortable shoes, sandals, boots, and everyday footwear with verified Aerosoles coupon codes."
+store_og_title: "Aerosoles Promo Code Oct 2026 - 20% Off Coupon"
+store_og_description: "Aerosoles Promo Code Oct 2026. Save up to 20% on comfortable shoes, sandals, boots, and everyday footwear with verified Aerosoles coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 6
 store_id: "aerosoles"
 best_discount: "Up to 30% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1162"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12813-214799-272782"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1163"
     coupon_title: "Extra 25% Off"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12813-214799-272782"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1164"
     coupon_title: "15% Off"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12813-214799-272782"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1165"
     coupon_title: "Aerosoles Rewards"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: "Earn 1 point for every $1 you spend"
     coupon_aff_url: "https://www.pjatr.com/t/8-12813-214799-272782"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1166"
     coupon_title: "Sign up and receive 15% OFF your first order"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjatr.com/t/8-12813-214799-272782"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1167"
     coupon_title: "Just reduced styles, up to 30% off"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: "NEW SPRING MARKDOWNS"
     coupon_aff_url: "https://www.pjatr.com/t/8-12813-214799-272782"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

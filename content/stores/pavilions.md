@@ -1,20 +1,20 @@
 ---
-title: "Pavilions Weekly Ad Aug 2026 - Weekly Flyer"
+title: "Pavilions Weekly Ad Oct 2026 - Weekly Flyer"
 slug: "pavilions"
-description: "Pavilions Weekly Ad Aug 2026. Browse the newest Pavilions weekly ad for fresh grocery savings, household products, snacks, and limited-time offers."
+description: "Pavilions Weekly Ad Oct 2026. Browse the newest Pavilions weekly ad for fresh grocery savings, household products, snacks, and limited-time offers."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Pavilions"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Pavilions Weekly Ad Aug 2026 - Weekly Flyer"
-store_title: "Pavilions Weekly Ad Aug 2026 - Weekly Flyer"
-store_meta_description: "Pavilions Weekly Ad Aug 2026. Browse the newest Pavilions weekly ad for fresh grocery savings, household products, snacks, and limited-time offers."
+store_h1: "Pavilions Weekly Ad Oct 2026 - Weekly Flyer"
+store_title: "Pavilions Weekly Ad Oct 2026 - Weekly Flyer"
+store_meta_description: "Pavilions Weekly Ad Oct 2026. Browse the newest Pavilions weekly ad for fresh grocery savings, household products, snacks, and limited-time offers."
 store_keywords: "pavilions coupon code, pavilions promo code, pavilions discount code, pavilions deals, pavilions offers, pavilions grocery coupons, pavilions coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Pavilions Weekly Ad Aug 2026 - Weekly Flyer"
-store_og_description: "Pavilions Weekly Ad Aug 2026. Browse the newest Pavilions weekly ad for fresh grocery savings, household products, snacks, and limited-time offers."
+store_og_title: "Pavilions Weekly Ad Oct 2026 - Weekly Flyer"
+store_og_description: "Pavilions Weekly Ad Oct 2026. Browse the newest Pavilions weekly ad for fresh grocery savings, household products, snacks, and limited-time offers."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 7
 store_id: "pavilions"
 best_discount: "Up to 15% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1036"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: "Clip digital coupons through the Pavilions for U program and save on groceries, produce, meat, and household essentials each week."
     coupon_aff_url: "https://www.pavilions.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1037"
     coupon_title: "Weekly Grocery Deals at Pavilions"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: "Shop the weekly ad to find limited-time discounts on fresh produce, deli items, snacks, beverages, and everyday groceries."
     coupon_aff_url: "https://www.pavilions.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1397"
     coupon_title: "$30 Off on your first online pickup or delivery"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pavilions.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1398"
     coupon_title: "Top members save $25 weekly!"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pavilions.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1399"
     coupon_title: "Save up to $20 on groceries"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pavilions.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1400"
     coupon_title: "Buy 1 Get 1 $5 Off Shrimp & Prawns"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pavilions.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1401"
     coupon_title: "15% Off Easy-Off Professional Oven & Grill Cleaner"
@@ -84,7 +84,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pavilions.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

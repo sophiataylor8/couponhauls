@@ -1,20 +1,20 @@
 ---
-title: "Albertsons Weekly Ad Aug 2026 - Grocery Ad"
+title: "Albertsons Weekly Ad Oct 2026 - Grocery Ad"
 slug: "albertsons"
-description: "Albertsons Weekly Ad Aug 2026. Check the newest Albertsons grocery ad for weekly discounts on fresh produce, pantry items, beverages, and more."
+description: "Albertsons Weekly Ad Oct 2026. Check the newest Albertsons grocery ad for weekly discounts on fresh produce, pantry items, beverages, and more."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Albertsons"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Albertsons Weekly Ad Aug 2026 - Grocery Ad"
-store_title: "Albertsons Weekly Ad Aug 2026 - Grocery Ad"
-store_meta_description: "Albertsons Weekly Ad Aug 2026. Check the newest Albertsons grocery ad for weekly discounts on fresh produce, pantry items, beverages, and more."
+store_h1: "Albertsons Weekly Ad Oct 2026 - Grocery Ad"
+store_title: "Albertsons Weekly Ad Oct 2026 - Grocery Ad"
+store_meta_description: "Albertsons Weekly Ad Oct 2026. Check the newest Albertsons grocery ad for weekly discounts on fresh produce, pantry items, beverages, and more."
 store_keywords: "albertsons coupon code, albertsons promo code, albertsons discount code, albertsons deals, albertsons offers, albertsons grocery coupons, albertsons coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Albertsons Weekly Ad Aug 2026 - Grocery Ad"
-store_og_description: "Albertsons Weekly Ad Aug 2026. Check the newest Albertsons grocery ad for weekly discounts on fresh produce, pantry items, beverages, and more."
+store_og_title: "Albertsons Weekly Ad Oct 2026 - Grocery Ad"
+store_og_description: "Albertsons Weekly Ad Oct 2026. Check the newest Albertsons grocery ad for weekly discounts on fresh produce, pantry items, beverages, and more."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "albertsons"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1048"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Sign up for Albertsons for U to clip digital coupons and enjoy personalized grocery discounts and weekly promotions."
     coupon_aff_url: "https://www.albertsons.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1049"
     coupon_title: "Albertsons Weekly Ad Savings"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Explore Albertsons weekly ad to save on fresh produce, meats, bakery goods, beverages, and everyday grocery items."
     coupon_aff_url: "https://www.albertsons.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

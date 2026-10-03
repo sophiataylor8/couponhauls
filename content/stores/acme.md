@@ -1,20 +1,20 @@
 ---
-title: "Acme Markets Weekly Ad Aug 2026 - Flyer This Week"
+title: "Acme Markets Weekly Ad Oct 2026 - Flyer This Week"
 slug: "acme"
-description: "Acme Markets Weekly Ad Aug 2026. View this week’s Acme Markets flyer featuring grocery savings, fresh produce deals, and supermarket specials."
+description: "Acme Markets Weekly Ad Oct 2026. View this week’s Acme Markets flyer featuring grocery savings, fresh produce deals, and supermarket specials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "ACME"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Acme Markets Weekly Ad Aug 2026 - Flyer This Week"
-store_title: "Acme Markets Weekly Ad Aug 2026 - Flyer This Week"
-store_meta_description: "Acme Markets Weekly Ad Aug 2026. View this week’s Acme Markets flyer featuring grocery savings, fresh produce deals, and supermarket specials."
+store_h1: "Acme Markets Weekly Ad Oct 2026 - Flyer This Week"
+store_title: "Acme Markets Weekly Ad Oct 2026 - Flyer This Week"
+store_meta_description: "Acme Markets Weekly Ad Oct 2026. View this week’s Acme Markets flyer featuring grocery savings, fresh produce deals, and supermarket specials."
 store_keywords: "acme coupon code, acme promo code, acme discount code, acme deals, acme offers, acme grocery coupons, acme coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Acme Markets Weekly Ad Aug 2026 - Flyer This Week"
-store_og_description: "Acme Markets Weekly Ad Aug 2026. View this week’s Acme Markets flyer featuring grocery savings, fresh produce deals, and supermarket specials."
+store_og_title: "Acme Markets Weekly Ad Oct 2026 - Flyer This Week"
+store_og_description: "Acme Markets Weekly Ad Oct 2026. View this week’s Acme Markets flyer featuring grocery savings, fresh produce deals, and supermarket specials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "acme"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1126"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Sign up for ACME for U to access digital coupons and personalized grocery deals."
     coupon_aff_url: "https://www.acmemarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1127"
     coupon_title: "ACME Weekly Grocery Deals"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Browse the ACME weekly ad to discover discounts on produce, meats, bakery items, and pantry staples."
     coupon_aff_url: "https://www.acmemarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

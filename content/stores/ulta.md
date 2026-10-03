@@ -1,20 +1,20 @@
 ---
-title: "Ulta Promo Code Aug 2026 - 15% Off Coupon"
+title: "Ulta Promo Code Oct 2026 - 15% Off Coupon"
 slug: "ulta"
-description: "Ulta Promo Code Aug 2026. Save up to 15% on makeup, skincare, haircare, fragrances, and beauty with verified Ulta coupon codes."
+description: "Ulta Promo Code Oct 2026. Save up to 15% on makeup, skincare, haircare, fragrances, and beauty with verified Ulta coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Ulta"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Ulta Promo Code Aug 2026 - 15% Off Coupon"
-store_title: "Ulta Promo Code Aug 2026 - 15% Off Coupon"
-store_meta_description: "Ulta Promo Code Aug 2026. Save up to 15% on makeup, skincare, haircare, fragrances, and beauty with verified Ulta coupon codes."
+store_h1: "Ulta Promo Code Oct 2026 - 15% Off Coupon"
+store_title: "Ulta Promo Code Oct 2026 - 15% Off Coupon"
+store_meta_description: "Ulta Promo Code Oct 2026. Save up to 15% on makeup, skincare, haircare, fragrances, and beauty with verified Ulta coupon codes."
 store_keywords: "ulta coupon, ulta promo code, ulta beauty coupon, ulta coupon $3.50 off $10, ulta coupon code $15 off $50, ulta beauty 20 off coupon, ulta discount code, ulta cosmetics coupon"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Ulta Promo Code Aug 2026 - 15% Off Coupon"
-store_og_description: "Ulta Promo Code Aug 2026. Save up to 15% on makeup, skincare, haircare, fragrances, and beauty with verified Ulta coupon codes."
+store_og_title: "Ulta Promo Code Oct 2026 - 15% Off Coupon"
+store_og_description: "Ulta Promo Code Oct 2026. Save up to 15% on makeup, skincare, haircare, fragrances, and beauty with verified Ulta coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "ulta"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1140"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Shop Ulta weekly deals to save on makeup, skincare, haircare, and beauty tools from top brands."
     coupon_aff_url: "https://www.ulta.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1141"
     coupon_title: "Ulta Ultamate Rewards Points Offers"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Earn and redeem points with Ultamate Rewards and access exclusive member-only discounts on beauty products."
     coupon_aff_url: "https://www.ulta.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

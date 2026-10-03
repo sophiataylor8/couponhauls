@@ -1,0 +1,172 @@
+{{/*
+  layouts/partials/home-schema.html
+  JSON-LD for the homepage: Organization, WebSite, WebPage, ItemList, FAQPage.
+
+  Usage in layouts/index.html:
+    {{ define "schema" }}{{ partial "home-schema.html" . }}{{ end }}
+
+  RULE: every "| jsonify" inside a ld+json script MUST be followed by "| safeJS",
+  otherwise Hugo's contextual escaping wraps the value in a second pair of quotes.
+  FAQ answers mirror the 5 visible questions in index.html (Google requires a match).
+*/}}
+
+{{- $siteURL        := .Site.BaseURL | strings.TrimRight "/" -}}
+{{- $isProd         := strings.Contains .Site.BaseURL "couponhauls.com" -}}
+{{- $baseHost       := .Site.BaseURL | replaceRE "^https?://(www\\.)?" "" | strings.TrimRight "/" -}}
+{{- $allStores      := where .Site.RegularPages "Section" "stores" -}}
+{{- $activeStores   := where $allStores ".Params.is_active" true -}}
+{{- $storeCount     := len $activeStores -}}
+{{- $featuredStores := site.Data.featured_stores | default slice -}}
+{{- $featCount      := len $featuredStores -}}
+{{- $logoURL        := printf "%simages/couponhaulslogo.png" .Site.BaseURL -}}
+
+{{/* ---- 1. Organization ---- */}}
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Organization",
+"@id": {{ (printf "%s/#organization" $siteURL) | jsonify | safeJS }},
+"name": {{ .Site.Title | jsonify | safeJS }},
+"alternateName": "CouponHauls",
+"url": {{ .Site.BaseURL | jsonify | safeJS }},
+"logo": {
+ "@type": "ImageObject",
+ "@id": {{ (printf "%s/#logo" $siteURL) | jsonify | safeJS }},
+ "url": {{ $logoURL | jsonify | safeJS }},
+ "contentUrl": {{ $logoURL | jsonify | safeJS }},
+ "caption": {{ .Site.Title | jsonify | safeJS }}
+},
+"image": { "@id": {{ (printf "%s/#logo" $siteURL) | jsonify | safeJS }} },
+"description": {{ .Site.Params.description | jsonify | safeJS }},
+"email": "info@couponhauls.com",
+"sameAs": [
+ "https://www.pinterest.com/couponhauls/",
+ "https://x.com/couponhauls_com"
+],
+"contactPoint": {
+ "@type": "ContactPoint",
+ "contactType": "customer service",
+ "email": "info@couponhauls.com",
+ "availableLanguage": "en"
+}
+}
+</script>
+
+{{/* ---- 2. WebSite + SearchAction ---- */}}
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "WebSite",
+"@id": {{ (printf "%s/#website" $siteURL) | jsonify | safeJS }},
+"url": {{ .Site.BaseURL | jsonify | safeJS }},
+"name": {{ .Site.Title | jsonify | safeJS }},
+"description": {{ .Site.Params.description | jsonify | safeJS }},
+"inLanguage": "en-US",
+"publisher": { "@id": {{ (printf "%s/#organization" $siteURL) | jsonify | safeJS }} },
+"potentialAction": {
+ "@type": "SearchAction",
+ "target": {
+   "@type": "EntryPoint",
+   "urlTemplate": {{ (printf "%s/stores/?q={search_term_string}" $siteURL) | jsonify | safeJS }}
+ },
+ "query-input": "required name=search_term_string"
+}
+}
+</script>
+
+{{/* ---- 3. WebPage ---- */}}
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "WebPage",
+"@id": {{ (printf "%s/#webpage" $siteURL) | jsonify | safeJS }},
+"url": {{ .Site.BaseURL | jsonify | safeJS }},
+"name": {{ (printf "Best Coupon Codes & Promo Codes %s | %s" (now.Format "2006") .Site.Title) | jsonify | safeJS }},
+"description": {{ .Site.Params.description | jsonify | safeJS }},
+"inLanguage": "en-US",
+"dateModified": {{ now.Format "2006-01-02" | jsonify | safeJS }},
+"isPartOf": { "@id": {{ (printf "%s/#website" $siteURL) | jsonify | safeJS }} },
+"about": { "@id": {{ (printf "%s/#organization" $siteURL) | jsonify | safeJS }} },
+"primaryImageOfPage": {
+ "@type": "ImageObject",
+ "url": {{ $logoURL | jsonify | safeJS }}
+}
+}
+</script>
+
+{{/* ---- 4. ItemList: featured stores ---- */}}
+{{- if $featuredStores }}
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "ItemList",
+"name": {{ (printf "Top Coupon Stores on %s" .Site.Title) | jsonify | safeJS }},
+"numberOfItems": {{ $featCount }},
+"itemListElement": [
+ {{ range $i, $store := $featuredStores -}}
+ {{- $slug := $store.slug -}}
+ {{- $sURL := printf "%s/%s/" $siteURL $slug -}}
+ {{- if and $isProd $slug -}}
+   {{- $sURL = printf "https://%s.%s/" $slug $baseHost -}}
+ {{- end }}
+ {
+   "@type": "ListItem",
+   "position": {{ add $i 1 }},
+   "url": {{ $sURL | jsonify | safeJS }},
+   "name": {{ (printf "%s Coupons" $store.store_name) | jsonify | safeJS }}
+ }{{ if lt $i (sub $featCount 1) }},{{ end }}
+ {{ end -}}
+]
+}
+</script>
+{{- end }}
+
+{{/* ---- 5. FAQPage (matches the 5 visible questions, same order) ---- */}}
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+ {
+   "@type": "Question",
+   "name": "How do I use a coupon code from CouponHauls?",
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Using a coupon is simple: (1) Find a deal and click Reveal Code or Copy Code. (2) Visit the retailer and add items to your cart. (3) At checkout, paste the code into the promo field and click Apply. The discount is deducted from your total automatically."
+   }
+ },
+ {
+   "@type": "Question",
+   "name": "Are the coupon codes on CouponHauls verified and working?",
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Every code is verified before publishing. We test and update codes daily to remove expired offers and add fresh ones. Our verified success rate is over 98%."
+   }
+ },
+ {
+   "@type": "Question",
+   "name": "How many stores does CouponHauls cover?",
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": {{ (printf "CouponHauls currently covers %d+ stores across fashion, electronics, groceries, home goods, outdoor gear, and beauty. New stores are added every week." $storeCount) | jsonify | safeJS }}
+   }
+ },
+ {
+   "@type": "Question",
+   "name": "Is CouponHauls free to use?",
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, CouponHauls is 100% free. No account or sign-up is required. We earn a small affiliate commission when you purchase through our links, at no extra cost to you."
+   }
+ },
+ {
+   "@type": "Question",
+   "name": "What types of deals does CouponHauls offer?",
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "CouponHauls offers promo codes, percentage-off discounts, free shipping coupons, dollar-off deals, buy-one-get-one offers, and no-code deals that activate at checkout automatically. We also track weekly store ads and seasonal sales events."
+   }
+ }
+]
+}
+</script>

@@ -1,20 +1,20 @@
 ---
-title: "United Supermarket Weekly Ad Aug 2026 - Sales Add"
+title: "United Supermarket Weekly Ad Oct 2026 - Sales Add"
 slug: "unitedsupermarkets"
-description: "United Supermarket Weekly Ad Aug 2026. Discover this week’s United Supermarket sales ad with grocery discounts, fresh meat offers, and pantry savings."
+description: "United Supermarket Weekly Ad Oct 2026. Discover this week’s United Supermarket sales ad with grocery discounts, fresh meat offers, and pantry savings."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "United Supermarkets"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "United Supermarket Weekly Ad Aug 2026 - Sales Add"
-store_title: "United Supermarket Weekly Ad Aug 2026 - Sales Add"
-store_meta_description: "United Supermarket Weekly Ad Aug 2026. Discover this week’s United Supermarket sales ad with grocery discounts, fresh meat offers, and pantry savings."
+store_h1: "United Supermarket Weekly Ad Oct 2026 - Sales Add"
+store_title: "United Supermarket Weekly Ad Oct 2026 - Sales Add"
+store_meta_description: "United Supermarket Weekly Ad Oct 2026. Discover this week’s United Supermarket sales ad with grocery discounts, fresh meat offers, and pantry savings."
 store_keywords: "united supermarkets coupon code, united supermarkets promo code, united supermarkets discount code, united supermarkets deals, united supermarkets offers, united supermarkets grocery coupons, united supermarkets coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "United Supermarket Weekly Ad Aug 2026 - Sales Add"
-store_og_description: "United Supermarket Weekly Ad Aug 2026. Discover this week’s United Supermarket sales ad with grocery discounts, fresh meat offers, and pantry savings."
+store_og_title: "United Supermarket Weekly Ad Oct 2026 - Sales Add"
+store_og_description: "United Supermarket Weekly Ad Oct 2026. Discover this week’s United Supermarket sales ad with grocery discounts, fresh meat offers, and pantry savings."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "unitedsupermarkets"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1090"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Join United Rewards to clip digital coupons and enjoy personalized savings on groceries and household items."
     coupon_aff_url: "https://www.unitedsupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1091"
     coupon_title: "United Supermarkets Weekly Ad Deals"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Check the weekly ad to find special discounts on produce, meats, bakery items, and everyday groceries."
     coupon_aff_url: "https://www.unitedsupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

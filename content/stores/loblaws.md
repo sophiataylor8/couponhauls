@@ -1,20 +1,20 @@
 ---
-title: "Loblaws Sale This Week Aug 2026 - Flyer Ad"
+title: "Loblaws Sale This Week Oct 2026 - Flyer Ad"
 slug: "loblaws"
-description: "Loblaws Sale This Week Aug 2026. Check the latest Loblaws flyer featuring grocery savings, fresh produce offers, and weekly supermarket deals."
+description: "Loblaws Sale This Week Oct 2026. Check the latest Loblaws flyer featuring grocery savings, fresh produce offers, and weekly supermarket deals."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Loblaws"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Loblaws Sale This Week Aug 2026 - Flyer Ad"
-store_title: "Loblaws Sale This Week Aug 2026 - Flyer Ad"
-store_meta_description: "Loblaws Sale This Week Aug 2026. Check the latest Loblaws flyer featuring grocery savings, fresh produce offers, and weekly supermarket deals."
+store_h1: "Loblaws Sale This Week Oct 2026 - Flyer Ad"
+store_title: "Loblaws Sale This Week Oct 2026 - Flyer Ad"
+store_meta_description: "Loblaws Sale This Week Oct 2026. Check the latest Loblaws flyer featuring grocery savings, fresh produce offers, and weekly supermarket deals."
 store_keywords: "loblaws coupon code, loblaws promo code, loblaws discount code, loblaws deals, loblaws offers, loblaws grocery coupons, loblaws coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Loblaws Sale This Week Aug 2026 - Flyer Ad"
-store_og_description: "Loblaws Sale This Week Aug 2026. Check the latest Loblaws flyer featuring grocery savings, fresh produce offers, and weekly supermarket deals."
+store_og_title: "Loblaws Sale This Week Oct 2026 - Flyer Ad"
+store_og_description: "Loblaws Sale This Week Oct 2026. Check the latest Loblaws flyer featuring grocery savings, fresh produce offers, and weekly supermarket deals."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "loblaws"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1072"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Check the Loblaws weekly flyer to discover grocery discounts on fresh produce, bakery goods, meats, and pantry staples."
     coupon_aff_url: "https://www.loblaws.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1073"
     coupon_title: "PC Optimum Rewards Offers"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Earn and redeem points with PC Optimum while shopping at Loblaws and enjoy exclusive member-only grocery deals."
     coupon_aff_url: "https://www.loblaws.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

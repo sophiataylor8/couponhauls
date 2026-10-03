@@ -1,20 +1,20 @@
 ---
-title: "Kohl's Promo Code Aug 2026 - 20% Off Coupon"
+title: "Kohl's Promo Code Oct 2026 - 20% Off Coupon"
 slug: "kohls"
-description: "Kohl's Promo Code Aug 2026. Get up to 20% off clothing, shoes, home decor, and everyday essentials with verified Kohl's coupon codes."
+description: "Kohl's Promo Code Oct 2026. Get up to 20% off clothing, shoes, home decor, and everyday essentials with verified Kohl's coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Kohls"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Kohl's Promo Code Aug 2026 - 20% Off Coupon"
-store_title: "Kohl's Promo Code Aug 2026 - 20% Off Coupon"
-store_meta_description: "Kohl's Promo Code Aug 2026. Get up to 20% off clothing, shoes, home decor, and everyday essentials with verified Kohl's coupon codes."
+store_h1: "Kohl's Promo Code Oct 2026 - 20% Off Coupon"
+store_title: "Kohl's Promo Code Oct 2026 - 20% Off Coupon"
+store_meta_description: "Kohl's Promo Code Oct 2026. Get up to 20% off clothing, shoes, home decor, and everyday essentials with verified Kohl's coupon codes."
 store_keywords: "kohls coupon code, kohls promo code, kohls discount code, kohls deals, kohls offers, kohls sale, kohls coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Kohl's Promo Code Aug 2026 - 20% Off Coupon"
-store_og_description: "Kohl's Promo Code Aug 2026. Get up to 20% off clothing, shoes, home decor, and everyday essentials with verified Kohl's coupon codes."
+store_og_title: "Kohl's Promo Code Oct 2026 - 20% Off Coupon"
+store_og_description: "Kohl's Promo Code Oct 2026. Get up to 20% off clothing, shoes, home decor, and everyday essentials with verified Kohl's coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 10
 store_id: "kohls"
 best_discount: "Up to 50% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1025"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: "Multi-buy savings"
     coupon_aff_url: "https://www.kohls.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1026"
     coupon_title: "12% Off Fashion"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: "Apparel discount"
     coupon_aff_url: "https://www.kohls.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1027"
     coupon_title: "20% Off"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: "discount on sale"
     coupon_aff_url: "https://www.kohls.com/"
     coupon_type: "Coupon"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1362"
     coupon_title: "Extra 15% Off Next Purchase With Kohl's Text Sign Up"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.kohls.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1363"
     coupon_title: "Extra 40% Off First Kohl’s Card Purchase"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.kohls.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1364"
     coupon_title: "Free Shipping On $49"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.kohls.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1365"
     coupon_title: "Earn 5% Every Day With Kohl's Rewards"
@@ -84,7 +84,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.kohls.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1366"
     coupon_title: "40% Off Select Outdoor Toys"
@@ -92,7 +92,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.kohls.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1367"
     coupon_title: "Up To 50% Off Select Swimwear"
@@ -100,7 +100,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.kohls.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1368"
     coupon_title: "Up To 40% Off Select Tees"
@@ -108,7 +108,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.kohls.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

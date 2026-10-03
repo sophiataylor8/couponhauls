@@ -1,20 +1,20 @@
 ---
-title: "Freshco Weekly Flyer Aug 2026 - Weekly Ad"
+title: "Freshco Weekly Flyer Oct 2026 - Weekly Ad"
 slug: "freshco"
-description: "Freshco Weekly Flyer Aug 2026. Explore the latest Freshco weekly ad with savings on groceries, fresh produce, meat, and household products."
+description: "Freshco Weekly Flyer Oct 2026. Explore the latest Freshco weekly ad with savings on groceries, fresh produce, meat, and household products."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "FreshCo"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Freshco Weekly Flyer Aug 2026 - Weekly Ad"
-store_title: "Freshco Weekly Flyer Aug 2026 - Weekly Ad"
-store_meta_description: "Freshco Weekly Flyer Aug 2026. Explore the latest Freshco weekly ad with savings on groceries, fresh produce, meat, and household products."
+store_h1: "Freshco Weekly Flyer Oct 2026 - Weekly Ad"
+store_title: "Freshco Weekly Flyer Oct 2026 - Weekly Ad"
+store_meta_description: "Freshco Weekly Flyer Oct 2026. Explore the latest Freshco weekly ad with savings on groceries, fresh produce, meat, and household products."
 store_keywords: "freshco coupon code, freshco promo code, freshco discount code, freshco deals, freshco offers, freshco grocery coupons, freshco coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Freshco Weekly Flyer Aug 2026 - Weekly Ad"
-store_og_description: "Freshco Weekly Flyer Aug 2026. Explore the latest Freshco weekly ad with savings on groceries, fresh produce, meat, and household products."
+store_og_title: "Freshco Weekly Flyer Oct 2026 - Weekly Ad"
+store_og_description: "Freshco Weekly Flyer Oct 2026. Explore the latest Freshco weekly ad with savings on groceries, fresh produce, meat, and household products."
 store_og_image: ""
 store_og_type: "website"
 
@@ -26,7 +26,7 @@ is_active: true
 website_featured: false
 coupon_count: 2
 store_id: "freshco"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1112"
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Check the FreshCo weekly flyer to save on fresh produce, meats, pantry items, and grocery essentials."
     coupon_aff_url: "https://freshco.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1113"
     coupon_title: "Scene+ Rewards Offers at FreshCo"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Earn Scene+ points and access exclusive member promotions while shopping at FreshCo stores."
     coupon_aff_url: "https://freshco.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 

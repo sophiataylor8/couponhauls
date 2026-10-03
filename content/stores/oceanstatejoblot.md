@@ -1,20 +1,20 @@
 ---
-title: "Ocean State Job Lot Flyer Aug 2026 - Crazy Deals"
+title: "Ocean State Job Lot Flyer Oct 2026 - Crazy Deals"
 slug: "oceanstatejoblot"
-description: "Ocean State Job Lot Flyer Aug 2026. Explore the latest Ocean State Job Lot flyer featuring crazy deals on home goods, outdoor products and clothing."
+description: "Ocean State Job Lot Flyer Oct 2026. Explore the latest Ocean State Job Lot flyer featuring crazy deals on home goods, outdoor products and clothing."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Ocean State Job Lot"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
-store_h1: "Ocean State Job Lot Flyer Aug 2026 - Crazy Deals"
-store_title: "Ocean State Job Lot Flyer Aug 2026 - Crazy Deals"
-store_meta_description: "Ocean State Job Lot Flyer Aug 2026. Explore the latest Ocean State Job Lot flyer featuring crazy deals on home goods, outdoor products and clothing."
+store_h1: "Ocean State Job Lot Flyer Oct 2026 - Crazy Deals"
+store_title: "Ocean State Job Lot Flyer Oct 2026 - Crazy Deals"
+store_meta_description: "Ocean State Job Lot Flyer Oct 2026. Explore the latest Ocean State Job Lot flyer featuring crazy deals on home goods, outdoor products and clothing."
 store_keywords: "ocean state job lot coupon code, ocean state job lot promo code, ocean state job lot discount code, ocean state job lot deals, ocean state job lot offers, ocean state job lot sale, ocean state job lot coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Ocean State Job Lot Flyer Aug 2026 - Crazy Deals"
-store_og_description: "Ocean State Job Lot Flyer Aug 2026. Explore the latest Ocean State Job Lot flyer featuring crazy deals on home goods, outdoor products and clothing."
+store_og_title: "Ocean State Job Lot Flyer Oct 2026 - Crazy Deals"
+store_og_description: "Ocean State Job Lot Flyer Oct 2026. Explore the latest Ocean State Job Lot flyer featuring crazy deals on home goods, outdoor products and clothing."
 store_og_image: ""
 store_og_type: "website"
 
@@ -27,7 +27,7 @@ website_featured: false
 coupon_count: 7
 store_id: "oceanstatejoblot"
 best_discount: "Up to 30% Off"
-verified_date: "July 2026"
+verified_date: "October 2026"
 
 coupons:
   - coupon_id: "1034"
@@ -36,7 +36,7 @@ coupons:
     coupon_description: "Shop select Crazy Deals items and receive a store gift card worth a percentage of the purchase value after buying qualifying products."
     coupon_aff_url: "https://www.oceanstatejoblot.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1035"
     coupon_title: "Job Lot Insider Club Exclusive Savings"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: "Join the free Insider Club to unlock member-only pricing, special promotions, and seasonal discounts across many store items."
     coupon_aff_url: "https://www.oceanstatejoblot.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1392"
     coupon_title: "10% Off Jingle Time LED Twinkle Colored String Lights with Timer"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.oceanstatejoblot.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1393"
     coupon_title: "30% Off Holiday Collection Kitchen Towels, Set of 2"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.oceanstatejoblot.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1394"
     coupon_title: "20% Off Yourigami Folding Convertible Play Couch, Fossil Gray"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.oceanstatejoblot.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1395"
     coupon_title: "15% Off Vita Garden Fence Panels, Set of 4"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.oceanstatejoblot.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1396"
     coupon_title: "25% Off Oneida Patrician Salad Forks, 12-Pack"
@@ -84,7 +84,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.oceanstatejoblot.com/"
     coupon_type: "Deal"
-    coupon_start: "01/06/2026"
+    coupon_start: "02/10/2026"
     expires_at: "31/12/2026"
 ---
 
