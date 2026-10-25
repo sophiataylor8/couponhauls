@@ -3,14 +3,17 @@
   Blog listing page — CouponHauls.com
 
   Fixes applied:
-  - Schema: Blog + ItemList + BreadcrumbList JSON-LD
+  - Schema: every "| jsonify" inside ld+json is followed by "| safeJS"
+    (stops Hugo double-quoting values, which produced /%22https://...%22
+    URLs reported as 404s in Search Console)
+  - Title / description blocks trimmed (no stray newlines in <title>)
+  - og_meta no longer crashes the build when the blog has zero posts
+  - Inner <main> changed to <div id="main-content"> (baseof.html already
+    wraps the page in <main>; nested <main> is invalid HTML)
   - OG/Twitter meta with correct type and description
   - Canonical URL
-  - Clean title and meta description
-  - All CSS in define "extra_head" block
   - Proper heading hierarchy h1 → h2 (featured) → h3 (grid cards)
-  - Featured post uses loading="eager", grid posts use loading="lazy"
-  - width/height on all images to prevent CLS
+  - Featured post uses loading="eager"
   - Sidebar categories dynamically extracted and deduplicated
   - aria-labels on all interactive elements and landmarks
   - No noindex logic anywhere
@@ -19,15 +22,15 @@
 
 
 {{/* ── Title ──────────────────────────────────────────────────────────── */}}
-{{ define "title" }}
+{{ define "title" -}}
 Savings Blog – Coupon Tips & Money-Saving Guides | {{ .Site.Title }}
-{{ end }}
+{{- end }}
 
 
 {{/* ── Meta Description ────────────────────────────────────────────────── */}}
-{{ define "description" }}
-{{- printf "Read expert coupon tips, money-saving guides, and promo code strategies from %s. %d articles to help you save more on every purchase." .Site.Title (len .Pages) -}}
-{{ end }}
+{{ define "description" -}}
+{{ printf "Read expert coupon tips, money-saving guides, and promo code strategies from %s. %d articles to help you save more on every purchase." .Site.Title (len .Pages) }}
+{{- end }}
 
 
 {{/* ── Canonical ────────────────────────────────────────────────────────── */}}
@@ -43,9 +46,11 @@ Savings Blog – Coupon Tips & Money-Saving Guides | {{ .Site.Title }}
 {{- $title   := printf "Savings Blog – Coupon Tips & Money-Saving Guides | %s" .Site.Title -}}
 {{- $desc    := printf "Expert coupon tips, promo code strategies, and money-saving guides. %d articles to help you save more on every purchase." (len .Pages) -}}
 {{- $ogImage := printf "%s%s" .Site.BaseURL .Site.Params.og_image -}}
-{{- with index .Pages 0 -}}
+{{- with .Pages -}}
+{{- with index . 0 -}}
 {{- if .Params.featured_image -}}
  {{- $ogImage = .Params.featured_image -}}
+{{- end -}}
 {{- end -}}
 {{- end -}}
 <meta property="og:title"       content="{{ $title }}">
@@ -72,55 +77,57 @@ Savings Blog – Coupon Tips & Money-Saving Guides | {{ .Site.Title }}
 {
 "@context": "https://schema.org",
 "@type": "Blog",
-"@id": {{ (printf "%s#blog" $pageURL) | jsonify }},
-"url": {{ $pageURL | jsonify }},
-"name": {{ (printf "%s Savings Blog" .Site.Title) | jsonify }},
-"description": {{ (printf "Expert coupon tips, promo code strategies, and money-saving guides from %s." .Site.Title) | jsonify }},
+"@id": {{ (printf "%s#blog" $pageURL) | jsonify | safeJS }},
+"url": {{ $pageURL | jsonify | safeJS }},
+"name": {{ (printf "%s Savings Blog" .Site.Title) | jsonify | safeJS }},
+"description": {{ (printf "Expert coupon tips, promo code strategies, and money-saving guides from %s." .Site.Title) | jsonify | safeJS }},
 "inLanguage": "en-US",
 "publisher": {
  "@type": "Organization",
- "@id": {{ (printf "%s/#organization" $siteURL) | jsonify }},
+ "@id": {{ (printf "%s/#organization" $siteURL) | jsonify | safeJS }},
  "name": "CouponHauls",
- "url": {{ .Site.BaseURL | jsonify }},
+ "url": {{ .Site.BaseURL | jsonify | safeJS }},
  "logo": {
    "@type": "ImageObject",
-   "url": {{ (printf "%simages/couponhaulslogo.png" .Site.BaseURL) | jsonify }}
+   "url": {{ (printf "%simages/couponhaulslogo.png" .Site.BaseURL) | jsonify | safeJS }}
  }
 },
 "isPartOf": {
  "@type": "WebSite",
- "@id": {{ (printf "%s/#website" $siteURL) | jsonify }},
- "url": {{ .Site.BaseURL | jsonify }},
- "name": {{ .Site.Title | jsonify }}
+ "@id": {{ (printf "%s/#website" $siteURL) | jsonify | safeJS }},
+ "url": {{ .Site.BaseURL | jsonify | safeJS }},
+ "name": {{ .Site.Title | jsonify | safeJS }}
 }
 }
 </script>
 
 {{ if .Pages }}
+{{- $top := first 10 .Pages -}}
+{{- $n   := len $top -}}
 <script type="application/ld+json">
 {
 "@context": "https://schema.org",
 "@type": "ItemList",
-"name": {{ (printf "%s – Latest Articles" .Site.Title) | jsonify }},
-"url": {{ $pageURL | jsonify }},
+"name": {{ (printf "%s – Latest Articles" .Site.Title) | jsonify | safeJS }},
+"url": {{ $pageURL | jsonify | safeJS }},
 "numberOfItems": {{ len .Pages }},
 "itemListElement": [
- {{ range $i, $page := first 10 .Pages }}
+ {{ range $i, $page := $top }}
  {
    "@type": "ListItem",
    "position": {{ add $i 1 }},
    "item": {
      "@type": "BlogPosting",
-     "@id": {{ (printf "%s#article" $page.Permalink) | jsonify }},
-     "headline": {{ $page.Title | jsonify }},
-     "url": {{ $page.Permalink | jsonify }},
-     "datePublished": {{ $page.Date.Format "2006-01-02" | jsonify }},
-     "description": {{ ($page.Params.description | default "") | jsonify }}
+     "@id": {{ (printf "%s#article" $page.Permalink) | jsonify | safeJS }},
+     "headline": {{ $page.Title | jsonify | safeJS }},
+     "url": {{ $page.Permalink | jsonify | safeJS }},
+     "datePublished": {{ $page.Date.Format "2006-01-02" | jsonify | safeJS }},
+     "description": {{ ($page.Params.description | default "") | jsonify | safeJS }}
      {{ with $page.Params.featured_image }},
-     "image": {{ . | jsonify }}
+     "image": {{ . | jsonify | safeJS }}
      {{ end }}
    }
- }{{ if lt $i (sub (len (first 10 $.Pages)) 1) }},{{ end }}
+ }{{ if lt $i (sub $n 1) }},{{ end }}
  {{ end }}
 ]
 }
@@ -136,13 +143,13 @@ Savings Blog – Coupon Tips & Money-Saving Guides | {{ .Site.Title }}
    "@type": "ListItem",
    "position": 1,
    "name": "Home",
-   "item": {{ .Site.BaseURL | jsonify }}
+   "item": {{ .Site.BaseURL | jsonify | safeJS }}
  },
  {
    "@type": "ListItem",
    "position": 2,
    "name": "Blog",
-   "item": {{ $pageURL | jsonify }}
+   "item": {{ $pageURL | jsonify | safeJS }}
  }
 ]
 }
@@ -607,8 +614,8 @@ border-width: 0;
 <section class="bl-section">
 <div class="bl-layout">
 
- <!-- ── Main content column ──────────────────────────────────── -->
- <main aria-label="Blog posts">
+ <!-- ── Main content column (div, not <main>: baseof.html already has <main>) ── -->
+ <div id="main-content" aria-label="Blog posts">
 
    {{ if .Pages }}
 
@@ -703,7 +710,7 @@ border-width: 0;
 
    {{ end }}
 
- </main><!-- /main -->
+ </div><!-- /#main-content -->
 
 
  <!-- ── Sidebar ──────────────────────────────────────────────── -->

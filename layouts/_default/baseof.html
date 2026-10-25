@@ -1,3 +1,7 @@
+{{/* Main-domain base URL with trailing slash, e.g. https://www.couponhauls.com/
+     Shared assets (JS, favicons, logo) live ONLY on www, so every store
+     subdomain must reference them with absolute URLs. */}}
+{{- $main := .Site.BaseURL | strings.TrimRight "/" -}}
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode | default "en-us" }}">
 <head>
@@ -13,10 +17,10 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 {{ end }}
 
-{{/* ── Favicons (served from CDN or static, not www-specific) ─────────── */}}
-<link rel="icon"            type="image/x-icon" href="/favicon.ico">
-<link rel="icon"            type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180"               href="/apple-touch-icon.png">
+{{/* ── Favicons — absolute URLs from the main domain (fixes subdomain 404s) ── */}}
+<link rel="icon"             type="image/x-icon" href="{{ $main }}/favicon.ico">
+<link rel="icon"             type="image/png" sizes="32x32" href="{{ $main }}/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180"    href="{{ $main }}/apple-touch-icon.png">
 
 {{/* ── Canonical ─────────────────────────────────────────────────────── */}}
 {{- block "canonical" . }}
@@ -29,13 +33,13 @@
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ $.Site.Params.description }}{{ end }}">
 <meta property="og:type"        content="website">
 <meta property="og:url"         content="{{ .Permalink }}">
-<meta property="og:image"       content="{{ .Site.BaseURL }}{{ .Site.Params.og_image }}">
+<meta property="og:image"       content="{{ $main }}/{{ .Site.Params.og_image }}">
 <meta property="og:site_name"   content="{{ .Site.Title }}">
 <meta name="twitter:card"        content="summary_large_image">
 <meta name="twitter:site"        content="{{ .Site.Params.twitter_handle }}">
 <meta name="twitter:title"       content="{{ .Title }}">
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-<meta name="twitter:image"       content="{{ .Site.BaseURL }}{{ .Site.Params.og_image }}">
+<meta name="twitter:image"       content="{{ $main }}/{{ .Site.Params.og_image }}">
 {{- end }}
 
 {{/* ── Per-template extra head content ──────────────────────────────── */}}
@@ -93,14 +97,14 @@
 
 {{- partial "footer.html" . }}
 
-{{/* ── Store search data — lazy loaded ───────────────────────────────── */}}
+{{/* ── Store search data — lazy loaded from the main domain ─────────── */}}
 <script>
-  window.STORES_DATA_URL = '{{ .Site.BaseURL }}stores-search-data.json';
+  window.STORES_DATA_URL = '{{ $main }}/stores-search-data.json';
   window.STORES_DATA = null;
 </script>
 
-{{/* ── App JS — served relative so subdomains don't need cross-origin ── */}}
-<script src="/js/app.js" defer></script>
+{{/* ── App JS — ABSOLUTE main-domain URL so every store subdomain loads it ── */}}
+<script src="{{ $main }}/js/app.js" defer></script>
 
 </body>
 </html>

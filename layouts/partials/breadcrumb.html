@@ -1,7 +1,16 @@
 {{/*
-  breadcrumb.html
-  Renders HTML breadcrumb nav AND JSON-LD BreadcrumbList schema.
-  Works correctly for store pages (subdomain URLs) and all other pages.
+  layouts/partials/breadcrumb.html
+  Renders an HTML breadcrumb nav AND a JSON-LD BreadcrumbList.
+  Works for store pages (subdomain URLs), blog pages and all other pages.
+
+  Fixes applied:
+  - Every "| jsonify" inside the ld+json script is followed by "| safeJS"
+    (without it Hugo escapes the already-quoted JSON string a second time,
+    producing URLs like /%22https://...%22 that Google reports as 404s)
+  - Duplicate schema.org microdata removed from the HTML — JSON-LD is the
+    single source of truth, so Search Console no longer sees two
+    BreadcrumbLists on one page
+  - Main-domain URLs (Home / Blog / Stores) are built from .Site.BaseURL
 */}}
 
 {{- $siteURL  := .Site.BaseURL | strings.TrimRight "/" -}}
@@ -20,55 +29,44 @@
   {{- $items = $items | append (dict "name" .Title "url" .Permalink) -}}
 {{- end -}}
 
+{{- $lastIdx := sub (len $items) 1 -}}
+
 {{/* ── HTML breadcrumb ─────────────────────────────────────────────── */}}
 <nav aria-label="Breadcrumb" class="breadcrumb-bar">
   <div class="breadcrumb-inner">
-    <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
-      {{ range $i, $item := $items }}
-      {{ $isLast := eq $i (sub (len $items) 1) }}
-      <li class="breadcrumb-item"
-          itemprop="itemListElement"
-          itemscope
-          itemtype="https://schema.org/ListItem">
-        {{ if not $isLast }}
-          <a href="{{ $item.url }}"
-             class="breadcrumb-link"
-             itemprop="item">
-            <span itemprop="name">{{ $item.name }}</span>
-          </a>
-          <meta itemprop="position" content="{{ add $i 1 }}">
-          <svg class="breadcrumb-sep" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="1.5"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        {{ else }}
-          <span class="breadcrumb-current"
-                aria-current="page"
-                itemprop="name">{{ $item.name }}</span>
-          <meta itemprop="item" content="{{ $item.url }}">
-          <meta itemprop="position" content="{{ add $i 1 }}">
-        {{ end }}
+    <ol class="breadcrumb-list">
+      {{- range $i, $item := $items }}
+      <li class="breadcrumb-item">
+        {{- if lt $i $lastIdx }}
+        <a href="{{ $item.url }}" class="breadcrumb-link">{{ $item.name }}</a>
+        <svg class="breadcrumb-sep" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        {{- else }}
+        <span class="breadcrumb-current" aria-current="page">{{ $item.name }}</span>
+        {{- end }}
       </li>
-      {{ end }}
+      {{- end }}
     </ol>
   </div>
 </nav>
 
-{{/* ── JSON-LD BreadcrumbList ───────────────────────────────────────── */}}
+{{/* ── JSON-LD BreadcrumbList ──────────────────────────────────────── */}}
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {{ range $i, $item := $items -}}
-    {
-      "@type": "ListItem",
-      "position": {{ add $i 1 }},
-      "name": {{ $item.name | jsonify }},
-      "item": {{ $item.url | jsonify }}
-    }{{ if lt $i (sub (len $items) 1) }},{{ end }}
-    {{ end }}
-  ]
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{{- range $i, $item := $items }}
+  {
+    "@type": "ListItem",
+    "position": {{ add $i 1 }},
+    "name": {{ $item.name | jsonify | safeJS }},
+    "item": {{ $item.url | jsonify | safeJS }}
+  }{{ if lt $i $lastIdx }},{{ end }}
+{{- end }}
+]
 }
 </script>
 

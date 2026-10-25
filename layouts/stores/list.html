@@ -3,12 +3,15 @@
   All Stores listing page — CouponHauls.com
 
   Fixes applied:
+  - Schema: every "| jsonify" inside ld+json is followed by "| safeJS"
+    (stops Hugo double-quoting values, which produced /%22https://...%22
+    URLs reported as 404s in Search Console)
+  - Title / description blocks trimmed (no stray newlines in <title>)
+  - Inner <main> changed to <div id="mainContent"> (baseof.html already
+    wraps the page in <main>; nested <main> is invalid HTML)
   - All store card URLs use canonical-url.html partial
   - Schema: WebPage + ItemList + BreadcrumbList JSON-LD
   - OG/Twitter meta tags with correct URL and description
-  - Clean title and meta description
-  - Breadcrumb with structured data
-  - All CSS extracted into define "extra_head" block
   - A-Z filter, search, sort — all HTML-rendered links (crawlable)
   - Proper heading hierarchy h1 → h2 per card
   - aria-label and role attributes for accessibility
@@ -18,17 +21,17 @@
 
 
 {{/* ── Title ──────────────────────────────────────────────────────────── */}}
-{{ define "title" }}
+{{ define "title" -}}
 {{- $count := len (where (where .Site.RegularPages "Section" "stores") ".Params.is_active" true) -}}
 All Coupon Codes & Promo Codes ({{ $count }}+ Stores) | {{ .Site.Title }}
-{{ end }}
+{{- end }}
 
 
 {{/* ── Meta Description ────────────────────────────────────────────────── */}}
-{{ define "description" }}
+{{ define "description" -}}
 {{- $count := len (where (where .Site.RegularPages "Section" "stores") ".Params.is_active" true) -}}
 {{- printf "Browse %d+ stores and find verified coupon codes, promo codes and deals updated daily. Save money at top retailers — 100%% free, no sign-up needed." $count -}}
-{{ end }}
+{{- end }}
 
 
 {{/* ── Canonical ────────────────────────────────────────────────────────── */}}
@@ -73,25 +76,25 @@ All Coupon Codes & Promo Codes ({{ $count }}+ Stores) | {{ .Site.Title }}
 {
 "@context": "https://schema.org",
 "@type": "WebPage",
-"@id": {{ (printf "%s#webpage" $pageURL) | jsonify }},
-"url": {{ $pageURL | jsonify }},
-"name": {{ (printf "All Coupon Codes & Promo Codes – %d+ Stores" $count) | jsonify }},
-"description": {{ (printf "Browse %d+ stores with verified coupon codes and deals, updated daily." $count) | jsonify }},
-"dateModified": {{ now.Format "2006-01-02" | jsonify }},
+"@id": {{ (printf "%s#webpage" $pageURL) | jsonify | safeJS }},
+"url": {{ $pageURL | jsonify | safeJS }},
+"name": {{ (printf "All Coupon Codes & Promo Codes – %d+ Stores" $count) | jsonify | safeJS }},
+"description": {{ (printf "Browse %d+ stores with verified coupon codes and deals, updated daily." $count) | jsonify | safeJS }},
+"dateModified": {{ now.Format "2006-01-02" | jsonify | safeJS }},
 "inLanguage": "en-US",
 "isPartOf": {
  "@type": "WebSite",
- "@id": {{ (printf "%s#website" $siteURL) | jsonify }},
- "url": {{ .Site.BaseURL | jsonify }},
- "name": {{ .Site.Title | jsonify }},
+ "@id": {{ (printf "%s/#website" $siteURL) | jsonify | safeJS }},
+ "url": {{ .Site.BaseURL | jsonify | safeJS }},
+ "name": {{ .Site.Title | jsonify | safeJS }},
  "publisher": {
    "@type": "Organization",
-   "@id": {{ (printf "%s#organization" $siteURL) | jsonify }},
+   "@id": {{ (printf "%s/#organization" $siteURL) | jsonify | safeJS }},
    "name": "CouponHauls",
-   "url": {{ .Site.BaseURL | jsonify }},
+   "url": {{ .Site.BaseURL | jsonify | safeJS }},
    "logo": {
      "@type": "ImageObject",
-     "url": {{ (printf "%simages/couponhaulslogo.png" .Site.BaseURL) | jsonify }}
+     "url": {{ (printf "%simages/couponhaulslogo.png" .Site.BaseURL) | jsonify | safeJS }}
    }
  }
 },
@@ -102,13 +105,13 @@ All Coupon Codes & Promo Codes ({{ $count }}+ Stores) | {{ .Site.Title }}
      "@type": "ListItem",
      "position": 1,
      "name": "Home",
-     "item": {{ .Site.BaseURL | jsonify }}
+     "item": {{ .Site.BaseURL | jsonify | safeJS }}
    },
    {
      "@type": "ListItem",
      "position": 2,
      "name": "All Stores",
-     "item": {{ $pageURL | jsonify }}
+     "item": {{ $pageURL | jsonify | safeJS }}
    }
  ]
 }
@@ -116,16 +119,18 @@ All Coupon Codes & Promo Codes ({{ $count }}+ Stores) | {{ .Site.Title }}
 </script>
 
 {{ if $active }}
+{{- $top := first 20 $active -}}
+{{- $n   := len $top -}}
 <script type="application/ld+json">
 {
 "@context": "https://schema.org",
 "@type": "ItemList",
-"name": {{ (printf "All Coupon Stores on %s" .Site.Title) | jsonify }},
-"description": {{ (printf "Browse %d+ verified coupon stores with daily updated promo codes and deals." $count) | jsonify }},
-"url": {{ $pageURL | jsonify }},
+"name": {{ (printf "All Coupon Stores on %s" .Site.Title) | jsonify | safeJS }},
+"description": {{ (printf "Browse %d+ verified coupon stores with daily updated promo codes and deals." $count) | jsonify | safeJS }},
+"url": {{ $pageURL | jsonify | safeJS }},
 "numberOfItems": {{ $count }},
 "itemListElement": [
- {{ range $i, $page := first 20 $active }}
+ {{ range $i, $page := $top }}
  {{- $slug := $page.Params.slug | default $page.Params.store_id | default "" -}}
  {{- $slug  = $slug | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
  {{- $name := $page.Params.store_name | default $page.Title | replaceRE `^"(.*)"$` "$1" | strings.TrimSpace -}}
@@ -138,11 +143,11 @@ All Coupon Codes & Promo Codes ({{ $count }}+ Stores) | {{ .Site.Title }}
    "position": {{ add $i 1 }},
    "item": {
      "@type": "Organization",
-     "@id": {{ $sURL | jsonify }},
-     "name": {{ $name | jsonify }},
-     "url": {{ $sURL | jsonify }}
+     "@id": {{ $sURL | jsonify | safeJS }},
+     "name": {{ $name | jsonify | safeJS }},
+     "url": {{ $sURL | jsonify | safeJS }}
    }
- }{{ if lt $i (sub (len (first 20 $active)) 1) }},{{ end }}
+ }{{ if lt $i (sub $n 1) }},{{ end }}
  {{ end }}
 ]
 }
@@ -677,9 +682,9 @@ border-width: 0;
 
 
 <!-- ════════════════════════════════════════════════════════════════
-  STORE GRID
+  STORE GRID  (div, not <main>: baseof.html already has <main>)
 ════════════════════════════════════════════════════════════════ -->
-<main class="sl-body" id="mainContent">
+<div class="sl-body" id="mainContent">
 <div class="sl-container">
 
  <!-- Results bar -->
@@ -777,7 +782,7 @@ border-width: 0;
  </div>
 
 </div><!-- /.sl-container -->
-</main>
+</div><!-- /#mainContent -->
 
 
 <!-- ════════════════════════════════════════════════════════════════
