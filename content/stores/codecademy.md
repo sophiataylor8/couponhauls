@@ -1,20 +1,20 @@
 ---
-title: "Codecademy Promo Code Oct 2026 - 20% Off Coupon"
+title: "Codecademy Promo Code Nov 2026 - 20% Off Coupon Code"
 slug: "codecademy"
-description: "Codecademy Promo Code Oct 2026. Save up to 20% on coding courses, career paths, certifications, and learning memberships with verified Codecademy coupon codes."
+description: "Codecademy Promo Code Nov 2026. Save up to 20% on coding courses, career paths, certifications, and learning memberships with verified Codecademy coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Codecademy"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Codecademy Promo Code Oct 2026 - 20% Off Coupon"
-store_title: "Codecademy Promo Code Oct 2026 - 20% Off Coupon"
-store_meta_description: "Codecademy Promo Code Oct 2026. Save up to 20% on coding courses, career paths, certifications, and learning memberships with verified Codecademy coupon codes."
+store_title: "Codecademy Promo Code Nov 2026 - 20% Off Coupon Code"
+store_meta_description: "Codecademy Promo Code Nov 2026. Save up to 20% on coding courses, career paths, certifications, and learning memberships with verified Codecademy coupon codes."
 store_keywords: "codecademy coupon, codecademy promo code, codecademy coupons, codecademy discount code, codecademy coupon codes, codecademy promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Codecademy Promo Code Oct 2026 - 20% Off Coupon"
-store_og_description: "Codecademy Promo Code Oct 2026. Save up to 20% on coding courses, career paths, certifications, and learning memberships with verified Codecademy coupon codes."
+store_og_title: "Codecademy Promo Code Nov 2026 - 20% Off Coupon Code"
+store_og_description: "Codecademy Promo Code Nov 2026. Save up to 20% on coding courses, career paths, certifications, and learning memberships with verified Codecademy coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjtra.com/t/8-12462-214799-213588"
     coupon_type: "Coupon"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1220"
     coupon_title: "50% Off"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjtra.com/t/8-12462-214799-213588"
     coupon_type: "Coupon"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1221"
     coupon_title: "10% Off"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pjtra.com/t/8-12462-214799-213588"
     coupon_type: "Coupon"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

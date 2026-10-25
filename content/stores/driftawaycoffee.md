@@ -1,20 +1,20 @@
 ---
-title: "Driftaway Coffee Promo Code Oct 2026 - 20% Off Coupon"
+title: "Driftaway Coffee Promo Code Nov 2026 - 20% Off Coupon"
 slug: "driftawaycoffee"
-description: "Driftaway Coffee Promo Code Oct 2026. Save up to 20% on coffee subscriptions, roasted beans, and blends with verified Driftaway Coffee coupon codes."
+description: "Driftaway Coffee Promo Code Nov 2026. Save up to 20% on coffee subscriptions, roasted beans, and blends with verified Driftaway Coffee coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Driftaway Coffee"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Driftaway Coffee Promo Code Oct 2026 - 20% Off Coupon"
-store_title: "Driftaway Coffee Promo Code Oct 2026 - 20% Off Coupon"
-store_meta_description: "Driftaway Coffee Promo Code Oct 2026. Save up to 20% on coffee subscriptions, roasted beans, and blends with verified Driftaway Coffee coupon codes."
+store_title: "Driftaway Coffee Promo Code Nov 2026 - 20% Off Coupon"
+store_meta_description: "Driftaway Coffee Promo Code Nov 2026. Save up to 20% on coffee subscriptions, roasted beans, and blends with verified Driftaway Coffee coupon codes."
 store_keywords: "driftaway coffee coupon, driftaway coffee promo code, driftaway coffee coupons, driftaway coffee discount code, driftaway coffee coupon codes, driftaway coffee promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Driftaway Coffee Promo Code Oct 2026 - 20% Off Coupon"
-store_og_description: "Driftaway Coffee Promo Code Oct 2026. Save up to 20% on coffee subscriptions, roasted beans, and blends with verified Driftaway Coffee coupon codes."
+store_og_title: "Driftaway Coffee Promo Code Nov 2026 - 20% Off Coupon"
+store_og_description: "Driftaway Coffee Promo Code Nov 2026. Save up to 20% on coffee subscriptions, roasted beans, and blends with verified Driftaway Coffee coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-11612-214799-159065"
     coupon_type: "Coupon"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1244"
     coupon_title: "Free Gift"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.gopjn.com/t/8-11612-214799-159065"
     coupon_type: "Coupon"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

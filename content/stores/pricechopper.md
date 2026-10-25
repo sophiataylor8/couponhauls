@@ -1,20 +1,20 @@
 ---
-title: "Price Chopper Weekly Flyer Oct 2026 - Circular"
+title: "Price Chopper Promo Code Nov 2026  - 10% Off Coupon"
 slug: "pricechopper"
-description: "Price Chopper Weekly Flyer Oct 2026. Explore the latest Price Chopper circular with grocery specials, meat deals, produce savings, and weekly offers."
+description: "Price Chopper Promo Code Nov 2026. Explore the latest Price Chopper circular with grocery specials, meat deals, produce savings, and weekly offers."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Price Chopper"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Price Chopper Weekly Flyer Oct 2026 - Circular"
-store_title: "Price Chopper Weekly Flyer Oct 2026 - Circular"
-store_meta_description: "Price Chopper Weekly Flyer Oct 2026. Explore the latest Price Chopper circular with grocery specials, meat deals, produce savings, and weekly offers."
+store_title: "Price Chopper Promo Code Nov 2026  - 10% Off Coupon"
+store_meta_description: "Price Chopper Promo Code Nov 2026. Explore the latest Price Chopper circular with grocery specials, meat deals, produce savings, and weekly offers."
 store_keywords: "price chopper coupon code, price chopper promo code, price chopper discount code, price chopper deals, price chopper offers, price chopper grocery coupons, price chopper coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Price Chopper Weekly Flyer Oct 2026 - Circular"
-store_og_description: "Price Chopper Weekly Flyer Oct 2026. Explore the latest Price Chopper circular with grocery specials, meat deals, produce savings, and weekly offers."
+store_og_title: "Price Chopper Promo Code Nov 2026  - 10% Off Coupon"
+store_og_description: "Price Chopper Promo Code Nov 2026. Explore the latest Price Chopper circular with grocery specials, meat deals, produce savings, and weekly offers."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Sign up for AdvantEdge Rewards to clip digital coupons and receive exclusive savings on groceries and household essentials."
     coupon_aff_url: "https://www.pricechopper.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1063"
     coupon_title: "Price Chopper Weekly Grocery Deals"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Browse the Price Chopper weekly ad for special discounts on fresh foods, snacks, beverages, and everyday grocery items."
     coupon_aff_url: "https://www.pricechopper.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

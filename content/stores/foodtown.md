@@ -1,20 +1,20 @@
 ---
-title: "Foodtown Weekly Ad Oct 2026 - Flyer, Circular"
+title: "Foodtown Promo Code Nov 2026  - 10% Off Coupon Code"
 slug: "foodtown"
-description: "Foodtown Weekly Ad Oct 2026. Browse the newest Foodtown flyer and circular with grocery discounts, meat specials, and weekly supermarket offers."
+description: "Foodtown Promo Code Nov 2026. Browse the newest Foodtown flyer and circular with grocery discounts, meat specials, and weekly supermarket offers."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Foodtown"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Foodtown Weekly Ad Oct 2026 - Flyer, Circular"
-store_title: "Foodtown Weekly Ad Oct 2026 - Flyer, Circular"
-store_meta_description: "Foodtown Weekly Ad Oct 2026. Browse the newest Foodtown flyer and circular with grocery discounts, meat specials, and weekly supermarket offers."
+store_title: "Foodtown Promo Code Nov 2026  - 10% Off Coupon Code"
+store_meta_description: "Foodtown Promo Code Nov 2026. Browse the newest Foodtown flyer and circular with grocery discounts, meat specials, and weekly supermarket offers."
 store_keywords: "foodtown coupon code, foodtown promo code, foodtown discount code, foodtown deals, foodtown offers, foodtown grocery coupons, foodtown coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Foodtown Weekly Ad Oct 2026 - Flyer, Circular"
-store_og_description: "Foodtown Weekly Ad Oct 2026. Browse the newest Foodtown flyer and circular with grocery discounts, meat specials, and weekly supermarket offers."
+store_og_title: "Foodtown Promo Code Nov 2026  - 10% Off Coupon Code"
+store_og_description: "Foodtown Promo Code Nov 2026. Browse the newest Foodtown flyer and circular with grocery discounts, meat specials, and weekly supermarket offers."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Check the Foodtown weekly circular for deals on fresh produce, meats, dairy, and grocery essentials."
     coupon_aff_url: "https://www.foodtown.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1129"
     coupon_title: "Foodtown Digital Coupon Deals"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Clip Foodtown digital coupons to unlock extra savings on groceries and household products."
     coupon_aff_url: "https://www.foodtown.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -1,20 +1,20 @@
 ---
-title: "Coffee Bean Promo Code Oct 2026 - 20% Off Coupon"
+title: "Coffee Bean Promo Code Nov 2026 - 20% Off Coupon Code"
 slug: "coffeebean"
-description: "Coffee Bean Promo Code Oct 2026. Get up to 20% off coffee blends, tea, espresso drinks, and cafe favorites with verified Coffee Bean coupon codes."
+description: "Coffee Bean Promo Code Nov 2026. Get up to 20% off coffee blends, tea, espresso drinks, and cafe favorites with verified Coffee Bean coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Coffee Bean"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Coffee Bean Promo Code Oct 2026 - 20% Off Coupon"
-store_title: "Coffee Bean Promo Code Oct 2026 - 20% Off Coupon"
-store_meta_description: "Coffee Bean Promo Code Oct 2026. Get up to 20% off coffee blends, tea, espresso drinks, and cafe favorites with verified Coffee Bean coupon codes."
+store_title: "Coffee Bean Promo Code Nov 2026 - 20% Off Coupon Code"
+store_meta_description: "Coffee Bean Promo Code Nov 2026. Get up to 20% off coffee blends, tea, espresso drinks, and cafe favorites with verified Coffee Bean coupon codes."
 store_keywords: "coffee bean coupon, coffee bean promo code, coffee bean coupons, coffee bean discount code, coffee bean coupon codes, coffee bean promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Coffee Bean Promo Code Oct 2026 - 20% Off Coupon"
-store_og_description: "Coffee Bean Promo Code Oct 2026. Get up to 20% off coffee blends, tea, espresso drinks, and cafe favorites with verified Coffee Bean coupon codes."
+store_og_title: "Coffee Bean Promo Code Nov 2026 - 20% Off Coupon Code"
+store_og_description: "Coffee Bean Promo Code Nov 2026. Get up to 20% off coffee blends, tea, espresso drinks, and cafe favorites with verified Coffee Bean coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrs.com/t/8-11138-214799-145574"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1223"
     coupon_title: "50% Off Your First Drink - Download The Coffee Bean Rewards app"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrs.com/t/8-11138-214799-145574"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

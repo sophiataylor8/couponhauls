@@ -1,20 +1,20 @@
 ---
-title: "King Kullen Supermarket Circular Oct 2026 - Weekly"
+title: "King Kullen Promo Code 2026  - 10% Off Coupon Code"
 slug: "kingkullen"
-description: "King Kullen Supermarket Circular Oct 2026. Browse the latest King Kullen weekly circular for grocery savings, fresh produce offers, and weekly specials."
+description: "King Kullen Supermarket Promo Code Nov 2026. Browse the latest King Kullen weekly circular for grocery savings, fresh produce offers, and weekly specials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "King Kullen"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "King Kullen Supermarket Circular Oct 2026 - Weekly"
-store_title: "King Kullen Supermarket Circular Oct 2026 - Weekly"
-store_meta_description: "King Kullen Supermarket Circular Oct 2026. Browse the latest King Kullen weekly circular for grocery savings, fresh produce offers, and weekly specials."
+store_title: "King Kullen Promo Code 2026  - 10% Off Coupon Code"
+store_meta_description: "King Kullen Supermarket Promo Code Nov 2026. Browse the latest King Kullen weekly circular for grocery savings, fresh produce offers, and weekly specials."
 store_keywords: "king kullen coupon code, king kullen promo code, king kullen discount code, king kullen deals, king kullen offers, king kullen grocery coupons, king kullen coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "King Kullen Supermarket Circular Oct 2026 - Weekly"
-store_og_description: "King Kullen Supermarket Circular Oct 2026. Browse the latest King Kullen weekly circular for grocery savings, fresh produce offers, and weekly specials."
+store_og_title: "King Kullen Promo Code 2026  - 10% Off Coupon Code"
+store_og_description: "King Kullen Supermarket Promo Code Nov 2026. Browse the latest King Kullen weekly circular for grocery savings, fresh produce offers, and weekly specials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Check the King Kullen weekly circular to save on fresh produce, meats, dairy products, and grocery essentials."
     coupon_aff_url: "https://kingkullen.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1119"
     coupon_title: "King Kullen Digital Coupons"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Clip digital coupons through your King Kullen account to unlock extra grocery savings each week."
     coupon_aff_url: "https://kingkullen.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -1,20 +1,20 @@
 ---
-title: "Charles Tyrwhitt 3 for $89, Discount Code"
+title: "Charles Tyrwhitt 3 for $89, Discount Code - 10% Off"
 slug: "charlestyrwhitt"
-description: "Charles Tyrwhitt 3 for $89 Discount Code Oct 2026. Get the latest Charles Tyrwhitt deal on dress shirts,  apparel, and menswear with verified codes."
+description: "Charles Tyrwhitt 3 for $89 Discount Code Nov 2026. Get the latest Charles Tyrwhitt deal on dress shirts,  apparel, and menswear with verified codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Charles Tyrwhitt"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Charles Tyrwhitt 3 for $89, Discount Code"
-store_title: "Charles Tyrwhitt 3 for $89, Discount Code"
-store_meta_description: "Charles Tyrwhitt 3 for $89 Discount Code Oct 2026. Get the latest Charles Tyrwhitt deal on dress shirts,  apparel, and menswear with verified codes."
+store_title: "Charles Tyrwhitt 3 for $89, Discount Code - 10% Off"
+store_meta_description: "Charles Tyrwhitt 3 for $89 Discount Code Nov 2026. Get the latest Charles Tyrwhitt deal on dress shirts,  apparel, and menswear with verified codes."
 store_keywords: "charles tyrwhitt, charles tyrwhitt coupon code, charles tyrwhitt promo code, charles tyrwhitt discount code, charles tyrwhitt coupons"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Charles Tyrwhitt 3 for $89, Discount Code"
-store_og_description: "Charles Tyrwhitt 3 for $89 Discount Code Oct 2026. Get the latest Charles Tyrwhitt deal on dress shirts,  apparel, and menswear with verified codes."
+store_og_title: "Charles Tyrwhitt 3 for $89, Discount Code - 10% Off"
+store_og_description: "Charles Tyrwhitt 3 for $89 Discount Code Nov 2026. Get the latest Charles Tyrwhitt deal on dress shirts,  apparel, and menswear with verified codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Shop multi-buy deals on dress shirts, often featuring bundle pricing when purchasing multiple shirts in one order."
     coupon_aff_url: "https://www.charlestyrwhitt.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1139"
     coupon_title: "Charles Tyrwhitt Seasonal Sale"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Enjoy seasonal promotions with discounts on shirts, suits, shoes, and accessories during limited-time sales events."
     coupon_aff_url: "https://www.charlestyrwhitt.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

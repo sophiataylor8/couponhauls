@@ -1,20 +1,20 @@
 ---
-title: "Times Supermarkets Weekly Ad Oct 2026"
+title: "Times Supermarkets Promo Code Nov 2026 - 10% Off Coupon"
 slug: "timessupermarkets"
-description: "Times Supermarkets Weekly Ad Oct 2026. Browse the latest Times Supermarkets weekly ad for grocery savings, fresh produce offers, and weekly food deals."
+description: "Times Supermarkets Promo Code Nov 2026. Browse the latest Times Supermarkets weekly ad for grocery savings, fresh produce offers, and weekly food deals."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Times Supermarket"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Times Supermarkets Weekly Ad Oct 2026"
-store_title: "Times Supermarkets Weekly Ad Oct 2026"
-store_meta_description: "Times Supermarkets Weekly Ad Oct 2026. Browse the latest Times Supermarkets weekly ad for grocery savings, fresh produce offers, and weekly food deals."
+store_title: "Times Supermarkets Promo Code Nov 2026 - 10% Off Coupon"
+store_meta_description: "Times Supermarkets Promo Code Nov 2026. Browse the latest Times Supermarkets weekly ad for grocery savings, fresh produce offers, and weekly food deals."
 store_keywords: "times supermarket coupon code, times supermarket promo code, times supermarket discount code, times supermarket deals, times supermarket offers, times supermarket grocery coupons, times supermarket coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Times Supermarkets Weekly Ad Oct 2026"
-store_og_description: "Times Supermarkets Weekly Ad Oct 2026. Browse the latest Times Supermarkets weekly ad for grocery savings, fresh produce offers, and weekly food deals."
+store_og_title: "Times Supermarkets Promo Code Nov 2026 - 10% Off Coupon"
+store_og_description: "Times Supermarkets Promo Code Nov 2026. Browse the latest Times Supermarkets weekly ad for grocery savings, fresh produce offers, and weekly food deals."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Check the Times Supermarket weekly ad to save on fresh produce, meats, seafood, and everyday grocery items."
     coupon_aff_url: "https://www.timessupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1095"
     coupon_title: "Times Supermarket In-Store Specials"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Find rotating in-store promotions and limited-time discounts on groceries and household essentials."
     coupon_aff_url: "https://www.timessupermarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

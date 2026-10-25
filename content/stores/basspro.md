@@ -1,20 +1,20 @@
 ---
-title: "Bass Pro Weekly Ad Oct 2026 - Sale Flyer"
+title: "Bass Pro Promo Code Nov 2026  - 10% Off Coupon Code"
 slug: "basspro"
-description: "Bass Pro Weekly Ad Oct 2026. Discover the latest Bass Pro sale flyer with deals on fishing gear, hunting equipment, camping products, and outdoor apparel."
+description: "Bass Pro Promo Code Nov 2026. Discover the latest Bass Pro sale flyer with deals on fishing gear, hunting equipment, camping products, and outdoor apparel."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Bass Pro"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Bass Pro Weekly Ad Oct 2026 - Sale Flyer"
-store_title: "Bass Pro Weekly Ad Oct 2026 - Sale Flyer"
-store_meta_description: "Bass Pro Weekly Ad Oct 2026. Discover the latest Bass Pro sale flyer with deals on fishing gear, hunting equipment, camping products, and outdoor apparel."
+store_title: "Bass Pro Promo Code Nov 2026  - 10% Off Coupon Code"
+store_meta_description: "Bass Pro Promo Code Nov 2026. Discover the latest Bass Pro sale flyer with deals on fishing gear, hunting equipment, camping products, and outdoor apparel."
 store_keywords: "bass pro coupon code, bass pro promo code, bass pro discount code, bass pro deals, bass pro offers, bass pro sale, bass pro coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Bass Pro Weekly Ad Oct 2026 - Sale Flyer"
-store_og_description: "Bass Pro Weekly Ad Oct 2026. Discover the latest Bass Pro sale flyer with deals on fishing gear, hunting equipment, camping products, and outdoor apparel."
+store_og_title: "Bass Pro Promo Code Nov 2026  - 10% Off Coupon Code"
+store_og_description: "Bass Pro Promo Code Nov 2026. Discover the latest Bass Pro sale flyer with deals on fishing gear, hunting equipment, camping products, and outdoor apparel."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Shop Bass Pro clearance section for discounts on fishing gear, hunting equipment, camping supplies, and outdoor apparel."
     coupon_aff_url: "https://www.basspro.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1117"
     coupon_title: "Bass Pro Seasonal Outdoor Sale"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Find seasonal promotions on outdoor gear, footwear, and sporting equipment at Bass Pro Shops."
     coupon_aff_url: "https://www.basspro.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

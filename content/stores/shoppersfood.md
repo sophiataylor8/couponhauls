@@ -1,20 +1,20 @@
 ---
-title: "Shoppers Food Weekly Ad Oct 2026 - Grocery Deals"
+title: "Shoppers Food Promo Code Nov 2026  - 10% Off Coupon"
 slug: "shoppersfood"
-description: "Shoppers Food Weekly Ad Oct 2026. Browse the latest Shoppers Food weekly ad featuring grocery deals, fresh produce discounts, and supermarket savings."
+description: "Shoppers Food Promo Code Nov 2026. Browse the latest Shoppers Food weekly ad featuring grocery deals, fresh produce discounts, and supermarket savings."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Shoppers"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Shoppers Food Weekly Ad Oct 2026 - Grocery Deals"
-store_title: "Shoppers Food Weekly Ad Oct 2026 - Grocery Deals"
-store_meta_description: "Shoppers Food Weekly Ad Oct 2026. Browse the latest Shoppers Food weekly ad featuring grocery deals, fresh produce discounts, and supermarket savings."
+store_title: "Shoppers Food Promo Code Nov 2026  - 10% Off Coupon"
+store_meta_description: "Shoppers Food Promo Code Nov 2026. Browse the latest Shoppers Food weekly ad featuring grocery deals, fresh produce discounts, and supermarket savings."
 store_keywords: "shoppers coupon code, shoppers promo code, shoppers discount code, shoppers deals, shoppers offers, shoppers grocery coupons, shoppers coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Shoppers Food Weekly Ad Oct 2026 - Grocery Deals"
-store_og_description: "Shoppers Food Weekly Ad Oct 2026. Browse the latest Shoppers Food weekly ad featuring grocery deals, fresh produce discounts, and supermarket savings."
+store_og_title: "Shoppers Food Promo Code Nov 2026  - 10% Off Coupon"
+store_og_description: "Shoppers Food Promo Code Nov 2026. Browse the latest Shoppers Food weekly ad featuring grocery deals, fresh produce discounts, and supermarket savings."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Browse Shoppers weekly deals to discover savings on fresh foods, pantry staples, and household products."
     coupon_aff_url: "https://www.shoppersfood.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1121"
     coupon_title: "Shoppers Digital Coupon Savings"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Access digital coupons through the Shoppers website or app to save on groceries and everyday essentials."
     coupon_aff_url: "https://www.shoppersfood.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -1,20 +1,20 @@
 ---
-title: "Randalls Weekly Ad Oct 2026 -  Weekly Flyer"
+title: "Randalls Promo Code Nov 2026  - 10% Off Coupon Code"
 slug: "randalls"
-description: "Randalls Weekly Ad Oct 2026. Check the latest Randalls weekly flyer for grocery discounts, fresh produce deals, and weekly supermarket savings."
+description: "Randalls Promo Code Nov 2026. Check the latest Randalls weekly flyer for grocery discounts, fresh produce deals, and weekly supermarket savings."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Randalls"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Randalls Weekly Ad Oct 2026 -  Weekly Flyer"
-store_title: "Randalls Weekly Ad Oct 2026 -  Weekly Flyer"
-store_meta_description: "Randalls Weekly Ad Oct 2026. Check the latest Randalls weekly flyer for grocery discounts, fresh produce deals, and weekly supermarket savings."
+store_title: "Randalls Promo Code Nov 2026  - 10% Off Coupon Code"
+store_meta_description: "Randalls Promo Code Nov 2026. Check the latest Randalls weekly flyer for grocery discounts, fresh produce deals, and weekly supermarket savings."
 store_keywords: "randalls coupon code, randalls promo code, randalls discount code, randalls deals, randalls offers, randalls grocery coupons, randalls coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Randalls Weekly Ad Oct 2026 -  Weekly Flyer"
-store_og_description: "Randalls Weekly Ad Oct 2026. Check the latest Randalls weekly flyer for grocery discounts, fresh produce deals, and weekly supermarket savings."
+store_og_title: "Randalls Promo Code Nov 2026  - 10% Off Coupon Code"
+store_og_description: "Randalls Promo Code Nov 2026. Check the latest Randalls weekly flyer for grocery discounts, fresh produce deals, and weekly supermarket savings."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Sign in to your Randalls account to access personalized digital coupons and exclusive savings through the Randalls for U program."
     coupon_aff_url: "https://www.randalls.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1039"
     coupon_title: "Weekly Ad Grocery Discounts"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Browse Randalls weekly ad to save on fresh foods, pantry items, beverages, and seasonal grocery promotions."
     coupon_aff_url: "https://www.randalls.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

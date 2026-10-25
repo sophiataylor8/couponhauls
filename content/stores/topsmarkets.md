@@ -1,20 +1,20 @@
 ---
-title: "Tops Friendly Markets Weekly Ad Oct 2026 - Flyer"
+title: "Tops Markets Promo Code Nov 2026  - 10% Off Coupon"
 slug: "topsmarkets"
-description: "Tops Friendly Markets Weekly Ad Oct 2026. Explore the newest Tops Friendly Markets flyer with grocery deals, fresh food savings, and weekly specials."
+description: "Tops Friendly Markets Promo Code Nov 2026. Explore the newest Tops Friendly Markets flyer with grocery deals, fresh food savings, and weekly specials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Tops Friendly Markets"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Tops Friendly Markets Weekly Ad Oct 2026 - Flyer"
-store_title: "Tops Friendly Markets Weekly Ad Oct 2026 - Flyer"
-store_meta_description: "Tops Friendly Markets Weekly Ad Oct 2026. Explore the newest Tops Friendly Markets flyer with grocery deals, fresh food savings, and weekly specials."
+store_title: "Tops Markets Promo Code Nov 2026  - 10% Off Coupon"
+store_meta_description: "Tops Friendly Markets Promo Code Nov 2026. Explore the newest Tops Friendly Markets flyer with grocery deals, fresh food savings, and weekly specials."
 store_keywords: "tops friendly markets coupon code, tops friendly markets promo code, tops friendly markets discount code, tops friendly markets deals, tops friendly markets offers, tops friendly markets grocery coupons, tops friendly markets coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Tops Friendly Markets Weekly Ad Oct 2026 - Flyer"
-store_og_description: "Tops Friendly Markets Weekly Ad Oct 2026. Explore the newest Tops Friendly Markets flyer with grocery deals, fresh food savings, and weekly specials."
+store_og_title: "Tops Markets Promo Code Nov 2026  - 10% Off Coupon"
+store_og_description: "Tops Friendly Markets Promo Code Nov 2026. Explore the newest Tops Friendly Markets flyer with grocery deals, fresh food savings, and weekly specials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Sign up for Tops BonusPlus to access digital coupons, personalized grocery deals, and member savings."
     coupon_aff_url: "https://www.topsmarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1087"
     coupon_title: "Tops Weekly Grocery Specials"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Browse the Tops weekly ad for discounts on fresh produce, meats, dairy products, and pantry staples."
     coupon_aff_url: "https://www.topsmarkets.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -1,20 +1,20 @@
 ---
-title: "Market Basket Weekly Flyer Oct 2026 - Circular"
+title: "Market Basket  Promo Code Nov 2026  - 10% Off Coupon"
 slug: "marketbasket"
-description: "Market Basket Weekly Flyer Oct 2026. Check the newest Market Basket circular featuring grocery discounts, fresh food offers, and weekly supermarket deals."
+description: "Market Basket Promo Code Nov 2026. Check the newest Market Basket circular featuring grocery discounts, fresh food offers, and weekly supermarket deals."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Market Basket"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Market Basket Weekly Flyer Oct 2026 - Circular"
-store_title: "Market Basket Weekly Flyer Oct 2026 - Circular"
-store_meta_description: "Market Basket Weekly Flyer Oct 2026. Check the newest Market Basket circular featuring grocery discounts, fresh food offers, and weekly supermarket deals."
+store_title: "Market Basket  Promo Code Nov 2026  - 10% Off Coupon"
+store_meta_description: "Market Basket Promo Code Nov 2026. Check the newest Market Basket circular featuring grocery discounts, fresh food offers, and weekly supermarket deals."
 store_keywords: "market basket coupon code, market basket promo code, market basket discount code, market basket deals, market basket offers, market basket grocery coupons, market basket coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Market Basket Weekly Flyer Oct 2026 - Circular"
-store_og_description: "Market Basket Weekly Flyer Oct 2026. Check the newest Market Basket circular featuring grocery discounts, fresh food offers, and weekly supermarket deals."
+store_og_title: "Market Basket  Promo Code Nov 2026  - 10% Off Coupon"
+store_og_description: "Market Basket Promo Code Nov 2026. Check the newest Market Basket circular featuring grocery discounts, fresh food offers, and weekly supermarket deals."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "View the Market Basket weekly flyer to discover discounts on fresh produce, meats, dairy, and grocery staples."
     coupon_aff_url: "https://www.shopmarketbasket.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1061"
     coupon_title: "In-Store Grocery Specials at Market Basket"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Find rotating in-store promotions and seasonal grocery savings available at participating Market Basket locations."
     coupon_aff_url: "https://www.shopmarketbasket.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

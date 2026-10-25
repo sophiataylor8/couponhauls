@@ -1,20 +1,20 @@
 ---
-title: "No Frills Weekly Flyer 2026 Oct 2026 - Weekly Ad"
+title: "No Frills Promo Code Nov 2026  - 10% Off Coupon Code"
 slug: "nofrills"
-description: "No Frills Weekly Flyer Oct 2026. Check the newest No Frills weekly flyer featuring grocery specials, fresh food deals, and weekly supermarket offers."
+description: "No Frills Promo Code Nov 2026. Check the newest No Frills weekly flyer featuring grocery specials, fresh food deals, and weekly supermarket offers."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "No Frills"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "No Frills Weekly Flyer 2026 Oct 2026 - Weekly Ad"
-store_title: "No Frills Weekly Flyer 2026 Oct 2026 - Weekly Ad"
-store_meta_description: "No Frills Weekly Flyer Oct 2026. Check the newest No Frills weekly flyer featuring grocery specials, fresh food deals, and weekly supermarket offers."
+store_title: "No Frills Promo Code Nov 2026  - 10% Off Coupon Code"
+store_meta_description: "No Frills Promo Code Nov 2026. Check the newest No Frills weekly flyer featuring grocery specials, fresh food deals, and weekly supermarket offers."
 store_keywords: "no frills coupon code, no frills promo code, no frills discount code, no frills deals, no frills offers, no frills grocery coupons, no frills coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "No Frills Weekly Flyer 2026 Oct 2026 - Weekly Ad"
-store_og_description: "No Frills Weekly Flyer Oct 2026. Check the newest No Frills weekly flyer featuring grocery specials, fresh food deals, and weekly supermarket offers."
+store_og_title: "No Frills Promo Code Nov 2026  - 10% Off Coupon Code"
+store_og_description: "No Frills Promo Code Nov 2026. Check the newest No Frills weekly flyer featuring grocery specials, fresh food deals, and weekly supermarket offers."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Check the No Frills weekly flyer to find deals on produce, meats, packaged foods, and everyday groceries."
     coupon_aff_url: "https://www.nofrills.ca/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1105"
     coupon_title: "PC Optimum Points Offers"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Earn and redeem PC Optimum points on eligible purchases at No Frills and enjoy exclusive member deals."
     coupon_aff_url: "https://www.nofrills.ca/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

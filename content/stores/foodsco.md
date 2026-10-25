@@ -1,20 +1,20 @@
 ---
-title: "Foods Co Weekly Ad Oct 2026 - Flyer"
+title: "Foods Co Promo Code Nov 2026  - 10% Off Coupon Code"
 slug: "foodsco"
-description: "Foods Co Weekly Ad Oct 2026. Browse the latest Foods Co flyer featuring grocery savings, fresh produce deals, and weekly supermarket specials."
+description: "Foods Co Promo Code Nov 2026. Browse the latest Foods Co flyer featuring grocery savings, fresh produce deals, and weekly supermarket specials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Foods Co"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Foods Co Weekly Ad Oct 2026 - Flyer"
-store_title: "Foods Co Weekly Ad Oct 2026 - Flyer"
-store_meta_description: "Foods Co Weekly Ad Oct 2026. Browse the latest Foods Co flyer featuring grocery savings, fresh produce deals, and weekly supermarket specials."
+store_title: "Foods Co Promo Code Nov 2026  - 10% Off Coupon Code"
+store_meta_description: "Foods Co Promo Code Nov 2026. Browse the latest Foods Co flyer featuring grocery savings, fresh produce deals, and weekly supermarket specials."
 store_keywords: "foods co coupon code, foods co promo code, foods co discount code, foods co deals, foods co offers, foods co grocery coupons, foods co coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Foods Co Weekly Ad Oct 2026 - Flyer"
-store_og_description: "Foods Co Weekly Ad Oct 2026. Browse the latest Foods Co flyer featuring grocery savings, fresh produce deals, and weekly supermarket specials."
+store_og_title: "Foods Co Promo Code Nov 2026  - 10% Off Coupon Code"
+store_og_description: "Foods Co Promo Code Nov 2026. Browse the latest Foods Co flyer featuring grocery savings, fresh produce deals, and weekly supermarket specials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Check the Foods Co weekly ad to find discounts on fresh produce, meats, dairy, and grocery staples."
     coupon_aff_url: "https://www.foodsco.net/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1109"
     coupon_title: "Foods Co Digital Coupons"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Clip digital coupons through your Foods Co account to unlock additional grocery savings."
     coupon_aff_url: "https://www.foodsco.net/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -1,20 +1,20 @@
 ---
-title: "Petsmart Promo Code Oct 2026 - 15% Off Coupon"
+title: "Petsmart Promo Code Nov 2026 - 15% Off Coupon Code"
 slug: "petsmart"
-description: "Petsmart Promo Code Oct 2026. Save up to 15% on pet food, toys, grooming supplies, and pet care products with verified Petsmart coupon codes."
+description: "Petsmart Promo Code Nov 2026. Save up to 15% on pet food, toys, grooming supplies, and pet care products with verified Petsmart coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "PetSmart"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Petsmart Promo Code Oct 2026 - 15% Off Coupon"
-store_title: "Petsmart Promo Code Oct 2026 - 15% Off Coupon"
-store_meta_description: "Petsmart Promo Code Oct 2026. Save up to 15% on pet food, toys, grooming supplies, and pet care products with verified Petsmart coupon codes."
+store_title: "Petsmart Promo Code Nov 2026 - 15% Off Coupon Code"
+store_meta_description: "Petsmart Promo Code Nov 2026. Save up to 15% on pet food, toys, grooming supplies, and pet care products with verified Petsmart coupon codes."
 store_keywords: "petsmart coupon code, petsmart promo code, petsmart discount code, petsmart deals, petsmart offers, petsmart pet supplies coupons, petsmart coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Petsmart Promo Code Oct 2026 - 15% Off Coupon"
-store_og_description: "Petsmart Promo Code Oct 2026. Save up to 15% on pet food, toys, grooming supplies, and pet care products with verified Petsmart coupon codes."
+store_og_title: "Petsmart Promo Code Nov 2026 - 15% Off Coupon Code"
+store_og_description: "Petsmart Promo Code Nov 2026. Save up to 15% on pet food, toys, grooming supplies, and pet care products with verified Petsmart coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Join PetSmart Treats Rewards to earn points on purchases and unlock exclusive member-only discounts on pet products."
     coupon_aff_url: "https://www.petsmart.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1097"
     coupon_title: "PetSmart Weekly Pet Supplies Sale"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Shop PetSmart weekly sales for discounts on pet food, toys, grooming products, and accessories."
     coupon_aff_url: "https://www.petsmart.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

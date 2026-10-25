@@ -1,20 +1,20 @@
 ---
-title: "Cabela's Weekly Ad Oct 2026 - Deals"
+title: "Cabela's Promo Code Nov 2026  - 10% Off Coupon Code"
 slug: "cabelas"
-description: "Cabela's Weekly Ad Oct 2026. View the latest Cabela's deals on hunting gear, fishing equipment, outdoor apparel, and camping products."
+description: "Cabela's Promo Code Nov 2026. View the latest Cabela's deals on hunting gear, fishing equipment, outdoor apparel, and camping products."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Cabela's"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Cabela's Weekly Ad Oct 2026 - Deals"
-store_title: "Cabela's Weekly Ad Oct 2026 - Deals"
-store_meta_description: "Cabela's Weekly Ad Oct 2026. View the latest Cabela's deals on hunting gear, fishing equipment, outdoor apparel, and camping products."
+store_title: "Cabela's Promo Code Nov 2026  - 10% Off Coupon Code"
+store_meta_description: "Cabela's Promo Code Nov 2026. View the latest Cabela's deals on hunting gear, fishing equipment, outdoor apparel, and camping products."
 store_keywords: "cabela's coupon code, cabela's promo code, cabela's discount code, cabelas deals, cabelas offers, cabelas sale, cabelas coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Cabela's Weekly Ad Oct 2026 - Deals"
-store_og_description: "Cabela's Weekly Ad Oct 2026. View the latest Cabela's deals on hunting gear, fishing equipment, outdoor apparel, and camping products."
+store_og_title: "Cabela's Promo Code Nov 2026  - 10% Off Coupon Code"
+store_og_description: "Cabela's Promo Code Nov 2026. View the latest Cabela's deals on hunting gear, fishing equipment, outdoor apparel, and camping products."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Save on hunting gear, fishing equipment, camping essentials, and outdoor apparel in the Cabela's clearance section."
     coupon_aff_url: "https://www.cabelas.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1079"
     coupon_title: "Cabela's Seasonal Sales Event"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Shop seasonal promotions at Cabela's for discounts on outdoor gear, footwear, and sporting goods."
     coupon_aff_url: "https://www.cabelas.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

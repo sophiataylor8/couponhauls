@@ -1,20 +1,20 @@
 ---
-title: "Key Food Supermarket Circular Oct 2026 - Weekly Ad"
+title: "Key Food Promo Code Nov 2026  - 10% Off Coupon Code"
 slug: "keyfood"
-description: "Key Food Supermarket Circular Oct 2026. Check the latest Key Food weekly ad for grocery savings, fresh produce offers, and supermarket deals."
+description: "Key Food Promo Code Nov 2026. Check the latest Key Food weekly ad for grocery savings, fresh produce offers, and supermarket deals."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Key Food"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Key Food Supermarket Circular Oct 2026 - Weekly Ad"
-store_title: "Key Food Supermarket Circular Oct 2026 - Weekly Ad"
-store_meta_description: "Key Food Supermarket Circular Oct 2026. Check the latest Key Food weekly ad for grocery savings, fresh produce offers, and supermarket deals."
+store_title: "Key Food Promo Code Nov 2026  - 10% Off Coupon Code"
+store_meta_description: "Key Food Promo Code Nov 2026. Check the latest Key Food weekly ad for grocery savings, fresh produce offers, and supermarket deals."
 store_keywords: "key food coupon code, key food promo code, key food discount code, key food deals, key food offers, key food grocery coupons, key food coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Key Food Supermarket Circular Oct 2026 - Weekly Ad"
-store_og_description: "Key Food Supermarket Circular Oct 2026. Check the latest Key Food weekly ad for grocery savings, fresh produce offers, and supermarket deals."
+store_og_title: "Key Food Promo Code Nov 2026  - 10% Off Coupon Code"
+store_og_description: "Key Food Promo Code Nov 2026. Check the latest Key Food weekly ad for grocery savings, fresh produce offers, and supermarket deals."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Browse the Key Food weekly circular to save on fresh foods, beverages, snacks, and everyday essentials."
     coupon_aff_url: "https://www.keyfood.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1131"
     coupon_title: "Key Food In-Store Promotions"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Find rotating in-store promotions and seasonal grocery specials at participating Key Food locations."
     coupon_aff_url: "https://www.keyfood.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

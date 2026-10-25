@@ -1,20 +1,20 @@
 ---
-title: "Smith's Weekly Digital Deals Oct 2026 - Weekly Ad"
+title: "Smith's Promo Code Nov 2026  - 10% Off Coupon Code"
 slug: "smiths"
-description: "Smith's Weekly Digital Deals Oct 2026. Discover this week’s Smith's digital deals with discounts on groceries, fresh food, beverages, and pantry products."
+description: "Smith's Promo Code Nov 2026. Discover this week’s Smith's digital deals with discounts on groceries, fresh food, beverages, and pantry products."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Smith's"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Smith's Weekly Digital Deals Oct 2026 - Weekly Ad"
-store_title: "Smith's Weekly Digital Deals Oct 2026 - Weekly Ad"
-store_meta_description: "Smith's Weekly Digital Deals Oct 2026. Discover this week’s Smith's digital deals with discounts on groceries, fresh food, beverages, and pantry products."
+store_title: "Smith's Promo Code Nov 2026  - 10% Off Coupon Code"
+store_meta_description: "Smith's Promo Code Nov 2026. Discover this week’s Smith's digital deals with discounts on groceries, fresh food, beverages, and pantry products."
 store_keywords: "smith's coupon code, smith's promo code, smith's discount code, smith's deals, smith's offers, smith's grocery coupons, smith's coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Smith's Weekly Digital Deals Oct 2026 - Weekly Ad"
-store_og_description: "Smith's Weekly Digital Deals Oct 2026. Discover this week’s Smith's digital deals with discounts on groceries, fresh food, beverages, and pantry products."
+store_og_title: "Smith's Promo Code Nov 2026  - 10% Off Coupon Code"
+store_og_description: "Smith's Promo Code Nov 2026. Discover this week’s Smith's digital deals with discounts on groceries, fresh food, beverages, and pantry products."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Clip digital coupons through your Smith's account to unlock savings on groceries, beverages, and household essentials."
     coupon_aff_url: "https://www.smithsfoodanddrug.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1077"
     coupon_title: "Smith's Weekly Ad Grocery Deals"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Browse the Smith's weekly ad to discover discounts on produce, meats, dairy products, and pantry staples."
     coupon_aff_url: "https://www.smithsfoodanddrug.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

@@ -1,20 +1,20 @@
 ---
-title: "Tom Thumb Weekly Ad Oct 2026 - Grocery Ad"
+title: "Tom Thumb Promo Code Nov 2026  - 10% Off Coupon Code"
 slug: "tomthumb"
-description: "Tom Thumb Weekly Ad Oct 2026. Discover this week’s Tom Thumb grocery ad with savings on fresh food, beverages, pantry items, and daily deals."
+description: "Tom Thumb Promo Code Nov 2026. Discover this week’s Tom Thumb grocery ad with savings on fresh food, beverages, pantry items, and daily deals."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Tom Thumb"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Tom Thumb Weekly Ad Oct 2026 - Grocery Ad"
-store_title: "Tom Thumb Weekly Ad Oct 2026 - Grocery Ad"
-store_meta_description: "Tom Thumb Weekly Ad Oct 2026. Discover this week’s Tom Thumb grocery ad with savings on fresh food, beverages, pantry items, and daily deals."
+store_title: "Tom Thumb Promo Code Nov 2026  - 10% Off Coupon Code"
+store_meta_description: "Tom Thumb Promo Code Nov 2026. Discover this week’s Tom Thumb grocery ad with savings on fresh food, beverages, pantry items, and daily deals."
 store_keywords: "tom thumb coupon code, tom thumb promo code, tom thumb discount code, tom thumb deals, tom thumb offers, tom thumb grocery coupons, tom thumb coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Tom Thumb Weekly Ad Oct 2026 - Grocery Ad"
-store_og_description: "Tom Thumb Weekly Ad Oct 2026. Discover this week’s Tom Thumb grocery ad with savings on fresh food, beverages, pantry items, and daily deals."
+store_og_title: "Tom Thumb Promo Code Nov 2026  - 10% Off Coupon Code"
+store_og_description: "Tom Thumb Promo Code Nov 2026. Discover this week’s Tom Thumb grocery ad with savings on fresh food, beverages, pantry items, and daily deals."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Unlock weekly grocery discounts and personalized offers by clipping digital coupons through the Tom Thumb for U rewards program."
     coupon_aff_url: "https://www.tomthumb.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1041"
     coupon_title: "BOGO Grocery Promotions"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Find buy-one-get-one free offers on select snacks, beverages, frozen foods, and pantry items during weekly Tom Thumb promotions."
     coupon_aff_url: "https://www.tomthumb.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

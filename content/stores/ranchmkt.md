@@ -1,20 +1,20 @@
 ---
-title: "Clayton Ranch Market Weekly Ad Oct 2026"
+title: "Clayton Ranch Market Promo Code Nov 2026 - 10% Off"
 slug: "ranchmkt"
-description: "Clayton Ranch Market Weekly Ad Oct 2026. Browse the latest Clayton Ranch Market weekly ad for grocery savings, fresh produce deals, and weekly specials."
+description: "Clayton Ranch Market Promo Code Nov 2026. Browse the latest Clayton Ranch Market weekly ad for grocery savings, fresh produce deals, and weekly specials."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Clayton Ranch Market"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Clayton Ranch Market Weekly Ad Oct 2026"
-store_title: "Clayton Ranch Market Weekly Ad Oct 2026"
-store_meta_description: "Clayton Ranch Market Weekly Ad Oct 2026. Browse the latest Clayton Ranch Market weekly ad for grocery savings, fresh produce deals, and weekly specials."
+store_title: "Clayton Ranch Market Promo Code Nov 2026 - 10% Off"
+store_meta_description: "Clayton Ranch Market Promo Code Nov 2026. Browse the latest Clayton Ranch Market weekly ad for grocery savings, fresh produce deals, and weekly specials."
 store_keywords: "clayton ranch market coupon code, clayton ranch market promo code, clayton ranch market discount code, clayton ranch market deals, clayton ranch market offers, clayton ranch market grocery coupons, clayton ranch market coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Clayton Ranch Market Weekly Ad Oct 2026"
-store_og_description: "Clayton Ranch Market Weekly Ad Oct 2026. Browse the latest Clayton Ranch Market weekly ad for grocery savings, fresh produce deals, and weekly specials."
+store_og_title: "Clayton Ranch Market Promo Code Nov 2026 - 10% Off"
+store_og_description: "Clayton Ranch Market Promo Code Nov 2026. Browse the latest Clayton Ranch Market weekly ad for grocery savings, fresh produce deals, and weekly specials."
 store_og_image: ""
 store_og_type: "website"
 
@@ -35,7 +35,7 @@ coupons:
     coupon_description: "Shop the Ranch Market weekly specials for savings on fresh produce, meats, and everyday groceries."
     coupon_aff_url: "https://www.ranchmkt.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1133"
     coupon_title: "Ranch Market Fresh Food Deals"
@@ -43,7 +43,7 @@ coupons:
     coupon_description: "Find rotating grocery deals and in-store promotions at Ranch Market locations."
     coupon_aff_url: "https://www.ranchmkt.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

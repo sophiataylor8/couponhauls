@@ -1,20 +1,20 @@
 ---
-title: "Chaser Brand Promo Code Oct 2026 - 20% Off Coupon"
+title: "Chaser Brand Promo Code Nov 2026 - 20% Off Coupon Code"
 slug: "chaserbrand"
-description: "Chaser Brand Promo Code Oct 2026. Get up to 20% off graphic tees, casual wear, loungewear, and fashion essentials with verified Chaser Brand coupon codes."
+description: "Chaser Brand Promo Code Nov 2026. Get up to 20% off graphic tees, casual wear, loungewear, and fashion essentials with verified Chaser Brand coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Chaser Brand"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Chaser Brand Promo Code Oct 2026 - 20% Off Coupon"
-store_title: "Chaser Brand Promo Code Oct 2026 - 20% Off Coupon"
-store_meta_description: "Chaser Brand Promo Code Oct 2026. Get up to 20% off graphic tees, casual wear, loungewear, and fashion essentials with verified Chaser Brand coupon codes."
+store_title: "Chaser Brand Promo Code Nov 2026 - 20% Off Coupon Code"
+store_meta_description: "Chaser Brand Promo Code Nov 2026. Get up to 20% off graphic tees, casual wear, loungewear, and fashion essentials with verified Chaser Brand coupon codes."
 store_keywords: "chaser brand coupon, chaser brand promo code, chaser brand coupons, chaser brand discount code, chaser brand coupon codes, chaser brand promo codes"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Chaser Brand Promo Code Oct 2026 - 20% Off Coupon"
-store_og_description: "Chaser Brand Promo Code Oct 2026. Get up to 20% off graphic tees, casual wear, loungewear, and fashion essentials with verified Chaser Brand coupon codes."
+store_og_title: "Chaser Brand Promo Code Nov 2026 - 20% Off Coupon Code"
+store_og_description: "Chaser Brand Promo Code Nov 2026. Get up to 20% off graphic tees, casual wear, loungewear, and fashion essentials with verified Chaser Brand coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -36,7 +36,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-12248-214799-188835"
     coupon_type: "Coupon"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1215"
     coupon_title: "10% Off"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-12248-214799-188835"
     coupon_type: "Coupon"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1216"
     coupon_title: "15% Off"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-12248-214799-188835"
     coupon_type: "Coupon"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1217"
     coupon_title: "10% Off"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-12248-214799-188835"
     coupon_type: "Coupon"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1218"
     coupon_title: "15% Off"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.pntrac.com/t/8-12248-214799-188835"
     coupon_type: "Coupon"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

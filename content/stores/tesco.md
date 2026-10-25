@@ -1,20 +1,20 @@
 ---
-title: "Tesco Promo Code Oct 2026 - 20% Off Coupon"
+title: "Tesco Promo Code Nov 2026 - 20% Off Coupon Code"
 slug: "tesco"
-description: "Tesco Promo Code Oct 2026. Save up to 20% on groceries, household essentials, fresh food, and everyday products with verified Tesco coupon codes."
+description: "Tesco Promo Code Nov 2026. Save up to 20% on groceries, household essentials, fresh food, and everyday products with verified Tesco coupon codes."
 
 # ── Display name (used in UI: buttons, footer, cards, search) ───────
 store_name: "Tesco"
 
 # ── On-page SEO ──────────────────────────────────────────────────────
 store_h1: "Tesco Promo Code Oct 2026 - 20% Off Coupon"
-store_title: "Tesco Promo Code Oct 2026 - 20% Off Coupon"
-store_meta_description: "Tesco Promo Code Oct 2026. Save up to 20% on groceries, household essentials, fresh food, and everyday products with verified Tesco coupon codes."
+store_title: "Tesco Promo Code Nov 2026 - 20% Off Coupon Code"
+store_meta_description: "Tesco Promo Code Nov 2026. Save up to 20% on groceries, household essentials, fresh food, and everyday products with verified Tesco coupon codes."
 store_keywords: "tesco coupon code, tesco promo code, tesco discount code, tesco deals, tesco offers, tesco sale, tesco coupon code 2026"
 
 # ── Open Graph / Social sharing ──────────────────────────────────────
-store_og_title: "Tesco Promo Code Oct 2026 - 20% Off Coupon"
-store_og_description: "Tesco Promo Code Oct 2026. Save up to 20% on groceries, household essentials, fresh food, and everyday products with verified Tesco coupon codes."
+store_og_title: "Tesco Promo Code Nov 2026 - 20% Off Coupon Code"
+store_og_description: "Tesco Promo Code Nov 2026. Save up to 20% on groceries, household essentials, fresh food, and everyday products with verified Tesco coupon codes."
 store_og_image: ""
 store_og_type: "website"
 
@@ -36,7 +36,7 @@ coupons:
     coupon_description: "Grocery & fresh products"
     coupon_aff_url: "https://www.tesco.com/"
     coupon_type: "Coupon"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1033"
     coupon_title: "Free Delivery $40+"
@@ -44,7 +44,7 @@ coupons:
     coupon_description: "Delivery discount"
     coupon_aff_url: "https://www.tesco.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1387"
     coupon_title: "Get up to 30% off male grooming"
@@ -52,7 +52,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.tesco.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1388"
     coupon_title: "up to 30% off TV essentials, plus Triple Clubcard Points"
@@ -60,7 +60,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.tesco.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1389"
     coupon_title: "Save 15% on Tesco Travel Insurance"
@@ -68,7 +68,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.tesco.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1390"
     coupon_title: "Up to 20% off paddling pools and outdoor toys"
@@ -76,7 +76,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.tesco.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
   - coupon_id: "1391"
     coupon_title: "Up to 20% off garden and outdoor"
@@ -84,7 +84,7 @@ coupons:
     coupon_description: ""
     coupon_aff_url: "https://www.tesco.com/"
     coupon_type: "Deal"
-    coupon_start: "02/10/2026"
+    coupon_start: "21/10/2026"
     expires_at: "31/12/2026"
 ---
 

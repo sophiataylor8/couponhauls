@@ -29,6 +29,7 @@
 
 {{/* ── OG / Twitter ──────────────────────────────────────────────────── */}}
 {{- block "og_meta" . }}
+{{- $main := .Site.BaseURL | strings.TrimRight "/" -}}
 <meta property="og:title"       content="{{ .Title }}">
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ $.Site.Params.description }}{{ end }}">
 <meta property="og:type"        content="website">
